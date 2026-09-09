@@ -7,10 +7,9 @@ on:
   workflow_dispatch:
     inputs:
       release_pr:
-        description: Número da Release PR já mesclada (opcional)
-        required: false
+        description: Número da Release PR já mesclada para reexecução manual
+        required: true
         type: string
-        default: ""
 
 permissions:
   contents: write

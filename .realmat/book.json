@@ -1,0 +1,14 @@
+{
+  "id": "ra-volume-i",
+  "title": "Basic Analysis: Introduction to Real Analysis, Volume I",
+  "short_title": "Basic Analysis I",
+  "subject": "Real analysis",
+  "base_branch": "master",
+  "build_system": "latex",
+  "latex_entrypoint": "realanal.tex",
+  "latex_engine": "pdflatex",
+  "pdf_name": "realanal.pdf",
+  "citation_file": "CITATION.cff",
+  "readme_file": "README.md",
+  "portal_repository": "projetorealmat/projetorealmat.github.io"
+}

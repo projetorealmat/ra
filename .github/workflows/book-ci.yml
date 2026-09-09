@@ -1,0 +1,17 @@
+name: REALMat — verificar Basic Analysis I
+
+on:
+  pull_request:
+    branches: [master]
+  push:
+    branches: [master]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    uses: projetorealmat/.github/.github/workflows/book-ci.yml@main
+    with:
+      config: .realmat/book.json
+      commit: ${{ github.event.pull_request.head.sha || github.sha }}

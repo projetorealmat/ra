@@ -1,0 +1,27 @@
+name: Preparar release PR — Basic Analysis I
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Próxima versão (MAJOR.MINOR.PATCH), por exemplo 0.1.0
+        required: true
+        type: string
+      release_date:
+        description: Data da publicação (AAAA-MM-DD); vazia usa a data UTC
+        required: false
+        type: string
+        default: ""
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  prepare:
+    uses: projetorealmat/.github/.github/workflows/book-prepare-release.yml@main
+    with:
+      config: .realmat/book.json
+      version: ${{ inputs.version }}
+      release_date: ${{ inputs.release_date }}
+    secrets: inherit

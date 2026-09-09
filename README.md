@@ -51,3 +51,11 @@ not have a recent enough ocgx2 package, you can simply comment out that line
 in the preamble.  Another is the glossaries, which used to have a bug  with
 sorting.  If you are getting undefined errors while compiling,
 take out the "sort=use" option from the glossaries package.
+
+## REALMat integration
+
+This repository is integrated into REALMat initially through Volume I (`realanal.tex`) as the original English source. The integration adds release metadata and automated PDF publication without changing the book's mathematical content.
+
+<!-- realmat-release:start -->
+No REALMat release has been published yet.
+<!-- realmat-release:end -->

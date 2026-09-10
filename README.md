@@ -51,3 +51,11 @@ not have a recent enough ocgx2 package, you can simply comment out that line
 in the preamble.  Another is the glossaries, which used to have a bug  with
 sorting.  If you are getting undefined errors while compiling,
 take out the "sort=use" option from the glossaries package.
+
+## REALMat integration
+
+This repository is the REALMat Volume I edition in preparation, based on the English source repository. Translation and adaptation will take place here; the upstream repository is retained only for provenance, credits, and license information.
+
+<!-- realmat-release:start -->
+No REALMat release has been published yet.
+<!-- realmat-release:end -->

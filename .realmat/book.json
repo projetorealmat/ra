@@ -1,0 +1,16 @@
+{
+  "id": "ra-volume-i",
+  "title": "Basic Analysis: Introduction to Real Analysis, Volume I",
+  "short_title": "Basic Analysis I",
+  "subject": "Real analysis",
+  "base_branch": "master",
+  "build_system": "latex",
+  "latex_entrypoint": "realanal.tex",
+  "latex_engine": "pdflatex",
+  "pdf_name": "realanal.pdf",
+  "citation_file": "CITATION.cff",
+  "readme_file": "README.md",
+  "source_url": "https://github.com/jirilebl/ra",
+  "source_license": "CC-BY-SA-4.0 OR CC-BY-NC-SA-4.0",
+  "portal_repository": "projetorealmat/projetorealmat.github.io"
+}

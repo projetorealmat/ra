@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it."
+title: "Basic Analysis: Introduction to Real Analysis, Volume I"
+version: "0.0.0"
+authors:
+  - family-names: Lebl
+    given-names: Jiří
+repository-code: "https://github.com/projetorealmat/ra"
+license: "CC-BY-SA-4.0 OR CC-BY-NC-SA-4.0"

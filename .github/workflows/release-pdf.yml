@@ -18,7 +18,7 @@ permissions:
 jobs:
   publish:
     if: ${{ github.event_name == 'workflow_dispatch' || (github.event.pull_request.merged == true && startsWith(github.event.pull_request.head.ref, 'release/v')) }}
-    uses: projetorealmat/.github/.github/workflows/book-publish-release.yml@main
+    uses: projetorealmat/.github/.github/workflows/book-publish-release.yml@v2
     with:
       config: .realmat/book.json
       release_pr: ${{ github.event_name == 'workflow_dispatch' && inputs.release_pr || '' }}

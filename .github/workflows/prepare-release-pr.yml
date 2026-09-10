@@ -19,7 +19,7 @@ permissions:
 
 jobs:
   prepare:
-    uses: projetorealmat/.github/.github/workflows/book-prepare-release.yml@main
+    uses: projetorealmat/.github/.github/workflows/book-prepare-release.yml@v2
     with:
       config: .realmat/book.json
       version: ${{ inputs.version }}

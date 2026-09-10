@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   build:
-    uses: projetorealmat/.github/.github/workflows/book-ci.yml@main
+    uses: projetorealmat/.github/.github/workflows/book-ci.yml@v2
     with:
       config: .realmat/book.json
       commit: ${{ github.event.pull_request.head.sha || github.sha }}

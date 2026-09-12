@@ -3,6 +3,15 @@
   "title": "Basic Analysis: Introduction to Real Analysis, Volume I",
   "short_title": "Basic Analysis I",
   "subject": "Real analysis",
+  "translation_stage": "unreviewed",
+  "entrypoint": "pdf",
+  "publications": [
+    {
+      "id": "pdf",
+      "label": "PDF",
+      "format": "pdf"
+    }
+  ],
   "base_branch": "master",
   "build_system": "latex",
   "latex_entrypoint": "realanal.tex",

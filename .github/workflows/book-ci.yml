@@ -1,4 +1,5 @@
 name: REALMat — verificar Basic Analysis I
+# O caller usa a tag imutável @v3 do contrato central REALMat.
 
 on:
   pull_request:

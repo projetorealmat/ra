@@ -3129,37 +3129,37 @@ $\sum_{n=1}^{M-1} x_n$ é um número fixo. Use
 \propref{prop:contalg} para concluir a demonstração.
 \end{proof}
 
-\subsection{Cauchy series}
+\subsection{Séries de Cauchy}
 
 \begin{defn}
-A series $\sum_{n=1}^\infty x_n$ is said to be \emph{Cauchy} or a
-\emph{Cauchy series}\index{Cauchy series}
-if the sequence of partial sums $\{ s_n \}_{n=1}^\infty$ is a Cauchy sequence.
+Dizemos que uma série $\sum_{n=1}^\infty x_n$ é \emph{de Cauchy} ou uma
+\emph{série de Cauchy}\index{série de Cauchy}
+se a sequência de somas parciais $\{ s_n \}_{n=1}^\infty$ é uma sequência de Cauchy.
 \end{defn}
 
-A sequence of real numbers converges if and only if it is
-Cauchy.  Therefore, a series is convergent if and only if it is Cauchy.
-The series $\sum_{n=1}^\infty x_n$ is Cauchy if and only if for every $\epsilon > 0$,
-there exists an $M \in \N$, such that for every $n \geq M$
-and $k \geq M$, we have
+Uma sequência de números reais é convergente se, e somente se, é
+de Cauchy. Portanto, uma série é convergente se, e somente se, é de Cauchy.
+A série $\sum_{n=1}^\infty x_n$ é de Cauchy se, e somente se, para todo $\epsilon > 0$,
+existe $M \in \N$ tal que, para todo $n \geq M$
+e $k \geq M$, vale
 \begin{equation*}
 \abs{ \left( \sum_{i=1}^k x_i \right) - \left( \sum_{i=1}^n x_i \right) }
 < \epsilon .
 \end{equation*}
-Without loss of generality, we assume $n < k$.  Then we write
+Sem perda de generalidade, suponhamos que $n < k$. Então escrevemos
 \begin{equation*}
 \abs{ \left( \sum_{i=1}^k x_i \right) - \left( \sum_{i=1}^n x_i \right) }
 =
 \abs{ \sum_{i={n+1}}^k x_i }
 < \epsilon .
 \end{equation*}
-We have proved the following simple proposition.
+Provamos a seguinte proposição simples.
 
 \begin{prop} \label{prop:cachyser}
-The series $\sum_{n=1}^\infty x_n$ is Cauchy
-if and only if for every $\epsilon > 0$, 
-there exists an $M \in \N$ such that for every $n \geq M$
-and every $k > n$,
+A série $\sum_{n=1}^\infty x_n$ é de Cauchy
+se, e somente se, para todo $\epsilon > 0$,
+existe $M \in \N$ tal que, para todo $n \geq M$
+e todo $k > n$,
 \begin{equation*}
 \abs{ \sum_{i={n+1}}^k x_i }
 < \epsilon .

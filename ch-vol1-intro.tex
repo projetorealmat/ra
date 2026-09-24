@@ -253,75 +253,74 @@ Espera-se que o leitor já tenha visto os fundamentos da teoria dos conjuntos
 e da escrita de demonstrações; esta seção deve servir como uma breve
 recapitulação.
 
-\subsection{Sets}
+\subsection{Conjuntos}
 
 \begin{defn}
-A \emph{\myindex{set}} is a collection of objects called
-\emph{elements}\index{element} or \emph{members}\index{member}.  A set with
-no objects is called the \emph{\myindex{empty set}} and is denoted by
-$\emptyset$\glsadd{not:emptyset} (or sometimes by $\{ \}$).
+Um \emph{\myindex{conjunto}} é uma coleção de objetos chamados
+\emph{elementos}\index{elemento} ou \emph{membros}\index{membro}. Um conjunto
+sem elementos é chamado de \emph{\myindex{conjunto vazio}} e é denotado por
+$\emptyset$\glsadd{not:emptyset} (ou, às vezes, por $\{ \}$).
 \end{defn}
 
-Think of a set as a club with a certain membership.  For
-example, the students who play chess are members of the chess club.
-The same student can be a member of many different clubs.
-However,
-do not take the analogy too far.  A set is only defined by the members
-that form the set; two sets that have the same members are the same set.
+Imagine um conjunto como um clube com determinados associados. Por exemplo,
+os estudantes que jogam xadrez são membros do clube de xadrez.
+O mesmo estudante pode pertencer a vários clubes diferentes.
+No entanto, não leve a analogia longe demais. Um conjunto é definido apenas
+pelos membros que o formam; dois conjuntos com os mesmos membros são o mesmo
+conjunto.
 
-Most of the time, we will consider sets
-of numbers.  For example, the set
+Na maior parte do tempo, consideraremos conjuntos de números. Por exemplo, o
+conjunto
 \glsadd{not:set}
 \begin{equation*}
 S \coloneqq \{ 0, 1, 2 \}
 \end{equation*}
-is the set containing
-the three elements 0, 1, and 2.
-By \myquote{$\coloneqq$},\glsadd{not:def} we mean we are defining what $S$ is, rather than
-just showing equality.
-We write\glsadd{not:eltof}
+contém os três elementos 0, 1 e 2.
+Com o símbolo \myquote{$\coloneqq$},\glsadd{not:def} indicamos que estamos
+definindo o que é $S$, em vez de apenas mostrar uma igualdade.
+Escrevemos\glsadd{not:eltof}
 \begin{equation*}
 1 \in S
 \end{equation*}
-to denote that the number 1 belongs to the set $S$.  That is, 1 is a member
-of $S$.
-At times we want to say that two elements are in a set $S$, so we 
-write \myquote{$1,2 \in S$} as a shorthand for
-\myquote{$1 \in S$ and $2 \in S$.}
+para indicar que o número 1 pertence ao conjunto $S$. Em outras palavras, 1
+é um elemento de $S$.
+Às vezes, queremos dizer que dois elementos pertencem a um conjunto $S$; por
+isso, usamos \myquote{$1,2 \in S$} como abreviação de
+\myquote{$1 \in S$ e $2 \in S$.}
 
-Similarly, we write\glsadd{not:noteltof}
+De modo semelhante, escrevemos\glsadd{not:noteltof}
 \begin{equation*}
 7 \notin S
 \end{equation*}
-to denote that the number 7 is not in $S$.  That is, 7 is not a member of
-$S$.
+para indicar que o número 7 não pertence a $S$, isto é, que 7 não é membro
+de $S$.
 
-The elements of all sets under consideration come from some set we call the
-\emph{\myindex{universe}}.  For simplicity,
-we often consider the universe to be the set that contains only the elements
-we are interested in.
-The universe is generally understood from context
-and is not explicitly mentioned.  In this course, our universe will
-often be the set of real numbers.
+Os elementos de todos os conjuntos considerados pertencem a algum conjunto
+que chamamos de \emph{\myindex{universo}}. Para simplificar, muitas vezes
+tomamos como universo o conjunto que contém apenas os elementos de nosso
+interesse.
+Em geral, o universo fica subentendido pelo contexto e não é mencionado
+explicitamente. Neste curso, muitas vezes o universo será o conjunto dos
+números reais.
 
-Although the elements of a set are often numbers,
-other objects, such as other sets, can be elements of a set.
-A set may also contain some of the same elements as another set.  For example,
+Embora os elementos de um conjunto sejam frequentemente números, outros
+objetos, como conjuntos, também podem ser elementos de um conjunto.
+Além disso, dois conjuntos podem ter alguns elementos em comum. Por exemplo,
 \begin{equation*}
 T \coloneqq \{ 0, 2 \}
 \end{equation*}
-contains the numbers 0 and 2.  In this case, all elements of $T$ also
-belong to $S$.  We write $T \subset S$.\glsadd{not:subset}
-See \figureref{fig:sets} for a diagram.
+contém os números 0 e 2. Nesse caso, todos os elementos de $T$ também
+pertencem a $S$. Escrevemos $T \subset S$.\glsadd{not:subset}
+Veja o diagrama da \figureref{fig:sets}.
 %More formally we make the
 %following definition.
 
 \begin{myfigureht}
 \myincludepdft{sets}{%
-A diagram of example sets S and T.  The set S includes 0, 1, and 2,
-and the set T includes 0 and 2.  There is an element 7 not
-included in either set.}
-\caption{A diagram of the example sets $S$ and its subset $T$.\label{fig:sets}}
+Diagrama dos conjuntos de exemplo S e T. O conjunto S contém 0, 1 e 2,
+e o conjunto T contém 0 e 2. O elemento 7 não pertence a nenhum dos
+conjuntos.}
+\caption{Diagrama dos conjuntos de exemplo $S$ e de seu subconjunto $T$.\label{fig:sets}}
 \end{myfigureht}
 
 \begin{defn}
@@ -330,131 +329,129 @@ included in either set.}
 \leavevmode
 \begin{enumerate}[(i)]
 \item
-A set $A$ is a \emph{\myindex{subset}}
-of a set $B$ if $x \in A$ implies $x \in B$, and we write $A \subset B$.
-That is, all members of $A$ are also members of $B$.  At times we
-write $B \supset A$ to mean the same thing.
+Um conjunto $A$ é um \emph{\myindex{subconjunto}} de um conjunto $B$ se
+$x \in A$ implica $x \in B$, e escrevemos $A \subset B$.
+Isto é, todos os elementos de $A$ também são elementos de $B$. Às vezes,
+escrevemos $B \supset A$ com o mesmo significado.
 \item
-Two sets $A$ and $B$ are \emph{\myindex{equal}}\glsadd{not:equal} if $A \subset B$ and $B
-\subset A$.  We write $A = B$.
-That is, $A$ and $B$ contain exactly the same elements.
-If it is not true that $A$ and $B$ are equal, then 
-we write $A \neq B$.
+Dois conjuntos $A$ e $B$ são \emph{\myindex{iguais}}\glsadd{not:equal} se
+$A \subset B$ e $B \subset A$. Escrevemos $A = B$.
+Isto é, $A$ e $B$ contêm exatamente os mesmos elementos.
+Se $A$ e $B$ não são iguais, escrevemos $A \neq B$.
 \item
-A set $A$ is a \emph{\myindex{proper subset}} of $B$ if $A \subset B$
-and $A \neq B$.  We write $A \subsetneq B$.\glsadd{not:subsetneq}
+Um conjunto $A$ é um \emph{\myindex{subconjunto pr\'oprio}} de $B$ se
+$A \subset B$ e $A \neq B$. Escrevemos $A \subsetneq B$.\glsadd{not:subsetneq}
 \end{enumerate}
 \end{defn}
 
-For the example $S$ and $T$ defined above, $T \subset S$, but
-$T \neq S$.  So $T$ is a proper subset of $S$.
-If $A = B$, then $A$ and $B$ are simply two names for the
-same exact set.
+No exemplo dos conjuntos $S$ e $T$ definidos acima, $T \subset S$, mas
+$T \neq S$. Portanto, $T$ é um
+subconjunto próprio de $S$.
+Se $A = B$, então $A$ e $B$ são apenas dois nomes para exatamente o mesmo
+conjunto.
 
-To define new sets, one often uses
-the
-\emph{\myindex{set building notation}},\glsadd{not:setbuilder}
+Para definir novos conjuntos, costuma-se usar a
+\emph{\myindex{notação de constru\c{c}\~ao de conjuntos}},\glsadd{not:setbuilder}
 \begin{equation*}
 \bigl\{ x \in A : P(x) \bigr\} .
 \end{equation*}
-This notation refers to a subset of the set $A$ containing all elements
-of $A$ that satisfy the property $P(x)$.
-Using $S = \{ 0, 1, 2 \}$ as above, $\{ x \in S : x \neq 2 \}$
-is the set $\{ 0, 1 \}$.
-The notation is sometimes
-abbreviated as $\bigl\{ x : P(x) \bigr\}$, that is, $A$ is not mentioned when understood from context.
-Furthermore, $x \in A$ is sometimes replaced with a formula to make the notation
-easier to read.  
+Essa notação representa um subconjunto de $A$ formado por todos os elementos
+de $A$ que satisfazem a propriedade $P(x)$.
+Usando $S = \{ 0, 1, 2 \}$ como acima, $\{ x \in S : x \neq 2 \}$
+é o conjunto $\{ 0, 1 \}$.
+Às vezes, a notação é abreviada como $\bigl\{ x : P(x) \bigr\}$; nesse caso,
+o conjunto $A$ não é mencionado quando fica subentendido pelo contexto.
+Além disso, a condição $x \in A$ pode ser substituída por uma fórmula para
+tornar a notação mais fácil de ler.
 
 \begin{example}
-The following are sets including the standard notations.
+Os conjuntos a seguir usam as notações usuais.
 \begin{enumerate}[(i)]
-\item The set of \emph{\myindex{natural numbers}},
+\item O conjunto dos \emph{\myindex{n\'umeros naturais}},
 \glsadd{not:natnums}
 $\N \coloneqq \{ 1, 2, 3, \ldots
 \}$.
-\item The set of \emph{\myindex{integers}},
+\item O conjunto dos \emph{\myindex{n\'umeros inteiros}},
 \glsadd{not:ints} 
 $\Z \coloneqq \{ 0, -1, 1, -2, 2, \ldots
 \}$.
-\item The set of \emph{\myindex{rational numbers}},
+\item O conjunto dos \emph{\myindex{n\'umeros racionais}},
 \glsadd{not:rationals} 
-$\Q \coloneqq \bigl\{ \frac{m}{n} :  m, n \in \Z \text{ and } n \neq 0 \bigr\}$.
-\item The set of even natural numbers, $\{  2m : m \in \N \}$.
-\item The set of real numbers,
+$\Q \coloneqq \bigl\{ \frac{m}{n} :  m, n \in \Z \text{ e } n \neq 0 \bigr\}$.
+\item O conjunto dos números naturais pares, $\{  2m : m \in \N \}$.
+\item O conjunto dos números reais,
 \glsadd{not:reals} 
 $\R$.
 \end{enumerate}
 
-Note that $\N \subset \Z \subset \Q \subset \R$.
+Observe que $\N \subset \Z \subset \Q \subset \R$.
 \end{example}
 
-We create new sets out of old ones by applying some natural operations.
+Formamos novos conjuntos a partir de conjuntos já existentes por meio de
+algumas operações naturais.
 
 \begin{defn}
 \pagebreak[2]
 \leavevmode
 \begin{enumerate}[(i)]
 \item
-A \emph{\myindex{union}} of two sets $A$ and $B$ is defined as
+A \emph{\myindex{uni\~ao}} de dois conjuntos $A$ e $B$ é definida por
 \glsadd{not:union}
 \begin{equation*}
-A \cup B \coloneqq \{ x : x \in A \text{ or } x \in B \} .
+A \cup B \coloneqq \{ x : x \in A \text{ ou } x \in B \} .
 \end{equation*}
 \item
-An \emph{\myindex{intersection}} of two sets $A$ and $B$ is defined as
+A \emph{\myindex{interse\c{c}\~ao}} de dois conjuntos $A$ e $B$ é definida por
 \glsadd{not:intersection}
 \begin{equation*}
-A \cap B \coloneqq \{ x : x \in A \text{ and } x \in B \} .
+A \cap B \coloneqq \{ x : x \in A \text{ e } x \in B \} .
 \end{equation*}
 \item
-A \emph{complement of $B$ relative to $A$\index{complement relative to}}
-(or \emph{\myindex{set-theoretic difference}} of $A$ and $B$) is defined as
+O \emph{complemento de $B$ em relação a $A$\index{complemento em rela\c{c}\~ao a}}
+(ou a \emph{\myindex{diferen\c{c}a de conjuntos}} de $A$ e $B$) é definido por
 \glsadd{not:setminus}
 \begin{equation*}
-A \setminus B \coloneqq \{ x : x \in A \text{ and } x \notin B \} .
+A \setminus B \coloneqq \{ x : x \in A \text{ e } x \notin B \} .
 \end{equation*}
 \item
-We say
-\emph{\myindex{complement}} of $B$ and write $B^c$ \glsadd{not:complement}
-instead of $A \setminus B$ if
-the set $A$ is either the entire universe or if it is the obvious
-set containing $B$, and is understood from context.
+Chamamos de \emph{\myindex{complemento}} de $B$ e escrevemos $B^c$
+\glsadd{not:complement} em vez de $A \setminus B$ quando o conjunto $A$ é
+todo o universo ou o conjunto que obviamente contém $B$, conforme fique
+subentendido pelo contexto.
 \item
-We say sets $A$ and $B$ are \emph{\myindex{disjoint}} if $A \cap B =
+Dois conjuntos $A$ e $B$ são \emph{\myindex{disjuntos}} se $A \cap B =
 \emptyset$.
 \end{enumerate}
 \end{defn}
 
-The notation $B^c$ may be a little vague at this point.  If
-the set $B$ is a subset of the real numbers $\R$, then $B^c$ means
-$\R \setminus B$.  If $B$ is naturally a subset of the natural numbers,
-then $B^c$
-is $\N \setminus B$.  If ambiguity can arise, we 
-use the set difference notation $A \setminus B$.
+A notação $B^c$ talvez pareça um pouco vaga neste momento. Se $B$ é um
+subconjunto dos números reais $\R$, então $B^c$ significa
+$\R \setminus B$. Se $B$ é naturalmente um subconjunto dos números naturais,
+então $B^c$ é $\N \setminus B$. Se houver risco de ambiguidade, usamos a
+notação de diferença de conjuntos $A \setminus B$.
 
 \begin{myfigureht}
 \myincludepdft{figsetop}{%
-Venn diagrams of set operations: First a diagram of A union B,
-with the inside of A or B shaded.
-Then a diagram of A intersect B where only the intersection
-A and B is shaded.  Then a diagram of A set minus B, where
-everything in A but not in B is shaded.  Finally a diagram
-of B complement, where everything not in B is shaded.}
-\caption{Venn diagrams of set operations, the result of the operation is
-shaded.\label{figsetop}}
+Diagramas de Venn das operações com conjuntos: primeiro, um diagrama da união
+de A e B, com a região interna de A ou de B sombreada.
+Depois, um diagrama da interseção de A e B, em que somente a interseção está
+sombreada. Em seguida, um diagrama da diferença de A e B, em que tudo o que
+está em A, mas não em B, está sombreado. Por fim, um diagrama do complemento
+de B, em que tudo o que não está em B está sombreado.}
+\caption{Diagramas de Venn das operações com conjuntos; a região sombreada
+representa o resultado da operação.\label{figsetop}}
 \end{myfigureht}
-We illustrate the operations on the
-\emph{Venn diagrams}\index{Venn diagram} in \figureref{figsetop}.
-Let us now establish one of the most basic theorems about sets and logic.
+Ilustramos essas operações com os
+\emph{diagramas de Venn}\index{diagrama de Venn} na \figureref{figsetop}.
+Vamos agora demonstrar um dos teoremas mais básicos sobre conjuntos e lógica.
 
-\begin{thm}[DeMorgan]\index{DeMorgan's theorem}
-Let $A, B, C$ be sets.  Then
+\begin{thm}[De Morgan]\index{teorema de De Morgan}
+Sejam $A, B, C$ conjuntos. Então
 \begin{equation*}
 {(B \cup C)}^c = B^c \cap C^c , \qquad
 {(B \cap C)}^c = B^c \cup C^c ,
 \end{equation*}
-or, more generally,
+ou, mais geralmente,
 \begin{equation*}
 A \setminus (B \cup C) = (A \setminus B) \cap (A \setminus C) , 
 \qquad
@@ -463,67 +460,70 @@ A \setminus (B \cap C) = (A \setminus B) \cup (A \setminus C) .
 \end{thm}
 
 \begin{proof}
-The first statement is proved by the second statement if we
-assume the set $A$ is our \myquote{universe.}
+A primeira igualdade decorre da segunda se considerarmos o conjunto $A$ como
+nosso \myquote{universo.}
 
-Let us prove $A \setminus (B \cup C) = (A \setminus B) \cap (A \setminus C)$.
-Remember the definition of equality of sets.  First, we must show that
-if $x \in A \setminus (B \cup C)$, then
-$x \in (A \setminus B) \cap (A \setminus C)$.  Second, we must also show that
-if $x \in (A \setminus B) \cap (A \setminus C)$, then
+Vamos demonstrar que
+$A \setminus (B \cup C) = (A \setminus B) \cap (A \setminus C)$.
+Para isso, lembre-se da definição de igualdade entre conjuntos. Primeiro,
+precisamos mostrar que, se $x \in A \setminus (B \cup C)$, então
+$x \in (A \setminus B) \cap (A \setminus C)$. Também precisamos mostrar que,
+se $x \in (A \setminus B) \cap (A \setminus C)$, então
 $x \in A \setminus (B \cup C)$.
-So let us assume $x \in A \setminus (B \cup C)$.  Then $x$ is in 
-$A$, but not in $B$ nor $C$.  Hence, $x$ is in $A$ and not in $B$, that is,
-$x \in A \setminus B$.  Similarly, $x \in A \setminus C$.  Thus
+Suponhamos, então, que $x \in A \setminus (B \cup C)$. Nesse caso, $x$
+pertence a $A$, mas não pertence a $B$ nem a $C$. Portanto, $x$ pertence a
+$A$ e não pertence a $B$, isto é, $x \in A \setminus B$. De modo semelhante,
+$x \in A \setminus C$. Logo,
 $x \in (A \setminus B) \cap (A \setminus C)$.
-On the other hand, suppose 
-$x \in (A \setminus B) \cap (A \setminus C)$.  In particular,
-$x \in (A \setminus B)$, so 
-$x \in A$ and $x \notin B$.  Also, as $x \in (A \setminus C)$, then $x \notin C$.
-Hence, $x \in A \setminus (B \cup C)$.
+Por outro lado, suponha que
+$x \in (A \setminus B) \cap (A \setminus C)$. Em particular,
+$x \in (A \setminus B)$, de modo que $x \in A$ e $x \notin B$. Além disso, como
+$x \in (A \setminus C)$, temos $x \notin C$.
+Portanto, $x \in A \setminus (B \cup C)$.
 
-The proof of the other equality is left as an exercise.
+A demonstração da outra igualdade fica como exercício.
 \end{proof}
 
-We called the result above a \emph{Theorem}, while most results we call
-a \emph{Proposition}, and a few we call a \emph{Lemma} (a result leading to another result) or
-\emph{Corollary} (a quick consequence of the preceding result).
-Do not read too much into
-the naming.  Some of it is traditional, some of it is stylistic choice.
-It is not necessarily true that a \emph{Theorem} is always
-\myquote{more important} than a
-\emph{Proposition} or a \emph{Lemma}.
+Chamamos o resultado acima de \emph{Teorema}; a maioria dos resultados recebe
+o nome de \emph{Proposição}, e alguns são chamados de \emph{Lema} (um
+resultado que conduz a outro) ou \emph{Corolário} (uma consequência rápida do
+resultado anterior).
+Não atribua importância excessiva a essa nomenclatura. Parte dela é
+tradicional, e parte decorre de escolhas de estilo.
+Não é necessariamente verdade que um \emph{Teorema} seja sempre
+\myquote{mais importante} do que uma \emph{Proposição} ou um \emph{Lema}.
 
 \medskip
 
-We will also need to intersect or union several sets at once.  If there are
-only finitely many, then we simply apply the union or intersection operation
-several times.  However, suppose we have an infinite collection
-of sets (a set of sets)
-$\{ A_1, A_2, A_3, \ldots \}$.  We define
+Também precisaremos intersectar ou unir vários conjuntos ao mesmo tempo. Se
+houver apenas um número finito deles, basta aplicar repetidamente a operação
+de união ou de interseção. Suponha, porém, que tenhamos uma coleção infinita
+de conjuntos (um conjunto de conjuntos)
+$\{ A_1, A_2, A_3, \ldots \}$. Definimos
 \glsadd{not:infunion}
 \glsadd{not:infintersection}
 \begin{align*}
-& \bigcup_{n=1}^\infty A_n \coloneqq \{ x : x \in A_n \text{ for some } n \in \N
+& \bigcup_{n=1}^\infty A_n \coloneqq \{ x : x \in A_n \text{ para algum } n \in \N
 \} , \\
-& \bigcap_{n=1}^\infty A_n \coloneqq \{ x : x \in A_n \text{ for all } n \in \N
+& \bigcap_{n=1}^\infty A_n \coloneqq \{ x : x \in A_n \text{ para todo } n \in \N
 \} .
 \end{align*}
 
-We can also have sets indexed by two natural numbers.  For example, we can have
-the set of sets
-$\{ A_{1,1}, A_{1,2}, A_{2,1}, A_{1,3}, A_{2,2}, A_{3,1}, \ldots \}$.  Then
-we write 
+Também podemos ter conjuntos indexados por dois números naturais. Por
+exemplo, podemos ter o conjunto de conjuntos
+$\{ A_{1,1}, A_{1,2}, A_{2,1}, A_{1,3}, A_{2,2}, A_{3,1}, \ldots \}$. Então
+escrevemos
 \begin{equation*}
 \bigcup_{n=1}^\infty \bigcup_{m=1}^\infty A_{n,m}
 =
 \bigcup_{n=1}^\infty \left( \bigcup_{m=1}^\infty A_{n,m} \right) .
 \end{equation*}
-And similarly with intersections.
+De modo análogo, procedemos com as interseções.
 
-It is not hard to see that we can take the unions in any order.  However,
-switching the order of unions and intersections is not generally permitted without proof.
-For instance,
+Não é difícil ver que podemos tomar as uniões em qualquer ordem. No entanto,
+em geral, não podemos trocar a ordem de uniões e interseções sem uma
+demonstração.
+Por exemplo,
 \begin{equation*}
 \bigcup_{n=1}^\infty
 \bigcap_{m=1}^\infty
@@ -543,17 +543,18 @@ However,
 \N.
 \end{equation*}
 
-Sometimes, the index set is not the set of natural numbers.  In such a case, we
-require a more general notation.  Suppose $I$ is some set and for each $\lambda \in
-I$, there is a set $A_\lambda$.  Then we define
+Às vezes, o conjunto de índices não é o conjunto dos números naturais. Nesse
+caso, precisamos de uma notação mais geral. Suponha que $I$ seja um conjunto
+e que, para cada $\lambda \in I$, exista um conjunto $A_\lambda$. Então
+definimos
 \glsadd{not:arbitunion}
 \glsadd{not:arbitintersection}
 \begin{equation*}
-\bigcup_{\lambda \in I} A_\lambda \coloneqq \{ x : x \in A_\lambda \text{ for some }
+\bigcup_{\lambda \in I} A_\lambda \coloneqq \{ x : x \in A_\lambda \text{ para algum }
 \lambda \in I
 \} ,
 \qquad
-\bigcap_{\lambda \in I} A_\lambda \coloneqq \{ x : x \in A_\lambda \text{ for all }
+\bigcap_{\lambda \in I} A_\lambda \coloneqq \{ x : x \in A_\lambda \text{ para todo }
 \lambda \in I
 \} .
 \end{equation*}

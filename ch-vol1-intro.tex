@@ -1,131 +1,124 @@
-\chapter*{Introduction}
-\addcontentsline{toc}{chapter}{Introduction}
-\markboth{INTRODUCTION}{INTRODUCTION}
+\chapter*{Introdução}
+\addcontentsline{toc}{chapter}{Introdução}
+\markboth{INTRODUÇÃO}{INTRODUÇÃO}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{About this book}
+\section{Sobre este livro}
 
 %mbxSTARTIGNORE
 \VolOneIntroExtrahead
 %mbxENDIGNORE
 % pretext (mbx) is always the two volume set
 %mbxlatex
-%mbxlatex \subsection{About Volume I}
+%mbxlatex \subsection{Sobre o Volume I}
 %mbxlatex 
 
-This first volume is a one-semester course in basic analysis.
-With the second volume, it is a year-long course.
-The book started its life
-as my lecture notes for teaching Math 444 at the
-University of Illinois at Urbana-Champaign (UIUC) in the fall semester of 2009.
-I added the metric space chapter for Math 521 at the University of
-Wisconsin--Madison (UW)\@.
-Volume II was added to teach Math 4143/4153 at Oklahoma State University
-(OSU)\@.
-A prerequisite for these courses is usually a basic proof course,
-using, for example, \cite{Hammack}, \cite{GIAM}, or~\cite{DW}.
+Este primeiro volume destina-se a um curso semestral de análise básica.
+Com o segundo volume, o curso passa a ter duração de um ano.
+O livro teve origem nas minhas notas de aula para a disciplina Math 444,
+ministrada na University of Illinois at Urbana-Champaign (UIUC), no semestre
+de outono de 2009. Acrescentei o capítulo sobre espaços métricos para a
+disciplina Math 521, na University of Wisconsin--Madison (UW)\@.
+O Volume II foi incluído para a disciplina Math 4143/4153, na Oklahoma State
+University (OSU)\@.
+Em geral, essas disciplinas têm como pré-requisito um curso básico de
+demonstrações, que pode usar, por exemplo, \cite{Hammack}, \cite{GIAM} ou
+\cite{DW}.
 
-It should be possible to use the book for
-both a basic course for students who do not necessarily wish to
-go to graduate school (such as UIUC 444), and also as a more advanced one-semester
-course that also covers topics such as metric spaces (such as UW 521).
-Here are suggestions for a semester course.
-A slower course such as UIUC 444:
+O livro pode ser usado tanto em um curso básico, destinado a estudantes que
+talvez não pretendam fazer pós-graduação (como a disciplina UIUC 444), quanto
+em um curso semestral mais avançado, que também aborde tópicos como espaços
+métricos (como a disciplina UW 521).
+Seguem algumas sugestões de organização para um curso semestral.
+Um curso mais lento, como UIUC 444:
 \begin{center}
 \S0.3, \S1.1--\S1.4, \S2.1--\S2.5, \S3.1--\S3.4, \S4.1--\S4.2,
 \S5.1--\S5.3, \S6.1--\S6.3
 \end{center}
-A more rigorous course covering metric spaces that runs quite a bit faster
-(e.g., UW 521):
+Um curso mais rigoroso, que aborde espaços métricos e avance
+consideravelmente mais rápido (por exemplo, UW 521):
 \begin{center}
 \S0.3, \S1.1--\S1.4, \S2.1--\S2.5, \S3.1--\S3.4, \S4.1--\S4.2,
 \S5.1--\S5.3, \S6.1--\S6.2, \S7.1--\S7.6
 \end{center}
-It should also be possible to run a faster course without metric spaces
-covering all sections of chapters 0 through 6.  The approximate number of
-lectures given in the section notes through Chapter 6 is a very rough
-estimate and was designed for the slower course.
-The first few chapters of the book can be used in an introductory proofs
-course, as is done, for example, at Iowa State University Math 201, where
-this book is used in conjunction with Hammack's \emph{Book of Proof}~\cite{Hammack}.
+Também é possível oferecer um curso mais rápido, sem espaços métricos, que
+abranja todas as seções dos capítulos 0 a 6. O número aproximado de aulas
+indicado nas notas das seções até o Capítulo 6 é uma estimativa bastante
+grosseira, elaborada para o curso mais lento.
+Os primeiros capítulos do livro também podem ser usados em um curso
+introdutório de demonstrações, como ocorre, por exemplo, na disciplina Math
+201 da Iowa State University, em que este livro é usado junto com
+\emph{Book of Proof}, de Hammack~\cite{Hammack}.
 
-With volume II\@, one can run a year-long course that covers multivariable
-topics.  In this scenario, it may make sense to cover most of the first volume
-in the first semester while leaving metric spaces for the beginning of the
-second semester.
+Com o Volume II\@, é possível oferecer um curso anual que aborde tópicos de
+várias variáveis. Nesse caso, pode fazer sentido cobrir a maior parte do
+primeiro volume no primeiro semestre e deixar os espaços métricos para o
+início do segundo semestre.
 
-The structure of the beginning of volume I somewhat follows the
-standard syllabus of UIUC Math 444 and, therefore, has some similarities with
-Bartle and Sherbert,
-\emph{Introduction to Real Analysis} \cite{BS}, which was the standard book
-at UIUC\@.
-A major difference is that we define the Riemann integral using
-Darboux sums and not tagged partitions.  The Darboux approach is far more
-appropriate for a course of this level.
+O início do Volume I segue, em certa medida, o programa tradicional da
+disciplina Math 444 da UIUC e, por isso, tem algumas semelhanças com
+\emph{Introduction to Real Analysis}, de Bartle e Sherbert \cite{BS}, que era
+o livro adotado na UIUC\@.
+Uma diferença importante é que definimos a integral de Riemann por meio de
+somas de Darboux, e não de partições etiquetadas. A abordagem de Darboux é muito
+mais adequada a um curso deste nível.
 
-Our approach allows us to fit a course such as UIUC 444 within a semester
-and still spend some time on the interchange of limits and end with
-Picard's theorem on the existence and uniqueness of solutions of ordinary
-differential equations.
-This theorem is a wonderful example
-that uses many results proved in the book.  For more advanced students,
-material may be covered faster so that we arrive at metric spaces and
-prove Picard's theorem using the fixed point theorem as is usual.
+Nossa abordagem permite concluir, em um semestre, um curso como UIUC 444 e,
+ainda assim, dedicar algum tempo à troca de limites e terminar com o teorema
+de Picard sobre existência e unicidade de soluções de equações diferenciais
+ordinárias.
+Esse teorema é um excelente exemplo de aplicação de muitos resultados
+demonstrados no livro. Para estudantes mais avançados, o conteúdo pode ser
+abordado mais rapidamente, de modo que se chegue aos espaços métricos e se
+demonstre o teorema de Picard usando o teorema do ponto fixo, como é usual.
 
-Other excellent books exist.  My favorite is 
-Rudin's excellent
-\emph{Principles of Mathematical Analysis}~\cite{Rudin:baby}
-or, as it is commonly and lovingly called, \emph{baby Rudin}
-(to distinguish it from his other great analysis textbook,
-\emph{big Rudin}).  I took a
-lot of inspiration and ideas from Rudin.  However, Rudin is a bit more
-advanced and ambitious than this present course.
-For those who wish to continue
-mathematics, Rudin is a fine investment.
-An inexpensive and somewhat simpler alternative to Rudin is
-Rosenlicht's \emph{Introduction to Analysis}~\cite{Rosenlicht}.
-There is also the freely downloadable \emph{Introduction to Real
-Analysis} by William Trench~\cite{Trench}.
+Há outros livros excelentes. Meu favorito é
+\emph{Principles of Mathematical Analysis}, de Rudin~\cite{Rudin:baby},
+conhecido com carinho como \emph{baby Rudin} (para distingui-lo de seu outro
+excelente livro de análise, chamado \emph{big Rudin}). Inspirei-me bastante
+nas ideias de Rudin. No entanto, esse livro é um pouco mais avançado e
+ambicioso do que o curso apresentado aqui.
+Para quem pretende continuar estudando matemática, o livro de Rudin é um
+ótimo investimento. Uma alternativa mais barata e um pouco mais simples é
+\emph{Introduction to Analysis}, de Rosenlicht~\cite{Rosenlicht}.
+Há também \emph{Introduction to Real Analysis}, de William Trench, disponível
+gratuitamente para download~\cite{Trench}.
 
 \medskip
 
-A note about the style of some of the proofs:  Many proofs
-traditionally done by contradiction, I prefer to do by
-a direct proof or by contrapositive.  While the book does include
-proofs by contradiction, I only
-do so when the contrapositive statement seemed too awkward or when 
-contradiction follows rather quickly.
-Contradiction is more likely to get beginning students into trouble,
-as we are talking about objects that do not exist.
+Uma observação sobre o estilo de algumas demonstrações: prefiro apresentar
+diretamente ou pela contrapositiva muitas demonstrações que tradicionalmente
+são feitas por contradição. Embora o livro inclua demonstrações por
+contradição, recorro a esse método apenas quando a contrapositiva parece
+muito pouco natural ou quando a contradição decorre rapidamente.
+A contradição tem maior probabilidade de confundir estudantes iniciantes,
+pois nela falamos de objetos que não existem.
 
-I try to avoid unnecessary formalism where it is unhelpful.
-Furthermore, the proofs and the language get slightly less formal as we
-progress through the book, as more and more details are left out to avoid
-clutter.
+Procuro evitar formalismos desnecessários quando não são úteis.
+Além disso, à medida que avançamos no livro, as demonstrações e a linguagem
+tornam-se um pouco menos formais, pois omitimos cada vez mais detalhes para
+evitar sobrecarregar o texto.
 
-As a general rule, I use $\coloneqq$ instead of $=$ to define an
-object rather than to simply show equality.  I use this symbol rather more
-liberally than is usual for emphasis.
-I use it even when the context is \myquote{local,}
-that is, I may simply define a function $f(x) \coloneqq x^2$
-for a single exercise or example.
+Como regra geral, uso $\coloneqq$ em vez de $=$ para definir um objeto, e não
+simplesmente para indicar uma igualdade. Uso esse símbolo com mais frequência
+do que é usual, para dar ênfase.
+Uso-o até mesmo quando o contexto é \myquote{local,} isto é, posso definir
+uma função $f(x) \coloneqq x^2$ apenas para um exercício ou exemplo.
 
 \medskip
 
-Finally, I would like to acknowledge Jana Ma\v{r}\'ikov\'a,
+Por fim, gostaria de agradecer a Jana Ma\v{r}\'ikov\'a,
 Glen Pugh, Paul Vojta, Frank Beatrous, S\"{o}nmez \c{S}ahuto\u{g}lu,
 Jim Brandt, Kenji Kozai, Arthur Busch,  Anton Petrunin,
 Mark Meilstrup, Harold P.\ Boas, Atilla Y{\i}lmaz,
-Thomas Mahoney, Scott Armstrong, and Paul Sacks,
+Thomas Mahoney, Scott Armstrong e Paul Sacks,
 Matthias Weber, Manuele Santoprete,
-Robert Niemeyer,
-and
-Amanullah Nabavi,
-for teaching with the book and giving me lots of useful feedback.
-Frank Beatrous wrote the University of Pittsburgh version extensions, which
-served as inspiration for many additions.
-I would also like to thank
+Robert Niemeyer e Amanullah Nabavi,
+por adotarem o livro em suas disciplinas e me darem muitas sugestões úteis.
+Frank Beatrous escreveu as extensões da versão da University of Pittsburgh,
+que inspiraram muitas das adições ao livro.
+Também gostaria de agradecer a
 Dan Stoneham, Jeremy Sutter, Eliya Gwetta, Daniel Pimentel-Alarc\'on,
 Steve Hoerning, Yi Zhang, Nicole Caviris,
 Kristopher Lee, Baoyue Bi, Hannah Lund,
@@ -140,13 +133,13 @@ Salven V.\ DeMartino,
 Xuechi Wang,
 Hugo Santarem de Araujo,
 Geoffrey Sired,
-Karabo Mathope (0x03B4 on github),
+Karabo Mathope (0x03B4 no GitHub),
 Samyak Jain,
-an anonymous reader or two, and in general all the students in my classes
-for suggestions and finding errors and typos.
-%mbxlatex       During the writing of this book, 
-%mbxlatex       the author was in part supported by NSF grants DMS-0900885 and
-%mbxlatex       DMS-1362337.
+um ou dois leitores anônimos e, de modo geral, todos os estudantes de minhas
+turmas
+pelas sugestões e por identificarem erros e falhas de digitação.
+%mbxlatex       Durante a elaboração deste livro, o autor recebeu apoio parcial
+%mbxlatex       dos auxílios NSF DMS-0900885 e DMS-1362337.
 
 % if in the two volume set then this will expand to the intro for vol II
 %mbxSTARTIGNORE
@@ -154,7 +147,7 @@ for suggestions and finding errors and typos.
 %mbxENDIGNORE
 % pretext (mbx) is always the two volume set
 %mbxlatex
-%mbxlatex \subsection{About Volume II}
+%mbxlatex \subsection{Sobre o Volume II}
 %mbxlatex 
 %mbxlatex \input{frag-vol2-intro.tex}
 %mbxlatex 
@@ -162,112 +155,103 @@ for suggestions and finding errors and typos.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{About analysis} \label{sec:aboutra}
+\section{Sobre análise} \label{sec:aboutra}
 
-Analysis is the branch of mathematics that deals with inequalities and
-limits.  The present course deals with the most basic 
-concepts in analysis.  The goal of the course is to acquaint the reader
-with rigorous proofs in analysis and also to
-set a firm foundation for calculus of one variable (and several variables if
-volume II is also considered).
+Análise é o ramo da matemática que trata de desigualdades e limites. Este
+curso aborda os conceitos mais básicos da análise. Seu objetivo é familiarizar
+o leitor com demonstrações rigorosas em análise e também estabelecer uma base
+sólida para o cálculo de uma variável (e de várias variáveis, caso o Volume II
+também seja considerado).
 
-Calculus has prepared you, the student, for using mathematics without telling
-you why what you learned is true.  To use, or teach, mathematics
-effectively, you cannot simply know \emph{what} is true, you must know
-\emph{why} it is true.  This course shows you \emph{why} calculus
-is true.  It is here to give you a good understanding of the concept of a
-limit, the derivative, and the integral.
+O cálculo ensinou você, estudante, a usar a matemática sem explicar por que
+aquilo que aprendeu é verdadeiro. Para usar ou ensinar matemática com
+eficácia, não basta saber \emph{o que} é verdadeiro; é preciso saber
+\emph{por que} é verdadeiro. Este curso mostra \emph{por que} o cálculo é
+válido. Seu propósito é proporcionar uma boa compreensão dos conceitos de
+limite, derivada e integral.
 
-Let us use an analogy.
-An auto mechanic who has learned to change the oil, fix broken headlights,
-and charge the battery, but who does not understand how the engine
-works, will only be able to do those simple tasks.
-He will be unable to work independently to diagnose and fix problems.
-A high school teacher who does not understand the definition of the Riemann
-integral or the derivative may not be able to properly answer all the
-students' questions.
-To this day I remember several nonsensical statements I heard
-from my calculus teacher in high school, who simply did not understand
-the concept of the limit, although he could \myquote{do} the problems in the
-textbook.
+Vamos recorrer a uma analogia.
+Um mecânico que aprendeu a trocar o óleo, consertar faróis quebrados e carregar
+a bateria, mas não entende como o motor funciona, só será capaz de realizar
+essas tarefas simples. Não conseguirá diagnosticar e resolver problemas por
+conta própria.
+Um professor do ensino médio que não compreende a definição da integral de
+Riemann ou da derivada talvez não consiga responder adequadamente a todas as
+perguntas dos estudantes.
+Até hoje me lembro de várias afirmações sem sentido que ouvi do meu professor
+de cálculo no ensino médio: ele simplesmente não entendia o conceito de
+limite, embora soubesse \myquote{fazer} os exercícios do livro.
 
 \medskip
 
-We start with a discussion of the real number system, most importantly
-its completeness property, which is the basis for all that follows.
-We then discuss the simplest form of a limit,
-the limit of a sequence.  Afterwards, we study
-functions of one variable, continuity, and the derivative.
-Next, we define the Riemann integral and prove the fundamental theorem of
-calculus.  We discuss sequences of functions and the
-interchange of limits.  Finally, we give an introduction to metric
-spaces.
+Começamos discutindo o sistema dos números reais e, sobretudo, sua propriedade
+de completude, que serve de base para tudo o que vem a seguir.
+Depois, tratamos da forma mais simples de limite: o limite de uma sequência.
+Em seguida, estudamos funções de uma variável, continuidade e derivada.
+Definimos então a integral de Riemann e demonstramos o teorema fundamental
+do cálculo. Também discutimos sequências de funções e a troca de limites.
+Por fim, apresentamos uma introdução aos espaços métricos.
 
 \medskip
 
-Let us give the most important difference between analysis and algebra.
-In algebra, we prove equalities directly;
-we prove that an object, perhaps a number, is equal to another object.
-In analysis, we usually prove inequalities,
-and we prove those inequalities by estimating.
-To illustrate the point, consider the following statement.
+Vejamos a diferença mais importante entre análise e álgebra.
+Em álgebra, demonstramos igualdades diretamente: provamos que um objeto,
+talvez um número, é igual a outro.
+Em análise, geralmente demonstramos desigualdades e, para isso, fazemos
+estimativas.
+Para ilustrar essa ideia, considere a seguinte afirmação.
 
 \medskip
 
-\emph{Let $x$ be a real number.  If $x < \epsilon$ is true for all
-real numbers
-$\epsilon > 0$, then $x \leq 0$.}
+\emph{Seja $x$ um número real. Se $x < \epsilon$ vale para todo número real
+$\epsilon > 0$, então $x \leq 0$.}
 
 \medskip
 
-This statement is the general idea of what we do in analysis.
-Suppose we really wish to prove the equality
-$x = 0$.  In analysis, we prove two inequalities:
-$x \leq 0$ and $x \geq 0$.
-To
-prove the inequality
-$x \leq 0$, we prove 
-$x < \epsilon$ for all positive $\epsilon$.
-To
-prove the inequality
-$x \geq 0$, we prove 
-$x > -\epsilon$ for all positive $\epsilon$.
+Essa afirmação resume, em linhas gerais, o que fazemos em análise.
+Suponha que queiramos demonstrar a igualdade $x = 0$. Em análise,
+demonstramos duas desigualdades: $x \leq 0$ e $x \geq 0$.
+Para demonstrar $x \leq 0$, mostramos que $x < \epsilon$ para todo
+$\epsilon > 0$.
+Para demonstrar $x \geq 0$, mostramos que $x > -\epsilon$ para todo
+$\epsilon > 0$.
 
 \medskip
 
-The term \emph{real analysis} is a little bit of a misnomer.  I prefer to
-use simply \emph{analysis}.  The other type of analysis, 
-\emph{complex analysis}, really builds upon the present material, rather than
-being distinct.  Furthermore, a more advanced course on real
-analysis would talk about complex numbers often.
-I suspect the nomenclature is
-historical baggage.
+O termo \emph{análise real} é um nome um tanto inadequado. Prefiro usar
+simplesmente \emph{análise}. A outra área, a \emph{análise complexa}, na
+verdade se apoia neste material, em vez de constituir algo completamente
+distinto. Além disso, um curso mais avançado de análise real trataria com
+frequência dos números complexos.
+Acredito que essa nomenclatura seja um resquício histórico.
 
 \medskip
 
-Let us get on with the show\ldots
+Vamos ao que interessa\ldots
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{Basic set theory} \label{sec:basicset}
-\index{set theory}
+\section{Teoria básica dos conjuntos} \label{sec:basicset}
+\index{teoria dos conjuntos}
 
 %mbxINTROSUBSECTION
 
-\sectionnotes{1--3 lectures (some material can be skipped, covered lightly,
-or left as reading)}
+\sectionnotes{1--3 aulas (parte do material pode ser omitida, abordada
+brevemente ou deixada como leitura)}
 
-Before we start talking about analysis, we need to fix some language.
-Modern\footnote{The term \myquote{modern} refers to the late 19th century up to
-the present.}
-analysis uses the language of sets and, therefore, that is where we start.
-We talk about sets in a rather informal way, using what is usually called
-\myquote{\myindex{na\"ive set theory}.}  Do not worry, that is what the majority of
-mathematicians use, and it is hard to get into trouble.
-The reader has hopefully seen the very basics of set theory
-and proof writing before, and this section should be a quick refresher.
+Antes de começar a falar de análise, precisamos fixar alguns termos.
+A análise moderna\footnote{O termo \myquote{moderna} refere-se ao período
+que vai do fim do século XIX até o presente.} usa a linguagem dos conjuntos;
+por isso, é por aí que começamos.
+Falamos de conjuntos de maneira relativamente informal, usando o que costuma
+ser chamado de \myquote{\myindex{teoria ingênua dos conjuntos}.} Não se
+preocupe: essa é a abordagem adotada pela maioria dos matemáticos, e é difícil
+ter problemas com ela.
+Espera-se que o leitor já tenha visto os fundamentos da teoria dos conjuntos
+e da escrita de demonstrações; esta seção deve servir como uma breve
+recapitulação.
 
 \subsection{Sets}
 

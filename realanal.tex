@@ -15,6 +15,7 @@
 % that is in figures/ run run-all-xp.sh (must have epix installed)
 
 \usepackage[T1]{fontenc}
+\usepackage[brazilian]{babel}
 
 \usepackage[shortlabels]{enumitem}
 \usepackage{ifpdf}
@@ -284,7 +285,7 @@
 \newcommand{\myquote}[1]{``#1''}
 
 % define this to be empty to kill notes
-\newcommand{\sectionnotes}[1]{\noindent \emph{Note: #1} \medskip \par}
+\newcommand{\sectionnotes}[1]{\noindent \emph{Nota: #1} \medskip \par}
 
 % Define this to be empty to not skip page before the sections to
 % save some paper
@@ -299,16 +300,16 @@
 \setcounter{tocdepth}{1}
 
 \theoremstyle{plain}
-\newtheorem{thm}{Theorem}[section]
-\newtheorem{lemma}[thm]{Lemma}
-\newtheorem{prop}[thm]{Proposition}
-\newtheorem{cor}[thm]{Corollary}
+\newtheorem{thm}{Teorema}[section]
+\newtheorem{lemma}[thm]{Lema}
+\newtheorem{prop}[thm]{Proposi\c{c}\~ao}
+\newtheorem{cor}[thm]{Corol\'ario}
 
 \theoremstyle{remark}
-\newtheorem{remark}[thm]{Remark}
+\newtheorem{remark}[thm]{Observa\c{c}\~ao}
 
 \theoremstyle{definition}
-\newtheorem{defn}[thm]{Definition}
+\newtheorem{defn}[thm]{Defini\c{c}\~ao}
 
 \newtheoremstyle{exercise}% name
   {}% Space above
@@ -323,7 +324,7 @@
 \newenvironment{exnote}{\small}{}
 
 \theoremstyle{exercise}
-\newtheorem{exercise}{Exercise}[section]
+\newtheorem{exercise}{Exerc\'{\i}cio}[section]
 
 \newtheoremstyle{example}% name
   {}% Space above
@@ -336,22 +337,22 @@
   {}% Theorem head spec (can be left empty, meaning "normal")
 
 \theoremstyle{example}
-\newtheorem{example}[thm]{Example}
+\newtheorem{example}[thm]{Exemplo}
 
 % referencing
-\newcommand{\figureref}[1]{\hyperref[#1]{Figure~\ref*{#1}}}
-\newcommand{\tableref}[1]{\hyperref[#1]{Table~\ref*{#1}}}
-\newcommand{\chapterref}[1]{\hyperref[#1]{chapter~\ref*{#1}}}
-\newcommand{\Chapterref}[1]{\hyperref[#1]{Chapter~\ref*{#1}}}
+\newcommand{\figureref}[1]{\hyperref[#1]{Figura~\ref*{#1}}}
+\newcommand{\tableref}[1]{\hyperref[#1]{Tabela~\ref*{#1}}}
+\newcommand{\chapterref}[1]{\hyperref[#1]{cap\'{\i}tulo~\ref*{#1}}}
+\newcommand{\Chapterref}[1]{\hyperref[#1]{Cap\'{\i}tulo~\ref*{#1}}}
 \newcommand{\sectionref}[1]{\hyperref[#1]{\S\ref*{#1}}}
-\newcommand{\exerciseref}[1]{\hyperref[#1]{Exercise~\ref*{#1}}}
-\newcommand{\remarkref}[1]{\hyperref[#1]{Remark~\ref*{#1}}}
-\newcommand{\exampleref}[1]{\hyperref[#1]{Example~\ref*{#1}}}
-\newcommand{\thmref}[1]{\hyperref[#1]{Theorem~\ref*{#1}}}
-\newcommand{\propref}[1]{\hyperref[#1]{Proposition~\ref*{#1}}}
-\newcommand{\lemmaref}[1]{\hyperref[#1]{Lemma~\ref*{#1}}}
-\newcommand{\corref}[1]{\hyperref[#1]{Corollary~\ref*{#1}}}
-\newcommand{\defnref}[1]{\hyperref[#1]{Definition~\ref*{#1}}}
+\newcommand{\exerciseref}[1]{\hyperref[#1]{Exerc\'{\i}cio~\ref*{#1}}}
+\newcommand{\remarkref}[1]{\hyperref[#1]{Observa\c{c}\~ao~\ref*{#1}}}
+\newcommand{\exampleref}[1]{\hyperref[#1]{Exemplo~\ref*{#1}}}
+\newcommand{\thmref}[1]{\hyperref[#1]{Teorema~\ref*{#1}}}
+\newcommand{\propref}[1]{\hyperref[#1]{Proposi\c{c}\~ao~\ref*{#1}}}
+\newcommand{\lemmaref}[1]{\hyperref[#1]{Lema~\ref*{#1}}}
+\newcommand{\corref}[1]{\hyperref[#1]{Corol\'ario~\ref*{#1}}}
+\newcommand{\defnref}[1]{\hyperref[#1]{Defini\c{c}\~ao~\ref*{#1}}}
 
 
 % List of Symbols/Notation
@@ -380,11 +381,13 @@
 \vspace{\stretch{1}}
 \noindent\hspace*{\centeroffset}\makebox[0pt][l]{\begin{minipage}{\textwidth}
 \flushright
-{\bfseries 
-by Ji{\v r}\'i Lebl\\[3ex]} 
+{\bfseries
+por Ji{\v r}\'i Lebl\\[2ex]
+Tradução para o português brasileiro: Projeto REALMat\\[1ex]}
+\includegraphics[width=1.8in]{figures/realmat-logo.jpg}\\[1ex]
 \today
 \\
-(version 6.3)
+(versão 6.3)
 % --- 6th edition, 3rd update)
 \end{minipage}}
 
@@ -397,13 +400,13 @@ by Ji{\v r}\'i Lebl\\[3ex]}
 \vspace*{\fill}
 
 \noindent
-Typeset in \LaTeX.
+Composto em \LaTeX.
 
 
 \bigskip
 
 \noindent
-Copyright \copyright 2009--2026 Ji{\v r}\'i Lebl
+Direitos autorais \copyright 2009--2026 Ji{\v r}\'i Lebl
 
 %PRINT
 % not for lulu
@@ -426,40 +429,37 @@ Copyright \copyright 2009--2026 Ji{\v r}\'i Lebl
 \bigskip
 
 \noindent
-\myincludegraphics[width=1.38in]{license}{CC-NC-SA license logo}
+\myincludegraphics[width=1.38in]{license}{Logotipo da licença CC BY-NC-SA}
 \quad
-\myincludegraphics[width=1.38in]{license2}{CC-SA license logo}
+\myincludegraphics[width=1.38in]{license2}{Logotipo da licença CC BY-SA}
 
 \bigskip
 
 \noindent
-This work
+Esta obra
 %PRINT
 % not for lulu, not needed anymore, see above
 %(except the cover art)
-is dual licensed under
-the Creative Commons
-Attribution-Non\-commercial-Share Alike 4.0 International License and
-the Creative Commons
-Attribution-Share Alike 4.0 International License.
-To view a
-copy of these licenses, visit
+é distribuída sob duas licenças Creative Commons:
+Atribuição-NãoComercial-CompartilhaIgual 4.0 Internacional e
+Atribuição-CompartilhaIgual 4.0 Internacional.
+Para consultar uma cópia dessas licenças, acesse
 \url{https://creativecommons.org/licenses/by-nc-sa/4.0/}
-or
+ou
 \url{https://creativecommons.org/licenses/by-sa/4.0/}
-or send a letter to
+ou envie uma carta para
 Creative Commons
 PO Box 1866, Mountain View, CA 94042, USA\@.
 
 \bigskip
 
 \noindent
-You can use, print, duplicate, and share this book as much as you want.  You can
-base your own notes on it and reuse parts if you keep the license the
-same.  You can assume the license is either CC-BY-NC-SA or CC-BY-SA\@,
-whichever is compatible with what you wish to do.
-Your derivative work must use at least one of the licenses.
-Derivative works must be prominently marked as such.
+Você pode usar, imprimir, duplicar e compartilhar este livro à vontade. Pode
+elaborar suas próprias notas com base nele e reutilizar partes, desde que
+mantenha a mesma licença. Você pode considerar que a licença é CC-BY-NC-SA ou
+CC-BY-SA, conforme aquela que for compatível com o uso pretendido.
+Sua obra derivada deve adotar pelo menos uma dessas licenças.
+Obras derivadas devem ser identificadas de forma destacada como tais.
 %PRINT
 % not for lulu
 %}
@@ -467,25 +467,23 @@ Derivative works must be prominently marked as such.
 \bigskip
 
 \noindent
-During the writing of this book, 
-the author was in part supported by NSF grants DMS-0900885 and
-DMS-1362337.
+Durante a elaboração deste livro, o autor recebeu apoio parcial dos auxílios
+NSF DMS-0900885 e DMS-1362337.
 
 \bigskip
 
 \noindent
-The major version / edition
-number is raised only if there have been substantial changes.
-From 6th edition onwards, both volumes share the same version number.
-Edition
-number started at 4, that is, version 4.0, as it was not kept track of
-before.  %The edition given with the ISBN number is the major version.
+A versão/edição principal só aumenta quando há mudanças substanciais.
+A partir da 6ª edição, os dois volumes compartilham o mesmo número de versão.
+O registro das edições começou pela edição 4, isto é, pela versão 4.0, pois
+não havia registro das edições anteriores.  %The edition given with the ISBN number is the major version.
 
 \bigskip
 
 \noindent
-See \url{https://www.jirka.org/ra/} or \url{https://jirilebl.github.io/ra/} for more information
-(including contact information, possible updates, and errata).
+Consulte \url{https://www.jirka.org/ra/} ou
+\url{https://jirilebl.github.io/ra/} para obter mais informações, incluindo
+formas de contato, possíveis atualizações e erratas.
 
 %PRINT
 % not for lulu
@@ -494,9 +492,8 @@ See \url{https://www.jirka.org/ra/} or \url{https://jirilebl.github.io/ra/} for 
 \bigskip
 
 \noindent
-The \LaTeX\ source for the book is available
-for possible modification and customization
-at github: \url{https://github.com/jirilebl/ra}
+O código-fonte \LaTeX\ do livro está disponível para possíveis modificações e
+personalizações no GitHub: \url{https://github.com/jirilebl/ra}
 %PRINT
 % not for lulu
 %}
@@ -561,9 +558,9 @@ at github: \url{https://github.com/jirilebl/ra}
 
 \cleardoublepage  
 \phantomsection
-\addcontentsline{toc}{chapter}{Further Reading}
-\markboth{FURTHER READING}{FURTHER READING}
-\begin{bibchapter}[Further Reading]
+\addcontentsline{toc}{chapter}{Leituras complementares}
+\markboth{LEITURAS COMPLEMENTARES}{LEITURAS COMPLEMENTARES}
+\begin{bibchapter}[Leituras complementares]
 \begin{biblist}[\normalsize]
 
 \bib{BS}{book}{
@@ -588,13 +585,13 @@ at github: \url{https://github.com/jirilebl/ra}
 \bib{GIAM}{misc}{
    author={Fields, Joseph E.},
    title={A Gentle Introduction to the Art of Mathematics},
-   note={Available at \url{http://giam.southernct.edu/GIAM/}},
+   note={Disponível em \url{http://giam.southernct.edu/GIAM/}},
 }
 
 \bib{Hammack}{misc}{
    author={Hammack, Richard},
    title={Book of Proof},
-   note={Available at \url{https://richardhammack.github.io/BookOfProof/}},
+   note={Disponível em \url{https://richardhammack.github.io/BookOfProof/}},
 }
 
 \bib{Rosenlicht}{book}{
@@ -654,7 +651,7 @@ at github: \url{https://github.com/jirilebl/ra}
 %FIXME: MBX version of notation list?
 
 \begingroup
-\renewcommand{\pagelistname}{Page}
+\renewcommand{\pagelistname}{P\'agina}
 \setglossarystyle{long3colheader}
 % correctly set up with cellspace
 \renewenvironment{theglossary}%
@@ -662,14 +659,13 @@ at github: \url{https://github.com/jirilebl/ra}
    \setlength\cellspacebottomlimit{4pt}
    \setlength\LTleft{0pt}
    \setlength\LTright{0pt}
-   \markboth{LIST OF NOTATION}{LIST OF NOTATION}
+   \markboth{LISTA DE NOTA\c{C}\~OES}{LISTA DE NOTA\c{C}\~OES}
    \begin{longtable}{Sl @{\extracolsep{\fill}} Sl @{\extracolsep{\fill}} Sl}}%
   {\end{longtable}}%
 \cleardoublepage
 \microtypesetup{protrusion=false}
-\printglossary[title=List of Notation] 
+\printglossary[title=Lista de nota\c{c}\~oes]
 \microtypesetup{protrusion=true}
 \endgroup
 
 \end{document}
-

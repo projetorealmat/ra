@@ -916,101 +916,102 @@ Deixamos como exercício simples para o leitor mostrar que a composição de
 aplicações injetivas é injetiva e a composição de aplicações sobrejetivas é
 sobrejetiva. Portanto, a composição de bijeções é uma bijeção.
 
-\subsection{Relations and equivalence classes}
+\subsection{Rela\c{c}\~oes e classes de equival\^encia}
 
-We often compare two objects in some way.  For instance, we say $1 < 2$
-for natural numbers, $\nicefrac{1}{2} = \nicefrac{2}{4}$ for rational
-numbers, or $\{ a,c \} \subset \{ a,b,c \}$ for sets.  The `$<$', `$=$', and
-`$\subset$' are examples of
-relations.
+Muitas vezes, comparamos dois objetos de alguma maneira. Por exemplo,
+dizemos $1 < 2$ para números naturais, $\nicefrac{1}{2} = \nicefrac{2}{4}$
+para números racionais ou $\{ a,c \} \subset \{ a,b,c \}$ para conjuntos.
+Os símbolos `$<$', `$=$' e `$\subset$' são exemplos de relações.
 
 \begin{defn}
-Given a set $A$, a \emph{\myindex{binary relation}}\index{relation} on $A$
-is a subset $\sR \subset A \times A$,
-which consists of those pairs where the relation is said to hold.
-Instead of $(a,b) \in \sR$, we write
+Seja $A$ um conjunto. Uma \emph{\myindex{rela\c{c}\~ao bin\'aria}}\index{rela\c{c}\~ao}
+em $A$ é um subconjunto $\sR \subset A \times A$,
+formado pelos pares para os quais dizemos que a relação vale.
+Em vez de escrever $(a,b) \in \sR$, escrevemos
 $a \, \sR \, b$.
 \end{defn}
 
 \begin{example}
-Take $A \coloneqq \{ 1,2,3 \}$.
+Considere $A \coloneqq \{ 1,2,3 \}$.
 
-Consider the relation `$<$'.  The corresponding set 
-of pairs is $\bigl\{ (1,2), (1,3), (2,3) \bigr\}$.  So $1 < 2$ holds as $(1,2)$
-is in the corresponding set of pairs, but $3 < 1$ does not hold as $(3,1)$ is
-not in the set.
+Considere a relação `$<$'. O conjunto correspondente de pares é
+$\bigl\{ (1,2), (1,3), (2,3) \bigr\}$. Assim, $1 < 2$ vale, pois $(1,2)$
+pertence ao conjunto de pares correspondente, mas $3 < 1$ não vale, pois
+$(3,1)$ não pertence ao conjunto.
 
-Similarly, the relation `$=$'
-is defined by the set of pairs $\bigl\{ (1,1), (2,2), (3,3) \big\}$.
+De modo semelhante, a relação `$=$' é definida pelo conjunto de pares
+$\bigl\{ (1,1), (2,2), (3,3) \big\}$.
 
-Any subset of $A \times A$ is a relation.  If we define the relation
-$\dagger$ via $\bigl\{ (1,2), (2,1), (2,3), (3,1) \bigr\}$, then $1 \dagger 2$ and
-$3 \dagger 1$ are
-true, but $1 \dagger 3$ is not.
+Qualquer subconjunto de $A \times A$ é uma relação. Se definirmos a relação
+$\dagger$ pelo conjunto $\bigl\{ (1,2), (2,1), (2,3), (3,1) \bigr\}$, então
+As afirmações $1 \dagger 2$ e $3 \dagger 1$ são verdadeiras, mas
+$1 \dagger 3$ não é.
 \end{example}
 
 \begin{defn}
 %FIXMEevillayouthack
 \pagebreak[2]
-A relation
-$\sR$ on a set $A$ is said to be
+A relação
+$\sR$ em um conjunto $A$ é dita
 \begin{enumerate}[(i)]
 \item
-\emph{Reflexive}\index{reflexive relation} if $a\, \sR \, a$ for
-all $a \in A$.
+\emph{Reflexiva}\index{rela\c{c}\~ao reflexiva} se $a\, \sR \, a$ para
+todo $a \in A$.
 \item
-\emph{Symmetric}\index{symmetric relation} if $a\, \sR \, b$ implies
+\emph{Simétrica}\index{rela\c{c}\~ao sim\'etrica} se $a\, \sR \, b$ implica
 $b \, \sR \, a$.
 \item
-\emph{Transitive}\index{transitive relation} if $a\, \sR \, b$ and
-$b \, \sR \, c$ implies $a\, \sR \, c$.
+\emph{Transitiva}\index{rela\c{c}\~ao transitiva} se $a\, \sR \, b$ e
+$b \, \sR \, c$ implicam $a\, \sR \, c$.
 \end{enumerate}
-If $\sR$ is reflexive, symmetric, and transitive, then it is said to be
-an \emph{\myindex{equivalence relation}}.
+Se $\sR$ é reflexiva, simétrica e transitiva, dizemos que é uma
+\emph{\myindex{rela\c{c}\~ao de equival\^encia}}.
 \end{defn}
 
 \begin{example}
-Let $A \coloneqq \{ 1,2,3 \}$.
-The relation `$<$' is transitive but neither reflexive nor symmetric.  The
-relation `$\leq$' defined by
+Seja $A \coloneqq \{ 1,2,3 \}$.
+A relação `$<$' é transitiva, mas não é reflexiva nem simétrica. A
+relação `$\leq$', definida por
 $\bigl\{ (1,1), (1,2), (1,3), (2,2), (2,3), (3,3) \bigr\}$
-is reflexive and transitive, but not symmetric.
-Finally, a relation `$\star$' defined by
-$\bigl\{ (1,1), (1,2), \allowbreak (2,1), \allowbreak (2,2), \allowbreak (3,3) \bigr\}$ is
-an equivalence relation.
+é reflexiva e transitiva, mas não é simétrica.
+Por fim, a relação `$\star$', definida por
+$\bigl\{ (1,1), (1,2), \allowbreak (2,1), \allowbreak (2,2), \allowbreak (3,3) \bigr\}$
+é uma relação de equivalência.
 \end{example}
 
-Equivalence relations are useful as they divide a set into sets of
-\myquote{equivalent} elements.
+As relações de equivalência são úteis porque dividem um conjunto em
+subconjuntos de elementos \myquote{equivalentes}.
 
 \begin{defn}
-Let $A$ be a set and $\sR$ an equivalence relation.
-An \emph{\myindex{equivalence class}} of $a \in A$, often denoted
-by $[a]$,\glsadd{not:equivclass} is the set $\{ x \in A : a\, \sR \, x \}$.
+Seja $A$ um conjunto e $\sR$ uma relação de equivalência.
+Uma \emph{\myindex{classe de equival\^encia}} de $a \in A$, geralmente
+denotada por $[a]$,\glsadd{not:equivclass} é o conjunto
+$\{ x \in A : a\, \sR \, x \}$.
 \end{defn}
 
-For example, given the relation `$\star$' above, there are two equivalence classes,
-$[1] = [2] = \{ 1,2 \}$ and $[3] = \{ 3 \}$.
+Por exemplo, para a relação `$\star$' acima, há duas classes de equivalência:
+$[1] = [2] = \{ 1,2 \}$ e $[3] = \{ 3 \}$.
 
-Reflexivity guarantees that $a \in [a]$.  Symmetry guarantees
-that if $b \in [a]$, then $a \in [b]$.  Finally, transitivity guarantees that
-if $b \in [a]$ and $c \in [b]$, then $c \in [a]$.
-In particular, we have the following proposition, whose proof is an
-exercise.
+A reflexividade garante que $a \in [a]$. A simetria garante que, se
+$b \in [a]$, então $a \in [b]$. Por fim, a transitividade garante que,
+se $b \in [a]$ e $c \in [b]$, então $c \in [a]$.
+Em particular, temos a seguinte proposição, cuja demonstração fica como
+exercício.
 
 \begin{prop} \label{prop:equivclasses}
-If $\sR$ is an equivalence relation on a set $A$,
-then every $a \in A$ is in exactly one
-equivalence class.  Moreover, $a\, \sR \, b$ if and only if $[a] = [b]$.
+Se $\sR$ é uma relação de equivalência em um conjunto $A$,
+então cada $a \in A$ pertence a exatamente uma classe de equivalência.
+Além disso, $a\, \sR \, b$ se, e somente se, $[a] = [b]$.
 \end{prop}
 
 \begin{example} \label{example:ratnums}
-The set of rational numbers can be defined as equivalence classes of
-a pair of an integer and a natural number,
-that is, elements of $\Z \times \N$.  The relation
-is defined by $(a,b) \sim (c,d)$ whenever $ad = bc$.
-It is left as an exercise to prove that `$\sim$' is an equivalence relation.
-Usually, the equivalence class $\bigl[(a,b)\bigr]$ is written as $\nicefrac{a}{b}$.
+O conjunto dos números racionais pode ser definido como o conjunto das
+classes de equivalência de pares ordenados formados por um número inteiro e
+um número natural, isto é, de elementos de $\Z \times \N$. A relação é definida por
+$(a,b) \sim (c,d)$ sempre que $ad = bc$.
+Deixamos como exercício provar que `$\sim$' é uma relação de equivalência.
+Em geral, a classe de equivalência $\bigl[(a,b)\bigr]$ é denotada por
+$\nicefrac{a}{b}$.
 \end{example}
 
 \subsection{Cardinality}

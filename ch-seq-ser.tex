@@ -1,72 +1,67 @@
-\chapter{Sequences and Series} \label{seq:chapter}
+\chapter{Sequ\^encias e s\'eries} \label{seq:chapter}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Sequências e limites}
+\section{Sequ\^encias e limites}
 \label{sec:seqsandlims}
 
 %mbxINTROSUBSECTION
 
 \sectionnotes{2,5 aulas}
 
-A análise trata essencialmente de limites. O tipo mais básico de limite
-é o limite de uma sequência de números reais.
-Já vimos sequências de maneira informal. Vamos dar a
-definição formal.
+Em essência, a análise trata de limites. O tipo mais básico de limite é o
+limite de uma sequência de números reais.
+Já vimos sequências serem usadas informalmente. Vamos apresentar a definição
+formal.
 
 \begin{defn}
-Uma \emph{\myindex{sequência}} (de números reais) é uma função $x \colon \N \to
-\R$. Em vez de $x(n)$,
-costumamos denotar o $n$-ésimo elemento da sequência por $x_n$.
+Uma \emph{\myindex{sequ\^encia}} (de números reais) é uma função
+$x \colon \N \to \R$. Em geral, em vez de $x(n)$, denotamos por $x_n$ o
+$n$-ésimo termo da sequência.
 Para denotar uma sequência, escrevemos%
-\footnote{É comum usar $\{ x_n \}$ ou $\{ x_n \}_n$ como abreviação.}%
+\footnote{É comum usar $\{ x_n \}$ ou $\{ x_n \}_n$ por brevidade.}%
 \glsadd{not:sequence}%
 \begin{equation*}
 \{ x_n \}_{n=1}^\infty.
 \end{equation*}
 
-Uma sequência $\{ x_n \}_{n=1}^\infty$ é \emph{limitada}\index{sequência limitada} se
-a função correspondente é limitada. Isto é, se
-existe um $B \in \R$ tal que
+Uma sequência $\{ x_n \}_{n=1}^\infty$ é \emph{limitada}\index{sequ\^encia limitada} se
+a função correspondente é limitada. Isto é, existe $B \in \R$ tal que
 \begin{equation*}
 \sabs{x_n} \leq B \qquad \text{para todo } n \in \N.
 \end{equation*}
-Em outras palavras, a sequência $\{x_n\}_{n=1}^\infty$ é limitada sempre que
-o conjunto $\{ x_n : n \in \N \}$
-é limitado.
-Definimos de maneira semelhante os termos
-\emph{limitada inferiormente}\index{limitada inferiormente!sequência} e
-\emph{limitada superiormente}\index{limitada superiormente!sequência}.
+Em outras palavras, a sequência $\{x_n\}_{n=1}^\infty$ é limitada sempre
+que o conjunto $\{ x_n : n \in \N \}$ é limitado.
+Definimos de modo análogo os termos
+\emph{limitada inferiormente}\index{sequ\^encia limitada inferiormente} e
+\emph{limitada superiormente}\index{sequ\^encia limitada superiormente}.
 \end{defn}
 
-Quando precisamos
-dar uma sequência concreta, muitas vezes apresentamos cada termo por meio de uma fórmula
-em função de $n$.
-Por exemplo, $\{ \nicefrac{1}{n} \}_{n=1}^\infty$ representa
-a sequência $1, \nicefrac{1}{2}, \nicefrac{1}{3}, \nicefrac{1}{4},
+Quando precisamos apresentar uma sequência concreta, muitas vezes damos
+cada termo por meio de uma fórmula em função de $n$.
+Por exemplo, $\{ \nicefrac{1}{n} \}_{n=1}^\infty$ representa a sequência
+$1, \nicefrac{1}{2}, \nicefrac{1}{3}, \nicefrac{1}{4},
 \nicefrac{1}{5}, \ldots$.
-A sequência $\{ \nicefrac{1}{n} \}_{n=1}^\infty$
-é limitada (basta tomar $B=1$). Por outro lado, a sequência
-$\{ n \}_{n=1}^\infty$ representa
-$1,2,3,4,\ldots$, e essa sequência não é limitada (por quê?).
+A sequência $\{ \nicefrac{1}{n} \}_{n=1}^\infty$ é limitada (basta tomar
+$B=1$). Por outro lado, a sequência $\{ n \}_{n=1}^\infty$ representa
+$1,2,3,4,\ldots$, e não é limitada (por quê?).
 
-Embora a notação de uma sequência
-seja parecida\footnote{\cite{BS} usam $(x_n)_{n=1}^\infty$ para denotar
-uma sequência, em vez de $\{ x_n \}_{n=1}^\infty$, que é a notação usada em \cite{Rudin:baby}.
-As duas são comuns.}
-com a de um conjunto, as noções são
-distintas. Por exemplo, a sequência $\bigl\{ {(-1)}^n \bigr\}_{n=1}^\infty$ é a sequência
-$-1,1,-1,1,-1,1,\ldots$, enquanto o conjunto de valores, chamado de
-\emph{imagem da sequência}\index{imagem de uma sequência},
-é simplesmente o conjunto $\{ -1, 1 \}$. Escrevemos esse conjunto
-como $\bigl\{ {(-1)}^n : n \in \N \bigr\}$.
+Embora a notação de uma sequência seja semelhante\footnote{Em \cite{BS},
+usa-se $(x_n)_{n=1}^\infty$ para denotar uma sequência, em vez de
+$\{ x_n \}_{n=1}^\infty$, como em \cite{Rudin:baby}. Ambas as notações são
+comuns.} à de um conjunto, as noções são distintas. Por exemplo, a sequência
+$\bigl\{ {(-1)}^n \bigr\}_{n=1}^\infty$ é a sequência
+$-1,1,-1,1,-1,1,\ldots$, enquanto o conjunto de seus valores, a
+\emph{imagem da sequência}\index{imagem de uma sequ\^encia}, é simplesmente
+o conjunto $\{ -1, 1 \}$. Escrevemos esse conjunto como
+$\bigl\{ {(-1)}^n : n \in \N \bigr\}$.
 % When ambiguity can arise, we
 %use the words \emph{sequence} or \emph{set} to distinguish the two
 %concepts.
 
-Outro exemplo de sequência é a \emph{\myindex{sequência constante}}.
-Trata-se de uma sequência $\{ c \}_{n=1}^\infty = c,c,c,c,\ldots$ que consiste
-em um único valor constante $c \in \R$ repetido indefinidamente.
+Outro exemplo de sequência é a \emph{\myindex{sequ\^encia constante}}.
+Trata-se da sequência $\{ c \}_{n=1}^\infty = c,c,c,c,\ldots$, formada por
+um único valor constante $c \in \R$, repetido indefinidamente.
 
 %We now get to the idea of a
 %\emph{limit of a sequence}\index{limit!of a sequence}.
@@ -75,77 +70,70 @@ em um único valor constante $c \in \R$ repetido indefinidamente.
 %It makes sense to talk about \emph{the} limit of a sequence.
 
 \begin{defn}
-Dizemos que uma sequência $\{ x_n \}_{n=1}^\infty$ \emph{converge} para um número
-$x \in \R$ se, para todo $\epsilon > 0$, existe um $M \in \N$ tal
-que $\sabs{x_n - x} < \epsilon$ para todo $n \geq M$.
+A sequência $\{ x_n \}_{n=1}^\infty$ \emph{converge} para um número
+$x \in \R$ se, para todo $\epsilon > 0$, existe $M \in \N$ tal que
+$\sabs{x_n - x} < \epsilon$ para todo $n \geq M$.
 O número $x$ é chamado de \emph{limite} da sequência.
-Demonstraremos que o limite $x$ é único; por isso, escrevemos%
-\footnote{No texto, isso pode ser representado como $\lim_{n\to\infty} x_n$.}
+Provaremos que o limite $x$ é único e, por isso, escrevemos%
+\footnote{No texto, isso pode ser renderizado como $\lim_{n\to\infty} x_n$.}
 \glsadd{not:limseq}%
 \begin{equation*}
 \lim_{n\to \infty} x_n \coloneqq x .
 \end{equation*}
 
-Uma sequência
-que converge é chamada de \emph{convergente}\index{convergente!sequência}.
-Caso contrário, dizemos que a sequência \emph{diverge}
-ou que é
-\emph{divergente}\index{divergente!sequência}.
+Uma sequência que converge é chamada de \emph{convergente}\index{sequ\^encia convergente}.
+Caso contrário, dizemos que a sequência \emph{diverge} ou que é
+\emph{divergente}\index{sequ\^encia divergente}.
 \end{defn}
 
-Em breve, na \propref{prop:limisunique}, mostraremos que o limite $x$ é sempre
-único, quando existe. Faz sentido falar do limite de
-uma sequência; basta mostrar que ela converge para um único
-número.
-Nos próximos exemplos, vamos fingir
-que já demonstramos a unicidade dos limites.
+Em breve, na \propref{prop:limisunique}, mostraremos que, se existir, o
+limite $x$ é sempre único. Faz sentido falar \emph{do} limite de uma
+sequência; basta mostrar que ela converge para um único número.
+Nos próximos exemplos, vamos supor que já provamos a unicidade dos limites.
 
-Intuitivamente, dizer que o limite é $x$ significa que, a partir de algum ponto,
-todos os termos da sequência ficam próximos de $x$. Mais precisamente,
-podemos chegar arbitrariamente perto do limite, desde que avancemos o suficiente
-na sequência. Isso não significa que algum dia atingiremos o limite. É possível,
-e bastante comum, que nenhum $x_n$ da sequência seja igual ao
-limite $x$.
-Ilustramos o conceito na \figureref{figsequenceconvergence}. Na
-figura, primeiro pensamos na sequência como um gráfico, pois ela é uma função de
-$\N$. Em seguida, também a representamos como uma sequência de pontos marcados na reta
-real.
+Intuitivamente, dizer que o limite é $x$ significa que, a partir de certo
+índice, todos os termos da sequência ficam próximos de $x$. Mais
+precisamente, podemos nos aproximar arbitrariamente do limite, desde que
+avancemos o suficiente na sequência. Isso não significa que chegaremos ao
+limite. É possível, e bastante comum, que nenhum termo $x_n$ da sequência
+seja igual ao limite $x$.
+Ilustramos o conceito na \figureref{figsequenceconvergence}. Primeiro,
+pensamos na sequência como um gráfico, pois ela é uma função definida em
+$\N$. Em seguida, também a representamos como uma sequência de pontos
+identificados na reta real.
 
 \begin{myfigureht}
 \myincludepdft{sequence-convergence_full}{%
 Dois diagramas.
-O primeiro é o gráfico de uma sequência: os valores estão no eixo vertical e
-o índice está no eixo horizontal.
-No eixo vertical,
-o número x está marcado e há uma linha horizontal.
-Uma faixa entre
-x menos épsilon e x mais épsilon está sombreada. Os valores
-da sequência ficam, em sua maioria, fora da faixa sombreada
-até o índice 7, marcado como M. Todos os valores
-seguintes estão dentro da faixa.
-No segundo diagrama, o eixo x é horizontal, com
-o número x marcado e os valores x sub 1, x sub 2, até x sub 10 marcados
-como traços.}
+O primeiro é o gráfico de uma sequência: os valores estão no eixo vertical
+e o índice, no eixo horizontal. No eixo vertical, marca-se o número x e
+traça-se uma reta horizontal. Uma faixa de x menos épsilon a x mais épsilon está
+sombreada. Até o índice 7, indicado por $M$, a maioria dos termos da
+sequência está fora da faixa sombreada. Todos os termos seguintes estão
+dentro dela.
+No segundo diagrama, o eixo x é horizontal, com o número x marcado e os
+valores x sub 1, x sub 2, até x sub 10 indicados por marcas.}
 \caption{Ilustração da convergência.
-Acima, mostramos os dez primeiros pontos da sequência como um gráfico,
-com $M$ e o intervalo em torno do limite $x$ indicados.
-Abaixo, os pontos da mesma sequência estão marcados na reta
-real.\label{figsequenceconvergence}}
+Acima, mostramos os dez primeiros termos da sequência como um gráfico, com
+$M$ e o intervalo em torno do limite $x$ assinalados.
+Abaixo, os termos da mesma sequência estão marcados na reta real.
+\label{figsequenceconvergence}}
 \end{myfigureht}
 
-Quando escrevemos $\lim_{n\to\infty} x_n = x$ para algum número real $x$, estamos afirmando duas
-coisas: primeiro, que $\{ x_n \}_{n=1}^\infty$ é convergente; segundo, que seu limite é
-$x$.
+Quando escrevemos $\lim_{n\to\infty} x_n = x$ para algum número real $x$,
+estamos afirmando duas coisas: primeiro, que $\{ x_n \}_{n=1}^\infty$ é
+convergente; segundo, que seu limite é $x$.
 
-A definição acima é uma das definições mais importantes da análise,
-e é essencial compreendê-la perfeitamente. O ponto-chave da
-definição é que, dado \emph{qualquer} $\epsilon > 0$, podemos encontrar um $M$. O
-valor de $M$ pode depender de $\epsilon$; por isso, só escolhemos $M$ depois de conhecer
-$\epsilon$. Vamos ilustrar a convergência com alguns exemplos.
+A definição acima é uma das mais importantes da análise e é necessário
+compreendê-la perfeitamente. O ponto-chave é que, dado \emph{qualquer}
+$\epsilon > 0$, podemos encontrar um $M$. Esse $M$ pode depender de
+$\epsilon$; portanto, só o escolhemos depois de conhecer $\epsilon$.
+Vamos ilustrar a convergência com alguns exemplos.
 
 \begin{example}
-A sequência constante $1,1,1,1,\ldots$ converge para 1. Para
-todo $\epsilon > 0$, escolha $M = 1$. Isto é, $\sabs{x_n-x} = \sabs{1-1} < \epsilon$ para todo $n$.
+A sequência constante $1,1,1,1,\ldots$ converge para 1. Para todo
+$\epsilon > 0$, tome $M = 1$. Temos
+$\sabs{x_n-x} = \sabs{1-1} < \epsilon$ para todo n.
 \end{example}
 
 \begin{example}
@@ -153,7 +141,7 @@ Afirmação: \emph{A sequência $\{ \nicefrac{1}{n} \}_{n=1}^\infty$ é converge
 \begin{equation*}
 \lim_{n\to \infty} \frac{1}{n} = 0 .
 \end{equation*}
-Demonstração: Dado um $\epsilon > 0$, encontre um $M \in \N$ tal que
+Demonstração: Dado $\epsilon > 0$, encontre $M \in \N$ tal que
 $0 < \nicefrac{1}{M} < \epsilon$
 (a \hyperref[thm:arch:i]{propriedade arquimediana} em ação).
 Para todo $n \geq M$,
@@ -165,17 +153,16 @@ Para todo $n \geq M$,
 \end{example}
 
 \begin{example}
-A sequência $\bigl\{ {(-1)}^n \bigr\}_{n=1}^\infty$ é divergente. Demonstração: Se
-houvesse um limite $x$, então, para $\epsilon = \frac{1}{2}$, esperaríamos um $M$ que
-satisfizesse a definição. Suponhamos que
-esse $M$ exista.
-Então, para um índice par com $n \geq M$, calculamos
+A sequência $\bigl\{ {(-1)}^n \bigr\}_{n=1}^\infty$ é divergente.
+Demonstração: Se existisse um limite $x$, então, para $\epsilon = \frac{1}{2}$,
+deveria existir um $M$ que satisfizesse a definição. Suponha que tal $M$
+exista. Para um $n$ par com $n \geq M$, calculamos
 \begin{equation*}
 \nicefrac{1}{2} > \sabs{x_n - x}  = \sabs{1 - x}
 \qquad \text{e} \qquad
 \nicefrac{1}{2} > \sabs{x_{n+1} - x}  = \sabs{-1 - x} .
 \end{equation*}
-Obtemos uma contradição:
+Obtemos então uma contradição:
 \begin{equation*}
 2 = \babs{1 - x - (-1 -x)} \leq
 \sabs{1 - x} + \sabs{-1 -x} < \nicefrac{1}{2} + \nicefrac{1}{2} = 1 .
@@ -186,21 +173,21 @@ Obtemos uma contradição:
 Uma sequência convergente tem um único limite.
 \end{prop}
 
-A demonstração desta proposição apresenta uma técnica útil em
-análise. Muitas demonstrações seguem o mesmo esquema geral. Queremos
-mostrar que certa quantidade é zero. Escrevemos essa quantidade usando a
-desigualdade triangular como a soma de duas outras quantidades e estimamos cada uma
-por números arbitrariamente pequenos.
+A demonstração desta proposição apresenta uma técnica útil em análise.
+Muitas demonstrações seguem o mesmo esquema geral. Queremos mostrar que certa
+quantidade é zero. Usando a desigualdade triangular, escrevemos essa
+quantidade como a soma de duas outras e estimamos cada uma por números
+arbitrariamente pequenos.
 
 \begin{proof}
 %NOTE: should be word for word the same as 7.3.3
-Suponhamos que $\{ x_n \}_{n=1}^\infty$ tenha limites $x$ e $y$.
-Tomemos um $\epsilon > 0$ arbitrário.
-Pela definição, encontramos um $M_1$ tal que, para todo $n \geq M_1$,
-$\sabs{x_n-x} < \nicefrac{\epsilon}{2}$. De modo semelhante, encontramos um $M_2$
-tal que, para todo $n \geq M_2$,
+Suponha que $\{ x_n \}_{n=1}^\infty$ tenha limites $x$ e $y$.
+Tome um $\epsilon > 0$ arbitrário.
+Pela definição, encontre $M_1$ tal que, para todo $n \geq M_1$,
+$\sabs{x_n-x} < \nicefrac{\epsilon}{2}$. De modo semelhante, encontre
+$M_2$ tal que, para todo $n \geq M_2$,
 $\sabs{x_n-y} < \nicefrac{\epsilon}{2}$.
-Agora tomemos um $n$ tal que $n \geq M_1$ e também $n \geq M_2$, e estimemos
+Agora tome $n$ tal que $n \geq M_1$ e $n \geq M_2$, e estime
 \begin{equation*}
 \begin{split}
 \sabs{y-x}
@@ -212,8 +199,8 @@ Agora tomemos um $n$ tal que $n \geq M_1$ e também $n \geq M_2$, e estimemos
 \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon .
 \end{split}
 \end{equation*}
-Como $\sabs{y-x} < \epsilon$ para todo $\epsilon > 0$, temos $\sabs{y-x} = 0$
-e $y=x$. Portanto, o limite (se existir) é único.
+Como $\sabs{y-x} < \epsilon$ para todo $\epsilon > 0$, temos
+$\sabs{y-x} = 0$ e $y=x$. Portanto, o limite (se existir) é único.
 \end{proof}
 
 \begin{prop}
@@ -221,8 +208,8 @@ Uma sequência convergente $\{ x_n \}_{n=1}^\infty$ é limitada.
 \end{prop}
 
 \begin{proof}
-Suponhamos que $\{ x_n \}_{n=1}^\infty$ convirja para $x$. Então existe um $M \in \N$
-tal que, para todo $n \geq M$, vale
+Suponha que $\{ x_n \}_{n=1}^\infty$ convirja para $x$. Então existe
+$M \in \N$ tal que, para todo $n \geq M$,
 $\sabs{x_n - x} < 1$. Para $n \geq M$,
 \begin{equation*}
 \begin{split}
@@ -234,7 +221,7 @@ $\sabs{x_n - x} < 1$. Para $n \geq M$,
 \end{split}
 \end{equation*}
 O conjunto $\bigl\{ \sabs{x_1}, \sabs{x_2}, \ldots, \sabs{x_{M-1}} , 1+\sabs{x} \bigr\}$
-é finito; portanto, definimos
+é finito; portanto, seja
 \begin{equation*}
 B \coloneqq \max \bigl\{ \sabs{x_1}, \sabs{x_2}, \ldots, \sabs{x_{M-1}}, 1+\sabs{x} \bigr\} .
 \end{equation*}
@@ -248,14 +235,14 @@ A sequência $\bigl\{ {(-1)}^n \bigr\}_{n=1}^\infty$ mostra que a recíproca
 não vale. Uma sequência limitada não é necessariamente convergente.
 
 \begin{example}
-Mostremos que $\left\{ \frac{n^2+1}{n^2+n} \right\}_{n=1}^\infty$ converge e que
+Vamos mostrar que $\left\{ \frac{n^2+1}{n^2+n} \right\}_{n=1}^\infty$
+converge e que
 \begin{equation*}
 \lim_{n\to\infty} \frac{n^2+1}{n^2+n} = 1 .
 \end{equation*}
 
-Dado $\epsilon > 0$,
-encontremos $M \in \N$ tal que $\frac{1}{M} < \epsilon$. Então, para todo $n \geq
-M$,
+Dado $\epsilon > 0$, encontre $M \in \N$ tal que $\frac{1}{M} < \epsilon$.
+Então, para todo $n \geq M$,
 \begin{equation*}
 \begin{split}
 %\abs{\frac{n^2+1}{n^2+n} - 1} & =
@@ -266,10 +253,10 @@ M$,
 \abs{\frac{1 - n}{n^2+n}} \\
 & =
 \frac{n-1}{n^2+n} \\
-& \leq
-\frac{n}{n^2+n}
-=
-\frac{1}{n+1} \\
+& \leq 
+\frac{n}{n^2+n} 
+ =
+\frac{1}{n+1}  \\
 & \leq \frac{1}{n}
 \leq \frac{1}{M} < \epsilon .
 \end{split}
@@ -277,249 +264,244 @@ M$,
 Portanto,
 $\lim_{n\to\infty} \frac{n^2+1}{n^2+n} = 1$.
 Este exemplo mostra que, às vezes, para obter o que queremos, precisamos
-descartar algumas informações a fim de conseguir uma estimativa mais simples.
+descartar algumas informações e assim conseguir uma estimativa mais simples.
 \end{example}
 
-\subsection{Sequências monótonas}
+\subsection{Sequ\^encias mon\'otonas}
 
-O tipo mais simples de sequência é uma sequência monótona. Verificar que
-uma sequência monótona converge é tão fácil quanto verificar que ela é limitada.
-Também é fácil encontrar
-o limite de uma sequência monótona convergente,
-desde que possamos encontrar o supremo ou o ínfimo
-de um conjunto enumerável de números.
+O tipo mais simples de sequência é a sequência monótona. Verificar que uma
+sequência monótona converge é tão fácil quanto verificar que ela é limitada.
+Também é fácil encontrar o limite de uma sequência monótona convergente,
+desde que possamos determinar o supremo ou o ínfimo de um conjunto contável
+de números.
 
 \begin{defn}
-Uma sequência $\{ x_n \}_{n=1}^\infty$ é \emph{monótona crescente}\index{sequência monótona crescente} se $x_n \leq x_{n+1}$ para todo $n \in \N$.
+A sequência $\{ x_n \}_{n=1}^\infty$ é \emph{monótona não decrescente}\index{sequ\^encia mon\'otona n\~ao decrescente} se $x_n \leq x_{n+1}$ para todo $n \in \N$.
 %
-Uma sequência $\{ x_n \}_{n=1}^\infty$ é \emph{monótona decrescente}\index{sequência monótona decrescente} se $x_n \geq x_{n+1}$ para todo $n \in \N$.
+A sequência $\{ x_n \}_{n=1}^\infty$ é \emph{monótona não crescente}\index{sequ\^encia mon\'otona n\~ao crescente} se $x_n \geq x_{n+1}$ para todo $n \in \N$.
 %
-Se uma sequência é monótona crescente ou monótona decrescente, podemos
-simplesmente dizer que ela é \emph{monótona}\index{sequência monótona}.\footnote{Alguns
-autores usam a palavra \emph{monotônica}\index{sequência monotônica}.}
+Se uma sequência é monótona não decrescente ou monótona não crescente,
+podemos simplesmente dizer que ela é \emph{monótona}\index{sequ\^encia mon\'otona}.\footnote{Alguns autores usam o termo
+\emph{monotônica}\index{sequ\^encia monot\^onica}.}
 \end{defn}
 
-Por exemplo,
-$\{ n \}_{n=1}^\infty$ é monótona crescente,
-$\{ \nicefrac{1}{n} \}_{n=1}^\infty$ é monótona decrescente,
-a sequência constante $\{ 1 \}_{n=1}^\infty$ é ao mesmo tempo monótona crescente e monótona
-decrescente, e $\bigl\{ {(-1)}^n \bigr\}_{n=1}^\infty$ não é monótona.
-Os primeiros termos de uma sequência monótona crescente de exemplo
-aparecem na
-\figureref{figsequenceincreasing}.
+Por exemplo, $\{ n \}_{n=1}^\infty$ é monótona não decrescente,
+$\{ \nicefrac{1}{n} \}_{n=1}^\infty$ é monótona não crescente,
+a sequência constante $\{ 1 \}_{n=1}^\infty$ é tanto monótona não
+decrescente quanto monótona não crescente, e
+$\bigl\{ {(-1)}^n \bigr\}_{n=1}^\infty$ não é monótona.
+Os primeiros termos de uma sequência monótona não decrescente de exemplo
+estão representados na \figureref{figsequenceincreasing}.
 
 \begin{myfigureht}
 \myincludegraphics{sequence-increasing}{%
-Um gráfico dos primeiros termos de uma sequência, com o eixo horizontal
-representando o índice. Cada valor seguinte da sequência é igual ou
-maior que o anterior; por isso, os pontos que representam os valores sobem à
-medida que avançamos para a direita no gráfico.}
-\caption{Os primeiros termos de uma sequência monótona crescente representados
-em um gráfico.\label{figsequenceincreasing}}
+Um gráfico dos primeiros termos de uma sequência, com o índice no eixo
+horizontal. Cada termo da sequência é igual ou maior que o anterior; por
+isso, os pontos que representam os valores sobem à medida que avançamos para
+a direita no gráfico.}
+\caption{Os primeiros termos de uma sequência monótona não decrescente,
+representados em um gráfico.\label{figsequenceincreasing}}
 \end{myfigureht}
 
 \begin{thm}[Teorema da convergência monótona] \label{thm:monotoneconv}
-\index{teorema da convergência monótona}%
-Uma sequência monótona $\{ x_n \}_{n=1}^\infty$ é limitada se, e somente se, é convergente.
+\index{teorema da converg\^encia mon\'otona}%
+Uma sequência monótona $\{ x_n \}_{n=1}^\infty$ é limitada se, e somente se,
+é convergente.
 
-Além disso, se $\{ x_n \}_{n=1}^\infty$ é monótona crescente e limitada, então
+Além disso, se $\{ x_n \}_{n=1}^\infty$ é monótona não decrescente e limitada, então
 \begin{equation*}
 \lim_{n\to \infty} x_n = \sup \{ x_n : n \in \N \} .
 \end{equation*}
-Se $\{ x_n \}_{n=1}^\infty$ é monótona decrescente e limitada, então
+Se $\{ x_n \}_{n=1}^\infty$ é monótona não crescente e limitada, então
 \begin{equation*}
 \lim_{n\to \infty} x_n = \inf \{ x_n : n \in \N \} .
 \end{equation*}
 \end{thm}
 
 \begin{proof}
-Consideremos uma sequência monótona crescente $\{ x_n \}_{n=1}^\infty$. Suponhamos
-primeiro que a sequência seja limitada,
-isto é,
-que o conjunto $\{ x_n : n \in  \N \}$ seja limitado. Seja
+Considere uma sequência monótona não decrescente
+$\{ x_n \}_{n=1}^\infty$. Suponha, primeiro, que a sequência seja limitada,
+isto é, que o conjunto $\{ x_n : n \in \N \}$ seja limitado. Seja
 \begin{equation*}
 x \coloneqq \sup \{ x_n : n \in \N \} .
 \end{equation*}
-Seja $\epsilon > 0$ arbitrário. Como $x$ é o supremo,
-deve existir pelo menos um $M \in \N$ tal que $x_{M} > x-\epsilon$.
-Como $\{ x_n \}_{n=1}^\infty$ é monótona crescente,
-é fácil ver (por \hyperref[induction:thm]{indução}) que
-$x_n \geq x_{M}$ para todo $n \geq M$. Portanto, para todo $n \geq M$,
+Seja $\epsilon > 0$ arbitrário. Como $x$ é o supremo, deve existir pelo
+menos um $M \in \N$ tal que $x_{M} > x-\epsilon$.
+Como $\{ x_n \}_{n=1}^\infty$ é monótona não decrescente, é fácil ver
+(por \hyperref[induction:thm]{indução}) que $x_n \geq x_{M}$ para todo
+$n \geq M$. Portanto, para todo $n \geq M$,
 \begin{equation*}
 \sabs{x_n-x} = x-x_n \leq x-x_{M} < \epsilon  .
 \end{equation*}
-Logo, $\{ x_n \}_{n=1}^\infty$ converge para $x$.
-Portanto, toda sequência monótona crescente e limitada converge.
-Na outra direção, já demonstramos que toda sequência convergente
-é limitada.
+Assim, $\{ x_n \}_{n=1}^\infty$ converge para $x$.
+Portanto, uma sequência monótona não decrescente e limitada converge.
+Na outra direção, já provamos que uma sequência convergente é limitada.
 
-A demonstração para sequências monótonas decrescentes fica como exercício.
+A demonstração para sequências monótonas não crescentes fica como exercício.
 \end{proof}
 
-Uma sequência monótona crescente $\{ x_n \}_{n=1}^\infty$
-é sempre limitada inferiormente, pois $x_1 \leq x_2 \leq \cdots \leq x_n$
-para qualquer $n$; assim, $x_1$ é uma cota inferior. Portanto, para verificar se uma
-sequência monótona crescente é limitada, basta verificar se
-ela é limitada superiormente. De modo semelhante, uma sequência monótona decrescente
-é sempre limitada superiormente; portanto, basta verificar se é
-limitada inferiormente.
+Uma sequência monótona não decrescente $\{ x_n \}_{n=1}^\infty$ é sempre
+limitada inferiormente, pois $x_1 \leq x_2 \leq \cdots \leq x_n$ para todo
+$n$; assim, $x_1$ é uma cota inferior. Portanto, para verificar se uma
+sequência monótona não decrescente é limitada, basta verificar se é limitada
+superiormente. De modo semelhante, uma sequência monótona não crescente é
+sempre limitada superiormente; portanto, basta verificar se é limitada
+inferiormente.
 
 \begin{example}
-Consideremos a sequência $\bigl\{ \frac{1}{\sqrt{n}} \bigr\}_{n=1}^\infty$.
+Considere a sequência $\bigl\{ \frac{1}{\sqrt{n}} \bigr\}_{n=1}^\infty$.
 
-A sequência é
-limitada inferiormente, pois
+A sequência é limitada inferiormente, pois
 $\frac{1}{\sqrt{n}} > 0$ para todo $n \in \N$.
-Mostremos que ela é monótona decrescente. Começamos com
-$\sqrt{n+1} \geq \sqrt{n}$ (por que isso é verdade?). Dessa desigualdade
+Vamos mostrar que ela é monótona não crescente. Começamos com
+$\sqrt{n+1} \geq \sqrt{n}$ (por que isso é verdade?). Dessa desigualdade,
 obtemos
 \begin{equation*}
 \frac{1}{\sqrt{n+1}} \leq \frac{1}{\sqrt{n}} .
 \end{equation*}
-Logo, a sequência é monótona decrescente e limitada inferiormente (portanto,
-limitada). Pelo \thmref{thm:monotoneconv}, concluímos que a sequência é
-convergente e que
+Logo, a sequência é monótona não crescente e limitada inferiormente (e,
+portanto, limitada). Pelo \thmref{thm:monotoneconv}, a sequência é
+convergente e
 \begin{equation*}
 \lim_{n\to \infty} \frac{1}{\sqrt{n}}
 =
 \inf \left\{ \frac{1}{\sqrt{n}} : n \in \N \right\} .
 \end{equation*}
-Já sabemos que o ínfimo é maior ou igual a 0, pois
-0 é uma cota inferior. Tomemos um número $b \geq 0$ tal
-que $b \leq \frac{1}{\sqrt{n}}$ para todo $n$. Elevamos ambos os lados ao quadrado e obtemos
+Já sabemos que o ínfimo é maior ou igual a 0, pois 0 é uma cota inferior.
+Seja $b \geq 0$ tal que $b \leq \frac{1}{\sqrt{n}}$ para todo $n$.
+Elevando ambos os lados ao quadrado, obtemos
 \begin{equation*}
 b^2 \leq \frac{1}{n} \qquad \text{para todo } n \in \N.
 \end{equation*}
-Já vimos que isso implica $b^2 \leq 0$ (uma consequência
-da \hyperref[thm:arch:i]{propriedade arquimediana}). Como $b^2 \geq 0$ também,
-temos $b^2 = 0$,
-e, portanto, $b = 0$.
-Logo, $b=0$ é a maior cota inferior, e $\lim\limits_{n\to\infty} \frac{1}{\sqrt{n}} = 0$.
+Já vimos que isso implica $b^2 \leq 0$ (como consequência da
+\hyperref[thm:arch:i]{propriedade arquimediana}). Como também temos
+$b^2 \geq 0$, segue que $b^2 = 0$ e, portanto, $b = 0$.
+Assim, $b=0$ é a maior das cotas inferiores, e
+$\lim\limits_{n\to\infty} \frac{1}{\sqrt{n}} = 0$.
 \end{example}
 
 \begin{example}
-Um alerta: demonstrar que uma sequência monótona é limitada
-para poder aplicar o \thmref{thm:monotoneconv} pode ser difícil.
+Uma ressalva: mostrar que uma sequência monótona é limitada para poder usar
+o \thmref{thm:monotoneconv} pode ser difícil.
 A sequência
 $\{ 1 + \nicefrac{1}{2} + \cdots + \nicefrac{1}{n} \}_{n=1}^\infty$
-é monótona crescente,
-cresce lentamente e, na verdade, cresce cada vez mais devagar à medida que $n$ aumenta.
-Veremos, ao estudar séries,
-que essa sequência não tem cota superior e, portanto, não converge. Não é
-de forma alguma óbvio que ela não tenha cota superior.
+é monótona não decrescente e cresce lentamente; na verdade, cresce cada vez
+mais devagar à medida que $n$ aumenta. Quando chegarmos às séries, veremos
+que essa sequência não tem cota superior e, portanto, não converge. De modo
+algum é evidente que essa sequência não tem cota superior.
 \end{example}
 
-Um exemplo comum de sequência monótona surge na seguinte
-proposição. A demonstração fica como exercício.
+Um exemplo comum do aparecimento de sequências monótonas é a proposição a
+seguir. Deixamos a demonstração como exercício.
 
 \begin{prop} \label{prop:supinfseq}
-Seja $S \subset \R$ um conjunto não vazio e limitado.
-Então existem sequências monótonas
-$\{ x_n \}_{n=1}^\infty$ e $\{ y_n \}_{n=1}^\infty$ tais que $x_n, y_n \in S$ e
+Seja $S \subset \R$ um conjunto limitado e não vazio.
+Então existem sequências monótonas $\{ x_n \}_{n=1}^\infty$ e
+$\{ y_n \}_{n=1}^\infty$ tais que $x_n, y_n \in S$ e
 \begin{equation*}
 \sup\,S = \lim_{n\to \infty} x_n \qquad \text{e} \qquad \inf\,S =
 \lim_{n\to\infty} y_n .
 \end{equation*}
 \end{prop}
 
-\subsection{Caudas de sequências}
+\subsection{Tail of a sequence}
 
 \begin{defn}
-Dada uma sequência $\{ x_n \}_{n=1}^\infty$,
-a \emph{$K$-ésima cauda} (com $K \in \N$),
-ou simplesmente a
-\emph{cauda}\index{cauda de uma sequência} de
-$\{ x_n \}_{n=1}^\infty$, é a sequência que começa no termo de índice $K+1$, geralmente escrita como
+For a sequence $\{ x_n \}_{n=1}^\infty$,
+the \emph{$K$-tail} (where $K \in \N$),
+or just the
+\emph{tail},\index{tail of a sequence} of
+$\{ x_n \}_{n=1}^\infty$ is the sequence starting at $K+1$, usually written as
 \begin{equation*}
 \{ x_{n+K} \}_{n=1}^\infty
-\qquad \text{ou} \qquad \{ x_n \}_{n=K+1}^\infty .
+\qquad \text{or} \qquad \{ x_n \}_{n=K+1}^\infty .
 \end{equation*}
 \end{defn}
 
-Por exemplo, a cauda de ordem $4$ de $\{ \nicefrac{1}{n} \}_{n=1}^\infty$ é
+For example, the $4$-tail of $\{ \nicefrac{1}{n} \}_{n=1}^\infty$ is
 $\nicefrac{1}{5}, \nicefrac{1}{6}, \nicefrac{1}{7}, \nicefrac{1}{8},
-\ldots$. A cauda de ordem $0$ de uma sequência é a própria sequência.
-A convergência e o limite de uma sequência dependem apenas de sua cauda.
+\ldots$.  The $0$-tail of a sequence is the sequence itself.
+The convergence and the limit of a sequence only depend on its tail.
 
 \begin{prop}
-Seja $\{ x_n \}_{n=1}^\infty$ uma sequência. Então as seguintes
-afirmações são equivalentes:
+Let $\{ x_n \}_{n=1}^\infty$ be a sequence.  Then the following
+statements are equivalent:
 \begin{enumerate}[(i)]
 \item \label{prop:ktail:i}
-A sequência $\{ x_n \}_{n=1}^\infty$ converge.
+The sequence $\{ x_n \}_{n=1}^\infty$ converges.
 \item \label{prop:ktail:ii}
-A $K$-ésima cauda $\{ x_{n+K} \}_{n=1}^\infty$ converge para todo $K \in \N$.
+The $K$-tail $\{ x_{n+K} \}_{n=1}^\infty$ converges for all $K \in \N$.
 \item \label{prop:ktail:iii}
-A $K$-ésima cauda $\{ x_{n+K} \}_{n=1}^\infty$ converge para algum $K \in \N$.
+The $K$-tail $\{ x_{n+K} \}_{n=1}^\infty$ converges for some $K \in \N$.
 \end{enumerate}
-Além disso, se algum (e, portanto, todos) dos limites existe, então, para todo $K \in \N$,
+Furthermore, if any (and hence all) of the limits exist, then for all $K \in \N$
 \begin{equation*}
 \lim_{n\to \infty} x_n = \lim_{n \to \infty} x_{n+K} .
 \end{equation*}
 \end{prop}
 
 \begin{proof}
-É claro que
-\ref{prop:ktail:ii} implica \ref{prop:ktail:iii}.
-Portanto, mostraremos primeiro que
+It is clear that
+\ref{prop:ktail:ii} implies \ref{prop:ktail:iii}.
+We will therefore show first that
 \ref{prop:ktail:i}
-implica
-\ref{prop:ktail:ii}
-e depois que
+implies
+\ref{prop:ktail:ii},
+and then we will show that
 \ref{prop:ktail:iii}
-implica
-\ref{prop:ktail:i}. Isto é,
+implies
+\ref{prop:ktail:i}.  That is, 
 %mbxSTARTIGNORE
 \begin{equation*}
 \begin{tikzcd}[row sep=0pt]
 & \text{\ref{prop:ktail:ii}} \ar[dr, Rightarrow] & \\
-\text{\ref{prop:ktail:i}} \ar[ur, Rightarrow, "\text{demonstrar}"] & &
-\text{\ref{prop:ktail:iii}} \ar[ll, Rightarrow, "\text{demonstrar}"]
+\text{\ref{prop:ktail:i}} \ar[ur, Rightarrow, "\text{to prove}"] & &
+\text{\ref{prop:ktail:iii}} \ar[ll, Rightarrow, "\text{to prove}"] 
 \end{tikzcd}
 \end{equation*}
 %mbxENDIGNORE
 %mbxlatex \begin{center}
-%mbxlatex \myincludepdft{tail_of_sequence_cd}{Um diagrama com
-%mbxlatex três setas de implicação. A primeira seta de (i) para (ii)
-%mbxlatex está rotulada como "demonstrar". A segunda seta de (ii) para (iii)
-%mbxlatex não está rotulada. A terceira seta de (iii) para (i) está
-%mbxlatex rotulada como "demonstrar".}
+%mbxlatex \myincludepdft{tail_of_sequence_cd}{A diagram with
+%mbxlatex three implication arrows.  First arrow from (i) to (ii)
+%mbxlatex is labeled with "to prove".  Second arrow from (ii) to (iii)
+%mbxlatex is not labeled.  Third arrow from (iii) to (i) is
+%mbxlatex labeled with "to prove".}
 %mbxlatex \end{center}
-No processo, também mostraremos que os limites são iguais.
+In the process we will also show that the limits are equal.
 
-Comecemos mostrando que \ref{prop:ktail:i} implica \ref{prop:ktail:ii}.
-Suponhamos que $\{x_n \}_{n=1}^\infty$ convirja para algum $x \in \R$.
-Seja $K \in \N$ arbitrário e
-definamos $y_n \coloneqq x_{n+K}$. Queremos mostrar que $\{ y_n \}_{n=1}^\infty$ converge
-para $x$.
-Dado um $\epsilon > 0$, existe um $M \in \N$ tal que
-$\sabs{x-x_n} < \epsilon$ para todo $n \geq M$.
-Note que $n \geq M$ implica $n+K \geq M$. Portanto, para
-todo $n \geq M$, temos
+We start with \ref{prop:ktail:i} implies \ref{prop:ktail:ii}.
+Suppose $\{x_n \}_{n=1}^\infty$ converges to some $x \in \R$.
+Let $K \in \N$ be arbitrary, and
+define $y_n \coloneqq x_{n+K}$.  We wish to show that $\{ y_n \}_{n=1}^\infty$ converges
+to $x$.
+Given an $\epsilon > 0$, there exists an $M \in \N$ such that
+$\sabs{x-x_n} < \epsilon$ for all $n \geq M$.
+Note that $n \geq M$ implies $n+K \geq M$.  Therefore, for
+all $n \geq M$, we have
 \begin{equation*}
 \sabs{x-y_n} = \sabs{x-x_{n+K}} < \epsilon .
 \end{equation*}
-Consequentemente, $\{ y_n \}_{n=1}^\infty$ converge para $x$.
+Consequently, $\{ y_n \}_{n=1}^\infty$ converges to $x$.
 
-Passemos ao caso em que \ref{prop:ktail:iii} implica \ref{prop:ktail:i}.
-Seja $K \in \N$ dado, definamos
-$y_n \coloneqq x_{n+K}$ e suponhamos que $\{ y_n \}_{n=1}^\infty$ convirja para $x \in \R$.
-Isto é, dado um $\epsilon > 0$, existe um $M' \in \N$ tal que
-$\sabs{x-y_n} < \epsilon$ para todo $n \geq M'$.
-Seja $M \coloneqq M'+K$. Então $n \geq M$ implica $n-K \geq M'$.
-Assim, sempre que $n \geq M$, temos
+Let us move to \ref{prop:ktail:iii} implies \ref{prop:ktail:i}.
+Let $K \in \N$ be given, define
+$y_n \coloneqq x_{n+K}$, and suppose that $\{ y_n \}_{n=1}^\infty$ converges to $x \in \R$.
+That is, given an $\epsilon > 0$, there exists an $M' \in \N$ such that
+$\sabs{x-y_n} < \epsilon$ for all $n \geq M'$.
+Let $M \coloneqq M'+K$.  Then $n \geq M$ implies $n-K \geq M'$.
+Thus, whenever $n \geq M$, we have
 \begin{equation*}
 \sabs{x-x_n} = \sabs{x-y_{n-K}} < \epsilon.
 \end{equation*}
-Portanto, $\{ x_n \}_{n=1}^\infty$ converge para $x$.
+Therefore, $\{ x_n \}_{n=1}^\infty$ converges to $x$.
 \end{proof}
 
-No fim das contas, o limite não depende de como a sequência começa; depende apenas
-da cauda. O início da sequência
-pode ser arbitrário.
+At the end of the day, the limit does not care about how the sequence begins, it only
+cares about the tail of the sequence.  The beginning of the sequence
+may be arbitrary.
 
-Por exemplo, a sequência definida por $x_n \coloneqq \frac{n}{n^2+16}$ é decrescente
-se começarmos em $n=4$ (antes disso, é crescente). Isto é:
+For example, the sequence defined by $x_n \coloneqq \frac{n}{n^2+16}$ is decreasing
+if we start at $n=4$ (it is increasing before).  That is:
 $\{ x_n \}_{n=1}^\infty =
 \nicefrac{1}{17},
 \nicefrac{1}{10},
@@ -530,7 +512,7 @@ $\{ x_n \}_{n=1}^\infty =
 \nicefrac{7}{65},
 \nicefrac{1}{10},
 \nicefrac{9}{97},
-\nicefrac{5}{58},\ldots$, e
+\nicefrac{5}{58},\ldots$, and 
 \begin{equation*}
 \nicefrac{1}{17} <
 \nicefrac{1}{10} <
@@ -543,259 +525,260 @@ $\{ x_n \}_{n=1}^\infty =
 \nicefrac{9}{97} >
 \nicefrac{5}{58} > \ldots .
 \end{equation*}
-Se descartarmos os três primeiros termos
-e considerarmos a cauda de ordem 3, ela será decrescente. A demonstração fica como exercício. Como a cauda de ordem 3
-é monótona e limitada inferiormente por zero, ela é convergente e, portanto, a sequência também converge.
+If we throw away the first 3 terms
+and look at the 3-tail, it is decreasing.  The proof is left as an exercise.  Since the 3-tail
+is monotone and bounded below by zero, it is convergent, and therefore the sequence is convergent.
 
-\subsection{Subsequências}
+\subsection{Subsequences}
 
-Às vezes, é útil considerar apenas alguns termos de uma sequência.
-Uma subsequência de $\{ x_n \}_{n=1}^\infty$ é uma sequência que contém
-apenas alguns dos termos de $\{ x_n \}_{n=1}^\infty$, na mesma ordem.
+It is useful to sometimes consider only some terms of a sequence.
+A subsequence of $\{ x_n \}_{n=1}^\infty$ is a sequence that contains
+only some of the numbers from $\{ x_n \}_{n=1}^\infty$ in the same order.
 
 \begin{defn}
-Seja $\{ x_n \}_{n=1}^\infty$ uma sequência.
-Seja $\{ n_i \}_{i=1}^\infty$ uma sequência estritamente crescente de números naturais,
-isto é, $n_i < n_{i+1}$ para todo $i \in \N$ (em outras palavras, $n_1 < n_2 < n_3 < \cdots$).
-A sequência
+Let $\{ x_n \}_{n=1}^\infty$ be a sequence.
+Let $\{ n_i \}_{i=1}^\infty$ be a strictly increasing sequence of natural
+numbers, that is, $n_i < n_{i+1}$ for all $i \in \N$ (in other words $n_1 < n_2 < n_3 < \cdots$).  
+The sequence
 \begin{equation*}
 \{ x_{n_i} \}_{i=1}^\infty
 \end{equation*}
-é chamada de \glsadd{not:subsequence}
-\emph{\myindex{subsequência}} de $\{ x_n \}_{n=1}^\infty$.
+is called \glsadd{not:subsequence}
+a \emph{\myindex{subsequence}} of $\{ x_n \}_{n=1}^\infty$.
 \end{defn}
 
-Assim, a subsequência é a sequência $x_{n_1},x_{n_2},x_{n_3},\ldots$.
-Por exemplo,
-a sequência
+So the subsequence is the sequence $x_{n_1},x_{n_2},x_{n_3},\ldots$.
+For instance,
+the sequence
 $\{ \nicefrac{1}{3i} \}_{i=1}^\infty
 = \nicefrac{1}{3},\nicefrac{1}{6},\nicefrac{1}{9},\nicefrac{1}{12},\ldots$
-é uma subsequência de
+is a subsequence of
 $\{ \nicefrac{1}{n} \}_{n=1}^\infty
 = 1, \nicefrac{1}{2},\nicefrac{1}{3},\nicefrac{1}{4},\ldots$.
-Para entender como essas duas
-sequências se encaixam na definição, tomemos $n_i \coloneqq 3i$;
-isto é, $\{ n_i \}_{i=1}^\infty$ é a
-sequência $3,6,9,12,\ldots$.
-Os termos $x_{n_i}$ da
-subsequência precisam vir da sequência original. Portanto, $1,0,\nicefrac{1}{3},0,
+To see how these two
+sequences fit in the definition, take $n_i \coloneqq 3i$,
+that is, $\{ n_i \}_{i=1}^\infty$ is the
+sequence $3,6,9,12,\ldots$.  
+The numbers $x_{n_i}$ in the
+subsequence must come from the original sequence.  So $1,0,\nicefrac{1}{3},0,
 \nicefrac{1}{5},\ldots$
-não é uma subsequência de $\{ \nicefrac{1}{n} \}_{n=1}^\infty$. Da mesma forma, a ordem
-deve ser preservada:
-a sequência $1,\nicefrac{1}{3},\nicefrac{1}{2},\nicefrac{1}{5},\ldots$
-não é uma subsequência de $\{ \nicefrac{1}{n} \}_{n=1}^\infty$.
+is not a subsequence of $\{ \nicefrac{1}{n} \}_{n=1}^\infty$.  Similarly, order
+must be preserved;
+the sequence $1,\nicefrac{1}{3},\nicefrac{1}{2},\nicefrac{1}{5},\ldots$
+is not a subsequence of $\{ \nicefrac{1}{n} \}_{n=1}^\infty$.
 
-Uma cauda de uma sequência é um tipo especial de subsequência. Para uma
-subsequência qualquer, temos a seguinte proposição sobre convergência,
-que é mais fraca do que a afirmação correspondente para caudas.
+A tail of a sequence is one special type of a subsequence.  For an arbitrary
+subsequence, we have the following proposition about convergence,
+which is weaker than that for tails.
 
 \begin{prop} \label{prop:seqtosubseq}
-Se $\{ x_n \}_{n=1}^\infty$ é convergente,
-então toda subsequência $\{ x_{n_i} \}_{i=1}^\infty$ também é convergente e
+If $\{ x_n \}_{n=1}^\infty$ is a convergent sequence,
+then every subsequence $\{ x_{n_i} \}_{i=1}^\infty$ is also convergent, and
 \begin{equation*}
-\lim_{n\to \infty} x_n =
+\lim_{n\to \infty} x_n = 
 \lim_{i\to \infty} x_{n_i} .
 \end{equation*}
 \end{prop}
 
 \begin{proof}
-Suponhamos que $\lim_{n\to \infty} x_n = x$. Então, para todo
-$\epsilon > 0$, existe um $M \in \N$ tal que, para todo $n \geq M$,
+Suppose $\lim_{n\to \infty} x_n = x$.  So for every
+$\epsilon > 0$, there is an $M \in \N$ such that for all $n \geq M$,
 \begin{equation*}
 \sabs{x_n - x} < \epsilon .
 \end{equation*}
-Não é difícil demonstrar (faça isso!) por \hyperref[induction:thm]{indução} que
-$n_i \geq i$ para todo $i \in \N$. Portanto, $i \geq M$ implica $n_i \geq M$. Assim,
-para todo $i \geq M$,
+It is not hard to prove (do it!) by \hyperref[induction:thm]{induction} that
+$n_i \geq i$ for all $i \in \N$.  Hence, $i \geq M$ implies $n_i \geq M$.  Thus,
+for all $i \geq M$,
 \begin{equation*}
 \sabs{x_{n_i} - x} < \epsilon ,
 \end{equation*}
-e a demonstração está concluída.
+and we are done.
 \end{proof}
 
 \begin{example}
-A existência de uma subsequência convergente não implica
-que a própria sequência seja convergente.
-Consideremos a sequência $0,1,0,1,0,1,\ldots$. Isto é,
-$x_n = 0$ se $n$ é ímpar, e $x_n = 1$ se $n$ é par. A sequência
-$\{ x_n \}_{n=1}^\infty$ é divergente; no entanto, a subsequência
-$\{ x_{2i} \}_{i=1}^\infty$ converge para 1 e a subsequência
-$\{ x_{2i+1} \}_{i=1}^\infty$ converge para 0. Compare com \propref{seqconvsubseqconv:prop}.
+Existence of a convergent subsequence does not imply
+convergence of the sequence itself.
+Take the sequence $0,1,0,1,0,1,\ldots$.  That is,
+$x_n = 0$ if $n$ is odd, and $x_n = 1$ if $n$ is even.  The sequence
+$\{ x_n \}_{n=1}^\infty$ is divergent; however, the subsequence
+$\{ x_{2i} \}_{i=1}^\infty$ converges to 1 and the subsequence
+$\{ x_{2i+1} \}_{i=1}^\infty$ converges to 0.  Compare \propref{seqconvsubseqconv:prop}.
 \end{example}
 
-\subsection{Exercícios}
+\subsection{Exercises}
 
 \begin{exnote}
-Nos exercícios a seguir, sinta-se à vontade para usar o que sabe de cálculo para
-encontrar o limite, se existir. Mas você deve \emph{demonstrar}
-que
-encontrou o limite correto, ou provar que a sequência é divergente.
+In the following exercises, feel free to use what you know from calculus to
+find the limit, if it exists.  But you must \emph{prove}
+that you
+found the correct limit, or prove that the sequence is divergent.
 \end{exnote}
 
 \begin{exercise}
-A sequência
+Is the sequence
 $\{ 3n \}_{n=1}^\infty$
-é limitada? Demonstre ou refute.
+bounded?  Prove or disprove.
 \end{exercise}
 
 \begin{exercise}
-A sequência
+Is the sequence
 $\{ n \}_{n=1}^\infty$
-é convergente? Em caso afirmativo, qual é o limite?
+convergent?  If so, what is the limit?
 \end{exercise}
 
 \begin{exercise}
-A sequência
+Is the sequence
 $\left\{ \dfrac{{(-1)}^n}{2n} \right\}_{n=1}^\infty$
-é convergente? Em caso afirmativo, qual é o limite?
+convergent?  If so, what is the limit?
 \end{exercise}
 
 \begin{exercise}
-A sequência
+Is the sequence
 $\{ 2^{-n} \}_{n=1}^\infty$
-é convergente? Em caso afirmativo, qual é o limite?
+convergent?  If so, what is the limit?
 \end{exercise}
 
 \begin{exercise}
-A sequência
+Is the sequence
 $\left\{ \dfrac{n}{n+1} \right\}_{n=1}^\infty$
-é convergente? Em caso afirmativo, qual é o limite?
+convergent?  If so, what is the limit?
 \end{exercise}
 
 \begin{exercise}
-A sequência
+Is the sequence
 $\left\{ \dfrac{n}{n^2+1} \right\}_{n=1}^\infty$
-é convergente? Em caso afirmativo, qual é o limite?
+convergent?  If so, what is the limit?
 \end{exercise}
 
 \begin{exercise} \label{exercise:absconv}
-Seja $\{ x_n \}_{n=1}^\infty$ uma sequência.
+Let $\{ x_n \}_{n=1}^\infty$ be a sequence.
 \begin{enumerate}[a)]
-\item Mostre que $\lim\limits_{n\to\infty} x_n = 0$ (isto é, o limite existe e é zero)
-se, e somente se, $\lim\limits_{n\to\infty} \sabs{x_n} = 0$.
-\item Dê um exemplo em que $\{ \sabs{x_n} \}_{n=1}^\infty$ converge e
+\item Show that $\lim\limits_{n\to\infty} x_n = 0$ (that is, the limit exists and is zero)
+if and only if $\lim\limits_{n\to\infty} \sabs{x_n} = 0$.
+\item Find an example such that $\{ \sabs{x_n} \}_{n=1}^\infty$ converges and
 $\{ x_n \}_{n=1}^\infty$
-diverge.
+diverges.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-A sequência
+Is the sequence
 $\left\{ \dfrac{2^n}{n!} \right\}_{n=1}^\infty$
-é convergente? Em caso afirmativo, qual é o limite?
+convergent?  If so, what is the limit?
 \end{exercise}
 
 \begin{exercise}
-Mostre que a sequência
-$\left\{ \dfrac{1}{\sqrt[3]{n}} \right\}_{n=1}^\infty$ é monótona e limitada. Em seguida, use
-\thmref{thm:monotoneconv} para encontrar seu limite.
+Show that the sequence
+$\left\{ \dfrac{1}{\sqrt[3]{n}} \right\}_{n=1}^\infty$ is monotone and bounded.  Then use
+\thmref{thm:monotoneconv} to find the limit.
 \end{exercise}
 
 \begin{exercise}
-Mostre que a sequência
+Show that the sequence
 $\left\{ \dfrac{n+1}{n} \right\}_{n=1}^\infty$
-é monótona e limitada. Em seguida, use
-\thmref{thm:monotoneconv} para encontrar seu limite.
+is monotone and bounded.  Then use
+\thmref{thm:monotoneconv} to find the limit.
 \end{exercise}
 
 \begin{exercise}
-Conclua a demonstração do \thmref{thm:monotoneconv} para sequências monótonas decrescentes.
+Finish the proof of \thmref{thm:monotoneconv} for monotone decreasing
+sequences.
 \end{exercise}
 
 \begin{exercise}
-Demonstre \propref{prop:supinfseq}.
+Prove \propref{prop:supinfseq}.
 \end{exercise}
 
 \begin{exercise}
-Seja $\{ x_n \}_{n=1}^\infty$ uma sequência monótona convergente. Suponha
-que exista um $k \in \N$ tal que
+Let $\{ x_n \}_{n=1}^\infty$ be a convergent monotone sequence.  Suppose 
+there exists a $k \in \N$ such that
 \begin{equation*}
 \lim_{n\to \infty} x_n = x_k .
 \end{equation*}
-Mostre que $x_n = x_k$ para todo $n \geq k$.
+Show that $x_n = x_k$ for all $n \geq k$.
 \end{exercise}
 
 \begin{exercise}
 \pagebreak[2]
-Encontre uma subsequência convergente da sequência
+Find a convergent subsequence of the sequence
 $\bigl\{ {(-1)}^n \bigr\}_{n=1}^\infty$.
 \end{exercise}
 
 \begin{exercise}
-Seja $\{x_n\}_{n=1}^\infty$ uma sequência definida por
+Let $\{x_n\}_{n=1}^\infty$ be a sequence defined by
 \begin{equation*}
-x_n \coloneqq
+x_n \coloneqq 
 \begin{cases}
-n               & \text{se } n \text{ é ímpar} , \\
-\nicefrac{1}{n} & \text{se } n \text{ é par} .
+n               & \text{if } n \text{ is odd} , \\
+\nicefrac{1}{n} & \text{if } n \text{ is even} .
 \end{cases}
 \avoidbreak
 \end{equation*}
 \begin{enumerate}[a)]
-\item A sequência é limitada? (demonstre ou refute)
-\item Existe alguma subsequência convergente? Em caso afirmativo, encontre-a.
+\item Is the sequence bounded? (prove or disprove)
+\item Is there a convergent subsequence?  If so, find it.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
 \pagebreak[2]
-Seja $\{ x_n \}_{n=1}^\infty$ uma sequência.
-Suponha que haja duas subsequências convergentes $\{ x_{n_i} \}_{i=1}^\infty$ e
-$\{ x_{m_i} \}_{i=1}^\infty$. Suponha que
+Let $\{ x_n \}_{n=1}^\infty$ be a sequence.
+Suppose there are two convergent subsequences $\{ x_{n_i} \}_{i=1}^\infty$ and
+$\{ x_{m_i} \}_{i=1}^\infty$.  Suppose 
 \begin{equation*}
 \lim_{i\to\infty} x_{n_i} = a
-\qquad \text{e} \qquad
+\qquad \text{and} \qquad
 \lim_{i\to\infty} x_{m_i} = b,
 \end{equation*}
-em que $a \neq b$. Demonstre que $\{ x_n \}_{n=1}^\infty$ não é convergente sem
-usar \propref{prop:seqtosubseq}.
+where $a \neq b$.  Prove that $\{ x_n \}_{n=1}^\infty$ is not convergent, without
+using \propref{prop:seqtosubseq}.
 \end{exercise}
 
-\begin{exercise}[Desafiador]
-Encontre uma sequência $\{ x_n \}_{n=1}^\infty$ tal que, para todo $y \in \R$, exista uma
-subsequência $\{ x_{n_i} \}_{i=1}^\infty$ que convirja para $y$.
+\begin{exercise}[Tricky]
+Find a sequence $\{ x_n \}_{n=1}^\infty$ such that for every $y \in \R$, there exists a
+subsequence $\{ x_{n_i} \}_{i=1}^\infty$ converging to $y$.
 \end{exercise}
 
-\begin{exercise}[Fácil]
-Seja $\{ x_n \}_{n=1}^\infty$ uma sequência e $x \in \R$.
-Suponha que, para todo $\epsilon > 0$, exista um $M$ tal que
-$\sabs{x_n-x} \leq \epsilon$ para todo $n \geq M$.
-Mostre que $\lim\limits_{n\to\infty} x_n = x$.
+\begin{exercise}[Easy]
+Let $\{ x_n \}_{n=1}^\infty$ be a sequence and $x \in \R$.
+Suppose for every $\epsilon > 0$, there is an $M$ such that
+$\sabs{x_n-x} \leq \epsilon$ for all $n \geq M$.
+Show that $\lim\limits_{n\to\infty} x_n = x$.
 \end{exercise}
 
-\begin{exercise}[Fácil]
-Seja $\{ x_n \}_{n=1}^\infty$ uma sequência e $x \in \R$ tal que
-exista um $k \in \N$ para o qual, para todo $n \geq k$,
-$x_n = x$. Demonstre que $\{ x_n \}_{n=1}^\infty$ converge para $x$.
+\begin{exercise}[Easy]
+Let $\{ x_n \}_{n=1}^\infty$ be a sequence and $x \in \R$ such that
+there exists a $k \in \N$ such that for all $n \geq k$,
+$x_n = x$.  Prove that $\{ x_n \}_{n=1}^\infty$ converges to $x$.
 \end{exercise}
 
 \begin{exercise}
-Seja $\{ x_n \}_{n=1}^\infty$ uma sequência e
-definamos uma sequência $\{ y_n \}_{n=1}^\infty$ por
-$y_{2k} \coloneqq x_{k^2}$ e $y_{2k-1} \coloneqq x_k$ para todo $k \in \N$.
-Demonstre que $\{ x_n \}_{n=1}^\infty$ converge se, e somente se,
-$\{ y_n \}_{n=1}^\infty$ converge.
-Além disso, demonstre que, se convergirem, então
+Let $\{ x_n \}_{n=1}^\infty$ be a sequence and
+define a sequence $\{ y_n \}_{n=1}^\infty$ by
+$y_{2k} \coloneqq x_{k^2}$ and $y_{2k-1} \coloneqq x_k$ for all $k \in \N$.
+Prove that $\{ x_n \}_{n=1}^\infty$ converges if and only if
+$\{ y_n \}_{n=1}^\infty$ converges.
+Furthermore, prove that if they converge, then
 $\lim\limits_{n\to\infty} x_n = \lim\limits_{n\to\infty} y_n$.
 \end{exercise}
 
 \begin{exercise}
-Mostre que a cauda de ordem 3 da sequência definida por $x_n \coloneqq \frac{n}{n^2+16}$ é
-monótona decrescente. Dica: suponha $n \geq m \geq 4$ e considere o
-numerador da expressão $x_n-x_m$.
+Show that the 3-tail of the sequence defined by $x_n \coloneqq \frac{n}{n^2+16}$ is
+monotone decreasing.  Hint: Suppose $n \geq m \geq 4$ and consider the 
+numerator of the expression $x_n-x_m$.
 \end{exercise}
 
 \begin{exercise}
-Suponha que $\{ x_n \}_{n=1}^\infty$ seja uma sequência tal que
-as subsequências $\{ x_{2n} \}_{n=1}^\infty$, $\{ x_{2n-1} \}_{n=1}^\infty$ e
-$\{ x_{3n} \}_{n=1}^\infty$ convirjam. Mostre que $\{ x_n \}_{n=1}^\infty$ converge.
+Suppose that $\{ x_n \}_{n=1}^\infty$ is a sequence such that
+the subsequences $\{ x_{2n} \}_{n=1}^\infty$, $\{ x_{2n-1} \}_{n=1}^\infty$, and
+$\{ x_{3n} \}_{n=1}^\infty$ all converge.  Show that $\{ x_n \}_{n=1}^\infty$ is convergent.
 \end{exercise}
 
 \begin{exercise}
-Suponha que $\{ x_n \}_{n=1}^\infty$ seja uma sequência monótona crescente que
-tenha uma subsequência convergente.
-Mostre que $\{ x_n \}_{n=1}^\infty$ converge.
-Observação: Assim, \propref{prop:seqtosubseq} é um \myquote{se, e somente se} para sequências monótonas.
+Suppose that $\{ x_n \}_{n=1}^\infty$ is a monotone increasing sequence that
+has a convergent subsequence.
+Show that $\{ x_n \}_{n=1}^\infty$ is convergent.
+Note: So \propref{prop:seqtosubseq} is an \myquote{if and only if} for monotone sequences.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

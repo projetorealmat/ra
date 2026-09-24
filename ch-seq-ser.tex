@@ -3332,49 +3332,49 @@ Naturalmente, não podemos multiplicar
 termo a termo. Essa estratégia nem sequer funciona para somas finitas:
 $(a+b)(c+d) \neq ac+bd$.
 
-\subsection{Absolute convergence}
+\subsection{Convergência absoluta}
 
-As monotone sequences are easier to work with than arbitrary sequences, it
-is usually easier to work with series $\sum_{n=1}^\infty x_n$, where $x_n \geq 0$ for
-all $n$.  The sequence of partial sums is then monotone increasing
-and converges if it is bounded above.
-Let us formalize this statement as a proposition.
+Como é mais fácil trabalhar com sequências monótonas do que com sequências arbitrárias,
+em geral é mais fácil trabalhar com séries $\sum_{n=1}^\infty x_n$ em que $x_n \geq 0$ para
+todo $n$. Nesse caso, a sequência das somas parciais é monótona não decrescente
+e converge se for limitada superiormente.
+Formalizemos essa afirmação em uma proposição.
 
 \begin{prop}
-If $x_n \geq 0$ for all $n$, then $\sum_{n=1}^\infty x_n$ converges if and only if
-the sequence of partial sums is bounded above.
+Se $x_n \geq 0$ para todo $n$, então $\sum_{n=1}^\infty x_n$ converge se, e somente se,
+a sequência das somas parciais é limitada superiormente.
 \end{prop}
 
-The limit of a monotone increasing sequence is the supremum.
-So when $x_n \geq 0$ for all $n$, we have the
-inequality
+O limite de uma sequência monótona não decrescente é seu supremo.
+Assim, quando $x_n \geq 0$ para todo $n$, vale a
+desigualdade
 \begin{equation*}
 \sum_{n=1}^k x_n \leq
 \sum_{n=1}^\infty x_n .
 \end{equation*}
-If we allow infinite limits, the inequality still
-holds even when the series diverges to infinity, although in that case it is not
-terribly useful.
+Se admitirmos limites infinitos, a desigualdade ainda
+vale quando a série diverge para infinito, embora, nesse caso, não seja
+muito útil.
 
-We will see that the following common criterion for convergence of series 
-has big implications for how the series can be manipulated.
+Veremos que o seguinte critério comum de convergência de séries
+tem consequências importantes para as operações que podemos realizar com elas.
 
 \begin{defn}
-A series $\sum_{n=1}^\infty x_n$
-\emph{\myindex{converges absolutely}}\index{absolute convergence} if
-the series $\sum_{n=1}^\infty \sabs{x_n}$ converges.
-If a series converges, but does not converge absolutely, we say
-it \emph{\myindex{converges conditionally}}.\index{conditional convergence}
+Uma série $\sum_{n=1}^\infty x_n$
+\emph{\myindex{converge absolutamente}}\index{convergência absoluta} se
+a série $\sum_{n=1}^\infty \sabs{x_n}$ converge.
+Se uma série converge, mas não converge absolutamente, dizemos
+que ela \emph{\myindex{converge condicionalmente}}.\index{convergência condicional}
 \end{defn}
 
 \begin{prop}
-If the series $\sum_{n=1}^\infty x_n$ converges absolutely, then it converges.
+Se a série $\sum_{n=1}^\infty x_n$ converge absolutamente, então ela converge.
 \end{prop}
 
 \begin{proof}
-A series is convergent if and only if it is Cauchy.
-Suppose $\sum_{n=1}^\infty \sabs{x_n}$ is Cauchy.  That is, for every $\epsilon > 0$,
-there exists an $M$ such that for all $k \geq M$ and all $n > k$, we have 
+Uma série converge se, e somente se, é de Cauchy.
+Suponha que $\sum_{n=1}^\infty \sabs{x_n}$ seja de Cauchy. Isto é, para todo $\epsilon > 0$,
+existe $M$ tal que, para todo $k \geq M$ e todo $n > k, vale 
 \begin{equation*}
 \sum_{i=k+1}^n \sabs{x_i} 
 =
@@ -3382,7 +3382,7 @@ there exists an $M$ such that for all $k \geq M$ and all $n > k$, we have
 <
 \epsilon .
 \end{equation*}
-We apply the triangle inequality for a finite sum to obtain
+Aplicamos a desigualdade triangular para somas finitas e obtemos
 \begin{equation*}
 \abs{ \sum_{i=k+1}^n x_i }
 \leq
@@ -3390,39 +3390,38 @@ We apply the triangle inequality for a finite sum to obtain
 <
 \epsilon .
 \end{equation*}
-Hence, $\sum_{n=1}^\infty x_n$ is Cauchy, and therefore it converges.
+Logo, $\sum_{n=1}^\infty x_n$ é de Cauchy e, portanto, converge.
 \end{proof}
 
-If $\sum_{n=1}^\infty x_n$ converges absolutely, the limits of
-$\sum_{n=1}^\infty x_n$ and $\sum_{n=1}^\infty \sabs{x_n}$ are generally different.  Computing one
-does not help us compute the other.  However, the computation above leads to
-a useful inequality for absolutely convergent series,
-a series version of the triangle inequality,
-a proof of which we leave as an exercise:
+Se $\sum_{n=1}^\infty x_n$ converge absolutamente, em geral os limites de
+$\sum_{n=1}^\infty x_n$ e $\sum_{n=1}^\infty \sabs{x_n}$ são diferentes. Calcular um
+deles não ajuda a calcular o outro. No entanto, o cálculo acima conduz a
+uma desigualdade útil para séries absolutamente convergentes:
+uma versão da desigualdade triangular para séries,
+cuja demonstração fica como exercício:
 \begin{equation*}
 \abs{ \sum_{i=1}^\infty x_i }
 \leq
 \sum_{i=1}^\infty \sabs{x_i} .
 \end{equation*}
 
-Absolutely convergent series have many wonderful properties.
-For example, absolutely convergent
-series can be rearranged arbitrarily, or we can multiply such
-series together easily.  Conditionally convergent series,
-on the other hand,
-often do not behave as one would expect.  See the next section.
+As séries absolutamente convergentes têm muitas propriedades importantes.
+Por exemplo, podemos reordenar seus termos arbitrariamente ou multiplicar essas
+séries com facilidade. As séries condicionalmente convergentes,
+por outro lado,
+muitas vezes não se comportam como esperaríamos. Veja a próxima seção.
 
-We leave it as an exercise to show that
+Deixamos como exercício mostrar que
 \begin{equation*}
 \sum_{n=1}^\infty \frac{{(-1)}^n}{n}
 \end{equation*}
-converges, although the reader should finish this section before trying.
-On the other hand, we proved
+converge, embora o leitor deva terminar esta seção antes de tentar.
+Por outro lado, provamos que
 \begin{equation*}
 \sum_{n=1}^\infty \frac{1}{n}
 \end{equation*}
-diverges.  Therefore,
-$\sum_{n=1}^\infty \frac{{(-1)}^n}{n}$ is a conditionally convergent series.
+diverge. Portanto,
+$\sum_{n=1}^\infty \frac{{(-1)}^n}{n}$ é uma série condicionalmente convergente.
 
 \subsection{Comparison test and the \texorpdfstring{$p$}{p}-series}
 

@@ -559,116 +559,116 @@ definimos
 \} .
 \end{equation*}
 
-\subsection{Induction}
+\subsection{Indu\c{c}\~ao}
 
-When a statement includes an arbitrary natural number,
-a common proof method is the principle of induction.  
-We start with the set of natural numbers $\N = \{ 1,2,3,\ldots \}$, and we
-give them their natural ordering, 
-that is, $1 < 2 < 3 < 4 < \cdots$.
-By $S \subset \N$ having a \emph{\myindex{least element}}, we mean that
-there exists an $x \in S$,
-such that for every
-$y \in S$, we have $x \leq y$.
+Quando uma afirmação envolve um número natural arbitrário,
+um método de demonstração comum é o princípio da indução.
+Começamos com o conjunto dos números naturais $\N = \{ 1,2,3,\ldots \}$ e
+consideramos sua ordem usual,
+isto é, $1 < 2 < 3 < 4 < \cdots$.
+Dizer que $S \subset \N$ possui um \emph{\myindex{menor elemento}} significa
+que existe $x \in S$ tal que, para todo
+$y \in S$, temos $x \leq y$.
 
-The natural numbers $\N$ ordered in the natural way
-possess the \emph{\myindex{well ordering property}}.
-We take this property
-as an \myindex{axiom}; we simply assume it is true.
+Os números naturais $\N$, ordenados da maneira usual,
+satisfazem a \emph{\myindex{propriedade da boa ordena\c{c}\~ao}}.
+Adotamos essa propriedade como um \myindex{axioma}; simplesmente a supomos
+verdadeira.
 
 %mbxSTARTIGNORE
 \theoremstyle{plain}
-\newtheorem*{wellordprop}{Well ordering property of $\N$}
+\newtheorem*{wellordprop}{Propriedade da boa ordena\c{c}\~ao de $\N$}
 \hypertarget{wop:link}{}%
 \begin{wellordprop}
-Every nonempty subset of $\N$ has a least (smallest) element.
+Todo subconjunto não vazio de $\N$ possui um elemento mínimo (ou seja, um
+menor elemento).
 \end{wellordprop}
 %mbxENDIGNORE
 %mbx <axiom xml:id="wop_link" number="">
-%mbx   <title>Well ordering property of <m>\N</m></title>
+%mbx   <title>Propriedade da boa ordenação de <m>\N</m></title>
 %mbx   <statement><p>
-%mbx   Every nonempty subset of <m>\N</m> has a least (smallest) element
+%mbx   Todo subconjunto não vazio de <m>\N</m> possui um elemento mínimo (ou seja, um menor elemento)
 %mbx   </p></statement>
 %mbx </axiom>
 
-The \emph{principle of \myindex{induction}}\index{principle of induction} is
-the following theorem, which is in a sense\footnote{To be completely
-rigorous, this equivalence is only true if we
-also assume as an axiom that $n-1$ exists for all natural numbers bigger than $1$, which we
-do.  In this book, we are assuming all the usual arithmetic holds.}
-equivalent to the well ordering property of the natural numbers.
+O \emph{princ\'ipio da \myindex{indu\c{c}\~ao}}\index{princ\'ipio da indu\c{c}\~ao}
+\'e o teorema a seguir, que em certo sentido\footnote{Para sermos
+completamente rigorosos, essa equival\^encia s\'o vale se tamb\'em
+admitirmos como axioma que $n-1$ existe para todo n\'umero natural maior que
+$1$, o que fazemos. Neste livro, supomos v\'alidas todas as regras usuais
+da aritm\'etica.}
+\'e equivalente \`a propriedade da boa ordena\c{c}\~ao dos n\'umeros naturais.
 
-\begin{thm}[Principle of induction] \label{induction:thm}
-Let $P(n)$ be a statement depending on a natural number~$n$.  Suppose that
+\begin{thm}[Princ\'ipio da indu\c{c}\~ao] \label{induction:thm}
+Seja $P(n)$ uma afirma\c{c}\~ao que depende de um n\'umero natural~$n$.
+Suponha que
 \begin{enumerate}[(i)]
-\item \emph{(\myindex{basis statement})} $P(1)$ is true.
-\item \emph{(\myindex{induction step})} If $P(n)$ is true, then $P(n+1)$ is true.
+\item \emph{(\myindex{base da indu\c{c}\~ao})} $P(1)$ é verdadeira.
+\item \emph{(\myindex{passo indutivo})} Se $P(n)$ é verdadeira, então
+$P(n+1)$ também é verdadeira.
 \end{enumerate}
-Then $P(n)$ is true for all $n \in \N$.
+Então $P(n)$ é verdadeira para todo $n \in \N$.
 \end{thm}
 
 \begin{proof}
-Let $S$ be the set of natural numbers $n$ for which $P(n)$ is
-not true.  Suppose for contradiction that
-$S$ is nonempty.  Then $S$ has a least element by the well ordering
-property.  Call $m \in S$ the least element of $S$.  We know $1 \notin
-S$ by hypothesis.  So $m > 1$, and $m-1$ is a natural number as well.
-Since $m$ is the least element of $S$, we know that $P(m-1)$ is true.
-But the induction step says that $P(m-1+1) = P(m)$ is true, 
-contradicting the statement that $m \in S$.  Therefore, $S$ is empty and 
-$P(n)$ is true for all $n \in \N$.
+Seja $S$ o conjunto dos números naturais $n$ para os quais $P(n)$ não é
+verdadeira. Suponha, por contradição, que $S$ não seja vazio.
+Pela propriedade da boa ordenação, $S$ possui um menor elemento.
+Seja $m \in S$ o menor elemento de $S$. Pela hipótese, $1 \notin S$. Logo,
+$m > 1$, e $m-1$ também é um número natural.
+Como $m$ é o menor elemento de $S$, sabemos que $P(m-1)$ é verdadeira.
+Porém, o passo indutivo afirma que $P(m-1+1) = P(m)$ é verdadeira, o
+que contradiz a afirmação de que $m \in S$. Portanto, o conjunto $S$ é vazio, e
+$P(n)$ é verdadeira para todo $n \in \N$.
 \end{proof}
 
-The assumption that
-$P(n)$ is true in \myquote{if $P(n)$ is true,
-then $P(n+1)$ is true}
-is usually called the \emph{\myindex{induction hypothesis}}.
-Sometimes it is convenient to start induction
-at a different number than 1,
-all that changes is the labeling.
-For example,
-if starting say at $n=0$, then $P(0)$ is the basis statement,
-and the induction step must be proved for all
+A suposição de que
+$P(n)$ é verdadeira na afirmação \myquote{se $P(n)$ \'e verdadeira,
+então $P(n+1)$ \'e verdadeira}
+costuma ser chamada de \emph{\myindex{hip\'otese de indu\c{c}\~ao}}.
+Às vezes, é conveniente iniciar a indução em um número diferente
+de 1; nesse caso, isso altera apenas a numeração.
+Por exemplo, se começarmos em $n=0$, então $P(0)$ é a base da
+indução, e o passo indutivo deve ser demonstrado para todo
 $n \in \N \cup \{ 0 \}$.
-The conclusion is then that $P(n)$ is true for all
+Concluímos, então, que $P(n)$ é verdadeira para todo
 $n \in \N \cup \{ 0 \}$.
 
 \begin{example}
-Let us prove that for all $n \in \N$,
+Vamos provar que, para todo $n \in \N$,
 \begin{equation*}
-2^{n-1} \leq n! \qquad \text{(recall } n! = 1 \cdot 2 \cdot 3 \cdots n\text{)}.
+2^{n-1} \leq n! \qquad \text{(lembre-se de que } n! = 1 \cdot 2 \cdot 3 \cdots n\text{)}.
 \end{equation*}
-Let $P(n)$ be the statement that
-$2^{n-1} \leq n!$ is true.
-Plug in $n=1$ to see that $P(1)$ is true.
+Seja $P(n)$ a afirmação de que
+$2^{n-1} \leq n!$ é verdadeira.
+Tomando $n=1$, vemos que $P(1)$ é verdadeira.
 
-Suppose $P(n)$ is true.  That is, suppose 
-$2^{n-1} \leq n!$ holds.  Multiply both sides by 2 to obtain
+Suponha que $P(n)$ seja verdadeira, isto é, que
+$2^{n-1} \leq n!$ valha. Multiplicando ambos os lados por 2, obtemos
 \begin{equation*}
 2^n \leq 2(n!) .
 \end{equation*}
-As $2 \leq (n+1)$ when $n \in \N$, we have
-$2(n!) \leq (n+1)(n!) = (n+1)!$.  That is,
+Como $2 \leq (n+1)$ para $n \in \N$, temos
+$2(n!) \leq (n+1)(n!) = (n+1)!$. Isto é,
 \begin{equation*}
 2^n \leq 2(n!) \leq  (n+1)!,
 \end{equation*}
-and hence $P(n+1)$ is true.  By the principle of induction,
-$P(n)$
-is true for all $n \in \N$.  In other words,
-$2^{n-1} \leq n!$ is true for all $n \in \N$.
+e, assim, $P(n+1)$ é verdadeira. Pelo princípio da indução,
+$P(n)$ é verdadeira para todo $n \in \N$. Em outras palavras,
+$2^{n-1} \leq n!$ é verdadeira para todo $n \in \N$.
 \end{example}
 
 \begin{example} \label{example:geometricsum}
-We claim that for all $c \neq 1$
-and all $n \in \N \cup \{ 0 \}$,
+Afirmamos que, para todo $c \neq 1$
+e todo $n \in \N \cup \{ 0 \}$,
 \begin{equation*}
 1 + c + c^2 + \cdots + c^n = \frac{1-c^{n+1}}{1-c} .
 \end{equation*}
 
-Proof: Fix some $c \neq 1$.
-It is easy to check that the equation holds with $n=0$.
-Suppose it holds for some $n$ (including possibly $n=0$).
-Then
+Demonstração: Fixemos $c \neq 1$.
+É fácil verificar que a igualdade vale para $n=0$.
+Suponha que ela valha para algum $n$ (possivelmente $n=0$).
+Então
 \begin{equation*}
 \begin{split}
 1 + c + c^2 + \cdots + c^n + c^{n+1} & =
@@ -678,24 +678,25 @@ Then
 & = \frac{1-c^{n+2}}{1-c} .
 \end{split}
 \end{equation*}
-By the principle of induction, the equation holds for all
+Pelo princípio da indução, a igualdade vale para todo
 $n \in \N \cup \{ 0 \}$.
 \end{example}
 
-Sometimes, it is easier to use in the inductive step
-that $P(k)$ is true for all $k = 1,2,\ldots,n$, not just for $k=n$.
-This principle is called \emph{\myindex{strong induction}} and is equivalent
-to the normal induction above.  The proof of that
-equivalence is left as an exercise.
+Às vezes, é mais fácil usar no passo indutivo o fato de que
+$P(k)$ é verdadeira para todo $k = 1,2,\ldots,n$, e não apenas para $k=n$.
+Esse princípio é chamado de \emph{\myindex{indu\c{c}\~ao forte}} e é
+equivalente ao princípio de indução usual apresentado acima. A demonstração
+dessa equivalência fica como exercício.
 
-\begin{thm}[Principle of strong induction]
-\index{principle of strong induction}\index{strong induction}
-Let $P(n)$ be a statement depending on a natural number $n$.  Suppose that
+\begin{thm}[Princ\'ipio da indu\c{c}\~ao forte]
+\index{princ\'ipio da indu\c{c}\~ao forte}\index{indu\c{c}\~ao forte}
+Seja $P(n)$ uma afirmação que depende de um número natural $n$. Suponha que
 \begin{enumerate}[(i)]
-\item \emph{(\myindex{basis statement})} $P(1)$ is true.
-\item \emph{(\myindex{induction step})} If $P(k)$ is true for all $k = 1,2,\ldots,n$, then $P(n+1)$ is true.
+\item \emph{(\myindex{base da indu\c{c}\~ao})} $P(1)$ é verdadeira.
+\item \emph{(\myindex{passo indutivo})} Se $P(k)$ é verdadeira para todo
+$k = 1,2,\ldots,n$, então $P(n+1)$ é verdadeira.
 \end{enumerate}
-Then $P(n)$ is true for all $n \in \N$.
+Então $P(n)$ é verdadeira para todo $n \in \N$.
 \end{thm}
 
 \subsection{Functions}

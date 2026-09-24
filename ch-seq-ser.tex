@@ -3166,53 +3166,53 @@ e todo $k > n$,
 \end{equation*}
 \end{prop}
 
-\subsection{Basic properties}
+\subsection{Propriedades básicas}
 
 \begin{prop}
-Let $\sum_{n=1}^\infty x_n$ be a convergent series.  Then
-the sequence $\{ x_n \}_{n=1}^\infty$ is convergent and
+Seja $\sum_{n=1}^\infty x_n$ uma série convergente. Então
+a sequência $\{ x_n \}_{n=1}^\infty$ é convergente e
 \begin{equation*}
 \lim_{n\to\infty} x_n = 0.
 \end{equation*}
 \end{prop}
 
 \begin{proof}
-Let $\epsilon > 0$ be given.  As $\sum_{n=1}^\infty x_n$ is convergent, it is Cauchy.
-Thus we find an $M$ such that for every $n \geq M$,
+Seja dado $\epsilon > 0$. Como $\sum_{n=1}^\infty x_n$ converge, ela é de Cauchy.
+Assim, encontramos $M$ tal que, para todo $n \geq M$,
 \begin{equation*}
 \epsilon > 
 \abs{ \sum_{i={n+1}}^{n+1} x_i }
 =
 \sabs{ x_{n+1} } .
 \end{equation*}
-Hence, for every $n \geq M+1$, we have $\sabs{x_{n}} < \epsilon$.
+Logo, para todo $n \geq M+1$, temos $\sabs{x_{n}} < \epsilon$.
 \end{proof}
 
 \begin{example}
-If $r \geq 1$ or $r \leq -1$, then the geometric series $\sum_{n=0}^\infty r^n$
-diverges.
+Se $r \geq 1$ ou $r \leq -1$, então a série geométrica $\sum_{n=0}^\infty r^n$
+diverge.
 
-Proof: $\sabs{r^n} = \sabs{r}^n \geq 1^n = 1$.  The terms do not go to zero
-and the series cannot converge.
+Demonstração: $\sabs{r^n} = \sabs{r}^n \geq 1^n = 1$. Os termos não tendem a zero
+e a série não pode convergir.
 \end{example}
 
-So if a series converges, the terms of the series go to zero.
-The implication, however, goes only one way.
-Let us give an example.
+Portanto, se uma série converge, seus termos tendem a zero.
+A implicação, porém, vale apenas em um sentido.
+Vejamos um exemplo.
 
 \begin{example} \label{example:harmonicseries}
-The series $\sum_{n=1}^\infty \nicefrac{1}{n}$ diverges (despite the fact that
+A série $\sum_{n=1}^\infty \nicefrac{1}{n}$ diverge (embora
 $\lim_{n\to\infty} \nicefrac{1}{n} = 0$).
-This is the famous \emph{\myindex{harmonic series}}%
-\footnote{The divergence of the harmonic series was known 
-long before the theory of series was made rigorous.  The proof we
-give is the earliest proof and was given by
+Esta é a famosa \emph{\myindex{série harmônica}}%
+\footnote{A divergência da série harmônica era conhecida muito
+antes de a teoria das séries ser formalizada. A demonstração que
+apresentamos é a mais antiga e foi dada por
 \href{https://en.wikipedia.org/wiki/Oresme}{Nicole Oresme}
 (1323?--1382).}.
 
-Proof: We will show that the sequence of partial sums is unbounded, and hence
-cannot converge.
-Write the partial sums $s_n$ for $n = 2^k$ as:
+Demonstração: mostraremos que a sequência das somas parciais é ilimitada e, portanto,
+não pode convergir.
+Escrevamos as somas parciais $s_n$ para $n = 2^k$ na forma:
 \begin{align*}
  s_1 & = 1 , \\
  s_2 & = \left( 1 \right) + \left( \frac{1}{2} \right) , \\
@@ -3229,11 +3229,11 @@ Write the partial sums $s_n$ for $n = 2^k$ as:
 \sum_{m=2^{i-1}+1}^{2^i} \frac{1}{m}
 \right) .
 \end{align*}
-Notice $\nicefrac{1}{3} + \nicefrac{1}{4} \geq \nicefrac{1}{4} + \nicefrac{1}{4} =
-\nicefrac{1}{2}$ and
+Observe que $\nicefrac{1}{3} + \nicefrac{1}{4} \geq \nicefrac{1}{4} + \nicefrac{1}{4} =
+\nicefrac{1}{2}$ e
 $\nicefrac{1}{5} + \nicefrac{1}{6} + \nicefrac{1}{7} + \nicefrac{1}{8}
 \geq \nicefrac{1}{8} + \nicefrac{1}{8} + \nicefrac{1}{8} + \nicefrac{1}{8} =
-\nicefrac{1}{2}$.  More generally
+\nicefrac{1}{2}$. Mais geralmente
 \begin{equation*}
 \sum_{m=2^{k-1}+1}^{2^k} \frac{1}{m}
 \geq
@@ -3241,7 +3241,7 @@ $\nicefrac{1}{5} + \nicefrac{1}{6} + \nicefrac{1}{7} + \nicefrac{1}{8}
 =
 (2^{k-1}) \frac{1}{2^k} = \frac{1}{2} .
 \end{equation*}
-Therefore,
+Portanto,
 \begin{equation*}
 s_{2^k} = 
 1 + 
@@ -3252,30 +3252,30 @@ s_{2^k} =
 \geq
 1 + \sum_{i=1}^k \frac{1}{2} = 1 + \frac{k}{2} .
 \end{equation*}
-As $\{ \nicefrac{k}{2} \}_{k=1}^\infty$ is unbounded by the
-\hyperref[thm:arch:i]{Archimedean property},
-$\{ s_{2^k} \}_{k=1}^\infty$ is unbounded,
-and therefore $\{ s_n \}_{n=1}^\infty$ is unbounded.
-Hence, $\{ s_n \}_{n=1}^\infty$ diverges, and consequently $\sum_{n=1}^\infty \nicefrac{1}{n}$ diverges.
+Como $\{ \nicefrac{k}{2} \}_{k=1}^\infty$ é ilimitada pela
+\hyperref[thm:arch:i]{propriedade arquimediana},
+$\{ s_{2^k} \}_{k=1}^\infty$ é ilimitada
+e, portanto, $\{ s_n \}_{n=1}^\infty$ também é ilimitada.
+Logo, $\{ s_n \}_{n=1}^\infty$ diverge e, consequentemente, $\sum_{n=1}^\infty \nicefrac{1}{n}$ diverge.
 \end{example}
 
-Like finite sums, convergent series behave linearly.
-That is, we can multiply them by constants
-and add them and these operations are done term by term.
+Assim como as somas finitas, as séries convergentes obedecem às propriedades de linearidade.
+Isto é, podemos multiplicá-las por constantes
+e somá-las, realizando essas operações termo a termo.
 
-\begin{prop}[Linearity of series]\index{linearity of series}
-Let $\alpha \in \R$ and $\sum_{n=1}^\infty x_n$ and $\sum_{n=1}^\infty y_n$ be
-convergent series.  Then
+\begin{prop}[Linearidade das séries]\index{linearidade!de séries}
+Sejam $\alpha \in \R$ e $\sum_{n=1}^\infty x_n$, $\sum_{n=1}^\infty y_n$
+séries convergentes. Então
 \begin{enumerate}[(i)]
 \item
-$\sum_{n=1}^\infty \alpha x_n$ is a convergent series and
+$\sum_{n=1}^\infty \alpha x_n$ é uma série convergente e
 \begin{equation*}
 \sum_{n=1}^\infty \alpha x_n
 =
 \alpha \sum_{n=1}^\infty x_n .
 \end{equation*}
 \item
-$\sum_{n=1}^\infty ( x_n + y_n )$ is a convergent series and
+$\sum_{n=1}^\infty ( x_n + y_n )$ é uma série convergente e
 \begin{equation*}
 \sum_{n=1}^\infty ( x_n + y_n ) 
 =
@@ -3287,20 +3287,19 @@ $\sum_{n=1}^\infty ( x_n + y_n )$ is a convergent series and
 \end{prop}
 
 \begin{proof}
-For the first item,
-we simply write the $k$th partial sum
+Para o primeiro item,
+escrevemos a $k$-ésima soma parcial
 \begin{equation*}
 \sum_{n=1}^k \alpha x_n
 =
 \alpha \left( \sum_{n=1}^k x_n \right) .
 \end{equation*}
-We look at the right-hand side and note that the constant multiple of
-a convergent sequence
-is convergent.  Hence, we take the limit of both sides to obtain
-the result.
+Observamos que o lado direito é um múltiplo constante de
+uma sequência convergente e, portanto, é convergente. Assim, calculamos o limite dos dois lados e obtemos
+o resultado.
 
-For the second item we also look at the
-$k$th partial sum
+Para o segundo item, também consideramos a
+$k$-ésima soma parcial
 \begin{equation*}
 \sum_{n=1}^k ( x_n + y_n ) 
 =
@@ -3308,17 +3307,17 @@ $k$th partial sum
 +
 \left( \sum_{n=1}^k y_n \right) .
 \end{equation*}
-We look at the right-hand side and note that the sum of convergent sequences
-is convergent.  Hence, we take the limit of both sides to obtain
-the proposition.
+Observamos que o lado direito é a soma de sequências convergentes
+e, portanto, é convergente. Assim, calculamos o limite dos dois lados e obtemos
+a proposição.
 \end{proof}
 
-An example of a useful application of the first item is the following
-formula.  If $\sabs{r} < 1$ and $i \in \N$, then
+Uma aplicação útil do primeiro item é a seguinte
+fórmula. Se $\sabs{r} < 1$ e $i \in \N$, então
 \begin{equation*}
 \sum_{n=i}^\infty r^n = \frac{r^i}{1-r} .
 \end{equation*}
-The formula follows by using the geometric series and multiplying by
+A fórmula decorre da série geométrica e da multiplicação por
 $r^i$:
 \begin{equation*}
 r^i \sum_{n=0}^\infty r^n =
@@ -3327,10 +3326,10 @@ r^i \sum_{n=0}^\infty r^n =
 \sum_{n=i}^\infty r^n .
 \end{equation*}
 
-Multiplying series is not as simple as adding; see the next
-section.
-It is not true, of course, that we multiply
-term by term.  That strategy does not work even for finite sums:
+Multiplicar séries não é tão simples quanto somá-las; veja a próxima
+seção.
+Naturalmente, não podemos multiplicar
+termo a termo. Essa estratégia nem sequer funciona para somas finitas:
 $(a+b)(c+d) \neq ac+bd$.
 
 \subsection{Absolute convergence}

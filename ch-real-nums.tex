@@ -1530,14 +1530,14 @@ Encontre um exemplo em que $f$ seja ilimitada, mas $\alpha f$ seja limitada.
 
 \sectionnewpage
 
-\section{Intervals and the size of \texorpdfstring{$\R$}{R}}
+\section{Intervalos e o tamanho de \texorpdfstring{$\R$}{R}}
 \label{sec:intandsizeR}
 
-\sectionnotes{0.5--1 lecture (proof of uncountability of $\R$ can be optional)}
+\sectionnotes{0,5--1 aula (a demonstração de que $\R$ não é enumerável pode ser opcional)}
 
-You have surely seen the notation for intervals\index{interval}
-before, but let us give a formal
-definition here.  For $a, b \in \R$ such that $a < b$, we define
+Você certamente já viu a notação de intervalos\index{intervalo},
+mas vamos dar aqui uma
+definição formal. Para $a, b \in \R$ tais que $a < b$, definimos
 \glsadd{not:openbdinterval}%
 \glsadd{not:closedbdinterval}%
 \glsadd{not:halfopenbdinterval}%
@@ -1549,250 +1549,249 @@ definition here.  For $a, b \in \R$ such that $a < b$, we define
 & (a,b] \coloneqq \{ x \in \R : a < x \leq b \}, \\
 & [a,b) \coloneqq \{ x \in \R : a \leq x < b \} .
 \end{align*}
-The interval $[a,b]$ is called a \emph{\myindex{closed interval}}
-and $(a,b)$ is called an \emph{\myindex{open interval}}.  The intervals
-of the form $(a,b]$ and $[a,b)$ are called
-\emph{half-open intervals}\index{half-open interval}.
+O intervalo $[a,b]$ é chamado de \emph{\myindex{intervalo fechado}}
+e $(a,b)$ é chamado de \emph{\myindex{intervalo aberto}}. Os intervalos
+da forma $(a,b]$ e $[a,b)$ são chamados de
+\emph{intervalos semiabertos}\index{intervalo semiaberto}.
 
-The intervals above are \emph{bounded intervals}\index{bounded
-interval}, since both $a$ and $b$ are real numbers.\footnote{When we write
-$(a,b)$, $[a,b]$, etc., we will always mean a bounded interval unless we explicitly say
-that $a$ or $b$ could be $-\infty$ or $\infty$.}
-We define \emph{unbounded intervals}\index{unbounded interval},
+Os intervalos acima são \emph{intervalos limitados}\index{intervalo
+limitado}, pois $a$ e $b$ são números reais.\footnote{Quando escrevemos
+$(a,b)$, $[a,b]$ etc., sempre queremos dizer um intervalo limitado, a menos que digamos explicitamente
+que $a$ ou $b$ pode ser $-\infty$ ou $\infty$.}
+Definimos os \emph{intervalos não limitados}\index{intervalo não limitado},
 \begin{align*}
 & [a,\infty) \coloneqq \{ x \in \R : a \leq x \}, \\
 & (a,\infty) \coloneqq \{ x \in \R : a < x \}, \\
 & (-\infty,b] \coloneqq \{ x \in \R : x \leq b \}, \\
 & (-\infty,b) \coloneqq \{ x \in \R : x < b \} .
 \end{align*}
-For completeness, we define $(-\infty,\infty) \coloneqq \R$.
-The intervals $[a,\infty)$, $(-\infty,b]$, and $\R$ are sometimes called
-\emph{\myindex{unbounded closed intervals}},
-and $(a,\infty)$, $(-\infty,b)$, and $\R$ are sometimes called
-\emph{\myindex{unbounded open intervals}}.
+Para completar, definimos $(-\infty,\infty) \coloneqq \R$.
+Às vezes, os intervalos $[a,\infty)$, $(-\infty,b]$ e $\R$ são chamados de
+\emph{\myindex{intervalos fechados não limitados}},
+e $(a,\infty)$, $(-\infty,b)$ e $\R$ são chamados de
+\emph{\myindex{intervalos abertos não limitados}}.
 
-The proof of the following proposition is left as an exercise.
-In short, an interval is a set with at least two points
-that contains all points between any two
-points.\footnote{Sometimes single point sets and the empty set are
-also called intervals, but in this book, intervals have at least two points.
-That is, we only defined the bounded intervals if $a < b$.}
+Deixamos a demonstração da proposição a seguir como exercício.
+Em resumo, um intervalo é um conjunto com pelo menos dois pontos
+que contém todos os pontos entre quaisquer dois
+de seus pontos.\footnote{Às vezes, conjuntos unitários e o conjunto vazio
+também são chamados de intervalos, mas neste livro os intervalos têm pelo menos dois pontos.
+Isto é, só definimos intervalos limitados quando $a < b$.}
 
 \begin{prop} \label{prop:intervaldef}
-A set $I \subset \R$ is an interval if and only if
-$I$ contains at least two points and
-for all $a,c \in I$ and $b \in \R$ such that $a < b < c$, we have $b \in I$.
+Um conjunto $I \subset \R$ é um intervalo se, e somente se,
+$I$ contém pelo menos dois pontos e
+para todos $a,c \in I$ e $b \in \R$ tais que $a < b < c$, temos $b \in I$.
 \end{prop}
 
-We have already seen that every open interval $(a,b)$ (where $a < b$ of course)
-is nonempty.  For example, it contains the number $\frac{a+b}{2}$.
-An unexpected fact is that from a set-theoretic perspective,
-all intervals have the same \myquote{size,} that is, they all have
-the same cardinality.  For instance, the map $f(x) \coloneqq 2x$
-takes the interval $[0,1]$ bijectively to the interval $[0,2]$.
+Já vimos que todo intervalo aberto $(a,b)$ (com $a < b$, é claro)
+é não vazio. Por exemplo, ele contém o número $\frac{a+b}{2}$.
+Um fato surpreendente é que, do ponto de vista da teoria dos conjuntos,
+todos os intervalos têm o mesmo \myquote{tamanho,} isto é, todos têm
+a mesma cardinalidade. Por exemplo, a função $f(x) \coloneqq 2x$
+leva o intervalo $[0,1]$ bijetivamente ao intervalo $[0,2]$.
 
-Perhaps more interestingly,
-the function $f(x) \coloneqq \tan(x)$
-is a bijective map from $(-\nicefrac{\pi}{2},\nicefrac{\pi}{2})$ to $\R$.  Hence the bounded
-interval $(-\nicefrac{\pi}{2},\nicefrac{\pi}{2})$ has the same cardinality as $\R$.  It is not
-straightforward to construct a bijective map from $[0,1]$ to
-$(0,1)$, but it is possible.
+Talvez ainda mais interessante seja a função $f(x) \coloneqq \tan(x)$,
+que é uma função bijetiva de $(-\nicefrac{\pi}{2},\nicefrac{\pi}{2})$ em $\R$. Portanto, o intervalo
+limitado $(-\nicefrac{\pi}{2},\nicefrac{\pi}{2})$ tem a mesma cardinalidade que $\R$. Não é
+simples construir uma função bijetiva de $[0,1]$ para
+$(0,1)$, mas isso é possível.
 
-And do not worry, there does exist a way to measure the \myquote{size} of subsets
-of real numbers that
-\myquote{sees}
-the difference between $[0,1]$ and $[0,2]$.  However, its proper definition
-requires much more machinery than we have right now.
+E não se preocupe: existe uma maneira de medir o \myquote{tamanho} dos subconjuntos
+dos números reais que
+\myquote{percebe}
+a diferença entre $[0,1]$ e $[0,2]$. No entanto, sua definição adequada
+requer muito mais ferramentas do que temos neste momento.
 
-Let us say more about the cardinality of intervals and hence about the
-cardinality of $\R$.  We have seen that there exist irrational numbers;
-that is,
-$\R \setminus \Q$ is nonempty.  The question is: How many irrational numbers
-are there?  It turns out there are a lot more irrational numbers than rational
-numbers.  We have seen that $\Q$ is countable, and we will show
-that $\R$ is uncountable.
-In fact, the cardinality of $\R$ is the
-same as the cardinality of $\sP(\N)$, although we will not prove this
-claim here.
+Digamos mais sobre a cardinalidade dos intervalos e, portanto, sobre a
+cardinalidade de $\R$. Já vimos que existem números irracionais;
+isto é,
+$\R \setminus \Q$ não é vazio. A pergunta é: quantos números irracionais
+existem? Acontece que há muito mais números irracionais do que racionais.
+Vimos que $\Q$ é enumerável, e mostraremos
+que $\R$ não é enumerável.
+Na verdade, a cardinalidade de $\R$ é
+igual à cardinalidade de $\sP(\N)$, embora não demonstremos
+essa afirmação aqui.
 
-\begin{thm}[Cantor]\index{Cantor's theorem}
-$\R$ is uncountable.
+\begin{thm}[Cantor]\index{teorema de Cantor}
+$\R$ não é enumerável.
 \end{thm}
 
-We give a version of
-Cantor's original proof from
-1874 as this proof requires the least setup.  Normally this proof is stated
-as a contradiction.  It is, however, easier
-to understand it as a direct constructive proof that any countably infinite subset
-must miss some element.
+Damos uma versão da demonstração original de Cantor,
+de 1874, pois ela requer o mínimo de preparação. Normalmente, essa demonstração é apresentada
+por contradição. No entanto, é mais fácil
+entendê-la como uma demonstração construtiva direta de que qualquer subconjunto infinito enumerável
+deve deixar de fora algum elemento.
 
 \begin{proof}
-Let $X \subset \R$ be a countably infinite
-subset such that for every pair of real numbers
-$a < b$, there is an $x \in X$ such that $a < x < b$.  Were $\R$ countable,
-we could take $X = \R$.  We will show that $X$ is necessarily
-a proper subset, and so $X$ cannot equal $\R$, and $\R$ must be
-uncountable.
+Seja $X \subset \R$ um subconjunto infinito enumerável
+tal que, para todo par de números reais
+$a < b$, existe $x \in X$ tal que $a < x < b$. Se $\R$ fosse enumerável,
+poderíamos tomar $X = \R$. Mostraremos que $X$ é necessariamente
+um subconjunto próprio e, portanto, $X$ não pode ser igual a $\R$; logo, $\R$ não é
+enumerável.
 
-As $X$ is countably infinite,
-there is a bijection from $\N$ to $X$.  We write $X$ as
-a sequence of real numbers $x_1, x_2, x_3,\ldots$, such that
-each number in $X$
-is given by $x_n$ for some $n \in \N$.
+Como $X$ é infinito enumerável,
+existe uma bijeção de $\N$ em $X$. Escrevemos $X$ como
+uma sequência de números reais $x_1, x_2, x_3,\ldots$, tal que
+cada número de $X$
+é $x_n$ para algum $n \in \N$.
 
-We inductively
-construct two sequences of real numbers $a_1,a_2,a_3,\ldots$ and
-$b_1,b_2,b_3,\ldots$.  Let
-$a_1 \coloneqq x_1$ and $b_1 \coloneqq x_1+1$.
-Note that $a_1 < b_1$ and
+Construiremos indutivamente
+duas sequências de números reais $a_1,a_2,a_3,\ldots$ e
+$b_1,b_2,b_3,\ldots$. Defina
+$a_1 \coloneqq x_1$ e $b_1 \coloneqq x_1+1$.
+Observe que $a_1 < b_1$ e
 $x_1 \notin (a_1,b_1)$.
-For some $k > 1$,
-suppose $a_1,a_2,\ldots,a_{k-1}$ and $b_1,b_2,\ldots,b_{k-1}$ have been
-defined,
-suppose
+Para algum $k > 1$,
+suponha que $a_1,a_2,\ldots,a_{k-1}$ e $b_1,b_2,\ldots,b_{k-1}$ já tenham sido
+definidos,
+que valha
 $a_1 < a_2 < \cdots < a_{k-1} < b_{k-1} < \cdots < b_2 < b_1$,
-and suppose
-for each $j=1,2,\ldots,k-1$,
-we have $x_\ell \notin (a_{j},b_{j})$
-for $\ell=1,2,\ldots,j$.
+e que, para
+cada $j=1,2,\ldots,k-1$,
+tenhamos $x_\ell \notin (a_{j},b_{j})$
+para $\ell=1,2,\ldots,j$.
 \begin{enumerate}[(i)]
-\item Define $a_k \coloneqq x_n$, where $n$ is the smallest $n \in \N$
-such that $x_n \in (a_{k-1},b_{k-1})$.  Such an $x_n$ exists by our
-assumption on $X$, and $n \geq k$ by the assumption on $(a_{k-1},b_{k-1})$.
-\item Next, define $b_k$ to be some real number in $(a_{k},b_{k-1})$,
-for example $b_k \coloneqq \frac{a_k+b_{k-1}}{2}$.
+\item Defina $a_k \coloneqq x_n$, onde $n$ é o menor $n \in \N$
+tal que $x_n \in (a_{k-1},b_{k-1})$. Tal $x_n$ existe pela nossa
+hipótese sobre $X$, e $n \geq k$ pela hipótese sobre $(a_{k-1},b_{k-1})$.
+\item Em seguida, defina $b_k$ como um número real em $(a_{k},b_{k-1})$,
+por exemplo, $b_k \coloneqq \frac{a_k+b_{k-1}}{2}$.
 \end{enumerate}
-Notice that %$a_k < b_k$ and
+Observe que %$a_k < b_k$ e
 $a_{k-1} < a_k < b_k < b_{k-1}$.
-Also notice that $(a_{k},b_{k})$ does not contain $x_k$ and hence
-does not contain $x_{\ell}$ for $\ell=1,2,\ldots,k$.
-The two sequences are now defined.
+Observe também que $(a_{k},b_{k})$ não contém $x_k$ e, portanto,
+não contém $x_{\ell}$ para $\ell=1,2,\ldots,k$.
+Agora as duas sequências estão definidas.
 
-Claim: \emph{$a_n < b_m$ for all $n$ and $m$ in $\N$.} Proof: Let us first
-assume $n < m$.  Then $a_n < a_{n+1} < \cdots < a_{m-1} < a_m < b_m$.
-Similarly for $n > m$.  The claim follows.
+Afirmação: \emph{$a_n < b_m$ para todos $n$ e $m$ em $\N$.} Demonstração: suponha primeiro
+$n < m$. Então $a_n < a_{n+1} < \cdots < a_{m-1} < a_m < b_m$.
+O mesmo vale para $n > m$. A afirmação está demonstrada.
 
-Let $A \coloneqq \{ a_n : n \in \N \}$ and $B \coloneqq \{ b_n : n \in \N \}$.
-By \propref{infsupineq:prop} and the claim above,
+Sejam $A \coloneqq \{ a_n : n \in \N \}$ e $B \coloneqq \{ b_n : n \in \N \}$.
+Pela \propref{infsupineq:prop} e pela afirmação acima,
 \begin{equation*}
 \sup\, A \leq \inf\, B .
 \end{equation*}
-Define $y \coloneqq \sup\, A$.  The number $y$ cannot be a member of $A$: If $y = a_n$
-for some $n$, then $y < a_{n+1}$, which is impossible.
-Similarly, $y$ cannot be a member of $B$.  Therefore,
-$a_n < y$ for all $n\in \N$
-and $y < b_n$ for all $n\in \N$.
-In other words, for every $n \in \N$, we have $y \in (a_n,b_n)$.
-By the construction of the sequence, $x_n \notin (a_n,b_n)$,
-and so $y \neq x_n$.  As $y \neq x_n$ for all $n \in \N$, we have that $y
+Defina $y \coloneqq \sup\, A$. O número $y$ não pode pertencer a $A$: se $y = a_n$
+para algum $n$, então $y < a_{n+1}$, o que é impossível.
+Da mesma forma, $y$ não pode pertencer a $B$. Portanto,
+$a_n < y$ para todo $n\in \N$
+e $y < b_n$ para todo $n\in \N$.
+Em outras palavras, para todo $n \in \N$, temos $y \in (a_n,b_n)$.
+Pela construção da sequência, $x_n \notin (a_n,b_n)$,
+e, portanto, $y \neq x_n$. Como $y \neq x_n$ para todo $n \in \N$, temos $y
 \notin X$.
 
-We have constructed a real number $y$ that is not in $X$, and thus $X$
-is a proper subset of $\R$.
-The sequence $x_1,x_2,\ldots$ cannot contain all elements of $\R$,
-and thus $\R$ is uncountable.
+Construímos um número real $y$ que não pertence a $X$, portanto $X$
+é um subconjunto próprio de $\R$.
+A sequência $x_1,x_2,\ldots$ não pode conter todos os elementos de $\R$,
+e, portanto, $\R$ não é enumerável.
 \end{proof}
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
 \begin{exercise}
-For $a < b$, construct an explicit bijection from $(a,b]$ to $(0,1]$.
+Para $a < b$, construa uma função bijetiva explícita de $(a,b]$ para $(0,1]$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon [0,1] \to (0,1)$ is a bijection.
-Using $f$, construct a
-bijection from $[-1,1]$ to $\R$.
+Suponha que $f \colon [0,1] \to (0,1)$ seja uma função bijetiva.
+Usando $f$, construa uma
+função bijetiva de $[-1,1]$ para $\R$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:intervaldef}
-Prove \propref{prop:intervaldef}.
-That is,
-suppose $I \subset \R$ is a subset with at least two elements
-such that if $a < b < c$ and $a, c \in I$, then $b \in I$.
-Prove that $I$ is one of the nine types of intervals explicitly
-given in this section.
-Furthermore, prove that the intervals given in this section
-all satisfy this property.
+Demonstre \propref{prop:intervaldef}.
+Isto é,
+suponha que $I \subset \R$ seja um subconjunto com pelo menos dois elementos
+tal que, se $a < b < c$ e $a, c \in I$, então $b \in I$.
+Demonstre que $I$ é um dos nove tipos de intervalos explicitamente
+definidos nesta seção.
+Além disso, demonstre que todos os intervalos definidos nesta seção
+satisfazem essa propriedade.
 \end{exercise}
 
-\begin{exercise}[Hard]
-Construct an explicit bijection from $(0,1]$ to $(0,1)$.
-Hint: One approach is as follows: First map $(\nicefrac{1}{2},1]$
-to $(0,\nicefrac{1}{2}]$, then map
+\begin{exercise}[Difícil]
+Construa uma função bijetiva explícita de $(0,1]$ para $(0,1)$.
+Dica: uma abordagem possível é a seguinte: primeiro leve $(\nicefrac{1}{2},1]$
+a $(0,\nicefrac{1}{2}]$, depois leve
 $(\nicefrac{1}{4},\nicefrac{1}{2}]$
-to $(\nicefrac{1}{2},\nicefrac{3}{4}]$, etc.
-Write down the map explicitly, that
-is, write down an algorithm that tells you exactly what number goes where.
-Then prove that the map is a bijection.
+a $(\nicefrac{1}{2},\nicefrac{3}{4}]$, e assim por diante.
+Escreva a função explicitamente, isto é,
+escreva um algoritmo que indique exatamente para onde cada número vai.
+Em seguida, demonstre que a função é bijetiva.
 \end{exercise}
 
-\begin{exercise}[Hard]
-Construct an explicit bijection from $[0,1]$ to $(0,1)$.
+\begin{exercise}[Difícil]
+Construa uma função bijetiva explícita de $[0,1]$ para $(0,1)$.
 \end{exercise}
 
 \begin{exercise}
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Show that every closed interval $[a,b]$ is the intersection
-of countably many open intervals.
+Mostre que todo intervalo fechado $[a,b]$ é a interseção
+de uma quantidade enumerável de intervalos abertos.
 \item
-Show that every open interval $(a,b)$
-is a countable union of closed intervals.
+Mostre que todo intervalo aberto $(a,b)$
+é uma união enumerável de intervalos fechados.
 \item
-Show that an intersection
-of a nonempty and possibly infinite family of bounded closed intervals,
+Mostre que a interseção
+de uma família não vazia e possivelmente infinita de intervalos fechados limitados,
 $\bigcap\limits_{\lambda \in I} [a_\lambda,b_\lambda]$,
-is either empty, a single point,
-or a bounded closed interval.
+é vazia, um único ponto
+ou um intervalo fechado limitado.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Suppose $S$ is a set of disjoint open intervals in $\R$.  That is,
-if $(a,b) \in S$ and $(c,d) \in S$, then either $(a,b) = (c,d)$
-or $(a,b) \cap (c,d) = \emptyset$.  Prove $S$ is a countable set.
+Suponha que $S$ seja um conjunto de intervalos abertos disjuntos em $\R$. Isto é,
+se $(a,b) \in S$ e $(c,d) \in S$, então ou $(a,b) = (c,d)$
+ou $(a,b) \cap (c,d) = \emptyset$. Demonstre que $S$ é enumerável.
 \end{exercise}
 
 \begin{exercise}
-Prove that the cardinality of $[0,1]$ is the same as the cardinality of
-$(0,1)$ by showing that
-$\babs{[0,1]} \leq \babs{(0,1)}$ and
+Demonstre que a cardinalidade de $[0,1]$ é igual à cardinalidade de
+$(0,1)$ mostrando que
+$\babs{[0,1]} \leq \babs{(0,1)}$ e
 $\babs{(0,1)} \leq \babs{[0,1]}$.
-See \defnref{def:comparecards}.
-This proof requires the Cantor--Bernstein--Schr\"oder theorem, which we
-stated without proof.  Note that this proof does not give you an
-explicit bijection.
+Veja \defnref{def:comparecards}.
+Esta demonstração requer o teorema de Cantor--Bernstein--Schr\"oder, que
+enunciamos sem demonstração. Observe que esta demonstração não fornece
+uma função bijetiva explícita.
 \end{exercise}
 
-\begin{exercise}[Challenging]
-A number $x$ is \emph{algebraic}\index{algebraic number} if $x$ is a root of
-a nonzero polynomial with
-integer coefficients, in other words, $a_n x^n + a_{n-1} x^{n-1} + \cdots
-+ a_1 x + a_0 = 0$ where $a_0,a_1,\ldots,a_n \in \Z$, but not all zero.
+\begin{exercise}[Desafiador]
+Um número $x$ é \emph{algébrico}\index{número algébrico} se $x$ for raiz de
+um polinômio não nulo com
+coeficientes inteiros, ou seja, se $a_n x^n + a_{n-1} x^{n-1} + \cdots
++ a_1 x + a_0 = 0$, onde $a_0,a_1,\ldots,a_n \in \Z$, mas nem todos são zero.
 \begin{enumerate}[a)]
 \item
-Show that there are only
-countably many algebraic numbers.
+Mostre que há apenas
+uma quantidade enumerável de números algébricos.
 \item
-Show that there exist non-algebraic (transcendental)
-numbers (follow in the footsteps of Cantor, use the uncountability of $\R$).
+Mostre que existem números não algébricos (transcendentes)
+(siga os passos de Cantor e use a não enumerabilidade de $\R$).
 \end{enumerate}
-Hint: Feel free to use the fact that a nonzero polynomial of degree $n$ has at most $n$ real
-roots.
+Dica: você pode usar o fato de que um polinômio não nulo de grau $n$ tem no máximo $n$ raízes
+reais.
 \end{exercise}
 
-\begin{exercise}[Challenging]
-Let $F$ be the set of all functions $f \colon \R \to \R$.
-Prove $\sabs{\R} < \sabs{F}$
-using Cantor's \thmref{cantorspowersetthm}.\footnote{Interestingly,
-if $C$ is the set of continuous functions, then $\sabs{\R} = \sabs{C}$.}
+\begin{exercise}[Desafiador]
+Seja $F$ o conjunto de todas as funções $f \colon \R \to \R$.
+Demonstre que $\sabs{\R} < \sabs{F}$
+usando o \thmref{cantorspowersetthm} de Cantor.\footnote{Curiosamente,
+se $C$ é o conjunto das funções contínuas, então $\sabs{\R} = \sabs{C}$.}
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
+
 \section{Decimal representation of the reals}
 \label{sec:decimals}
 

@@ -528,51 +528,50 @@ será decrescente. Deixamos a demonstração como exercício. Como a cauda de í
 é monótona e limitada inferiormente por zero, ela é convergente; portanto,
 a sequência também é convergente.
 
-\subsection{Subsequences}
+\subsection{Subsequ\^encias}
 
-It is useful to sometimes consider only some terms of a sequence.
-A subsequence of $\{ x_n \}_{n=1}^\infty$ is a sequence that contains
-only some of the numbers from $\{ x_n \}_{n=1}^\infty$ in the same order.
+Às vezes, é útil considerar apenas alguns termos de uma sequência.
+Uma subsequência de $\{ x_n \}_{n=1}^\infty$ é uma sequência que contém
+apenas alguns dos termos de $\{ x_n \}_{n=1}^\infty$, na mesma ordem.
 
 \begin{defn}
-Let $\{ x_n \}_{n=1}^\infty$ be a sequence.
-Let $\{ n_i \}_{i=1}^\infty$ be a strictly increasing sequence of natural
-numbers, that is, $n_i < n_{i+1}$ for all $i \in \N$ (in other words $n_1 < n_2 < n_3 < \cdots$).  
-The sequence
+Seja $\{ x_n \}_{n=1}^\infty$ uma sequência.
+Seja $\{ n_i \}_{i=1}^\infty$ uma sequência estritamente crescente de
+números naturais, isto é, $n_i < n_{i+1}$ para todo $i \in \N$ (em outras
+palavras, $n_1 < n_2 < n_3 < \cdots$).
+A sequência
 \begin{equation*}
 \{ x_{n_i} \}_{i=1}^\infty
 \end{equation*}
-is called \glsadd{not:subsequence}
-a \emph{\myindex{subsequence}} of $\{ x_n \}_{n=1}^\infty$.
+é chamada de \glsadd{not:subsequence}
+\emph{\myindex{subsequ\^encia}} de $\{ x_n \}_{n=1}^\infty$.
 \end{defn}
 
-So the subsequence is the sequence $x_{n_1},x_{n_2},x_{n_3},\ldots$.
-For instance,
-the sequence
+Assim, a subsequência é a sequência $x_{n_1},x_{n_2},x_{n_3},\ldots$.
+Por exemplo, a sequência
 $\{ \nicefrac{1}{3i} \}_{i=1}^\infty
 = \nicefrac{1}{3},\nicefrac{1}{6},\nicefrac{1}{9},\nicefrac{1}{12},\ldots$
-is a subsequence of
+é uma subsequência de
 $\{ \nicefrac{1}{n} \}_{n=1}^\infty
 = 1, \nicefrac{1}{2},\nicefrac{1}{3},\nicefrac{1}{4},\ldots$.
-To see how these two
-sequences fit in the definition, take $n_i \coloneqq 3i$,
-that is, $\{ n_i \}_{i=1}^\infty$ is the
-sequence $3,6,9,12,\ldots$.  
-The numbers $x_{n_i}$ in the
-subsequence must come from the original sequence.  So $1,0,\nicefrac{1}{3},0,
+Para ver como essas duas sequências se encaixam na definição, tome
+$n_i \coloneqq 3i$; isto é, $\{ n_i \}_{i=1}^\infty$ é a sequência
+$3,6,9,12,\ldots$.
+Os números $x_{n_i}$ da subsequência devem vir da sequência original.
+Assim, $1,0,\nicefrac{1}{3},0,
 \nicefrac{1}{5},\ldots$
-is not a subsequence of $\{ \nicefrac{1}{n} \}_{n=1}^\infty$.  Similarly, order
-must be preserved;
-the sequence $1,\nicefrac{1}{3},\nicefrac{1}{2},\nicefrac{1}{5},\ldots$
-is not a subsequence of $\{ \nicefrac{1}{n} \}_{n=1}^\infty$.
+A sequência acima não é uma subsequência de $\{ \nicefrac{1}{n} \}_{n=1}^\infty$.
+Além disso, a ordem deve ser preservada: a sequência
+$1,\nicefrac{1}{3},\nicefrac{1}{2},\nicefrac{1}{5},\ldots$
+não é uma subsequência de $\{ \nicefrac{1}{n} \}_{n=1}^\infty$.
 
-A tail of a sequence is one special type of a subsequence.  For an arbitrary
-subsequence, we have the following proposition about convergence,
-which is weaker than that for tails.
+Uma cauda de uma sequência é um tipo especial de subsequência. Para uma
+subsequência arbitrária, temos a seguinte proposição sobre convergência,
+que é mais fraca do que o resultado para caudas.
 
 \begin{prop} \label{prop:seqtosubseq}
-If $\{ x_n \}_{n=1}^\infty$ is a convergent sequence,
-then every subsequence $\{ x_{n_i} \}_{i=1}^\infty$ is also convergent, and
+Se $\{ x_n \}_{n=1}^\infty$ é uma sequência convergente, então toda
+subsequência $\{ x_{n_i} \}_{i=1}^\infty$ também converge, e
 \begin{equation*}
 \lim_{n\to \infty} x_n = 
 \lim_{i\to \infty} x_{n_i} .
@@ -580,28 +579,29 @@ then every subsequence $\{ x_{n_i} \}_{i=1}^\infty$ is also convergent, and
 \end{prop}
 
 \begin{proof}
-Suppose $\lim_{n\to \infty} x_n = x$.  So for every
-$\epsilon > 0$, there is an $M \in \N$ such that for all $n \geq M$,
+Suponha que $\lim_{n\to \infty} x_n = x$. Então, para todo
+$\epsilon > 0$, existe $M \in \N$ tal que, para todo $n \geq M$,
 \begin{equation*}
 \sabs{x_n - x} < \epsilon .
 \end{equation*}
-It is not hard to prove (do it!) by \hyperref[induction:thm]{induction} that
-$n_i \geq i$ for all $i \in \N$.  Hence, $i \geq M$ implies $n_i \geq M$.  Thus,
-for all $i \geq M$,
+Não é difícil provar (faça isso!) por \hyperref[induction:thm]{indução} que
+$n_i \geq i$ para todo $i \in \N$. Portanto, $i \geq M$ implica $n_i \geq M$.
+Assim, para todo $i \geq M$,
 \begin{equation*}
 \sabs{x_{n_i} - x} < \epsilon ,
 \end{equation*}
-and we are done.
+e a demonstração está concluída.
 \end{proof}
 
 \begin{example}
-Existence of a convergent subsequence does not imply
-convergence of the sequence itself.
-Take the sequence $0,1,0,1,0,1,\ldots$.  That is,
-$x_n = 0$ if $n$ is odd, and $x_n = 1$ if $n$ is even.  The sequence
-$\{ x_n \}_{n=1}^\infty$ is divergent; however, the subsequence
-$\{ x_{2i} \}_{i=1}^\infty$ converges to 1 and the subsequence
-$\{ x_{2i+1} \}_{i=1}^\infty$ converges to 0.  Compare \propref{seqconvsubseqconv:prop}.
+A existência de uma subsequência convergente não implica que a própria
+sequência seja convergente.
+Considere a sequência $0,1,0,1,0,1,\ldots$. Isto é,
+$x_n = 0$ se $n$ é ímpar, e $x_n = 1$ se $n$ é par. A sequência
+$\{ x_n \}_{n=1}^\infty$ é divergente; no entanto, a subsequência
+$\{ x_{2i} \}_{i=1}^\infty$ converge para 1 e a subsequência
+$\{ x_{2i+1} \}_{i=1}^\infty$ converge para 0. Compare com
+\propref{seqconvsubseqconv:prop}.
 \end{example}
 
 \subsection{Exercises}

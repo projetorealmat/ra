@@ -2952,123 +2952,118 @@ $\{ x_n \}_{n=1}^\infty$ é de Cauchy.
 
 \sectionnewpage
 
-\section{Series}
+\section{Séries}
 \label{sec:series}
 
 %mbxINTROSUBSECTION
 
-\sectionnotes{2 lectures}
+\sectionnotes{2 aulas}
 
-A fundamental object in mathematics is that of a series.  In fact, when
-the foundations of analysis were being developed, the motivation was to
-understand series.  Understanding series is important in applications
-of analysis.  For example, solutions to differential equations are often
-given as series, and differential equations are the basis for understanding
-almost all of modern science.
+Um objeto fundamental da matemática é a série. De fato, durante o desenvolvimento
+dos fundamentos da análise, a motivação era compreender as séries. Seu estudo é
+importante nas aplicações da análise. Por exemplo, soluções de equações diferenciais
+são frequentemente dadas por séries, e as equações diferenciais são a base para
+compreender quase toda a ciência moderna.
 
-\subsection{Definition}
+\subsection{Definição}
 
 \begin{defn}
-Given a sequence $\{ x_n \}_{n=1}^\infty$, we write the formal object
+Dada uma sequência $\{ x_n \}_{n=1}^\infty$, escrevemos o objeto formal
 \begin{equation*}
 \sum_{n=1}^\infty x_n
 \end{equation*}
 \glsadd{not:series}
-and call it a \emph{\myindex{series}}.  A series
-\emph{converges}\index{convergent!series} if the sequence
+e o chamamos de \emph{\myindex{série}}. Uma série
+\emph{converge}\index{convergente!série} se a sequência
 $\{ s_k \}_{k=1}^\infty$
-defined by
+definida por
 \glsadd{not:finitesum}
 \begin{equation*}
 s_k \coloneqq \sum_{n=1}^k x_n = x_1 + x_2 + \cdots + x_k
 \end{equation*}
-converges.
-The numbers $s_k$ are called
-\emph{\myindex{partial sums}}.
-If the series converges, we write
+converge.
+Os números $s_k$ são chamados de
+\emph{\myindex{somas parciais}}.
+Se a série converge, escrevemos
 \begin{equation*}
 \sum_{n=1}^\infty x_n =  \lim\limits_{k\to\infty} s_k .
 \end{equation*}
-In this case, we cheat a little and treat
-$\sum_{n=1}^\infty x_n$ as a number.
+Nesse caso, abusamos um pouco da notação e tratamos
+$\sum_{n=1}^\infty x_n$ como um número.
 
-If the sequence $\{ s_k \}_{k=1}^\infty$ diverges,
-we say the series is \emph{divergent}\index{divergent!series}.
-In this case, $\sum_{n=1}^\infty x_n$ is simply a formal object and not a number.
+Se a sequência $\{ s_k \}_{k=1}^\infty$ diverge,
+dizemos que a série é \emph{divergente}\index{divergente!série}.
+Nesse caso, $\sum_{n=1}^\infty x_n$ é apenas um objeto formal, e não um número.
 \end{defn}
 
-In other words, for a convergent series, we have
+Em outras palavras, para uma série convergente, temos
 \begin{equation*}
 \sum_{n=1}^\infty x_n
 =
 \lim_{k\to\infty} 
 \sum_{n=1}^k x_n .
 \end{equation*}
-We only have this equality if the limit on
-the right actually exists.  If the series does not converge, the right-hand
-side does not make sense (the limit does not exist).
-Therefore, be careful as 
-$\sum_{n=1}^\infty x_n$ means two different things (a notation for the series itself 
-or the limit of the partial sums), and you must use context
-to distinguish.
+Essa igualdade só vale se o limite à direita realmente existir. Se a série não
+converge, o lado direito não faz sentido (o limite não existe).
+Portanto, tenha cuidado: $\sum_{n=1}^\infty x_n$ pode significar duas coisas
+diferentes (uma notação para a própria série ou o limite das somas parciais),
+e o contexto deve esclarecer qual delas está em uso.
 
 \begin{remark}
-It is sometimes convenient to start
-the series at an index different from 1.  For instance, we can write
+Às vezes, é conveniente começar
+a série em um índice diferente de 1. Por exemplo, podemos escrever
 \begin{equation*}
 \sum_{n=0}^\infty r^n = \sum_{n=1}^\infty r^{n-1} .
 \end{equation*}
-The left-hand side is more convenient to write.
+O lado esquerdo é mais conveniente de escrever.
 \end{remark}
 
 \begin{remark}
-It is common to write the series $\sum_{n=1}^\infty x_n$ as
+É comum escrever a série $\sum_{n=1}^\infty x_n$ na forma
 \begin{equation*}
 x_1 + x_2 + x_3 + \cdots
 \end{equation*}
-with the understanding that the ellipsis indicates a series and
-not a simple sum.  We do not use this notation as it is the sort of informal
-notation that leads to mistakes in proofs.
+entendendo que as reticências indicam uma série,
+e não uma soma finita. Não usamos essa notação porque é informal e pode
+levar a erros nas demonstrações.
 \end{remark}
 
 \begin{example}
-The series
+A série
 \begin{equation*}
-\sum_{n=1}^\infty \frac{1}{2^n}
+\sum_{n=1}^\infty \frac{1}{2^n
 \end{equation*}
-converges and the limit is 1.  That is,
+converge e seu limite é 1. Isto é,
 \begin{equation*}
 \sum_{n=1}^\infty \frac{1}{2^n} = 
 \lim_{k\to\infty} \sum_{n=1}^k \frac{1}{2^n} = 
 1 .
 \end{equation*}
 
-Proof: We need the equality
+Demonstração: precisamos da igualdade
 \begin{equation*}
 \left( \sum_{n=1}^k \frac{1}{2^n} \right)
 + \frac{1}{2^k}
 = 1 .
 \end{equation*}
-The equality is immediate when $k=1$.  The proof for general $k$
-follows by \hyperref[induction:thm]{induction}, which we leave to the
-reader.  See \figureref{figcutseries} for an illustration.
+A igualdade é imediata para $k=1$. A demonstração para um $k$ arbitrário
+segue por \hyperref[induction:thm]{indução}; deixamos os detalhes a cargo do
+leitor. A \figureref{figcutseries} ilustra a situação.
 \begin{myfigureht}
 \myincludepdft{figcutseries}{%
-A diagram of the real line.  The point 0 is on the left and the point
-1 is on the right.  A distance of one half is marked from the 0 to
-one half.  Then the distance of one quarter is marked from one half
-to the point at 3 quarters.  Then a distance of one eighth is marked from
-3 quarters to 7 eighths.  Also marked is the distance one half plus one quarter plus one
-eighth, which puts together the three aforementioned distances.
-Lastly the remaining distance of one eighth from 7 eighths to 1 is also
-marked.}
-\caption{The equality 
+Diagrama da reta real. O ponto 0 está à esquerda e o ponto 1, à direita.
+Marca-se a distância de um meio de 0 até um meio. Em seguida, marca-se a distância
+de um quarto de um meio até o ponto três quartos. Depois, marca-se a distância
+de um oitavo de três quartos até sete oitavos. Também está marcada a distância
+um meio mais um quarto mais um oitavo, que reúne as três distâncias mencionadas.
+Por fim, marca-se a distância restante de um oitavo entre sete oitavos e 1.}
+\caption{A igualdade 
 $\left( \sum_{n=1}^k \frac{1}{2^n} \right)
 + \frac{1}{2^k}
-= 1$ illustrated for $k=3$.\label{figcutseries}}
+= 1$ ilustrada para $k=3$.\label{figcutseries}}
 \end{myfigureht}
 
-Let $s_k$ be the partial sum.  We write
+Seja $s_k$ a soma parcial. Escrevemos
 \begin{equation*}
 \sabs{
 1 - s_k 
@@ -3082,44 +3077,44 @@ Let $s_k$ be the partial sum.  We write
 \abs{\frac{1}{2^k}} = 
 \frac{1}{2^k} .
 \end{equation*}
-The sequence $\bigl\{ \frac{1}{2^k} \bigr\}_{k=1}^\infty$, and
-therefore $\bigl\{ \sabs{1-s_k} \bigr\}_{k=1}^\infty$,
-converges to zero.  So, $\{ s_k \}_{k=1}^\infty$ converges to $1$.
+A sequência $\bigl\{ \frac{1}{2^k} \bigr\}_{k=1}^\infty$ converge para zero e, portanto,
+$\bigl\{ \sabs{1-s_k} \bigr\}_{k=1}^\infty$ também converge para zero.
+Logo, $\{ s_k \}_{k=1}^\infty$ converge para $1$.
 \end{example}
 
 \begin{prop} \label{geometric:prop}
-Suppose
-$-1 < r < 1$.  Then the \emph{\myindex{geometric series}}
-$\sum_{n=0}^\infty r^n$ converges, and
+Suponha que
+$-1 < r < 1$. Então a \emph{\myindex{série geométrica}}
+$\sum_{n=0}^\infty r^n$ converge, e
 \begin{equation*}
 \sum_{n=0}^\infty r^n = \frac{1}{1-r} .
 \end{equation*}
 \end{prop}
 
-Details of the proof are left as an exercise.
-The proof consists of showing 
+Os detalhes da demonstração ficam como exercício.
+A demonstração consiste em mostrar 
 \begin{equation*}
 \sum_{n=0}^{k-1} r^n = \frac{1-r^k}{1-r} ,
 \end{equation*}
-and then taking the limit as $k$ goes to $\infty$.
-The geometric series is one of the most important series, and in fact it is
-one of the few series for which we can so explicitly find the limit.
+e então calcular o limite quando $k$ tende a $\infty$.
+A série geométrica é uma das séries mais importantes e, de fato, uma das poucas
+para as quais podemos encontrar o limite de forma tão explícita.
 
 \medskip
 
 \pagebreak[2]
-As with sequences, we can talk about a \emph{\myindex{tail of a series}}.
+Assim como para sequências, podemos falar da \emph{\myindex{cauda de uma série}}.
 
 \begin{prop}
-Let $\sum_{n=1}^\infty x_n$ be a series.  Let $M \in \N$.  Then
+Seja $\sum_{n=1}^\infty x_n$ uma série e seja $M \in \N$. Então
 \begin{equation*}
-\sum_{n=1}^\infty x_n \quad \text{converges if and only if} \quad
-\sum_{n=M}^\infty x_n \quad \text{converges.}
+\sum_{n=1}^\infty x_n \quad \text{converge se, e somente se,} \quad
+\sum_{n=M}^\infty x_n \quad \text{converge.}
 \end{equation*}
 \end{prop}
 
 \begin{proof}
-We look at partial sums of the two series (for $k \geq M$)
+Consideremos as somas parciais das duas séries (para $k \geq M$)
 \begin{equation*}
 \sum_{n=1}^{k} x_n
 =
@@ -3129,9 +3124,9 @@ We look at partial sums of the two series (for $k \geq M$)
 +
 \sum_{n=M}^{k} x_n .
 \end{equation*}
-Note that 
-$\sum_{n=1}^{M-1} x_n$ is a fixed number.  Use
-\propref{prop:contalg} to finish the proof.
+Observe que
+$\sum_{n=1}^{M-1} x_n$ é um número fixo. Use
+\propref{prop:contalg} para concluir a demonstração.
 \end{proof}
 
 \subsection{Cauchy series}

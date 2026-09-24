@@ -2646,44 +2646,41 @@ $\liminf$.
 
 \sectionnewpage
 
-\section{Cauchy sequences}
+\section{Sequências de Cauchy}
 \label{sec:cauchy}
 
-\sectionnotes{less than a lecture}
+\sectionnotes{menos de uma aula}
 
-Often we wish to describe a certain number 
-by a sequence that converges to it.  In this case, it is impossible to use the
-number itself in the proof that the sequence converges.
-It would be nice if we could check for convergence without knowing
-the limit.
+Muitas vezes, queremos descrever um número por meio de uma sequência que
+converge para ele. Nesse caso, não podemos usar o próprio número na demonstração
+de que a sequência converge.
+Seria conveniente verificar a convergência sem conhecer o limite.
 
 \begin{defn}
-A sequence $\{ x_n \}_{n=1}^\infty$ is a \emph{\myindex{Cauchy sequence}}%
+Uma sequência $\{ x_n \}_{n=1}^\infty$ é uma \emph{\myindex{sequência de Cauchy}}%
 \footnote{%
-Named after the French mathematician
-\href{https://en.wikipedia.org/wiki/Cauchy}{Augustin-Louis Cauchy} (1789--1857).} if
-for every $\epsilon > 0$ there exists an $M \in \N$ such that
-for all $n \geq M$ and all $k \geq M$, we have
+Nomeada em homenagem ao matemático francês
+\href{https://en.wikipedia.org/wiki/Cauchy}{Augustin-Louis Cauchy} (1789--1857).} se, para todo $\epsilon > 0$, existe $M \in \N$ tal que,
+para todo $n \geq M$ e todo $k \geq M$,
 \begin{equation*}
 \sabs{x_n - x_k} < \epsilon .
 \end{equation*}
 \end{defn}
 
-Informally, being Cauchy means that the terms of the sequence are eventually
-all arbitrarily close to each other.  We might expect such a sequence to be
-convergent, and we would be correct due to $\R$ having the
-\hyperref[defn:lub]{least-upper-bound property}.  Before we prove this fact,
-we look at some examples.
+Intuitivamente, ser de Cauchy significa que, a partir de certo índice, os termos
+da sequência ficam arbitrariamente próximos uns dos outros. Podemos esperar que
+uma sequência assim seja convergente, e isso de fato ocorre porque $\R$ possui a
+\hyperref[defn:lub]{propriedade do supremo}. Antes de demonstrar esse fato,
+vejamos alguns exemplos.
 
 \begin{example}
-The sequence $\{ \nicefrac{1}{n} \}_{n=1}^\infty$ is a Cauchy sequence.
+A sequência $\{ \nicefrac{1}{n} \}_{n=1}^\infty$ é de Cauchy.
 
-Proof:  Given $\epsilon > 0$, find $M$ such that
-$M > \nicefrac{2}{\epsilon}$.  Then for $n,k \geq M$,
-we have $\nicefrac{1}{n} < \nicefrac{\epsilon}{2}$
-and
-$\nicefrac{1}{k} < \nicefrac{\epsilon}{2}$.  Therefore, for $n, k \geq M$,
-we have
+Demonstração: dado $\epsilon > 0$, encontre $M$ tal que
+$M > \nicefrac{2}{\epsilon}$. Então, para $n,k \geq M$,
+vale $\nicefrac{1}{n} < \nicefrac{\epsilon}{2}$
+e
+$\nicefrac{1}{k} < \nicefrac{\epsilon}{2}$. Portanto, para $n,k \geq M$,
 \begin{equation*}
 \abs{\frac{1}{n} - \frac{1}{k}}
 \leq
@@ -2693,11 +2690,11 @@ we have
 \end{example}
 
 \begin{example}
-The sequence $\bigl\{ {(-1)}^n \bigr\}_{n=1}^\infty$ is not a Cauchy sequence.
+A sequência $\bigl\{ {(-1)}^n \bigr\}_{n=1}^\infty$ não é de Cauchy.
 
-Proof:
-Given any $M \in \N$, take $n \geq M$ to be any even number, and
-let $k \coloneqq n+1$.  Then
+Demonstração:
+Dado $M \in \N$, tome um $n \geq M$ par
+e defina $k \coloneqq n+1$. Então
 \begin{equation*}
 \begin{split}
 \babs{{(-1)}^n - {(-1)}^k}
@@ -2708,8 +2705,8 @@ let $k \coloneqq n+1$.  Then
 \babs{1 - (-1)} = 2 .
 \end{split}
 \end{equation*}
-Therefore, for any $\epsilon \leq 2$ the definition cannot be satisfied, and
-the sequence is not Cauchy.
+Portanto, para qualquer $\epsilon \leq 2$, a definição não pode ser satisfeita e
+a sequência não é de Cauchy.
 \end{example}
 
 %\begin{example}
@@ -2745,43 +2742,41 @@ the sequence is not Cauchy.
 %\end{example}
 
 \begin{prop}
-If a sequence is Cauchy, then it is bounded.
+Toda sequência de Cauchy é limitada.
 \end{prop}
 
 \begin{proof}
-Suppose $\{ x_n \}_{n=1}^\infty$ is Cauchy.  Pick an $M$ such that for all
-$n,k \geq M$, we have $\sabs{x_n-x_k} < 1$.  In particular, 
-for all $n \geq M$,
+Suponha que $\{ x_n \}_{n=1}^\infty$ seja de Cauchy. Escolha $M$ tal que, para
+$n,k \geq M$, tenhamos $\sabs{x_n-x_k} < 1$. Em particular,
+para todo $n \geq M$,
 \begin{equation*}
 \sabs{x_n - x_M} < 1 .
 \end{equation*}
-By the reverse triangle inequality,
-$\sabs{x_n} - \sabs{x_M} \leq \sabs{x_n - x_M} < 1$.  Hence, for $n \geq M$,
+Pela desigualdade triangular reversa,
+$\sabs{x_n} - \sabs{x_M} \leq \sabs{x_n - x_M} < 1$.  Logo, para $n \geq M$,
 \begin{equation*}
 \sabs{x_n} < 1 + \sabs{x_M}.
 \end{equation*}
-Let
+Defina
 \begin{equation*}
 B \coloneqq \max \bigl\{ \sabs{x_1}, \sabs{x_2}, \ldots,
 \sabs{x_{M-1}}, 1+ \sabs{x_M} \bigr\} .
 \end{equation*}
-Then $\sabs{x_n} \leq B$ for all $n \in \N$.
+Então $\sabs{x_n} \leq B$ para todo $n \in \N$.
 \end{proof}
 
 \begin{thm}
-A sequence of real numbers is Cauchy if and only if it converges.
+Uma sequência de números reais é de Cauchy se, e somente se, é convergente.
 \end{thm}
 
 \begin{proof}
-Suppose $\{ x_n \}_{n=1}^\infty$ converges to $x$,
-and
-let $\epsilon > 0$ be given.
-Then there 
-exists an $M$ such that for $n \geq M$,
+Suponha que $\{ x_n \}_{n=1}^\infty$ converge para $x$
+e seja dado $\epsilon > 0$.
+Então existe $M$ tal que, para $n \geq M$,
 \begin{equation*}
 \sabs{x_n - x} < \frac{\epsilon}{2} .
 \end{equation*}
-Hence, for $n \geq M$ and $k \geq M$,
+Logo, para $n \geq M$ e $k \geq M$,
 \begin{equation*}
 \sabs{x_n - x_k} = 
 \sabs{x_n - x + x - x_k}
@@ -2789,39 +2784,39 @@ Hence, for $n \geq M$ and $k \geq M$,
 \epsilon .
 \end{equation*}
 
-Alright, that direction was easy.  Now suppose $\{ x_n \}_{n=1}^\infty$ is Cauchy.
-We have shown that $\{ x_n \}_{n=1}^\infty$ is bounded.
-For a bounded sequence, liminf and limsup exist, and this is
-where we use the
-\hyperref[defn:lub]{least-upper-bound property}.
-If we show that
+Essa direção foi simples. Suponha agora que $\{ x_n \}_{n=1}^\infty$ seja de Cauchy.
+Já mostramos que $\{ x_n \}_{n=1}^\infty$ é limitada.
+Para uma sequência limitada, existem o limite inferior e o limite superior; é aqui
+que usamos a
+\hyperref[defn:lub]{propriedade do supremo}.
+Se mostrarmos que
 \begin{equation*}
 \liminf_{n\to \infty} x_n = \limsup_{n\to\infty} x_n ,
 \end{equation*}
-then $\{ x_n \}_{n=1}^\infty$ must be convergent by \propref{liminfsupconv:prop}.
+então, pela \propref{liminfsupconv:prop}, $\{ x_n \}_{n=1}^\infty$ será convergente.
 
 
-Define $a \coloneqq \limsup_{n\to\infty} x_n$ and
+Defina $a \coloneqq \limsup_{n\to\infty} x_n$ e
 $b \coloneqq \liminf_{n\to\infty} x_n$.
-By \thmref{subseqlimsupinf:thm}, there exist subsequences
-$\{ x_{n_i} \}_{i=1}^\infty$ and
-$\{ x_{m_i} \}_{i=1}^\infty$ such that
+Pelo \thmref{subseqlimsupinf:thm}, existem subsequências
+$\{ x_{n_i} \}_{i=1}^\infty$ e
+$\{ x_{m_i} \}_{i=1}^\infty$ tais que
 \begin{equation*}
 \lim_{i\to\infty} x_{n_i} = a
-\qquad \text{and} \qquad
+\qquad \text{e} \qquad
 \lim_{i\to\infty} x_{m_i} = b.
 \end{equation*}
-Given an $\epsilon > 0$,
-there exists an $M_1$ such that
-$\sabs{x_{n_i} - a} < \nicefrac{\epsilon}{3}$ for all $i \geq M_1$
-and an $M_2$ such that
-$\sabs{x_{m_i} - b} < \nicefrac{\epsilon}{3}$ for all $i \geq M_2$.
-There also exists an $M_3$
-such that
+Dado $\epsilon > 0$,
+existe $M_1$ tal que
+$\sabs{x_{n_i} - a} < \nicefrac{\epsilon}{3}$ para todo $i \geq M_1
+e $M_2$ tal que
+$\sabs{x_{m_i} - b} < \nicefrac{\epsilon}{3}$ para todo $i \geq M_2$.
+Existe ainda $M_3$
+tal que
 $\sabs{x_n-x_k} < \nicefrac{\epsilon}{3}$
-for all $n,k \geq M_3$.
-Let $M \coloneqq \max \{ M_1, M_2, M_3 \}$.
-If $i \geq M$, then $n_i \geq M$ and $m_i \geq M$.  Hence,
+para todo $n,k \geq M_3$.
+Seja $M \coloneqq \max \{ M_1, M_2, M_3 \}$.
+Se $i \geq M$, então $n_i \geq M$ e $m_i \geq M$. Logo,
 \begin{equation*}
 \begin{split}
 \sabs{a-b} & =
@@ -2841,128 +2836,122 @@ If $i \geq M$, then $n_i \geq M$ and $m_i \geq M$.  Hence,
 = \epsilon .
 \end{split}
 \end{equation*}
-As $\sabs{a-b} < \epsilon$ for all $\epsilon > 0$, we have $a=b$ and 
-the sequence converges.
+Como $\sabs{a-b} < \epsilon$ para todo $\epsilon > 0$, temos $a=b$ e
+a sequência converge.
 \end{proof}
 
 \begin{remark}
-The statement of this theorem is sometimes used to define the
-completeness property of the real numbers.  We say a set is
-\emph{\myindex{Cauchy-complete}} (or sometimes just \emph{\myindex{complete}})
-if every Cauchy sequence converges to something in the set.
-Above, we proved that
-as $\R$ has the \hyperref[defn:lub]{least-upper-bound property}, $\R$ is 
-Cauchy-complete.
-One can construct $\R$ via
-\myquote{completing} $\Q$ by \myquote{throwing in} just enough points to make all
-Cauchy sequences converge (we omit the details).
-The resulting field has the
-least-upper-bound property.
-The advantage of defining completeness via Cauchy
-sequences is that it generalizes to
-more abstract settings such as metric spaces, see \chapterref{ms:chapter}.
+Às vezes, usa-se a afirmação deste teorema para definir a propriedade de
+completude dos números reais. Dizemos que um conjunto é
+\emph{\myindex{completo de Cauchy}} (ou simplesmente \emph{\myindex{completo}})
+se toda sequência de Cauchy converge para um elemento do conjunto.
+Acima, provamos que, como $\R$ possui a \hyperref[defn:lub]{propriedade do supremo},
+$\R$ é completo de Cauchy.
+É possível construir $\R$ \myquote{completando} $\Q$ ao \myquote{acrescentar} pontos
+suficientes para que toda sequência de Cauchy convirja (omitimos os detalhes).
+O corpo resultante possui a propriedade do supremo.
+A vantagem de definir completude por meio de sequências de Cauchy é que essa
+noção se generaliza para contextos mais abstratos, como espaços métricos; veja
+\chapterref{ms:chapter}.
 \end{remark}
 
-The Cauchy criterion is stronger than 
-$\sabs{x_{n+1}-x_n}$ (or $\sabs{x_{n+j}-x_n}$ for a fixed $j$) going to zero as
-$n$ goes to
-infinity.  When we get to the partial sums of the harmonic series
-(see \exampleref{example:harmonicseries} in the next section), we will have
-a sequence such that $x_{n+1}-x_n = \frac{1}{n+1}$,
-yet $\{ x_n \}_{n=1}^\infty$ is divergent.
-In fact, for that sequence,
-$\lim_{n\to\infty} \sabs{x_{n+j}-x_n} = 0$ for
-every $j \in \N$ (compare \exerciseref{exercise:badnocauchy}).
-The key point in the definition of Cauchy is that $n$ and $k$
-vary independently and can be arbitrarily far apart.
+O critério de Cauchy é mais forte do que exigir que
+$\sabs{x_{n+1}-x_n}$ (ou $\sabs{x_{n+j}-x_n}$, para um $j$ fixo) tenda a zero quando
+$n$ tende ao infinito. Ao chegarmos às somas parciais da série harmônica
+(veja o \exampleref{example:harmonicseries} na próxima seção), encontraremos
+uma sequência tal que $x_{n+1}-x_n = \frac{1}{n+1}$,
+mas $\{ x_n \}_{n=1}^\infty$ é divergente.
+Na verdade, para essa sequência,
+$\lim_{n\to\infty} \sabs{x_{n+j}-x_n} = 0$ para
+todo $j \in \N$ (compare com o \exerciseref{exercise:badnocauchy}).
+O ponto essencial na definição de Cauchy é que $n$ e $k$
+variam independentemente e podem estar arbitrariamente distantes.
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
 \begin{exercise}
-Prove that $\bigl\{ \frac{n^2-1}{n^2} \bigr\}_{n=1}^\infty$ is Cauchy using directly the definition
-of Cauchy sequences.
+Demonstre diretamente pela definição de sequência de Cauchy que $\bigl\{ \frac{n^2-1}{n^2} \bigr\}_{n=1}^\infty$ é de Cauchy.
 \end{exercise}
 
 \begin{exercise}
-Let $\{ x_n \}_{n=1}^\infty$ be a sequence such that
-there exists a positive $C < 1$ and for all $n \geq 2$,
+Seja $\{ x_n \}_{n=1}^\infty$ uma sequência tal que existe $C>0$, com $C<1$, e, para todo $n\geq 2$,
 \begin{equation*}
 \sabs{x_{n+1} - x_n} \leq C \sabs{x_{n}-x_{n-1}} .
 \end{equation*}
-Prove that $\{ x_n \}_{n=1}^\infty$ is Cauchy.
-Hint:  You can freely use the formula (for $C \neq 1$)
+Demonstre que $\{ x_n \}_{n=1}^\infty$ é de Cauchy.
+Dica: você pode usar livremente a fórmula (para $C \neq 1$)
 \begin{equation*}
 1+ C+ C^2 + \cdots + C^n = \frac{1-C^{n+1}}{1-C}.
 \end{equation*}
 \end{exercise}
 
-\begin{exercise}[Challenging]
-Suppose $F$ is an ordered field that contains the rational numbers
-$\Q$, such that $\Q$ is dense,
-that is: Whenever $x,y \in F$ are such that $x < y$,
-then there exists a $q \in \Q$ such that $x < q < y$.
-Say a sequence $\{ x_n \}_{n=1}^\infty$ of rational numbers is Cauchy
-if given every $\epsilon \in \Q$ with $\epsilon > 0$, there exists
-an $M$ such that for all $n,k \geq M$, we have $\sabs{x_n-x_k} < \epsilon$.
-Suppose every Cauchy sequence of rational numbers has a limit in $F$.
-Prove that $F$ has the \hyperref[defn:lub]{least-upper-bound property}.
+\begin{exercise}[Desafiador]
+Suponha que $F$ seja um corpo ordenado que contém os números racionais
+$\Q$, e que $\Q$ seja denso em $F$,
+isto é: para quaisquer $x,y \in F$ tais que $x < y$,
+existe $q \in \Q$ tal que $x < q < y$.
+Dizemos que uma sequência $\{ x_n \}_{n=1}^\infty$ de números racionais é de Cauchy
+se, para todo $\epsilon \in \Q$ com $\epsilon > 0$, existe
+$M$ tal que, para todo $n,k \geq M$, temos $\sabs{x_n-x_k} < \epsilon$.
+Suponha que toda sequência de Cauchy de números racionais tenha limite em $F$.
+Demonstre que $F$ possui a \hyperref[defn:lub]{propriedade do supremo}.
 \end{exercise}
 
 \begin{exercise}
-Let $\{ x_n \}_{n=1}^\infty$ and $\{ y_n \}_{n=1}^\infty$ be sequences such
-that $\lim_{n\to\infty} y_n =0$.  Suppose that for all $k \in \N$
-and
-for all $m \geq k$, we have
+Sejam $\{ x_n \}_{n=1}^\infty$ e $\{ y_n \}_{n=1}^\infty$ sequências tais
+que $\lim_{n\to\infty} y_n =0$. Suponha que, para todo $k \in \N$
+e todo $m \geq k$, tenhamos
 \begin{equation*}
 \sabs{x_m-x_k} \leq y_k .
 \end{equation*}
-Show that $\{ x_n \}_{n=1}^\infty$ is Cauchy.
+Mostre que $\{ x_n \}_{n=1}^\infty$ é de Cauchy.
 \end{exercise}
 
 \begin{exercise}
-Suppose a Cauchy sequence $\{ x_n \}_{n=1}^\infty$ is such that for every $M \in \N$,
-there exists a $k \geq M$ and an $n \geq M$ such that
-$x_k < 0$ and $x_n > 0$.  Using simply the definition of a Cauchy sequence
-and of a convergent sequence, show that
-the sequence converges to $0$.
+Suponha que uma sequência de Cauchy $\{ x_n \}_{n=1}^\infty$ tenha a seguinte propriedade: para todo $M \in \N$,
+existem $k \geq M$ e $n \geq M$ tais que
+$x_k < 0$ e $x_n > 0$. Usando apenas as definições de sequência de Cauchy
+e de sequência convergente, mostre que
+a sequência converge para $0$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $\sabs{x_n-x_k} \leq \nicefrac{n}{k^2}$ for all $n$ and $k$.
-Show that $\{ x_n \}_{n=1}^\infty$ is Cauchy.\footnote{After proving that
-the sequence is Cauchy, for an extra exercise, prove the sequence is constant.}
+Suponha que $\sabs{x_n-x_k} \leq \nicefrac{n}{k^2}$ para todos $n$ e $k$.
+Mostre que $\{ x_n \}_{n=1}^\infty$ é de Cauchy.\footnote{Depois de provar que
+a sequência é de Cauchy, prove, como exercício extra, que ela é constante.}
 \end{exercise}
 
 \begin{exercise}
-Suppose $\{ x_n \}_{n=1}^\infty$ is a Cauchy sequence such that for infinitely many
-$n$, $x_n = c$.  Using only the definition of Cauchy sequence prove 
-that $\lim\limits_{n\to\infty} x_n = c$.
+Suponha que $\{ x_n \}_{n=1}^\infty$ seja uma sequência de Cauchy tal que, para infinitos
+$n$, $x_n = c$. Usando apenas a definição de sequência de Cauchy, prove
+que $\lim\limits_{n\to\infty} x_n = c$.
 \end{exercise}
 
 \begin{exercise}
-True or false, prove or find a counterexample:  If $\{ x_n \}_{n=1}^\infty$ is a Cauchy
-sequence, then there exists an $M$
-such that for all $n \geq M$, we have
+Verdadeiro ou falso? Demonstre ou dê um contraexemplo: se $\{ x_n \}_{n=1}^\infty$ é uma sequência de Cauchy,
+então existe $M$
+tal que, para todo $n \geq M$, vale
 $\sabs{x_{n+1}-x_n}
 \leq
 \sabs{x_{n}-x_{n-1}}$.
 \end{exercise}
 
 \begin{exercise}
-Suppose 
-$\{ x_n \}_{n=1}^\infty$ is a sequence such that for every $\ell$ and $k$,
-we have
-$\sabs{x_\ell-x_k} \leq y_\ell + z_k$, where
-$\{ y_n \}_{n=1}^\infty$ and 
-$\{ z_n \}_{n=1}^\infty$ are sequences that converge to $0$.
-Show that 
-$\{ x_n \}_{n=1}^\infty$ is Cauchy.
+Suponha que
+$\{ x_n \}_{n=1}^\infty$ seja uma sequência tal que, para todo $\ell$ e $k$,
+vale
+$\sabs{x_\ell-x_k} \leq y_\ell + z_k$, em que
+$\{ y_n \}_{n=1}^\infty$ e
+$\{ z_n \}_{n=1}^\infty$ são sequências que convergem para $0$.
+Mostre que
+$\{ x_n \}_{n=1}^\infty$ é de Cauchy.
 \end{exercise}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
+
 \section{Series}
 \label{sec:series}
 

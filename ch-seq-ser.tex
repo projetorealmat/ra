@@ -404,7 +404,7 @@ $\{ y_n \}_{n=1}^\infty$ tais que $x_n, y_n \in S$ e
 \end{equation*}
 \end{prop}
 
-\subsection{Tail of a sequence}
+\subsection{Cauda de uma sequência}
 
 \begin{defn}
 Para uma sequência $\{ x_n \}_{n=1}^\infty$,
@@ -900,7 +900,7 @@ $x-x_n < \nicefrac{\epsilon}{2}$ e
 $y_n-y < \nicefrac{\epsilon}{2}$. Somamos essas desigualdades e
 obtemos
 \begin{equation*}
-y_n-x_n+x-y < \epsilon, \qquad \text{or} \qquad
+y_n-x_n+x-y < \epsilon, \qquad \text{ou} \qquad
 y_n-x_n < y-x+ \epsilon .
 \end{equation*}
 Como $x_n \leq y_n$, temos
@@ -956,61 +956,61 @@ podemos concluir apenas que
 \end{equation*}
 Esse ponto é uma fonte comum de erros.
 
-\subsection{Continuity of algebraic operations}
+\subsection{Continuidade das operações algébricas}
 
-Limits interact nicely with algebraic operations.
+Os limites interagem bem com as operações algébricas.
 
 \begin{prop} \label{prop:contalg}
-Let $\{ x_n \}_{n=1}^\infty$ and $\{ y_n \}_{n=1}^\infty$ be convergent sequences.
+Sejam $\{ x_n \}_{n=1}^\infty$ e $\{ y_n \}_{n=1}^\infty$ sequências convergentes.
 \begin{enumerate}[(i)]
 \item \label{prop:contalg:i}
-The sequence $\{ z_n \}_{n=1}^\infty$, where $z_n \coloneqq x_n + y_n$, converges and
+A sequência $\{ z_n \}_{n=1}^\infty$, em que $z_n \coloneqq x_n + y_n$, converge e
 \begin{equation*}
-\lim_{n \to \infty} (x_n + y_n) = 
-\lim_{n \to \infty} z_n = 
-\lim_{n \to \infty} x_n + 
+\lim_{n \to \infty} (x_n + y_n) =
+\lim_{n \to \infty} z_n =
+\lim_{n \to \infty} x_n +
 \lim_{n \to \infty} y_n .
 \end{equation*}
 \item \label{prop:contalg:ii}
-The sequence $\{ z_n \}_{n=1}^\infty$, where $z_n \coloneqq x_n - y_n$, converges and
+A sequência $\{ z_n \}_{n=1}^\infty$, em que $z_n \coloneqq x_n - y_n$, converge e
 \begin{equation*}
-\lim_{n \to \infty} (x_n - y_n) = 
-\lim_{n \to \infty} z_n = 
-\lim_{n \to \infty} x_n - 
+\lim_{n \to \infty} (x_n - y_n) =
+\lim_{n \to \infty} z_n =
+\lim_{n \to \infty} x_n -
 \lim_{n \to \infty} y_n .
 \end{equation*}
 \item \label{prop:contalg:iii}
-The sequence $\{ z_n \}_{n=1}^\infty$, where $z_n \coloneqq x_n y_n$, converges and
+A sequência $\{ z_n \}_{n=1}^\infty$, em que $z_n \coloneqq x_n y_n$, converge e
 \begin{equation*}
-\lim_{n \to \infty} (x_n y_n) = 
-\lim_{n \to \infty} z_n = 
+\lim_{n \to \infty} (x_n y_n) =
+\lim_{n \to \infty} z_n =
 \left( \lim_{n \to \infty} x_n \right)
 \left( \lim_{n \to \infty} y_n \right) .
 \end{equation*}
 \item \label{prop:contalg:iv}
-If $\lim_{n\to\infty} y_n \neq 0$ and $y_n \neq 0$ for all $n \in \N$, then
-the sequence $\{ z_n \}_{n=1}^\infty$, where $z_n \coloneqq \dfrac{x_n}{y_n}$, converges and
+Se $\lim_{n\to\infty} y_n \neq 0$ e $y_n \neq 0$ para todo $n \in \N$, então
+a sequência $\{ z_n \}_{n=1}^\infty$, em que $z_n \coloneqq \dfrac{x_n}{y_n}$, converge e
 \begin{equation*}
-\lim_{n \to \infty} \frac{x_n}{y_n} = 
-\lim_{n \to \infty} z_n = 
+\lim_{n \to \infty} \frac{x_n}{y_n} =
+\lim_{n \to \infty} z_n =
 \frac{\lim_{n \to \infty} x_n}{\lim_{n \to \infty} y_n} .
 \end{equation*}
 \end{enumerate}
 \end{prop}
 
 \begin{proof}
-We start with \ref{prop:contalg:i}.
-Suppose $\{ x_n \}_{n=1}^\infty$ and $\{ y_n \}_{n=1}^\infty$ are convergent sequences and
-write $z_n \coloneqq x_n + y_n$.  Let $x \coloneqq \lim_{n\to\infty} x_n$,
-$y \coloneqq \lim_{n\to\infty} y_n$, and $z \coloneqq x+y$.
-Let $\epsilon > 0$ be given.  
-Find an $M_1$ such that for all $n \geq M_1$,
-we have
-$\sabs{x_n - x} < \nicefrac{\epsilon}{2}$.  
-Find an $M_2$ such that for all $n \geq M_2$,
-we have
-$\sabs{y_n - y} < \nicefrac{\epsilon}{2}$.  Take $M \coloneqq \max \{ M_1, M_2 \}$.
-For all $n \geq M$, we have
+Comecemos por \ref{prop:contalg:i}.
+Suponhamos que $\{ x_n \}_{n=1}^\infty$ e $\{ y_n \}_{n=1}^\infty$ sejam sequências convergentes e
+escrevamos $z_n \coloneqq x_n + y_n$. Sejam $x \coloneqq \lim_{n\to\infty} x_n$,
+$y \coloneqq \lim_{n\to\infty} y_n$ e $z \coloneqq x+y$.
+Seja $\epsilon > 0$ dado.
+Encontremos um $M_1$ tal que, para todo $n \geq M_1$,
+valha
+$\sabs{x_n - x} < \nicefrac{\epsilon}{2}$.
+Encontremos um $M_2$ tal que, para todo $n \geq M_2$,
+valha
+$\sabs{y_n - y} < \nicefrac{\epsilon}{2}$. Seja $M \coloneqq \max \{ M_1, M_2 \}$.
+Para todo $n \geq M$, temos
 \begin{equation*}
 \begin{split}
 \sabs{z_n - z} &=
@@ -1025,24 +1025,24 @@ For all $n \geq M$, we have
 = \epsilon.
 \end{split}
 \end{equation*}
-Therefore, \ref{prop:contalg:i} is proved.
-The proof of \ref{prop:contalg:ii} is almost identical and is left as an
-exercise.
+Assim, provamos \ref{prop:contalg:i}.
+A demonstração de \ref{prop:contalg:ii} é quase idêntica e fica como
+exercício.
 
-Let us tackle 
+Passemos a
 \ref{prop:contalg:iii}.
-Suppose again that $\{ x_n \}_{n=1}^\infty$ and $\{ y_n \}_{n=1}^\infty$ are convergent sequences and
-write $z_n \coloneqq x_n y_n$.  Let $x \coloneqq \lim_{n\to\infty} x_n$,
-$y \coloneqq \lim_{n\to\infty} y_n$, and $z \coloneqq xy$.
-Let $\epsilon > 0$ be given.
-Let $K \coloneqq \max\{ \sabs{x}, \sabs{y}, \nicefrac{\epsilon}{3} , 1 \}$.
-Find an $M_1$ such that for all $n \geq M_1$,
-we have
+Suponhamos novamente que $\{ x_n \}_{n=1}^\infty$ e $\{ y_n \}_{n=1}^\infty$ sejam sequências convergentes e
+escrevamos $z_n \coloneqq x_n y_n$. Sejam $x \coloneqq \lim_{n\to\infty} x_n$,
+$y \coloneqq \lim_{n\to\infty} y_n$ e $z \coloneqq xy$.
+Seja $\epsilon > 0$ dado.
+Seja $K \coloneqq \max\{ \sabs{x}, \sabs{y}, \nicefrac{\epsilon}{3} , 1 \}$.
+Encontremos um $M_1$ tal que, para todo $n \geq M_1$,
+valha
 $\sabs{x_n - x} < \frac{\epsilon}{3K}$.
-Find an $M_2$ such that for all $n \geq M_2$,
-we have
-$\sabs{y_n - y} < \frac{\epsilon}{3K}$.  Take $M \coloneqq \max \{ M_1, M_2 \}$.
-For all $n \geq M$, we have
+Encontremos um $M_2$ tal que, para todo $n \geq M_2$,
+valha
+$\sabs{y_n - y} < \frac{\epsilon}{3K}$. Seja $M \coloneqq \max \{ M_1, M_2 \}$.
+Para todo $n \geq M$, temos
 \begin{equation*}
 \begin{split}
 \sabs{z_n - z} &=
@@ -1055,64 +1055,64 @@ For all $n \geq M$, we have
 \babs{(x_n-x)y} + \babs{x(y_n - y)} +
 \babs{(x_n-x)(y_n-y)} \\
 & =
-\sabs{x_n -x}\sabs{y} + 
-\sabs{x}\sabs{y_n -y} + 
+\sabs{x_n -x}\sabs{y} +
+\sabs{x}\sabs{y_n -y} +
 \sabs{x_n -x}\sabs{y_n -y}
 \\
 & <
-\frac{\epsilon}{3K} K + 
-K \frac{\epsilon}{3K} + 
+\frac{\epsilon}{3K} K +
+K \frac{\epsilon}{3K} +
 \frac{\epsilon}{3K}
 \frac{\epsilon}{3K}
-\qquad \qquad \text{(now notice that } \tfrac{\epsilon}{3K} \leq 1
-\text{ and }
+\qquad \qquad \text{(observe que } \tfrac{\epsilon}{3K} \leq 1
+\text{ e }
 K \geq 1\text{)}
 \\
 & \leq
 \frac{\epsilon}{3} + \frac{\epsilon}{3} + \frac{\epsilon}{3}
- = \epsilon .
+= \epsilon .
 \end{split}
 \end{equation*}
 
-Finally, we examine
+Por fim, examinemos
 \ref{prop:contalg:iv}.
-We prove the following simpler claim:
+Demonstraremos a seguinte afirmação mais simples:
 
-Claim: \emph{If $\{ y_n \}_{n=1}^\infty$ is a convergent sequence such that
-$\lim_{n\to\infty} y_n \neq 0$ and $y_n \neq 0$ for all $n \in \N$, then
-$\{ \nicefrac{1}{y_n} \}_{n=1}^\infty$ converges and}
+Afirmação: \emph{Se $\{ y_n \}_{n=1}^\infty$ é uma sequência convergente tal que
+$\lim_{n\to\infty} y_n \neq 0$ e $y_n \neq 0$ para todo $n \in \N$, então
+$\{ \nicefrac{1}{y_n} \}_{n=1}^\infty$ converge e}
 \begin{equation*}
-\lim_{n\to\infty} \frac{1}{y_n} = \frac{1}{\lim_{n\to\infty} y_n}  .
+\lim_{n\to\infty} \frac{1}{y_n} = \frac{1}{\lim_{n\to\infty} y_n} .
 \end{equation*}
 
-Once the claim is proved, we take the sequence
+Uma vez demonstrada a afirmação, tomamos a sequência
 $\{ \nicefrac{1}{y_n} \}_{n=1}^\infty$,
-multiply it by the sequence $\{ x_n \}_{n=1}^\infty$, and apply item
+multiplicamo-la pela sequência $\{ x_n \}_{n=1}^\infty$ e aplicamos o item
 \ref{prop:contalg:iii}.
 
-Proof of claim:  Let $\epsilon > 0$ be given.
-Let $y \coloneqq \lim_{n\to\infty} y_n$.
-As $\sabs{y} \neq 0$, we have
+Demonstração da afirmação: Seja $\epsilon > 0$ dado.
+Seja $y \coloneqq \lim_{n\to\infty} y_n$.
+Como $\sabs{y} \neq 0$, temos
 $\min \left\{ \sabs{y}^2\frac{\epsilon}{2}, \, \frac{\sabs{y}}{2} \right\} > 0$.
-Find an $M$ such that for all $n \geq M$,
-we have
+Encontremos um $M$ tal que, para todo $n \geq M$,
+valha
 \begin{equation*}
 \sabs{y_n - y} < \min \left\{ \sabs{y}^2\frac{\epsilon}{2}, \, \frac{\sabs{y}}{2}
 \right\} .
 \end{equation*}
-For all $n \geq M$, we have
-$\sabs{y - y_n} < \nicefrac{\sabs{y}}{2}$, and so
+Para todo $n \geq M$, temos
+$\sabs{y - y_n} < \nicefrac{\sabs{y}}{2}$ e, portanto,
 \begin{equation*}
-\sabs{y} = 
+\sabs{y} =
 \sabs{y - y_n + y_n } \leq
 \sabs{y - y_n} + \sabs{ y_n } < \frac{\sabs{y}}{2} + \sabs{y_n}.
 \end{equation*}
-Subtracting $\nicefrac{\sabs{y}}{2}$ from both sides we obtain
-$\nicefrac{\sabs{y}}{2} < \sabs{y_n}$, or in other words,
+Subtraindo $\nicefrac{\sabs{y}}{2}$ de ambos os lados, obtemos
+$\nicefrac{\sabs{y}}{2} < \sabs{y_n}$, ou, em outras palavras,
 \begin{equation*}
 \frac{1}{\sabs{y_n}} < \frac{2}{\sabs{y}} .
 \end{equation*}
-We finish the proof of the claim:
+Concluímos a demonstração da afirmação:
 \begin{equation*}
 \begin{split}
 \abs{\frac{1}{y_n} - \frac{1}{y}} &=
@@ -1127,62 +1127,62 @@ We finish the proof of the claim:
 \end{split}
 \avoidbreak
 \end{equation*}
-And we are done.
+E a demonstração está concluída.
 \end{proof}
 
-By plugging in constant sequences, we get several easy corollaries.
-If $c \in \R$ and $\{ x_n \}_{n=1}^\infty$ is a convergent sequence, then
-for example
+Substituindo constantes por sequências, obtemos vários corolários simples.
+Se $c \in \R$ e $\{ x_n \}_{n=1}^\infty$ é uma sequência convergente, então,
+por exemplo,
 \begin{equation*}
-\lim_{n \to \infty} c x_n = 
+\lim_{n \to \infty} c x_n =
 c \left( \lim_{n \to \infty} x_n \right) \qquad
-\text{and}
+\text{e}
 \qquad
-\lim_{n \to \infty} (c + x_n) = 
+\lim_{n \to \infty} (c + x_n) =
 c + \lim_{n \to \infty} x_n .
 \end{equation*}
-Similarly, we find such equalities for constant subtraction and division.
+De modo semelhante, obtemos igualdades para subtração e divisão por constantes.
 
-As we can take limits past multiplication, we can show (exercise)
-that $\lim_{n\to\infty} x_n^k = {(\lim_{n\to\infty} x_n)}^k$ for all $k \in \N$.
-That is, we can take limits
-past powers.  Let us see if we can do the same with roots.
+Como podemos passar limites através da multiplicação, podemos demonstrar (como exercício)
+que $\lim_{n\to\infty} x_n^k = {(\lim_{n\to\infty} x_n)}^k$ para todo $k \in \N$.
+Isto é, podemos passar limites
+por potências. Vejamos se podemos fazer o mesmo com raízes.
 
 \begin{prop}
 \pagebreak[2]
-Let $\{ x_n \}_{n=1}^\infty$ be a convergent sequence such
-that $x_n \geq 0$ for all $n \in \N$.
-Then
+Seja $\{ x_n \}_{n=1}^\infty$ uma sequência convergente tal
+que $x_n \geq 0$ para todo $n \in \N$.
+Então
 \begin{equation*}
 \lim_{n\to\infty} \sqrt{x_n} =
 \sqrt{ \lim_{n\to\infty} x_n } .
 \end{equation*}
 \end{prop}
 
-Of course, to even make this statement, we need to apply
-\corref{limandineq:cor} to show
-that
-$\lim_{n\to\infty} x_n \geq 0$, so that we can take the square root without
-worry.
+É claro que, para formular essa afirmação, precisamos aplicar
+\corref{limandineq:cor} e mostrar
+que
+$\lim_{n\to\infty} x_n \geq 0$, para que possamos calcular a raiz quadrada sem
+preocupação.
 
 \begin{proof}
-Let $\{ x_n \}_{n=1}^\infty$ be a convergent sequence and let $x \coloneqq
+Seja $\{ x_n \}_{n=1}^\infty$ uma sequência convergente e seja $x \coloneqq
 \lim_{n\to\infty} x_n$.
-As we just mentioned, $x \geq 0$.
+Como acabamos de mencionar, $x \geq 0$.
 
-First suppose $x=0$.  Let $\epsilon > 0$ be given.
-Then there is an $M$ such that for all $n \geq M$, we have
-$x_n = \sabs{x_n} < \epsilon^2$, or in other words, $\sqrt{x_n} < \epsilon$.
-Hence,
+Suponhamos primeiro que $x=0$. Seja $\epsilon > 0$ dado.
+Então existe um $M$ tal que, para todo $n \geq M$, vale
+$x_n = \sabs{x_n} < \epsilon^2$, ou, em outras palavras, $\sqrt{x_n} < \epsilon$.
+Logo,
 \begin{equation*}
 \abs{\sqrt{x_n} - \sqrt{x}} =
 \sqrt{x_n} < \epsilon.
 \end{equation*}
 
-Now suppose $x > 0$ (and hence $\sqrt{x} > 0$).
+Agora suponhamos que $x > 0$ (e, portanto, $\sqrt{x} > 0$).
 \begin{equation*}
 \begin{split}
-\abs{\sqrt{x_n}-\sqrt{x}} &= 
+\abs{\sqrt{x_n}-\sqrt{x}} &=
 \abs{\frac{x_n-x}{\sqrt{x_n}+\sqrt{x}}} \\
 &=
 \frac{1}{\sqrt{x_n}+\sqrt{x}}
@@ -1192,99 +1192,97 @@ Now suppose $x > 0$ (and hence $\sqrt{x} > 0$).
 \sabs{x_n-x} .
 \end{split}
 \end{equation*}
-We leave the rest of the proof to the reader.
+Deixamos o restante da demonstração para o leitor.
 \end{proof}
 
-A similar proof works for the $k$th root.  That is, we also
-obtain
-$\lim_{n\to\infty} x_n^{1/k} = {( \lim_{n\to\infty} x_n )}^{1/k}$.  We leave this to the reader
-as a challenging exercise.
+Uma demonstração semelhante vale para a raiz $k$-ésima. Isto é, também
+obtemos
+$\lim_{n\to\infty} x_n^{1/k} = {( \lim_{n\to\infty} x_n )}^{1/k}$. Deixamos essa demonstração para o leitor
+como um exercício desafiador.
 
-We may also want to take the limit past the absolute value sign.
-The converse of this proposition is not true, see
-\exerciseref{exercise:absconv} part b).
+Também podemos querer passar o limite através do módulo.
+A recíproca desta proposição não vale; veja o
+item b) do \exerciseref{exercise:absconv}.
 
 \begin{prop}
-If $\{ x_n \}_{n=1}^\infty$ is a convergent sequence, then $\{ \sabs{x_n} \}_{n=1}^\infty$
-is convergent and
+Se $\{ x_n \}_{n=1}^\infty$ é uma sequência convergente, então $\{ \sabs{x_n} \}_{n=1}^\infty$
+também converge e
 \begin{equation*}
-\lim_{n\to\infty} \sabs{x_n} = 
+\lim_{n\to\infty} \sabs{x_n} =
 \abs{\lim_{n\to\infty} x_n} .
 \end{equation*}
 \end{prop}
 
 \begin{proof}
-We simply note the reverse triangle inequality
+Basta observar a desigualdade triangular reversa:
 \begin{equation*}
 \big\lvert \sabs{x_n} - \sabs{x} \big\rvert \leq \sabs{x_n-x} .
 \end{equation*}
-Hence, if $\sabs{x_n -x}$ can be made arbitrarily small, so can
-$\big\lvert \sabs{x_n} - \sabs{x} \big\rvert$.
-Details are left to the reader.
+Portanto, se $\sabs{x_n -x}$ puder ser arbitrariamente pequeno, então
+$\big\lvert \sabs{x_n} - \sabs{x} \big\rvert$ também poderá.
+Deixamos os detalhes para o leitor.
 \end{proof}
 
-Let us see an example putting the propositions above together.  Since
-$\lim_{n\to\infty} \nicefrac{1}{n} = 0$, then
+Vejamos um exemplo que reúne as proposições acima. Como
+$\lim_{n\to\infty} \nicefrac{1}{n} = 0$, temos
 \begin{equation*}
 \lim_{n\to \infty}
-\abs{\sqrt{1 + \nicefrac{1}{n}} - \nicefrac{100}{n^2}} =  
+\abs{\sqrt{1 + \nicefrac{1}{n}} - \nicefrac{100}{n^2}} =
 \abs{\sqrt{1 + \Bigl(\lim_{n\to\infty} \nicefrac{1}{n}\Bigr)}
 - 100 \Bigl(\lim_{n\to\infty} \nicefrac{1}{n}\Bigr)\Bigl(\lim_{n\to\infty} \nicefrac{1}{n}\Bigr)} = 1.
 \end{equation*}
-That is, the limit on the left-hand side exists because the right-hand
-side exists.  You really should read the equality above from right to left.
+Isto é, o limite do lado esquerdo existe porque o limite do lado direito existe. Você realmente deve ler a igualdade acima da direita para a esquerda.
 
-On the other hand, you must apply the propositions carefully.
-For example, by rewriting the expression with common denominator first,
-we find
+Por outro lado, é preciso aplicar as proposições com cuidado.
+Por exemplo, reescrevendo primeiro a expressão com denominador comum,
+obtemos
 \begin{equation*}
 \lim_{n\to \infty} \left( \frac{n^2}{n+1} - n \right)
 = -1 .
 \end{equation*}
-However, 
-$\bigl\{ \frac{n^2}{n+1} \bigr\}_{n=1}^\infty$ and 
-$\{n\}_{n=1}^\infty$ are not convergent,
-so
+No entanto,
+$\bigl\{ \frac{n^2}{n+1} \bigr\}_{n=1}^\infty$ e
+$\{n\}_{n=1}^\infty$ não são convergentes;
+portanto,
 $\Bigl(\lim\limits_{n\to\infty} \frac{n^2}{n+1}\Bigr) -
-\Bigl(\lim\limits_{n\to\infty} n\Bigr)$ is nonsense.
+\Bigl(\lim\limits_{n\to\infty} n\Bigr)$ não faz sentido.
 
-\subsection{Recursively defined sequences}
+\subsection{Sequências definidas recursivamente}
 
-Now that we know we can interchange limits and algebraic operations, we can
-compute the limits of many sequences.
-One such class is recursively defined sequences, that is, sequences where
-the next number in the sequence is computed using a formula from a fixed number
-of preceding elements in the sequence.
+Agora que sabemos trocar limites e operações algébricas, podemos
+calcular os limites de muitas sequências.
+Uma dessas classes é a das sequências definidas recursivamente, isto é, sequências em que
+o termo seguinte é calculado por uma fórmula que depende de um número fixo
+de termos anteriores.
 
 \begin{example}
-Let $\{ x_n \}_{n=1}^\infty$ be defined by $x_1 \coloneqq 2$ and
+Seja $\{ x_n \}_{n=1}^\infty$ definida por $x_1 \coloneqq 2$ e
 \begin{equation*}
 x_{n+1} \coloneqq x_n - \frac{x_n^2-2}{2x_n} .
 \end{equation*}
-We must first find out if this sequence is well-defined; we must show we never
-divide by zero.
-Then we must find out if the sequence converges.  Only then
-can we attempt to find the limit.
+Primeiro, precisamos descobrir se essa sequência está bem definida; precisamos demonstrar que nunca
+dividimos por zero.
+Depois, precisamos descobrir se a sequência converge. Só então
+podemos tentar encontrar seu limite.
 
-So let us prove that for all $n$,
-$x_n$ exists and $x_n > 0$
-(so the sequence is well-defined and bounded below).
-Let us show this by \hyperref[induction:thm]{induction}.  We know that
-$x_1 = 2 > 0$.  For the induction step, suppose $x_n$ exists and
-$x_n > 0$.  Then
+Comecemos demonstrando que, para todo $n$,
+$x_n$ existe e $x_n > 0$
+(assim, a sequência está bem definida e é limitada inferiormente).
+Demonstremos isso por \hyperref[induction:thm]{indução}. Sabemos que
+$x_1 = 2 > 0$. Para o passo indutivo, suponhamos que $x_n$ exista e
+que $x_n > 0$. Então
 \begin{equation*}
 x_{n+1} = x_n - \frac{x_n^2-2}{2x_n} =
 \frac{2x_n^2 - x_n^2+2}{2x_n} =
 \frac{x_n^2+2}{2x_n} .
 \end{equation*}
-It is always true that $x_n^2+2 > 0$,
-and as
-$x_n > 0$, then $x_{n+1} = \frac{x_n^2+2}{2x_n} > 0$.
+Sempre vale $x_n^2+2 > 0$,
+e, como
+$x_n > 0$, temos $x_{n+1} = \frac{x_n^2+2}{2x_n} > 0$.
 
-Next we
-show that the sequence is monotone decreasing.  If we show that
-$x_n^2-2 \geq 0$ for all $n$, then $x_{n+1} \leq x_n$ for all $n$.
-Obviously $x_1^2-2 = 4-2 = 2 > 0$.  For an arbitrary $n$, we have 
+Em seguida, mostraremos que a sequência é monótona decrescente. Se demonstrarmos que
+$x_n^2-2 \geq 0$ para todo $n$, então $x_{n+1} \leq x_n$ para todo $n$.
+É claro que $x_1^2-2 = 4-2 = 2 > 0$. Para um $n$ arbitrário, temos
 \begin{equation*}
 x_{n+1}^2-2 =
 {\left( \frac{x_n^2+2}{2x_n} \right)}^2 - 2
@@ -1295,205 +1293,203 @@ x_{n+1}^2-2 =
 =
 \frac{{\left( x_n^2-2 \right)}^2}{4x_n^2} .
 \end{equation*}
-Since squares are nonnegative,
-$x_{n+1}^2-2 \geq 0$ for all $n$.  Therefore,
-$\{ x_n \}_{n=1}^\infty$ is monotone decreasing and bounded ($x_n > 0$ for all $n$), and 
-the limit exists.  It remains to find the limit.
+Como quadrados são não negativos,
+$x_{n+1}^2-2 \geq 0$ para todo $n$. Portanto,
+$\{ x_n \}_{n=1}^\infty$ é monótona decrescente e limitada (pois $x_n > 0$ para todo $n$); assim,
+o limite existe. Resta encontrar esse limite.
 
-Write
+Escrevamos
 \begin{equation*}
 2x_nx_{n+1} = x_n^2+2 .
 \end{equation*}
-Since $\{ x_{n+1} \}_{n=1}^\infty$ is the 1-tail of $\{ x_n \}_{n=1}^\infty$, it converges to the
-same limit.  Let us define $x \coloneqq \lim_{n\to\infty} x_n$.  Take the limit of
-both sides to obtain
+Como $\{ x_{n+1} \}_{n=1}^\infty$ é a cauda de ordem 1 de $\{ x_n \}_{n=1}^\infty$, ela converge para o
+mesmo limite. Seja $x \coloneqq \lim_{n\to\infty} x_n$. Tomemos o limite dos
+dois lados e obtemos
 \begin{equation*}
 2x^2 = x^2+2 ,
 \end{equation*}
-or $x^2 = 2$.  As $x_n > 0$ for all $n$ we get $x \geq 0$, and therefore $x = \sqrt{2}$.
+ou $x^2 = 2$. Como $x_n > 0$ para todo $n$, temos $x \geq 0$ e, portanto, $x = \sqrt{2}$.
 \end{example}
 
-You may have seen the sequence above before.  It is
-\emph{Newton's method}%
+Talvez você já tenha visto a sequência acima. Trata-se do
+\emph{método de Newton}%
 \footnote{%
-Named after the English physicist and mathematician
+Nomeado em homenagem ao físico e matemático inglês
 \href{https://en.wikipedia.org/wiki/Isaac_Newton}{Isaac Newton}
 (1642--1726/7).}
-for finding the square root of 2.  This method comes up often in
-practice and converges very rapidly.  We used the fact that
-$x_1^2 -2 >0$, although it was not strictly needed to show convergence by
-considering a tail of the sequence.
-The sequence converges as long as $x_1 \neq 0$, although with a negative $x_1$
-we would arrive at $x=-\sqrt{2}$.  By replacing the 2 in the numerator we 
-obtain the square root of any positive number.  These statements are left as
-an exercise.
+para encontrar a raiz quadrada de 2. Esse método aparece com frequência na
+prática e converge muito rapidamente. Usamos o fato de que
+$x_1^2 -2 >0$, embora isso não fosse estritamente necessário para provar a convergência
+considerando uma cauda da sequência.
+A sequência converge desde que $x_1 \neq 0$, embora, para um $x_1$
+negativo, obtivéssemos $x=-\sqrt{2}$. Substituindo o 2 no numerador,
+obtemos a raiz quadrada de qualquer número positivo. Essas afirmações ficam como
+exercício.
 
-You should, however, be careful.  Before taking any limits, you must
-make sure the sequence converges.  Let us see an example.
+No entanto, é preciso ter cuidado. Antes de calcular qualquer limite, devemos
+verificar se a sequência converge. Vejamos um exemplo.
 
 \begin{example}
-Suppose $x_1 \coloneqq 1$ and $x_{n+1} \coloneqq x_n^2+x_n$.
-If we blindly assumed that the limit exists (call it $x$), then we
-would get the equation $x = x^2+x$, from which we might
-conclude $x=0$.  However, it is not hard
-to show that $\{ x_n \}_{n=1}^\infty$ is unbounded and therefore does not converge.
+Suponhamos que $x_1 \coloneqq 1$ e $x_{n+1} \coloneqq x_n^2+x_n$.
+Se presumíssemos, sem verificar, que o limite existe (chamemo-lo de $x$), obteríamos
+a equação $x = x^2+x$, da qual poderíamos
+concluir $x=0$. No entanto, não é difícil
+demonstrar que $\{ x_n \}_{n=1}^\infty$ não é limitada e, portanto, não converge.
 
-The thing to notice in this example is that the method still works, but
-it depends on the initial value $x_1$.  If we set $x_1 \coloneqq 0$,
-then the sequence converges and the limit really is 0.
-An entire branch of mathematics, called dynamics, deals precisely with these
-issues.
-See
+O que devemos notar neste exemplo é que o método ainda funciona, mas
+depende do valor inicial $x_1$. Se tomarmos $x_1 \coloneqq 0$,
+a sequência converge e o limite é de fato 0.
+Um ramo inteiro da matemática, chamado de dinâmica, trata precisamente dessas
+questões.
+Veja
 \exerciseref{exercise:convergentinitialvalues}.
 \end{example}
 
-\subsection{Some convergence tests}
+\subsection{Alguns critérios de convergência}
 
-It is not always necessary to go back to the definition of convergence
-to prove that a sequence is convergent.  We first give a simple convergence test.
-The main idea is that 
-$\{ x_n \}_{n=1}^\infty$ converges to $x$ if and only if 
-$\bigl\{ \sabs{ x_n - x } \bigr\}_{n=1}^\infty$ converges to zero.
+Nem sempre é necessário voltar à definição de convergência
+para demonstrar que uma sequência converge. Primeiro, apresentamos um critério simples.
+A ideia principal é que
+$\{ x_n \}_{n=1}^\infty$ converge para $x$ se, e somente se,
+$\bigl\{ \sabs{ x_n - x } \bigr\}_{n=1}^\infty$ converge para zero.
 
 \begin{prop} \label{convzero:prop}
-Let $\{ x_n \}_{n=1}^\infty$ be a sequence. 
-Suppose there is an $x \in \R$
-and a convergent sequence $\{ a_n \}_{n=1}^\infty$
-such that
+Seja $\{ x_n \}_{n=1}^\infty$ uma sequência.
+Suponhamos que exista um $x \in \R$
+e uma sequência convergente $\{ a_n \}_{n=1}^\infty$
+tais que
 \begin{equation*}
 \lim_{n\to\infty} a_n = 0
 \end{equation*}
-and 
+e
 \begin{equation*}
 \sabs{x_n - x} \leq a_n
 \qquad
-\text{for all $n \in \N$.}
+\text{para todo $n \in \N$.}
 \end{equation*}
-Then $\{ x_n \}_{n=1}^\infty$ converges and $\lim\limits_{n\to\infty} x_n = x$.
+Então $\{ x_n \}_{n=1}^\infty$ converge e $\lim\limits_{n\to\infty} x_n = x$.
 \end{prop}
 
 \begin{proof}
-Let $\epsilon > 0$ be given.  Note that $a_n \geq 0$
-for all $n$.  Find an $M \in \N$ such that for
-all $n \geq M$, we have
-$a_n = \sabs{a_n - 0} < \epsilon$.  Then, for all $n \geq M$,
-we have
+Seja $\epsilon > 0$ dado. Note que $a_n \geq 0$
+para todo $n$. Encontremos um $M \in \N$ tal que, para
+todo $n \geq M$, valha
+$a_n = \sabs{a_n - 0} < \epsilon$. Então, para todo $n \geq M$,
+temos
 \begin{equation*}
 \sabs{x_n - x} \leq a_n < \epsilon . \qedhere
 \end{equation*}
 \end{proof}
 
-In other words, studying when a sequence has a limit is 
-the same as studying when another sequence goes to zero.
-It may be hard to decide if a particular sequence converges, but
-for some sequences there exist easy-to-apply tests for convergence.
-Let us see one such test.
-First, we compute the limit of a certain specific sequence.
+Em outras palavras, estudar quando uma sequência tem limite é
+o mesmo que estudar quando outra sequência converge para zero.
+Pode ser difícil decidir se uma dada sequência converge, mas
+para algumas sequências há critérios de convergência fáceis de aplicar.
+Vejamos um deles.
+Primeiro, calcularemos o limite de uma sequência específica.
 
 \begin{prop}
-Let $c > 0$.
+Seja $c > 0$.
 \begin{enumerate}[(i)]
 \item
-If $c < 1$, then
+Se $c < 1$, então
 \begin{equation*}
 \lim_{n\to\infty} c^n = 0.
 \end{equation*}
 \item
-If $c > 1$, then $\{ c^n \}_{n=1}^\infty$ is unbounded.
+Se $c > 1$, então $\{ c^n \}_{n=1}^\infty$ não é limitada.
 \end{enumerate}
 \end{prop}
 
 \begin{proof}
-First consider $c < 1$.  As $c > 0$, we get $c^n > 0$ for all $n \in \N$ by
-\hyperref[induction:thm]{induction}.  Then $c < 1$ implies that
-$c^{n+1} < c^n$ for all $n$.
-The sequence $\{ c^n \}_{n=1}^\infty$ is
-thus
-bounded below and
-decreasing.  Hence, it is convergent.
-Let $x \coloneqq \lim_{n\to\infty} c^n$.  The 1-tail $\{ c^{n+1} \}_{n=1}^\infty$
-also converges to $x$.  Taking the limit of both sides of $c^{n+1} = c \cdot
-c^n$, we obtain $x = cx$, or $(1-c)x=0$.  It follows that $x=0$ as $c \neq 1$.
+Consideremos primeiro $c < 1$. Como $c > 0$, obtemos $c^n > 0$ para todo $n \in \N$ por
+\hyperref[induction:thm]{indução}. Como $c < 1$, temos
+$c^{n+1} < c^n$ para todo $n$.
+Assim, a sequência $\{ c^n \}_{n=1}^\infty$ é
+limitada inferiormente e
+decrescente. Portanto, é convergente.
+Seja $x \coloneqq \lim_{n\to\infty} c^n$. A cauda de ordem 1, $\{ c^{n+1} \}_{n=1}^\infty$,
+também converge para $x$. Tomando o limite dos dois lados de $c^{n+1} = c \cdot
+c^n$, obtemos $x = cx$, ou $(1-c)x=0$. Segue que $x=0$, pois $c \neq 1$.
 
-Now consider $c > 1$.
-Let $B > 0$ be arbitrary.
-As $\nicefrac{1}{c} < 1$, the sequence $\bigl\{ {(\nicefrac{1}{c})}^n \bigr\}_{n=1}^\infty$
-converges to $0$.
-Hence, for some large enough $n$, we get
+Agora consideremos $c > 1$.
+Seja $B > 0$ arbitrário.
+Como $\nicefrac{1}{c} < 1$, a sequência $\bigl\{ {(\nicefrac{1}{c})}^n \bigr\}_{n=1}^\infty$
+converge para $0$.
+Portanto, para algum $n$ suficientemente grande, temos
 \begin{equation*}
 \frac{1}{c^n} =
 {\left(\frac{1}{c}\right)}^n < \frac{1}{B} .
 \end{equation*}
-In other words, $c^n > B$, and $B$ is not an upper bound for 
-$\{ c^n \}_{n=1}^\infty$.  As $B$ was arbitrary, $\{ c^n \}_{n=1}^\infty$ is unbounded.
+Em outras palavras, $c^n > B$, e $B$ não é cota superior de
+$\{ c^n \}_{n=1}^\infty$. Como $B$ era arbitrário, $\{ c^n \}_{n=1}^\infty$ não é limitada.
 \end{proof}
 
-In the proposition above, the
-ratio of the $(n+1)$th term to the $n$th term is $c$.  We 
-generalize this simple result to a larger class of sequences.
-The following lemma will come up again once we get to series.
+Na proposição acima, a
+razão entre o $(n+1)$-ésimo e o $n$-ésimo termo é $c$. Generalizamos
+esse resultado simples para uma classe maior de sequências.
+O lema a seguir voltará a aparecer quando estudarmos séries.
 
-\begin{lemma}[Ratio test for sequences]\index{ratio test for sequences}
+\begin{lemma}[Teste da razão para sequências]\index{teste da razão para sequências}
 \label{seq:ratiotest}
-Let $\{ x_n \}_{n=1}^\infty$ be a sequence such that $x_n \neq 0$ for all $n$ and such that
-the limit
+Seja $\{ x_n \}_{n=1}^\infty$ uma sequência tal que $x_n \neq 0$ para todo $n$ e tal que o limite
 \begin{equation*}
 L \coloneqq \lim_{n\to\infty} \frac{\sabs{x_{n+1}}}{\sabs{x_n}}
 \qquad
-\text{exists.}
+\text{exista.}
 \end{equation*}
 \begin{enumerate}[(i)]
 \item
-If $L < 1$, then $\{ x_n \}_{n=1}^\infty$ converges and $\lim\limits_{n\to\infty} x_n = 0$.
+Se $L < 1$, então $\{ x_n \}_{n=1}^\infty$ converge e $\lim\limits_{n\to\infty} x_n = 0$.
 \item
-If $L > 1$, then $\{ x_n \}_{n=1}^\infty$ is unbounded (hence diverges).
+Se $L > 1$, então $\{ x_n \}_{n=1}^\infty$ não é limitada (logo, diverge).
 \end{enumerate}
 \end{lemma}
 
-If $L$ exists, but $L=1$, the lemma says nothing.  We cannot make any
-conclusion based on that information alone.  For example,
-the sequence $\{ \nicefrac{1}{n} \}_{n=1}^\infty$ converges to zero, but $L=1$.
-The constant sequence $\{ 1 \}_{n=1}^\infty$ converges to 1, not zero, and 
-$L=1$.  The sequence $\bigl\{ {(-1)}^n \bigr\}_{n=1}^\infty$ does not converge at all, and $L=1$ as
-well.
-Finally, the sequence $\{  n \}_{n=1}^\infty$ is unbounded, yet again $L=1$.
-The statement of the lemma may be strengthened somewhat, see 
-exercises \ref{exercise:strongerratiotest1} and
+Se $L$ existe, mas $L=1$, o lema não fornece nenhuma conclusão.
+Não podemos chegar a nenhuma
+conclusão com base apenas nessa informação. Por exemplo,
+a sequência $\{ \nicefrac{1}{n} \}_{n=1}^\infty$ converge para zero, mas $L=1$.
+A sequência constante $\{ 1 \}_{n=1}^\infty$ converge para 1, não para zero, e
+$L=1$. A sequência $\bigl\{ {(-1)}^n \bigr\}_{n=1}^\infty$ também não converge, e $L=1$.
+Por fim, a sequência $\{ n \}_{n=1}^\infty$ não é limitada, mas, novamente, $L=1$.
+O enunciado do lema pode ser um pouco fortalecido; veja os
+exercícios \ref{exercise:strongerratiotest1} e
 \ref{exercise:strongerratiotest2}.
 
 \begin{proof}
-Suppose $L < 1$.
-As
-$\frac{\sabs{x_{n+1}}}{\sabs{x_n}} \geq 0$ for all $n$, we have $L \geq 0$.  Pick
-$r$ such that $L < r < 1$.
-We wish to compare the sequence $\{ x_n \}_{n=1}^\infty$ to the sequence $\{ r^n \}_{n=1}^\infty$.  The idea is that
-while the ratio $\frac{\sabs{x_{n+1}}}{\sabs{x_n}}$ is not going to be less than $L$ eventually,
-it will eventually be less than $r$, which is still less than 1.
-The intuitive idea of the proof is illustrated in \figureref{figratseq}.
+Suponhamos que $L < 1$.
+Como
+$\frac{\sabs{x_{n+1}}}{\sabs{x_n}} \geq 0$ para todo $n$, temos $L \geq 0$. Escolhamos
+$r$ tal que $L < r < 1$.
+Queremos comparar a sequência $\{ x_n \}_{n=1}^\infty$ com a sequência $\{ r^n \}_{n=1}^\infty$. A ideia é que,
+embora a razão $\frac{\sabs{x_{n+1}}}{\sabs{x_n}}$ não seja menor que $L$ a partir de algum ponto,
+ela será eventualmente menor que $r$, que ainda é menor que 1.
+A ideia intuitiva da demonstração está ilustrada na \figureref{figratseq}.
 \begin{myfigureht}
 \myincludepdft{figratseq}{%
-A diagram of the real line with points L on the left, then
-a little to the right a point r and further to the right the point 1.
-shorter lines mark points congregating around L and all less
-than r.}
-\caption{The short lines represent the ratios 
+Um diagrama da reta real com o ponto L à esquerda, depois
+um pouco à direita o ponto r e, ainda mais à direita, o ponto 1.
+Traços menores marcam pontos que se agrupam em torno de L e são todos
+menores que r.}
+\caption{Os traços curtos representam as razões
 $\frac{\sabs{x_{n+1}}}{\sabs{x_n}}$
-approaching $L < 1$.\label{figratseq}}
+que convergem para $L < 1$.\label{figratseq}}
 \end{myfigureht}
 
-As $r-L > 0$, there exists an $M \in \N$ such that for
-all $n \geq M$, we have
+Como $r-L > 0$, existe um $M \in \N$ tal que, para
+todo $n \geq M$, temos
 \begin{equation*}
 \abs{\frac{\sabs{x_{n+1}}}{\sabs{x_n}} - L} < r-L .
 \end{equation*}
-Therefore, for $n \geq M$,
+Portanto, para $n \geq M$,
 \begin{equation*}
-\frac{\sabs{x_{n+1}}}{\sabs{x_n}} - L < r-L 
-\qquad \text{or} \qquad
+\frac{\sabs{x_{n+1}}}{\sabs{x_n}} - L < r-L
+\qquad \text{ou} \qquad
 \frac{\sabs{x_{n+1}}}{\sabs{x_n}} < r .
 \end{equation*}
-For $n > M$ (that is for $n \geq M+1$)
-write
+Para $n > M$ (isto é, para $n \geq M+1$),
+escrevemos
 \begin{equation*}
 \sabs{x_n} =
 \sabs{x_M}
@@ -1505,24 +1501,24 @@ write
 \sabs{x_M}
 r r \cdots r = \sabs{x_M} r^{n-M} = (\sabs{x_M} r^{-M}) r^n .
 \end{equation*}
-The sequence $\{ r^n \}_{n=1}^\infty$ converges to zero and hence 
-$\sabs{x_M} r^{-M} r^n$ converges to zero.  By \propref{convzero:prop},
-the $M$-tail
-$\{x_n\}_{n=M+1}^\infty$ converges to zero and therefore $\{x_n\}_{n=1}^\infty$ converges to zero.
+A sequência $\{ r^n \}_{n=1}^\infty$ converge para zero; portanto,
+$\sabs{x_M} r^{-M} r^n$ também converge para zero. Pela \propref{convzero:prop},
+a cauda de ordem $M$,
+$\{x_n\}_{n=M+1}^\infty$, converge para zero e, portanto, $\{x_n\}_{n=1}^\infty$ também converge para zero.
 
-Now suppose $L > 1$.  Pick
-$r$ such that $1 < r < L$.  As $L-r > 0$,
-there exists an $M \in \N$ such that for
-all $n \geq M$
+Agora suponhamos que $L > 1$. Escolhamos
+$r$ tal que $1 < r < L$. Como $L-r > 0$,
+existe um $M \in \N$ tal que, para
+todo $n \geq M$,
 \begin{equation*}
 \abs{\frac{\sabs{x_{n+1}}}{\sabs{x_n}} - L} < L-r .
 \end{equation*}
-Therefore,
+Portanto,
 \begin{equation*}
 \frac{\sabs{x_{n+1}}}{\sabs{x_n}} > r .
 \end{equation*}
-Again for $n > M$,
-write
+Novamente, para $n > M$,
+escrevemos
 \begin{equation*}
 \sabs{x_n} =
 \sabs{x_M}
@@ -1534,20 +1530,20 @@ write
 \sabs{x_M}
 r r \cdots r = \sabs{x_M} r^{n-M} = (\sabs{x_M} r^{-M}) r^n .
 \end{equation*}
-The sequence $\{ r^n \}_{n=1}^\infty$ is unbounded (since $r > 1$), and so
-$\{x_n\}_{n=1}^\infty$ cannot be bounded (if $\sabs{x_n} \leq B$ for all $n$, then
-$r^n < \frac{B}{\sabs{x_M}} r^{M}$ for all $n > M$, which is impossible).
-Consequently, $\{ x_n \}_{n=1}^\infty$ cannot converge.
+A sequência $\{ r^n \}_{n=1}^\infty$ não é limitada (pois $r > 1$), logo
+$\{x_n\}_{n=1}^\infty$ não pode ser limitada (se $\sabs{x_n} \leq B$ para todo $n$, então
+$r^n < \frac{B}{\sabs{x_M}} r^{M}$ para todo $n > M$, o que é impossível).
+Consequentemente, $\{ x_n \}_{n=1}^\infty$ não pode convergir.
 \end{proof}
 
 \begin{example}
-A simple application of the lemma above is to prove 
+Uma aplicação simples do lema acima é demonstrar que
 \begin{equation*}
 \lim_{n\to\infty} \frac{2^n}{n!} = 0 .
 \end{equation*}
 
-Proof:
-Compute
+Demonstração:
+Calculemos
 \begin{equation*}
 \frac{2^{n+1} / (n+1)!}{2^n/n!}
 =
@@ -1555,232 +1551,234 @@ Compute
 =
 \frac{2}{n+1} .
 \end{equation*}
-It is not hard to see that $\bigl\{ \frac{2}{n+1} \bigr\}_{n=1}^\infty$ converges to zero.
-The conclusion follows by the lemma.
+Não é difícil ver que $\bigl\{ \frac{2}{n+1} \bigr\}_{n=1}^\infty$ converge para zero.
+A conclusão segue do lema.
 \end{example}
 
 \begin{example} \label{example:nto1overn}
-A more complicated (and useful) application of the ratio test is to prove 
+Uma aplicação um pouco mais complicada (e útil) do teste da razão é demonstrar que
 \begin{equation*}
 \lim_{n\to\infty} n^{1/n} = 1 .
 \end{equation*}
 
-Proof:
-Let $\epsilon > 0$ be given.  Consider the sequence
-$\bigl\{ \frac{n}{{(1+\epsilon)}^n} \bigr\}_{n=1}^\infty$.  Compute
+Demonstração:
+Seja $\epsilon > 0$ dado. Consideremos a sequência
+$\bigl\{ \frac{n}{{(1+\epsilon)}^n} \bigr\}_{n=1}^\infty$. Calculemos
 \begin{equation*}
 \frac{(n+1)/{(1+\epsilon)}^{n+1}}{n/{(1+\epsilon)}^{n}}
 =
 \frac{n+1}{n} \frac{1}{1+\epsilon} .
 \end{equation*}
-The limit of $\frac{n+1}{n} = 1+\frac{1}{n}$ as $n \to \infty$ is 1, and so
+O limite de $\frac{n+1}{n} = 1+\frac{1}{n}$ quando $n \to \infty$ é 1, logo
 \begin{equation*}
 \lim_{n\to \infty} \frac{(n+1)/{(1+\epsilon)}^{n+1}}{n/{(1+\epsilon)}^{n}}
 =
-\frac{1}{1+\epsilon}  < 1 .
+\frac{1}{1+\epsilon} < 1 .
 \end{equation*}
-Therefore, $\bigl\{ \frac{n}{{(1+\epsilon)}^n} \bigr\}_{n=1}^\infty$ converges to 0.
-In particular,
-there exists an $M$ such that for $n \geq M$, we have
-$\frac{n}{{(1+\epsilon)}^n} < 1$, or 
-$n < {(1+\epsilon)}^n$, or 
-$n^{1/n} < 1+\epsilon$.  As $n \geq 1$, we find $n^{1/n} \geq 1$, and
-so $0 \leq n^{1/n}-1 < \epsilon$. Consequently,
+Portanto, $\bigl\{ \frac{n}{{(1+\epsilon)}^n} \bigr\}_{n=1}^\infty$ converge para 0.
+Em particular,
+existe um $M$ tal que, para $n \geq M$, temos
+$\frac{n}{{(1+\epsilon)}^n} < 1$, ou
+$n < {(1+\epsilon)}^n$, ou
+$n^{1/n} < 1+\epsilon$. Como $n \geq 1$, temos $n^{1/n} \geq 1$ e,
+portanto, $0 \leq n^{1/n}-1 < \epsilon$. Consequentemente,
 $\lim\limits_{n\to\infty} n^{1/n} = 1$.
 \end{example}
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
 \begin{exercise}
-Prove \corref{limandineq:cor}.  Hint: Use constant sequences
-and \lemmaref{limandineq:lemma}.
+Demonstre \corref{limandineq:cor}. Dica: use sequências constantes
+e \lemmaref{limandineq:lemma}.
 \end{exercise}
 
 \begin{exercise}
-Prove part \ref{prop:contalg:ii} of \propref{prop:contalg}.
+Demonstre o item \ref{prop:contalg:ii} da \propref{prop:contalg}.
 \end{exercise}
 
 \begin{exercise}
-Prove that if $\{ x_n \}_{n=1}^\infty$ is a convergent sequence, $k \in \N$, then
+Demonstre que, se $\{ x_n \}_{n=1}^\infty$ é uma sequência convergente e $k \in \N$, então
 \begin{equation*}
-\lim_{n\to\infty} x_n^k = 
+\lim_{n\to\infty} x_n^k =
 {\left( \lim_{n\to\infty} x_n \right)}^k .
 \end{equation*}
-Hint: Use \hyperref[induction:thm]{induction}.
+Dica: use \hyperref[induction:thm]{indução}.
 \end{exercise}
 
 \begin{exercise}
-Suppose $x_1 \coloneqq \frac{1}{2}$ and $x_{n+1} \coloneqq x_n^2$.  Show that
-$\{ x_n \}_{n=1}^\infty$ converges and find
-$\lim_{n\to\infty} x_n$.  Hint: You cannot divide by zero!
+Suponha que $x_1 \coloneqq \frac{1}{2}$ e $x_{n+1} \coloneqq x_n^2$. Mostre que
+$\{ x_n \}_{n=1}^\infty$ converge e encontre
+$\lim_{n\to\infty} x_n$. Dica: não se pode dividir por zero!
 \end{exercise}
 
 \begin{exercise}
-Let $x_n \coloneqq \frac{n-\cos(n)}{n}$.  Use the
-\hyperref[squeeze:lemma]{squeeze lemma} to show that
-$\{ x_n \}_{n=1}^\infty$ converges and find the limit.
+Seja $x_n \coloneqq \frac{n-\cos(n)}{n}$. Use o
+\hyperref[squeeze:lemma]{lema do confronto} para mostrar que
+$\{ x_n \}_{n=1}^\infty$ converge e determinar seu limite.
 \end{exercise}
 
 \begin{exercise}
-Let $x_n \coloneqq \frac{1}{n^2}$ and $y_n \coloneqq \frac{1}{n}$.  Define
-$z_n \coloneqq \frac{x_n}{y_n}$ and 
-$w_n \coloneqq \frac{y_n}{x_n}$.  Do $\{ z_n \}_{n=1}^\infty$ and $\{ w_n \}_{n=1}^\infty$
-converge?  What are the limits?  Can you apply \propref{prop:contalg}?
-Why or why not?
+Sejam $x_n \coloneqq \frac{1}{n^2}$ e $y_n \coloneqq \frac{1}{n}$. Definamos
+$z_n \coloneqq \frac{x_n}{y_n}$ e
+$w_n \coloneqq \frac{y_n}{x_n}$. As sequências $\{ z_n \}_{n=1}^\infty$ e $\{ w_n \}_{n=1}^\infty$
+convergem? Quais são os limites? Podemos aplicar a \propref{prop:contalg}?
+Por que sim ou por que não?
 \end{exercise}
 
 \begin{exercise}
-True or false, prove or find a counterexample:
-If $\{ x_n \}_{n=1}^\infty$ is a sequence
-such that $\{ x_n^2 \}_{n=1}^\infty$ converges, then $\{ x_n \}_{n=1}^\infty$ converges.
+Verdadeiro ou falso? Demonstre ou encontre um contraexemplo:
+Se $\{ x_n \}_{n=1}^\infty$ é uma sequência
+tal que $\{ x_n^2 \}_{n=1}^\infty$ converge, então $\{ x_n \}_{n=1}^\infty$ converge.
 \end{exercise}
 
 \begin{exercise}
-Show that
+Mostre que
 \begin{equation*}
 \lim_{n\to\infty} \frac{n^2}{2^n} = 0 .
 \end{equation*}
 \end{exercise}
 
 \begin{exercise}
-Suppose $\{ x_n \}_{n=1}^\infty$ is a sequence, $x \in \R$, and $x_n \neq x$ for
-all $n \in \N$.  Suppose the limit
+Suponha que $\{ x_n \}_{n=1}^\infty$ seja uma sequência, $x \in \R$ e $x_n \neq x$ para
+todo $n \in \N$. Suponha que exista o limite
 \begin{equation*}
 L \coloneqq \lim_{n \to \infty} \frac{\sabs{x_{n+1}-x}}{\sabs{x_n-x}}
 \end{equation*}
-exists and $L < 1$.  Show that $\{ x_n \}_{n=1}^\infty$ converges to $x$.
+e que $L < 1$. Mostre que $\{ x_n \}_{n=1}^\infty$ converge para $x$.
 \end{exercise}
 
-\begin{exercise}[Challenging]
-Let $\{ x_n \}_{n=1}^\infty$ be a convergent sequence such
-that $x_n \geq 0$ and $k \in \N$.
-Show
+\begin{exercise}[Desafiador]
+Seja $\{ x_n \}_{n=1}^\infty$ uma sequência convergente tal
+que $x_n \geq 0$ e $k \in \N$.
+Mostre que
 \begin{equation*}
 \lim_{n\to\infty} x_n^{1/k} =
 {\left( \lim_{n\to\infty} x_n \right)}^{1/k} .
 \end{equation*}
-Hint: First, handle the limit being zero.
-Next, find an expression $q$ such that $\frac{x_n^{1/k}-x^{1/k}}{x_n-x} =
+Dica: Primeiro, trate o caso em que o limite é zero.
+Em seguida, encontre uma expressão $q$ tal que
+$\frac{x_n^{1/k}-x^{1/k}}{x_n-x} =
 \frac{1}{q}$.
 \end{exercise}
 
 \begin{exercise}
-Let $r > 0$.  Show that starting with an arbitrary $x_1 \neq 0$, the sequence
-defined by
+Seja $r > 0$. Mostre que, partindo de um $x_1 \neq 0$ arbitrário, a sequência
+definida por
 \begin{equation*}
 x_{n+1} \coloneqq x_n - \frac{x_n^2-r}{2x_n}
 \end{equation*}
-converges to $\sqrt{r}$ if $x_1 > 0$ and $-\sqrt{r}$ if $x_1 < 0$.
+converge para $\sqrt{r}$ se $x_1 > 0$ e para $-\sqrt{r}$ se $x_1 < 0$.
 \end{exercise}
 
 \begin{samepage}
 \begin{exercise}
-Let $\{ a_n \}_{n=1}^\infty$ and $\{ b_n \}_{n=1}^\infty$ be sequences.
+Sejam $\{ a_n \}_{n=1}^\infty$ e $\{ b_n \}_{n=1}^\infty$ sequências.
 \begin{enumerate}[a)]
 \item
-Suppose $\{ a_n \}_{n=1}^\infty$ is bounded and $\{ b_n \}_{n=1}^\infty$ converges to 0.
-Show that $\{ a_n b_n \}_{n=1}^\infty$ converges to 0.
+Suponha que $\{ a_n \}_{n=1}^\infty$ seja limitada e que $\{ b_n \}_{n=1}^\infty$ convirja para 0.
+Mostre que $\{ a_n b_n \}_{n=1}^\infty$ converge para 0.
 \item
-Find an example where $\{ a_n \}_{n=1}^\infty$ is unbounded, $\{ b_n \}_{n=1}^\infty$ converges to
-0, and $\{ a_n b_n \}_{n=1}^\infty$ is not convergent.
+Dê um exemplo em que $\{ a_n \}_{n=1}^\infty$ não seja limitada, $\{ b_n \}_{n=1}^\infty$ convirja para
+0 e $\{ a_n b_n \}_{n=1}^\infty$ não seja convergente.
 \item
-Find an example where $\{ a_n \}_{n=1}^\infty$ is bounded, $\{ b_n \}_{n=1}^\infty$ converges to
-some $x \neq 0$, and $\{ a_n b_n \}_{n=1}^\infty$ is not convergent.
+Dê um exemplo em que $\{ a_n \}_{n=1}^\infty$ seja limitada, $\{ b_n \}_{n=1}^\infty$ convirja para
+algum $x \neq 0$ e $\{ a_n b_n \}_{n=1}^\infty$ não seja convergente.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
 
 \begin{samepage}
-\begin{exercise}[Easy] \label{exercise:strongerratiotest1}
-Prove the following stronger version of \lemmaref{seq:ratiotest}, the ratio
-test.  
-Suppose $\{ x_n \}_{n=1}^\infty$ is a sequence such that $x_n \neq 0$ for all
+\begin{exercise}[Fácil] \label{exercise:strongerratiotest1}
+Demonstre a seguinte versão mais forte do
+\lemmaref{seq:ratiotest}, o teste da razão.
+Suponha que $\{ x_n \}_{n=1}^\infty$ seja uma sequência tal que $x_n \neq 0$ para todo
 $n$.
 \begin{enumerate}[a)]
 \item
-Prove that if there exists an $r < 1$ and $M \in \N$ such that
+Demonstre que, se existir um $r < 1$ e um $M \in \N$ tais que
 \begin{equation*}
-\frac{\sabs{x_{n+1}}}{\sabs{x_n}} \leq r \quad \text{for all } n \geq M,
+\frac{\sabs{x_{n+1}}}{\sabs{x_n}} \leq r \quad \text{para todo } n \geq M,
 \end{equation*}
-then $\{ x_n \}_{n=1}^\infty$ converges to $0$.
+então $\{ x_n \}_{n=1}^\infty$ converge para $0$.
 \item
-Prove that if there exists an $r > 1$ and $M \in \N$ such that
+Demonstre que, se existir um $r > 1$ e um $M \in \N$ tais que
 \begin{equation*}
-\frac{\sabs{x_{n+1}}}{\sabs{x_n}} \geq r  \quad \text{for all } n \geq M,
+\frac{\sabs{x_{n+1}}}{\sabs{x_n}} \geq r \quad \text{para todo } n \geq M,
 \end{equation*}
-then $\{ x_n \}_{n=1}^\infty$ is unbounded.
+então $\{ x_n \}_{n=1}^\infty$ não é limitada.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
 
 \begin{exercise} \label{exercise:convergentinitialvalues}
-Suppose $x_1 \coloneqq c$ and $x_{n+1} \coloneqq x_n^2+x_n$.
-Show that $\{ x_n \}_{n=1}^\infty$ converges if and only if $-1 \leq c \leq 0$, in which
-case it converges to 0.
+Suponha que $x_1 \coloneqq c$ e $x_{n+1} \coloneqq x_n^2+x_n$.
+Mostre que $\{ x_n \}_{n=1}^\infty$ converge se, e somente se, $-1 \leq c \leq 0$; nesse caso,
+converge para 0.
 \end{exercise}
 
 \begin{exercise}
-Prove $\lim\limits_{n \to \infty} {(n^2+1)}^{1/n} = 1$.
+Demonstre que $\lim\limits_{n \to \infty} {(n^2+1)}^{1/n} = 1$.
 \end{exercise}
 
 \begin{exercise}
-Prove that $\bigl\{ {(n!)}^{1/n} \bigr\}_{n=1}^\infty$
-is unbounded.
-Hint: Show that for every $C > 0$, $\left\{ \frac{C^n}{n!}
-\right\}_{n=1}^\infty$ converges to zero.
+Demonstre que $\bigl\{ {(n!)}^{1/n} \bigr\}_{n=1}^\infty$
+não é limitada.
+Dica: mostre que, para todo $C > 0$, a sequência $\left\{ \frac{C^n}{n!}
+\right\}_{n=1}^\infty$ converge para zero.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{Limit superior, limit inferior, and Bolzano--Weierstrass}
+
+\section{Limite superior, limite inferior e Bolzano--Weierstrass}
 \label{sec:bw}
 
 %mbxINTROSUBSECTION
 
-\sectionnotes{1--2 lectures, alternative proof of BW optional}
+\sectionnotes{1--2 aulas; a demonstração alternativa do teorema de Bolzano--Weierstrass é opcional}
 
-In this section, we study bounded sequences and their subsequences.
-We define what we call limit superior and limit inferior
-of a bounded sequence, which are the largest and smallest
-possible limits of subsequences.
-Furthermore, we prove the
-Bolzano--Weierstrass theorem%
+Nesta seção, estudamos sequências limitadas e suas subsequências.
+Definimos o que chamamos de limite superior e limite inferior
+de uma sequência limitada, que são os maiores e menores
+limites possíveis de suas subsequências.
+Além disso, demonstramos o
+teorema de Bolzano--Weierstrass%
 \footnote{%
-Named after the Czech mathematician
+Nomeado em homenagem ao matemático tcheco
 \href{https://en.wikipedia.org/wiki/Bernard_Bolzano}{Bernhard Placidus Johann Nepomuk Bolzano}
-(1781--1848), and the German mathematician
+(1781--1848) e ao matemático alemão
 \href{https://en.wikipedia.org/wiki/Karl_Weierstrass}{Karl Theodor Wilhelm Weierstrass}
-(1815--1897).}, an
-indispensable tool in analysis, showing the existence of convergent
-subsequences.
+(1815--1897).}, uma
+ferramenta indispensável em análise, que garante a existência de
+subsequências convergentes.
 
-We proved that every convergent sequence is bounded; nevertheless,
-there exist many bounded divergent sequences.  For instance,
-the sequence $\bigl\{ {(-1)}^n \bigr\}_{n=1}^\infty$ is bounded
-but divergent.  All is not lost, however, and we can
-still compute certain limits with a bounded divergent sequence.
+Demonstramos que toda sequência convergente é limitada; ainda assim,
+há muitas sequências limitadas que divergem. Por exemplo,
+a sequência $\bigl\{ {(-1)}^n \bigr\}_{n=1}^\infty$ é limitada,
+mas divergente. No entanto, nem tudo está perdido: ainda podemos
+calcular certos limites de sequências limitadas divergentes.
 
-\subsection{Upper and lower limits}
+\subsection{Limites superior e inferior}
 
-There are ways of creating monotone sequences out of any sequence, and
-in this fashion we
-get \emph{\myindex{limit superior}}\index{limsup} and
-\emph{\myindex{limit inferior}}\index{liminf}.  These limits always exist for bounded
-sequences.
+Há maneiras de construir sequências monótonas a partir de qualquer sequência e,
+dessa forma, obtemos o
+\emph{\myindex{limite superior}}\index{limsup} e o
+\emph{\myindex{limite inferior}}\index{liminf}. Esses limites sempre existem para sequências
+limitadas.
 
-If a sequence $\{ x_n \}_{n=1}^\infty$ is bounded, then 
-the set $\{ x_k : k \in \N \}$ is bounded.  For every $n$,
-the set $\{ x_k : k \geq n \}$ is also bounded (as it is a subset), so we
-take its supremum and infimum.
+Se uma sequência $\{ x_n \}_{n=1}^\infty$ é limitada, então
+o conjunto $\{ x_k : k \in \N \}$ é limitado. Para todo $n$,
+o conjunto $\{ x_k : k \geq n \}$ também é limitado (pois é um subconjunto); assim,
+tomamos seu supremo e seu ínfimo.
 
 \begin{defn} \label{liminflimsup:def}
-Let $\{ x_n \}_{n=1}^\infty$ be a bounded sequence.  Define the sequences
+Seja $\{ x_n \}_{n=1}^\infty$ uma sequência limitada. Definimos as sequências
 $\{ a_n \}_{n=1}^\infty$
-and $\{ b_n \}_{n=1}^\infty$ by
-$a_n \coloneqq \sup \{ x_k : k \geq n \}$ and
-$b_n \coloneqq \inf \{ x_k : k \geq n \}$.  
-Define, if the limits exist,\glsadd{not:limsupseq}\glsadd{not:liminfseq}
+e $\{ b_n \}_{n=1}^\infty$ por
+$a_n \coloneqq \sup \{ x_k : k \geq n \}$ e
+$b_n \coloneqq \inf \{ x_k : k \geq n \}$.
+Definimos, quando os limites existem,\glsadd{not:limsupseq}\glsadd{not:liminfseq}
 \begin{equation*}
 \limsup_{n \to \infty} x_n \coloneqq \lim_{n \to \infty} a_n ,
 \qquad
@@ -1788,25 +1786,24 @@ Define, if the limits exist,\glsadd{not:limsupseq}\glsadd{not:liminfseq}
 \end{equation*}
 \end{defn}
 
-For a bounded sequence, liminf and limsup always exist (see below).  It is possible
-to define liminf and limsup for unbounded sequences if we allow $\infty$
-and $-\infty$, and we do so later in this section.
-It is not hard to generalize the following results to
-include unbounded sequences; however, we first restrict our attention to
-bounded ones.
+Para uma sequência limitada, liminf e limsup sempre existem (veja abaixo). É possível
+definir liminf e limsup para sequências não limitadas se permitirmos $\infty$
+e $-\infty$, e faremos isso mais adiante nesta seção.
+Não é difícil generalizar os resultados a seguir para
+incluir sequências não limitadas; primeiro, porém, nos restringimos às
+limitadas.
 
 \begin{prop}
-Let $\{ x_n \}_{n=1}^\infty$ be a bounded sequence.  Let $a_n$ and $b_n$ be as in
-the definition above.
+Seja $\{ x_n \}_{n=1}^\infty$ uma sequência limitada. Sejam $a_n$ e $b_n$ como na
+definição acima.
 \begin{enumerate}[(i)]
 \item
-The
-sequence $\{ a_n \}_{n=1}^\infty$ is bounded monotone decreasing
-and $\{ b_n \}_{n=1}^\infty$ is bounded monotone increasing.  In particular,
-$\liminf\limits_{n\to\infty} x_n$ and $\limsup\limits_{n\to\infty} x_n$ exist.
+A sequência $\{ a_n \}_{n=1}^\infty$ é limitada e monótona decrescente,
+e $\{ b_n \}_{n=1}^\infty$ é limitada e monótona crescente. Em particular,
+$\liminf\limits_{n\to\infty} x_n$ e $\limsup\limits_{n\to\infty} x_n$ existem.
 \item
 $\displaystyle \limsup_{n \to \infty} x_n = \inf \{ a_n : n \in \N \}$
-and
+e
 $\displaystyle \liminf_{n \to \infty} x_n = \sup \{ b_n : n \in \N \}$.
 \item
 $\displaystyle \liminf_{n \to \infty} x_n \leq \limsup_{n \to \infty} x_n$.
@@ -1814,79 +1811,79 @@ $\displaystyle \liminf_{n \to \infty} x_n \leq \limsup_{n \to \infty} x_n$.
 \end{prop}
 
 \begin{proof}
-Let us see why $\{ a_n \}_{n=1}^\infty$ is a decreasing sequence.  As $a_n$ is the least upper
-bound for $\{ x_k : k \geq n \}$, it is also
-an upper bound for the subset $\{ x_k : k \geq n+1 \}$.  Therefore,
-$a_{n+1}$, the least upper bound for
-$\{ x_k : k \geq n+1 \}$, has to be less than or equal to $a_n$,
-the least upper bound for
+Vejamos por que $\{ a_n \}_{n=1}^\infty$ é uma sequência decrescente. Como $a_n$ é a menor cota superior
+de $\{ x_k : k \geq n \}$, também é
+uma cota superior do subconjunto $\{ x_k : k \geq n+1 \}$. Portanto,
+$a_{n+1}$, a menor cota superior de
+$\{ x_k : k \geq n+1 \}$, deve ser menor ou igual a $a_n$,
+a menor cota superior de
 $\{ x_k : k \geq n \}$.
-That is,
-$a_n \geq a_{n+1}$ for all $n$.  Similarly (an exercise),
-$\{ b_n \}_{n=1}^\infty$ is an increasing sequence.
-It is left as an exercise to show that
-if $\{ x_n \}_{n=1}^\infty$ is bounded, then $\{ a_n \}_{n=1}^\infty$ and
-$\{ b_n \}_{n=1}^\infty$ must be bounded.
+Isto é,
+$a_n \geq a_{n+1}$ para todo $n$. De modo semelhante (veja o exercício),
+$\{ b_n \}_{n=1}^\infty$ é uma sequência crescente.
+Fica como exercício mostrar que,
+se $\{ x_n \}_{n=1}^\infty$ é limitada, então $\{ a_n \}_{n=1}^\infty$ e
+$\{ b_n \}_{n=1}^\infty$ também são limitadas.
 
-The second item follows as the sequences
-$\{ a_n \}_{n=1}^\infty$ and $\{ b_n \}_{n=1}^\infty$ are monotone and bounded.
+O segundo item decorre do fato de que as sequências
+$\{ a_n \}_{n=1}^\infty$ e $\{ b_n \}_{n=1}^\infty$ são monótonas e limitadas.
 
-For the third item, note that $b_n \leq a_n$, as the $\inf$ of a nonempty set
-is less than or equal to its $\sup$.  The sequences $\{ a_n \}_{n=1}^\infty$
-and $\{ b_n \}_{n=1}^\infty$
-converge to the limsup and the liminf, respectively.
-Apply \lemmaref{limandineq:lemma} to obtain
+Para o terceiro item, observe que $b_n \leq a_n$, pois o $\inf$ de um conjunto não vazio
+é menor ou igual ao seu $\sup$. As sequências $\{ a_n \}_{n=1}^\infty$
+e $\{ b_n \}_{n=1}^\infty$
+convergem, respectivamente, para o limsup e o liminf.
+Apliquemos a \lemmaref{limandineq:lemma} para obter
 \begin{equation*}
 \lim_{n\to \infty} b_n \leq \lim_{n\to \infty} a_n.  \qedhere
 \end{equation*}
 \end{proof}
 \begin{myfigureht}
 \myincludegraphics{sequence-limsupliminf_an_bn}{%
-A graph of an example sequence x sub n in dots
-for 50 points, that is, n from 1 to 50.
-In the middle there are two horizontal dashed lines,
-the upper one is marked as lim sup as n goes to infinity of x sub n
-and
-the lower one is marked as lim inf as n goes to infinity of x sub n.
-The dots land both above and below the lines but they seem
-to congregate closer to the region between the two lines on the 
-right hand side.  Two extra sequences are marked,
-on the bottom with diamonds, is a sequence that is less than or equal
-to all the dots and constant, until it hits a dot.  Then it goes up
-and is constant until it hits a dot, and this keeps repeating.
-So it looks like a series of horizontal rows ending where the
-diamond as at the same place as a dot, and all the other dots are
-above the diamonds.
-All the diamonds are below the lower dashed line.
-A similar pattern but reversed is with circles from above,
-that is a row of circles until it hits a dot, then it goes down
-and repeats, and all the circles are above or on the dots.
-All the circles are above the upper dashed line.}
-\caption{First 50 terms of an example sequence.  Terms $x_n$ of the sequence are
-marked with dots
+Um gráfico de uma sequência de pontos x sub n
+com 50 termos, isto é, para n de 1 a 50.
+No meio, há duas linhas horizontais tracejadas:
+a de cima está marcada como lim sup quando n tende ao infinito de x sub n,
+e
+a de baixo está marcada como lim inf quando n tende ao infinito de x sub n.
+Os pontos ficam tanto acima quanto abaixo das linhas, mas parecem
+se agrupar cada vez mais perto da região entre elas, à
+medida que avançamos para a direita. Duas sequências adicionais estão marcadas:
+embaixo, com losangos, há uma sequência menor ou igual
+a todos os pontos e constante até alcançar um ponto. Então ela sobe
+e permanece constante até alcançar outro ponto, e isso se repete.
+Assim, parece haver fileiras horizontais que terminam quando
+o losango chega à mesma posição de um ponto, enquanto todos os demais pontos
+ficam acima dos losangos.
+Todos os losangos estão abaixo da linha tracejada inferior.
+Um padrão semelhante, mas invertido, aparece com círculos por cima:
+há uma fileira de círculos até que ela alcance um ponto; então desce
+e o processo se repete; todos os círculos ficam acima ou sobre os pontos.
+Todos os círculos estão acima da linha tracejada superior.}
+\caption{Os primeiros 50 termos de uma sequência de exemplo. Os termos $x_n$ da sequência são
+marcados com pontos
 %mbxSTARTIGNORE
 (\raisebox{0.25ex}{\tiny$\bullet$}),
 %mbxENDIGNORE
 %mbxlatex ($\boldsymbol{\cdot}$),
-$a_n$ are marked with
-circles ($\circ$), and
-$b_n$ are marked with diamonds ($\diamond$).\label{sequence-limsupliminf_an_bn}}
+$a_n$ são marcados com
+círculos ($\circ$), e
+$b_n$ são marcados com losangos ($\diamond$).\label{sequence-limsupliminf_an_bn}}
 \end{myfigureht}
 
 \begin{example} \label{example:liminfsupex}
-Let $\{ x_n \}_{n=1}^\infty$ be defined by
+Seja $\{ x_n \}_{n=1}^\infty$ definida por
 \begin{equation*}
 x_n \coloneqq
 \begin{cases}
-\frac{n+1}{n} & \text{if } n \text{ is odd,} \\
-0             & \text{if } n \text{ is even.}
+\frac{n+1}{n} & \text{se } n \text{ é ímpar,} \\
+0             & \text{se } n \text{ é par.}
 \end{cases}
 \end{equation*}
-Let us compute the $\liminf$ and $\limsup$ of this sequence.  See also
-\figureref{sequence-limsupliminf_an_bn-example}.  First the
-limit inferior:
+Calculemos o $\liminf$ e o $\limsup$ dessa sequência. Veja também a
+\figureref{sequence-limsupliminf_an_bn-example}. Primeiro, o
+limite inferior:
 \begin{equation*}
-\liminf_{n\to\infty} x_n = 
+\liminf_{n\to\infty} x_n =
 \lim_{n\to\infty}
 \bigl(
 \inf \{ x_k : k \geq n \}
@@ -1894,95 +1891,95 @@ limit inferior:
 =
 \lim_{n\to\infty} 0 = 0 .
 \end{equation*}
-For the limit superior, we write
+Para o limite superior, escrevemos
 \begin{equation*}
-\limsup_{n\to\infty} x_n = 
+\limsup_{n\to\infty} x_n =
 \lim_{n\to\infty}
 \bigl(
 \sup \{ x_k : k \geq n \}
 \bigr) .
 \end{equation*}
-It is not hard to see that
+Não é difícil ver que
 \begin{equation*}
 \sup \{ x_k : k \geq n \} =
 \begin{cases}
-\frac{n+1}{n}   & \text{if } n \text{ is odd,} \\
-\frac{n+2}{n+1} & \text{if } n \text{ is even.}
+\frac{n+1}{n}   & \text{se } n \text{ é ímpar,} \\
+\frac{n+2}{n+1} & \text{se } n \text{ é par.}
 \end{cases}
 \end{equation*}
-We leave it to the reader to show that the limit is 1.  That is,
+Deixamos para o leitor mostrar que o limite é 1. Isto é,
 \begin{equation*}
 \limsup_{n\to\infty} x_n = 1 .
 \end{equation*}
-Do note that the sequence $\{ x_n \}_{n=1}^\infty$ is not a convergent sequence.
+Note que a sequência $\{ x_n \}_{n=1}^\infty$ não é convergente.
 \begin{myfigureht}
 \myincludegraphics{sequence-limsupliminf_an_bn-example}{%
-The same marking as in the previous figure but now for a very specific
-sequence.  The lower dashed line (the lim inf) is the horizontal axis
-and the upper dashed line is roughly in the middle of the picture.
-The first dot is high up above the upper dashed line
-and a circle is at the same
-place, while the diamond is on the horizontal axis.
-In fact, all the diamonds
-are on the horizontal axis.
-The second dot is on the horizontal axis, but the circle is above
-the upper dashed line but lower than the first dot.
-The third dot is at the same height as the second circle
-and the third circle is at the same spot.
-The pattern now keeps repeating as the dots for odd n
-and the circles get closer and closer to the upper dashed line
-from above.}
-\caption{First 20 terms of the sequence in \exampleref{example:liminfsupex}.
-The marking is as in \figureref{sequence-limsupliminf_an_bn}.
+A mesma marcação da figura anterior, mas agora para uma
+sequência específica. A linha tracejada inferior (o lim inf) é o eixo horizontal,
+e a linha tracejada superior fica aproximadamente no meio da figura.
+O primeiro ponto está bem acima da linha tracejada superior,
+e há um círculo na mesma
+posição, enquanto o losango está sobre o eixo horizontal.
+Na verdade, todos os losangos
+estão sobre o eixo horizontal.
+O segundo ponto está sobre o eixo horizontal, mas o círculo está acima
+da linha tracejada superior e abaixo do primeiro ponto.
+O terceiro ponto está na mesma altura que o segundo círculo,
+e o terceiro círculo ocupa essa mesma posição.
+O padrão se repete: os pontos correspondentes a n ímpar
+e os círculos se aproximam cada vez mais da linha tracejada superior
+por cima.}
+\caption{Os primeiros 20 termos da sequência do \exampleref{example:liminfsupex}.
+A marcação é a mesma da \figureref{sequence-limsupliminf_an_bn}.
 \label{sequence-limsupliminf_an_bn-example}}
 \end{myfigureht}
 \end{example}
 
-We associate certain subsequences with $\limsup$ and $\liminf$.
-It is important to notice that $\{ a_n \}_{n=1}^\infty$ and
-$\{ b_n \}_{n=1}^\infty$ are not
-subsequences of $\{ x_n \}_{n=1}^\infty$, nor need they
-consist of the same numbers.
-For example, if the sequence is $\{ \nicefrac{1}{n} \}_{n=1}^\infty$, then
-$b_n = 0$ for all $n \in \N$.
+Associamos certas subsequências a $\limsup$ e $\liminf$.
+É importante observar que $\{ a_n \}_{n=1}^\infty$ e
+$\{ b_n \}_{n=1}^\infty$ não são
+subsequências de $\{ x_n \}_{n=1}^\infty$, nem precisam
+ser formadas pelos mesmos números.
+Por exemplo, se a sequência é $\{ \nicefrac{1}{n} \}_{n=1}^\infty$, então
+$b_n = 0$ para todo $n \in \N$.
 
 \begin{thm} \label{subseqlimsupinf:thm}
-If $\{ x_n \}_{n=1}^\infty$ is a bounded sequence, then there exists a subsequence
-$\{ x_{n_k} \}_{k=1}^\infty$ such that
+Se $\{ x_n \}_{n=1}^\infty$ é uma sequência limitada, então existe uma subsequência
+$\{ x_{n_k} \}_{k=1}^\infty$ tal que
 \begin{equation*}
 \lim_{k\to \infty} x_{n_k} = \limsup_{n \to \infty} x_n .
 \end{equation*}
-Similarly, there exists a (perhaps different) subsequence
-$\{ x_{m_k} \}_{k=1}^\infty$ such that
+De modo semelhante, existe uma subsequência (possivelmente diferente)
+$\{ x_{m_k} \}_{k=1}^\infty$ tal que
 \begin{equation*}
 \lim_{k\to \infty} x_{m_k} = \liminf_{n \to \infty} x_n .
 \end{equation*}
 \end{thm}
 
 \begin{proof}
-Define $a_n \coloneqq \sup \{ x_k : k \geq n \}$.
-Write
+Definamos $a_n \coloneqq \sup \{ x_k : k \geq n \}$.
+Seja
 $x \coloneqq \limsup_{n\to\infty} x_n = \lim_{n\to\infty} a_n$.
-We define the subsequence inductively.
-Let $n_1 \coloneqq 1$, and suppose $n_1,n_2,\ldots,n_{k-1}$ are already defined for
-some $k \geq 2$.  Pick an $m \geq n_{k-1} + 1$
-such that
+Definimos a subsequência indutivamente.
+Seja $n_1 \coloneqq 1$ e suponhamos que $n_1,n_2,\ldots,n_{k-1}$ já estejam definidos para
+algum $k \geq 2$. Escolhamos um $m \geq n_{k-1} + 1$
+tal que
 \begin{equation*}
 a_{(n_{k-1}+1)} - x_m < \frac{1}{k} .
 \end{equation*}
-Such an $m$ exists
-as $a_{(n_{k-1}+1)}$ is a supremum of the
-set $\{ x_\ell : \ell \geq n_{k-1} + 1 \}$ and hence there are elements
-of the sequence arbitrarily close (or even possibly equal) to the supremum.
-Set $n_{k} \coloneqq  m$.  The subsequence $\{ x_{n_k} \}_{k=1}^\infty$ is defined.  Next, we
-must prove that it converges to $x$.
+Esse $m$ existe
+porque $a_{(n_{k-1}+1)}$ é o supremo do
+conjunto $\{ x_\ell : \ell \geq n_{k-1} + 1 \}$ e, portanto, há termos
+da sequência arbitrariamente próximos (ou até iguais) ao supremo.
+Definamos $n_{k} \coloneqq m$. Assim, a subsequência $\{ x_{n_k} \}_{k=1}^\infty$ está definida. Agora
+precisamos demonstrar que ela converge para $x$.
 
-For all $k \geq 2$, we have
-$a_{(n_{k-1}+1)} \geq a_{n_k}$ (why?) and $a_{n_{k}} \geq x_{n_k}$.
-Therefore, for every $k \geq 2$,
+Para todo $k \geq 2$, temos
+$a_{(n_{k-1}+1)} \geq a_{n_k}$ (por quê?) e $a_{n_{k}} \geq x_{n_k}$.
+Portanto, para todo $k \geq 2$,
 \begin{equation*}
 \begin{split}
-\sabs{a_{n_k} - x_{n_k}} & = 
+\sabs{a_{n_k} - x_{n_k}} & =
 a_{n_k} - x_{n_k}
 \\
 & \leq
@@ -1992,20 +1989,20 @@ a_{(n_{k-1}+1)} - x_{n_k}
 \end{split}
 \end{equation*}
 
-Let us show that $\{ x_{n_k} \}_{k=1}^\infty$ converges to $x$.
-Note that the subsequence need not be monotone.  Let $\epsilon > 0$ be given.
-As $\{ a_n \}_{n=1}^\infty$ converges to $x$, the subsequence
-$\{ a_{n_k} \}_{k=1}^\infty$ converges to $x$.
-Thus there exists an $M_1 \in \N$
-such that for all $k \geq M_1$, we have
+Mostremos que $\{ x_{n_k} \}_{k=1}^\infty$ converge para $x$.
+Observe que a subsequência não precisa ser monótona. Seja $\epsilon > 0$ dado.
+Como $\{ a_n \}_{n=1}^\infty$ converge para $x$, a subsequência
+$\{ a_{n_k} \}_{k=1}^\infty$ converge para $x$.
+Assim, existe um $M_1 \in \N$
+tal que, para todo $k \geq M_1$, vale
 \begin{equation*}
 \sabs{a_{n_k} - x} < \frac{\epsilon}{2} .
 \end{equation*}
-Find an $M_2 \in \N$ such that
+Encontremos um $M_2 \in \N$ tal que
 \begin{equation*}
 \frac{1}{M_2} \leq \frac{\epsilon}{2}.
 \end{equation*}
-Take $M \coloneqq \max \{M_1 , M_2 , 2 \}$.  For all $k \geq M$,
+Seja $M \coloneqq \max \{M_1 , M_2 , 2 \}$. Para todo $k \geq M$,
 \begin{equation*}
 \begin{split}
 \sabs{x- x_{n_k}} & =
@@ -2020,46 +2017,46 @@ Take $M \coloneqq \max \{M_1 , M_2 , 2 \}$.  For all $k \geq M$,
 \end{split}
 \end{equation*}
 
-We leave the statement for $\liminf$ as an exercise.
+Deixamos para o leitor demonstrar a afirmação correspondente ao $\liminf$.
 \end{proof}
 
-\subsection{Using limit inferior and limit superior}
+\subsection{Uso dos limites inferior e superior}
 
-The advantage of $\liminf$ and $\limsup$ is that we can always write them
-down for any (bounded) sequence.
-If we could somehow compute them, we could also compute the limit of the
-sequence if it exists, or show that the sequence diverges.
-Working with $\liminf$ and $\limsup$ is a
-little bit like working with limits, although there are subtle differences.
+A vantagem de $\liminf$ e $\limsup$ é que podemos sempre escrevê-los
+para qualquer sequência (limitada).
+Se conseguíssemos calculá-los, também poderíamos calcular o limite da
+sequência, caso exista, ou demonstrar que ela diverge.
+Trabalhar com $\liminf$ e $\limsup$ é um pouco
+como trabalhar com limites, embora haja diferenças sutis.
 
 \begin{prop} \label{liminfsupconv:prop}
-Let $\{ x_n \}_{n=1}^\infty$ be a bounded sequence.  Then
-$\{ x_n \}_{n=1}^\infty$ converges
-if and only if
+Seja $\{ x_n \}_{n=1}^\infty$ uma sequência limitada. Então
+$\{ x_n \}_{n=1}^\infty$ converge
+se, e somente se,
 \begin{equation*}
-\liminf_{n\to \infty} x_n = 
+\liminf_{n\to \infty} x_n =
 \limsup_{n\to \infty} x_n.
 \end{equation*}
-Furthermore, if $\{ x_n \}_{n=1}^\infty$ converges, then
+Além disso, se $\{ x_n \}_{n=1}^\infty$ converge, então
 \begin{equation*}
-\lim_{n\to \infty} x_n = 
-\liminf_{n\to \infty} x_n = 
+\lim_{n\to \infty} x_n =
+\liminf_{n\to \infty} x_n =
 \limsup_{n\to \infty} x_n.
 \end{equation*}
 \end{prop}
 
 \begin{proof}
-Let $a_n$ and $b_n$ be as in \defnref{liminflimsup:def}.
-In particular, for all $n \in \N$,
+Sejam $a_n$ e $b_n$ como na \defnref{liminflimsup:def}.
+Em particular, para todo $n \in \N$,
 \begin{equation*}
 b_n \leq x_n \leq a_n .
 \end{equation*}
-First suppose
+Suponhamos primeiro que
 $\liminf_{n\to\infty} x_n = \limsup_{n\to\infty} x_n$.
-Then $\{ a_n \}_{n=1}^\infty$ and $\{ b_n \}_{n=1}^\infty$
-both converge to the same limit.
-By the squeeze lemma
-(\lemmaref{squeeze:lemma}), $\{ x_n \}_{n=1}^\infty$ converges and
+Então $\{ a_n \}_{n=1}^\infty$ e $\{ b_n \}_{n=1}^\infty$
+convergem para o mesmo limite.
+Pelo lema do confronto
+(\lemmaref{squeeze:lemma}), $\{ x_n \}_{n=1}^\infty$ converge e
 \begin{equation*}
 \lim_{n\to \infty} b_n
 =
@@ -2068,22 +2065,22 @@ By the squeeze lemma
 \lim_{n\to \infty} a_n .
 \end{equation*}
 
-Now suppose $\{ x_n \}_{n=1}^\infty$ converges to $x$.
-By \thmref{subseqlimsupinf:thm},
-there exists a subsequence $\{ x_{n_k} \}_{k=1}^\infty$
-converging to $\limsup_{n\to\infty} x_n$.
-As $\{ x_n \}_{n=1}^\infty$ converges to $x$,
-every subsequence converges to $x$ and
-so $\limsup_{n\to\infty} x_n = \lim_{k\to\infty} x_{n_k} = x$.
-Similarly, $\liminf_{n\to\infty} x_n = x$.
+Agora suponhamos que $\{ x_n \}_{n=1}^\infty$ convirja para $x$.
+Pelo \thmref{subseqlimsupinf:thm},
+existe uma subsequência $\{ x_{n_k} \}_{k=1}^\infty$
+que converge para $\limsup_{n\to\infty} x_n$.
+Como $\{ x_n \}_{n=1}^\infty$ converge para $x$,
+toda subsequência converge para $x$ e
+portanto $\limsup_{n\to\infty} x_n = \lim_{k\to\infty} x_{n_k} = x$.
+De modo semelhante, $\liminf_{n\to\infty} x_n = x$.
 \end{proof}
 
-Limit superior and limit inferior behave nicely
-with subsequences.
+O limite superior e o limite inferior comportam-se bem
+com subsequências.
 
 \begin{prop} \label{prop:subseqslimsupinf}
-Suppose $\{ x_n \}_{n=1}^\infty$ is a bounded sequence and
-$\{ x_{n_k} \}_{k=1}^\infty$ is a subsequence.  Then
+Suponhamos que $\{ x_n \}_{n=1}^\infty$ seja uma sequência limitada e
+que $\{ x_{n_k} \}_{k=1}^\infty$ seja uma subsequência. Então
 \begin{equation*}
 \liminf_{n\to\infty} x_n \leq
 \liminf_{k\to\infty} x_{n_k} \leq
@@ -2093,195 +2090,196 @@ $\{ x_{n_k} \}_{k=1}^\infty$ is a subsequence.  Then
 \end{prop}
 
 \begin{proof}
-The middle inequality has been proved already.  We will prove the third
-inequality, and leave the first inequality as an exercise.
+Já demonstramos a desigualdade do meio. Vamos demonstrar a terceira
+desigualdade e deixar a primeira como exercício.
 
-We want to prove that
-$\limsup_{k\to\infty} x_{n_k} \leq \limsup_{n\to\infty} x_n$.  Define
-$a_n \coloneqq \sup \{ x_k : k \geq n \}$ 
-as usual.
-Also define
+Queremos demonstrar que
+$\limsup_{k\to\infty} x_{n_k} \leq \limsup_{n\to\infty} x_n$. Definamos
+$a_n \coloneqq \sup \{ x_k : k \geq n \}$
+como de costume.
+Definamos também
 $c_n \coloneqq \sup \{ x_{n_k} : k \geq n \}$.
-It is not true that $\{ c_n \}_{n=1}^\infty$ is necessarily a subsequence
-of $\{ a_n \}_{n=1}^\infty$.
-However, as $n_k \geq k$ for all $k$, we have
+Não é verdade que $\{ c_n \}_{n=1}^\infty$ seja necessariamente uma subsequência
+de $\{ a_n \}_{n=1}^\infty$.
+No entanto, como $n_k \geq k$ para todo $k$, temos
 $\{ x_{n_k} : k \geq n \} \subset \{ x_k : k \geq n \}$.
-A supremum of a subset is less than or equal to the supremum of the
-set, and therefore
+O supremo de um subconjunto é menor ou igual ao supremo do
+conjunto que o contém; portanto,
 \begin{equation*}
-c_n \leq a_n \qquad \text{for all $n$}.
+c_n \leq a_n \qquad \text{para todo $n$}.
 \end{equation*}
-\lemmaref{limandineq:lemma} gives
+A \lemmaref{limandineq:lemma} implica que
 \begin{equation*}
 \lim_{n\to\infty} c_n \leq \lim_{n\to\infty} a_n ,
 \end{equation*}
-which is the desired conclusion.
+que é a conclusão desejada.
 \end{proof}
 
-Limit superior and limit inferior
-are the largest and smallest
-subsequential limits.  If the subsequence $\{ x_{n_k} \}_{k=1}^\infty$ in the previous
-proposition is convergent, then
+O limite superior e o limite inferior
+são os maiores e menores
+limites subsequenciais. Se a subsequência $\{ x_{n_k} \}_{k=1}^\infty$ da proposição anterior
+for convergente, então
 $\liminf_{k\to\infty} x_{n_k} = \lim_{k\to\infty} x_{n_k} =
-\limsup_{k\to\infty} x_{n_k}$.  Therefore,
+\limsup_{k\to\infty} x_{n_k}$. Portanto,
 \begin{equation*}
 \liminf_{n\to\infty} x_n \leq
 \lim_{k\to\infty} x_{n_k} \leq
 \limsup_{n\to\infty} x_n .
 \end{equation*}
 
-Similarly, we get the following useful test for convergence
-of a bounded sequence.  We leave the proof as an exercise.
+De modo semelhante, obtemos o seguinte critério útil de convergência
+para sequências limitadas. Deixamos a demonstração como exercício.
 
 \begin{prop} \label{seqconvsubseqconv:prop}
-A bounded sequence $\{ x_n \}_{n=1}^\infty$ is convergent and converges to $x$
-if and only if
-every convergent subsequence
-$\{ x_{n_k} \}_{k=1}^\infty$ converges to $x$.
+Uma sequência limitada $\{ x_n \}_{n=1}^\infty$ converge para $x$
+se, e somente se,
+toda subsequência convergente
+$\{ x_{n_k} \}_{k=1}^\infty$ converge para $x$.
 \end{prop}
 
-\subsection{Bolzano--Weierstrass theorem}
+\subsection{Teorema de Bolzano--Weierstrass}
 
-While it is not true that every bounded sequence is convergent, the
-Bolzano--Weierstrass theorem tells us that we can at least find a convergent
-subsequence.
-The version of Bolzano--Weierstrass 
-we present in this section is the Bolzano--Weierstrass for
-sequences of real numbers.
+Embora nem toda sequência limitada seja convergente, o
+teorema de Bolzano--Weierstrass nos diz que podemos, ao menos, encontrar uma subsequência
+convergente.
+A versão do teorema de Bolzano--Weierstrass
+apresentada nesta seção é a versão para
+sequências de números reais.
 
-\begin{thm}[Bolzano--Weierstrass]\index{Bolzano--Weierstrass theorem}\label{thm:bwseq}
-Suppose a sequence $\{ x_n \}_{n=1}^\infty$ of real numbers is bounded.
-Then there exists a convergent subsequence $\{ x_{n_i} \}_{i=1}^\infty$.
+\begin{thm}[Bolzano--Weierstrass]\index{teorema de Bolzano--Weierstrass}\label{thm:bwseq}
+Suponhamos que uma sequência $\{ x_n \}_{n=1}^\infty$ de números reais seja limitada.
+Então existe uma subsequência convergente $\{ x_{n_i} \}_{i=1}^\infty$.
 \end{thm}
 
 \begin{proof}
-\thmref{subseqlimsupinf:thm} says that there exists
-a subsequence whose limit is $\limsup_{n\to\infty} x_n$.
+O \thmref{subseqlimsupinf:thm} afirma que existe
+uma subsequência cujo limite é $\limsup_{n\to\infty} x_n$.
 \end{proof}
 
-The reader might complain right now that 
-\thmref{subseqlimsupinf:thm} is strictly stronger than the
-Bolzano--Weierstrass theorem as presented above.  That is true.
-However, 
-\thmref{subseqlimsupinf:thm} only applies to the real line, but
-Bolzano--Weierstrass applies in more general contexts (that is, in $\R^n$)
-with pretty much the exact same statement.
+Neste momento, o leitor talvez reclame que
+o \thmref{subseqlimsupinf:thm} é estritamente mais forte que o
+teorema de Bolzano--Weierstrass apresentado acima. Isso é verdade.
+No entanto,
+o \thmref{subseqlimsupinf:thm} se aplica apenas à reta real, enquanto
+o teorema de Bolzano--Weierstrass vale em contextos mais gerais (isto é, em $\R^n$)
+com praticamente o mesmo enunciado.
 
-As the theorem is so important to analysis, we present an explicit
-proof.
-The idea of the following proof also generalizes to different contexts.
+Como esse teorema é tão importante para a análise, apresentamos uma demonstração
+explícita.
+A ideia da demonstração a seguir também se generaliza para outros contextos.
 
-\begin{proof}[Alternate proof of Bolzano--Weierstrass]
-As the sequence is bounded, there exist two numbers $a_1 < b_1$
-such that $a_1 \leq x_n \leq b_1$ for all $n \in \N$.
-We will define a subsequence $\{ x_{n_i} \}_{i=1}^\infty$ and two
-sequences $\{ a_i \}_{i=1}^\infty$ and $\{ b_i \}_{i=1}^\infty$, such that
-$\{ a_i \}_{i=1}^\infty$ is monotone increasing, $\{ b_i \}_{i=1}^\infty$ is monotone decreasing,
-$a_i \leq x_{n_i} \leq b_i$ and such that $\lim_{i\to\infty} a_i =
-\lim_{i\to\infty} b_i$.   That
-$\{ x_{n_i} \}_{i=1}^\infty$ converges then follows by the \hyperref[squeeze:lemma]{squeeze lemma}.
+\begin{proof}[Demonstração alternativa de Bolzano--Weierstrass]
+Como a sequência é limitada, existem dois números $a_1 < b_1$
+tais que $a_1 \leq x_n \leq b_1$ para todo $n \in \N$.
+Definiremos uma subsequência $\{ x_{n_i} \}_{i=1}^\infty$ e duas
+sequências $\{ a_i \}_{i=1}^\infty$ e $\{ b_i \}_{i=1}^\infty$ tais que
+$\{ a_i \}_{i=1}^\infty$ seja monótona crescente, $\{ b_i \}_{i=1}^\infty$ seja monótona decrescente,
+$a_i \leq x_{n_i} \leq b_i$ e $\lim_{i\to\infty} a_i =
+\lim_{i\to\infty} b_i$. Então, pelo
+\hyperref[squeeze:lemma]{lema do confronto}, a subsequência
+$\{ x_{n_i} \}_{i=1}^\infty$ converge.
 
-We define the sequences inductively.  We will define the sequences so that
-for all $i$, we have $a_i < b_i$,
-and that $x_n \in [a_i,b_i]$ for infinitely many $n \in \N$.
-We have already defined $a_1$ and $b_1$.  We take $n_1 \coloneqq 1$, that is
+Definimos as sequências indutivamente. Vamos construí-las de modo que,
+para todo $i$, tenhamos $a_i < b_i$
+e $x_n \in [a_i,b_i]$ para infinitos $n \in \N$.
+Já definimos $a_1$ e $b_1$. Tomemos $n_1 \coloneqq 1$, isto é,
 $x_{n_1} = x_1$.
-Suppose that up to some $k \in \N$,
-we have defined the subsequence $x_{n_1}, x_{n_2}, \ldots,
-x_{n_k}$, and the sequences $a_1,a_2,\ldots,a_k$
-and $b_1,b_2,\ldots,b_k$.
-Let $y \coloneqq \frac{a_k+b_k}{2}$.
-Clearly
-$a_k < y < b_k$.  If there exist infinitely many $j \in \N$
-such that $x_j \in [a_k,y]$, then set $a_{k+1} \coloneqq a_k$, $b_{k+1}
-\coloneqq y$,
-and pick $n_{k+1} > n_{k}$
-such that $x_{n_{k+1}} \in [a_k,y]$.  If there are not infinitely many 
-$j$ such that 
-$x_j \in [a_k,y]$, then it must be true that there are infinitely many $j \in
-\N$ such that 
-$x_j \in [y,b_k]$.  In this case pick $a_{k+1} \coloneqq y$, $b_{k+1}
-\coloneqq b_k$,
-and pick $n_{k+1} > n_{k}$
-such that $x_{n_{k+1}} \in [y,b_k]$.
+Suponhamos que, até algum $k \in \N$,
+tenhamos definido a subsequência $x_{n_1}, x_{n_2}, \ldots,
+x_{n_k}$ e as sequências $a_1,a_2,\ldots,a_k$
+e $b_1,b_2,\ldots,b_k$.
+Seja $y \coloneqq \frac{a_k+b_k}{2}$.
+É claro que
+$a_k < y < b_k$. Se houver infinitos $j \in \N$
+tais que $x_j \in [a_k,y]$, definamos $a_{k+1} \coloneqq a_k$, $b_{k+1}
+\coloneqq y$
+e escolhamos $n_{k+1} > n_{k}$
+tal que $x_{n_{k+1}} \in [a_k,y]$. Se não houver infinitos
+$j$ tais que
+$x_j \in [a_k,y]$, então haverá infinitos $j \in
+\N$ tais que
+$x_j \in [y,b_k]$. Nesse caso, definamos $a_{k+1} \coloneqq y$, $b_{k+1}
+\coloneqq b_k$
+e escolhamos $n_{k+1} > n_{k}$
+tal que $x_{n_{k+1}} \in [y,b_k]$.
 
-We now have the sequences defined.  What is left to prove is that
-$\lim_{i\to\infty} a_i = \lim_{i\to\infty} b_i$.  The limits exist as the sequences
-are monotone.  In the construction,
-$b_i - a_i$ is cut in half in each step.  Therefore,
-$b_{i+1} - a_{i+1} = \frac{b_i-a_i}{2}$.  By
-\hyperref[induction:thm]{induction},
+Assim, as sequências estão definidas. Resta demonstrar que
+$\lim_{i\to\infty} a_i = \lim_{i\to\infty} b_i$. Os limites existem, pois as sequências
+são monótonas. Na construção,
+a diferença $b_i - a_i$ é reduzida pela metade a cada passo. Portanto,
+$b_{i+1} - a_{i+1} = \frac{b_i-a_i}{2}$. Por
+\hyperref[induction:thm]{indução},
 \begin{equation*}
 b_i - a_i = \frac{b_1-a_1}{2^{i-1}} .
 \end{equation*}
 
-Let $x \coloneqq \lim_{i\to\infty} a_i$.  As $\{ a_i \}_{i=1}^\infty$ is monotone,
+Seja $x \coloneqq \lim_{i\to\infty} a_i$. Como $\{ a_i \}_{i=1}^\infty$ é monótona,
 \begin{equation*}
 x = \sup \{ a_i : i \in \N \} .
 \end{equation*}
-Let $y \coloneqq \lim_{i\to\infty} b_i = \inf \{ b_i : i \in \N \}$.  Since $a_i < b_i$ for
-all $i$, we have $x \leq y$.
-As the sequences are monotone, we have (why?) that for all $i$,
+Seja $y \coloneqq \lim_{i\to\infty} b_i = \inf \{ b_i : i \in \N \}$. Como $a_i < b_i$ para
+todo $i$, temos $x \leq y$.
+Como as sequências são monótonas, temos (por quê?) que, para todo $i$,
 \begin{equation*}
 y-x \leq b_i-a_i = \frac{b_1-a_1}{2^{i-1}} .
 \end{equation*}
-Because $\frac{b_1-a_1}{2^{i-1}}$ is arbitrarily small and $y-x \geq 0$,
-we have $y-x = 0$.  Finish by the \hyperref[squeeze:lemma]{squeeze lemma}.
+Como $\frac{b_1-a_1}{2^{i-1}}$ pode ser arbitrariamente pequeno e $y-x \geq 0$,
+temos $y-x = 0$. Conclua usando o \hyperref[squeeze:lemma]{lema do confronto}.
 \end{proof}
 
-Yet another proof of the Bolzano--Weierstrass theorem is to show the
-following claim,
-which is left as a challenging exercise.
-\emph{Claim: Every sequence has a monotone subsequence}.
+Outra demonstração do teorema de Bolzano--Weierstrass consiste em provar a
+seguinte afirmação,
+que fica como exercício desafiador:
+\emph{Toda sequência tem uma subsequência monótona}.
 
-\subsection{Infinite limits}
+\subsection{Limites infinitos}
 
-Just as for infima and suprema, it is possible to allow certain
-limits to be infinite.  That is, we write $\lim_{n\to\infty} x_n = \infty$ or
-$\lim_{n\to\infty} x_n = -\infty$ for certain divergent sequences.
+Assim como no caso de ínfimos e supremos, é possível permitir que certos
+limites sejam infinitos. Isto é, escrevemos $\lim_{n\to\infty} x_n = \infty$ ou
+$\lim_{n\to\infty} x_n = -\infty$ para certas sequências divergentes.
 
 \begin{defn}
-\index{infinite limit!of a sequence}\index{limit!infinite}
-We say
-$\{ x_n \}_{n=1}^\infty$ \emph{\myindex{diverges to infinity}}%
-\footnote{Sometimes it is said that $\{ x_n \}_{n=1}^\infty$ \emph{converges to infinity}.}
-if for every $K \in
-\R$, there exists an $M \in \N$ such that for all $n \geq M$, we have $x_n >
-K$.  In this case we write
+\index{limite infinito!de uma sequência}\index{limite!infinito}
+Dizemos que
+$\{ x_n \}_{n=1}^\infty$ \emph{\myindex{diverge para infinito}}%
+\footnote{Às vezes, diz-se que $\{ x_n \}_{n=1}^\infty$ \emph{converge para infinito}.}
+se, para todo $K \in
+\R$, existe um $M \in \N$ tal que, para todo $n \geq M$, vale $x_n >
+K$. Nesse caso, escrevemos
 \begin{equation*}
-\lim_{n \to \infty} x_n \coloneqq \infty .  
+\lim_{n \to \infty} x_n \coloneqq \infty .
 \end{equation*}
-Similarly,
-if for every $K \in \R$ there exists an $M \in \N$ such that
-for all $n \geq M$, we have $x_n < K$, we say $\{ x_n \}_{n=1}^\infty$
-\emph{\myindex{diverges to minus infinity}} and we write
+De modo semelhante,
+se, para todo $K \in \R$, existe um $M \in \N$ tal que,
+para todo $n \geq M$, vale $x_n < K$, dizemos que $\{ x_n \}_{n=1}^\infty$
+\emph{\myindex{diverge para menos infinito}} e escrevemos
 \begin{equation*}
-\lim_{n \to \infty} x_n \coloneqq -\infty .  
+\lim_{n \to \infty} x_n \coloneqq -\infty .
 \end{equation*}
 \end{defn}
 
-With this definition and allowing $\infty$ and $-\infty$,
-we can write $\lim_{n\to\infty} x_n$ for any monotone sequence.
+Com essa definição e permitindo $\infty$ e $-\infty$,
+podemos escrever $\lim_{n\to\infty} x_n$ para qualquer sequência monótona.
 
 \begin{prop} \label{prop:unboundedmonotone}
-Suppose $\{ x_n \}_{n=1}^\infty$ is a monotone unbounded sequence.  Then
+Suponhamos que $\{ x_n \}_{n=1}^\infty$ seja uma sequência monótona não limitada. Então
 \begin{equation*}
 \lim_{n \to \infty} x_n =
 \begin{cases}
-\infty  & \text{if } \{ x_n \}_{n=1}^\infty \text{ is increasing,} \\
--\infty & \text{if } \{ x_n \}_{n=1}^\infty \text{ is decreasing.}
+\infty  & \text{se } \{ x_n \}_{n=1}^\infty \text{ é crescente,} \\
+-\infty & \text{se } \{ x_n \}_{n=1}^\infty \text{ é decrescente.}
 \end{cases}
 \end{equation*}
 \end{prop}
 
 \begin{proof}
-The case of monotone increasing follows from
-\exerciseref{exercise:infseqlimlims} part c) below.
-Suppose $\{x_n\}_{n=1}^\infty$ is decreasing and unbounded.
-That the sequence is unbounded means that
-for every $K \in \R$, there is an $M \in \N$ such that $x_M < K$.
-By monotonicity, $x_n \leq x_M < K$ for all $n \geq M$.
-Therefore, $\lim_{n\to\infty} x_n = -\infty$.
+O caso monótono crescente segue do
+item c) do \exerciseref{exercise:infseqlimlims} abaixo.
+Suponhamos que $\{x_n\}_{n=1}^\infty$ seja decrescente e não limitada.
+O fato de a sequência não ser limitada significa que,
+para todo $K \in \R$, existe um $M \in \N$ tal que $x_M < K$.
+Pela monotonicidade, $x_n \leq x_M < K$ para todo $n \geq M$.
+Portanto, $\lim_{n\to\infty} x_n = -\infty$.
 \end{proof}
 
 \begin{example}
@@ -2292,75 +2290,73 @@ Therefore, $\lim_{n\to\infty} x_n = -\infty$.
 \qquad
 \lim_{n\to \infty} -n = -\infty.
 \end{equation*}
-We leave verification to the reader.
+Deixamos a verificação para o leitor.
 \end{example}
 
-We may also allow $\liminf$ and $\limsup$ to take on
-the values $\infty$ and $-\infty$, so that
-we can apply $\liminf$ and $\limsup$
-to absolutely any sequence, not just
-a bounded one.   Unfortunately, the sequences $\{ a_n \}_{n=1}^\infty$ and
+Também podemos permitir que $\liminf$ e $\limsup$ assumam
+os valores $\infty$ e $-\infty$, de modo que
+possamos aplicar $\liminf$ e $\limsup$ a qualquer sequência, e não apenas
+a uma sequência limitada. Infelizmente, as sequências $\{ a_n \}_{n=1}^\infty$ e
 $\{ b_n \}_{n=1}^\infty$
-are not sequences of real numbers but of extended real numbers.  In
-particular, $a_n$ can equal $\infty$ for some $n$, and $b_n$ can equal
-$-\infty$.  So we have no definition for the limits.
-But since the extended real numbers are still an ordered set, we
-can take suprema and infima.
+não são sequências de números reais, mas de números reais estendidos. Em
+particular, $a_n$ pode ser igual a $\infty$ para algum $n$, e $b_n$ pode ser igual a
+$-\infty$. Assim, não temos uma definição para os limites.
+Mas, como os reais estendidos ainda formam um conjunto ordenado, podemos
+tomar supremos e ínfimos.
 
 \begin{defn}
-Let $\{ x_n \}_{n=1}^\infty$ be an unbounded sequence of real numbers.  Define
-sequences of extended real numbers by
-$a_n \coloneqq \sup \{ x_k : k \geq n \}$ and
+Seja $\{ x_n \}_{n=1}^\infty$ uma sequência não limitada de números reais. Definimos
+sequências de números reais estendidos por
+$a_n \coloneqq \sup \{ x_k : k \geq n \}$ e
 $b_n \coloneqq \inf \{ x_k : k \geq n \}$.
-Define\glsadd{not:limsupseq}\glsadd{not:liminfseq}
-\index{limit inferior}\index{limit superior}\index{limsup}\index{liminf}
+Definimos\glsadd{not:limsupseq}\glsadd{not:liminfseq}
+\index{limite inferior}\index{limite superior}\index{limsup}\index{liminf}
 \begin{equation*}
-\limsup_{n \to \infty} x_n \coloneqq \inf \{ a_n : n \in \N \}, \qquad \text{and} \qquad
+\limsup_{n \to \infty} x_n \coloneqq \inf \{ a_n : n \in \N \}, \qquad \text{e} \qquad
 \liminf_{n \to \infty} x_n \coloneqq \sup \{ b_n : n \in \N \}.
 \end{equation*}
 \end{defn}
 
-This definition agrees with the definition for bounded
-sequences.
+Essa definição coincide com a definição para sequências limitadas.
 
 \begin{prop}
-Let $\{ x_n \}_{n=1}^\infty$ be an unbounded sequence.  Define
-$\{ a_n \}_{n=1}^\infty$ and $\{ b_n \}_{n=1}^\infty$ as above.
-Then $\{ a_n \}_{n=1}^\infty$ is decreasing, and $\{ b_n \}_{n=1}^\infty$ is increasing.
-If $a_n$ is a real number for every $n$, then
+Seja $\{ x_n \}_{n=1}^\infty$ uma sequência não limitada. Definamos
+$\{ a_n \}_{n=1}^\infty$ e $\{ b_n \}_{n=1}^\infty$ como acima.
+Então $\{ a_n \}_{n=1}^\infty$ é decrescente, e $\{ b_n \}_{n=1}^\infty$ é crescente.
+Se $a_n$ for um número real para todo $n$, então
 $\limsup_{n\to\infty} x_n = \lim_{n\to\infty} a_n$.
-If $b_n$ is a real number for every $n$, then
+Se $b_n$ for um número real para todo $n$, então
 $\liminf_{n\to\infty} x_n = \lim_{n\to\infty} b_n$.
 \end{prop}
 
 \begin{proof}
-As before,
+Como antes,
 $a_n = \sup \{ x_k : k \geq n \} \geq \sup \{ x_k : k \geq n+1 \} =
-a_{n+1}$.  So $\{ a_n \}_{n=1}^\infty$ is decreasing. Similarly,
-$\{ b_n \}_{n=1}^\infty$ is increasing.
+a_{n+1}$. Portanto, $\{ a_n \}_{n=1}^\infty$ é decrescente. De modo semelhante,
+$\{ b_n \}_{n=1}^\infty$ é crescente.
 
-If the sequence $\{ a_n \}_{n=1}^\infty$ is a sequence of real numbers, then
-$\lim_{n\to\infty} a_n = \inf \{ a_n : n \in \N \}$.  This follows from
-\thmref{thm:monotoneconv} if $\{ a_n \}_{n=1}^\infty$ is bounded and
-\propref{prop:unboundedmonotone} if $\{a_n \}_{n=1}^\infty$
-is unbounded.  We proceed similarly with $\{ b_n \}_{n=1}^\infty$.
+Se $\{ a_n \}_{n=1}^\infty$ for uma sequência de números reais, então
+$\lim_{n\to\infty} a_n = \inf \{ a_n : n \in \N \}$. Isso segue do
+\thmref{thm:monotoneconv} se $\{ a_n \}_{n=1}^\infty$ for limitada e da
+\propref{prop:unboundedmonotone} se $\{a_n \}_{n=1}^\infty$
+não for limitada. Procedemos de maneira semelhante com $\{ b_n \}_{n=1}^\infty$.
 \end{proof}
 
-The definition behaves as expected with
-$\limsup$ and $\liminf$, see exercises \ref{exercise:infseqlimex}
-and \ref{exercise:infseqlimlims}.
+A definição se comporta como esperado para
+$\limsup$ e $\liminf$; veja os exercícios \ref{exercise:infseqlimex}
+e \ref{exercise:infseqlimlims}.
 
 \begin{example}
-Suppose
-$x_n \coloneqq 0$ for odd $n$ and $x_n \coloneqq n$ for even $n$.
-Then $a_n = \infty$ for all $n$, since for every $M$,
-there exists an even $k$ such that $x_k = k \geq M$.
-On the other hand, $b_n = 0$ for all $n$, as
-for every $n$, the set
-$\{ x_k : k \geq n \}$ consists of $0$ and positive numbers.
-So,
+Suponhamos que
+$x_n \coloneqq 0$ para $n$ ímpar e $x_n \coloneqq n$ para $n$ par.
+Então $a_n = \infty$ para todo $n$, pois, para todo $M$,
+existe um $k$ par tal que $x_k = k \geq M$.
+Por outro lado, $b_n = 0$ para todo $n$, pois,
+para todo $n$, o conjunto
+$\{ x_k : k \geq n \}$ contém $0$ e números positivos.
+Assim,
 \begin{equation*}
-\lim_{n\to \infty} x_n \quad \text{does not exist},
+\lim_{n\to \infty} x_n \quad \text{não existe},
 \qquad
 \limsup_{n\to \infty} x_n = \infty ,
 \qquad
@@ -2368,63 +2364,63 @@ So,
 \end{equation*}
 \end{example}
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
 \begin{exercise}
-Suppose $\{ x_n \}_{n=1}^\infty$ is a bounded sequence.  Define $a_n$ and
-$b_n$ as in \defnref{liminflimsup:def}.  Show that $\{ a_n \}_{n=1}^\infty$
-and $\{ b_n \}_{n=1}^\infty$ are bounded.
+Suponha que $\{ x_n \}_{n=1}^\infty$ seja uma sequência limitada. Defina $a_n$ e
+$b_n$ como na \defnref{liminflimsup:def}. Mostre que $\{ a_n \}_{n=1}^\infty$
+e $\{ b_n \}_{n=1}^\infty$ são limitadas.
 \end{exercise}
 
 \begin{exercise}
-Suppose $\{ x_n \}_{n=1}^\infty$ is a bounded sequence.
-Define $b_n$ as in \defnref{liminflimsup:def}.  Show that
-$\{ b_n \}_{n=1}^\infty$ is an increasing sequence.
+Suponha que $\{ x_n \}_{n=1}^\infty$ seja uma sequência limitada.
+Defina $b_n$ como na \defnref{liminflimsup:def}. Mostre que
+$\{ b_n \}_{n=1}^\infty$ é uma sequência crescente.
 \end{exercise}
 
 \begin{exercise}
-Finish the proof of \propref{prop:subseqslimsupinf}.  That is,
-suppose $\{ x_n \}_{n=1}^\infty$ is a bounded sequence and
-$\{ x_{n_k} \}_{k=1}^\infty$ is a subsequence.  Prove
+Conclua a demonstração da \propref{prop:subseqslimsupinf}. Isto é,
+suponha que $\{ x_n \}_{n=1}^\infty$ seja uma sequência limitada e
+que $\{ x_{n_k} \}_{k=1}^\infty$ seja uma subsequência. Demonstre que
 $\displaystyle \liminf_{n\to\infty} x_n \leq
 \liminf_{k\to\infty} x_{n_k}$.
 \end{exercise}
 
 \begin{exercise}
-Prove \propref{seqconvsubseqconv:prop}.
+Demonstre \propref{seqconvsubseqconv:prop}.
 \end{exercise}
 
 \begin{exercise}
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Let $x_n \coloneqq \dfrac{{(-1)}^n}{n}$.
-Find $\limsup\limits_{n\to\infty} x_n$ and $\liminf\limits_{n\to\infty} x_n$.
+Seja $x_n \coloneqq \dfrac{{(-1)}^n}{n}$.
+Determine $\limsup\limits_{n\to\infty} x_n$ e $\liminf\limits_{n\to\infty} x_n$.
 \item
-Let $x_n \coloneqq \dfrac{(n-1){(-1)}^n}{n}$.
-Find $\limsup\limits_{n\to\infty} x_n$ and $\liminf\limits_{n\to\infty} x_n$.
+Seja $x_n \coloneqq \dfrac{(n-1){(-1)}^n}{n}$.
+Determine $\limsup\limits_{n\to\infty} x_n$ e $\liminf\limits_{n\to\infty} x_n$.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Let $\{ x_n \}_{n=1}^\infty$ and $\{ y_n \}_{n=1}^\infty$ be bounded sequences such that
-$x_n \leq y_n$ for all $n$.  Show
+Sejam $\{ x_n \}_{n=1}^\infty$ e $\{ y_n \}_{n=1}^\infty$ sequências limitadas tais que
+$x_n \leq y_n$ para todo $n$. Mostre que
 \begin{equation*}
 \limsup_{n\to\infty} x_n \leq
 \limsup_{n\to\infty} y_n
-\qquad \text{and} \qquad
+\qquad \text{e} \qquad
 \liminf_{n\to\infty} x_n \leq
 \liminf_{n\to\infty} y_n .
 \end{equation*}
 \end{exercise}
 
 \begin{exercise}
-Let $\{ x_n \}_{n=1}^\infty$ and $\{ y_n \}_{n=1}^\infty$ be bounded sequences.
+Sejam $\{ x_n \}_{n=1}^\infty$ e $\{ y_n \}_{n=1}^\infty$ sequências limitadas.
 \begin{enumerate}[a)]
 \item
-Show that $\{ x_n + y_n \}_{n=1}^\infty$ is bounded.
+Mostre que $\{ x_n + y_n \}_{n=1}^\infty$ é limitada.
 \item
-Show that
+Mostre que
 \begin{equation*}
 \Bigl(\liminf_{n\to \infty} x_n\Bigr)
 +
@@ -2432,12 +2428,12 @@ Show that
 \leq
 \liminf_{n\to \infty} \, (x_n+y_n) .
 \end{equation*}
-Hint: One proof is to find a subsequence $\{ x_{n_m}+y_{n_m} \}_{m=1}^\infty$ of
-$\{ x_n + y_n \}_{n=1}^\infty$ that converges.
-Then find a subsequence $\{ x_{n_{m_i}} \}_{i=1}^\infty$ of
-$\{ x_{n_m} \}_{m=1}^\infty$ that converges.
+Dica: uma demonstração consiste em encontrar uma subsequência $\{ x_{n_m}+y_{n_m} \}_{m=1}^\infty$ de
+$\{ x_n + y_n \}_{n=1}^\infty$ que converge.
+Em seguida, encontre uma subsequência $\{ x_{n_{m_i}} \}_{i=1}^\infty$ de
+$\{ x_{n_m} \}_{m=1}^\infty$ que converge.
 \item
-Find an explicit $\{ x_n \}_{n=1}^\infty$ and $\{ y_n \}_{n=1}^\infty$ such that
+Encontre sequências explícitas $\{ x_n \}_{n=1}^\infty$ e $\{ y_n \}_{n=1}^\infty$ tais que
 \begin{equation*}
 \Bigl(\liminf_{n\to \infty} x_n\Bigr)
 +
@@ -2445,17 +2441,17 @@ Find an explicit $\{ x_n \}_{n=1}^\infty$ and $\{ y_n \}_{n=1}^\infty$ such that
 <
 \liminf_{n\to \infty} \, (x_n+y_n) .
 \end{equation*}
-Hint: Look for examples that do not have a limit.
+Dica: procure exemplos que não tenham limite.
 \end{enumerate}
 \end{exercise}
 
 \begin{samepage}
 \begin{exercise}
-Let $\{ x_n \}_{n=1}^\infty$ and $\{ y_n \}_{n=1}^\infty$ be bounded sequences (by the previous
-exercise, $\{ x_n + y_n \}_{n=1}^\infty$ is bounded).
+Sejam $\{ x_n \}_{n=1}^\infty$ e $\{ y_n \}_{n=1}^\infty$ sequências limitadas (pelo exercício anterior,
+$\{ x_n + y_n \}_{n=1}^\infty$ é limitada).
 \begin{enumerate}[a)]
 \item
-Show that
+Mostre que
 \begin{equation*}
 \Bigl(\limsup_{n\to \infty} x_n\Bigr)
 +
@@ -2463,9 +2459,9 @@ Show that
 \geq
 \limsup_{n\to \infty} \, (x_n+y_n) .
 \end{equation*}
-Hint: See previous exercise.
+Dica: veja o exercício anterior.
 \item
-Find an explicit $\{ x_n \}_{n=1}^\infty$ and $\{ y_n \}_{n=1}^\infty$ such that
+Encontre sequências explícitas $\{ x_n \}_{n=1}^\infty$ e $\{ y_n \}_{n=1}^\infty$ tais que
 \begin{equation*}
 \Bigl(\limsup_{n\to \infty} x_n\Bigr)
 +
@@ -2473,176 +2469,175 @@ Find an explicit $\{ x_n \}_{n=1}^\infty$ and $\{ y_n \}_{n=1}^\infty$ such that
 >
 \limsup_{n\to \infty} \, (x_n+y_n) .
 \end{equation*}
-Hint: See previous exercise.
+Dica: veja o exercício anterior.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
 
 \begin{exercise}
-If $S \subset \R$ is a set, then $x \in \R$ is a \emph{\myindex{cluster
-point}}
-if for every $\epsilon > 0$, the set $(x-\epsilon,x+\epsilon) \cap S
-\setminus \{ x \}$ is not empty.  That is, if there are points of $S$
-arbitrarily close to $x$.
-For example, $S \coloneqq \{ \nicefrac{1}{n} : n \in \N \}$ has a unique cluster point $0$, but $0 \notin S$.
-Prove the following version of the Bolzano--Weierstrass theorem:
+Se $S \subset \R$ é um conjunto, então $x \in \R$ é um \emph{\myindex{ponto de
+acumulação}}
+se, para todo $\epsilon > 0$, o conjunto $(x-\epsilon,x+\epsilon) \cap S
+\setminus \{ x \}$ não é vazio. Isto é, se há pontos de $S$
+arbitrariamente próximos de $x$.
+Por exemplo, $S \coloneqq \{ \nicefrac{1}{n} : n \in \N \}$ tem um único ponto de acumulação, $0$, mas $0 \notin S$.
+Demonstre a seguinte versão do teorema de Bolzano--Weierstrass:
 
 \medskip
 
 \noindent
-\emph{\textbf{Theorem.} Let $S \subset \R$ be a bounded infinite set,
-then there exists at least one cluster point of $S$}.
+\emph{\textbf{Teorema.} Se $S \subset \R$ é um conjunto infinito e limitado,
+então existe pelo menos um ponto de acumulação de $S$.}
 
 \medskip
 
-Hint: If $S$ is infinite, then $S$ contains a countably infinite subset.
-That is, there is a sequence $\{ x_n \}_{n=1}^\infty$ of distinct numbers in $S$.
+Dica: Se $S$ é infinito, então $S$ contém um subconjunto infinito enumerável.
+Isto é, existe uma sequência $\{ x_n \}_{n=1}^\infty$ de números distintos em $S$.
 \end{exercise}
 
 \begin{samepage}
-\begin{exercise}[Challenging]
+\begin{exercise}[Desafiador]
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Prove that every sequence contains a monotone subsequence.
-Hint: Call $n \in \N$ a \emph{peak}
-of the sequence
+Demonstre que toda sequência contém uma subsequência monótona.
+Dica: Chamamos $n \in \N$ de \emph{pico}
+da sequência
 $\{ x_n \}_{n=1}^\infty$
-if $x_m \leq x_n$ for all $m \geq n$.
-There are two possibilities: Either the sequence has at most finitely many
-peaks,
-or it has infinitely many peaks.
+se $x_m \leq x_n$ para todo $m \geq n$.
+Há duas possibilidades: ou a sequência tem apenas um número finito de
+picos,
+ou tem infinitos picos.
 \item
-Conclude the Bolzano--Weierstrass theorem.
+Conclua o teorema de Bolzano--Weierstrass.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
 
 \begin{exercise}
 \pagebreak[2]
-Prove a stronger version of \propref{seqconvsubseqconv:prop}.
-Suppose $\{ x_n \}_{n=1}^\infty$ is a sequence such that every subsequence
-$\{ x_{n_m} \}_{m=1}^\infty$ has a subsequence
-$\{ x_{n_{m_i}} \}_{i=1}^\infty$ that converges to $x$.
+Demonstre uma versão mais forte da \propref{seqconvsubseqconv:prop}.
+Suponha que $\{ x_n \}_{n=1}^\infty$ seja uma sequência tal que toda subsequência
+$\{ x_{n_m} \}_{m=1}^\infty$ tenha uma subsequência
+$\{ x_{n_{m_i}} \}_{i=1}^\infty$ que convirja para $x$.
 \begin{enumerate}[a)]
 \item
-First show that $\{ x_n \}_{n=1}^\infty$ is
-bounded.
+Primeiro, mostre que $\{ x_n \}_{n=1}^\infty$ é
+limitada.
 \item
-Now show that $\{ x_n \}_{n=1}^\infty$ converges to $x$.
+Em seguida, mostre que $\{ x_n \}_{n=1}^\infty$ converge para $x$.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Let $\{x_n\}_{n=1}^\infty$ be a bounded sequence.
+Seja $\{x_n\}_{n=1}^\infty$ uma sequência limitada.
 \begin{enumerate}[a)]
 \item
-Prove that there exists an $s$ such that for every $r > s$, there exists 
-an $M \in \N$ such that for all $n \geq M$, we have
+Demonstre que existe um $s$ tal que, para todo $r > s$, existe
+um $M \in \N$ tal que, para todo $n \geq M$, vale
 $x_n < r$.
 \item
-If $s$ is a number as in a), then prove $\limsup\limits_{n\to\infty} x_n \leq s$.
+Se $s$ é um número como no item a), demonstre que $\limsup\limits_{n\to\infty} x_n \leq s$.
 \item
-Show that if $S$ is the set of all $s$ as in a), then
+Seja $S$ o conjunto de todos os valores de $s$ como no item a). Mostre que
 $\limsup\limits_{n\to\infty} x_n = \inf \, S$.
 \end{enumerate}
 \end{exercise}
 
-\begin{exercise}[Easy] \label{exercise:infseqlimex}
+\begin{exercise}[Fácil] \label{exercise:infseqlimex}
 \pagebreak[2]
-Suppose $\{ x_n \}_{n=1}^\infty$ is such that $\liminf\limits_{n\to\infty} x_n = -\infty$,
-$\limsup\limits_{n\to\infty} x_n = \infty$.
+Suponha que $\{ x_n \}_{n=1}^\infty$ seja tal que $\liminf\limits_{n\to\infty} x_n = -\infty$
+e $\limsup\limits_{n\to\infty} x_n = \infty$.
 \begin{enumerate}[a)]
 \item
-Show that $\{ x_n \}_{n=1}^\infty$ is not convergent, and also
-that neither $\lim\limits_{n\to\infty} x_n = \infty$
-nor $\lim\limits_{n\to\infty} x_n = -\infty$
-is true.
+Mostre que $\{ x_n \}_{n=1}^\infty$ não converge e que também não é verdade
+que $\lim\limits_{n\to\infty} x_n = \infty$
+nem que $\lim\limits_{n\to\infty} x_n = -\infty$.
 \item
-Find an example of such a sequence.
+Dê um exemplo de tal sequência.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise} \label{exercise:infseqlimlims}
-Let $\{ x_n \}_{n=1}^\infty$ be a sequence.
+Seja $\{ x_n \}_{n=1}^\infty$ uma sequência.
 \begin{enumerate}[a)]
 \item
-Show that
-$\lim\limits_{n\to\infty} x_n = \infty$ if and only if
+Mostre que
+$\lim\limits_{n\to\infty} x_n = \infty$ se, e somente se,
 $\liminf\limits_{n\to\infty} x_n = \infty$.
 \item
-Then show that $\lim\limits_{n\to\infty} x_n = - \infty$ if and only if
+Em seguida, mostre que $\lim\limits_{n\to\infty} x_n = - \infty$ se, e somente se,
 $\limsup\limits_{n\to\infty} x_n = -\infty$.
 \item
-If $\{ x_n \}_{n=1}^\infty$ is monotone increasing, show that either
-$\lim_{n\to\infty} x_n$ exists and is finite or $\lim_{n\to\infty} x_n = \infty$.  In either
-case, $\lim_{n\to\infty} x_n = \sup \{ x_n : n \in \N \}$.
+Se $\{ x_n \}_{n=1}^\infty$ é monótona crescente, mostre que ou
+$\lim_{n\to\infty} x_n$ existe e é finito, ou $\lim_{n\to\infty} x_n = \infty$. Em qualquer
+caso, $\lim_{n\to\infty} x_n = \sup \{ x_n : n \in \N \}$.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise} \label{exercise:strongerratiotest2}
-Prove the following stronger version of \lemmaref{seq:ratiotest}, the ratio
-test.
-Suppose $\{ x_n \}_{n=1}^\infty$ is a sequence such that $x_n \neq 0$ for all
+Demonstre a seguinte versão mais forte do \lemmaref{seq:ratiotest}, o teste
+da razão.
+Suponha que $\{ x_n \}_{n=1}^\infty$ seja uma sequência tal que $x_n \neq 0$ para todo
 $n$.
 \begin{enumerate}[a)]
 \item
-Prove that if
+Demonstre que, se
 \begin{equation*}
 \limsup_{n \to \infty} \frac{\sabs{x_{n+1}}}{\sabs{x_n}} < 1 ,
 \end{equation*}
-then $\{ x_n \}_{n=1}^\infty$ converges to $0$.
+então $\{ x_n \}_{n=1}^\infty$ converge para $0$.
 \item
-Prove that if
+Demonstre que, se
 \begin{equation*}
 \liminf_{n \to \infty} \frac{\sabs{x_{n+1}}}{\sabs{x_n}} > 1 ,
 \end{equation*}
-then $\{ x_n \}_{n=1}^\infty$ is unbounded.
+então $\{ x_n \}_{n=1}^\infty$ não é limitada.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Suppose $\{ x_n \}_{n=1}^\infty$ is a bounded sequence, $a_n \coloneqq \sup \{ x_k : k \geq n \}$
-as before.  Suppose that for some $\ell \in \N$,
-$a_\ell \notin \{ x_k : k \geq \ell \}$.  Then show that $a_j = a_\ell$ for all $j \geq \ell$, and hence
+Suponha que $\{ x_n \}_{n=1}^\infty$ seja uma sequência limitada e que $a_n \coloneqq \sup \{ x_k : k \geq n \}$
+como antes. Suponha que, para algum $\ell \in \N$,
+$a_\ell \notin \{ x_k : k \geq \ell \}$. Mostre que $a_j = a_\ell$ para todo $j \geq \ell$ e, portanto,
 $\limsup\limits_{n\to\infty} x_n = a_\ell$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $\{ x_n \}_{n=1}^\infty$ is a sequence,
-and $a_n \coloneqq \sup \{ x_k : k \geq n \}$ and
-$b_n \coloneqq \inf \{ x_k : k \geq n \}$ as before.
+Suponha que $\{ x_n \}_{n=1}^\infty$ seja uma sequência,
+e $a_n \coloneqq \sup \{ x_k : k \geq n \}$ e
+$b_n \coloneqq \inf \{ x_k : k \geq n \}$ como antes.
 \begin{enumerate}[a)]
 \item
-Prove that if $a_\ell = \infty$ for some $\ell \in \N$, then 
+Demonstre que, se $a_\ell = \infty$ para algum $\ell \in \N$, então
 $\limsup\limits_{n\to\infty} x_n = \infty$.
 \item
-Prove that if $b_\ell = -\infty$ for some $\ell \in \N$, then 
+Demonstre que, se $b_\ell = -\infty$ para algum $\ell \in \N$, então
 $\liminf\limits_{n\to\infty} x_n = -\infty$.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Suppose $\{ x_n \}_{n=1}^\infty$ is a sequence
-such that both $\liminf_{n\to\infty} x_n$ and
-$\limsup_{n\to\infty} x_n$  are finite.  Prove that $\{ x_n \}_{n=1}^\infty$ is bounded.
+Suponha que $\{ x_n \}_{n=1}^\infty$ seja uma sequência
+tal que tanto $\liminf_{n\to\infty} x_n$ quanto
+$\limsup_{n\to\infty} x_n$ sejam finitos. Demonstre que $\{ x_n \}_{n=1}^\infty$ é limitada.
 \end{exercise}
 
 \begin{exercise}
-Suppose $\{ x_n \}_{n=1}^\infty$ is a bounded sequence, and $\epsilon > 0$ is given.
-Prove that there exists an $M$ such that for all $k \geq M$,
+Suponha que $\{ x_n \}_{n=1}^\infty$ seja uma sequência limitada e que $\epsilon > 0$ seja dado.
+Demonstre que existe um $M$ tal que, para todo $k \geq M$,
 \begin{equation*}
-x_k - \Bigl(\limsup_{n\to\infty} x_n\Bigr) < \epsilon \qquad \text{and} \qquad
+x_k - \Bigl(\limsup_{n\to\infty} x_n\Bigr) < \epsilon \qquad \text{e} \qquad
 \Bigl(\liminf_{n\to\infty} x_n\Bigr) - x_k < \epsilon .
 \end{equation*}
 \end{exercise}
 
 \begin{exercise} \label{exercise:extendsubseqlimsupinf}
-Extend \thmref{subseqlimsupinf:thm} to unbounded sequences:
-Suppose that $\{ x_n \}_{n=1}^\infty$ is a sequence.
-If $\limsup_{n\to\infty} x_n = \infty$, then prove that
-there exists a subsequence $\{ x_{n_i} \}_{i=1}^\infty$ converging to $\infty$.
-Then prove the same result for $-\infty$, and then prove both statements for
+Estenda o \thmref{subseqlimsupinf:thm} a sequências não limitadas:
+suponha que $\{ x_n \}_{n=1}^\infty$ seja uma sequência.
+Se $\limsup_{n\to\infty} x_n = \infty$, demonstre que
+existe uma subsequência $\{ x_{n_i} \}_{i=1}^\infty$ que converge para $\infty$.
+Em seguida, demonstre o mesmo resultado para $-\infty$ e, depois, demonstre as duas afirmações para
 $\liminf$.
 \end{exercise}
 
@@ -2650,6 +2645,7 @@ $\liminf$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
+
 \section{Cauchy sequences}
 \label{sec:cauchy}
 

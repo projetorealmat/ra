@@ -558,9 +558,8 @@ Para ver como essas duas sequências se encaixam na definição, tome
 $n_i \coloneqq 3i$; isto é, $\{ n_i \}_{i=1}^\infty$ é a sequência
 $3,6,9,12,\ldots$.
 Os números $x_{n_i}$ da subsequência devem vir da sequência original.
-Assim, $1,0,\nicefrac{1}{3},0,
-\nicefrac{1}{5},\ldots$
-A sequência acima não é uma subsequência de $\{ \nicefrac{1}{n} \}_{n=1}^\infty$.
+Assim, a sequência $1,0,\nicefrac{1}{3},0,
+\nicefrac{1}{5},\ldots$ não é uma subsequência de $\{ \nicefrac{1}{n} \}_{n=1}^\infty$.
 Além disso, a ordem deve ser preservada: a sequência
 $1,\nicefrac{1}{3},\nicefrac{1}{2},\nicefrac{1}{5},\ldots$
 não é uma subsequência de $\{ \nicefrac{1}{n} \}_{n=1}^\infty$.
@@ -604,180 +603,182 @@ $\{ x_{2i+1} \}_{i=1}^\infty$ converge para 0. Compare com
 \propref{seqconvsubseqconv:prop}.
 \end{example}
 
-\subsection{Exercises}
+\subsection{Exerc\'icios}
 
 \begin{exnote}
-In the following exercises, feel free to use what you know from calculus to
-find the limit, if it exists.  But you must \emph{prove}
-that you
-found the correct limit, or prove that the sequence is divergent.
+Nos exercícios a seguir, sinta-se à vontade para usar o que sabe de cálculo
+para encontrar o limite, se ele existir. Mas você deve \emph{demonstrar} que
+encontrou o limite correto ou provar que a sequência é divergente.
 \end{exnote}
 
 \begin{exercise}
-Is the sequence
+A sequência
 $\{ 3n \}_{n=1}^\infty$
-bounded?  Prove or disprove.
+é limitada? Prove ou refute.
 \end{exercise}
 
 \begin{exercise}
-Is the sequence
+A sequência
 $\{ n \}_{n=1}^\infty$
-convergent?  If so, what is the limit?
+é convergente? Se for, qual é o limite?
 \end{exercise}
 
 \begin{exercise}
-Is the sequence
+A sequência
 $\left\{ \dfrac{{(-1)}^n}{2n} \right\}_{n=1}^\infty$
-convergent?  If so, what is the limit?
+é convergente? Se for, qual é o limite?
 \end{exercise}
 
 \begin{exercise}
-Is the sequence
+A sequência
 $\{ 2^{-n} \}_{n=1}^\infty$
-convergent?  If so, what is the limit?
+é convergente? Se for, qual é o limite?
 \end{exercise}
 
 \begin{exercise}
-Is the sequence
+A sequência
 $\left\{ \dfrac{n}{n+1} \right\}_{n=1}^\infty$
-convergent?  If so, what is the limit?
+é convergente? Se for, qual é o limite?
 \end{exercise}
 
 \begin{exercise}
-Is the sequence
+A sequência
 $\left\{ \dfrac{n}{n^2+1} \right\}_{n=1}^\infty$
-convergent?  If so, what is the limit?
+é convergente? Se for, qual é o limite?
 \end{exercise}
 
 \begin{exercise} \label{exercise:absconv}
-Let $\{ x_n \}_{n=1}^\infty$ be a sequence.
+Seja $\{ x_n \}_{n=1}^\infty$ uma sequência.
 \begin{enumerate}[a)]
-\item Show that $\lim\limits_{n\to\infty} x_n = 0$ (that is, the limit exists and is zero)
-if and only if $\lim\limits_{n\to\infty} \sabs{x_n} = 0$.
-\item Find an example such that $\{ \sabs{x_n} \}_{n=1}^\infty$ converges and
-$\{ x_n \}_{n=1}^\infty$
-diverges.
+\item Mostre que $\lim\limits_{n\to\infty} x_n = 0$ (isto é, que o limite
+existe e é zero) se, e somente se, $\lim\limits_{n\to\infty} \sabs{x_n} = 0$.
+\item Dê um exemplo em que $\{ \sabs{x_n} \}_{n=1}^\infty$ converge e
+$\{ x_n \}_{n=1}^\infty$ diverge.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Is the sequence
+A sequência
 $\left\{ \dfrac{2^n}{n!} \right\}_{n=1}^\infty$
-convergent?  If so, what is the limit?
+é convergente? Se for, qual é o limite?
 \end{exercise}
 
 \begin{exercise}
-Show that the sequence
-$\left\{ \dfrac{1}{\sqrt[3]{n}} \right\}_{n=1}^\infty$ is monotone and bounded.  Then use
-\thmref{thm:monotoneconv} to find the limit.
+Mostre que a sequência
+$\left\{ \dfrac{1}{\sqrt[3]{n}} \right\}_{n=1}^\infty$ é monótona e limitada.
+Em seguida, use o \thmref{thm:monotoneconv} para encontrar o limite.
 \end{exercise}
 
 \begin{exercise}
-Show that the sequence
+Mostre que a sequência
 $\left\{ \dfrac{n+1}{n} \right\}_{n=1}^\infty$
-is monotone and bounded.  Then use
-\thmref{thm:monotoneconv} to find the limit.
+é monótona e limitada. Em seguida, use o
+\thmref{thm:monotoneconv} para encontrar o limite.
 \end{exercise}
 
 \begin{exercise}
-Finish the proof of \thmref{thm:monotoneconv} for monotone decreasing
-sequences.
+Complete a demonstração do \thmref{thm:monotoneconv} para sequências
+monótonas não crescentes.
 \end{exercise}
 
 \begin{exercise}
-Prove \propref{prop:supinfseq}.
+Prove a \propref{prop:supinfseq}.
 \end{exercise}
 
 \begin{exercise}
-Let $\{ x_n \}_{n=1}^\infty$ be a convergent monotone sequence.  Suppose 
-there exists a $k \in \N$ such that
+Seja $\{ x_n \}_{n=1}^\infty$ uma sequência monótona convergente. Suponha
+que exista $k \in \N$ tal que
 \begin{equation*}
 \lim_{n\to \infty} x_n = x_k .
 \end{equation*}
-Show that $x_n = x_k$ for all $n \geq k$.
+Mostre que $x_n = x_k$ para todo $n \geq k$.
 \end{exercise}
 
 \begin{exercise}
 \pagebreak[2]
-Find a convergent subsequence of the sequence
+Encontre uma subsequência convergente da sequência
 $\bigl\{ {(-1)}^n \bigr\}_{n=1}^\infty$.
 \end{exercise}
 
 \begin{exercise}
-Let $\{x_n\}_{n=1}^\infty$ be a sequence defined by
+Seja $\{x_n\}_{n=1}^\infty$ uma sequência definida por
 \begin{equation*}
 x_n \coloneqq 
 \begin{cases}
-n               & \text{if } n \text{ is odd} , \\
-\nicefrac{1}{n} & \text{if } n \text{ is even} .
+n               & \text{se } n \text{ é ímpar} , \\
+\nicefrac{1}{n} & \text{se } n \text{ é par} .
 \end{cases}
 \avoidbreak
 \end{equation*}
 \begin{enumerate}[a)]
-\item Is the sequence bounded? (prove or disprove)
-\item Is there a convergent subsequence?  If so, find it.
+\item A sequência é limitada? (prove ou refute)
+\item Existe uma subsequência convergente? Se existir, encontre-a.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
 \pagebreak[2]
-Let $\{ x_n \}_{n=1}^\infty$ be a sequence.
-Suppose there are two convergent subsequences $\{ x_{n_i} \}_{i=1}^\infty$ and
-$\{ x_{m_i} \}_{i=1}^\infty$.  Suppose 
+Seja $\{ x_n \}_{n=1}^\infty$ uma sequência.
+Suponha que existam duas subsequências convergentes,
+$\{ x_{n_i} \}_{i=1}^\infty$ e $\{ x_{m_i} \}_{i=1}^\infty$. Suponha que
 \begin{equation*}
 \lim_{i\to\infty} x_{n_i} = a
-\qquad \text{and} \qquad
+\qquad \text{e} \qquad
 \lim_{i\to\infty} x_{m_i} = b,
 \end{equation*}
-where $a \neq b$.  Prove that $\{ x_n \}_{n=1}^\infty$ is not convergent, without
-using \propref{prop:seqtosubseq}.
+em que $a \neq b$. Prove que $\{ x_n \}_{n=1}^\infty$ não é convergente,
+sem usar a \propref{prop:seqtosubseq}.
 \end{exercise}
 
-\begin{exercise}[Tricky]
-Find a sequence $\{ x_n \}_{n=1}^\infty$ such that for every $y \in \R$, there exists a
-subsequence $\{ x_{n_i} \}_{i=1}^\infty$ converging to $y$.
+\begin{exercise}[Desafio]
+Encontre uma sequência $\{ x_n \}_{n=1}^\infty$ tal que, para todo
+$y \in \R$, exista uma subsequência $\{ x_{n_i} \}_{i=1}^\infty$ que
+converge para $y$.
 \end{exercise}
 
-\begin{exercise}[Easy]
-Let $\{ x_n \}_{n=1}^\infty$ be a sequence and $x \in \R$.
-Suppose for every $\epsilon > 0$, there is an $M$ such that
-$\sabs{x_n-x} \leq \epsilon$ for all $n \geq M$.
-Show that $\lim\limits_{n\to\infty} x_n = x$.
+\begin{exercise}[F\'acil]
+Seja $\{ x_n \}_{n=1}^\infty$ uma sequência e seja $x \in \R$.
+Suponha que, para todo $\epsilon > 0$, exista $M$ tal que
+$\sabs{x_n-x} \leq \epsilon$ para todo $n \geq M$.
+Mostre que $\lim\limits_{n\to\infty} x_n = x$.
 \end{exercise}
 
-\begin{exercise}[Easy]
-Let $\{ x_n \}_{n=1}^\infty$ be a sequence and $x \in \R$ such that
-there exists a $k \in \N$ such that for all $n \geq k$,
-$x_n = x$.  Prove that $\{ x_n \}_{n=1}^\infty$ converges to $x$.
+\begin{exercise}[F\'acil]
+Seja $\{ x_n \}_{n=1}^\infty$ uma sequência e seja $x \in \R$ tais que
+exista $k \in \N$ para o qual $x_n = x$ para todo $n \geq k$.
+Prove que $\{ x_n \}_{n=1}^\infty$ converge para $x$.
 \end{exercise}
 
 \begin{exercise}
-Let $\{ x_n \}_{n=1}^\infty$ be a sequence and
-define a sequence $\{ y_n \}_{n=1}^\infty$ by
-$y_{2k} \coloneqq x_{k^2}$ and $y_{2k-1} \coloneqq x_k$ for all $k \in \N$.
-Prove that $\{ x_n \}_{n=1}^\infty$ converges if and only if
-$\{ y_n \}_{n=1}^\infty$ converges.
-Furthermore, prove that if they converge, then
+Seja $\{ x_n \}_{n=1}^\infty$ uma sequência e defina a sequência
+$\{ y_n \}_{n=1}^\infty$ por
+$y_{2k} \coloneqq x_{k^2}$ e $y_{2k-1} \coloneqq x_k$ para todo $k \in \N$.
+Prove que $\{ x_n \}_{n=1}^\infty$ converge se, e somente se,
+$\{ y_n \}_{n=1}^\infty$ converge.
+Além disso, prove que, se ambas convergem, então
 $\lim\limits_{n\to\infty} x_n = \lim\limits_{n\to\infty} y_n$.
 \end{exercise}
 
 \begin{exercise}
-Show that the 3-tail of the sequence defined by $x_n \coloneqq \frac{n}{n^2+16}$ is
-monotone decreasing.  Hint: Suppose $n \geq m \geq 4$ and consider the 
-numerator of the expression $x_n-x_m$.
+Mostre que a cauda de índice 3 da sequência definida por
+$x_n \coloneqq \frac{n}{n^2+16}$ é monótona não crescente.
+Dica: suponha que $n \geq m \geq 4$ e considere o numerador da expressão
+$x_n-x_m$.
 \end{exercise}
 
 \begin{exercise}
-Suppose that $\{ x_n \}_{n=1}^\infty$ is a sequence such that
-the subsequences $\{ x_{2n} \}_{n=1}^\infty$, $\{ x_{2n-1} \}_{n=1}^\infty$, and
-$\{ x_{3n} \}_{n=1}^\infty$ all converge.  Show that $\{ x_n \}_{n=1}^\infty$ is convergent.
+Suponha que $\{ x_n \}_{n=1}^\infty$ seja uma sequência cujas
+subsequências $\{ x_{2n} \}_{n=1}^\infty$, $\{ x_{2n-1} \}_{n=1}^\infty$ e
+$\{ x_{3n} \}_{n=1}^\infty$ sejam todas convergentes. Mostre que
+$\{ x_n \}_{n=1}^\infty$ é convergente.
 \end{exercise}
 
 \begin{exercise}
-Suppose that $\{ x_n \}_{n=1}^\infty$ is a monotone increasing sequence that
-has a convergent subsequence.
-Show that $\{ x_n \}_{n=1}^\infty$ is convergent.
-Note: So \propref{prop:seqtosubseq} is an \myquote{if and only if} for monotone sequences.
+Suponha que $\{ x_n \}_{n=1}^\infty$ seja uma sequência monótona não
+decrescente que tenha uma subsequência convergente.
+Mostre que $\{ x_n \}_{n=1}^\infty$ é convergente.
+Observação: assim, a \propref{prop:seqtosubseq} é uma afirmação do tipo
+\myquote{se, e somente se} para sequências monótonas.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -699,40 +699,35 @@ $k = 1,2,\ldots,n$, então $P(n+1)$ é verdadeira.
 Então $P(n)$ é verdadeira para todo $n \in \N$.
 \end{thm}
 
-\subsection{Functions}
+\subsection{Fun\c{c}\~oes}
 
-Informally,
-a \emph{\myindex{set-theoretic function}}\index{function}
-$f$ taking a set $A$ to a set $B$
-is a mapping that to each $x \in A$ assigns a unique $y \in B$.  We write
-$f \colon A \to B$.\glsadd{not:func}
-A function $f
-\colon A \to B$ is
-a black box into which we stick an element of $A$,
-and the function
-spits out an element of $B$.
-Sometimes $f$ is called a \emph{\myindex{mapping}} or a
-\emph{\myindex{map}},
-and we say $f$ \emph{maps $A$ to $B$}.
+Informalmente,
+uma \emph{\myindex{fun\c{c}\~ao no sentido da teoria dos conjuntos}}\index{fun\c{c}\~ao}
+$f$, que leva um conjunto $A$ a um conjunto $B$,
+\'e uma aplica\c{c}\~ao que associa a cada $x \in A$ um \'unico $y \in B$.
+Escrevemos $f \colon A \to B$.\glsadd{not:func}
+Uma fun\c{c}\~ao $f \colon A \to B$ é como uma caixa-preta na qual
+inserimos um elemento de $A$; a fun\c{c}\~ao nos devolve um elemento de $B$.
+Às vezes, $f$ tamb\'em é chamada de \emph{\myindex{aplica\c{c}\~ao}} ou de
+\emph{\myindex{mapa}}, e dizemos que $f$ \emph{leva $A$ em $B$}.
 
-An example function 
-$f \colon S \to T$ from $S \coloneqq \{ 0, 1, 2 \}$ to $T \coloneqq \{ 0, 2 \}$
-can be defined
-by assigning $f(0) \coloneqq 2$, $f(1) \coloneqq 2$, and $f(2) \coloneqq 0$.
+Uma fun\c{c}\~ao de exemplo
+$f \colon S \to T$, de $S \coloneqq \{ 0, 1, 2 \}$ em $T \coloneqq \{ 0, 2 \}$,
+pode ser definida atribuindo-se $f(0) \coloneqq 2$, $f(1) \coloneqq 2$ e
+$f(2) \coloneqq 0$.
 %
-Often, functions are defined by some sort of
-formula; however, you should really think of a function as just a very large
-table of values.
-The subtle issue here is that a single function can have several 
-formulas, all giving the same function.
-For many functions, there is
-no formula that expresses its values.
-To define the notion of a function rigorously,
-we must first define the Cartesian product.
+Muitas vezes, as fun\c{c}\~oes s\~ao definidas por algum tipo de
+f\'ormula; no entanto, conv\'em pensar em uma fun\c{c}\~ao simplesmente como
+uma tabela muito grande de valores.
+A sutileza é que uma mesma fun\c{c}\~ao pode ter v\'arias f\'ormulas,
+todas definindo a mesma fun\c{c}\~ao.
+Para muitas fun\c{c}\~oes, n\~ao existe uma f\'ormula que exprima seus valores.
+Para definir rigorosamente a no\c{c}\~ao de fun\c{c}\~ao, precisamos primeiro
+definir o produto cartesiano.
 
 \begin{defn}
-Let $A$ and $B$ be sets.  The \emph{\myindex{Cartesian product}}
-is the set of tuples defined as
+Sejam $A$ e $B$ conjuntos. O \emph{\myindex{produto cartesiano}}
+é o conjunto de tuplas definido por
 \glsadd{not:cartprod}
 \begin{equation*}
 A \times B \coloneqq
@@ -740,81 +735,86 @@ A \times B \coloneqq
 \end{equation*}
 \end{defn}
 
-For instance, $\{ a,b \} \times \{ c , d\} =
+Por exemplo, $\{ a,b \} \times \{ c , d\} =
 \bigl\{
 (a,c), (a,d), (b,c), (b,d)
 \bigr\}$.
-A more complicated example is the set $[0,1] \times [0,1]$: a subset of the
-plane bounded by a square with vertices $(0,0)$, $(0,1)$, $(1,0)$, and $(1,1)$.
-When $A$ and $B$ are the same set, we often use a superscript 2 to denote
-such a product.  For example, $[0,1]^2 = 
-[0,1] \times [0,1]$ or $\R^2 = \R \times \R$ (the Cartesian plane).
+Um exemplo mais elaborado é o conjunto $[0,1] \times [0,1]$: um
+subconjunto do plano delimitado por um quadrado com v\'ertices $(0,0)$,
+$(0,1)$, $(1,0)$ e $(1,1)$.
+Quando $A$ e $B$ s\~ao o mesmo conjunto, costuma-se usar o expoente 2 para
+denotar esse produto. Por exemplo, $[0,1]^2 =
+[0,1] \times [0,1]$ ou $\R^2 = \R \times \R$ (o plano cartesiano).
 
 \begin{defn}
-A \emph{function} $f \colon A \to B$ is a subset $f$ of $A \times B$
-such that for each $x \in A$, there exists a unique $y \in B$ for which $(x,y) \in f$.
-We write $f(x) = y$.
-If we consider $f$ simply as a subset in $A \times B$,
-then we call this set the
-\emph{\myindex{graph}} of the function.
+Uma \emph{fun\c{c}\~ao} $f \colon A \to B$ é um subconjunto $f$ de $A \times B$
+tal que, para cada $x \in A$, existe um \'unico $y \in B$ para o qual
+$(x,y) \in f$.
+Escrevemos $f(x) = y$.
+Se considerarmos $f$ simplesmente como um subconjunto de $A \times B$,
+chamamos esse conjunto de
+\emph{\myindex{gr\'afico}} da fun\c{c}\~ao.
 
-The set $A$ is called the \emph{\myindex{domain}} of $f$ (and
-sometimes confusingly denoted $D(f)$).  The set
+O conjunto $A$ é chamado de \emph{\myindex{dom\'inio}} de $f$ (e,
+às vezes, é denotado de modo confuso por $D(f)$). O conjunto
 \begin{equation*}
-R(f) \coloneqq \{ y \in B : \text{there exists an } x \in A \text{ such that }
+R(f) \coloneqq \{ y \in B : \text{existe um } x \in A \text{ tal que }
 f(x)=y \}
 \end{equation*}
-is called the \emph{\myindex{range}} of $f$.
-The set $B$ is called the \emph{\myindex{codomain}} of $f$.
+Esse conjunto é chamado de \emph{\myindex{imagem}} de $f$.
+O conjunto $B$ é chamado de \emph{\myindex{contradom\'inio}} de $f$.
 \end{defn}
 
-It is possible that the range $R(f)$ is a proper subset of the codomain $B$,
-while the domain of $f$ is always equal to $A$.  We generally 
-assume that the domain of $f$ is nonempty.
+É poss\'ivel que a imagem $R(f)$ seja um subconjunto pr\'oprio do
+contradom\'inio $B$, ao passo que o dom\'inio de $f$ é sempre igual a $A$.
+Em geral, supomos que o dom\'inio de $f$ n\~ao seja vazio.
 
 \begin{example}
-From calculus, you are most familiar with functions taking real numbers to real
-numbers.  However, you saw some other types of functions as well.
-The derivative is a function that maps the set of
-differentiable functions to the set of all functions.
-Another example is the Laplace transform, which also
-takes functions to functions.  Yet another example is the function that takes
-a continuous function $g$ defined on the interval $[0,1]$ and returns the
-number $\int_0^1 g(x) \,dx$.
+Em Cálculo, você está mais familiarizado com funções de números reais em
+números reais. No entanto, você também já viu outros tipos de funções.
+A derivada é uma função que leva o conjunto das funções diferenciáveis ao
+conjunto de todas as funções.
+Outro exemplo é a transformada de Laplace, que também leva funções a funções.
+Ainda outro exemplo é a função que recebe uma função contínua $g$ definida
+no intervalo $[0,1]$ e retorna o número $\int_0^1 g(x) \,dx$.
 \end{example}
 
 \begin{defn}
-Consider a function $f \colon A \to B$.  Define
-the \emph{\myindex{image}} (or \emph{\myindex{direct image}}) of a subset
-$C \subset A$ as
+Considere uma função $f \colon A \to B$. Definimos
+a \emph{\myindex{imagem}} (ou \emph{\myindex{imagem direta}}) de um
+subconjunto $C \subset A$ por
 \glsadd{not:dirimage}
 \begin{equation*}
 f(C) \coloneqq \bigl\{ f(x) \in B : x \in C \bigr\} .
 \end{equation*}
-Define the \emph{\myindex{inverse image}} of a subset $D
-\subset B$ as
+Definimos a \emph{\myindex{imagem inversa}} de um subconjunto
+$D \subset B$ por
 \glsadd{not:invimage}
 \begin{equation*}
 f^{-1}(D) \coloneqq \bigl\{ x \in A : f(x) \in D \bigr\} .
 \end{equation*}
 \end{defn}
 
-In particular, $R(f) = f(A)$, the range is the direct image of
-the domain $A$.
+Em particular, $R(f) = f(A)$: a imagem é a imagem direta do domínio $A$.
 
 \begin{myfigureht}
 \myincludepdft{funcimags_full}{%
-Two sets of dots are labeled 1, 2, 3, 4 and a, b, c, d.
-There is an arrow from 1 to b, from 2 to d, from 3 to c,
-and from 4 to b.  A list of example images is on the right:
-f applied to the set containing 1,2,3,4 equals the set containing b, c, d.
-f applied to the set containing 1,2,4 equals the set containing b, d.
-f applied to the set containing 1 equals the set containing b.
-f inverse applied to the set containing a,b,c equals the set containing 1,3,4.
-f inverse applied to the set containing a equals the empty set.
-f inverse applied to the set containing b equals the set containing 1,4.}
-\caption{Example of direct and inverse images for the function
-$f \colon \{ 1,2,3,4 \} \to \{ a,b,c,d \}$ defined by
+Dois conjuntos de pontos estão identificados pelos números 1, 2, 3, 4 e
+pelas letras a, b, c, d.
+Há uma seta de 1 para b, de 2 para d, de 3 para c e de 4 para b. À direita,
+uma lista apresenta exemplos de imagens:
+A imagem, por f, do conjunto que contém 1, 2, 3 e 4 é o conjunto que contém
+b, c e d.
+A imagem, por f, do conjunto que contém 1, 2 e 4 é o conjunto que contém b
+e d.
+A imagem, por f, do conjunto que contém 1 é o conjunto que contém b.
+A imagem inversa, por f, do conjunto que contém a, b e c é o conjunto que
+contém 1, 3 e 4.
+A imagem inversa, por f, do conjunto que contém a é o conjunto vazio.
+A imagem inversa, por f, do conjunto que contém b é o conjunto que contém 1
+e 4.}
+\caption{Exemplo de imagens diretas e inversas para a fun\c{c}\~ao
+$f \colon \{ 1,2,3,4 \} \to \{ a,b,c,d \}$ definida por
 $f(1) \coloneqq b$,
 $f(2) \coloneqq d$,
 $f(3) \coloneqq c$,
@@ -822,13 +822,13 @@ $f(4) \coloneqq b$.\label{figfuncimags}}
 \end{myfigureht}
 
 \begin{example}
-Define the function $f \colon \R \to \R$ by
-$f(x) \coloneqq \sin(\pi x)$.  Then $f\bigl([0,\nicefrac{1}{2}]\bigr) = [0,1]$, 
+Defina a função $f \colon \R \to \R$ por
+$f(x) \coloneqq \sin(\pi x)$. Então $f\bigl([0,\nicefrac{1}{2}]\bigr) = [0,1]$,
 $f^{-1}\bigl(\{0\}\bigr) = \Z$, etc.
 \end{example}
 
 \begin{prop} \label{st:propinv}
-Consider $f \colon A \to B$.  Let $C, D$ be subsets of $B$.  Then
+Considere $f \colon A \to B$. Sejam $C, D$ subconjuntos de $B$. Então
 \begin{align*}
 & f^{-1}( C \cup D) = f^{-1} (C) \cup f^{-1} (D) , \\
 & f^{-1}( C \cap D) = f^{-1} (C) \cap f^{-1} (D) , \\
@@ -836,87 +836,85 @@ Consider $f \colon A \to B$.  Let $C, D$ be subsets of $B$.  Then
 \end{align*}
 \end{prop}
 
-Read the last line of the proposition as
+Interprete a última linha da proposição como
 $f^{-1}( B \setminus C) = A \setminus f^{-1} (C)$.
 
 \begin{proof}
-We start with the union.  If $x \in 
-f^{-1}( C \cup D)$, then 
-$x$ is taken to $C$ or $D$, that is, $f(x) \in C$ or $f(x) \in D$.  Thus
-$f^{-1}( C \cup D) \subset f^{-1} (C) \cup f^{-1} (D)$.  Conversely,
-if $x \in f^{-1}(C)$, then $x \in f^{-1}(C \cup D)$.  Similarly for
-$x \in f^{-1}(D)$.  Hence,
-$f^{-1}( C \cup D) \supset f^{-1} (C) \cup f^{-1} (D)$, and we have
-equality.
+Começamos pela união. Se $x \in f^{-1}( C \cup D)$, então a função leva
+$x$ a um elemento de $C$ ou de $D$, isto é, $f(x) \in C$ ou $f(x) \in D$.
+Logo, $f^{-1}( C \cup D) \subset f^{-1} (C) \cup f^{-1} (D)$.
+Reciprocamente, se $x \in f^{-1}(C)$, então $x \in f^{-1}(C \cup D)$.
+O mesmo vale para $x \in f^{-1}(D)$. Portanto,
+$f^{-1}( C \cup D) \supset f^{-1} (C) \cup f^{-1} (D)$, e obtemos a
+igualdade.
 
-The rest of the proof is left as an exercise.
+O restante da demonstração fica como exercício.
 \end{proof}
 
-For direct images, the best we can do is the
-following weaker result.
+Para imagens diretas, o melhor que podemos afirmar é o resultado mais fraco
+a seguir.
 
 \begin{prop} \label{st:propfor}
-Consider $f \colon A \to B$.  Let $C, D$ be subsets of $A$.  Then
+Considere $f \colon A \to B$. Sejam $C, D$ subconjuntos de $A$. Então
 \begin{align*}
 & f( C \cup D) = f (C) \cup f (D) , \\
 & f( C \cap D) \subset f (C) \cap f (D) .
 \end{align*}
 \end{prop}
 
-The proof is left as an exercise.
+Deixamos a demonstração como exercício.
 
 \begin{defn}
-Let $f \colon A \to B$ be a function.
-The function $f$ is said to be
-\emph{\myindex{injective}} or
-\emph{\myindex{one-to-one}} if $f(x_1) = f(x_2)$ implies $x_1 = x_2$.  In
-other words,
-$f$ is injective if
-for all $y \in B$, the set
-$f^{-1}(\{y\})$ is empty or consists of a single element.
-We call such an $f$ an \emph{\myindex{injection}}.
+Seja $f \colon A \to B$ uma função.
+Dizemos que $f$ é
+\emph{\myindex{injetiva}} ou
+\emph{\myindex{um a um}} se $f(x_1) = f(x_2)$ implica $x_1 = x_2$. Em
+outras palavras, $f$ é injetiva se, para todo $y \in B$, o conjunto
+$f^{-1}(\{y\})$ é vazio ou contém um único elemento.
+Chamamos tal $f$ de uma \emph{\myindex{inje\c{c}\~ao}}.
 
-If $f(A) = B$, then we say $f$ is
-\emph{\myindex{surjective}} or
-\emph{\myindex{onto}}.
-In other words, $f$ is surjective if the range and the codomain of $f$ are equal.
-We call such an $f$ a \emph{\myindex{surjection}}.
+Se $f(A) = B$, dizemos que $f$ é
+\emph{\myindex{sobrejetiva}} ou
+\emph{\myindex{sobrejetora}}.
+Em outras palavras, $f$ é sobrejetiva se a imagem e o contradomínio de $f$
+são iguais.
+Chamamos tal $f$ de uma \emph{\myindex{sobreje\c{c}\~ao}}.
 
-If $f$ is both surjective and injective, then
-we say $f$ is \emph{\myindex{bijective}} or that $f$ is a
-\emph{\myindex{bijection}}.
+Se $f$ é ao mesmo tempo sobrejetiva e injetiva, dizemos que $f$ é
+\emph{\myindex{bijetiva}} ou que $f$ é uma
+\emph{\myindex{bije\c{c}\~ao}}.
 \end{defn}
 
-When $f \colon A \to B$ is a bijection, then the inverse image of a single
-element, $f^{-1}(\{y\})$, is always
-a unique element of $A$.  We then consider $f^{-1}$ as a function
+Quando $f \colon A \to B$ é uma bijeção, a imagem inversa de um elemento,
+$f^{-1}(\{y\})$, é sempre um único elemento de $A$. Passamos então a
+considerar $f^{-1}$ como uma função
 \glsadd{not:invfunction}
-$f^{-1} \colon B \to A$ and we write simply $f^{-1}(y)$.
-In this case, we call $f^{-1}$ the \emph{\myindex{inverse function}} of $f$.
-For instance, for the bijection $f \colon \R \to \R$ defined by
-$f(x) \coloneqq x^3$, we have
+$f^{-1} \colon B \to A$ e escrevemos simplesmente $f^{-1}(y)$.
+Nesse caso, chamamos $f^{-1}$ de \emph{\myindex{fun\c{c}\~ao inversa}} de $f$.
+Por exemplo, para a bijeção $f \colon \R \to \R$ definida por
+$f(x) \coloneqq x^3$, temos
 $f^{-1}(x) = \sqrt[3]{x}$.
 
 %A final piece of notation for functions that
 %we need is the \emph{\myindex{composition of functions}}.
 
 \begin{defn}
-Consider $f \colon A \to B$ and $g \colon B \to C$.  The
-\emph{composition}\index{composition of functions}
-of the functions $f$ and $g$ is the function
-$g \circ f \colon A \to C$ defined as
+Considere $f \colon A \to B$ e $g \colon B \to C$. A
+\emph{composi\c{c}\~ao}\index{composi\c{c}\~ao de fun\c{c}\~oes}
+das funções $f$ e $g$ é a função
+$g \circ f \colon A \to C$ definida por
 \glsadd{not:composition}
 \begin{equation*}
 (g \circ f)(x) \coloneqq g\bigl(f(x)\bigr) .
 \end{equation*}
 \end{defn}
 
-For example, if $f \colon \R \to \R$ is $f(x)\coloneqq x^3$ and $g \colon \R \to \R$
-is $g(y) = \sin(y)$, then $(g \circ f)(x) = \sin(x^3)$.
-It is left to the reader as an easy exercise
-to show that composition of one-to-one maps is
-one-to-one and composition of onto maps is onto.
-Therefore, the composition of bijections is a bijection.
+Por exemplo, se $f \colon \R \to \R$ é dada por $f(x)\coloneqq x^3$ e
+$g \colon \R \to \R$ é dada por $g(y) = \sin(y)$, então
+$(g \circ f)(x) = \sin(x^3)$.
+Deixamos como exercício simples para o leitor mostrar que a composição de
+aplicações injetivas é injetiva e a composição de aplicações sobrejetivas é
+sobrejetiva. Portanto, a composição de bijeções é uma bijeção.
 
 \subsection{Relations and equivalence classes}
 

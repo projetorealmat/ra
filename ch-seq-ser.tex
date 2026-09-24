@@ -3618,55 +3618,55 @@ A série $\sum_{n=1}^\infty \frac{1}{n^2}$ converge pelo critério da série $p$
 Portanto, pelo critério da comparação, $\sum_{n=1}^\infty \frac{1}{n^2+1}$ converge.
 \end{example}
 
-\subsection{Ratio test}
+\subsection{Critério da razão}
 
-Suppose $r > 0$.  The ratio of two subsequent terms in the geometric series
-$\sum_{n=0}^\infty r^n$ is $\frac{r^{n+1}}{r^n} = r$, and the series converges
-whenever $r < 1$.  Just as for sequences, this fact
-can be generalized to more arbitrary series
-as long as we have such a ratio \myquote{in the limit.}  We then compare
-the tail of a series to the geometric series.
+Suponha que $r > 0$. A razão entre dois termos consecutivos da série geométrica
+$\sum_{n=0}^\infty r^n$ é $\frac{r^{n+1}}{r^n} = r$, e a série converge
+sempre que $r < 1$. Assim como ocorre com sequências, esse fato
+pode ser generalizado para séries mais arbitrárias,
+desde que essa razão exista \myquote{no limite}. Então comparamos
+a cauda de uma série com a série geométrica.
 
 
-\begin{prop}[Ratio test]\index{ratio test for series}
-Let $\sum_{n=1}^\infty x_n$ be a series, $x_n \neq 0$ for all $n$, and such that
+\begin{prop}[Critério da razão]\index{critério da razão para séries}
+Seja $\sum_{n=1}^\infty x_n$ uma série, com $x_n \neq 0$ para todo $n$, e tal que
 \begin{equation*}
 L \coloneqq \lim_{n\to\infty} \frac{\sabs{x_{n+1}}}{\sabs{x_n}}
-\qquad \text{exists.}
+\qquad \text{existe.}
 \end{equation*}
 \begin{enumerate}[(i)]
 \item
-If $L < 1$, then $\sum_{n=1}^\infty x_n$ converges absolutely.
+Se $L < 1$, então $\sum_{n=1}^\infty x_n$ converge absolutamente.
 \item
-If $L > 1$, then $\sum_{n=1}^\infty x_n$ diverges.
+Se $L > 1$, então $\sum_{n=1}^\infty x_n$ diverge.
 \end{enumerate}
 \end{prop}
 
-Although the test as stated is often sufficient, it can be strengthened a
-bit, see \exerciseref{exercise:strongerratiotest}.
+Embora o critério, tal como enunciado, seja frequentemente suficiente, ele pode ser um pouco
+fortalecido; veja o \exerciseref{exercise:strongerratiotest}.
 
 \begin{proof}
-If $L > 1$, then
-\lemmaref{seq:ratiotest} says that the sequence $\{ x_n \}_{n=1}^\infty$
-diverges.  Since it is a necessary condition for the convergence of series
-that the terms go to zero, we know that $\sum_{n=1}^\infty x_n$ must diverge.
+Se $L > 1$, então
+\lemmaref{seq:ratiotest} afirma que a sequência $\{ x_n \}_{n=1}^\infty$
+diverge. Como uma condição necessária para a convergência de séries
+é que seus termos tendam a zero, sabemos que $\sum_{n=1}^\infty x_n$ deve divergir.
 
-Thus suppose $L < 1$.
-We will argue that $\sum_{n=1}^\infty \sabs{x_n}$ must converge.
-The proof is similar to that of \lemmaref{seq:ratiotest}.  Of course $L \geq
-0$.  
-Pick
-$r$ such that $L < r < 1$.  As $r-L > 0$, there exists an $M \in \N$ such that for
-all $n \geq M$,
+Suponhamos, então, que $L < 1$.
+Mostraremos que $\sum_{n=1}^\infty \sabs{x_n}$ deve convergir.
+A demonstração é semelhante à de \lemmaref{seq:ratiotest}. Naturalmente, $L \geq
+0$.
+Escolha
+$r$ tal que $L < r < 1$. Como $r-L > 0$, existe $M \in \N$ tal que, para
+todo $n \geq M$,
 \begin{equation*}
 \abs{\frac{\sabs{x_{n+1}}}{\sabs{x_n}} - L} < r-L .
 \end{equation*}
-Therefore,
+Portanto,
 \begin{equation*}
 \frac{\sabs{x_{n+1}}}{\sabs{x_n}} < r .
 \end{equation*}
-For $n > M$ (that is for $n \geq M+1$),
-write
+Para $n > M$ (isto é, para $n \geq M+1$),
+escrevemos
 \begin{equation*}
 \sabs{x_n} =
 \sabs{x_M}
@@ -3679,7 +3679,7 @@ write
 r r \cdots r = \sabs{x_M} r^{n-M} =
 \bigl(\sabs{x_M} r^{-M}\bigr) r^n .
 \end{equation*}
-For $k > M$, write the partial sum as
+Para $k > M$, escrevemos a soma parcial na forma
 \begin{equation*}
 \begin{split}
 \sum_{n=1}^k \sabs{x_n}
@@ -3702,10 +3702,10 @@ For $k > M$, write the partial sum as
 \left( \sum_{n=M+1}^{k} r^n \right) .
 \end{split}
 \end{equation*}
-As $0 < r < 1$, the geometric series
-$\sum_{n=0}^{\infty} r^n$ converges, so
-$\sum_{n=M+1}^{\infty} r^n$ converges as well.  We take the
-limit as $k$ goes to infinity on the right-hand side above to obtain
+Como $0 < r < 1$, a série geométrica
+$\sum_{n=0}^{\infty} r^n$ converge; portanto,
+$\sum_{n=M+1}^{\infty} r^n$ também converge. Calculamos o
+limite, quando $k$ tende ao infinito, do lado direito acima e obtemos
 \begin{equation*}
 \begin{split}
 \sum_{n=1}^k \sabs{x_n}
@@ -3722,25 +3722,25 @@ limit as $k$ goes to infinity on the right-hand side above to obtain
 \left( \sum_{n=M+1}^{\infty} r^n \right) .
 \end{split}
 \end{equation*}
-The right-hand side is a number that does not depend on $k$.
-Hence, the sequence of partial sums of $\sum_{n=1}^\infty \sabs{x_n}$ is bounded
-and $\sum_{n=1}^\infty \sabs{x_n}$ is convergent.  Thus, $\sum_{n=1}^\infty x_n$ is
-absolutely convergent.
+O lado direito é um número que não depende de $k$.
+Logo, a sequência das somas parciais de $\sum_{n=1}^\infty \sabs{x_n}$ é limitada,
+e $\sum_{n=1}^\infty \sabs{x_n}$ converge. Portanto, $\sum_{n=1}^\infty x_n$ é
+absolutamente convergente.
 \end{proof}
 
 \begin{example}
-The series
+A série
 \begin{equation*}
 \sum_{n=1}^\infty \frac{2^n}{n!}
 \end{equation*}
-converges absolutely.
+converge absolutamente.
 
-Proof:  We write
+Demonstração: escrevemos
 \begin{equation*}
 \lim_{n\to\infty} \frac{2^{(n+1)}/(n+1)!}{2^n / n!} =
 \lim_{n\to\infty} \frac{2}{n+1} = 0 .
 \end{equation*}
-Therefore, the series converges absolutely by the ratio test.
+Portanto, a série converge absolutamente pelo critério da razão.
 \end{example}
 
 \subsection{Exercises}

@@ -3423,89 +3423,88 @@ Por outro lado, provamos que
 diverge. Portanto,
 $\sum_{n=1}^\infty \frac{{(-1)}^n}{n}$ é uma série condicionalmente convergente.
 
-\subsection{Comparison test and the \texorpdfstring{$p$}{p}-series}
+\subsection{Critério da comparação e série \texorpdfstring{$p$}{p}}
 
-We noted above that for a series with positive terms to converge,
-the terms not only have to go to zero, but they have to go to zero
-\myquote{fast enough.}  If we know about convergence of a certain series,
-we can use the following comparison test to see if the terms of another
-series go to zero \myquote{fast enough.}
+Observamos acima que, para uma série de termos positivos convergir,
+não basta que os termos tendam a zero: eles precisam tender a zero
+\myquote{rápido o suficiente}. Se conhecemos a convergência de uma série,
+podemos usar o seguinte critério da comparação para verificar se os termos de outra
+série tendem a zero \myquote{rápido o suficiente}.
 
 \begin{samepage}
-\begin{prop}[Comparison test]\index{comparison test for series}
-Let $\sum_{n=1}^\infty x_n$ and $\sum_{n=1}^\infty y_n$ be series such that $0 \leq x_n \leq y_n$
-for all $n \in \N$.
+\begin{prop}[Critério da comparação]\index{critério da comparação para séries}
+Sejam $\sum_{n=1}^\infty x_n$ e $\sum_{n=1}^\infty y_n$ séries tais que $0 \leq x_n \leq y_n$
+para todo $n \in \N$.
 \begin{enumerate}[(i)]
-\item If $\sum_{n=1}^\infty y_n$ converges, then so does $\sum_{n=1}^\infty x_n$.
-\item If $\sum_{n=1}^\infty x_n$ diverges, then so does $\sum_{n=1}^\infty y_n$.
+\item Se $\sum_{n=1}^\infty y_n$ converge, então $\sum_{n=1}^\infty x_n$ também converge.
+\item Se $\sum_{n=1}^\infty x_n$ diverge, então $\sum_{n=1}^\infty y_n$ também diverge.
 \end{enumerate}
 \end{prop}
 \end{samepage}
 
 \begin{proof}
-As the terms of the series are all nonnegative, the sequences of
-partial sums are both monotone increasing.
-Since $x_n \leq y_n$ for all $n$, the partial sums
-satisfy for all $k$
+Como todos os termos das séries são não negativos, as sequências das
+somas parciais são monótonas não decrescentes.
+Como $x_n \leq y_n$ para todo $n$, as somas parciais satisfazem, para todo $k$,
 \begin{equation} \label{comptest:eq}
 \sum_{n=1}^k x_n \leq \sum_{n=1}^k y_n .
 \end{equation}
-If the series $\sum_{n=1}^\infty y_n$ converges, the partial sums for the series
-are bounded.  Therefore, the right-hand side of \eqref{comptest:eq}
-is bounded for all $k$; there exists some $B \in \R$ such that
-$\sum_{n=1}^k y_n \leq B$ for all $k$, and so
+Se a série $\sum_{n=1}^\infty y_n$ converge, suas somas parciais são
+limitadas. Portanto, o lado direito de \eqref{comptest:eq}
+é limitado para todo $k$; existe $B \in \R$ tal que
+$\sum_{n=1}^k y_n \leq B$ para todo $k$, e assim
 \begin{equation*}
 \sum_{n=1}^k x_n \leq \sum_{n=1}^k y_n \leq B.
 \end{equation*}
-Hence, the partial sums for $\sum_{n=1}^\infty x_n$
-are also bounded.  Since the partial sums are a monotone increasing sequence
-they are convergent.  The first item is thus proved.
+Logo, as somas parciais de $\sum_{n=1}^\infty x_n$
+também são limitadas. Como formam uma sequência monótona não decrescente,
+convergem. Assim, provamos o primeiro item.
 
-On the other hand if $\sum_{n=1}^\infty x_n$ diverges, the sequence of partial sums
-must be unbounded since it is monotone increasing.  That is, the partial
-sums for $\sum_{n=1}^\infty x_n$ are eventually bigger than any real number.  Putting this
-together with \eqref{comptest:eq} we see that for every $B \in
-\R$, there is a $k$ such that 
+Por outro lado, se $\sum_{n=1}^\infty x_n$ diverge, a sequência das somas parciais
+é ilimitada, pois é monótona não decrescente. Isto é, as somas
+parciais de $\sum_{n=1}^\infty x_n$ acabam superando qualquer número real. Juntando isso
+com \eqref{comptest:eq}, vemos que, para todo $B \in
+\R$, existe $k$ tal que 
 \begin{equation*}
 B \leq \sum_{n=1}^k x_n \leq \sum_{n=1}^k y_n .
 \end{equation*}
-Hence, the partial sums for $\sum_{n=1}^\infty y_n$ are also unbounded, and
-$\sum_{n=1}^\infty y_n$ also diverges.
+Logo, as somas parciais de $\sum_{n=1}^\infty y_n$ também são ilimitadas, e
+$\sum_{n=1}^\infty y_n$ também diverge.
 \end{proof}
 
-A useful series to use with the comparison test is the
-$p$-series%
-\footnote{We have not yet defined $x^p$ for $x > 0$ and
-an arbitrary $p \in \R$.  The definition is $x^p \coloneqq \exp ( p \ln x )$.
-We will define the logarithm and the exponential in \sectionref{sec:logandexp}.
-For now you can just think of rational $p$
-where $x^{k/m} = {(x^{1/m})}^{k}$.  See also \exerciseref{exercise:realpower}.}.
+Uma série útil para aplicar o critério da comparação é a
+série $p$%
+\footnote{Ainda não definimos $x^p$ para $x > 0$ e
+um $p \in \R$ arbitrário. A definição é $x^p \coloneqq \exp ( p \ln x )$.
+Definiremos o logaritmo e a exponencial na \sectionref{sec:logandexp}.
+Por enquanto, basta considerar $p$ racional,
+para o qual $x^{k/m} = {(x^{1/m})}^{k}$. Veja também o \exerciseref{exercise:realpower}.}.
 
-\begin{prop}[$p$-series or the $p$-test]%
-\index{p-series@$p$-series}\index{p-test@$p$-test}
-For $p \in \R$, 
-the series
+\begin{prop}[Série $p$ ou critério $p$]%
+\index{série $p$@$p$-série}\index{critério p@critério $p$}
+Para $p \in \R$,
+a série
 \begin{equation*}
 \sum_{n=1}^\infty \frac{1}{n^p}
 \end{equation*}
-converges if and only if $p > 1$.
+converge se, e somente se, $p > 1$.
 \end{prop}
 
 \begin{proof}
-First suppose $p \leq 1$.
-As $n \geq 1$, we have
-$\frac{1}{n^p} \geq \frac{1}{n}$.  Since
-$\sum_{n=1}^\infty \frac{1}{n}$ diverges,
-$\sum_{n=1}^\infty \frac{1}{n^p}$ must diverge for all $p \leq 1$ by the comparison test.
+Suponha primeiro que $p \leq 1$.
+Como $n \geq 1$, temos
+$\frac{1}{n^p} \geq \frac{1}{n}$. Como
+$\sum_{n=1}^\infty \frac{1}{n}$ diverge,
+$\sum_{n=1}^\infty \frac{1}{n^p}$ também deve divergir para todo $p \leq 1$, pelo critério da comparação.
 
-Now suppose $p > 1$.
-We proceed as we did for the
-harmonic series, but instead of showing that the sequence
-of partial sums is unbounded, we show that it is bounded.
-The terms of the series are positive, so the sequence of partial sums
-is monotone increasing and converges if it is bounded
-above.
-Let $s_n$ denote the $n$th partial sum.
+Suponha agora que $p > 1$.
+Procedemos como no caso da
+série harmônica, mas, em vez de mostrar que a sequência
+das somas parciais é ilimitada, mostraremos que ela é limitada.
+Os termos da série são positivos, logo a sequência das somas parciais
+é monótona não decrescente e converge se for limitada
+superiormente.
+Seja $s_n$ a $n$-ésima soma parcial.
 \begin{align*}
  s_1 & = 1 , \\
  s_3 & = \left( 1 \right) + \left( \frac{1}{2^p} + \frac{1}{3^p} \right) , \\
@@ -3519,15 +3518,15 @@ Let $s_n$ denote the $n$th partial sum.
 \sum_{m=2^i}^{2^{i+1}-1} \frac{1}{m^p}
 \right) .
 \end{align*}
-Instead of estimating from below, we estimate from above.
-As $p$ is positive, $2^p < 3^p$, and hence
+Em vez de estimar por baixo, estimamos por cima.
+Como $p$ é positivo, $2^p < 3^p$ e, portanto,
 $\frac{1}{2^p} + \frac{1}{3^p} <
-\frac{1}{2^p} + \frac{1}{2^p}$.  Similarly,
+\frac{1}{2^p} + \frac{1}{2^p}$. De modo semelhante,
 $\frac{1}{4^p} + \frac{1}{5^p} +
 \frac{1}{6^p} + \frac{1}{7^p} <
 \frac{1}{4^p} + \frac{1}{4^p} +
-\frac{1}{4^p} + \frac{1}{4^p}$.  Therefore,
-for all $k \geq 2$,
+\frac{1}{4^p} + \frac{1}{4^p}$. Portanto,
+para todo $k \geq 2$,
 \begin{equation*}
 \begin{split}
 s_{2^k-1}
@@ -3560,15 +3559,15 @@ s_{2^k-1}
 \right)}^i .
 \end{split}
 \end{equation*}
-As $p > 1$, we have $\frac{1}{2^{p-1}} < 1$.
-\propref{geometric:prop} says that
+Como $p > 1$, temos $\frac{1}{2^{p-1}} < 1$.
+A \propref{geometric:prop} afirma que
 \begin{equation*}
 \sum_{i=1}^\infty
 {\left(
 \frac{1}{2^{p-1}}
 \right)}^i
 \end{equation*}
-converges.  Thus,
+converge. Assim,
 \begin{equation*}
 s_{2^k-1} < 
 1+
@@ -3583,9 +3582,9 @@ s_{2^k-1} <
 \frac{1}{2^{p-1}}
 \right)}^i .
 \end{equation*}
-For every $n$ there is a $k \geq 2$ such that $n \leq 2^k-1$, and
-as $\{ s_n \}_{n=1}^\infty$ is a monotone sequence, $s_n \leq s_{2^k-1}$.
-So for all $n$,
+Para todo $n$, existe $k \geq 2$ tal que $n \leq 2^k-1$; como
+$\{ s_n \}_{n=1}^\infty$ é monótona, temos $s_n \leq s_{2^k-1}$.
+Assim, para todo $n$,
 \begin{equation*}
 s_n < 
 1+
@@ -3594,31 +3593,29 @@ s_n <
 \frac{1}{2^{p-1}}
 \right)}^i
 \end{equation*}
-Thus the sequence of partial sums is bounded, and the series converges.
+Portanto, a sequência das somas parciais é limitada e a série converge.
 \end{proof}
 
-Neither the $p$-series test nor the comparison test 
-tells us what the sum converges to.  They only tell us that a limit
-of the partial sums exists.  For instance, while we know that
-$\sum_{n=1}^\infty \nicefrac{1}{n^2}$ converges, it is far harder to
-find\footnote{Demonstration of this fact is
-what made the Swiss mathematician
+Nem o critério da série $p$ nem o critério da comparação
+nos dizem a que valor converge a soma. Eles apenas garantem a existência
+do limite das somas parciais. Por exemplo, embora saibamos que
+$\sum_{n=1}^\infty \nicefrac{1}{n^2}$ converge, é muito mais difícil determinar
+\footnote{A demonstração desse fato foi o que tornou famoso o matemático suíço
 \href{https://en.wikipedia.org/wiki/Leonhard_Euler}{Leonhard Euler}
-(1707--1783)
-famous.}
-that the limit is $\nicefrac{\pi^2}{6}$.
-If we treat $\sum_{n=1}^\infty \nicefrac{1}{n^p}$ as a function of $p$,
-we get the Riemann $\zeta$ (zeta) function.  Understanding the
-behavior of this function contains
-one of the most famous unsolved problems in mathematics today and has applications
-in seemingly unrelated areas such as modern cryptography.
+(1707--1783).}
+que o limite é $\nicefrac{\pi^2}{6}$.
+Se tratarmos $\sum_{n=1}^\infty \nicefrac{1}{n^p}$ como uma função de $p$,
+obtemos a função zeta de Riemann. O estudo do
+comportamento dessa função envolve
+um dos problemas em aberto mais famosos da matemática atual e tem aplicações
+em áreas aparentemente não relacionadas, como a criptografia moderna.
 
 \begin{example}
-The series $\sum_{n=1}^\infty \frac{1}{n^2+1}$ converges.
+A série $\sum_{n=1}^\infty \frac{1}{n^2+1}$ converge.
 
-Proof:  First, $\frac{1}{n^2+1} < \frac{1}{n^2}$ for all $n \in \N$.
-The series $\sum_{n=1}^\infty \frac{1}{n^2}$ converges by the $p$-series test.
-Therefore, by the comparison test, $\sum_{n=1}^\infty \frac{1}{n^2+1}$ converges.
+Demonstração: primeiro, $\frac{1}{n^2+1} < \frac{1}{n^2}$ para todo $n \in \N$.
+A série $\sum_{n=1}^\infty \frac{1}{n^2}$ converge pelo critério da série $p$.
+Portanto, pelo critério da comparação, $\sum_{n=1}^\infty \frac{1}{n^2+1}$ converge.
 \end{example}
 
 \subsection{Ratio test}

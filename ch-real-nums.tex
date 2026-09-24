@@ -2269,3 +2269,475 @@ One possibility is to first prove that $b^n > n$ for all $n \in \N$ by induction
 Explicitly construct an injection $f \colon \R \to \R \setminus \Q$ using
 \propref{prop:rationaldecimal}.
 \end{exercise}
+\section{Representação decimal dos reais}
+\label{sec:decimals}
+
+\sectionnotes{1 aula (opcional)}
+
+Costumamos pensar nos números reais por meio de suas
+\emph{representações decimais}\index{representação decimal}.
+Chamamos de (decimal)
+\emph{\myindex{algarismo}}\index{algarismo decimal} um inteiro
+entre $0$ e $9$.
+Dado um inteiro positivo $n$, encontramos algarismos $d_K,d_{K-1},\ldots,d_2,d_1,d_0$ para algum
+$K$ (cada $d_j$ é um inteiro entre $0$ e $9$) tais que
+\begin{equation*}
+n = d_K {10}^K + d_{K-1} {10}^{K-1} + \cdots + d_2 {10}^2 + d_1 10 + d_0 .
+\end{equation*}
+Frequentemente supomos que $d_K \neq 0$ (para evitar zeros à esquerda).
+Para representar $n$, escrevemos a sequência de
+algarismos: $n = d_K d_{K-1} \cdots d_2 d_1 d_0$.
+
+De modo semelhante, representamos alguns números racionais. Para certos
+números $x$, podemos encontrar
+inteiros não negativos $K$ e $M$ e algarismos
+$d_K,d_{K-1},\ldots,d_1,d_0,d_{-1},\ldots,d_{-M}$ tais que
+\begin{equation*}
+%mbxlatex \begin{aligned}
+x
+%mbxlatex &
+= d_K {10}^K + d_{K-1} {10}^{K-1} + \cdots + d_2 {10}^2 + d_1 10 + d_0
+%mbxlatex \\
+%mbxlatex & \phantom{={}}
++ d_{-1} {10}^{-1} + d_{-2} {10}^{-2} + \cdots + d_{-M} {10}^{-M} .
+%mbxlatex \end{aligned}
+\end{equation*}
+Escrevemos $x = d_K d_{K-1} \cdots d_1 d_0 \, . \, d_{-1} d_{-2} \cdots d_{-M}$.
+
+Nem todo número real admite tal representação.
+Nem mesmo o simples
+número racional $\nicefrac{1}{3}$ a admite. O número irracional $\sqrt{2}$
+também não admite tal representação. Para obter uma representação para
+todos os números reais, precisamos permitir infinitos algarismos.
+
+Consideremos apenas os números reais do intervalo $[0,1]$. Se
+encontrarmos representações para eles, somando
+números inteiros obtemos representações para todos os números reais.
+Tomemos uma sequência infinita de algarismos decimais:
+\begin{equation*}
+0.d_1d_2d_3\ldots.
+\end{equation*}
+Temos um algarismo $d_j$ para cada $j \in \N$.
+Renumeramos os algarismos para evitar os sinais negativos.
+Escrevemos
+\begin{equation*}
+D_n \coloneqq
+\frac{d_1}{10} +
+\frac{d_2}{{10}^2} +
+\frac{d_3}{{10}^3} +
+\cdots +
+\frac{d_n}{{10}^n} .
+\end{equation*}
+Dizemos que a
+sequência de algarismos representa um número real $x$ se
+\begin{equation*}
+x =
+\sup_{n \in \N} \left(
+\frac{d_1}{10} +
+\frac{d_2}{{10}^2} +
+\frac{d_3}{{10}^3} +
+\cdots +
+\frac{d_n}{{10}^n}
+\right) =
+\sup_{n \in \N} \, D_n .
+\end{equation*}
+O número $D_n=0.d_1 d_2 d_3 \ldots d_n$ é o truncamento de $x$
+a $n$ algarismos decimais.
+
+\begin{prop} \label{prop:decimalprop}
+\leavevmode
+\begin{enumerate}[(i)]
+\item
+Toda sequência infinita de algarismos
+$0.d_1d_2d_3\ldots$ representa um único número real $x \in [0,1]$, e
+\begin{equation*}
+D_n \leq x \leq D_n+\frac{1}{{10}^n} \qquad \text{para todo } n \in \N.
+\end{equation*}
+\item
+Para todo $x \in (0,1]$ existe uma sequência infinita de algarismos
+$0.d_1d_2d_3\ldots$ que representa $x$.
+Existe uma única representação tal que
+\begin{equation*}
+D_n < x \leq D_n+\frac{1}{{10}^n} \qquad \text{para todo } n \in \N.
+\end{equation*}
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+Comecemos pelo primeiro item. Tomemos uma sequência infinita arbitrária de
+algarismos $0.d_1d_2d_3\ldots$. Usando a fórmula da soma geométrica, escrevemos
+\begin{equation*}
+\begin{split}
+D_n =
+\frac{d_1}{10} +
+\frac{d_2}{{10}^2} +
+\frac{d_3}{{10}^3} +
+\cdots +
+\frac{d_n}{{10}^n}
+& \leq
+\frac{9}{10} +
+\frac{9}{{10}^2} +
+\frac{9}{{10}^3} +
+\cdots +
+\frac{9}{{10}^n}
+\\
+& =
+\frac{9}{10}
+\bigl( 1 + \nicefrac{1}{10} +
+{(\nicefrac{1}{10})}^2 + \cdots +
+{(\nicefrac{1}{10})}^{n-1} \bigr)
+\\
+& =
+\frac{9}{10}
+\left(
+\frac{1-{(\nicefrac{1}{10})}^{n}}{1-\nicefrac{1}{10}}
+\right)
+= 1-{(\nicefrac{1}{10})}^{n}
+< 1 .
+\end{split}
+\end{equation*}
+Em particular, $D_n < 1$ para todo $n$. Uma soma de números não negativos é
+não negativa, logo $D_n \geq 0$, e portanto
+\begin{equation*}
+0 \leq \sup_{n\in \N} \, D_n \leq 1 .
+\end{equation*}
+Assim, $0.d_1d_2d_3\ldots$ representa um único número
+$x \coloneqq \sup_{n\in \N} D_n \in [0,1]$.
+Como $x$ é um supremo, $D_n \leq x$.
+Tomemos $m \in \N$. Se $m < n$, então $D_m - D_n \leq 0$. Se $m > n$, então,
+calculando como acima,
+\begin{equation*}
+D_m - D_n
+=
+\frac{d_{n+1}}{{10}^{n+1}} +
+\frac{d_{n+2}}{{10}^{n+2}} +
+\frac{d_{n+3}}{{10}^{n+3}} +
+\cdots +
+\frac{d_{m}}{{10}^m}
+\leq
+\frac{1}{{10}^{n}}
+\bigl(
+1-{(\nicefrac{1}{10})}^{m-n}
+\bigr)
+<
+\frac{1}{{10}^{n}} .
+\end{equation*}
+Tomando o supremo em relação a $m$, obtemos
+\begin{equation*}
+x - D_n
+\leq
+\frac{1}{{10}^{n}} .
+\end{equation*}
+
+Passemos ao
+segundo item. Tomemos qualquer $x \in (0,1]$.
+Primeiro, provaremos a existência.
+Por conveniência, seja $D_0 \coloneqq 0$.
+Então,
+$D_0 < x \leq D_0 + {10}^{-0}$.
+Suponhamos que tenhamos definido os algarismos $d_1,d_2,\ldots,d_n$
+e que
+$D_k < x \leq D_k + {10}^{-k}$, para $k=0,1,2,\ldots,n$. Precisamos definir $d_{n+1}$.
+
+Pela
+\hyperref[thm:arch:i]{propriedade arquimediana} dos números reais,
+encontramos um inteiro $j$ tal que
+$x-D_n \leq j {10}^{-(n+1)}$. Tomemos o menor desses $j$ e obtemos
+\begin{equation} \label{eq:theDnjineq}
+(j-1){10}^{-(n+1)} < x-D_n \leq j {10}^{-(n+1)} .
+\end{equation}
+Seja $d_{n+1} \coloneqq j-1$.
+Como $D_n < x$,
+temos $d_{n+1} = j-1 \geq 0$. Por outro lado, como
+$x-D_n \leq {10}^{-n}$, temos que
+$j$ é no máximo 10 e, portanto, $d_{n+1} \leq 9$.
+Logo, $d_{n+1}$ é um algarismo decimal.
+Como $D_{n+1} = D_n + d_{n+1} {10}^{-(n+1)}$,
+somemos $D_n$ à desigualdade
+\eqref{eq:theDnjineq} acima:
+\begin{multline*}
+D_{n+1} = D_n + (j-1){10}^{-(n+1)} < x
+\leq
+D_n + j {10}^{-(n+1)} \\
+=
+D_n + (j-1) {10}^{-(n+1)} +
+{10}^{-(n+1)} = D_{n+1} + {10}^{-(n+1)} .
+\end{multline*}
+Portanto, vale
+$D_{n+1} < x \leq D_{n+1} + {10}^{-(n+1)}$.
+Definimos indutivamente
+uma sequência infinita de algarismos $0.d_1d_2d_3\ldots$.
+
+Consideremos $D_{n} < x \leq D_{n} + {10}^{-n}$.
+Como $D_n < x$ para todo $n$, temos
+$\sup \{ D_n : n \in \N \} \leq x$.
+A segunda desigualdade para $D_n$ implica
+\begin{equation*}
+x - \sup \{ D_m : m \in \N \}
+\leq
+x - D_n \leq 10^{-n} .
+\end{equation*}
+Como a desigualdade vale para todo $n$ e
+${10}^{-n}$ pode ser arbitrariamente pequeno
+(veja \exerciseref{exercise:bnlimit}),
+temos $x \leq \sup \{ D_m : m \in \N \}$.
+Portanto, $\sup \{ D_m : m \in \N \} = x$.
+
+Resta provar a unicidade.
+Suponhamos que $0.e_1e_2e_3\ldots$ seja outra representação de $x$.
+Seja $E_n$ o truncamento com $n$ algarismos de $0.e_1e_2e_3\ldots$, e suponhamos
+que $E_n < x \leq E_n + {10}^{-n}$ para todo $n \in \N$.
+Suponhamos que, para algum $K \in \N$, $e_n = d_n$ para todo $n < K$; assim,
+$D_{K-1} = E_{K-1}$. Então,
+\begin{equation*}
+E_K = D_{K-1} + e_K{10}^{-K} < x \leq E_K + {10}^{-K} = D_{K-1} +
+e_K{10}^{-K} + {10}^{-K} .
+\end{equation*}
+Subtraindo $D_{K-1}$ e multiplicando por ${10}^{K}$, obtemos
+\begin{equation*}
+e_K < (x - D_{K-1}){10}^K \leq e_K + 1 .
+\end{equation*}
+De modo semelhante,
+\begin{equation*}
+d_K < (x - D_{K-1}){10}^K \leq d_K + 1 .
+\end{equation*}
+Portanto, tanto $e_K$ quanto $d_K$ são o maior inteiro $j$
+tal que $j < (x - D_{K-1}){10}^K$, e, consequentemente, $e_K = d_K$.
+Em outras palavras, a representação é única.
+\end{proof}
+
+A representação não é única se não exigirmos
+$D_n < x$ para todo $n$.
+Por exemplo, para o
+número $\nicefrac{1}{2}$, o método usado na demonstração fornece a representação
+\begin{equation*}
+0.49999\ldots .
+\end{equation*}
+No entanto, $\nicefrac{1}{2}$ também tem a representação $0.50000\ldots$.
+
+Os únicos números que têm representações não únicas são aqueles que terminam
+em uma sequência infinita de algarismos $0$
+ou em uma sequência infinita de algarismos $9$, pois a única representação para a qual
+$D_n = x$ é aquela em que todos os algarismos após o $n$-ésimo são zeros.
+Nesse caso,
+há exatamente duas representações de $x$ (veja os exercícios).
+
+Daremos outra demonstração de que os reais não são enumeráveis, usando
+representações decimais.
+Esta é a segunda demonstração de Cantor, provavelmente a mais conhecida.
+Ela pode parecer mais curta, mas isso ocorre porque já fizemos
+a parte mais difícil e nos resta um truque engenhoso para provar que $\R$ é
+não enumerável. Esse truque é chamado de
+\emph{\myindex{diagonalização de Cantor}}\index{diagonalização} e
+também é usado em outras demonstrações.
+
+\begin{thm}[Cantor]
+O conjunto $(0,1]$ não é enumerável.
+\end{thm}
+
+\begin{proof}
+Seja $X \coloneqq \{ x_1,x_2,x_3,\ldots \}$ um subconjunto enumerável qualquer dos números reais em $(0,1]$.
+Construiremos um número real que não pertence a $X$. Seja
+\begin{equation*}
+x_n = 0.d_1^nd_2^nd_3^n\ldots
+\end{equation*}
+a representação única da proposição, isto é, $d_j^n$ é o
+$j$-ésimo algarismo do $n$-ésimo número. Definamos
+\begin{equation*}
+e_n \coloneqq
+\begin{cases}
+1 & \text{se } d_n^n \neq 1, \\
+2 & \text{se } d_n^n = 1.
+\end{cases}
+\end{equation*}
+Seja $E_n$ o truncamento com $n$ algarismos de $y = 0.e_1e_2e_3\ldots$. Como
+todos os algarismos são não nulos, $E_n < E_{n+1} \leq y$. Portanto,
+\begin{equation*}
+E_n < y \leq E_n + {10}^{-n}
+\end{equation*}
+para todo $n$, e, pela proposição,
+essa é a representação única de $y$. Para todo $n$, o $n$-ésimo algarismo
+de $y$ é diferente do $n$-ésimo algarismo de $x_n$, logo $y \neq x_n$.
+Assim, $y \notin X$. Como $X$ era um subconjunto enumerável arbitrário,
+$(0,1]$ não é enumerável. Veja um
+exemplo na \figureref{cantorexamplefig}.
+\begin{myfigureht}
+\myincludepdft{cantorexamplefig}{%
+Cinco números, indicados por x sub 1 até x sub 5, aparecem alinhados um
+abaixo do outro na notação decimal.
+Os cinco primeiros algarismos decimais de cada número estão visíveis.
+Em particular, x sub 1 é 0 vírgula 1 3 2 1 0, seguido de reticências que
+indicam a continuação dos algarismos.
+O primeiro algarismo, 1, está contornado por uma caixa.
+x sub 2 é 0 vírgula 7 9 4 1 3, seguido de reticências.
+O segundo algarismo, 9, está contornado por uma caixa.
+x sub 3 é 0 vírgula 3 0 1 3 4, seguido de reticências.
+O terceiro algarismo, 1, está contornado por uma caixa.
+x sub 4 é 0 vírgula 8 9 2 5 6, seguido de reticências.
+O quarto algarismo, 5, está contornado por uma caixa.
+x sub 5 é 0 vírgula 1 6 0 2 4, seguido de reticências.
+O quinto algarismo, 4, está contornado por uma caixa.
+Reticências adicionais indicam que a sequência de números continua.
+À direita, aparece o texto: Número que não está na lista:
+y igual a 0 vírgula 2 1 2 1 1, seguido de reticências.}
+\caption{Exemplo da diagonalização de Cantor, com os algarismos diagonais $d_n^n$ marcados.\label{cantorexamplefig}}
+\end{myfigureht}
+\end{proof}
+
+Usando algarismos decimais, também podemos encontrar muitos números que não são racionais.
+A proposição a seguir vale para todo
+número racional, mas, por simplicidade, enunciaremos o resultado apenas para $x \in (0,1]$.
+
+\begin{prop} \label{prop:rationaldecimal}
+Se $x \in (0,1]$ é racional e $x = 0.d_1d_2d_3\ldots$,
+então os algarismos decimais tornam-se periódicos a partir de algum ponto. Isto é, existem
+inteiros positivos $N$ e $P$ tais que, para todo $n \geq N$, $d_n = d_{n+P}$.
+\end{prop}
+
+\begin{proof}
+Suponhamos que $x = \nicefrac{p}{q}$, em que $p$ e $q$ são inteiros positivos.
+Se $x$ tiver uma representação decimal não única, então ambas as representações
+terão algarismos periódicos a partir de algum ponto:
+ou serão todos $0$, ou todos $9$;
+veja \exerciseref{exercise:nonuniquedecimals}.
+Portanto, suponhamos que $x$ tenha uma representação única.
+Também suporemos que $x \neq 1$, de modo que $p < q$.
+
+Para calcular o primeiro algarismo, dividimos $10p$ por
+$q$. Seja $d_1$ o quociente.
+O resto $r_1$ é um inteiro
+entre $0$ e $q-1$. Isto é, $d_1$ é o maior inteiro
+tal que $d_1 q \leq 10p$ e, em seguida, $r_1 = 10p - d_1q$.
+Como $p < q$, temos $d_1 < 10$, logo $d_1$ é um algarismo.
+Além disso,
+\begin{equation*}
+\frac{d_1}{10} \leq \frac{p}{q} =
+\frac{d_1}{10} + \frac{r_1}{10q} \leq \frac{d_1}{10} +
+\frac{1}{10} .
+\end{equation*}
+A primeira desigualdade é estrita, pois $x$ tem uma
+representação única. Portanto, $d_1$ é de fato o primeiro algarismo.
+Resta $\frac{r_1}{10q}$.
+Para calcular $d_2$, dividimos $10r_1$ por $q$, obtendo $d_2$
+e $r_2$, em que $r_2 = 10r_1 - d_2 q$.
+Isolando $r_1$ e substituindo em
+$\frac{p}{q} = \frac{d_1}{10} + \frac{r_1}{10 q}$,
+obtemos
+$\frac{p}{q} = \frac{d_1}{10} + \frac{d_2}{{10}^2} +
+\frac{r_2}{{10}^2 q} = D_2 +
+\frac{r_2}{{10}^2 q}$.
+Como $r_2 < q$, novamente temos $d_2 < 10$.
+Para calcular $d_3$, dividimos $10r_2$ por $q$,
+obtendo $d_3$ e $r_3$. E assim por diante.
+Depois de calcular $n-1$ algarismos, temos
+$\frac{p}{q} = D_{n-1} + \frac{r_{n-1}}{10^{n-1} q}$.
+Para obter o $n$-ésimo algarismo,
+dividimos $10r_{n-1}$ por $q$
+para obter o quociente $d_n$, o resto $r_n$ e as desigualdades
+\begin{equation*}
+\frac{d_n}{10} \leq \frac{r_{n-1}}{q} =
+\frac{d_n}{10} + \frac{r_n}{10q} \leq \frac{d_n}{10} +
+\frac{1}{10} .
+\end{equation*}
+Dividindo por $10^{n-1}$ e somando $D_{n-1}$, obtemos
+\begin{equation*}
+D_n \leq D_{n-1} + \frac{r_{n-1}}{10^{n-1} q} = \frac{p}{q} \leq D_n +
+\frac{1}{10^n} .
+\end{equation*}
+Pela unicidade, o $n$-ésimo algarismo $d_n$ é o algarismo obtido pela construção.
+
+O novo algarismo depende apenas do resto do passo anterior.
+Há no máximo $q$ restos possíveis.
+Portanto, o processo deve começar a se repetir após no máximo $q$ passos,
+e, assim, $P$ é no máximo $q$.
+\end{proof}
+
+A recíproca da proposição também vale e fica como exercício.
+
+\begin{example}
+O número
+\begin{equation*}
+x = 0.101001000100001000001\ldots
+\end{equation*}
+é irracional.
+Mais especificamente, os algarismos são um,
+depois um zero, depois um um, depois dois zeros, depois um um,
+depois três zeros,
+e assim por diante.
+A irracionalidade de $x$ segue da
+proposição: os algarismos nunca se tornam periódicos.
+Para todo $P$,
+se avançarmos suficientemente, encontraremos um 1 seguido de pelo menos
+$P$ zeros, e há infinitos algarismos 1 desse tipo.
+Isto é, existem infinitos $n$ (logo, valores de $n$ arbitrariamente grandes)
+tais que $d_n=1$ e $d_{n+P}=0$; em outras palavras,
+$d_n \neq d_{n+P}$.
+\end{example}
+
+\subsection{Exercícios}
+
+\begin{exercise}[Fácil]
+Qual é a representação decimal de $1$ garantida por
+\propref{prop:decimalprop}? Mostre que ela de fato satisfaz
+a condição.
+\end{exercise}
+
+\begin{exercise}
+Demonstre a recíproca de \propref{prop:rationaldecimal}, isto é,
+se os algarismos da representação decimal de $x$ forem periódicos a partir de algum ponto, então
+$x$ será racional.
+\end{exercise}
+
+\begin{exercise} \label{exercise:nonuniquedecimals}
+Mostre que os números reais $x \in (0,1)$ com representação decimal não única
+são exatamente os números racionais que podem ser escritos
+como $\frac{m}{10^n}$ para alguns inteiros $m$ e $n$. Neste caso, mostre que
+existem exatamente duas representações de $x$.
+\end{exercise}
+
+\begin{exercise} \label{exercise:decimalpropbaseb}
+Seja $b \geq 2$ um inteiro. Defina uma representação de um número real em
+$[0,1]$ na base $b$, em vez da base 10, e demonstre
+\propref{prop:decimalprop} para a base $b$.
+\end{exercise}
+
+\begin{exercise}
+Usando o exercício anterior com $b=2$ (sistema binário),
+mostre que a cardinalidade de $\R$ é igual à cardinalidade de $\sP(\N)$,
+obtendo assim mais uma demonstração (embora relacionada) de que $\R$ não é enumerável.
+Dica: Construa duas injeções, uma de $[0,1]$ em $\sP(\N)$
+e outra de $\sP(\N)$ em $[0,1]$. Dica 2: Dado um
+conjunto $A \subset \N$, a função que faz o $n$-ésimo algarismo binário de $x$ ser 1 se
+$n\in A$ funciona quase, mas não é injetiva. Modifique-a.
+\end{exercise}
+
+\begin{exercise}[Desafiador]
+Construa explicitamente uma injeção de $[0,1] \times [0,1]$ em $[0,1]$ (pense por que
+isso é tão surpreendente\footnote{%
+Com um pouco mais de trabalho (ou aplicando o
+teorema de Cantor--Bernstein--Schr\\\"oder),
+é possível demonstrar que existe uma bijeção.
+Ao provar esse resultado, Cantor aparentemente escreveu:
+\myquote{Vejo isso, mas não acredito.}}).
+Em seguida, descreva o conjunto dos números de $[0,1]$ que não pertencem à imagem da sua
+injeção (a menos, é claro, que você tenha conseguido construir uma bijeção).
+Dica: Considere os algarismos pares e ímpares da expansão decimal.
+\end{exercise}
+
+\begin{exercise}
+Demonstre que, se $x = \nicefrac{p}{q} \in (0,1]$ é racional, $q > 1$,
+então o período $P$ dos algarismos periódicos da representação decimal
+de $x$ é, na verdade, menor ou igual a $q-1$.
+\end{exercise}
+
+\begin{exercise} \label{exercise:bnlimit}
+Demonstre que, se $b \in \N$ e $b \geq 2$, então, para todo $\epsilon > 0$,
+existe um $n \in \N$ tal que
+$b^{-n} < \epsilon$. Dica:
+Uma possibilidade é primeiro demonstrar por indução que $b^n > n$ para todo $n \in \N$.
+\end{exercise}
+
+\begin{exercise}
+Construa explicitamente uma injeção $f \colon \R \to \R \setminus \Q$ usando
+\propref{prop:rationaldecimal}.
+\end{exercise}

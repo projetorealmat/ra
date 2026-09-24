@@ -507,172 +507,172 @@ Encontre um subconjunto limitado de $S$ que não tenha menor cota superior.
 
 \sectionnewpage
 
-\section{The set of real numbers} \label{sec:setofreals}
+\section{O conjunto dos números reais} \label{sec:setofreals}
 
 %mbxINTROSUBSECTION
 
-\sectionnotes{2 lectures, the extended real numbers are optional}
+\sectionnotes{2 aulas; os números reais estendidos são opcionais}
 
-\subsection{The set of real numbers}
+\subsection{O conjunto dos números reais}
 
-We finally get to the real number system.  To simplify matters, instead of constructing the
-real number set from the rational numbers, we simply state their existence
-as a theorem without proof.  Notice that $\Q$ is an ordered
-field.
+Finalmente chegamos ao sistema dos números reais. Para simplificar, em vez de
+construir o conjunto dos números reais a partir dos racionais, simplesmente
+enunciamos sua existência como um teorema, sem demonstração. Observe que $\Q$ é um corpo
+ordenado.
 
 \begin{thm}
-There exists a unique\footnote{Uniqueness is up to isomorphism, but we wish
-to avoid excessive use of algebra.  For us, it is simply enough to assume
-that a set of real numbers exists.  See Rudin~\cite{Rudin:baby} for the
-construction and more details.}
-ordered field $\R$ with the \hyperref[defn:lub]{least-upper-bound property}
-such that $\Q \subset \R$.
+Existe um único\footnote{A unicidade é a menos de isomorfismo, mas queremos
+evitar o uso excessivo de álgebra. Para nós, basta supor
+que existe um conjunto dos números reais. Veja Rudin~\cite{Rudin:baby} para a
+construção e mais detalhes.}
+corpo ordenado $\R$ com a propriedade da
+\hyperref[defn:lub]{menor cota superior}
+tal que $\Q \subset \R$.
 \end{thm}
 
-Note also that $\N \subset \Q$.  We saw that $1 > 0$.
-By \hyperref[induction:thm]{induction} (exercise),
-we can prove that $n > 0$ for all $n \in \N$.
-Similarly, we verify simple statements about rational numbers.
-For example, we proved that if $n > 0$, then $\nicefrac{1}{n} > 0$.
-Then $m < k$ implies $\nicefrac{m}{n} < \nicefrac{k}{n}$.
+Observe também que $\N \subset \Q$. Vimos que $1 > 0$.
+Pela \hyperref[induction:thm]{indução} (exercício),
+podemos provar que $n > 0$ para todo $n \in \N$.
+Da mesma forma, verificamos afirmações simples sobre os números racionais.
+Por exemplo, provamos que, se $n > 0$, então $\nicefrac{1}{n} > 0$.
+Então $m < k$ implica $\nicefrac{m}{n} < \nicefrac{k}{n}$.
 
-Analysis consists of proving inequalities, and
-the following proposition, or one of its many variations,
-is how an analyst proves a nonstrict inequality.
+A análise consiste em demonstrar desigualdades, e
+a proposição a seguir, ou alguma de suas muitas variações,
+é a maneira como um analista demonstra uma desigualdade não estrita.
 
 \begin{prop}
-If $x \in \R$ is such that $x \leq \epsilon$ for all
-$\epsilon \in \R$ where
-$\epsilon > 0$, then $x \leq 0$.
+Se $x \in \R$ é tal que $x \leq \epsilon$ para todo
+$\epsilon \in \R$ tal que
+$\epsilon > 0$, então $x \leq 0$.
 \end{prop}
 
 \begin{proof}
-If $x > 0$, then $0 < \nicefrac{x}{2} < x$ (why?).  Take
-$\epsilon = \nicefrac{x}{2}$ to get a contradiction.  Thus $x \leq 0$.
+Se $x > 0$, então $0 < \nicefrac{x}{2} < x$ (por quê?). Tome
+$\epsilon = \nicefrac{x}{2}$ para obter uma contradição. Portanto, $x \leq 0$.
 \end{proof}
 
-For nonnegative $x$, equality results:
-\emph{If $x \geq 0$ is such that $x \leq \epsilon$ for all
-$\epsilon > 0$, then $x = 0$.}
-A common version uses the absolute value (see \sectionref{sec:absval}):
-\emph{If $\sabs{x} \leq \epsilon$ for all
-$\epsilon > 0$, then $x = 0$.}
-To prove $x \geq 0$, an analyst might prove
-that $x \geq -\epsilon$ for all $\epsilon > 0$.
-From now on, when we say $x \geq 0$ or
-$\epsilon > 0$, we automatically mean that $x \in \R$ and $\epsilon \in \R$.
+Para $x$ não negativo, obtemos uma igualdade:
+\emph{Se $x \geq 0$ é tal que $x \leq \epsilon$ para todo
+$\epsilon > 0$, então $x = 0$.}
+Uma versão comum usa o valor absoluto (veja \sectionref{sec:absval}):
+\emph{Se $\sabs{x} \leq \epsilon$ para todo
+$\epsilon > 0$, então $x = 0$.}
+Para provar que $x \geq 0$, um analista pode demonstrar
+que $x \geq -\epsilon$ para todo $\epsilon > 0$.
+De agora em diante, quando dissermos $x \geq 0$ ou
+$\epsilon > 0$, estaremos supondo automaticamente que $x \in \R$ e $\epsilon \in \R$.
 
-The idea behind the proposition above is that
-any time we have two real numbers $a < b$, there is another
-real number $c$ such that
-$a < c < b$.  Infinitely many such $c$ exist.  One of them is, for example,
-$c = \frac{a+b}{2}$ (why?).
-We will use this fact in the next example.
+A ideia por trás da proposição acima é que, sempre que tivermos dois números
+reais $a < b$, existe outro
+número real $c$ tal que
+$a < c < b$. Existem infinitos valores de $c$ assim. Por exemplo, um deles é
+$c = \frac{a+b}{2}$ (por quê?).
+Usaremos esse fato no próximo exemplo.
 
-The most useful property of $\R$ for analysts
-is not just that it is an ordered field, but that it has the
-\hyperref[defn:lub]{least-upper-bound property}.
-Essentially, we want $\Q$, but we also
-want to take suprema (and infima) willy-nilly.
-So what we do is take $\Q$ and throw in enough numbers to obtain $\R$.
+A propriedade mais útil de $\R$ para os analistas
+não é apenas ser um corpo ordenado, mas também ter a
+\hyperref[defn:lub]{propriedade da menor cota superior}.
+Essencialmente, queremos $\Q$, mas também queremos
+tomar supremos (e ínfimos) à vontade.
+Então partimos de $\Q$ e acrescentamos números suficientes para obter $\R$.
 
-We mentioned already that $\R$ contains elements that are not in $\Q$
-because of the \hyperref[defn:lub]{least-upper-bound property}.  Let us
-prove it.
-We saw there is no
-rational square root of two.  The set
-$\{ x \in \Q : x^2 < 2 \}$ implies the existence of the real number
-$\sqrt{2}$, although this fact requires a bit of work.  See also
+Já mencionamos que $\R$ contém elementos que não pertencem a $\Q$
+por causa da \hyperref[defn:lub]{propriedade da menor cota superior}. Vamos
+demonstrar isso.
+Vimos que não existe raiz quadrada racional de dois. O conjunto
+$\{ x \in \Q : x^2 < 2 \}$ implica a existência do número real
+$\sqrt{2}$, embora esse fato exija algum trabalho. Veja também
 \exerciseref{exercise:sqrt2QorR}.
 
 \begin{example} \label{example:sqrt2}
-Claim: \emph{There exists a unique positive
-$r \in \R$ such that $r^2 = 2$.  We denote $r$ by $\sqrt{2}$.}
+Afirmação: \emph{Existe um único
+$r \in \R$ positivo tal que $r^2 = 2$. Denotamos $r$ por $\sqrt{2}$.}
 
 \begin{proof}
-Take the set
-$A \coloneqq \{ x \in \R : x^2 < 2 \}$.  We first show that $A$ is bounded above and
-nonempty.  The inequality $x \geq 2$ implies $x^2 \geq 4$
-(see \exerciseref{exercise:squareineq}).
-So if $x^2 < 2$, then $x < 2$.  So $A$ is bounded above.
-As $1 \in A$, the set $A$ is nonempty.  The supremum, therefore, exists.
+Considere o conjunto
+$A \coloneqq \{ x \in \R : x^2 < 2 \}$. Primeiro mostraremos que $A$ é limitado superiormente e
+não vazio. A desigualdade $x \geq 2$ implica $x^2 \geq 4$
+(veja \exerciseref{exercise:squareineq}).
+Portanto, se $x^2 < 2$, então $x < 2$. Logo, $A$ é limitado superiormente.
+Como $1 \in A$, o conjunto $A$ não é vazio. Portanto, existe o supremo.
 
-Let $r \coloneqq \sup\, A$.  We will show that $r^2 = 2$ by showing
-that $r^2 \geq 2$ and $r^2 \leq 2$.  This is the way analysts show
-equality, by showing two inequalities.
-We already know that $r \geq 1 > 0$.
+Seja $r \coloneqq \sup\, A$. Mostraremos que $r^2 = 2$ provando
+que $r^2 \geq 2$ e $r^2 \leq 2$. É assim que os analistas demonstram
+uma igualdade: provando duas desigualdades.
+Já sabemos que $r \geq 1 > 0$.
 
 %\medskip
-In the following, it may seem we are pulling certain expressions out of
-a hat.  When writing a proof such as this, we would, of course, come up with
-the expressions only after playing around with what we wish to prove.  The
-order in which we write the proof is not necessarily the order in which we
-come up with the proof.
+A seguir, pode parecer que estamos tirando certas expressões
+da cartola. Ao escrever uma demonstração como esta, naturalmente só
+encontraríamos as expressões depois de explorar o que queremos provar. A
+ordem em que escrevemos a demonstração não é necessariamente a ordem em que
+a encontramos.
 
-Let us first show that $r^2 \geq 2$.
-Take a positive number $s$ such that $s^2 < 2$.  We wish to find an $h > 0$
-such that ${(s+h)}^2 < 2$.
-As $2-s^2 > 0$, we have $\frac{2-s^2}{2s+1} > 0$.
-Choose an $h \in \R$ such that
+Vamos primeiro mostrar que $r^2 \geq 2$.
+Tome um número positivo $s$ tal que $s^2 < 2$. Queremos encontrar um $h > 0$
+tal que ${(s+h)}^2 < 2$.
+Como $2-s^2 > 0$, temos $\frac{2-s^2}{2s+1} > 0$.
+Escolha $h \in \R$ tal que
 $0 < h < \frac{2-s^2}{2s+1}$.
-Furthermore, assume $h < 1$.  Estimate,
+Além disso, suponha que $h < 1$. Estimamos:
 \begin{equation*}
 \begin{aligned}
 {(s+h)}^2 - s^2 & = h(2s + h) \\
- & < h(2s+1) & & \quad \bigl(\text{since } h < 1\bigr) \\
- & < 2-s^2 & & \quad \bigl(\text{since } h < \tfrac{2-s^2}{2s+1} \bigr) .
+ & < h(2s+1) & & \quad \bigl(\text{pois } h < 1\bigr) \\
+ & < 2-s^2 & & \quad \bigl(\text{pois } h < \tfrac{2-s^2}{2s+1} \bigr) .
 \end{aligned}
 \end{equation*}
-Therefore, ${(s+h)}^2 < 2$.  Hence $s+h \in A$, but as $h > 0$,
-we have $s+h > s$.  So $s < r = \sup\, A$.  As $s$ was an arbitrary
-positive number such that $s^2 < 2$, it follows that $r^2 \geq 2$.
+Portanto, ${(s+h)}^2 < 2$. Assim, $s+h \in A$, mas, como $h > 0$,
+temos $s+h > s$. Logo, $s < r = \sup\, A$. Como $s$ era um número
+positivo arbitrário tal que $s^2 < 2$, segue que $r^2 \geq 2$.
 
 %\medskip
 
-Now take a positive number $s$ such that
-$s^2 > 2$.  We wish to find an $h > 0$ such that
-${(s-h)}^2 > 2$ and $s-h$ is still positive.
-As $s^2-2 > 0$, we have $\frac{s^2-2}{2s} > 0$.
-Let $h \coloneqq \frac{s^2-2}{2s}$,
-and check $s-h=s-\frac{s^2-2}{2s} = \frac{s}{2}+\frac{1}{s} > 0$.
-Estimate,
+Agora tome um número positivo $s$ tal que
+$s^2 > 2$. Queremos encontrar um $h > 0$ tal que
+${(s-h)}^2 > 2$ e $s-h$ ainda seja positivo.
+Como $s^2-2 > 0$, temos $\frac{s^2-2}{2s} > 0$.
+Defina $h \coloneqq \frac{s^2-2}{2s}$,
+e verifique que $s-h=s-\frac{s^2-2}{2s} = \frac{s}{2}+\frac{1}{s} > 0$.
+Estimamos:
 \begin{equation*}
 \begin{aligned}
 s^2 - {(s-h)}^2 & = 2sh - h^2 \\
- & < 2sh & & \quad \bigl( \text{since } h^2 > 0 \text{ as } h \neq 0 \bigr) \\
- & = s^2-2 & & \quad \bigl( \text{since } h = \tfrac{s^2-2}{2s} \bigr) .
+ & < 2sh & & \quad \bigl( \text{pois } h^2 > 0 \text{ as } h \neq 0 \bigr) \\
+ & = s^2-2 & & \quad \bigl( \text{pois } h = \tfrac{s^2-2}{2s} \bigr) .
 \end{aligned}
 \end{equation*}
-By subtracting $s^2$ from both sides and multiplying by $-1$, we find
-${(s-h)}^2 > 2$.  Therefore, $s-h \notin A$.
+Subtraindo $s^2$ de ambos os lados e multiplicando por $-1$, obtemos
+${(s-h)}^2 > 2$. Portanto, $s-h \notin A$.
 
-Moreover, if $x \geq s-h$,
-then $x^2 \geq {(s-h)}^2 > 2$ (as $x > 0$ and $s-h > 0$) and so $x \notin A$.
-Thus,
-$s-h$ is an upper bound for $A$.  However, $s-h < s$, or in other
-words, $s > r = \sup\, A$.  Hence, $r^2 \leq 2$.
+Além disso, se $x \geq s-h$,
+então $x^2 \geq {(s-h)}^2 > 2$ (pois $x > 0$ e $s-h > 0$), e assim $x \notin A$.
+Logo,
+$s-h$ é uma cota superior de $A$. No entanto, $s-h < s$, ou, em outras
+palavras, $s > r = \sup\, A$. Portanto, $r^2 \leq 2$.
 
 \medskip
 
-Together, $r^2 \geq 2$ and $r^2 \leq 2$ imply
-$r^2 = 2$.  The existence part is finished.  We still need to
-handle uniqueness.  Suppose $s \in \R$ is such that $s^2 = 2$ and $s > 0$.
-Thus, $s^2 = r^2$.  However, if $0 < s < r$, then $s^2 < r^2$.  Similarly,
-$0 < r < s$ implies $r^2 < s^2$.  Hence, $s = r$.
+Juntas, $r^2 \geq 2$ e $r^2 \leq 2$ implicam
+$r^2 = 2$. A parte da existência está concluída. Ainda precisamos
+provar a unicidade. Suponha que $s \in \R$ seja tal que $s^2 = 2$ e $s > 0$.
+Assim, $s^2 = r^2$. No entanto, se $0 < s < r$, então $s^2 < r^2$. Da mesma forma,
+$0 < r < s$ implica $r^2 < s^2$. Portanto, $s = r$.
 \end{proof}
 \end{example}
 
-The number $\sqrt{2} \notin \Q$.  The set
-$\R \setminus \Q$ is called the set of
-\emph{\myindex{irrational}} numbers.  We just proved that $\R \setminus \Q$
-is nonempty.  Not only is it nonempty, as we will see, it is very
-large indeed.
+O número $\sqrt{2} \notin \Q$. O conjunto
+$\R \setminus \Q$ é chamado de conjunto dos números
+\emph{\myindex{irracionais}}. Acabamos de provar que $\R \setminus \Q$
+não é vazio. E, como veremos, ele não é apenas não vazio: é muito
+grande mesmo.
 
-Using the same technique as above, we can show that a positive real
-number $x^{1/n}$ exists for all $n\in \N$ and all $x > 0$.
-That is, for each $x > 0$,
-there exists a unique positive real number $r$ such that $r^n = x$.
-The proof is left as an exercise.
+Usando a mesma técnica acima, podemos mostrar que existe um número real positivo
+$x^{1/n}$ para todo $n\in \N$ e todo $x > 0$.
+Isto é, para cada $x > 0$,
+existe um único número real positivo $r$ tal que $r^n = x$.
+A demonstração fica como exercício.
 
 \subsection{Archimedean property}
 

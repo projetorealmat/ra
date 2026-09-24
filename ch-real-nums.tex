@@ -674,13 +674,13 @@ Isto é, para cada $x > 0$,
 existe um único número real positivo $r$ tal que $r^n = x$.
 A demonstração fica como exercício.
 
-\subsection{Archimedean property}
+\subsection{Propriedade arquimediana}
 
-As we have seen, there are plenty of real numbers in any interval.  But
-there are also infinitely many rational numbers in any interval.  The
-following is one of the fundamental facts about the real numbers.
-The two parts of the next theorem are actually equivalent, even though it may
-not seem like that at first sight.
+Como vimos, há muitos números reais em qualquer intervalo. Mas também
+há infinitos números racionais em qualquer intervalo. O resultado a seguir é
+um dos fatos fundamentais sobre os números reais.
+As duas partes do próximo teorema são, na verdade, equivalentes, embora isso
+talvez não pareça evidente à primeira vista.
 
 
 \begin{thm} \label{thm:arch}
@@ -688,422 +688,420 @@ not seem like that at first sight.
 \pagebreak[3]
 \leavevmode
 \begin{enumerate}[(i)]
-\item \label{thm:arch:i} \emph{(\myindex{Archimedean property})}%
-\footnote{Named after the Ancient Greek mathematician
-\href{https://en.wikipedia.org/wiki/Archimedes}{Archimedes of Syracuse}
-(c.\ 287 BC -- c.\ 212 BC)\@.
-This property is Axiom V from Archimedes' \myquote{On the Sphere and
-Cylinder} (225 BC)\@.}
-If $x, y \in \R$ and
-$x > 0$, then there exists an $n \in \N$ such that
+\item \label{thm:arch:i} \emph{(\myindex{propriedade arquimediana})}%
+\footnote{Em homenagem ao matemático da Grécia Antiga
+\href{https://en.wikipedia.org/wiki/Archimedes}{Arquimedes de Siracusa}
+(c.\ 287 a.C. -- c.\ 212 a.C.)\@.
+Esta propriedade é o Axioma V da obra de Arquimedes
+\myquote{Sobre a esfera e o cilindro} (225 a.C.)\@.}
+Se $x, y \in \R$ e
+$x > 0$, então existe $n \in \N$ tal que
 \begin{equation*}
 nx > y .
 \end{equation*}
-\item \label{thm:arch:ii} \emph{($\Q$ is dense in $\R$\index{density of
-rational numbers})} If $x, y \in \R$ and
-$x < y$, then there exists an $r \in \Q$ such that
+\item \label{thm:arch:ii} \emph{($\Q$ é denso em $\R$\index{densidade dos números racionais})} Se $x, y \in \R$ e
+$x < y$, então existe $r \in \Q$ tal que
 $x < r < y$.
 \end{enumerate}
 \end{thm}
 
 \begin{proof}
-Let us prove \ref{thm:arch:i}.  Divide through by $x$.
-Then \ref{thm:arch:i} says that for every real number $t\coloneqq \nicefrac{y}{x}$,
-we can find $n \in \N$ such that $n > t$.  In other words,
-\ref{thm:arch:i} says that $\N \subset \R$ is not bounded above.
-Suppose for contradiction that $\N$ is bounded above.  Let $b \coloneqq \sup \N$.
-The number $b-1$ cannot possibly be an upper bound for $\N$ as it is strictly
-less than $b$ (the least upper bound).  Thus there exists an $m \in \N$ such that $m > b-1$.
-Add one to obtain $m+1 > b$, contradicting $b$ being an
-upper bound.
+Vamos provar \ref{thm:arch:i}. Divida tudo por $x$.
+Então \ref{thm:arch:i} afirma que, para todo número real $t\coloneqq \nicefrac{y}{x}$,
+podemos encontrar $n \in \N$ tal que $n > t$. Em outras palavras,
+\ref{thm:arch:i} afirma que $\N \subset \R$ não é limitado superiormente.
+Suponha, por absurdo, que $\N$ seja limitado superiormente. Seja $b \coloneqq \sup \N$.
+O número $b-1$ não pode ser uma cota superior de $\N$, pois é estritamente
+menor que $b$ (a menor cota superior). Portanto, existe $m \in \N$ tal que $m > b-1$.
+Some 1 aos dois lados para obter $m+1 > b$, uma contradição, pois $b$ é uma
+cota superior.
 
 \begin{myfigureht}
 \myincludepdft{figdensofQ}{%
-A diagram of the horizontal real line with several tall vertical
-ticks marked that are equally spaced with the distance
-between them being 1 over n.  The second tick
-from the left is marked as m minus 1 all over n.
-After this tick there is the number x marked with a short tick.
-The next tall tick is marked with m over n.
-Then comes the number y and then a tall tick marked
-m plus 1 all over n.  Then two more tall ticks are shown.}
-\caption{Idea of the proof of the density of $\Q$: Find $n$ such that $y-x >
-\nicefrac{1}{n}$, then take the least $m$ such that $\nicefrac{m}{n} > x$.\label{figdensofQ}}
+Um diagrama da reta real horizontal com vários traços verticais altos
+igualmente espaçados, cuja distância entre eles é 1 sobre n. O segundo traço
+a partir da esquerda está marcado como m menos 1, tudo sobre n.
+Depois desse traço, aparece o número x, marcado com um traço curto.
+O próximo traço alto está marcado como m sobre n.
+Em seguida aparece o número y e depois um traço alto marcado como
+m mais 1, tudo sobre n. Mais dois traços altos aparecem depois.}
+\caption{Ideia da demonstração da densidade de $\Q$: encontre $n$ tal que $y-x >
+\nicefrac{1}{n}$ e, em seguida, tome o menor $m$ tal que $\nicefrac{m}{n} > x$.\label{figdensofQ}}
 \end{myfigureht}
-Let us tackle \ref{thm:arch:ii}.
-See \figureref{figdensofQ}
-for a picture of the idea behind the proof.
-First assume $x \geq 0$.
-Note that $y-x > 0$.
-By \ref{thm:arch:i}, there exists an $n \in \N$ such that
+Vamos demonstrar \ref{thm:arch:ii}.
+Veja a \figureref{figdensofQ}
+para visualizar a ideia da demonstração.
+Suponha primeiro que $x \geq 0$.
+Observe que $y-x > 0$.
+Por \ref{thm:arch:i}, existe $n \in \N$ tal que
 \begin{equation*}
 n(y-x) > 1
-\qquad \text{or} \qquad
+\qquad \text{ou} \qquad
 y-x > \nicefrac{1}{n}.
 \end{equation*}
-Again by \ref{thm:arch:i}, the set
-$A \coloneqq \{ k \in \N : k > nx \}$ is nonempty.  By the
-\hyperlink{wop:link}{well ordering property}
-of $\N$, $A$ has a least element $m$.
-As $m \in A$, we have $m > nx$.
-Divide through by $n$ to get $x < \nicefrac{m}{n}$.
-As $m$ is the least
-element of $A$, $m-1 \notin A$.
-If $m > 1$, then $m-1 \in \N$, but $m-1 \notin A$ and so $m-1 \leq nx$.
-If $m=1$,
-then $m-1 = 0$, and $m-1 \leq nx$ still holds as $x \geq 0$.
-In other words,
+Novamente por \ref{thm:arch:i}, o conjunto
+$A \coloneqq \{ k \in \N : k > nx \}$ não é vazio. Pela
+\hyperlink{wop:link}{propriedade da boa ordenação}
+de $\N$, $A$ tem um menor elemento $m$.
+Como $m \in A$, temos $m > nx$.
+Divida tudo por $n$ para obter $x < \nicefrac{m}{n}$.
+Como $m$ é o menor
+elemento de $A$, $m-1 \notin A$.
+Se $m > 1$, então $m-1 \in \N$, mas $m-1 \notin A$ e, portanto, $m-1 \leq nx$.
+Se $m=1$,
+então $m-1 = 0$, e ainda temos $m-1 \leq nx$, pois $x \geq 0$.
+Em outras palavras,
 \begin{equation*}
-m-1 \leq nx \qquad \text{or} \qquad m \leq nx+1 .
+m-1 \leq nx \qquad \text{ou} \qquad m \leq nx+1 .
 \end{equation*}
-On the other hand,
-from $n(y-x) > 1$ we obtain $ny > 1+nx$.
-Hence $ny > 1+nx \geq m$, and therefore $y > \nicefrac{m}{n}$.
-Putting everything together, we obtain $x < \nicefrac{m}{n} < y$.
-So take $r = \nicefrac{m}{n}$.
+Por outro lado,
+de $n(y-x) > 1$ obtemos $ny > 1+nx$.
+Logo, $ny > 1+nx \geq m$, e, portanto, $y > \nicefrac{m}{n}$.
+Juntando tudo, obtemos $x < \nicefrac{m}{n} < y$.
+Assim, tome $r = \nicefrac{m}{n}$.
 
-Now assume $x < 0$.  If $y > 0$, then just take $r=0$.  If
-$y \leq 0$, then $0 \leq -y < -x$, and we
-find a rational $q$ such that $-y < q < -x$.  Then take $r = -q$.
+Agora suponha que $x < 0$. Se $y > 0$, basta tomar $r=0$. Se
+$y \leq 0$, então $0 \leq -y < -x$, e encontramos
+um número racional $q$ tal que $-y < q < -x$. Então, tome $r = -q$.
 \end{proof}
 
-Let us state and prove a simple but useful corollary of the
-\hyperref[thm:arch:i]{Archimedean property}.
+Enunciemos e provemos um corolário simples, mas útil, da
+\hyperref[thm:arch:i]{propriedade arquimediana}.
 
 \begin{cor}
 $\inf \{ \nicefrac{1}{n} : n \in \N \} = 0$.
-See \figureref{fig:oneovernset}.
+Veja a \figureref{fig:oneovernset}.
 \end{cor}
 
 \begin{proof}
-Let $A \coloneqq \{ \nicefrac{1}{n} : n \in \N \}$.  Obviously, $A$ is not empty.
-Furthermore,
-$\nicefrac{1}{n} > 0$ for all $n \in \N$, so $0$ is a lower bound
-and $b \coloneqq \inf\, A$ exists.
-As $0$ is a lower bound, $b \geq 0$.
-Take an arbitrary $a > 0$.  By the
-\hyperref[thm:arch:i]{Archimedean property}, there exists an $n$ such that
-$na > 1$, that is, $a > \nicefrac{1}{n} \in A$.  Therefore,
-$a$ cannot be a lower bound for $A$.  Hence $b=0$.
+Seja $A \coloneqq \{ \nicefrac{1}{n} : n \in \N \}$. É evidente que $A$ não é vazio.
+Além disso,
+$\nicefrac{1}{n} > 0$ para todo $n \in \N$, então $0$ é uma cota inferior
+e $b \coloneqq \inf\, A$ existe.
+Como $0$ é uma cota inferior, $b \geq 0$.
+Tome um $a > 0$ arbitrário. Pela
+\hyperref[thm:arch:i]{propriedade arquimediana}, existe $n$ tal que
+$na > 1$, isto é, $a > \nicefrac{1}{n} \in A$. Portanto,
+$a$ não pode ser uma cota inferior de $A$. Logo, $b=0$.
 \end{proof}
 
 \begin{myfigureht}
 \myincludegraphics{oneovernset}{%
-A diagram of the horizontal real line with vertical ticks marking
-the numbers 1, 1 over 2, 1 over 3, 1 over 4, etc.  These ticks get
-closer and closer to 0, which is also marked, and they are so thick
-by the time we get to 0 that we only see a black rectangle there.}
-\caption{The set $\{ \nicefrac{1}{n} : n \in \N \}$ and its infimum $0$.\label{fig:oneovernset}}
+Um diagrama da reta real horizontal com traços verticais indicando
+os números 1, 1 sobre 2, 1 sobre 3, 1 sobre 4 etc. Os traços ficam
+cada vez mais próximos de 0, que também está marcado. Ao chegar a 0,
+eles são tão espessos que só vemos ali um retângulo preto.}
+\caption{O conjunto $\{ \nicefrac{1}{n} : n \in \N \}$ e seu ínfimo $0$.\label{fig:oneovernset}}
 \end{myfigureht}
 
 
 
-\subsection{Using supremum and infimum}
+\subsection{Usando supremo e ínfimo}
 
-Suprema and infima are
-compatible with algebraic operations.  For a set $A \subset \R$ and
-$x \in \R$ define
+Supremos e ínfimos são
+compatíveis com as operações algébricas. Para um conjunto $A \subset \R$ e
+$x \in \R$, definimos
 \begin{align*}
 x + A & \coloneqq \{ x+y \in \R : y \in A \} , \\
 xA & \coloneqq \{ xy \in \R : y \in A \} .
 \end{align*}
-For example, if $A = \{ 1,2,3 \}$, then $5+A = \{ 6,7,8 \}$ and $3A = \{ 3,6,9
+Por exemplo, se $A = \{ 1,2,3 \}$, então $5+A = \{ 6,7,8 \}$ e $3A = \{ 3,6,9
 \}$.
 
 \begin{prop} \label{prop:supinfalg}
-Let $A \subset \R$ be nonempty.
+Seja $A \subset \R$ não vazio.
 \begin{enumerate}[(i)]
-\item If $x \in \R$ and $A$ is bounded above, then $\sup (x+A) = x + \sup\, A$.
-\item If $x \in \R$ and $A$ is bounded below, then $\inf (x+A) = x + \inf\, A$.
-\item If $x > 0$ and $A$ is bounded above, then $\sup (xA) = x ( \sup\, A )$.
-\item If $x > 0$ and $A$ is bounded below, then $\inf (xA) = x ( \inf\, A )$.
-\item If $x < 0$ and $A$ is bounded below, then $\sup (xA) = x ( \inf\, A )$.
-\item If $x < 0$ and $A$ is bounded above, then $\inf (xA) = x ( \sup\, A )$.
+\item Se $x \in \R$ e $A$ é limitado superiormente, então $\sup (x+A) = x + \sup\, A$.
+\item Se $x \in \R$ e $A$ é limitado inferiormente, então $\inf (x+A) = x + \inf\, A$.
+\item Se $x > 0$ e $A$ é limitado superiormente, então $\sup (xA) = x ( \sup\, A )$.
+\item Se $x > 0$ e $A$ é limitado inferiormente, então $\inf (xA) = x ( \inf\, A )$.
+\item Se $x < 0$ e $A$ é limitado inferiormente, então $\sup (xA) = x ( \inf\, A )$.
+\item Se $x < 0$ e $A$ é limitado superiormente, então $\inf (xA) = x ( \sup\, A )$.
 \end{enumerate}
 \end{prop}
 
-Note how multiplying a set by a negative number swaps suprema and infima.
-Also, as the proposition implies that
-the supremum (resp.\ infimum) of $x+A$ or $xA$ exists,
-it also implies that $x+A$ or $xA$
-is nonempty and bounded above (resp.\ below).
+Observe que a multiplicação de um conjunto por um número negativo troca supremos e ínfimos.
+Além disso, como a proposição implica que
+o supremo (respectivamente, o ínfimo) de $x+A$ ou $xA$ existe,
+ela também implica que $x+A$ ou $xA$
+é não vazio e limitado superiormente (respectivamente, inferiormente).
 
 \begin{proof}
-Let us only prove the first statement.  The rest are left as exercises.
+Vamos provar apenas a primeira afirmação. As demais ficam como exercícios.
 
-Suppose $b$ is an upper bound for $A$.  That is, $y \leq b$ for all $y \in A$.
-Then $x+y \leq x+b$ for all $y \in A$, and so $x+b$ is an upper
-bound for $x+A$.  In particular, if $b = \sup\, A$, then
+Suponha que $b$ seja uma cota superior de $A$. Isto é, $y \leq b$ para todo $y \in A$.
+Então $x+y \leq x+b$ para todo $y \in A$, de modo que $x+b$ é uma cota
+superior de $x+A$. Em particular, se $b = \sup\, A$, então
 \begin{equation*}
 \sup (x+A) \leq x+b = x+ \sup\, A .
 \end{equation*}
 
-The opposite inequality is similar. If $c$ is an upper bound for $x+A$,
-then $x+y \leq c$
-for all $y \in A$ and so $y \leq c-x$ for all $y \in A$.
-So $c-x$ is an upper bound for $A$.
-If $c = \sup (x+A)$, then
+A desigualdade oposta se prova de maneira semelhante. Se $c$ é uma cota superior de $x+A$,
+então $x+y \leq c$
+para todo $y \in A$ e, portanto, $y \leq c-x$ para todo $y \in A$.
+Logo, $c-x$ é uma cota superior de $A$.
+Se $c = \sup (x+A)$, então
 \begin{equation*}
 \sup\, A \leq c-x = \sup (x+A) -x .
 \end{equation*}
-The result follows.
+A conclusão segue.
 \end{proof}
 
-Sometimes we need to apply supremum or infimum twice.  Here is an example.
+Às vezes precisamos aplicar supremo ou ínfimo duas vezes. Veja este exemplo.
 
 \begin{prop} \label{infsupineq:prop}
-Let $A, B \subset \R$ be nonempty sets such that $x \leq y$ whenever $x \in A$ and
-$y \in B$.  Then $A$ is bounded above, $B$ is bounded below, and $\sup\, A \leq \inf\, B$.
+Sejam $A, B \subset \R$ conjuntos não vazios tais que $x \leq y$ sempre que $x \in A$ e
+$y \in B$. Então $A$ é limitado superiormente, $B$ é limitado inferiormente e $\sup\, A \leq \inf\, B$.
 \end{prop}
 
 \begin{proof}
-Any $x \in A$ is a lower bound for $B$.
-Therefore, $x \leq \inf\, B$ for all $x \in A$,
-so $\inf\, B$ is an upper bound for $A$.
-Hence, $\sup\, A \leq \inf\, B$.
+Todo $x \in A$ é uma cota inferior de $B$.
+Portanto, $x \leq \inf\, B$ para todo $x \in A$,
+de modo que $\inf\, B$ é uma cota superior de $A$.
+Logo, $\sup\, A \leq \inf\, B$.
 \end{proof}
 
-We must be careful about strict inequalities and taking suprema and infima.
-Note that $x < y$ whenever $x \in A$ and
-$y \in B$ still only implies $\sup\, A \leq \inf\, B$, and not a strict
-inequality.
-For example, take $A \coloneqq \{ 0 \}$ and $B \coloneqq \{ \nicefrac{1}{n}
+É preciso ter cuidado com desigualdades estritas e com a aplicação de supremos e ínfimos.
+Observe que $x < y$ sempre que $x \in A$ e
+$y \in B$ ainda implica apenas $\sup\, A \leq \inf\, B$, e não uma desigualdade
+estrita.
+Por exemplo, tome $A \coloneqq \{ 0 \}$ e $B \coloneqq \{ \nicefrac{1}{n}
 : n \in \N \}$.
-Then $0 < \nicefrac{1}{n}$
-for all $n \in \N$.  However, $\sup\, A = 0$ and $\inf\, B = 0$.
-This important subtle point comes up often.
+Então $0 < \nicefrac{1}{n}$
+para todo $n \in \N$. No entanto, $\sup\, A = 0$ e $\inf\, B = 0$.
+Esse importante detalhe sutil aparece com frequência.
 
 \medskip
 \pagebreak[1]
 
-The proof of the following
-often-used fact is left to the reader.
-A similar result holds for infima.
+Deixamos ao leitor a demonstração do seguinte
+resultado, que usamos com frequência.
+Um resultado semelhante vale para ínfimos.
 
 \begin{prop} \label{prop:existsxepsfromsup}
-If $S \subset \R$ is nonempty and bounded above,
-then for every $\epsilon > 0$ there exists an $x \in S$ such
-that $(\sup\, S) - \epsilon < x \leq \sup\, S$.
+Se $S \subset \R$ é não vazio e limitado superiormente,
+então, para todo $\epsilon > 0$, existe $x \in S$ tal
+que $(\sup\, S) - \epsilon < x \leq \sup\, S$.
 \end{prop}
 
 
-To make using suprema and infima even easier, we may want to
-write $\sup\, A$ and $\inf\, A$ without worrying about $A$ being
-bounded and nonempty.  We make the following natural definitions.
+Para facilitar ainda mais o uso de supremos e ínfimos, talvez queiramos
+escrever $\sup\, A$ e $\inf\, A$ sem nos preocupar se $A$ é
+limitado e não vazio. Vamos fazer as seguintes definições naturais.
 
 \begin{defn}
-Let $A \subset \R$ be a set.
+Seja $A \subset \R$ um conjunto.
 \begin{enumerate}[(i)]
-\item If $A$ is empty, then $\sup\, A \coloneqq -\infty$.
-\item If $A$ is not bounded above, then $\sup\, A \coloneqq \infty$.
-\item If $A$ is empty, then $\inf\, A \coloneqq \infty$.
-\item If $A$ is not bounded below, then $\inf\, A \coloneqq -\infty$.
+\item Se $A$ é vazio, então $\sup\, A \coloneqq -\infty$.
+\item Se $A$ não é limitado superiormente, então $\sup\, A \coloneqq \infty$.
+\item Se $A$ é vazio, então $\inf\, A \coloneqq \infty$.
+\item Se $A$ não é limitado inferiormente, então $\inf\, A \coloneqq -\infty$.
 \end{enumerate}
 \end{defn}
 
-The statements in the definition above
-follow naturally if, instead of working in 
-the ordered set $\R$, we take suprema and infima
-in the ordered set
+As afirmações da definição acima
+decorrem naturalmente se, em vez de trabalhar no
+conjunto ordenado $\R$, tomarmos supremos e ínfimos
+no conjunto ordenado
 $\R^* \coloneqq \R \cup \{ -\infty , \infty\}$
-\glsadd{not:extreal},\glsadd{not:infinity}
-where we let
+\glsadd{not:extreal},\glsadd{not:infinity},
+onde definimos
 \begin{equation*}
--\infty < \infty \quad \text{and} \quad
--\infty < x \quad \text{and} \quad
-x < \infty \quad \text{for all $x \in \R$}.
+-\infty < \infty \quad \text{e} \quad
+-\infty < x \quad \text{e} \quad
+x < \infty \quad \text{para todo $x \in \R$}.
 \end{equation*}
-The set $\R^*$ is called the set of \emph{\myindex{extended real numbers}}.
-For convenience, $\infty$ and $-\infty$ are sometimes treated as if they were
-numbers, except we do not allow arbitrary arithmetic with them.
-It is possible to define some arithmetic on $\R^*$.  Most operations
-are extended in an obvious way, but we must leave
-$\infty-\infty$, $0 \cdot (\pm\infty)$, and $\frac{\pm\infty}{\pm\infty}$
-undefined.
-We refrain from
-using this arithmetic;
-it leads to easy mistakes as $\R^*$ is not a field.
-Now we can take suprema and infima without fear of emptiness or
-unboundedness.  In this book, we mostly avoid
-using $\R^*$ outside of exercises and leave such generalizations to the interested reader.
+O conjunto $\R^*$ é chamado de conjunto dos \emph{\myindex{números reais estendidos}}.
+Por conveniência, às vezes tratamos $\infty$ e $-\infty$ como se fossem
+números, mas não permitimos operações aritméticas arbitrárias com eles.
+É possível definir algumas operações aritméticas em $\R^*$. A maioria delas
+se estende de maneira evidente, mas precisamos deixar
+$\infty-\infty$, $0 \cdot (\pm\infty)$ e $\frac{\pm\infty}{\pm\infty}$
+sem definição.
+Evitamos
+usar essas operações;
+elas levam a erros fáceis, pois $\R^*$ não é um corpo.
+Agora podemos tomar supremos e ínfimos sem nos preocupar com conjuntos vazios ou
+não limitados. Neste livro, evitamos em grande parte
+usar $\R^*$ fora dos exercícios e deixamos tais generalizações para o leitor interessado.
 
-\subsection{Maxima and minima}
+\subsection{Máximos e mínimos}
 
-By \exerciseref{exercise:finitesethasminmax},
-a finite set of numbers always has a supremum and an infimum
-and they are both contained in the set itself.
-In this case, we usually do not use the words supremum or infimum.
-When a set $A$ of real numbers is bounded above and
-$\sup\, A \in A$, we can use the word
-\emph{\myindex{maximum}} and the notation $\max\, A$\glsadd{not:max} to denote the supremum.
-Similarly for infimum: When $A$ is bounded below
-and $\inf\, A \in A$, we can use the
-word \emph{\myindex{minimum}} and the notation $\min\, A$.\glsadd{not:min}
-For example,
+Pelo \exerciseref{exercise:finitesethasminmax},
+todo conjunto finito de números tem supremo e ínfimo,
+e ambos pertencem ao próprio conjunto.
+Neste caso, em geral, não usamos as palavras supremo ou ínfimo.
+Quando um conjunto $A$ de números reais é limitado superiormente e
+$\sup\, A \in A$, podemos usar a palavra
+\emph{\myindex{máximo}} e a notação $\max\, A$\glsadd{not:max} para indicar o supremo.
+De maneira semelhante, para o ínfimo: quando $A$ é limitado inferiormente
+e $\inf\, A \in A$, podemos usar a
+palavra \emph{\myindex{mínimo}} e a notação $\min\, A$.\glsadd{not:min}
+Por exemplo,
 \begin{align*}
 & \max \{ 1,2.4,\pi,100 \} = 100 , \\
 & \min \{ 1,2.4,\pi,100 \} = 1 .
 \end{align*}
-While writing $\sup$ and $\inf$ may be technically
-correct in this situation, $\max$ and
-$\min$ are generally used to emphasize that the supremum or infimum
-is in the set itself, especially when the set is finite.
+Embora escrever $\sup$ e $\inf$ seja tecnicamente
+correto nesta situação, em geral se usam $\max$ e
+$\min$ para enfatizar que o supremo ou o ínfimo
+pertence ao próprio conjunto, especialmente quando o conjunto é finito.
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
 \begin{exercise}
-Prove that
-if $t > 0$ ($t \in \R$), then there exists an $n \in \N$ such that
+Demonstre que,
+se $t > 0$ ($t \in \R$), então existe $n \in \N$ tal que
 $\dfrac{1}{n^2} < t$.
 \end{exercise}
 
 \begin{exercise}
-Prove that
-if $t \geq 0$ ($t \in \R$), then there exists an $n \in \N$ such that $n-1 \leq t < n$.
+Demonstre que,
+se $t \geq 0$ ($t \in \R$), então existe $n \in \N$ tal que $n-1 \leq t < n$.
 \end{exercise}
 
 \begin{exercise}
-Finish the proof of \propref{prop:supinfalg}.
+Complete a demonstração de \propref{prop:supinfalg}.
 \end{exercise}
 
 \begin{exercise}
-Let $x, y \in \R$.  Suppose $x^2 + y^2 = 0$.  Prove that $x = 0$ and $y = 0$.
+Sejam $x, y \in \R$. Suponha que $x^2 + y^2 = 0$. Demonstre que $x = 0$ e $y = 0$.
 \end{exercise}
 
 \begin{exercise}
-Show that $\sqrt{3}$ is irrational.
+Mostre que $\sqrt{3}$ é irracional.
 \end{exercise}
 
 \begin{exercise}
-Let $n \in \N$.
-Show that $\sqrt{n}$ is either an integer or it is
-irrational.
+Seja $n \in \N$.
+Mostre que $\sqrt{n}$ ou é um inteiro ou é
+irracional.
 \end{exercise}
 
 \begin{exercise}
-Prove the \emph{\myindex{arithmetic-geometric mean inequality}}.
-For two positive real numbers $x,y$,
+Demonstre a \emph{\myindex{desigualdade entre as médias aritmética e geométrica}}.
+Para dois números reais positivos $x,y$,
 \begin{equation*}
 \sqrt{xy} \leq \frac{x+y}{2} .
 \end{equation*}
-Furthermore, equality occurs if and only if $x=y$.
+Além disso, há igualdade se, e somente se, $x=y$.
 \end{exercise}
 
 \begin{exercise}
-Show that for every pair of real numbers $x$ and $y$ such that $x < y$, there
-exists an irrational number $s$ such that $x < s < y$.  Hint:
-Apply the density of $\Q$ to $\dfrac{x}{\sqrt{2}}$ and
-$\dfrac{y}{\sqrt{2}}$, but avoid zero.
+Mostre que, para todo par de números reais $x$ e $y$ tais que $x < y$, existe
+um número irracional $s$ tal que $x < s < y$. Dica:
+aplique a densidade de $\Q$ a $\dfrac{x}{\sqrt{2}}$ e
+$\dfrac{y}{\sqrt{2}}$, mas evite o zero.
 \end{exercise}
 
 \begin{exercise} \label{exercise:supofsum}
-Let $A$ and $B$ be two nonempty bounded sets of real numbers.  Let
+Sejam $A$ e $B$ dois conjuntos não vazios e limitados de números reais. Seja
 $C \coloneqq \{ a+b : a \in A, b \in B \}$.
-Show that $C$ is a bounded set and that
+Mostre que $C$ é limitado e que
 \begin{equation*}
 \sup\,C = \sup\,A + \sup\,B
-\qquad \text{and} \qquad
+\qquad \text{e} \qquad
 \inf\,C = \inf\,A + \inf\,B .
 \end{equation*}
 \end{exercise}
 
 \begin{exercise}
-Let $A$ and $B$ be two nonempty bounded sets of nonnegative real numbers.
-Define the set
+Sejam $A$ e $B$ dois conjuntos não vazios e limitados de números reais não negativos.
+Defina o conjunto
 $C \coloneqq \{ ab : a \in A, b \in B \}$.
-Show that $C$ is a bounded set and that
+Mostre que $C$ é limitado e que
 \begin{equation*}
 \sup\,C = (\sup\,A )( \sup\,B)
-\qquad \text{and} \qquad
+\qquad \text{e} \qquad
 \inf\,C = (\inf\,A )( \inf\,B).
 \end{equation*}
 \end{exercise}
 
-\begin{exercise}[Hard] \label{exercise:rootexistshard}
-Given $x > 0$ and $n \in \N$, show that there exists a unique positive
-real number $r$ such that $x = r^n$.  Usually, $r$ is denoted by $x^{1/n}$.
+\begin{exercise}[Difícil] \label{exercise:rootexistshard}
+Dados $x > 0$ e $n \in \N$, mostre que existe um único número real positivo
+$r$ tal que $x = r^n$. Em geral, denotamos $r$ por $x^{1/n}$.
 \end{exercise}
 
-\begin{exercise}[Easy]
-Prove \propref{prop:existsxepsfromsup}.
+\begin{exercise}[Fácil]
+Demonstre \propref{prop:existsxepsfromsup}.
 \end{exercise}
 
 \begin{exercise} \label{exercise:bernoulliineq}
-Prove \emph{\myindex{Bernoulli's inequality}}%
+Demonstre a \emph{\myindex{desigualdade de Bernoulli}}%
 \footnote{%
-Named after the Swiss mathematician
+Em homenagem ao matemático suíço
 \href{https://en.wikipedia.org/wiki/Jacob_Bernoulli}{Jacob Bernoulli}
 (1655--1705).}%
-: If $1+x > 0$, then
-for all $n \in \N$, we have $(1+x)^n \geq 1+nx$.
+: se $1+x > 0$, então,
+para todo $n \in \N$, temos $(1+x)^n \geq 1+nx$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:sqrt2QorR}
-Prove $\sup \{ x \in \Q : x^2 < 2 \} = \sup \{ x \in \R : x^2 < 2 \}$.
+Demonstre que $\sup \{ x \in \Q : x^2 < 2 \} = \sup \{ x \in \R : x^2 < 2 \}$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:Dedekind}
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Prove that given $y \in \R$, we have $\sup \{ x \in \Q : x < y \} = y$.
+Demonstre que, dado $y \in \R$, temos $\sup \{ x \in \Q : x < y \} = y$.
 \item
-Let $A \subset \Q$ be a nonempty set that is bounded above such that whenever $x
-\in A$ and $t \in \Q$ with $t < x$, then $t \in A$.  Further suppose
-$\sup\, A \notin A$.  Show that there exists a $y \in \R$ such that
-$A = \{ x \in \Q : x < y \}$.  A set such as $A$ is called a
-\emph{\myindex{Dedekind cut}}.
+Seja $A \subset \Q$ um conjunto não vazio e limitado superiormente tal que, sempre que $x
+\in A$ e $t \in \Q$ com $t < x$, então $t \in A$. Suponha também
+que $\sup\, A \notin A$. Mostre que existe $y \in \R$ tal que
+$A = \{ x \in \Q : x < y \}$. Um conjunto como $A$ é chamado de
+\emph{\myindex{corte de Dedekind}}.
 \item
-Show that there is a bijection between $\R$ and Dedekind cuts.
+Mostre que existe uma bijeção entre $\R$ e os cortes de Dedekind.
 \end{enumerate}
-Note: Dedekind used sets as in part b) in his construction of the
-real numbers.
+Observação: Dedekind usou conjuntos como os da parte b) em sua construção dos
+números reais.
 \end{exercise}
 
 \begin{exercise}
-Prove that if $A \subset \Z$ is a nonempty subset bounded below, then
-there exists a least element in $A$.
-Now describe why this statement would simplify the proof of
-\thmref{thm:arch} part \ref{thm:arch:ii} so that you do not have to assume
+Demonstre que, se $A \subset \Z$ é um subconjunto não vazio e limitado inferiormente, então
+$A$ tem um menor elemento.
+Agora descreva por que essa afirmação simplificaria a demonstração do
+\thmref{thm:arch}, parte \ref{thm:arch:ii}, de modo que não seria preciso supor
 $x \geq 0$.
 \end{exercise}
 
 \begin{samepage}
 \begin{exercise} \label{exercise:realpower}
-Let us suppose we know $x^{1/n}$ exists for every $x > 0$ and every $n \in
-\N$ (see \exerciseref{exercise:rootexistshard} above).
-For integers $p$ and $q > 0$ where $\nicefrac{p}{q}$ is in lowest terms,
-define $x^{p/q} \coloneqq
+Suponha que saibamos que $x^{1/n}$ existe para todo $x > 0$ e todo $n \in
+\N$ (veja acima \exerciseref{exercise:rootexistshard}).
+Para inteiros $p$ e $q > 0$ tais que $\nicefrac{p}{q}$ esteja em forma irredutível,
+defina $x^{p/q} \coloneqq
 {(x^{1/q})}^p$.
 \begin{enumerate}[a)]
 \item
-Show that the power is well-defined even
-if the fraction is not in lowest terms: If $\nicefrac{p}{q} =
-\nicefrac{m}{k}$ where $m$ and $k > 0$ are integers, then
+Mostre que a potência está bem definida mesmo
+se a fração não estiver em forma irredutível: se $\nicefrac{p}{q} =
+\nicefrac{m}{k}$, onde $m$ e $k > 0$ são inteiros, então
 ${(x^{1/q})}^p = {(x^{1/k})}^m$.
 \item
-Let $x$ and $y$ be two positive numbers and $r$ a rational number.
-Assuming $r > 0$, show
-$x < y$ if and only if $x^r < y^r$.  Then suppose $r < 0$ and show:
-$x < y$ if and only if $x^r > y^r$.
+Sejam $x$ e $y$ dois números positivos e $r$ um número racional.
+Supondo que $r > 0$, mostre que
+$x < y$ se, e somente se, $x^r < y^r$. Em seguida, suponha que $r < 0$ e mostre:
+$x < y$ se, e somente se, $x^r > y^r$.
 \item
-Suppose $x > 1$ and $r,s$ are rational numbers where $r < s$.
-Show $x^r < x^s$.  If $0 < x < 1$ and $r < s$, show that $x^r > x^s$.
-Hint: Write $r$ and $s$ with the same denominator.
+Suponha que $x > 1$ e que $r,s$ sejam números racionais tais que $r < s$.
+Mostre que $x^r < x^s$. Se $0 < x < 1$ e $r < s$, mostre que $x^r > x^s$.
+Dica: escreva $r$ e $s$ com o mesmo denominador.
 \item
-(Challenging)%
-\footnote{In
+(Desafio)%
+\footnote{Em
 \sectionref{sec:logandexp}
-we will define the exponential and the logarithm and
-define $x^z \coloneqq \exp(z \ln x)$.  We will then have
-sufficient machinery to make proofs of these assertions far easier.  At this
-point, however, we do not yet have these tools.}
-For an irrational $z \in \R \setminus \Q$ and $x > 1$ define
-$x^z \coloneqq \sup \{ x^r : r \leq z, r \in \Q \}$,
-for $x=1$ define $1^z = 1$,
-and for $0 < x < 1$ define
+definiremos a exponencial e o logaritmo, e
+definiremos $x^z \coloneqq \exp(z \ln x)$. Assim, teremos
+ferramentas suficientes para demonstrar essas afirmações com muito mais facilidade. Neste
+ponto, porém, ainda não dispomos dessas ferramentas.}
+Para um número irracional $z \in \R \setminus \Q$ e $x > 1$, defina
+$x^z \coloneqq \sup \{ x^r : r \leq z, r \in \Q \}$;
+para $x=1$, defina $1^z = 1$;
+e, para $0 < x < 1$, defina
 $x^z \coloneqq \inf \{ x^r : r \leq z, r \in \Q \}$.
-Prove the two assertions of part b) for all real $z$.
+Demonstre as duas afirmações da parte b) para todo número real $z$.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
@@ -1113,6 +1111,7 @@ Prove the two assertions of part b) for all real $z$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
+
 \section{Absolute value and bounded functions} \label{sec:absval}
 
 \sectionnotes{0.5--1 lecture}

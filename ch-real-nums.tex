@@ -371,143 +371,142 @@ e $b$ é uma cota inferior arbitrária de $A$,
 a maior cota inferior de $A$ existe e é igual a $-c$.
 \end{proof}
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
 \begin{exercise}
-Prove part \ref{prop:bordfield:iii} of \propref{prop:bordfield}.
-That is, let $F$ be an ordered field and $x,y,z \in F$.  Prove
-that
-if $x < 0$ and $y < z$, then $xy > xz$.
+Seja $F$ um corpo ordenado e sejam $x,y,z \in F$. Demonstre a parte
+\ref{prop:bordfield:iii} de \propref{prop:bordfield}.
+Isto é, demonstre que, se $x < 0$ e $y < z$, então $xy > xz$.
 \end{exercise}
 
 
 \begin{exercise} \label{exercise:finitesethasminmax}
-Let $S$ be an ordered set.  Let $A \subset S$ be a nonempty finite subset.
-Show that $A$ is bounded.  Furthermore,
-show that
-$\inf\, A$ exists and is in $A$ and
-$\sup\, A$ exists and is in $A$.
-Hint: Use \hyperref[induction:thm]{induction}.
+Seja $S$ um conjunto ordenado. Seja $A \subset S$ um subconjunto finito e não vazio.
+Mostre que $A$ é limitado. Além disso,
+mostre que
+$\inf\, A$ existe e pertence a $A$ e que
+$\sup\, A$ existe e pertence a $A$.
+Dica: use a \hyperref[induction:thm]{indução}.
 \end{exercise}
 
 \begin{exercise} \label{exercise:squareineq}
-Prove part \ref{prop:bordfield:vi} of \propref{prop:bordfield}.
-That is, let $x, y \in F$, where $F$ is an ordered field, such that
-$0 < x < y$.  Show that $x^2 < y^2$.
+Demonstre a parte \ref{prop:bordfield:vi} de \propref{prop:bordfield}.
+Isto é, sejam $x, y \in F$, onde $F$ é um corpo ordenado, tais que
+$0 < x < y$. Mostre que $x^2 < y^2$.
 \end{exercise}
 
 \begin{exercise}
-Let $S$ be an ordered set.  Let $B \subset S$ be bounded (above and
-below).  Let $A \subset B$ be a nonempty subset.
-Suppose all the $\inf$s and
-$\sup$s exist. Show that
+Seja $S$ um conjunto ordenado. Seja $B \subset S$ um conjunto limitado (superior
+e inferiormente). Seja $A \subset B$ um subconjunto não vazio.
+Suponha que existam todos os $\inf$s e
+$\sup$s. Mostre que
 \begin{equation*}
 \inf\, B \leq \inf\, A \leq \sup\, A \leq \sup\, B .
 \end{equation*}
 \end{exercise}
 
 \begin{exercise}
-Let $S$ be an ordered set.  Let $A \subset S$ and suppose
-$b$ is an upper bound for $A$.  Suppose $b \in A$.  Show
-that $b = \sup\, A$.
+Seja $S$ um conjunto ordenado. Seja $A \subset S$ e suponha que
+$b$ seja uma cota superior de $A$. Suponha que $b \in A$. Mostre
+que $b = \sup\, A$.
 \end{exercise}
 
 \begin{exercise}
-Let $S$ be an ordered set.  Let $A \subset S$ be nonempty and
-bounded above.
-Suppose $\sup\, A$ exists and
+Seja $S$ um conjunto ordenado. Seja $A \subset S$ não vazio e
+limitado superiormente.
+Suponha que $\sup\, A$ exista e
 $\sup\, A \notin A$.
-Show that $A$ contains a countably infinite
-subset.
+Mostre que $A$ contém um subconjunto infinito enumerável.
 %In particular, $A$ is infinite.
 \end{exercise}
 
 \begin{exercise}
-Find a nonstandard ordering of the set of natural numbers $\N$
-such that there exists a nonempty proper subset $A \subsetneq \N$
-and such that $\sup\, A$ exists in $\N$, but $\sup\, A \notin A$.
-To keep things straight, it might be a good idea to use a different
-notation for the nonstandard ordering such as $n \prec m$.
+Encontre uma ordenação não usual do conjunto dos números naturais $\N$
+tal que exista um subconjunto próprio não vazio $A \subsetneq \N$
+e tal que $\sup\, A$ exista em $\N$, mas $\sup\, A \notin A$.
+Para manter a notação clara, pode ser uma boa ideia usar uma notação diferente
+para a ordenação não usual, como $n \prec m$.
 \end{exercise}
 
 \begin{exercise}
 \pagebreak[2]
-Let $F \coloneqq \{ 0, 1, 2 \}$.
+Seja $F \coloneqq \{ 0, 1, 2 \}$.
 \begin{enumerate}[a)]
 \item
-Prove that there is
-exactly one way to define addition and multiplication so that $F$ is
-a field if $0$ and $1$ have their usual meaning of (A4) and (M4).
+Demonstre que existe uma única maneira de definir adição e multiplicação
+para que $F$ seja um corpo, se $0$ e $1$ tiverem o significado usual dos
+axiomas (A4) e (M4).
 \item
-Show that $F$ cannot be an ordered field.
+Mostre que $F$ não pode ser um corpo ordenado.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise} \label{exercise:dominatingb}
 \pagebreak[2]
-Let $S$ be an ordered set and
-let $A$ be a nonempty subset such that $\sup \, A$ exists.  Suppose there
-is a $B \subset A$ such that whenever $x \in A$ there is a $y \in B$
-such that $x \leq y$.  Show that $\sup \, B$ exists and $\sup \, B = \sup \, A$.
+Seja $S$ um conjunto ordenado e
+seja $A$ um subconjunto não vazio tal que $\sup \, A$ exista. Suponha que exista
+$B \subset A$ tal que, sempre que $x \in A$, existe $y \in B$
+com $x \leq y$. Mostre que $\sup \, B$ existe e $\sup \, B = \sup \, A$.
 \end{exercise}
 
 \begin{exercise}
-Let $D$ be the ordered set of all possible words (not just English words,
-all strings of letters of arbitrary length)
-using the Latin alphabet with only lowercase letters.  The order is the
-lexicographic order as in a dictionary (e.g.\ \emph{aa} $<$ \emph{aaa} $<$ \emph{dog} $<$ \emph{door}).
-Let $A$ be the subset of $D$ containing the words whose
-first letter is `a' (e.g.\ \emph{a} $\in A$, \emph{abcd} $\in A$).
-Show that $A$ has a supremum and find what it is.
+Seja $D$ o conjunto ordenado de todas as palavras possíveis (não apenas palavras em inglês,
+mas todas as sequências de letras de comprimento arbitrário)
+formadas com o alfabeto latino, usando somente letras minúsculas. A ordem é a
+ordem lexicográfica, como em um dicionário (por exemplo, \emph{aa} $<$ \emph{aaa} $<$ \emph{dog} $<$ \emph{door}).
+Seja $A$ o subconjunto de $D$ que contém as palavras cuja
+primeira letra é `a' (por exemplo, \emph{a} $\in A$, \emph{abcd} $\in A$).
+Mostre que $A$ tem supremo e determine qual é.
 \end{exercise}
 
 \begin{exercise}
-Let $F$ be an ordered field and $x,y,z,w \in F$.
+Sejam $F$ um corpo ordenado e $x,y,z,w \in F$.
 \begin{enumerate}[a)]
 \item
-Prove part \ref{prop:bordfield:vii} of \propref{prop:bordfield}.
-That is,
-if $x \leq y$ and $z \leq w$, then $x+z \leq y+w$.
+Demonstre a parte \ref{prop:bordfield:vii} de \propref{prop:bordfield}.
+Isto é,
+se $x \leq y$ e $z \leq w$, então $x+z \leq y+w$.
 \item
-Prove that
-if $x < y$ and $z \leq w$, then $x+z < y+w$.
+Demonstre que,
+se $x < y$ e $z \leq w$, então $x+z < y+w$.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Prove that any ordered field must contain a countably infinite set.
+Demonstre que todo corpo ordenado contém um subconjunto infinito enumerável.
 \end{exercise}
 
 \begin{exercise}
-Let $\N_{\infty} \coloneqq \N \cup \{ \infty \}$, where the elements of $\N$ are
-ordered in the usual way amongst themselves,
-and $k < \infty$ for every $k \in \N$.  Show $\N_{\infty}$ is an ordered set
-and that every subset $E \subset \N_{\infty}$ has a supremum in
-$\N_{\infty}$ (make sure to also handle the case of an empty set).
-Remark: Note that the case of the empty set will be different
-if our ordered set is the real numbers or the extended
-real numbers from the next section.  It is important that
-our ordered set here is $\N_{\infty}$.
+Seja $\N_{\infty} \coloneqq \N \cup \{ \infty \}$, onde os elementos de $\N$ são
+ordenados entre si da maneira usual,
+e $k < \infty$ para todo $k \in \N$. Mostre que $\N_{\infty}$ é um conjunto ordenado
+e que todo subconjunto $E \subset \N_{\infty}$ tem supremo em
+$\N_{\infty}$ (inclua também o caso do conjunto vazio).
+Observação: o caso do conjunto vazio será diferente
+se o conjunto ordenado for o dos números reais ou o dos números reais
+estendidos, que aparecerão na próxima seção. É importante que, neste exercício,
+o conjunto ordenado seja $\N_{\infty}$.
 \end{exercise}
 
 \begin{exercise}
-Let $S \coloneqq \{ a_k : k \in \N \} \cup \{ b_k : k \in \N \}$, ordered such that
-$a_k < b_j$ for every $k$ and $j$,
-$a_k < a_m$ whenever $k < m$,
-and $b_k > b_m$ whenever $k < m$.
+Seja $S \coloneqq \{ a_k : k \in \N \} \cup \{ b_k : k \in \N \}$, ordenado de modo que
+$a_k < b_j$ para todo $k$ e $j$,
+$a_k < a_m$ sempre que $k < m$,
+e $b_k > b_m$ sempre que $k < m$.
 \begin{enumerate}[a)]
 \item
-Show that $S$ is an ordered set.
+Mostre que $S$ é um conjunto ordenado.
 \item
-Show that every subset of $S$ is bounded (both above and below).
+Mostre que todo subconjunto de $S$ é limitado (superiormente e inferiormente).
 \item
-Find a bounded subset of $S$ that has no least upper bound.
+Encontre um subconjunto limitado de $S$ que não tenha menor cota superior.
 \end{enumerate}
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
+
 \section{The set of real numbers} \label{sec:setofreals}
 
 %mbxINTROSUBSECTION

@@ -1014,221 +1014,229 @@ Em geral, a classe de equivalência $\bigl[(a,b)\bigr]$ é denotada por
 $\nicefrac{a}{b}$.
 \end{example}
 
-\subsection{Cardinality}
+\subsection{Cardinalidade}
 
-A subtle but fundamental issue in set theory
-and one that generates a considerable amount of
-confusion among beginning students is that of cardinality,
-or \myquote{size} of sets.
+Uma questão sutil, mas fundamental, na teoria dos conjuntos, e que causa
+muita confusão entre estudantes iniciantes, é a cardinalidade, ou o
+\myquote{tamanho} dos conjuntos.
 %The concept of cardinality is fundamental in modern mathematics in general and
 %in analysis in particular.
-Indeed, in this section, we will see the first really
-unexpected theorem.
+De fato, nesta seção, veremos o primeiro teorema realmente inesperado.
 
 \begin{defn}
-Let $A$ and $B$ be sets.  We say $A$ and $B$ have the same
-\emph{\myindex{cardinality}}
-when there exists a bijection $f \colon A \to B$.  We denote
-by $\sabs{A}$ \glsadd{not:cardinality} the equivalence class of all sets with the same cardinality as
-$A$, and we simply call $\sabs{A}$ the cardinality of $A$.
+Sejam $A$ e $B$ conjuntos. Dizemos que $A$ e $B$ têm a mesma
+\emph{\myindex{cardinalidade}}
+quando existe uma bijeção $f \colon A \to B$. Denotamos
+por $\sabs{A}$ \glsadd{not:cardinality} a classe de equivalência de todos os
+conjuntos com a mesma cardinalidade que $A$ e chamamos $\sabs{A}$ simplesmente
+de cardinalidade de $A$.
 \end{defn}
 
-For example, $\{ 1,2,3 \}$ has the same cardinality as $\{ a,b,c \}$ by
-defining a bijection $f(1) \coloneqq a$, $f(2) \coloneqq b$, $f(3) \coloneqq c$.
-Clearly, the bijection is not unique.
+Por exemplo, $\{ 1,2,3 \}$ tem a mesma cardinalidade que $\{ a,b,c \}$ se
+definirmos a bijeção $f(1) \coloneqq a$, $f(2) \coloneqq b$,
+$f(3) \coloneqq c$.
+Evidentemente, essa bijeção não é única.
 
-The existence of a bijection really is an equivalence relation.
-The identity function, $f(x) \coloneqq x$, is a bijection showing reflexivity.
-If $f$ is a bijection, then so is $f^{-1}$, showing symmetry.
-If $f \colon A \to B$ and $g \colon B \to C$ are bijections, then
-$g \circ f$ is a bijection of $A$ and $C$, showing transitivity.
-A set $A$ has the same cardinality as the empty set if and only
-if $A$ itself is the empty set:  If $B$ is nonempty, then
-no function $f \colon B \to \emptyset$ can exist.
-In particular, there is no bijection of $B$ and $\emptyset$.
+A relação \myquote{ter a mesma cardinalidade} é, de fato, uma relação de
+equivalência.
+A função identidade, $f(x) \coloneqq x$, é uma bijeção que mostra a
+reflexividade.
+Se $f$ é uma bijeção, então $f^{-1}$ também é, o que mostra a simetria.
+Se $f \colon A \to B$ e $g \colon B \to C$ são bijeções, então
+$g \circ f$ é uma bijeção entre $A$ e $C$, o que mostra a transitividade.
+Um conjunto $A$ tem a mesma cardinalidade que o conjunto vazio se, e somente
+se $A$ é o próprio conjunto vazio: se $B$ não é vazio, não existe função
+$f \colon B \to \emptyset$.
+Em particular, não existe bijeção entre $B$ e $\emptyset$.
 
 \begin{defn}
-If $A$ has the same cardinality as $\{ 1,2,3,\ldots,n \}$
-for some $n \in \N$,
-we write $\sabs{A} \coloneqq n$.  If $A$ is empty, we write
+Se $A$ tem a mesma cardinalidade que $\{ 1,2,3,\ldots,n \}$
+para algum $n \in \N$,
+escrevemos $\sabs{A} \coloneqq n$. Se $A$ é vazio, escrevemos
 $\sabs{A} \coloneqq 0$.
-In either case, we say that $A$ is
-\emph{\myindex{finite}}.
-We say $A$ is \emph{\myindex{infinite}} or \myquote{of infinite cardinality}
-if $A$ is not finite.
+Em ambos os casos, dizemos que $A$ é
+\emph{\myindex{finito}}.
+Dizemos que $A$ é \emph{\myindex{infinito}} ou tem
+\myquote{cardinalidade infinita} se $A$ não for finito.
 \end{defn}
 
-That the notation $\sabs{A} = n$ is justified, we leave as an exercise.  That
-is, for each nonempty finite set $A$, there exists a unique natural number
-$n$ such that there exists a bijection from $A$ to $\{ 1,2,3,\ldots,n \}$.
+Deixamos como exercício verificar que a notação $\sabs{A} = n$ é justificada.
+Isto é, para cada conjunto finito não vazio $A$, existe um único número
+natural $n$ tal que há uma bijeção de $A$ em $\{ 1,2,3,\ldots,n \}$.
 
-We can order sets by size (cardinality).
+Podemos ordenar conjuntos pelo tamanho (cardinalidade).
 
 \begin{defn} \label{def:comparecards}
-We write
+Escrevemos
 \begin{equation*}
 \sabs{A} \leq \sabs{B}
 \end{equation*}
-if there exists an injection from $A$ to $B$.  We write $\sabs{A} = \sabs{B}$
-if $A$ and $B$ have the same cardinality.  We write $\sabs{A} < \sabs{B}$
-if $\sabs{A} \leq \sabs{B}$, but $A$ and $B$ do not have the same cardinality.
+se existe uma injeção de $A$ em $B$. Escrevemos $\sabs{A} = \sabs{B}$
+se $A$ e $B$ têm a mesma cardinalidade. Escrevemos $\sabs{A} < \sabs{B}$
+se $\sabs{A} \leq \sabs{B}$, mas $A$ e $B$ não têm a mesma cardinalidade.
 \end{defn}
 
-We state without proof that
-$A$ and $B$ have the same cardinality if and only if
-$\sabs{A} \leq \sabs{B}$ and
-$\sabs{B} \leq \sabs{A}$.  This result is the
-\myindex{Cantor--Bernstein--Schr\"oder} theorem.
-Furthermore, if $A$ and $B$ are any two sets,
-we can always write $\sabs{A} \leq \sabs{B}$ or
-$\sabs{B} \leq \sabs{A}$.  The issues surrounding this
-last statement are very subtle.  As we do not require either
-of these two statements, we omit proofs.
+Enunciamos, sem demonstração, que
+$A$ e $B$ têm a mesma cardinalidade se, e somente se,
+$\sabs{A} \leq \sabs{B}$ e
+$\sabs{B} \leq \sabs{A}$. Esse resultado é o teorema de
+\myindex{Cantor--Bernstein--Schr\"oder}.
+Além disso, para quaisquer dois conjuntos $A$ e $B$,
+sempre podemos escrever $\sabs{A} \leq \sabs{B}$ ou
+$\sabs{B} \leq \sabs{A}$. As questões relacionadas a essa
+última afirmação são muito sutis. Como não precisamos de nenhum
+desses dois resultados, omitimos as demonstrações.
 
-The truly interesting cases of cardinality are infinite sets.
-We will distinguish two types of infinite cardinality.
+Os casos realmente interessantes de cardinalidade são os de conjuntos
+infinitos.
+Vamos distinguir dois tipos de cardinalidade infinita.
 
 \begin{defn}
-If $\sabs{A} = \sabs{\N}$, then we say $A$ is
-\emph{\myindex{countably infinite}}.
-If $A$ is finite or countably infinite, then we say $A$
-is \emph{\myindex{countable}}.
-If $A$ is not countable, then
-$A$ is said to be \emph{\myindex{uncountable}}.
+Se $\sabs{A} = \sabs{\N}$, dizemos que $A$ é
+\emph{\myindex{infinito enumer\'avel}}.
+Se $A$ é finito ou infinito enumerável, dizemos que $A$
+é \emph{\myindex{enumer\'avel}}.
+Se $A$ não é enumerável,
+dizemos que $A$ é \emph{\myindex{n\~ao enumer\'avel}}.
 \end{defn}
 
-The cardinality of $\N$ is usually denoted as
-$\aleph_0$ (read as aleph-naught)\footnote{For the fans of the TV show
-\emph{Futurama}, there is a movie theater in one episode
-called an $\aleph_0$-plex.}.
+A cardinalidade de $\N$ costuma ser denotada por
+$\aleph_0$ (lê-se alef zero)\footnote{Para os fãs do programa de TV
+\emph{Futurama}, há uma sala de cinema em um episódio
+chamada de $\aleph_0$-plex.}.
 
 \begin{example}
-The set of even natural numbers has the same cardinality as $\N$.  Proof:
-Let $E \subset \N$ be the set of even natural numbers.
-Given $k \in E$, write $k=2n$ for some $n \in \N$.
-Then $f(n) \coloneqq 2n$ defines a bijection $f \colon \N \to E$.
+O conjunto dos números naturais pares tem a mesma cardinalidade que $\N$.
+Demonstração: Seja $E \subset \N$ o conjunto dos números naturais pares.
+Dado $k \in E$, escrevemos $k=2n$ para algum $n \in \N$.
+Então $f(n) \coloneqq 2n$ define uma bijeção $f \colon \N \to E$.
 \end{example}
 
-In fact, we mention without proof the following characterization
-of infinite sets: \emph{A set is infinite if and only if it is in one-to-one
-correspondence with a proper subset of itself}.
+Mencionamos, sem demonstração, a seguinte caracterização dos conjuntos
+infinitos: \emph{Um conjunto é infinito se, e somente se, está em
+correspondência biunívoca com algum subconjunto próprio de si mesmo}.
 
 \begin{example}
-$\N \times \N$ is a countably infinite set.  Proof: Arrange the
-elements of $\N \times \N$ as follows
-$(1,1)$, $(1,2)$, $(2,1)$, $(1,3)$, $(2,2)$, $(3,1)$, \ldots.  That is,
-first write down all the elements whose two entries sum to $k$,
-then write down all the elements whose entries sum to $k+1$, and so on.
-Define a bijection with $\N$ by letting 1 go to $(1,1)$,
-2 go to $(1,2)$, and so on.  See \figureref{fig:NcrossNcard}.
+$\N \times \N$ é um conjunto infinito enumerável. Demonstração: Organizemos
+os elementos de $\N \times \N$ da seguinte maneira:
+$(1,1)$, $(1,2)$, $(2,1)$, $(1,3)$, $(2,2)$, $(3,1)$, \ldots. Isto é,
+primeiro listamos todos os elementos cujas duas entradas somam $k$,
+depois listamos todos aqueles cujas entradas somam $k+1$, e assim por diante.
+Definimos uma bijeção com $\N$ fazendo 1 corresponder a $(1,1)$,
+2 corresponder a $(1,2)$, e assim por diante. Veja \figureref{fig:NcrossNcard}.
 \begin{myfigureht}
 \myincludepdft{NcrossNcard}{%
-A grid of pairs (row,column) is given with an arrow
-going from (1,1) to (1,2), then to
-(2,1) diagonally down and left, then to (1,3), then diagonally
-down and left to (2,2) and then to (3,1), then
-an arrow to (1,4), then diagonally down and left to (2,3),
-then (3,2), then (4,1).  Dots indicate the diagram is infinite.}
-\caption{Showing $\N \times \N$ is countable.\label{fig:NcrossNcard}}
+Uma grade de pares (linha, coluna) é percorrida por uma seta que vai
+de (1,1) a (1,2), depois a
+(2,1), diagonalmente para baixo e para a esquerda, e então a (1,3); em seguida,
+diagonalmente para baixo e para a esquerda até (2,2) e depois até (3,1). Uma
+seta segue até (1,4) e continua diagonalmente para baixo e para a esquerda por
+(2,3), (3,2) e (4,1). Reticências indicam que o diagrama é infinito.}
+\caption{Mostrando que $\N \times \N$ é enumerável.\label{fig:NcrossNcard}}
 \end{myfigureht}
 \end{example}
 
 \begin{example}
-The set of rational numbers is countable.  Proof: (informal)
-For positive rational numbers, follow the same procedure
-as in the previous example, writing
-$\nicefrac{1}{1}$, $\nicefrac{1}{2}$, $\nicefrac{2}{1}$, etc.  However,
-leave out fractions (such as $\nicefrac{2}{2}$)
-that have already appeared.  The list would continue:
+O conjunto dos números racionais é enumerável. Demonstração (informal):
+Para os racionais positivos, seguimos o mesmo procedimento do exemplo
+anterior, escrevendo
+$\nicefrac{1}{1}$, $\nicefrac{1}{2}$, $\nicefrac{2}{1}$ etc. No entanto,
+omitimos as frações (como $\nicefrac{2}{2}$)
+que já apareceram. A lista continua assim:
 $\nicefrac{1}{3}$, $\nicefrac{3}{1}$, $\nicefrac{1}{4}$,
-$\nicefrac{2}{3}$, etc.
-For all rational numbers, include $0$ and the negative numbers:
+$\nicefrac{2}{3}$ etc.
+Para listar todos os racionais, incluímos o $0$ e os números negativos:
 $0$,
 $\nicefrac{1}{1}$,
 $\nicefrac{-1}{1}$,
 $\nicefrac{1}{2}$,
-$\nicefrac{-1}{2}$, etc.
+$\nicefrac{-1}{2}$ etc.
 \end{example}
 
-For completeness, we mention the following statements
-from the exercises.
-\emph{If $A \subset
-B$ and $B$ is countable, then $A$ is countable.}  The contrapositive of the
-statement is that if $A$ is
-uncountable, then $B$ is uncountable.
-As a consequence, if $\sabs{A} < \sabs{\N}$, then $A$ is
-finite.
-Similarly, if $B$ is finite and $A \subset B$, then $A$ is finite.
+Para completar, mencionamos as seguintes afirmações que aparecem nos
+exercícios.
+\emph{Se $A \subset
+B$ e $B$ é enumerável, então $A$ é enumerável.} A contrapositiva dessa
+afirmação diz que, se $A$ não é enumerável, então $B$ também não é
+enumerável.
+Como consequência, se $\sabs{A} < \sabs{\N}$, então $A$ é
+finito.
+De modo semelhante, se $B$ é finito e $A \subset B$, então $A$ é finito.
 
 %FIXMEevillayouthack
 \pagebreak[2]
-We give the first truly striking result about cardinality.
-To do so, we need a notation for
-the set of all subsets of a set.
+Apresentamos agora o primeiro resultado realmente surpreendente sobre
+cardinalidade.
+Para isso, precisamos de uma notação para
+o conjunto de todos os subconjuntos de um conjunto.
 
 \begin{defn}
-The \emph{\myindex{power set}} of a set $A$, denoted by $\sP(A)$,
-\glsadd{not:powerset} is the set of all subsets of $A$.
+O \emph{\myindex{conjunto das partes}} de um conjunto $A$, denotado por
+$\sP(A)$,\glsadd{not:powerset} é o conjunto de todos os subconjuntos de $A$.
 \end{defn}
 
-For example, if $A \coloneqq \{ 1,2\}$,
-then $\sP(A) = \bigl\{ \emptyset, \{ 1 \}, \{ 2 \}, \{ 1, 2 \} \bigr\}$.
-In particular, $\sabs{A} = 2$ and $\babs{\sP(A)} = 4 = 2^2$.
-In general,
-for a finite set $A$ of cardinality $n$, the
-cardinality of $\sP(A)$ is $2^n$.
-This fact is left as an exercise.  
-Hence, for a finite set $A$,
-the cardinality of $\sP(A)$ is strictly
-larger than the
-cardinality of $A$.  What is an unexpected and
-striking fact is that this statement is also true for infinite sets.
+Por exemplo, se $A \coloneqq \{ 1,2\}$,
+então $\sP(A) = \bigl\{ \emptyset, \{ 1 \}, \{ 2 \}, \{ 1, 2 \} \bigr\}$.
+Em particular, $\sabs{A} = 2$ e $\babs{\sP(A)} = 4 = 2^2$.
+Em geral,
+para um conjunto finito $A$ de cardinalidade $n$,
+a cardinalidade de $\sP(A)$ é $2^n$.
+Deixamos esse fato como exercício.
+Portanto, para um conjunto finito $A$,
+a cardinalidade de $\sP(A)$ é estritamente
+maior que a
+cardinalidade de $A$. O fato inesperado e
+surpreendente é que essa afirmação também vale para conjuntos infinitos.
 
 \begin{thm}[Cantor%
-\footnote{Named after the German mathematician
+\footnote{Em homenagem ao matemático alemão
 \href{https://en.wikipedia.org/wiki/Georg_Cantor}{Georg Ferdinand Ludwig
 Philipp Cantor} (1845--1918).}]
-\index{Cantor's theorem}
+\index{teorema de Cantor}
 \label{cantorspowersetthm}
-Let $A$ be a set.  Then
+Seja $A$ um conjunto. Então
 $\sabs{A} < \babs{\sP(A)}$.
-In particular, there exists no surjection from
-$A$ onto $\sP(A)$.
+Em particular, não existe função sobrejetora de
+$A$ em $\sP(A)$.
 \end{thm}
 
 \begin{proof}
-An injection $f \colon A \to \sP(A)$ exists:
-For $x \in A$, let $f(x) \coloneqq \{ x \}$.  Thus,
+Existe uma injeção $f \colon A \to \sP(A)$:
+para $x \in A$, seja $f(x) \coloneqq \{ x \}$. Assim,
 $\sabs{A} \leq \babs{\sP(A)}$.
 
-To finish the proof, we must show that
-no function $g \colon A \to \sP(A)$ is a surjection.
-Suppose 
-$g \colon A \to \sP(A)$ is a function.  So for $x \in A$,
-$g(x)$ is a subset of $A$.  Define the set
+Para concluir a demonstração, devemos mostrar que
+nenhuma função $g \colon A \to \sP(A)$ é sobrejetora.
+Suponha que
+$g \colon A \to \sP(A)$ seja uma função. Então, para $x \in A$,
+$g(x)$ é um subconjunto de $A$. Definimos o conjunto
 \begin{equation*}
 B \coloneqq \bigl\{ x \in A : x \notin g(x) \bigr\} .
 \end{equation*}
-We claim that $B$ is not in the range of $g$ and hence $g$ is not a
-surjection.  Suppose for contradiction that there exists an $x_0$ such that $g(x_0) = B$.
-Either $x_0 \in B$ or $x_0 \notin B$.  If $x_0 \in B$, then $x_0 \notin
-g(x_0) = B$, which is a contradiction.  If $x_0 \notin B$, then $x_0 \in
-g(x_0) = B$, which is again a contradiction.  Thus such an $x_0$ does not
-exist.  Therefore, $B$ is not in the range of $g$, and $g$ is not a
-surjection.  As $g$ was an arbitrary function, no surjection exists.
+Afirmamos que $B$ não pertence à imagem de $g$ e, portanto, $g$ não é
+sobrejetora. Suponha, por contradição, que exista um $x_0$ tal que
+$g(x_0) = B$.
+Ou $x_0 \in B$ ou $x_0 \notin B$. Se $x_0 \in B$, então $x_0 \notin
+g(x_0) = B$, o que é uma contradição. Se $x_0 \notin B$, então $x_0 \in
+g(x_0) = B$, o que também é uma contradição. Logo, tal $x_0$ não
+existe. Portanto, $B$ não pertence à imagem de $g$, e $g$ não é
+sobrejetora. Como $g$ era uma função arbitrária, não existe nenhuma função
+sobrejetora.
 \end{proof}
 
-One particular consequence of this 
-theorem is that there do exist uncountable sets,
-as $\sP(\N)$ must be uncountable.
-A related fact is that
-the set of real numbers (which we study in the next chapter) is uncountable.
-The existence of uncountable sets may seem unintuitive, and the theorem
-caused quite a controversy at the time
-it was announced.  The theorem not only says that uncountable sets exist,
-but that there, in fact, exist progressively larger
-and larger infinite sets $\N$, $\sP(\N)$,
-$\sP(\sP(\N))$, $\sP(\sP(\sP(\N)))$, etc.
+Uma consequência particular deste teorema é a existência de conjuntos não
+enumeráveis, pois $\sP(\N)$ necessariamente não é enumerável.
+Um fato relacionado é que
+o conjunto dos números reais (que estudaremos no próximo capítulo) não é
+enumerável.
+A existência de conjuntos não enumeráveis pode parecer contraintuitiva, e o
+teorema causou bastante controvérsia na época
+em que foi anunciado. O teorema não afirma apenas que existem conjuntos não
+enumeráveis: afirma também que, de fato, existem conjuntos infinitos cada vez
+maiores,
+$\N$, $\sP(\N)$,
+$\sP(\sP(\N))$, $\sP(\sP(\sP(\N)))$ etc.
+
 
 \subsection{Exercises}
 

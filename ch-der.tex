@@ -1,124 +1,116 @@
-\chapter{The Derivative} \label{der:chapter}
+\chapter{A derivada} \label{der:chapter}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{The derivative}
+\section{A derivada}
 \label{sec:der}
 
 %mbxINTROSUBSECTION
 
-\sectionnotes{1 lecture}
+\sectionnotes{1 aula}
 
-The idea of a derivative is the following.
-If the graph of a function looks locally like a straight line,
-then we can talk about the slope of this line.
-The slope tells us the rate at which 
-the value of the function is changing at that particular point.
-Of course, we are leaving out any function that has corners or
-discontinuities.  
-Let us be precise.
+A ideia de derivada é a seguinte.
+Se o gráfico de uma função se parece localmente com uma reta,
+podemos falar da inclinação dessa reta.
+A inclinação indica a taxa de variação do valor da função naquele ponto.
+Naturalmente, estamos deixando de lado as funções que têm bicos ou
+descontinuidades.
+Sejamos precisos.
 
-\subsection{Definition and basic properties}
+\subsection{Definição e propriedades básicas}
 
 \begin{defn}
-Let $I$ be an interval, let
-$f \colon I \to \R$ be a function, and let $c \in I$.  If 
-the limit
+Seja $I$ um intervalo, seja
+$f \colon I \to \R$ uma função e seja $c \in I$. Se o limite
 \begin{equation*}
 L \coloneqq \lim_{x \to c} \frac{f(x)-f(c)}{x-c} 
 \end{equation*}
-exists, then we say $f$ is
-\emph{\myindex{differentiable}}\index{function!differentiable} at
-$c$, we call $L$ the \emph{\myindex{derivative}} of $f$ at $c$,
-and we write $f'(c) \coloneqq L$.\glsadd{not:derivative}
+existe, dizemos que $f$ é
+\emph{\myindex{diferenciável}}\index{função!diferenciável} em
+$c$, chamamos $L$ de \emph{\myindex{derivada}} de $f$ em $c$
+e escrevemos $f'(c) \coloneqq L$.\glsadd{not:derivative}
 
 \medskip
 
-If $f$ is differentiable at all $c \in I$, then we simply say that
-$f$ is \emph{differentiable}, and then we obtain a function
+Se $f$ é diferenciável em todo $c \in I$, dizemos simplesmente que
+$f$ é \emph{diferenciável}; assim, obtemos uma função
 $f' \colon I \to \R$.
-The derivative is sometimes written as $\frac{df}{dx}$ or
+Às vezes, a derivada é denotada por $\frac{df}{dx}$ ou
 $\frac{d}{dx}\bigl( f(x) \bigr)$.
 
 \medskip
 
-The expression $\frac{f(x)-f(c)}{x-c}$ is called the
-\emph{\myindex{difference quotient}}.
+A expressão $\frac{f(x)-f(c)}{x-c}$ é chamada de
+\emph{\myindex{quociente de diferenças}}.
 \end{defn}
 
-The graphical interpretation of the derivative is  depicted in
-\figureref{derivfig}.  The left-hand plot gives the line through
-$\bigl(c,f(c)\bigr)$
-and $\bigl(x,f(x)\bigr)$ with slope
-$\frac{f(x)-f(c)}{x-c}$, that is,
-the \emph{\myindex{secant line}}.  When we take the limit as $x$ goes to $c$,
-we get the right-hand plot, where we see
-that the derivative of the function
-at the point $c$ is the slope of the line tangent to the graph of $f$
-at the point $\bigl(c,f(c)\bigr)$.
+A interpretação gráfica da derivada está ilustrada na
+\figureref{derivfig}. O gráfico à esquerda mostra a reta que passa por
+$\bigl(c,f(c)\bigr)$ e $\bigl(x,f(x)\bigr)$, com inclinação
+$\frac{f(x)-f(c)}{x-c}$; essa é a
+\emph{\myindex{reta secante}}. Ao tomarmos o limite quando $x$ tende a $c$,
+obtemos o gráfico à direita, em que vemos que a derivada da função
+no ponto $c$ é a inclinação da reta tangente ao gráfico de $f$
+no ponto $\bigl(c,f(c)\bigr)$.
 
 \begin{myfigureht}
 \myincludepdft{deriv_derivd}{%
-Two diagrams of a plot of a function f.  On the left,
-the points c and x are marked on the horizontal axis.
-The corresponding points on the graph of f are marked
-and through them is drawn a line (a secant line).  It is labeled
-with slope equals f of x -f of c the entire thing divided
-by quantity x minus c.
-On the right, the same function is drawn but only the point c
-is marked.  A line that is tangent to the graph of f
-through the corresponding point is drawn and labeled
-with slope equals f prime of c.}
-\caption{Graphical interpretation of the derivative.\label{derivfig}}
+Dois diagramas do gráfico de uma função f. À esquerda,
+os pontos c e x estão marcados no eixo horizontal.
+Os pontos correspondentes no gráfico de f também estão marcados,
+e uma reta secante passa por eles. Sua inclinação está indicada por
+f de x menos f de c, tudo dividido por x menos c.
+À direita, a mesma função está representada, mas apenas o ponto c
+está marcado. Uma reta tangente ao gráfico de f passa pelo ponto
+correspondente e está identificada com inclinação igual a f linha de c.}
+\caption{Interpretação gráfica da derivada.\label{derivfig}}
 \end{myfigureht}
 
-We allow $I$ to be a closed interval and we allow
-$c$ to be an endpoint of $I$.  Some calculus books do not allow $c$ to be an
-endpoint of an interval, but all the theory still works by allowing it, and
-it makes our work easier.
+Permitimos que $I$ seja um intervalo fechado e que
+$c$ seja uma extremidade de $I$. Alguns livros de cálculo não permitem que
+$c$ seja uma extremidade do intervalo, mas toda a teoria continua válida
+quando a permitimos, e isso simplifica nosso trabalho.
 
 \begin{example}
-Let $f(x) \coloneqq x^2$ be defined on the whole real line.  Let $c \in \R$ be arbitrary.  We find that if
-$x \neq c$,
+Seja $f(x) \coloneqq x^2$ definida em toda a reta real. Seja $c \in \R$
+arbitrário. Vemos que, se $x \neq c$,
 \begin{equation*}
 \frac{x^2-c^2}{x-c} =
 \frac{(x+c)(x-c)}{x-c} =
 (x+c) .
 \end{equation*}
-Therefore,
+Portanto,
 \begin{equation*}
-f'(c) = 
+f'(c) =
 \lim_{x\to c} \frac{x^2-c^2}{x-c} =
 \lim_{x\to c} (x+c) = 2c.
 \end{equation*}
 \end{example}
 
 \begin{example}
-Let $f(x) \coloneqq ax + b$ for numbers $a, b \in \R$.
-Let $c \in \R$ be arbitrary.
-For $x \neq c$,
+Seja $f(x) \coloneqq ax + b$, em que $a, b \in \R$.
+Seja $c \in \R$ arbitrário.
+Para $x \neq c$,
 \begin{equation*}
 \frac{f(x)-f(c)}{x-c} =
 \frac{a(x-c)}{x-c} = a .
 \end{equation*}
-Therefore,
+Portanto,
 \begin{equation*}
 f'(c) =
-\lim_{x\to c} 
+\lim_{x\to c}
 \frac{f(x)-f(c)}{x-c} =
-\lim_{x\to c} 
+\lim_{x\to c}
 a = a.
 \end{equation*}
-In fact, every differentiable function \myquote{infinitesimally} behaves like
-the affine function $ax + b$.  You can guess many results
-and formulas for derivatives if you work them out for affine functions
-first.
+De fato, toda função diferenciável se comporta \myquote{infinitesimalmente}
+como a função afim $ax + b$. É possível conjecturar muitos resultados
+e fórmulas para derivadas calculando-as primeiro para funções afins.
 \end{example}
 
 \begin{example}
-The function $f(x) \coloneqq \sqrt{x}$ is differentiable for $x > 0$.  To see this
-fact, fix $c > 0$,
-and suppose $x \neq c$ and $x > 0$.  Compute
+A função $f(x) \coloneqq \sqrt{x}$ é diferenciável para $x > 0$. Para ver
+isso, fixe $c > 0$ e suponha que $x \neq c$ e $x > 0$. Calcule
 \begin{equation*}
 \frac{\sqrt{x}-\sqrt{c}}{x-c}
 =
@@ -126,7 +118,7 @@ and suppose $x \neq c$ and $x > 0$.  Compute
 =
 \frac{1}{\sqrt{x}+\sqrt{c}} .
 \end{equation*}
-Therefore,
+Portanto,
 \begin{equation*}
 f'(c) =
 \lim_{x\to c}
@@ -140,96 +132,95 @@ f'(c) =
 \end{example}
 
 \begin{example}
-The function $f(x) \coloneqq \sabs{x}$ is not differentiable
-at the origin.  When $x > 0$,
+A função $f(x) \coloneqq \sabs{x}$ não é diferenciável
+na origem. Quando $x > 0$,
 \begin{equation*}
 \frac{\sabs{x}-\sabs{0}}{x-0} =
 \frac{x-0}{x-0} = 1 .
 \end{equation*}
-When $x < 0$,
+Quando $x < 0$,
 \begin{equation*}
 \frac{\sabs{x}-\sabs{0}}{x-0} =
 \frac{-x-0}{x-0} = -1 .
 \end{equation*}
 \end{example}
 
-A famous example of Weierstrass shows that there exists a continuous
-function that is not differentiable at \emph{any} point.  The construction
-of this function is beyond the scope of this chapter.  On the other hand,
-a differentiable function is always continuous.
+Um famoso exemplo de Weierstrass mostra que existe uma função contínua
+que não é diferenciável em \emph{nenhum} ponto. A construção dessa função
+está além do escopo deste capítulo. Por outro lado, toda função diferenciável
+é contínua.
 
 \begin{prop}
-If $f \colon I \to \R$ is differentiable at $c \in I$,
-then it is continuous at $c$.
+Se $f \colon I \to \R$ é diferenciável em $c \in I$,
+então é contínua em $c$.
 \end{prop}
 
 \begin{proof}
-We know the limits
+Sabemos que os limites
 \begin{equation*}
 \lim_{x\to c}\frac{f(x)-f(c)}{x-c} = f'(c)
 \qquad
-\text{and}
+\text{e}
 \qquad
 \lim_{x\to c}(x-c) = 0
 \end{equation*}
-exist.  Furthermore,
+existem. Além disso,
 \begin{equation*}
 f(x)-f(c) = 
 \left( \frac{f(x)-f(c)}{x-c} \right) (x-c) .
 \end{equation*}
-Therefore, the limit of $f(x)-f(c)$ exists and
+Portanto, o limite de $f(x)-f(c)$ existe e
 \begin{equation*}
 \lim_{x\to c} \bigl( f(x)-f(c) \bigr) =
 \left(\lim_{x\to c} \frac{f(x)-f(c)}{x-c} \right)
 \left(\lim_{x\to c} (x-c) \right) =
 f'(c) \cdot 0  = 0.
 \end{equation*}
-Hence, $\lim\limits_{x\to c} f(x) = f(c)$, and $f$ is continuous at $c$.
+Logo, $\lim\limits_{x\to c} f(x) = f(c)$, e $f$ é contínua em $c$.
 \end{proof}
 
-An important property of the derivative is linearity.  The
-derivative is the approximation of a function by a straight line.
-The slope of a line through two points changes linearly when the
-$y$-coordinates are changed linearly.  Taking the limit,
-it makes sense that the derivative is linear.
+Uma propriedade importante da derivada é a linearidade. A derivada aproxima
+uma função por uma reta. A inclinação da reta que passa por dois pontos
+varia linearmente quando as coordenadas $y$ variam linearmente.
+Ao tomarmos o limite, faz sentido que a derivada seja linear.
 
-\begin{prop}[Linearity]
-\index{linearity of the derivative}
-Let $I$ be an interval, let
-$f \colon I \to \R$ and $g \colon I \to \R$ be differentiable at $c \in I$,
-and let $\alpha \in \R$.
+\begin{prop}[Linearidade]
+\index{linearidade da derivada}
+Seja $I$ um intervalo, sejam
+$f \colon I \to \R$ e $g \colon I \to \R$ diferenciáveis em $c \in I$,
+e seja $\alpha \in \R$.
 \begin{enumerate}[(i)]
 \item
-Define $h \colon I \to \R$ by $h(x) \coloneqq \alpha f(x)$.  Then
-$h$ is differentiable at $c$ and
+Defina $h \colon I \to \R$ por $h(x) \coloneqq \alpha f(x)$. Então
+$h$ é diferenciável em $c$ e
 $h'(c) = \alpha f'(c)$.
 \item
-Define $h \colon I \to \R$ by $h(x) \coloneqq  f(x) + g(x)$.  Then
-$h$ is differentiable at $c$ and
+Defina $h \colon I \to \R$ por $h(x) \coloneqq f(x) + g(x)$. Então
+$h$ é diferenciável em $c$ e
 $h'(c) =  f'(c) + g'(c)$.
 \end{enumerate}
 \end{prop}
 
 \begin{proof}
-First, let $h(x) \coloneqq \alpha f(x)$.
-For $x \in I$, $x \neq c$,
+Primeiro, seja $h(x) \coloneqq \alpha f(x)$.
+Para $x \in I$, $x \neq c$,
 \begin{equation*}
 \frac{h(x)-h(c)}{x-c} =
 \frac{\alpha f(x) - \alpha f(c)}{x-c}
 =
 \alpha \frac{f(x) - f(c)}{x-c} .
 \end{equation*}
-The limit as $x$ goes to $c$ exists on the right-hand side
-by \corref{falg:cor}.  We get
+O limite quando $x$ tende a $c$ existe no lado direito
+por \corref{falg:cor}. Assim,
 \begin{equation*}
 \lim_{x\to c}\frac{h(x)-h(c)}{x-c} =
 \alpha \lim_{x\to c} \frac{f(x) - f(c)}{x-c} .
 \end{equation*}
-Therefore, $h$ is differentiable at $c$,
-and the derivative is computed as given.
+Portanto, $h$ é diferenciável em $c$,
+e a derivada é calculada como indicado.
 
-Next, define $h(x) \coloneqq f(x)+g(x)$.
-For $x \in I$, $x \neq c$, we have
+Em seguida, defina $h(x) \coloneqq f(x)+g(x)$.
+Para $x \in I$, $x \neq c$, temos
 \begin{equation*}
 \frac{h(x)-h(c)}{x-c} =
 \frac{\bigl(f(x) + g(x)\bigr) - \bigl(f(c) + g(c)\bigr)}{x-c}
@@ -238,139 +229,135 @@ For $x \in I$, $x \neq c$, we have
 +
 \frac{g(x) - g(c)}{x-c} .
 \end{equation*}
-The limit as $x$ goes to $c$ exists on the right-hand side
-by \corref{falg:cor}.  We get
+O limite quando $x$ tende a $c$ existe no lado direito
+por \corref{falg:cor}. Assim,
 \begin{equation*}
 \lim_{x\to c}\frac{h(x)-h(c)}{x-c} =
 \lim_{x\to c} \frac{f(x) - f(c)}{x-c}
 +
 \lim_{x\to c}\frac{g(x) - g(c)}{x-c} .
 \end{equation*}
-Therefore, $h$ is differentiable at $c$,
-and the derivative is computed as given.
+Portanto, $h$ é diferenciável em $c$,
+e a derivada é calculada como indicado.
 \end{proof}
 
-It is not true that the derivative of a product of two functions is
-the product of the derivatives.
-Instead, we get what is called the \emph{product rule}
-or the \emph{\myindex{Leibniz rule}}%
-\footnote{Named for the German mathematician
+A derivada do produto de duas funções não é o produto das derivadas.
+Em vez disso, obtemos o que se chama \emph{regra do produto}
+ou \emph{\myindex{regra de Leibniz}}%
+\footnote{Em homenagem ao matemático alemão
 \href{https://en.wikipedia.org/wiki/Leibniz}{Gottfried Wilhelm Leibniz}
 (1646--1716).}.
 
-\begin{prop}[Product rule]\index{product rule}
-Let $I$ be an interval, let
-$f \colon I \to \R$ and $g \colon I \to \R$ be 
-functions differentiable at $c$.  If $h \colon I \to \R$
-is defined by
+\begin{prop}[Regra do produto]\index{regra do produto}
+Seja $I$ um intervalo, sejam
+$f \colon I \to \R$ e $g \colon I \to \R$ funções diferenciáveis em $c$.
+Se $h \colon I \to \R$ é definida por
 \begin{equation*}
 h(x) \coloneqq f(x) g(x) ,
 \end{equation*}
-then $h$ is differentiable at $c$ and
+então $h$ é diferenciável em $c$ e
 \begin{equation*}
 h'(c) = f(c) g'(c) + f'(c) g(c) .
 \end{equation*}
 \end{prop}
 
-The proof of the product rule is left as an exercise.  The key to the proof is 
-the identity
+A demonstração da regra do produto fica como exercício. A identidade
+fundamental para a demonstração é
 $f(x) g(x) - f(c) g(c) =
 f(x)\bigl( g(x) - g(c) \bigr)
 + \bigl( f(x) - f(c) \bigr) g(c)$,
-which is illustrated in \figureref{figprodrule}.
+como ilustra a \figureref{figprodrule}.
 \begin{myfigureht}
 \myincludepdft{figprodrule}{%
-A diagram of a rectangular area in the plane, divided
-into 3 rectangles.  The horizontal side runs from 0 to
-f of x, and the vertical side runs from 0 to g of x.
-The largest white area is a rectangle that runs horizontally
-from 0 to some f of c, which is slightly less than f of x,
-and vertically from 0 to some g of c, which is slightly less than
-g of x.  This white area is labeled as f of c times g of c.
-On top, there is a thin lightly shaded rectangle running
-on the horizontal side from 0 to f of x, and on the vertical
-side from g of c to g of x.  It is labeled 
-as f of x times the quantity g of x minus g of c.
-Finally, there is a thin darkly shaded rectangle
-running horizontally from f of c to f of x and vertically
-from 0 to g of c.  It is labeled as f of x minus f of c
-the entire thing times g of c.}
-\caption{The idea of product rule.  The area of the entire rectangle
-$f(x)g(x)$ differs from the area of the unshaded rectangle $f(c)g(c)$
-by the area of the two shaded rectangles 
-$f(x)\bigl( g(x) - g(c) \bigr)$ and
+Diagrama de uma região retangular no plano, dividida
+em três retângulos. O lado horizontal vai de 0 a
+f de x, e o lado vertical vai de 0 a g de x.
+A maior região branca é um retângulo que se estende horizontalmente
+de 0 até f de c, um pouco menor que f de x,
+e verticalmente de 0 até g de c, um pouco menor que
+g de x. Essa região branca está identificada como f de c vezes g de c.
+Acima dela, há um retângulo fino, levemente sombreado, que se estende
+horizontalmente de 0 a f de x e verticalmente
+de g de c a g de x. Ele está identificado
+como f de x vezes a quantidade g de x menos g de c.
+Por fim, há um retângulo fino, mais escuro, que se estende
+horizontalmente de f de c a f de x e verticalmente
+de 0 a g de c. Ele está identificado como f de x menos f de c,
+tudo isso vezes g de c.}
+\caption{Ideia da regra do produto. A área do retângulo inteiro
+$f(x)g(x)$ difere da área do retângulo não sombreado $f(c)g(c)$
+pela área dos dois retângulos sombreados:
+$f(x)\bigl( g(x) - g(c) \bigr)$ e
 $\bigl( f(x) - f(c) \bigr) g(c)$.
-In other words, roughly,  $\Delta (f \cdot g)
+Em outras palavras, aproximadamente, $\Delta (f \cdot g)
 = f \cdot \Delta g + \Delta f \cdot g$.\label{figprodrule}}
 \end{myfigureht}
 
 
 
-\begin{prop}[Quotient rule]\index{quotient rule}
-Let $I$ be an interval, let
-$f \colon I \to \R$ and $g \colon I \to \R$ be differentiable at $c$
-and $g(x) \neq 0$ for all $x \in I$.
-If $h \colon I \to \R$
-is defined by
+\begin{prop}[Regra do quociente]\index{regra do quociente}
+Seja $I$ um intervalo, sejam
+$f \colon I \to \R$ e $g \colon I \to \R$ diferenciáveis em $c$,
+e suponha que $g(x) \neq 0$ para todo $x \in I$.
+Se $h \colon I \to \R$ é definida por
 \begin{equation*}
 h(x) \coloneqq \frac{f(x)}{g(x)},
 \end{equation*}
-then $h$ is differentiable at $c$ and
+então $h$ é diferenciável em $c$ e
 \begin{equation*}
 h'(c) = \frac{f'(c) g(c) - f(c) g'(c)}{{\bigl(g(c)\bigr)}^2} .
 \end{equation*}
 \end{prop}
 
-Again, the proof is left as an exercise.
+Novamente, a demonstração fica como exercício.
 
-\subsection{Chain rule}
+\subsection{Regra da cadeia}
 
-More complicated functions are often obtained by composition,
-which is differentiated via the chain rule.  The rule also tells us
-how a derivative changes if we change variables.
+Funções mais complicadas são frequentemente obtidas por composição,
+e sua derivada é calculada pela regra da cadeia. Essa regra também nos diz
+como a derivada muda quando fazemos uma mudança de variável.
 
-\begin{prop}[Chain rule]
-\index{chain rule}
-Let $I_1, I_2$ be intervals, let
-$g \colon I_1 \to I_2$ be differentiable at $c \in I_1$,
-and
-$f \colon I_2 \to \R$ be differentiable at $g(c)$.
-If $h \colon I_1 \to \R$
-is defined by
+\begin{prop}[Regra da cadeia]
+\index{regra da cadeia}
+Sejam $I_1, I_2$ intervalos, seja
+$g \colon I_1 \to I_2$ diferenciável em $c \in I_1$
+e seja
+$f \colon I_2 \to \R$ diferenciável em $g(c)$.
+Se $h \colon I_1 \to \R$ é definida por
 \begin{equation*}
 h(x) \coloneqq (f \circ g) (x) = f\bigl(g(x)\bigr) ,
 \end{equation*}
-then $h$ is differentiable at $c$ and
+então $h$ é diferenciável em $c$ e
 \begin{equation*}
 h'(c) = f'\bigl(g(c)\bigr)g'(c) .
 \end{equation*}
 \end{prop}
 
 \begin{proof}
-Let $d \coloneqq g(c)$.  Define
-$u \colon I_2 \to \R$ and $v \colon I_1 \to \R$ by
+Seja $d \coloneqq g(c)$. Defina
+$u \colon I_2 \to \R$ e $v \colon I_1 \to \R$ por
 \begin{equation*}
 u(y) \coloneqq
 \begin{cases}
- \frac{f(y) - f(d)}{y-d}  & \text{if } y \neq d, \\
- f'(d)                    & \text{if } y = d,
+ \frac{f(y) - f(d)}{y-d}  & \text{se } y \neq d, \\
+ f'(d)                    & \text{se } y = d,
 \end{cases}
 \qquad
 v(x) \coloneqq
 \begin{cases}
- \frac{g(x) - g(c)}{x-c} & \text{if } x \neq c, \\
- g'(c)                   & \text{if } x = c.
+ \frac{g(x) - g(c)}{x-c} & \text{se } x \neq c, \\
+ g'(c)                   & \text{se } x = c.
 \end{cases}
 \end{equation*}
-Because $f$ is differentiable at $d = g(c)$, we find that
-$u$ is continuous at $d$.  Similarly, $v$ is continuous at $c$.
-For any $x$ and $y$,
+Como $f$ é diferenciável em $d = g(c)$, concluímos que
+$u$ é contínua em $d$. De modo semelhante, $v$ é contínua em $c$.
+Para quaisquer $x$ e $y$,
 \begin{equation*}
 f(y)-f(d) = u(y) (y-d)
-\qquad \text{and} \qquad
+\qquad \text{e} \qquad
 g(x)-g(c) = v(x) (x-c) .
 \end{equation*}
-Plug in to obtain
+Substituindo, obtemos
 \begin{equation*}
 h(x)-h(c)
 =
@@ -380,150 +367,143 @@ u\bigl( g(x) \bigr) \bigl(g(x)-g(c)\bigr)
 =
 u\bigl( g(x) \bigr) \bigl(v(x) (x-c)\bigr) .
 \end{equation*}
-Therefore, if $x \neq c$,
+Portanto, se $x \neq c$,
 \begin{equation} \label{eq:chainruleeq}
 \frac{h(x)-h(c)}{x-c}
 =
 u\bigl( g(x) \bigr) v(x) .
 \end{equation}
-By continuity of $u$ and $v$ at $d$ and $c$ respectively, we find
+Pela continuidade de $u$ e $v$ em $d$ e $c$, respectivamente, temos
 $\lim_{y \to d} u(y)
-= f'(d) = f'\bigl(g(c)\bigr)$ and
+= f'(d) = f'\bigl(g(c)\bigr)$ e
 $\lim_{x \to c} v(x) = g'(c)$.
-The function $g$ is continuous at $c$, and so $\lim_{x \to c} g(x) = g(c)$.
-Hence, the limit of
-the right-hand side of \eqref{eq:chainruleeq}
-as $x$ goes to $c$
-exists and is equal to $f'\bigl(g(c)\bigr) g'(c)$.  Thus $h$
-is differentiable at $c$ and $h'(c) = f'\bigl(g(c)\bigr)g'(c)$.
+A função $g$ é contínua em $c$ e, portanto, $\lim_{x \to c} g(x) = g(c)$.
+Assim, o limite do lado direito de \eqref{eq:chainruleeq}
+quando $x$ tende a $c$ existe e é igual a $f'\bigl(g(c)\bigr) g'(c)$. Logo, $h$
+é diferenciável em $c$ e $h'(c) = f'\bigl(g(c)\bigr)g'(c)$.
 \end{proof}
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
 \begin{exercise}
-Prove the product rule.
-Hint: Prove and use
+Demonstre a regra do produto.
+Dica: demonstre e use
 $f(x) g(x) - f(c) g(c) = f(x)\bigl( g(x) - g(c) \bigr) + \bigl( f(x) -
 f(c) \bigr) g(c)$.
 \end{exercise}
 
 \begin{exercise}
-Prove the quotient rule.  Hint: You can do this directly, but it may be
-easier to find the derivative of $\nicefrac{1}{x}$ and then use
-the chain rule and the product rule.
+Demonstre a regra do quociente. Dica: você pode fazer isso diretamente, mas
+talvez seja mais fácil encontrar a derivada de $\nicefrac{1}{x}$ e, em seguida,
+usar a regra da cadeia e a regra do produto.
 \end{exercise}
 
 \begin{exercise} \label{exercise:diffofxn}
-For $n \in \Z$,
-prove that $x^n$ is differentiable and find the derivative,
-unless, of course, $n < 0$ and $x=0$.
-Hint: Use the product rule.
+Para $n \in \Z$, demonstre que $x^n$ é diferenciável e encontre sua derivada,
+exceto, naturalmente, quando $n < 0$ e $x=0$.
+Dica: use a regra do produto.
 \end{exercise}
 
 \begin{exercise}
-Prove that a polynomial is differentiable, and find the derivative.
-Hint: Use the previous exercise.
+Demonstre que um polinômio é diferenciável e encontre sua derivada.
+Dica: use o exercício anterior.
 \end{exercise}
 
 \begin{exercise}
-Define $f \colon \R \to \R$ by
+Defina $f \colon \R \to \R$ por
 \begin{equation*}
 f(x) \coloneqq
 \begin{cases}
-x^2 & \text{if } x \in \Q,\\
-0 & \text{otherwise.}
+x^2 & \text{se } x \in \Q,\\
+0 & \text{caso contrário.}
 \end{cases}
 \end{equation*}
-Prove that $f$ is differentiable at $0$, but discontinuous at all points
-except $0$.
+Demonstre que $f$ é diferenciável em $0$, mas descontínua em todos os pontos,
+exceto em $0$.
 \end{exercise}
 
 \begin{exercise}
-Assume the inequality $\babs{x-\sin(x)} \leq x^2$.  Prove that $\sin$ is
-differentiable at $0$, and find the derivative at $0$.
+Suponha que vale a desigualdade $\babs{x-\sin(x)} \leq x^2$. Demonstre que
+$\sin$ é diferenciável em $0$ e encontre a derivada em $0$.
 \end{exercise}
 
 \begin{exercise}
-Using the previous exercise, prove that $\sin$ is differentiable at all $x$
-and that the derivative is $\cos(x)$.  Hint: Use the sum-to-product
-trigonometric identity as we did before.
+Usando o exercício anterior, demonstre que $\sin$ é diferenciável para todo $x$
+e que sua derivada é $\cos(x)$. Dica: use a identidade trigonométrica
+de soma em produto, como fizemos anteriormente.
 \end{exercise}
 
 \begin{exercise}
-Let $f \colon I \to \R$ be differentiable.  For $n \in \Z$, let $f^n$
-be the function defined by $f^n(x) \coloneqq {\bigl( f(x) \bigr)}^n$.  If
-$n < 0$, assume $f(x) \neq 0$ for all $x \in I$.  Prove that
+Seja $f \colon I \to \R$ diferenciável. Para $n \in \Z$, seja $f^n$
+a função definida por $f^n(x) \coloneqq {\bigl( f(x) \bigr)}^n$. Se
+$n < 0$, suponha que $f(x) \neq 0$ para todo $x \in I$. Demonstre que
 $(f^n)'(x) = n {\bigl(f(x) \bigr)}^{n-1} f'(x)$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon \R \to \R$ is a differentiable
-Lipschitz continuous function.
-Prove that $f'$ is a bounded function.
+Suponha que $f \colon \R \to \R$ seja uma função diferenciável
+e Lipschitz contínua.
+Demonstre que $f'$ é uma função limitada.
 \end{exercise}
 
 \begin{exercise} \label{exercise:inversederformula}
-Let $I_1, I_2$ be intervals.
-Let $f \colon I_1 \to I_2$ be a bijective function and $g \colon I_2 \to I_1$
-be the inverse.  Suppose that both $f$ is differentiable at $c \in I_1$ and
-$f'(c) \neq 0$ and $g$ is differentiable at $f(c)$.  Use the chain rule
-to find a formula for $g'\bigl(f(c)\bigr)$ (in terms of $f'(c)$).
+Sejam $I_1, I_2$ intervalos.
+Seja $f \colon I_1 \to I_2$ uma função bijetiva e seja $g \colon I_2 \to I_1$
+sua inversa. Suponha que $f$ seja diferenciável em $c \in I_1$,
+que $f'(c) \neq 0$ e que $g$ seja diferenciável em $f(c)$. Use a regra da cadeia
+para encontrar uma fórmula para $g'\bigl(f(c)\bigr)$ (em termos de $f'(c)$).
 \end{exercise}
 
 \begin{exercise} \label{exercise:bndmuldiff}
-Suppose $f \colon I \to \R$ is bounded, $g \colon I \to
-\R$ is differentiable at $c \in I$, and $g(c) = g'(c) = 0$.  Show
-that $h(x) \coloneqq f(x) g(x)$ is differentiable at $c$.  Hint: You
-cannot apply the product rule.
+Suponha que $f \colon I \to \R$ seja limitada, que $g \colon I \to
+\R$ seja diferenciável em $c \in I$ e que $g(c) = g'(c) = 0$. Mostre
+que $h(x) \coloneqq f(x) g(x)$ é diferenciável em $c$. Dica: não é possível
+aplicar a regra do produto.
 \end{exercise}
 
 \begin{exercise} \label{exercise:diffsqueeze}
-Suppose $f \colon I \to \R$, 
-$g \colon I \to \R$, and
-$h \colon I \to \R$, are functions.  Suppose $c \in I$ is such that
-$f(c) = g(c) = h(c)$, $g$ and $h$ are differentiable at $c$,
-and $g'(c) = h'(c)$.  Furthermore, suppose $h(x) \leq f(x) \leq g(x)$ for
-all $x \in I$.  Prove $f$ is differentiable at $c$ and $f'(c) = g'(c) =
-h'(c)$.
+Suponha que $f \colon I \to \R$,
+$g \colon I \to \R$ e $h \colon I \to \R$ sejam funções. Suponha que
+$c \in I$ satisfaça $f(c) = g(c) = h(c)$, que $g$ e $h$ sejam diferenciáveis
+em $c$ e que $g'(c) = h'(c)$. Além disso, suponha que $h(x) \leq f(x) \leq g(x)$
+para todo $x \in I$. Demonstre que $f$ é diferenciável em $c$ e que
+$f'(c) = g'(c) = h'(c)$.
 \end{exercise}
 
 \begin{exercise}
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Suppose $f \colon (-1,1) \to \R$ is a function such that $f(x) = x h(x)$ for
-a bounded function $h \colon (-1,1) \to \R$.
-Show that $g(x) \coloneqq {\bigl( f(x) \bigr)}^2$ is
-differentiable at the origin and $g'(0) = 0$.
+Suponha que $f \colon (-1,1) \to \R$ seja uma função tal que $f(x) = x h(x)$,
+em que $h \colon (-1,1) \to \R$ é limitada.
+Mostre que $g(x) \coloneqq {\bigl( f(x) \bigr)}^2$ é diferenciável na origem
+e que $g'(0) = 0$.
 \item
-Find an example of a
-continuous function $f \colon (-1,1) \to \R$ with $f(0) = 0$, but such
-that $g(x) \coloneqq {\bigl( f(x) \bigr)}^2$ is not differentiable at the origin.
+Encontre um exemplo de função contínua $f \colon (-1,1) \to \R$ com $f(0) = 0$,
+mas tal que $g(x) \coloneqq {\bigl( f(x) \bigr)}^2$ não seja diferenciável na origem.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon I \to \R$ is differentiable at $c \in I$.
-Prove that there exist numbers $a$ and $b$ with the property that
-for every $\epsilon > 0$, there is a $\delta > 0$, such that
-$\babs{a+b(x-c) - f(x)} \leq \epsilon \sabs{x-c}$, whenever $x \in I$ and
+Suponha que $f \colon I \to \R$ seja diferenciável em $c \in I$.
+Demonstre que existem números $a$ e $b$ tais que, para todo $\epsilon > 0$,
+existe $\delta > 0$ com a propriedade de que
+$\babs{a+b(x-c) - f(x)} \leq \epsilon \sabs{x-c}$ sempre que $x \in I$ e
 $\sabs{x-c} < \delta$.
-In other words, show that
-there exists a function $g \colon I \to \R$
-such that $\lim_{x\to c} g(x) = 0$ and
+Em outras palavras, mostre que existe uma função $g \colon I \to \R$
+tal que $\lim_{x\to c} g(x) = 0$ e
 $\babs{a+b(x-c) - f(x)} = g(x) \sabs{x-c}$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:simpleLHopital}
-Prove the following simple version of \myindex{L'H\^opital's rule}\index{L'Hospital's rule}.
-Suppose 
-$f \colon (a,b) \to \R$ and $g \colon (a,b) \to \R$ are differentiable
-functions
-whose derivatives $f'$ and $g'$ are continuous functions.
-Suppose that at $c \in (a,b)$, $f(c) = 0$, $g(c)=0$,
-$g'(x) \neq 0$ for all $x \in (a,b)$, and
-$g(x) \neq 0$ whenever $x \neq c$.   Note
-that the limit of $\nicefrac{f'(x)}{g'(x)}$ as $x$ goes to $c$ exists.  Show that
+Demonstre a seguinte versão simples da \myindex{regra de L'H\^opital}\index{regra de L'Hospital}.
+Suponha que
+$f \colon (a,b) \to \R$ e $g \colon (a,b) \to \R$ sejam funções diferenciáveis
+cujas derivadas $f'$ e $g'$ são contínuas.
+Suponha que, em $c \in (a,b)$, $f(c) = 0$ e $g(c)=0$,
+que $g'(x) \neq 0$ para todo $x \in (a,b)$ e que
+$g(x) \neq 0$ sempre que $x \neq c$. Observe
+que existe o limite de $\nicefrac{f'(x)}{g'(x)}$ quando $x$ tende a $c$. Mostre que
 \begin{equation*}
 \lim_{x \to c} \frac{f(x)}{g(x)} = 
 \lim_{x \to c} \frac{f'(x)}{g'(x)} .
@@ -531,12 +511,12 @@ that the limit of $\nicefrac{f'(x)}{g'(x)}$ as $x$ goes to $c$ exists.  Show tha
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon (a,b) \to \R$ is differentiable at $c \in (a,b)$,
-$f(c)=0$, and $f'(c) > 0$.
-Prove that there is a $\delta > 0$ such that $f(x) < 0$
-whenever $c-\delta < x < c$ and
-$f(x) > 0$ 
-whenever $c < x < c+\delta$.
+Suponha que $f \colon (a,b) \to \R$ seja diferenciável em $c \in (a,b)$,
+$f(c)=0$ e $f'(c) > 0$.
+Demonstre que existe $\delta > 0$ tal que $f(x) < 0$
+sempre que $c-\delta < x < c$ e
+$f(x) > 0$
+sempre que $c < x < c+\delta$.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

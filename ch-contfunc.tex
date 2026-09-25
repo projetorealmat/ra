@@ -198,104 +198,102 @@ Para $x \in [0,1)$, $x \neq 0$ e $\sabs{x-0} < \delta$, temos
 \end{equation*}
 \end{example}
 
-\subsection{Sequential limits} \label{subseq:sequentiallimits}
+\subsection{Limites sequenciais} \label{subseq:sequentiallimits}
 
-Let us connect the limit as defined above with limits of sequences.
+Relacionemos o limite definido acima com os limites de sequências.
 
 \begin{lemma}\label{seqflimit:lemma}
-Let $S \subset \R$, let $c$ be a cluster point of $S$, let $f \colon S \to
-\R$ be a function, and let $L \in \R$.
+Seja $S \subset \R$, seja $c$ um ponto de acumulação de $S$, seja $f \colon S \to
+\R$ uma função e seja $L \in \R$.
 
-Then
-$f(x) \to L$ as $x \to c$ if and only if for every sequence
+Então
+$f(x) \to L$ quando $x \to c$ se, e somente se, para toda sequência
 $\{ x_n \}_{n=1}^\infty$
-such that $x_n \in S \setminus \{c\}$ for all $n$,
-and such that $\lim_{n\to\infty} x_n = c$,
-we have that the sequence $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ converges to $L$.
+tal que $x_n \in S \setminus \{c\}$ para todo $n$
+e $\lim_{n\to\infty} x_n = c$,
+a sequência $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ converge para $L$.
 \end{lemma}
 
 \begin{proof}
-Suppose 
-$f(x) \to L$ as $x \to c$, and $\{ x_n \}_{n=1}^\infty$ is a sequence
-such that
-$x_n \in S \setminus \{c\}$ and
+Suponhamos que
+$f(x) \to L$ quando $x \to c$ e que $\{ x_n \}_{n=1}^\infty$ seja uma sequência
+tal que
+$x_n \in S \setminus \{c\}$ e
 $\lim_{n\to\infty} x_n = c$.
-We wish to show that $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ converges to $L$.
-Let $\epsilon > 0$ be given.  Find a $\delta > 0$ such that
-if $x \in S \setminus \{c\}$ and $\sabs{x-c} < \delta$, then
-$\babs{f(x) - L} < \epsilon$.  As
-$\{ x_n \}_{n=1}^\infty$  converges to $c$, find an $M$ such that for $n \geq M$,
-we have that $\sabs{x_n - c} < \delta$.  Therefore, for $n \geq M$,
+Queremos mostrar que $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ converge para $L$.
+Seja dado $\epsilon > 0$. Encontre $\delta > 0$ tal que, se
+$x \in S \setminus \{c\}$ e $\sabs{x-c} < \delta$, então
+$\babs{f(x) - L} < \epsilon$. Como
+$\{ x_n \}_{n=1}^\infty$ converge para $c$, encontre $M$ tal que, para $n \geq M$,
+temos $\sabs{x_n - c} < \delta$. Portanto, para $n \geq M$,
 \begin{equation*}
 \babs{f(x_n) - L} < \epsilon .
 \end{equation*}
-Thus $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ converges to $L$.
+Assim, $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ converge para $L$.
 
-For the other direction, we use proof by contrapositive.  Suppose 
-it is not true that $f(x) \to L$ as $x \to c$.  The negation of the
-definition is that there exists an $\epsilon > 0$ such that for every
-$\delta > 0$ there exists an $x \in S \setminus \{c\}$, where
+Para a outra direção, usamos a demonstração por contraposição. Suponhamos
+que não seja verdade que $f(x) \to L$ quando $x \to c$. A negação da
+definição afirma que existe $\epsilon > 0$ tal que, para todo
+$\delta > 0$, existe $x \in S \setminus \{c\}$ para o qual
 $\sabs{x-c} < \delta$
-and $\babs{f(x)-L} \geq \epsilon$.
+e $\babs{f(x)-L} \geq \epsilon$.
 
-Let us use $\nicefrac{1}{n}$ for $\delta$ in the statement above to
-construct a sequence $\{ x_n \}_{n=1}^\infty$.  We have
-that there exists an $\epsilon > 0$ such that for every $n$,
-there exists a point $x_n \in S \setminus \{c\}$, where
+Usemos $\nicefrac{1}{n}$ no lugar de $\delta$ na afirmação acima para
+construir uma sequência $\{ x_n \}_{n=1}^\infty$. Existe
+$\epsilon > 0$ tal que, para todo $n$,
+existe um ponto $x_n \in S \setminus \{c\}$ para o qual
 $\sabs{x_n-c} < \nicefrac{1}{n}$
-and $\babs{f(x_n)-L} \geq \epsilon$.
-The sequence $\{ x_n \}_{n=1}^\infty$ just constructed converges to $c$, but
-the sequence $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ does not converge to $L$.
-And we are done.
+e $\babs{f(x_n)-L} \geq \epsilon$.
+A sequência $\{ x_n \}_{n=1}^\infty$ assim construída converge para $c$, mas
+a sequência $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ não converge para $L$.
+E isso conclui a demonstração.
 \end{proof}
 
-It is possible to strengthen the reverse direction of
-the lemma by simply stating that
-\myquote{$\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ converges,} without requiring a specific limit.
-See \exerciseref{exercise:seqflimitalt}.
+É possível fortalecer a direção recíproca do lema simplesmente afirmando que
+\myquote{$\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ converge,} sem exigir um limite específico.
+Veja \exerciseref{exercise:seqflimitalt}.
 
 \begin{example}
 $\displaystyle \lim_{x \to 0} \sin( \nicefrac{1}{x} )$
-does not exist, but 
+não existe, mas
 $\displaystyle \lim_{x \to 0} x\sin( \nicefrac{1}{x} ) = 0$.
-See \figureref{figsin1x}.
+Veja \figureref{figsin1x}.
 
 \begin{myfigureht}
 %left guy also used in 10.4
 \myincludepdft{sin1x_xsin1x}{%
-The graphs of functions on an interval around the origin.
-On the left the function oscillates
-between minus 1 and 1
-faster and faster as x approaches 0, so much so that near the origin
-the graph appears as solid black.
-On the right, the function again oscillates faster and faster
-as x approaches 0, but now the amplitude also goes down to 0
-and so what sort of seems like a solid black region is really like the
-tip of a triangle.}
-\caption{Graphs of $\sin(\nicefrac{1}{x})$ and $x \sin(\nicefrac{1}{x})$.
-Note that the computer cannot properly graph $\sin(\nicefrac{1}{x})$
-near zero as it oscillates too fast.\label{figsin1x}}
+Os gráficos de funções em um intervalo ao redor da origem.
+À esquerda, a função oscila entre menos 1 e 1
+cada vez mais rapidamente à medida que x se aproxima de 0, a ponto de,
+perto da origem, o gráfico parecer preto sólido.
+À direita, a função também oscila cada vez mais rapidamente
+à medida que x se aproxima de 0, mas agora a amplitude também diminui até 0,
+de modo que a região que parece preta sólida se assemelha, na verdade, à
+ponta de um triângulo.}
+\caption{Gráficos de $\sin(\nicefrac{1}{x})$ e $x \sin(\nicefrac{1}{x})$.
+Observe que o computador não consegue representar corretamente
+$\sin(\nicefrac{1}{x})$ perto de zero, pois a oscilação é rápida demais.\label{figsin1x}}
 \end{myfigureht}
 
-Proof:
-We start with $\sin(\nicefrac{1}{x})$.  Define a sequence
-by
-$x_n \coloneqq \frac{1}{\pi n + \nicefrac{\pi}{2}}$.  It is not hard to see
-that $\lim_{n\to\infty} x_n = 0$.  Furthermore,
+Demonstração:
+Comecemos com $\sin(\nicefrac{1}{x})$. Defina a sequência
+por
+$x_n \coloneqq \frac{1}{\pi n + \nicefrac{\pi}{2}}$. É fácil ver
+que $\lim_{n\to\infty} x_n = 0$. Além disso,
 \begin{equation*}
 \sin ( \nicefrac{1}{x_n} )
 =
 \sin (\pi n + \nicefrac{\pi}{2})
 = {(-1)}^n .
 \end{equation*}
-Therefore, $\bigl\{ \sin ( \nicefrac{1}{x_n} ) \bigr\}_{n=1}^\infty$ does not converge.
-By
-\lemmaref{seqflimit:lemma}, 
-$\displaystyle \lim_{x \to 0} \sin( \nicefrac{1}{x} )$ does not exist.
+Portanto, a sequência $\bigl\{ \sin ( \nicefrac{1}{x_n} ) \bigr\}_{n=1}^\infty$ não converge.
+Pelo
+\lemmaref{seqflimit:lemma},
+$\displaystyle \lim_{x \to 0} \sin( \nicefrac{1}{x} )$ não existe.
 
-Now consider $x\sin(\nicefrac{1}{x})$.  Let $\{ x_n \}_{n=1}^\infty$ be a sequence
-such that $x_n \neq 0$ for all $n$, and such that $\lim_{n\to\infty} x_n = 0$.
-Notice that $\babs{\sin(t)} \leq 1$ for all $t \in \R$.  Therefore,
+Agora consideremos $x\sin(\nicefrac{1}{x})$. Seja $\{ x_n \}_{n=1}^\infty$ uma sequência
+tal que $x_n \neq 0$ para todo $n$ e $\lim_{n\to\infty} x_n = 0$.
+Observe que $\babs{\sin(t)} \leq 1$ para todo $t \in \R$. Portanto,
 \begin{equation*}
 \babs{x_n\sin(\nicefrac{1}{x_n})-0}
 =
@@ -303,86 +301,82 @@ Notice that $\babs{\sin(t)} \leq 1$ for all $t \in \R$.  Therefore,
 \leq
 \sabs{x_n} .
 \end{equation*}
-As $x_n$ goes to zero, $\sabs{x_n}$ goes to zero, and hence
-$\bigl\{ x_n\sin(\nicefrac{1}{x_n}) \bigr\}_{n=1}^\infty$ converges to zero.  By
-\lemmaref{seqflimit:lemma}, 
+Como $x_n$ tende a zero, $\sabs{x_n}$ também tende a zero e, portanto,
+$\bigl\{ x_n\sin(\nicefrac{1}{x_n}) \bigr\}_{n=1}^\infty$ converge para zero. Pelo
+\lemmaref{seqflimit:lemma},
 $\displaystyle \lim_{x \to 0} x\sin( \nicefrac{1}{x} ) = 0$.
 \end{example}
 
-Keep in mind the phrase \myquote{for every sequence} in the lemma.
-For example, take $\sin(\nicefrac{1}{x})$ and the sequence given by
+Tenha em mente a expressão \myquote{para toda sequência} no lema.
+Por exemplo, tome $\sin(\nicefrac{1}{x})$ e a sequência dada por
 $x_n \coloneqq \nicefrac{1}{\pi n}$.
-Then $\bigl\{ \sin (\nicefrac{1}{x_n}) \bigr\}_{n=1}^\infty$
-is the constant zero sequence, and
-therefore converges to zero, but the limit of 
-$\sin(\nicefrac{1}{x})$ as $x \to 0$ does not exist.
+Então $\bigl\{ \sin (\nicefrac{1}{x_n}) \bigr\}_{n=1}^\infty$
+é a sequência constante zero e, portanto, converge para zero, mas o limite de
+$\sin(\nicefrac{1}{x})$ quando $x \to 0$ não existe.
 
-Using \lemmaref{seqflimit:lemma}, 
-we can start applying everything we know about
-sequential limits to limits of functions.  Let us give a few important
-examples.
+Usando o \lemmaref{seqflimit:lemma},
+podemos começar a aplicar tudo o que sabemos sobre
+limites de sequências aos limites de funções. Vejamos alguns exemplos importantes.
 
 \begin{cor}
-Let $S \subset \R$ and let $c$ be a cluster point of $S$.  
-Suppose $f \colon S \to
-\R$ and $g \colon S \to \R$ are functions
-such that
-the limits of $f(x)$ and $g(x)$ as $x$ goes to $c$ both exist,
-and
+Seja $S \subset \R$ e seja $c$ um ponto de acumulação de $S$.
+Suponha que $f \colon S \to
+\R$ e $g \colon S \to \R$ sejam funções tais que
+os limites de $f(x)$ e $g(x)$ quando $x$ tende a $c$ existam, e que
 \begin{equation*}
-f(x) \leq g(x) \qquad \text{for all } x \in S \setminus \{ c \}.
+f(x) \leq g(x) \qquad \text{para todo } x \in S \setminus \{ c \}.
 \end{equation*}
-Then
+Então
 \begin{equation*}
 \lim_{x\to c} f(x) \leq \lim_{x\to c} g(x) .
 \end{equation*}
 \end{cor}
 
 \begin{proof}
-Take $\{ x_n \}_{n=1}^\infty$ to be a sequence of numbers in $S \setminus \{ c \}$
-that converges to $c$.  Let
+Seja $\{ x_n \}_{n=1}^\infty$ uma sequência de números em $S \setminus \{ c \}$
+que converge para $c$. Seja
 \begin{equation*}
-L_1 \coloneqq \lim_{x\to c} f(x), \qquad \text{and} \qquad L_2 \coloneqq \lim_{x\to c} g(x) .
+L_1 \coloneqq \lim_{x\to c} f(x), \qquad \text{e} \qquad L_2 \coloneqq \lim_{x\to c} g(x) .
 \end{equation*}
-\lemmaref{seqflimit:lemma} says that $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ converges to
-$L_1$ and $\bigl\{ g(x_n) \bigr\}_{n=1}^\infty$ converges to $L_2$.  We also
-have $f(x_n) \leq g(x_n)$ for all $n$.
-We obtain $L_1 \leq L_2$ using
+O \lemmaref{seqflimit:lemma} afirma que $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ converge para
+$L_1$ e que $\bigl\{ g(x_n) \bigr\}_{n=1}^\infty$ converge para $L_2$. Também
+temos $f(x_n) \leq g(x_n)$ para todo $n$.
+Obtemos $L_1 \leq L_2$ usando o
 \lemmaref{limandineq:lemma}.
 \end{proof}
 
-By applying constant functions, we get the following corollary.  The
-proof is left as an exercise.
+Aplicando funções constantes, obtemos o seguinte corolário. A demonstração
+fica como exercício.
 
 \begin{cor} \label{fconstineq:cor}
-Let $S \subset \R$ and let $c$ be a cluster point of $S$.  Suppose $f \colon S \to
-\R$ is a function such that the limit of $f(x)$ as $x$ goes to $c$
-exists.
-Suppose there are two real numbers $a$ and $b$ such that
+Seja $S \subset \R$ e seja $c$ um ponto de acumulação de $S$. Suponha que $f \colon S \to
+\R$ seja uma função tal que o limite de $f(x)$ quando $x$ tende a $c$
+exista.
+Suponha que existam dois números reais $a$ e $b$ tais que
 \begin{equation*}
-a \leq f(x) \leq b \qquad \text{for all } x \in S \setminus \{ c \}.
+a \leq f(x) \leq b \qquad \text{para todo } x \in S \setminus \{ c \}.
 \end{equation*}
-Then
+Então
 \begin{equation*}
 a \leq \lim_{x\to c} f(x) \leq b .
 \end{equation*}
 \end{cor}
 
-Using \lemmaref{seqflimit:lemma} in the same way as above, we also get
-the following corollaries, whose proofs are again left as exercises.
+Usando o \lemmaref{seqflimit:lemma} da mesma maneira que acima, obtemos também
+os seguintes corolários, cujas demonstrações ficam como exercícios.
 
 \begin{cor} \label{fsqueeze:cor}
-Let $S \subset \R$ and let $c$ be a cluster point of $S$.
-Suppose $f \colon S \to \R$,
-$g \colon S \to \R$, and $h \colon S \to \R$ are functions such that
+Seja $S \subset \R$ e seja $c$ um ponto de acumulação de $S$.
+Suponha que $f \colon S \to \R$,
+$g \colon S \to \R$ e $h \colon S \to \R$ sejam funções tais que
 \begin{equation*}
-f(x) \leq g(x) \leq h(x) \qquad \text{for all } x \in S \setminus \{ c \}.
+f(x) \leq g(x) \leq h(x) \qquad \text{para todo } x \in S \setminus \{ c \}.
 \end{equation*}
-Suppose the limits of $f(x)$ and $h(x)$ as $x$ goes to $c$ both exist, and
+Suponha que os limites de $f(x)$ e $h(x)$ quando $x$ tende a $c$ existam e que
 \begin{equation*}
 \lim_{x\to c} f(x) = \lim_{x\to c} h(x) .
 \end{equation*}
-Then the limit of $g(x)$ as $x$ goes to $c$ exists and
+Então o limite de $g(x)$ quando $x$ tende a $c$ existe e
 \begin{equation*}
 \lim_{x\to c} g(x) =
 \lim_{x\to c} f(x) = \lim_{x\to c} h(x) .
@@ -390,16 +384,15 @@ Then the limit of $g(x)$ as $x$ goes to $c$ exists and
 \end{cor}
 
 \begin{cor} \label{falg:cor}
-Let $S \subset \R$ and let $c$ be a cluster point of $S$.  
-Suppose $f \colon S \to \R$ and
-$g \colon S \to \R$ are functions
-such that 
-the limits of $f(x)$ and $g(x)$ as $x$ goes to $c$ both exist.
-Then
+Seja $S \subset \R$ e seja $c$ um ponto de acumulação de $S$.
+Suponha que $f \colon S \to \R$ e
+$g \colon S \to \R$ sejam funções tais que
+os limites de $f(x)$ e $g(x)$ quando $x$ tende a $c$ existam.
+Então
 \begin{enumerate}[(i)]
 \item
 $\displaystyle
-\lim_{x\to c} \bigl(f(x)+g(x)\bigr) = \left(\lim_{x\to c} f(x)\right) + 
+\lim_{x\to c} \bigl(f(x)+g(x)\bigr) = \left(\lim_{x\to c} f(x)\right) +
 \left(\lim_{x\to c} g(x)\right) .
 $
 \item
@@ -412,9 +405,9 @@ $\displaystyle
 \lim_{x\to c} \bigl(f(x)g(x)\bigr) = \left(\lim_{x\to c} f(x)\right)
 \left(\lim_{x\to c} g(x)\right) .
 $
-\item \label{falg:cor:iv} If
+\item \label{falg:cor:iv} Se
 $\displaystyle \lim_{x\to c} g(x) \neq 0$
-and $g(x) \neq 0$ for all $x \in S \setminus \{ c \}$, then
+e $g(x) \neq 0$ para todo $x \in S \setminus \{ c \}$, então
 \begin{equation*}
 \lim_{x\to c} \frac{f(x)}{g(x)} =
 \frac{\lim_{x\to c} f(x)}{\lim_{x\to c} g(x)} .
@@ -423,10 +416,10 @@ and $g(x) \neq 0$ for all $x \in S \setminus \{ c \}$, then
 \end{cor}
 
 \begin{cor} \label{fabs:cor}
-Let $S \subset \R$ and let $c$ be a cluster point of $S$.
-Suppose $f \colon S \to \R$ is a function such that the limit of $f(x)$ as $x$ goes to $c$
-exists.
-Then
+Seja $S \subset \R$ e seja $c$ um ponto de acumulação de $S$.
+Suponha que $f \colon S \to \R$ seja uma função tal que o limite de $f(x)$ quando $x$ tende a $c$
+exista.
+Então
 \begin{equation*}
 \lim_{x\to c} \babs{f(x)} =
 \abs{\lim_{x\to c} f(x)}.

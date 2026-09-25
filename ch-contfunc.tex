@@ -732,45 +732,44 @@ forma final data apenas do fim do século XIX.
 \subsection{Definição e propriedades básicas}
 
 \begin{defn}
-Suppose $S \subset \R$ and $c \in S$.
-We say $f \colon S \to \R$
-is \emph{continuous at $c$}\index{continuous at $c$}
-if for every $\epsilon > 0$
-there is a $\delta > 0$ such that whenever $x \in S$ and $\sabs{x-c} <
-\delta$, we have
+Sejam $S \subset \R$ e $c \in S$.
+Dizemos que $f \colon S \to \R$
+é \emph{contínua em $c$}\index{contínua em $c$}
+se, para todo $\epsilon > 0$,
+existe $\delta > 0$ tal que, sempre que $x \in S$ e $\sabs{x-c} <
+\delta$, temos
 $\babs{f(x)-f(c)} < \epsilon$.
 
 %\medskip
 
-When $f \colon S \to \R$ is continuous at all $c \in S$, then we simply say
-$f$ is a \emph{\myindex{continuous function}}\index{function!continuous}.
+Quando $f \colon S \to \R$ é contínua em todo $c \in S$, dizemos simplesmente
+que $f$ é uma \emph{\myindex{função contínua}}\index{função!contínua}.
 \end{defn}
 \begin{myfigureht}
 \myincludepdft{contigr}{%
-A diagram of the graph of a function y equals f of x,
-near a point x equals c.  The graph is shown and the
-strip within delta of c is shown and a strip within
-epsilon of f of c is shown.  The box that fits within
-both strips is shaded, and within this range the graph
-fits within the vertical range.}
-\caption{For $\sabs{x-c} < \delta$, the graph of $f(x)$ should be within the gray region.\label{fig:contigr}}
+Diagrama do gráfico de uma função y igual a f de x,
+próximo de um ponto x igual a c. O gráfico é mostrado, assim como a
+faixa a uma distância delta de c e a faixa a uma distância
+epsilon de f de c. A caixa contida em ambas as faixas está sombreada;
+nessa região, o gráfico fica dentro da faixa vertical.}
+\caption{Quando $\sabs{x-c} < \delta$, o gráfico de $f(x)$ deve estar dentro da região cinza.\label{fig:contigr}}
 \end{myfigureht}
 
-If $f$ is continuous for all $c \in A$, we say
-$f$ is \emph{continuous on $A \subset S$}.  A straightforward
-exercise (\exerciseref{exercise:restrictioncontinuous})
-shows that this implies that $f|_A$ is continuous, although
-the converse does not hold (as we will see in \exampleref{example:removablediscont}).
+Se $f$ é contínua para todo $c \in A$, dizemos que
+$f$ é \emph{contínua em $A \subset S$}. Um exercício simples
+(\exerciseref{exercise:restrictioncontinuous}) mostra que isso implica que
+$f|_A$ é contínua, embora a recíproca não seja válida (como veremos no
+\exampleref{example:removablediscont}).
 
-Continuity may be the most important definition to understand in analysis,
-and it is not an easy one.  See \figureref{fig:contigr}.
-Note that $\delta$ depends not only
-on $\epsilon$, but also on $c$;  we need not pick
-one $\delta$ for all $c \in S$.
-It is no accident 
-that the definition of continuity is similar to the definition of a
-limit of a function.  The main feature of continuous functions
-is that these are precisely the functions that behave nicely with limits.
+Continuidade talvez seja a definição mais importante a compreender em análise,
+e não é simples. Veja a \figureref{fig:contigr}.
+Observe que $\delta$ depende não apenas
+de $\epsilon$, mas também de $c$; não precisamos escolher
+um único $\delta$ para todo $c \in S$.
+Não é por acaso
+que a definição de continuidade é semelhante à definição de limite de uma
+função. A característica principal das funções contínuas
+é que elas são precisamente as funções que se comportam bem com limites.
 
 \begin{prop} \label{contbasic:prop}
 Consider a function $f \colon S \to \R$ defined on a set  $S \subset \R$

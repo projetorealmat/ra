@@ -981,8 +981,8 @@ Seja $f \colon \R \to \R$ a função definida por
 \begin{equation*}
 f(x) \coloneqq
 \begin{cases}
-{\bigl( x \sin(\nicefrac{1}{x}) \bigr)}^2 & \text{if } x \neq 0, \\
-0 & \text{if } x = 0.
+{\bigl( x \sin(\nicefrac{1}{x}) \bigr)}^2 & \text{se } x \neq 0, \\
+0 & \text{se } x = 0.
 \end{cases}
 \end{equation*}
 Afirmamos que $f$ é diferenciável em todos os pontos, mas $f' \colon \R \to \R$ não é contínua na origem. Além disso, $f$ tem um mínimo em $0$, mas sua derivada muda de sinal infinitas vezes nas proximidades da origem. Veja a \figureref{fig:nonc1diff}.
@@ -1049,7 +1049,7 @@ Suponha que $f \colon (a,b) \to \R$ seja diferenciável e que $f'(x) \neq 0$ par
 \end{exercise}
 
 \begin{exercise} \label{exercise:samediffconst}
-Suponha que $f \colon (a,b) \to \R$ e $g \colon (a,b) \to \R$ sejam diferenciáveis e que $f'(x)=g\'(x)$ para todo $x \in (a,b)$. Mostre que existe uma constante $C$ tal que $f(x)=g(x)+C$.
+Suponha que $f \colon (a,b) \to \R$ e $g \colon (a,b) \to \R$ sejam diferenciáveis e que $f'(x)=g'(x)$ para todo $x \in (a,b)$. Mostre que existe uma constante $C$ tal que $f(x)=g(x)+C$.
 \end{exercise}
 
 \begin{exercise}
@@ -1085,7 +1085,7 @@ Suponha que $a,b \in \R$ e que $f \colon \R \to \R$ seja diferenciável, com $f'
 \item
 Demonstre \propref{prop:endpointderivative}.
 \item 
-Suponha que $f \colon (a,b) \to \R$ seja contínua e diferenciável em todos os pontos, exceto em $c \in (a,b)$, e que $\\lim_{x \to c} f'(x)=L$. Demonstre que $f$ é diferenciável em $c$ e que $f'(c)=L$.
+Suponha que $f \colon (a,b) \to \R$ seja contínua e diferenciável em todos os pontos, exceto em $c \in (a,b)$, e que $\lim_{x \to c} f'(x)=L$. Demonstre que $f$ é diferenciável em $c$ e que $f'(c)=L$.
 \end{enumerate}
 \end{exercise}
 
@@ -1111,72 +1111,52 @@ Demonstre \thmref{thm:cauchymvt}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{Taylor's theorem}
+\section{Teorema de Taylor}
 \label{sec:taylor}
 
 %mbxINTROSUBSECTION
 
-\sectionnotes{less than a lecture (optional section)}
+\sectionnotes{menos de uma aula (seção opcional)}
 
-\subsection{Derivatives of higher orders}
+\subsection{Derivadas de ordens superiores}
 
-When $f \colon I \to \R$ is differentiable, we obtain a function
-$f' \colon I \to \R$.  The function
-$f'$ is called the \emph{\myindex{first derivative}} of $f$.
-If $f'$ is differentiable, we denote by
-$f'' \colon I \to \R$ the derivative of $f'$.  The function $f''$
-is called the \emph{\myindex{second derivative}} of $f$.
+Quando $f \colon I \to \R$ é diferenciável, obtemos uma função
+$f' \colon I \to \R$. A função $f'$ é chamada de
+\emph{\myindex{primeira derivada}} de $f$.
+Se $f'$ é diferenciável, denotamos por $f'' \colon I \to \R$ a derivada de $f'$. A função $f''$ é chamada de
+\emph{\myindex{segunda derivada}} de $f$.
 \glsadd{not:secondthirdfourthder}
-We similarly obtain
-$f'''$, $f''''$, and so on.
-With a larger number of derivatives
-the notation would get out of hand; we denote
-by $f^{(n)}$ the
+De modo semelhante, obtemos $f'''$, $f''''$ e assim por diante.
+Com um número maior de derivadas, a notação ficaria excessivamente complexa; denotamos por $f^{(n)}$ a
 \glsadd{not:nthder}
-\emph{$n$th derivative}\index{nth derivative@$n$th derivative} of $f$.
+\emph{$n$-ésima derivada}\index{derivada de ordem n@$n$-ésima derivada} de $f$.
 %
-When $f$ possesses $n$ derivatives, we say $f$ is
-\emph{$n$ times differentiable}\index{n times differentiable@$n$ times
-differentiable}\index{differentiable!n times@$n$ times}.
+Quando $f$ possui $n$ derivadas, dizemos que $f$ é
+\emph{$n$ vezes diferenciável}\index{n vezes diferenciável@$n$ vezes diferenciável}\index{diferenciável!n vezes}.
 
-\subsection{Taylor's theorem}
+\subsection{Teorema de Taylor}
 
-Taylor's theorem%
-\footnote{Named for the English mathematician
+O teorema de Taylor%
+\footnote{Nomeado em homenagem ao matemático inglês
 \href{https://en.wikipedia.org/wiki/Brook_Taylor}{Brook Taylor}
-(1685--1731).
-It was found by
-the Scottish mathematician
+(1685--1731). O resultado foi descoberto pelo matemático escocês
 \href{https://en.wikipedia.org/wiki/James_Gregory_(mathematician)}{James Gregory}
-(1638--1675).  The statement we give
-is due to
+(1638--1675). A formulação que apresentamos é devida a
 \href{https://en.wikipedia.org/wiki/Lagrange}{Joseph-Louis Lagrange}
-(1736--1813).} (at least the version we give here)
-is a generalization of the \hyperref[thm:mvt]{mean value theorem}.
-Mean value theorem says that up to a small error $f(x)$ for $x$ near $x_0$ can be
-approximated by $f(x_0)$:
+(1736--1813).} (ao menos a versão que apresentamos aqui)
+é uma generalização do \hyperref[thm:mvt]{teorema do valor médio}.
+O teorema do valor médio afirma que, a menos de um pequeno erro, $f(x)$, para $x$ próximo de $x_0$, pode ser aproximada por $f(x_0)$:
 \begin{equation*}
 f(x) = f(x_0) + f'(c)(x-x_0),
 \end{equation*}
-where the \myquote{error} $f'(c)(x-x_0)$
-is measured in terms of the first derivative
-at some point $c$ between $x$ and $x_0$.
-Taylor's theorem generalizes this result to higher derivatives.
-It tells us that up to a small error, any $n$
-times differentiable function can be approximated at a point $x_0$
-by a polynomial of degree $n$.  The
-error of this approximation goes to zero faster than ${(x-x_0)}^{n}$ as
-$x$ goes to $x_0$.
-To see why this is a good approximation, notice that for a big $n$, 
-${(x-x_0)}^n$ is very small in a small interval around $x_0$.
-We will require one more (so $n+1$) derivative to write the error
-as we do in the mean value theorem.
+onde o \myquote{erro} $f'(c)(x-x_0)$ é medido em termos da primeira derivada em algum ponto $c$ entre $x$ e $x_0$.
+O teorema de Taylor generaliza esse resultado para derivadas de ordens superiores. Ele afirma que, a menos de um pequeno erro, toda função diferenciável $n$ vezes pode ser aproximada, em um ponto $x_0$, por um polinômio de grau $n$. O erro dessa aproximação tende a zero mais rapidamente que ${(x-x_0)}^n$ quando $x$ tende a $x_0$.
+Para entender por que essa aproximação é boa, observe que, para $n$ grande, ${(x-x_0)}^n$ é muito pequeno em um intervalo pequeno ao redor de $x_0$.
+Para expressar o erro como fazemos no teorema do valor médio, exigiremos mais uma derivada, isto é, $n+1$ derivadas.
 
 \begin{defn}
-For an $n$ times differentiable function $f$ defined near a point $x_0 \in \R$, define the
-$n$th order \emph{\myindex{Taylor polynomial}}%
-\index{nth order Taylor polynomial@$n$th order Taylor polynomial}
-for $f$ at $x_0$ as
+Para uma função $f$ diferenciável $n$ vezes, definida nas proximidades de um ponto $x_0 \in \R$, definimos como \emph{\myindex{polinômio de Taylor}}%
+\index{polinômio de Taylor de ordem n@$n$-ésimo polinômio de Taylor} de $f$ em $x_0$ por
 \begin{equation*}
 \begin{split}
 P_n^{x_0}(x)
@@ -1197,200 +1177,80 @@ f(x_0)
 \end{equation*}
 \end{defn}
 
-See \figureref{fig:taylorsin} for
-the odd-degree Taylor polynomials for the sine function at $x_0=0$.
-The even-degree terms are all zero, as even derivatives 
-of sine are again sines, which are zero at a origem.
+Veja na \figureref{fig:taylorsin} os polinômios de Taylor de grau ímpar da função seno em $x_0=0$.
+Todos os termos de grau par são nulos, pois as derivadas pares do seno voltam a ser funções seno, que se anulam na origem.
 \begin{myfigureht}
 \myincludegraphics{taylorsin}{%
-The graph of the sine function is given.  Also several
-approximations are given.  First a straight line that is
-tangent at the origin is labeled as y equals P sub 1 super 0 of x.
-Second a graph of a cubic that is tangent to the graph of sine
-at the origin and somewhat approximates it nearby is labeled
-as y equals P sub 3 super 0 of x.
-Similarly with degree 5 and degree 7 approximations.  The higher the
-degree the further away from the origin is the graph reasonably close 
-to the sine function, for example the degree 7 approximation seems
-relatively close between two points where the sine
-is zero around the origin, that is, plus and minus pi.}
-\caption{The odd degree Taylor polynomials for the sine
-function.\label{fig:taylorsin}}
+O gráfico da função seno é mostrado, junto com várias aproximações. Primeiro, uma reta tangente na origem, identificada por y igual a P de índice 1 e expoente 0 de x. Em seguida, o gráfico de uma cúbica tangente ao gráfico do seno na origem e que o aproxima nas proximidades, identificada por y igual a P de índice 3 e expoente 0 de x. Também são mostradas as aproximações de graus 5 e 7. Quanto maior o grau, mais longe da origem o gráfico permanece próximo do seno; por exemplo, a aproximação de grau 7 parece relativamente próxima entre os dois zeros do seno ao redor da origem, isto é, em mais e menos pi.}
+\caption{Os polinômios de Taylor de grau ímpar da função seno.\label{fig:taylorsin}}
 \end{myfigureht}
 
-The statement of Taylor's theorem that we give includes the
-\hyperref[thm:mvt]{mean value theorem}, which can be thought of as
-Taylor's theorem for $n=0$.
+A formulação do teorema de Taylor que apresentamos inclui o \hyperref[thm:mvt]{teorema do valor médio}, que pode ser considerado o teorema de Taylor para $n=0$.
 
-\begin{thm}[Taylor]\index{Taylor's theorem} \label{thm:taylor}
-Suppose $f \colon [a,b] \to \R$ is a function with $n$ continuous
-derivatives on $[a,b]$ and such that $f^{(n+1)}$ exists on $(a,b)$.
-Given distinct points $x_0$ and $x$ in $[a,b]$,
-there is a point $c$ between $x_0$
-and $x$ such that
+\begin{thm}[Taylor]\index{teorema de Taylor} \label{thm:taylor}
+Suponha que $f \colon [a,b] \to \R$ tenha $n$ derivadas contínuas em $[a,b]$ e que $f^{(n+1)}$ exista em $(a,b)$. Dados pontos distintos $x_0$ e $x$ em $[a,b]$, existe um ponto $c$ entre $x_0$ e $x$ tal que
 \begin{equation*}
 f(x)=P_{n}^{x_0}(x)+\frac{f^{(n+1)}(c)}{(n+1)!}{(x-x_0)}^{n+1} .
 \end{equation*}
 \end{thm}
 
-The term $R_n^{x_0}(x)\coloneqq
-f(x)-P_n^{x_0}(x) =
-\frac{f^{(n+1)}(c)}{(n+1)!}{(x-x_0)}^{n+1}$ is called the
-\emph{remainder term}\index{remainder term in Taylor's formula}.  This
-form is called the
-\emph{\myindex{Lagrange form}} of the remainder.  There are other ways
-to write the remainder term, but we skip those.  Note that $c$ depends on
-both $x$ and $x_0$.
+O termo $R_n^{x_0}(x)\coloneqq f(x)-P_n^{x_0}(x) = \frac{f^{(n+1)}(c)}{(n+1)!}{(x-x_0)}^{n+1}$ é chamado de \emph{termo do resto}\index{termo do resto na fórmula de Taylor}. Essa forma é chamada de \emph{\myindex{forma de Lagrange}} do resto. Há outras maneiras de escrever o termo do resto, mas não as abordaremos. Observe que $c$ depende tanto de $x$ quanto de $x_0$.
 
 \begin{proof}
-Let $M_{x,x_0}$ be the number (depending on $x$ and $x_0$) solving the equation
+Seja $M_{x,x_0}$ o número (dependente de $x$ e $x_0$) que satisfaz a equação
 \begin{equation*}
 f(x)=P_{n}^{x_0}(x)+M_{x,x_0}{(x-x_0)}^{n+1} .
 \end{equation*}
-Define a function $g(s)$ by
+Defina a função $g(s)$ por
 \begin{equation*}
 g(s) \coloneqq f(s)-P_n^{x_0}(s)-M_{x,x_0}{(s-x_0)}^{n+1} .
 \end{equation*}
-We compute
-the $k$th derivative at $x_0$ of the Taylor polynomial
-${(P_n^{x_0})}^{(k)}(x_0) = f^{(k)}(x_0)$ for
-$k=0,1,2,\ldots,n$ (the zeroth derivative of a function is the function
-itself).  Therefore,
+Calculamos as derivadas de ordem $k$ do polinômio de Taylor no ponto $x_0$ e obtemos ${ (P_n^{x_0})}^{(k)}(x_0) = f^{(k)}(x_0)$ para $k=0,1,2,\ldots,n$ (a derivada de ordem zero de uma função é a própria função). Portanto,
 \begin{equation*}
 g(x_0) = g'(x_0) = g''(x_0) = \cdots = g^{(n)}(x_0) = 0 .
 \end{equation*}
-In particular, $g(x_0) = 0$.
-We also have $g(x) = 0$.
-By the
-\hyperref[thm:mvt]{mean value theorem},
-there exists an $x_1$ between $x_0$ and $x$ such that $g'(x_1) = 0$.
-Applying the \hyperref[thm:mvt]{mean value theorem}
-to $g'$, we obtain that there exists
-$x_2$ between $x_0$ and $x_1$ (and therefore between $x_0$ and $x$)
-such that $g''(x_2) = 0$.  We repeat the
-argument $n+1$ times to obtain a number $x_{n+1}$ between $x_0$ and $x_n$
-(and therefore between $x_0$ and $x$) such that $g^{(n+1)}(x_{n+1}) = 0$.
+Em particular, $g(x_0)=0$. Também temos $g(x)=0$. Pelo \hyperref[thm:mvt]{teorema do valor médio}, existe um $x_1$ entre $x_0$ e $x$ tal que $g'(x_1)=0$. Aplicando o \hyperref[thm:mvt]{teorema do valor médio} a $g'$, obtemos um $x_2$ entre $x_0$ e $x_1$ (e, portanto, entre $x_0$ e $x$) tal que $g''(x_2)=0$. Repetimos o argumento $n+1$ vezes e obtemos um número $x_{n+1}$ entre $x_0$ e $x_n$ (e, portanto, entre $x_0$ e $x$) tal que $g^{(n+1)}(x_{n+1})=0$.
 
-Let $c \coloneqq x_{n+1}$.
-We compute the $(n+1)$th derivative of $g$ to find
+Seja $c \coloneqq x_{n+1}$. Calculamos a derivada de ordem $n+1$ de $g$ e obtemos
 \begin{equation*}
 g^{(n+1)}(s) = f^{(n+1)}(s)-(n+1)!\,M_{x,x_0} .
 \end{equation*}
-Plugging in $c$ for $s$, we obtain $M_{x,x_0} = \frac{f^{(n+1)}(c)}{(n+1)!}$, and
-we are done.
+Substituindo $s$ por $c$, obtemos $M_{x,x_0} = \frac{f^{(n+1)}(c)}{(n+1)!}$, como queríamos.
 \end{proof}
 
-In the proof, we found
-${(P_n^{x_0})}^{(k)}(x_0) = f^{(k)}(x_0)$ for $k=0,1,2,\ldots,n$.
-Therefore, the Taylor polynomial has the same derivatives as $f$ at $x_0$
-up to the $n$th derivative.  That is why the Taylor polynomial is
-a good approximation to $f$.
-Notice how in \figureref{fig:taylorsin} the Taylor polynomials are
-reasonably good approximations to the sine near $x=0$.
+Na demonstração, vimos que ${ (P_n^{x_0})}^{(k)}(x_0) = f^{(k)}(x_0)$ para $k=0,1,2,\ldots,n$. Portanto, o polinômio de Taylor tem as mesmas derivadas que $f$ em $x_0$, até a derivada de ordem $n$. É por isso que o polinômio de Taylor é uma boa aproximação de $f$. Observe como, na \figureref{fig:taylorsin}, os polinômios de Taylor aproximam bem a função seno nas proximidades de $x=0$.
 
-We do not necessarily get good approximations
-by the Taylor polynomial everywhere.
-Consider expanding the function
-$f(x) \coloneqq \frac{x}{1-x}$ around 0,
-for $x < 1$, we get the graphs in
-\figureref{fig:taylorgeom}.  The dotted lines are the first, second, and
-third degree approximations.
-The dashed line is the 20th degree polynomial.
-The approximation does seem to get
-better as the degree rises for $x > -1$.
-For $x < -1$, it in fact gets visibly worse.
-The polynomials
-are the partial sums of the geometric series $\sum_{n=1}^\infty x^n$,
-and the series only converges on $(-1,1)$.
-See the discussion of power series in
-\sectionref{sec:moreonseries}.
+O polinômio de Taylor não fornece necessariamente boas aproximações em todo lugar. Considere o desenvolvimento da função $f(x) \coloneqq \frac{x}{1-x}$ ao redor de $0$, para $x<1$; os gráficos estão na \figureref{fig:taylorgeom}. As linhas pontilhadas representam as aproximações de graus 1, 2 e 3. A linha tracejada representa o polinômio de grau 20. A aproximação parece melhorar à medida que o grau aumenta para $x>-1$. Para $x<-1$, na verdade, ela piora visivelmente. Os polinômios são as somas parciais da série geométrica $\sum_{n=1}^\infty x^n$, que só converge em $(-1,1)$. Veja a discussão sobre séries de potências na \sectionref{sec:moreonseries}.
 
 \begin{myfigureht}
 \myincludegraphics{taylorgeom}{%
-In bold line is a graph of a function on the interval
-from minus 2 to 1, that comes in flat from the right from below
-the x-axis, crosses the x-axis at the origin, and then turns sharply
-upward leaving the picture before we get to 1.
-The graphs of the first three Taylor polynomials are shown in
-dotted line.  That is,
-a straight line, a quadratic, and a cubic.
-They all seem to be 
-somewhat reasonable approximation very near the origin
-but get worse as we get further.
-A dashed line signifying the degree 20 approximation is drawn and
-from some point slightly more than minus 1 until where the bold
-line leaves the picture on the right, we cannot tell the difference
-between it and the bold line.  However, right around minus 1
-if we move from right to left, it shoots upwards leaving the picture,
-so for x less than minus 1 the approximation would be ludicrously worse
-than the small degree approximations (which are not good already).}
-\caption{The function $\frac{x}{1-x}$, and the Taylor polynomials
-$P_1^0$, $P_2^0$, $P_3^0$ (all dotted), and the polynomial $P_{20}^0$
-(dashed).\label{fig:taylorgeom}}
+Em linha espessa, aparece o gráfico de uma função no intervalo de menos 2 a 1: ela chega horizontalmente pela direita, abaixo do eixo $x$, cruza o eixo na origem e então sobe abruptamente, saindo da figura antes de chegar a 1. Os gráficos dos três primeiros polinômios de Taylor aparecem pontilhados: uma reta, uma parábola e uma cúbica. Todos parecem aproximar razoavelmente a função bem perto da origem, mas a aproximação piora à medida que nos afastamos. Uma linha tracejada representa a aproximação de grau 20. Um pouco à direita de menos 1 e até o ponto em que a linha espessa sai da figura, mal se distingue essa aproximação da curva original. Porém, perto de menos 1, ao avançarmos da direita para a esquerda, ela sobe rapidamente e sai da figura; assim, para $x$ menor que menos 1, a aproximação fica muito pior que as de grau baixo, que já não eram boas.}
+\caption{A função $\frac{x}{1-x}$ e os polinômios de Taylor $P_1^0$, $P_2^0$ e $P_3^0$ (pontilhados) e $P_{20}^0$ (tracejado).\label{fig:taylorgeom}}
 \end{myfigureht}
 
-If $f$ is \emph{\myindex{infinitely
-differentiable}}\index{differentiable!infinitely},
-that is, if $f$ can be
-differentiated any number of times, then 
-we define the \emph{\myindex{Taylor series}}:
+Se $f$ é \emph{\myindex{infinitamente diferenciável}}\index{diferenciável!infinitamente}, isto é, se $f$ pode ser diferenciada qualquer número de vezes, definimos a \emph{\myindex{série de Taylor}}:
 \begin{equation*}
 %T^{x_0}(x)
 %\coloneqq
 \sum_{k=0}^\infty
 \frac{f^{(k)}(x_0)}{k!}{(x-x_0)}^k .
 \end{equation*}
-There is no guarantee that this series converges for any
-$x \neq x_0$.  Even where it does converge, there is no guarantee
-that it converges to the function $f$.  Functions $f$
-whose Taylor series at every point $x_0$
-converges to $f$ in some open interval containing $x_0$
-are called
-\emph{analytic functions}\index{analytic function}.
-Many functions one tends to see in practice are analytic.
-See \exerciseref{exercise:nonanalytic}, for an example of a non-analytic
-function.
+Não há garantia de que essa série converja para algum $x \neq x_0$. Mesmo quando converge, não há garantia de que sua soma seja a função $f$. Chamamos de \emph{funções analíticas}\index{função analítica} as funções $f$ cuja série de Taylor, em todo ponto $x_0$, converge para $f$ em algum intervalo aberto que contém $x_0$. Muitas funções encontradas na prática são analíticas. Veja no \exerciseref{exercise:nonanalytic} um exemplo de função não analítica.
 
 \medskip
 
-The definition of derivative says that
-a function is
-differentiable if it
-is locally approximated by a line.
-We mention in passing that there exists a converse to Taylor's
-theorem,
-which we will neither state nor prove,
-saying that if a function is
-locally approximated in a certain way by a polynomial of degree $d$, then it
-has $d$ derivatives.
+A definição de derivada afirma que uma função é diferenciável quando é localmente aproximada por uma reta. Mencionamos de passagem que existe uma recíproca do teorema de Taylor, que não enunciaremos nem demonstraremos: se uma função é localmente aproximada, de certo modo, por um polinômio de grau $d$, então ela possui $d$ derivadas.
 
 \medskip
 
-Taylor's theorem gives a quick proof of a version of
-the second derivative test.
-By a \emph{\myindex{strict relative minimum}}\index{minimum!strict relative}
-of $f$ at $c$,
-we mean that there exists a $\delta > 0$ such that $f(x) > f(c)$ for
-all $x \in (c-\delta,c+\delta)$ where $x\neq c$.
-A \emph{\myindex{strict relative maximum}}\index{maximum!strict relative}
-is defined similarly.
-Continuity of the second derivative is not needed, but the proof is more
-difficult and is left as an exercise.  The proof also generalizes
-into the $n$th derivative test, which is also left as
-an exercise.
+O teorema de Taylor fornece uma demonstração rápida de uma versão do teste da segunda derivada. Dizemos que $f$ tem um \emph{\myindex{mínimo relativo estrito}}\index{mínimo!relativo estrito} em $c$ quando existe $\delta>0$ tal que $f(x)>f(c)$ para todo $x \in (c-\delta,c+\delta)$ com $x\neq c$. O \emph{\myindex{máximo relativo estrito}}\index{máximo!relativo estrito} é definido de modo semelhante. A continuidade da segunda derivada não é necessária, mas a demonstração é mais difícil e fica como exercício. A demonstração também se generaliza para o teste da derivada de ordem $n$, que também fica como exercício.
 
-\begin{prop}[Second derivative test]\index{second derivative test}
-Suppose $f \colon (a,b) \to \R$ is twice continuously differentiable,
-$x_0 \in (a,b)$, $f'(x_0) = 0$ and $f''(x_0) > 0$.  Then $f$ has a strict relative
-minimum at $x_0$.
+\begin{prop}[Teste da segunda derivada]\index{teste da segunda derivada}
+Suponha que $f \colon (a,b) \to \R$ seja duas vezes continuamente diferenciável, que $x_0 \in (a,b)$, $f'(x_0)=0$ e $f''(x_0)>0$. Então $f$ tem um mínimo relativo estrito em $x_0$.
 \end{prop}
 
 \begin{proof}
-As $f''$ is continuous, there exists a $\delta > 0$
-such that $f''(c) > 0$ for all $c \in (x_0-\delta,x_0+\delta)$,
-see \exerciseref{exercise:positivecontneigh}.
-Take $x \in (x_0-\delta,x_0+\delta)$, $x \neq x_0$.
-Taylor's theorem says that for some $c$ between $x_0$ and $x$,
+Como $f''$ é contínua, existe $\delta>0$ tal que $f''(c)>0$ para todo $c \in (x_0-\delta,x_0+\delta)$; veja \exerciseref{exercise:positivecontneigh}. Tome $x \in (x_0-\delta,x_0+\delta)$, com $x \neq x_0$. O teorema de Taylor garante que, para algum $c$ entre $x_0$ e $x$,
 \begin{equation*}
 f(x) 
 =
@@ -1399,193 +1259,129 @@ f(x_0) + f'(x_0) (x-x_0) +
 =
 f(x_0) + \frac{f''(c)}{2}{(x-x_0)}^{2}  .
 \end{equation*}
-As $f''(c) > 0$ and ${(x-x_0)}^2 > 0$, we have $f(x) > f(x_0)$.
+Como $f''(c)>0$ e ${(x-x_0)}^2>0$, temos $f(x)>f(x_0).
 \end{proof}
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
 \begin{exercise}
-Compute the $n$th Taylor polynomial at $0$ for the exponential function.
+Calcule o polinômio de Taylor de ordem $n$ em $0$ para a função exponencial.
 \end{exercise}
 
 \begin{exercise}
-Suppose $p$ is a polynomial of degree $d$.  Given $x_0 \in \R$,
-show that
-the $d$th Taylor polynomial for $p$ at $x_0$ is equal to $p$.
+Suponha que $p$ seja um polinômio de grau $d$. Dado $x_0 \in \R$, mostre que o polinômio de Taylor de ordem $d$ de $p$ em $x_0$ é igual a $p$.
 \end{exercise}
 
 \begin{exercise}
-Let $f(x) \coloneqq \sabs{x}^3$.  Compute $f'(x)$ and $f''(x)$ for all $x$,
-but show that $f^{(3)}(0)$ does not exist.
+Seja $f(x) \coloneqq \sabs{x}^3$. Calcule $f'(x)$ e $f''(x)$ para todo $x$, mas mostre que $f^{(3)}(0)$ não existe.
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon \R \to \R$ has $n$ continuous derivatives.  Show
-that for every $x_0 \in \R$,
-there exist polynomials $P$ and $Q$ of degree $n$ and 
-an $\epsilon > 0$ such that $P(x) \leq f(x) \leq Q(x)$ for all $x \in
-[x_0,x_0+\epsilon]$  and
-$Q(x)-P(x) = \lambda {(x-x_0)}^n$ for some $\lambda \geq 0$.
+Suponha que $f \colon \R \to \R$ tenha $n$ derivadas contínuas. Mostre que, para todo $x_0 \in \R$, existem polinômios $P$ e $Q$ de grau $n$ e um $\epsilon>0$ tais que $P(x) \leq f(x) \leq Q(x)$ para todo $x \in [x_0,x_0+\epsilon]$, e $Q(x)-P(x)=\lambda {(x-x_0)}^n$ para algum $\lambda \geq 0$.
 \end{exercise}
 
 \begin{exercise}
-If $f \colon [a,b] \to \R$ has $n+1$ continuous derivatives\footnote{%
-The same statement holds if we only require $n$ derivatives,
-but it is quite a bit harder to prove.
+Se $f \colon [a,b] \to \R$ tem $n+1$ derivadas contínuas\footnote{%
+O mesmo enunciado vale se exigirmos apenas $n$ derivadas, mas a demonstração é consideravelmente mais difícil.
 }
-and $x_0 \in [a,b]$,
-prove
+e $x_0 \in [a,b]$, demonstre
 $\lim\limits_{x\to x_0} \frac{R_n^{x_0}(x)}{{(x-x_0)}^n} = 0$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon [a,b] \to \R$ has $n+1$ continuous derivatives
-and $x_0 \in (a,b)$.
-Prove: $f^{(k)}(x_0) = 0$ for all $k = 0, 1, 2, \ldots, n$
-if and only if $\lim\limits_{x\to x_0} \frac{f(x)}{{(x-x_0)}^{n+1}}$ exists.
+Suponha que $f \colon [a,b] \to \R$ tenha $n+1$ derivadas contínuas e que $x_0 \in (a,b)$. Demonstre que $f^{(k)}(x_0)=0$ para todo $k=0,1,2,\ldots,n$
+se, e somente se, existe $\lim\limits_{x\to x_0} \frac{f(x)}{{(x-x_0)}^{n+1}}$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $a,b,c \in \R$ and $f \colon \R \to \R$ is twice differentiable,
-$f''(x) = a$ for all $x$, $f'(0) = b$, and $f(0) = c$.  Find $f$ and prove that 
-it is the unique differentiable function with this property.
+Suponha que $a,b,c \in \R$ e que $f \colon \R \to \R$ seja duas vezes diferenciável, com $f''(x)=a$ para todo $x$, $f'(0)=b$ e $f(0)=c$. Determine $f$ e demonstre que ela é a única função diferenciável com essa propriedade.
 \end{exercise}
 
-\begin{exercise}[Challenging]
-Show that a simple converse to Taylor's theorem does not hold.
-Find a function $f \colon \R \to \R$ with no second derivative at $x=0$ such that
-$\babs{f(x)} \leq \babs{x^3}$, that is, $f$ goes to zero at 0 faster than $x^2$, and
-while $f'(0)$ exists, $f''(0)$ does not.
+\begin{exercise}[Desafiador]
+Mostre que uma recíproca simples do teorema de Taylor não vale. Encontre uma função $f \colon \R \to \R$ que não tenha segunda derivada em $x=0$ e tal que
+$\babs{f(x)} \leq \babs{x^3}$, isto é, $f$ tende a zero em $0$ mais rapidamente que $x^2$, e $f'(0)$ exista, mas $f''(0)$ não.
 \end{exercise}
 
 \begin{exercise} \label{exercise:extendboundedder2}
-Suppose $f \colon (0,1) \to \R$ is differentiable and $f''$
-is bounded.
+Suponha que $f \colon (0,1) \to \R$ seja diferenciável e que $f''$
+seja limitada.
 \begin{enumerate}[a)]
 \item
-Show that there exists a once differentiable function $g \colon [0,1) \to \R$
-such that $f(x) = g(x)$ for all $x \neq 0$.  Hint: 
-See
-\exerciseref{exercise:extendboundedder}.
+Mostre que existe uma função $g \colon [0,1) \to \R$, diferenciável uma vez, tal que $f(x)=g(x)$ para todo $x \neq 0$. Dica: veja \exerciseref{exercise:extendboundedder}.
 \item
-Find an example where the $g$ is not twice differentiable at $x=0$.
+Encontre um exemplo em que $g$ não seja duas vezes diferenciável em $x=0$.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Prove the
-\emph{$n$th derivative test}\index{nth derivative test@$n$th derivative test}.
-Suppose $n \in \N$,
-$x_0 \in (a,b)$, and $f \colon (a,b) \to \R$ is $n$ times continuously
-differentiable, with $f^{(k)}(x_0) = 0$ for $k=1,2,\ldots,n-1$, and
+Demonstre o \emph{teste da derivada de ordem $n$}\index{teste da derivada de ordem n@$n$-ésimo teste da derivada}.
+Suponha que $n \in \N$, $x_0 \in (a,b)$ e que $f \colon (a,b) \to \R$ seja $n$ vezes continuamente diferenciável, com $f^{(k)}(x_0)=0$ para $k=1,2,\ldots,n-1$, e
 $f^{(n)}(x_0)
 \neq 0$.
-Prove:
+Demonstre:
 \begin{enumerate}[a)]
 \item
-If $n$ is odd, then $f$ has neither a relative minimum,
-nor a maximum at $x_0$.
+Se $n$ é ímpar, então $f$ não tem mínimo nem máximo relativo em $x_0$.
 \item
-If $n$ is even, then $f$ has a strict relative minimum at $x_0$ if
+Se $n$ é par, então $f$ tem um mínimo relativo estrito em $x_0$ se
 $f^{(n)}(x_0) > 0$
-and a strict relative maximum at $x_0$ if $f^{(n)}(x_0) < 0$.
+e um máximo relativo estrito em $x_0$ se $f^{(n)}(x_0) < 0$.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Prove the more general version of the second derivative test.
-Suppose $f \colon (a,b) \to \R$ is differentiable and $x_0 \in (a,b)$
-is such that, $f'(x_0) = 0$, $f''(x_0)$ exists, and $f''(x_0) > 0$.
-Prove that $f$ has a strict relative
-minimum at $x_0$.  Hint: Consider the limit definition of $f''(x_0)$.
+Demonstre a versão mais geral do teste da segunda derivada.
+Suponha que $f \colon (a,b) \to \R$ seja diferenciável e que $x_0 \in (a,b)$ satisfaça $f'(x_0)=0$, exista $f''(x_0)$ e $f''(x_0)>0$.
+Demonstre que $f$ tem um mínimo relativo estrito em $x_0$. Dica: considere a definição de limite de $f''(x_0).
+
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{Inverse function theorem}
+\section{Teorema da função inversa}
 \label{sec:ift}
 
 %mbxINTROSUBSECTION
 
-\sectionnotes{less than 1 lecture (optional section, needed for
-\sectionref{sec:logandexp}, requires 
-\sectionref{sec:monotonefunc})}
+\sectionnotes{menos de uma aula (seção opcional, necessária para \sectionref{sec:logandexp} e dependente de \sectionref{sec:monotonefunc})}
 
-\subsection{Inverse function theorem}
+\subsection{Teorema da função inversa}
 
-We start with a simple example.  Consider the function $f(x) \coloneqq a x$ for a
-number $a \neq 0$.  Then $f \colon \R \to \R$ is bijective, and the inverse
-is $f^{-1}(y) = \frac{1}{a} y$.  In particular, $f'(x) = a$ and 
-$(f^{-1})'(y) = \frac{1}{a}$.  As differentiable functions are
-\myquote{infinitesimally like} linear functions, we expect the same
-sort of behavior from the inverse of a differentiable function.
-The main idea of differentiating inverse functions is the following lemma.
+Comecemos com um exemplo simples. Considere a função $f(x) \coloneqq ax$, para um número $a \neq 0$. Então $f \colon \R \to \R$ é bijetiva, e sua inversa é $f^{-1}(y)=\frac{1}{a}y$. Em particular, $f'(x)=a$ e $(f^{-1})'(y)=\frac{1}{a}$. Como as funções diferenciáveis são \myquote{infinitesimalmente semelhantes} a funções lineares, esperamos um comportamento análogo para a inversa de uma função diferenciável. A ideia principal para derivar funções inversas é o lema a seguir.
 
 \begin{lemma} \label{lemma:ift}
-Let $I,J \subset \R$ be intervals.
-If $f \colon I \to J$ is strictly monotone (hence one-to-one),
-onto ($f(I) = J$),
-differentiable at $x_0 \in I$, and $f'(x_0) \neq 0$,
-then the inverse 
-$f^{-1}$ is differentiable at $y_0 = f(x_0)$ and
+Sejam $I,J \subset \R$ intervalos. Se $f \colon I \to J$ é estritamente monótona (portanto, injetiva), sobrejetiva ($f(I)=J$), diferenciável em $x_0 \in I$ e $f'(x_0) \neq 0$, então a inversa $f^{-1}$ é diferenciável em $y_0=f(x_0)$ e
 \begin{equation*}
 (f^{-1})'(y_0) = \frac{1}{f'\bigl( f^{-1}(y_0) \bigr)} = \frac{1}{f'(x_0)} .
 \end{equation*}
-If $f$ is continuously differentiable and $f'$ is never zero, then $f^{-1}$
-is continuously differentiable.
+Se $f$ é continuamente diferenciável e $f'$ nunca se anula, então $f^{-1}$ também é continuamente diferenciável.
 \end{lemma}
 
 \begin{proof}
-By \propref{prop:invcont}, $f$ has a continuous inverse.  For convenience,
-call the inverse $g \colon J \to I$.
-Let $x_0,y_0$ be as in the statement.  For $x \in I$, write $y \coloneqq f(x)$.
-If $x \neq x_0$, and so $y \neq y_0$, we find
+Pela \propref{prop:invcont}, $f$ tem uma inversa contínua. Para simplificar a notação, chamemos essa inversa de $g \colon J \to I$. Sejam $x_0,y_0$ como no enunciado. Para $x \in I$, escreva $y \coloneqq f(x)$. Se $x \neq x_0$ e, portanto, $y \neq y_0$, obtemos
 \begin{equation*}
 \frac{g(y)-g(y_0)}{y-y_0} =
 \frac{g\bigl(f(x)\bigr)-g\bigl(f(x_0)\bigr)}{f(x)-f(x_0)} =
 \frac{x-x_0}{f(x)-f(x_0)} .
 \end{equation*}
-See \figureref{inversefig} for the geometric idea.
+A ideia geométrica está ilustrada na \figureref{inversefig}.
 \begin{myfigureht}
 \myincludepdft{inversefigAB}{%
-Two diagrams.
-On the left, a function f that looks like the square root
-is shown in the first quadrant.  On the horizontal axis
-there is a point labeled x equals g of y.  A dashed
-line goes vertically up from this point until it hits the corresponding
-point on the graph of f.  Another dashed line, now horizontal goes left
-until it hits the y axis and a point marked f of x equals y.
-Another point x sub 0 equals g of y sub 0 is also marked
-a bit to the right of the first.  The same setup with the
-dashed lines is repeated except instead of x it is x sub 0 and
-instead of y it is y sub 0.
-A secant line is drawn through the two points on the graph
-and it is labeled as having slope
-f of x minus f of x sub 0, the whole thing over quantity
-x minus x sub 0
-and that equals
-y minus y sub 0, the whole thing over quantity
-g of y minus g of y sub 0.
-The right hand diagram is the same thing but the picture
-is simply reflected across the x equals y line, so the x-axis
-becomes the y-axis and vice-versa, and the graph now looks more
-like x squared.  The two expressions of the tangent
-line are the reciprocals.}
-\caption{Interpretation of the derivative of the inverse
-function.\label{inversefig}}
+Dois diagramas. À esquerda, uma função parecida com a raiz quadrada é mostrada no primeiro quadrante. No eixo horizontal há um ponto identificado por x igual a g de y. Uma linha tracejada sobe verticalmente desse ponto até encontrar o ponto correspondente no gráfico de f. Outra linha tracejada, agora horizontal, segue para a esquerda até encontrar o eixo y no ponto marcado por f de x igual a y. Também está marcado, um pouco à direita, o ponto x sub 0 igual a g de y sub 0. Repete-se o mesmo esquema com as linhas tracejadas, agora usando x sub 0 e y sub 0. Uma secante passa pelos dois pontos do gráfico e sua inclinação está indicada pela razão entre f de x menos f de x sub 0 e x menos x sub 0, que é igual à razão entre y menos y sub 0 e g de y menos g de y sub 0. O diagrama da direita é o mesmo, mas refletido em relação à reta x igual a y; assim, os eixos x e y trocam de posição e o gráfico passa a se parecer com x ao quadrado. As duas expressões da inclinação são recíprocas.}
+\caption{Interpretação da derivada da função inversa.\label{inversefig}}
 \end{myfigureht}
 
-Let
+Defina
 \begin{equation*}
 Q(x) \coloneqq
 \begin{cases}
-\frac{x-x_0}{f(x)-f(x_0)} & \text{if } x \neq x_0, \\
-\frac{1}{f'(x_0)}         & \text{if } x = x_0 \quad \text{(notice that }
+\frac{x-x_0}{f(x)-f(x_0)} & \text{se } x \neq x_0, \\
+\frac{1}{f'(x_0)}         & \text{se } x = x_0 \quad \text{(observe que }
 f'(x_0) \neq 0 \text{)}.
 \end{cases}
 \end{equation*}
-As $f$ is differentiable at $x_0$, 
+Como $f$ é diferenciável em $x_0$,
 \begin{equation*}
 \lim_{x \to x_0} Q(x) =
 \lim_{x \to x_0} 
@@ -1595,206 +1391,117 @@ As $f$ is differentiable at $x_0$,
 =
 Q(x_0) ,
 \end{equation*}
-that is, $Q$ is continuous at $x_0$.
-As $g(y)$ is continuous at $y_0$,
-the composition $Q\bigl(g(y)\bigr) = \frac{g(y)-g(y_0)}{y-y_0}$
-is continuous at $y_0$ by
+isto é, $Q$ é contínua em $x_0$.
+Como $g(y)$ é contínua em $y_0$,
+a composição $Q\bigl(g(y)\bigr) = \frac{g(y)-g(y_0)}{y-y_0}$
+é contínua em $y_0$ pela
 \propref{prop:compositioncont}.
-Therefore,
+Portanto,
 \begin{equation*}
 \frac{1}{f'\bigl(g(y_0)\bigr)}
 = Q\bigl(g(y_0)\bigr)
 = \lim_{y \to y_0} Q\bigl(g(y)\bigr)
 = \lim_{y \to y_0} \frac{g(y)-g(y_0)}{y-y_0} .
 \end{equation*}
-So $g$ is differentiable at $y_0$, and $g'(y_0) =
+Assim, $g$ é diferenciável em $y_0$, e $g'(y_0) =
 \frac{1}{f'\left(\vphantom{1^1_1}g(y_0)\right)}$.
 
-If $f'$ is continuous and nonzero at all $x \in I$,
-then the lemma applies at all $x \in I$.  As $g$ is also
-continuous (it is differentiable), the derivative $g'(y) =
-\frac{1}{f'\left(\vphantom{1^1_1}g(y)\right)}$ must be continuous.
+Se $f'$ é contínua e não se anula em nenhum $x \in I$, então o lema se aplica a todo $x \in I$. Como $g$ também é contínua (pois é diferenciável), a derivada $g'(y)=\frac{1}{f'\left(\vphantom{1^1_1}g(y)\right)}$ deve ser contínua.
 \end{proof}
 
-What is usually called the inverse function theorem is the following result.
+O resultado geralmente chamado de teorema da função inversa é o seguinte.
 
-\begin{thm}[Inverse function theorem]\index{inverse function theorem}
-Let $f \colon (a,b) \to \R$ be a continuously differentiable function,
-$x_0 \in (a,b)$ a point where $f'(x_0) \neq 0$.  Then there exists
-an open interval $I \subset (a,b)$ with $x_0 \in I$, the
-restriction $f|_{I}$ is injective with a continuously differentiable inverse
-$g \colon J \to I$ defined on an interval $J \coloneqq f(I)$,
-and
+\begin{thm}[Teorema da função inversa]\index{teorema da função inversa}
+Seja $f \colon (a,b) \to \R$ uma função continuamente diferenciável e seja $x_0 \in (a,b)$ um ponto em que $f'(x_0) \neq 0$. Então existe um intervalo aberto $I \subset (a,b)$ que contém $x_0$, tal que a restrição $f|_I$ é injetiva e possui uma inversa continuamente diferenciável $g \colon J \to I$, definida em um intervalo $J \coloneqq f(I)$, e
 \begin{equation*}
-g'(y) = \frac{1}{f'\bigl( g(y) \bigr)} \qquad \text{for all } y \in J.
+g'(y) = \frac{1}{f'\bigl( g(y) \bigr)} \qquad \text{para todo } y \in J.
 \end{equation*}
 \end{thm}
 
 \begin{proof}
-Without loss of generality, suppose $f'(x_0) > 0$.  As $f'$ is
-continuous, there must exist an open interval $I = (x_0-\delta,x_0+\delta)$ 
-such that $f'(x) > 0$ for all $x \in I$.  See
-\exerciseref{exercise:positivecontneigh}.
+Sem perda de generalidade, suponha que $f'(x_0)>0$. Como $f'$ é contínua, existe um intervalo aberto $I=(x_0-\delta,x_0+\delta)$ tal que $f'(x)>0$ para todo $x \in I$. Veja \exerciseref{exercise:positivecontneigh}.
 
-By \propref{incdecdiffstrictprop}, $f$ is strictly increasing
-on $I$, and hence the restriction $f|_{I}$ is bijective onto $J \coloneqq f(I)$.
-As $f$ is continuous,
-\corref{cor:continterval}
-(or directly via the
-\hyperref[IVT:thm]{intermediate value theorem})
-implies that
-$f(I)$ is an interval.
-Now apply \lemmaref{lemma:ift}.
+Pela \propref{incdecdiffstrictprop}, $f$ é estritamente crescente em $I$ e, portanto, sua restrição $f|_I$ é uma bijeção sobre $J \coloneqq f(I)$. Como $f$ é contínua, a \corref{cor:continterval} (ou, diretamente, o \hyperref[IVT:thm]{teorema do valor intermediário}) implica que $f(I)$ é um intervalo.
+Agora, aplique o \lemmaref{lemma:ift}.
 \end{proof}
 
-In \exampleref{example:sqrt2}, we saw how difficult an
-endeavor was proving the existence of $\sqrt{2}$ without any
-tools.
-With the \hyperref[IVT:thm]{intermediate value theorem},
-the existence of roots is almost trivial, and
-with the machinery of this section, we will prove
-far more than mere existence.
+No \exampleref{example:sqrt2}, vimos como era difícil provar a existência de $\sqrt{2}$ sem ferramentas. Com o \hyperref[IVT:thm]{teorema do valor intermediário}, a existência de raízes é quase trivial; com os resultados desta seção, provaremos muito mais do que sua mera existência.
 
 \begin{cor}
-Given $n \in \N$ and $x \geq 0$, there exists a unique 
-number $y \geq 0$ (denoted $x^{1/n} \coloneqq y$), such that $y^n = x$.  Furthermore,
-the function $g \colon (0,\infty) \to (0,\infty)$ defined by
-$g(x) \coloneqq x^{1/n}$ is continuously differentiable and
+Dados $n \in \N$ e $x \geq 0$, existe um único número $y \geq 0$ (denotado por $x^{1/n} \coloneqq y$) tal que $y^n=x$. Além disso, a função $g \colon (0,\infty) \to (0,\infty)$ definida por $g(x) \coloneqq x^{1/n}$ é continuamente diferenciável e
 \begin{equation*}
 g'(x) = \frac{1}{nx^{(n-1)/n}} = \frac{1}{n} \, x^{(1-n)/n} ,
 \end{equation*}
-using the convention $x^{m/n} \coloneqq {(x^{1/n})}^{m}$.
+usando a convenção $x^{m/n} \coloneqq {(x^{1/n})}^{m}$.
 \end{cor}
 
 \begin{proof}
-For $x=0$, the existence of a unique root is trivial.
+Para $x=0$, a existência de uma raiz única é trivial.
 
-Let $f \colon (0,\infty) \to (0,\infty)$ be defined by $f(y) \coloneqq y^n$.
-The function $f$ is continuously differentiable,
-and $f'(y) = ny^{n-1}$, see \exerciseref{exercise:diffofxn}.
-For $y > 0$, the derivative $f'$ is strictly positive,
-and so again by \propref{incdecdiffstrictprop}, $f$ is strictly
-increasing (this can also be proved directly) and hence injective.
-Suppose $M$ and $\epsilon$ are such that
-$M > 1$ and $1 > \epsilon > 0$.
-Then
-$f(M) = M^n \geq M$ and
-$f(\epsilon) = \epsilon^n \leq \epsilon$.
-For every $x$ with $\epsilon < x < M$,
-we have, by the
-\hyperref[IVT:thm]{intermediate value theorem}, that $x \in
-f\bigl( [\epsilon,M] \bigr) \subset
-f\bigl( (0,\infty) \bigr)$.  As $M$ and $\epsilon$ were arbitrary, $f$ is onto
-$(0,\infty)$, and hence $f$ is bijective.
-Let $g$ be the inverse of $f$, and we obtain
-the existence and uniqueness of positive
-$n$th roots.  \lemmaref{lemma:ift} says that $g$ has a continuous
-derivative and $g'(x) =
-\frac{1}{f'\left(\vphantom{1^1_1}g(x)\right)} = \frac{1}{n {(x^{1/n})}^{n-1}}$.
+Seja $f \colon (0,\infty) \to (0,\infty)$ definida por $f(y) \coloneqq y^n$. A função $f$ é continuamente diferenciável e $f'(y)=ny^{n-1}$; veja \exerciseref{exercise:diffofxn}. Para $y>0$, a derivada $f'$ é estritamente positiva e, novamente pela \propref{incdecdiffstrictprop}, $f$ é estritamente crescente (isso também pode ser demonstrado diretamente) e, portanto, injetiva.
+Suponha que $M$ e $\epsilon$ satisfaçam $M>1$ e $1>\epsilon>0$. Então $f(M)=M^n \geq M$ e $f(\epsilon)=\epsilon^n \leq \epsilon$. Para todo $x$ com $\epsilon<x<M$, o \hyperref[IVT:thm]{teorema do valor intermediário} garante que $x \in f\bigl( [\epsilon,M] \bigr) \subset f\bigl( (0,\infty) \bigr)$.
+Como $M$ e $\epsilon$ eram arbitrários, $f$ é sobrejetiva em $(0,\infty)$ e, portanto, bijetiva. Seja $g$ a inversa de $f$. Assim, obtemos a existência e a unicidade das raízes $n$-ésimas positivas. O \lemmaref{lemma:ift} afirma que $g$ tem derivada contínua e $g'(x) = \frac{1}{f'\left(\vphantom{1^1_1}g(x)\right)} = \frac{1}{n {(x^{1/n})}^{n-1}}$.
 \end{proof}
 
 \begin{example}
-The corollary provides a good example of where the inverse function theorem
-gives us an interval smaller than $(a,b)$.  Take $f \colon \R \to \R$
-defined by $f(x) \coloneqq x^2$.  Then $f'(x_0) \neq 0$
-as long as $x_0 \neq 0$.  If $x_0 > 0$, we can take $I=(0,\infty)$, but
-no larger.
+O corolário fornece um bom exemplo de situação em que o teorema da função inversa produz um intervalo menor que $(a,b)$. Considere $f \colon \R \to \R$ definida por $f(x) \coloneqq x^2$. Então $f'(x_0) \neq 0$ sempre que $x_0 \neq 0$. Se $x_0>0$, podemos tomar $I=(0,\infty)$, mas não um intervalo maior.
 \end{example}
 
 \begin{example}
-Another useful example is $f(x) \coloneqq x^3$.  The function $f \colon \R \to \R$ is
-one-to-one and onto, so $f^{-1}(y) = y^{1/3}$ exists on the entire real
-line, including zero and negative $y$.  The function $f$ has
-a continuous derivative, but $f^{-1}$ has no derivative at a origem.  The
-point is that $f'(0) = 0$.  See \figureref{cubecuberootfig} for a graph.
-Notice the vertical tangent on the cube root at a origem.
-See also \exerciseref{exercise:oddroot}.
+Outro exemplo útil é $f(x) \coloneqq x^3$. A função $f \colon \R \to \R$ é bijetiva, portanto $f^{-1}(y)=y^{1/3}$ existe em toda a reta real, inclusive para $y$ nulo e negativo. A função $f$ tem derivada contínua, mas $f^{-1}$ não é diferenciável na origem. Isso ocorre porque $f'(0)=0$. Veja o gráfico na \figureref{cubecuberootfig}. Observe a tangente vertical à curva da raiz cúbica na origem. Veja também o \exerciseref{exercise:oddroot}.
 \begin{myfigureht}
 \myincludegraphics{cubecuberoot}{%
-The graph y equals the cube root of x in bold line
-and the graph of y equals x cubed in dashed line.
-We note that while the graph of x cubed is tangent to the x-axis
-at the origin, the cube root is a reflection across the x equals y
-line and is therefore tangent to the vertical y-axis at a origem.}
-\caption{Graphs of $x^3$ and $x^{1/3}$.\label{cubecuberootfig}}
+O gráfico de y igual à raiz cúbica de x aparece em linha espessa, e o gráfico de y igual a x ao cubo, em linha tracejada. Observe que, enquanto o gráfico de x ao cubo é tangente ao eixo x na origem, a raiz cúbica é sua reflexão em torno da reta x igual a y e, portanto, é tangente ao eixo y vertical na origem.}
+\caption{Gráficos de $x^3$ e $x^{1/3}$.\label{cubecuberootfig}}
 \end{myfigureht}
 \end{example}
 
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
 \begin{exercise}
-Suppose $f \colon \R \to \R$ is continuously differentiable and
-$f'(x) > 0$ for all $x$.  Show that $f$ is invertible on the interval $J =
-f(\R)$, the inverse is continuously differentiable, and ${(f^{-1})}'(y) >
-0$ for all $y \in f(\R)$.
+Suponha que $f \colon \R \to \R$ seja continuamente diferenciável e que $f'(x)>0$ para todo $x$. Mostre que $f$ é invertível no intervalo $J=f(\R)$, que sua inversa é continuamente diferenciável e que ${(f^{-1})'}(y)>0$ para todo $y \in f(\R)$.
 \end{exercise}
 
 \begin{exercise}
 \pagebreak[2]
-Suppose $I,J$ are intervals and a monotone onto $f \colon I \to J$ has an inverse $g \colon J \to I$.
-Suppose you already know that both $f$ and $g$ are differentiable
-everywhere and $f'$ is never zero.  Using the chain rule but not
-\lemmaref{lemma:ift}, prove the
-formula $g'(y) = \frac{1}{f'\left(\vphantom{1_1^1}g(y)\right)}$. % \bigl( \bigr) are overly big here!
-Remark: This exercise is the same as \exerciseref{exercise:inversederformula},
-no need to do it again if you have
-solved it already.
+Suponha que $I,J$ sejam intervalos e que $f \colon I \to J$ seja monótona e sobrejetiva, com inversa $g \colon J \to I$. Suponha que você já saiba que $f$ e $g$ são diferenciáveis em todos os pontos e que $f'$ nunca se anula. Usando a regra da cadeia, mas não o \lemmaref{lemma:ift}, demonstre a fórmula $g'(y)=\frac{1}{f'\left(\vphantom{1_1^1}g(y)\right)}$. % \bigl( \bigr) são grandes demais aqui!
+Observação: este exercício equivale ao \exerciseref{exercise:inversederformula}; não é necessário refazê-lo se você já o resolveu.
 \end{exercise}
 
 \begin{exercise}
 \pagebreak[2]
-Let $n\in \N$ be even.
-Prove that every $x > 0$ has a unique negative $n$th root.
-That is, there exists a negative number $y$ such that $y^n = x$.
-Compute the derivative
-of the function $g(x) \coloneqq y$.
+Seja $n \in \N$ par. Demonstre que todo $x>0$ tem uma única raiz $n$-ésima negativa. Isto é, existe um número negativo $y$ tal que $y^n=x$. Calcule a derivada da função $g(x) \coloneqq y$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:oddroot}
-Let $n \in \N$ be odd and $n \geq 3$.
-Prove that every $x$ has a unique $n$th root.
-That is, there exists a number $y$ such that $y^n = x$.  Prove that
-the function defined by $g(x) \coloneqq y$ is differentiable except at $x=0$
-and compute the derivative.  Prove that $g$ is not differentiable at $x=0$.
+Seja $n \in \N$ ímpar, com $n \geq 3$. Demonstre que todo $x$ tem uma única raiz $n$-ésima. Isto é, existe um número $y$ tal que $y^n=x$. Demonstre que a função definida por $g(x) \coloneqq y$ é diferenciável, exceto em $x=0$, e calcule sua derivada. Demonstre que $g$ não é diferenciável em $x=0$.
 \end{exercise}
 
-\begin{exercise}[requires \sectionref{sec:taylor}]
-Show that if in the inverse function theorem $f$ has $k$ continuous
-derivatives, then the inverse function $g$ also has $k$ continuous
-derivatives.
+\begin{exercise}[requer \sectionref{sec:taylor}]
+Mostre que, se no teorema da função inversa $f$ tem $k$ derivadas contínuas, então a função inversa $g$ também tem $k$ derivadas contínuas.
 \end{exercise}
 
 \begin{exercise}
-Let $f(x) \coloneqq x + 2 x^2 \sin(\nicefrac{1}{x})$ for $x \neq 0$ and
-$f(0) \coloneqq 0$.  Show that $f$ is differentiable at all $x$, that $f'(0) > 0$,
-but that $f$ is not invertible
-on any open interval containing a origem.
+Seja $f(x) \coloneqq x+2x^2\sin(\nicefrac{1}{x})$ para $x \neq 0$ e $f(0) \coloneqq 0$. Mostre que $f$ é diferenciável em todo $x$ e que $f'(0)>0$, mas não é invertível em nenhum intervalo aberto que contenha a origem.
 \end{exercise}
 
 \begin{exercise}
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Let $f \colon \R \to \R$ be a continuously differentiable function
-and $k > 0$ be a number such that $f'(x) \geq k$ for all $x \in \R$.
-Show $f$ is one-to-one and onto, and has a continuously differentiable
-inverse $f^{-1} \colon \R \to \R$.
+Seja $f \colon \R \to \R$ continuamente diferenciável, e seja $k>0$ um número tal que $f'(x) \geq k$ para todo $x \in \R$. Mostre que $f$ é bijetiva e possui inversa continuamente diferenciável $f^{-1} \colon \R \to \R$.
 \item
-Find an example $f \colon \R \to \R$
-where $f'(x) > 0$
-for all $x$, but $f$ is not onto.
+Encontre um exemplo de função $f \colon \R \to \R$ tal que $f'(x)>0$ para todo $x$, mas $f$ não seja sobrejetiva.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Suppose $I,J$ are intervals and a monotone onto $f \colon I \to J$ has an inverse $g \colon J \to I$.
-Suppose $x \in I$ and $y \coloneqq f(x) \in J$, and that $g$ is differentiable at
-$y$.  Prove:
+Suponha que $I,J$ sejam intervalos e que uma função monótona e sobrejetiva $f \colon I \to J$ tenha inversa $g \colon J \to I$. Suponha que $x \in I$, que $y \coloneqq f(x) \in J$ e que $g$ seja diferenciável em $y$. Demonstre:
 \begin{enumerate}[a)]
 \item
-If $g'(y) \neq 0$, then $f$ is differentiable at $x$.
+Se $g'(y) \neq 0$, então $f$ é diferenciável em $x$.
 \item
-If $g'(y) = 0$, then $f$ is not differentiable at $x$.
+Se $g'(y)=0$, então $f$ não é diferenciável em $x$.
 \end{enumerate}
 \end{exercise}

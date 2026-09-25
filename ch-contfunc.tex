@@ -772,75 +772,72 @@ função. A característica principal das funções contínuas
 é que elas são precisamente as funções que se comportam bem com limites.
 
 \begin{prop} \label{contbasic:prop}
-Consider a function $f \colon S \to \R$ defined on a set  $S \subset \R$
-and let $c \in S$.
-Then:
+Considere uma função $f \colon S \to \R$ definida em um conjunto $S \subset \R$
+e seja $c \in S$.
+Então:
 %\begin{enumerate}[(i),itemsep=0.5\itemsep,parsep=0.5\parsep,topsep=0.5\topsep,partopsep=0.5\partopsep]
 \begin{enumerate}[(i)]
 \item \label{contbasic:prop:i}
-If $c$ is not a cluster point of $S$, then $f$ is continuous at $c$.
+Se $c$ não é ponto de acumulação de $S$, então $f$ é contínua em $c$.
 \item \label{contbasic:prop:ii}
-If $c$ is a cluster point of $S$, then $f$ is continuous at $c$
-if and only if the limit of $f(x)$ as $x \to c$ exists and
+Se $c$ é ponto de acumulação de $S$, então $f$ é contínua em $c$
+se, e somente se, existe o limite de $f(x)$ quando $x \to c$ e
 \begin{equation*}
 \lim_{x\to c} f(x) = f(c) .
 \end{equation*}
 \item \label{contbasic:prop:iii}
-The function $f$ is continuous at $c$ if and only if for every sequence
+A função $f$ é contínua em $c$ se, e somente se, para toda sequência
 $\{ x_n \}_{n=1}^\infty$
-where $x_n \in S$ and $\lim\limits_{n\to\infty} x_n = c$, the sequence
-$\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ converges
-to $f(c)$.
+tal que $x_n \in S$ e $\lim\limits_{n\to\infty} x_n = c$, a sequência
+$\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ converge
+para $f(c)$.
 \end{enumerate}
 \end{prop}
 
 \begin{proof}
 \pagebreak[2]
-We start with \ref{contbasic:prop:i}.  Suppose $c$ is not a cluster point of
-$S$.  Then there exists a $\delta > 0$
-such that $S \cap (c-\delta,c+\delta) = \{ c \}$.
-For any $\epsilon > 0$, simply pick this given $\delta$.
-The only $x \in S$ such that $\sabs{x-c} < \delta$ is $x=c$.  Then
+Comecemos com \ref{contbasic:prop:i}. Suponha que $c$ não seja ponto de acumulação de
+$S$. Então existe $\delta > 0$
+tal que $S \cap (c-\delta,c+\delta) = \{ c \}$.
+Para qualquer $\epsilon > 0$, basta escolher esse $\delta$.
+O único $x \in S$ tal que $\sabs{x-c} < \delta$ é $x=c$. Portanto,
 $\babs{f(x)-f(c)} = \babs{f(c)-f(c)} = 0 < \epsilon$.
 
-Let us move to \ref{contbasic:prop:ii}.
-Suppose $c$ is a cluster point of $S$.  Let us first suppose
-that $\lim_{x\to c} f(x) = f(c)$.  Then for every $\epsilon > 0$,
-there is a $\delta > 0$ such that if $x \in S \setminus \{ c \}$
-and $\sabs{x-c} < \delta$, then $\babs{f(x)-f(c)} < \epsilon$.
-Also $\babs{f(c)-f(c)} = 0 < \epsilon$, so the definition of continuity at
-$c$ is satisfied.  On the other hand, suppose $f$ is continuous
-at $c$.  For every $\epsilon > 0$, there exists a $\delta > 0$
-such that for $x \in S$ where $\sabs{x-c} < \delta$, we have
-$\babs{f(x)-f(c)} < \epsilon$.  Then the statement is, of course, still true if
-$x \in S \setminus \{ c \} \subset S$.  Therefore, $\lim_{x\to c} f(x) =
+Passemos a \ref{contbasic:prop:ii}.
+Suponha que $c$ seja ponto de acumulação de $S$. Primeiro, suponhamos
+que $\lim_{x\to c} f(x) = f(c)$. Então, para todo $\epsilon > 0$,
+existe $\delta > 0$ tal que, se $x \in S \setminus \{ c \}$
+e $\sabs{x-c} < \delta$, então $\babs{f(x)-f(c)} < \epsilon$.
+Além disso, $\babs{f(c)-f(c)} = 0 < \epsilon$, de modo que a definição de continuidade em
+$c$ é satisfeita. Por outro lado, suponha que $f$ seja contínua
+em $c$. Para todo $\epsilon > 0$, existe $\delta > 0$
+tal que, para $x \in S$ com $\sabs{x-c} < \delta$, temos
+$\babs{f(x)-f(c)} < \epsilon$. Essa afirmação continua válida se
+$x \in S \setminus \{ c \} \subset S$. Portanto, $\lim_{x\to c} f(x) =
 f(c)$.
 
-For \ref{contbasic:prop:iii}, first suppose $f$ is continuous at $c$.
-Let $\{ x_n \}_{n=1}^\infty$
-be a sequence such that $x_n \in S$ and $\lim_{n\to\infty} x_n = c$.  Let $\epsilon > 0$
-be given.  Find a $\delta > 0$ such that $\babs{f(x)-f(c)} < \epsilon$
-for all $x \in S$ where $\sabs{x-c} < \delta$.  Find an $M \in \N$
-such that for $n \geq M$, we have $\sabs{x_n-c} < \delta$.  Then for
-$n \geq M$, we have that $\babs{f(x_n)-f(c)} < \epsilon$,
-so $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$
-converges to $f(c)$.
+Para provar \ref{contbasic:prop:iii}, suponha primeiro que $f$ seja contínua em $c$.
+Seja $\{ x_n \}_{n=1}^\infty$
+uma sequência tal que $x_n \in S$ e $\lim_{n\to\infty} x_n = c$. Seja dado $\epsilon > 0$.
+Encontre $\delta > 0$ tal que $\babs{f(x)-f(c)} < \epsilon$
+para todo $x \in S$ com $\sabs{x-c} < \delta$. Encontre $M \in \N$
+tal que, para $n \geq M$, tenhamos $\sabs{x_n-c} < \delta$. Então, para
+$n \geq M$, temos $\babs{f(x_n)-f(c)} < \epsilon$,
+e, portanto, $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$
+converge para $f(c)$.
 
-We prove the other direction of \ref{contbasic:prop:iii} by contrapositive.
-Suppose $f$ is not
-continuous at $c$.  Then there exists an $\epsilon > 0$
-such that for every $\delta > 0$, there exists an $x \in S$
-such that $\sabs{x-c} < \delta$ and $\babs{f(x)-f(c)} \geq \epsilon$.
-Define a sequence $\{ x_n \}_{n=1}^\infty$ as follows.
-Let $x_n \in S$ be such that $\sabs{x_n-c} < \nicefrac{1}{n}$
-and $\babs{f(x_n)-f(c)} \geq \epsilon$.
-Now $\{ x_n \}_{n=1}^\infty$ is
-a sequence in $S$ such that
-$\lim_{n\to\infty} x_n = c$ and such that
-$\babs{f(x_n)-f(c)} \geq \epsilon$ for all $n \in \N$.
-Thus $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$
-does not converge to $f(c)$.  It may or may not converge, but it definitely
-does not converge to $f(c)$.  
+Provemos a outra implicação de \ref{contbasic:prop:iii} por contraposição.
+Suponha que $f$ não seja contínua em $c$. Então existe $\epsilon > 0$
+tal que, para todo $\delta > 0$, existe $x \in S$
+tal que $\sabs{x-c} < \delta$ e $\babs{f(x)-f(c)} \geq \epsilon$.
+Defina uma sequência $\{ x_n \}_{n=1}^\infty$ da seguinte maneira.
+Escolha $x_n \in S$ tal que $\sabs{x_n-c} < \nicefrac{1}{n}$
+e $\babs{f(x_n)-f(c)} \geq \epsilon$.
+Então $\{ x_n \}_{n=1}^\infty$ é uma sequência em $S$ tal que
+$\lim_{n\to\infty} x_n = c$ e $\babs{f(x_n)-f(c)} \geq \epsilon$ para todo $n \in \N$.
+Assim, $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$
+não converge para $f(c)$. Ela pode convergir ou não, mas certamente
+não converge para $f(c)$.
 \end{proof}
 
 The last item in the proposition is particularly powerful.  It allows us to

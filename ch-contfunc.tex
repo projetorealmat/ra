@@ -1548,196 +1548,181 @@ a função não é contínua em 0.
 
 \subsection{Bolzano's intermediate value theorem}
 
-Bolzano's intermediate value theorem is one of the cornerstones of analysis.
-It is sometimes only called the intermediate value theorem or just
-Bolzano's theorem.  To prove Bolzano's theorem we prove the
-following simpler lemma.
+O teorema do valor intermediário de Bolzano é um dos pilares da análise.
+Às vezes, ele é chamado apenas de teorema do valor intermediário ou,
+simplesmente, de teorema de Bolzano. Para demonstrar o teorema de Bolzano,
+provaremos o lema mais simples a seguir.
 
 \begin{lemma} \label{IVT:lemma}
-Let $f \colon [a,b] \to \R$ be a continuous function.
-Suppose $f(a) < 0$ and $f(b) > 0$. 
-Then there exists a number $c \in (a,b)$
-such that $f(c) = 0$.
+Seja $f \colon [a,b] \to \R$ uma função contínua.
+Suponha que $f(a) < 0$ e $f(b) > 0$.
+Então existe um número $c \in (a,b)$ tal que $f(c) = 0$.
 \end{lemma}
 
 \begin{proof}
-We define two sequences $\{ a_n \}_{n=1}^\infty$
-and $\{ b_n \}_{n=1}^\infty$ inductively:
+Definimos indutivamente duas sequências $\{ a_n \}_{n=1}^\infty$
+e $\{ b_n \}_{n=1}^\infty$:
 \begin{enumerate}[(i)]
-\item Let $a_1 \coloneqq a$ and $b_1 \coloneqq b$.
-\item If $f\left(\frac{a_n+b_n}{2}\right) \geq 0$, let $a_{n+1} \coloneqq a_n$ and
+\item Seja $a_1 \coloneqq a$ e $b_1 \coloneqq b$.
+\item Se $f\left(\frac{a_n+b_n}{2}\right) \geq 0$, seja
+$a_{n+1} \coloneqq a_n$ e
 $b_{n+1} \coloneqq \frac{a_n+b_n}{2}$.
-\item If $f\left(\frac{a_n+b_n}{2}\right) < 0$, let $a_{n+1} \coloneqq \frac{a_n+b_n}{2}$ and
+\item Se $f\left(\frac{a_n+b_n}{2}\right) < 0$, seja
+$a_{n+1} \coloneqq \frac{a_n+b_n}{2}$ e
 $b_{n+1} \coloneqq b_n$.
 \end{enumerate}
 \begin{myfigureht}
 \myincludegraphics{bisect}{%
-Graph of a function that crosses the
-x-axis at c going upwards.  The interval
-a sub 1 to b sub 1 is marked and f is negative
-at a sub 1 and positive at b sub 1.
-Next interval is a sub 2 which is equal to a sub 1
-and b sub 2 is in the middle of the previous interval.
-Again the function is negative at a sub 2 and positive
-at b sub 2.  We continue with the intervals
-with f being negative on the left and positive
-on the right.
-The next interval is from a sub 3 which equals
-a sub 2 and b sub 3 which
-is in the middle of the previous interval.  
-For the next interval, a sub 4 is in the middle and
-b sub 4 is equal to b sub 3.
-The next a sub 5 is in the middle again and b sub 5 
-is equal to b sub 4.  The number c is
-inside all of these intervals.}
-\caption{Finding roots (bisection method).\label{bisectfig}}
+Gráfico de uma função que cruza o eixo x em c, crescendo.
+O intervalo de a_1 a b_1 está assinalado, e f é negativa
+em a_1 e positiva em b_1.
+O intervalo seguinte tem a_2 igual a a_1, e b_2 está no meio
+do intervalo anterior. Novamente, a função é negativa em a_2 e
+positiva em b_2. Prosseguimos com os intervalos nos quais f é
+negativa à esquerda e positiva à direita.
+O intervalo seguinte vai de a_3, que é igual a a_2, até b_3,
+que está no meio do intervalo anterior.
+No intervalo seguinte, a_4 está no meio e b_4 é igual a b_3.
+Depois, a_5 volta a estar no meio e b_5 é igual a b_4.
+O número c está dentro de todos esses intervalos.}
+\caption{Encontrando raízes (método da bisseção).\label{bisectfig}}
 \end{myfigureht}
-See \figureref{bisectfig} for an example of the first five steps.
-If $a_n < b_n$, then $a_n < \frac{a_n+b_n}{2} < b_n$.  So
+A \figureref{bisectfig} mostra um exemplo dos cinco primeiros passos.
+Se $a_n < b_n$, então
+$a_n < \frac{a_n+b_n}{2} < b_n$. Portanto,
 $a_{n+1} < b_{n+1}$.
-As $a_1 = a < b = b_1$,
-\hyperref[induction:thm]{induction} gives that
-$a_n < b_n$ for all $n$.
-Furthermore, $a_n \leq a_{n+1}$ and 
-$b_n \geq b_{n+1}$ for all $n$, that is, the sequences are monotone.
-As $a_n < b_n \leq b_1 = b$ and 
-$b_n > a_n \geq a_1 = a$ for all $n$,
-the sequences are also bounded.  Therefore, the
-sequences converge.
-Let $c \coloneqq \lim_{n\to\infty} a_n$ and $d \coloneqq \lim_{n\to\infty} b_n$,
-where also $a \leq c \leq d \leq b$.  We need
-to show that $c=d$.
-Notice
+Como $a_1 = a < b = b_1$,
+a \hyperref[induction:thm]{indução} implica que
+$a_n < b_n$ para todo $n$.
+Além disso, $a_n \leq a_{n+1}$ e
+$b_n \geq b_{n+1}$ para todo $n$; isto é, as sequências são monótonas.
+Como $a_n < b_n \leq b_1 = b$ e
+$b_n > a_n \geq a_1 = a$ para todo $n$,
+as sequências também são limitadas. Portanto, elas convergem.
+Sejam $c \coloneqq \lim_{n\to\infty} a_n$ e
+$d \coloneqq \lim_{n\to\infty} b_n$,
+de modo que também $a \leq c \leq d \leq b$. Precisamos mostrar que $c=d$.
+Observe que
 \begin{equation*}
 b_{n+1} - a_{n+1} = \frac{b_n-a_n}{2}.
 \end{equation*}
-By \hyperref[induction:thm]{induction},
+Pela \hyperref[induction:thm]{indução},
 \begin{equation*}
 b_n - a_n = \frac{b_1-a_1}{2^{n-1}} = 2^{1-n} (b-a) .
 \end{equation*}
-As $2^{1-n}(b-a)$ converges to zero, we take the limit as $n$ goes to
-infinity to get
+Como $2^{1-n}(b-a)$ converge para zero, tomamos o limite quando $n$ tende
+ao infinito e obtemos
 \begin{equation*}
 d-c = \lim_{n\to\infty} (b_n - a_n) =
 \lim_{n\to\infty} 2^{1-n} (b-a) = 0.
 \avoidbreak
 \end{equation*}
-In other words, $c=d$.
+Em outras palavras, $c=d$.
 
-By construction, for all $n$,
+Por construção, para todo $n$,
 \begin{equation*}
 f(a_n) < 0
-\qquad \text{and} \qquad
+\qquad \text{e} \qquad
 f(b_n) \geq 0 .
 \end{equation*}
-Since
+Como
 $\lim_{n\to\infty} a_n = \lim_{n\to\infty} b_n = c$
-and $f$ is continuous at $c$, we may take 
-limits in those inequalities:
+e $f$ é contínua em $c$, podemos tomar limites nessas desigualdades:
 \begin{equation*}
 f(c) = \lim_{n\to\infty} f(a_n) \leq 0
-\qquad \text{and} \qquad
+\qquad \text{e} \qquad
 f(c) = \lim_{n\to\infty} f(b_n) \geq 0 .
 \end{equation*}
-As $f(c) \geq 0$ and 
-$f(c) \leq 0$, we conclude $f(c) = 0$.
-Thus also $c \neq a$ and $c \neq b$, so
-$a < c < b$.
+Como $f(c) \geq 0$ e $f(c) \leq 0$, concluímos que $f(c) = 0$.
+Logo, também temos $c \neq a$ e $c \neq b$, portanto $a < c < b$.
 \end{proof}
 
-\begin{thm}[Bolzano's intermediate value theorem] \label{IVT:thm}
-\index{Bolzano's theorem}
-\index{Bolzano's intermediate value theorem}
-\index{intermediate value theorem}
-Let $f \colon [a,b] \to \R$ be a continuous function.
-Suppose $y \in \R$ is such that $f(a) < y < f(b)$
-or $f(a) > y > f(b)$.  Then there exists a $c \in (a,b)$
-such that $f(c) = y$.
+\begin{thm}[Teorema do valor intermediário de Bolzano] \label{IVT:thm}
+\index{teorema de Bolzano}
+\index{teorema do valor intermediário de Bolzano}
+\index{teorema do valor intermediário}
+Seja $f \colon [a,b] \to \R$ uma função contínua.
+Suponha que $y \in \R$ seja tal que $f(a) < y < f(b)$
+ou $f(a) > y > f(b)$. Então existe $c \in (a,b)$
+tal que $f(c) = y$.
 \end{thm}
 
-The theorem says that a continuous function on a closed interval
-achieves all the values between the values at the endpoints.
+O teorema afirma que uma função contínua em um intervalo fechado
+assume todos os valores entre os valores nos extremos.
 
 \begin{proof}
-If $f(a) < y < f(b)$, then define $g(x) \coloneqq f(x)-y$.  Then 
-$g(a) < 0$ and $g(b) > 0$, and we apply \lemmaref{IVT:lemma}
-to $g$ to find $c$.  If $g(c) = 0$, then $f(c) = y$.
+Se $f(a) < y < f(b)$, definimos $g(x) \coloneqq f(x)-y$. Então
+$g(a) < 0$ e $g(b) > 0$, e aplicamos o \lemmaref{IVT:lemma}
+a $g$ para encontrar $c$. Se $g(c) = 0$, então $f(c) = y$.
 
-Similarly, if $f(a) > y > f(b)$, then define $g(x) \coloneqq y-f(x)$.
-Again, $g(a) < 0$ and $g(b) > 0$, and we apply \lemmaref{IVT:lemma} to
-find $c$.
-As before, if $g(c) = 0$, then $f(c) = y$.
+De modo semelhante, se $f(a) > y > f(b)$, definimos
+$g(x) \coloneqq y-f(x)$. Novamente, $g(a) < 0$ e $g(b) > 0$,
+e aplicamos o \lemmaref{IVT:lemma} para encontrar $c$.
+Como antes, se $g(c) = 0$, então $f(c) = y$.
 \end{proof}
 
-If a function is continuous, then the restriction
-to a subset is continuous; if $f \colon S \to \R$ is continuous and
-$[a,b] \subset S$, then $f|_{[a,b]}$ is also continuous.  We generally
-apply the theorem to a function continuous on some large set $S$,
-but we restrict our attention to an interval.
+Se uma função é contínua, sua restrição a um subconjunto também é contínua;
+se $f \colon S \to \R$ é contínua e $[a,b] \subset S$, então
+$f|_{[a,b]}$ também é contínua. Em geral, aplicamos o teorema a uma função
+contínua em algum conjunto maior $S$, mas restringimos nossa atenção a um
+intervalo.
 
+A demonstração do lema nos diz como encontrar a raiz $c$. Essa prova não é útil
+apenas para nós, matemáticos puros: ela também fornece uma ideia útil na
+matemática aplicada, chamada de \emph{\myindex{método da bisseção}}.
 
-The proof of the lemma tells us how to find the root $c$.  The
-proof is not only useful for us pure mathematicians,
-it is a useful idea in applied mathematics,
-where it is called the \emph{\myindex{bisection method}}.
-
-
-\begin{example}[Bisection method] %\index{bisection method}
-The polynomial $f(x) \coloneqq x^3-2x^2+x-1$ has a real root in $(1,2)$.  We simply
-notice that $f(1) = -1$ and $f(2) = 1$.  Hence, there must exist a point $c
-\in (1,2)$ such that $f(c) = 0$.  To find a better approximation of
-the root we follow the proof of \lemmaref{IVT:lemma}.  
-We look at 1.5 and find that $f(1.5) = -0.625$.  Therefore,
-there is a root of the polynomial in $(1.5,2)$.  Next, we look at 1.75
-and note that $f(1.75) \approx -0.016$.  Hence, there is a root of $f$ in
-$(1.75,2)$.  Next, we look at 1.875 and find that $f(1.875) \approx 0.44$,
-thus there is a root in $(1.75,1.875)$.  We follow this procedure until we gain
-sufficient precision.  In fact, the root is at $c \approx 1.7549$.
+\begin{example}[Método da bisseção] %\index{bisection method}
+O polinômio $f(x) \coloneqq x^3-2x^2+x-1$ tem uma raiz real em $(1,2)$.
+Basta observar que $f(1) = -1$ e $f(2) = 1$. Portanto, existe um ponto
+$c \in (1,2)$ tal que $f(c) = 0$. Para encontrar uma aproximação melhor
+da raiz, seguimos a demonstração do \lemmaref{IVT:lemma}.
+Calculamos $f(1.5) = -0.625$. Portanto, há uma raiz do polinômio em $(1.5,2)$.
+Em seguida, examinamos 1.75 e observamos que $f(1.75) \approx -0.016$.
+Logo, há uma raiz de $f$ em $(1.75,2)$. Depois, calculamos
+$f(1.875) \approx 0.44$, portanto há uma raiz em $(1.75,1.875)$.
+Repetimos esse procedimento até obter precisão suficiente. De fato,
+a raiz é $c \approx 1.7549$.
 \end{example}
 
-The technique is the simplest method of finding roots of polynomials,
-a common problem in applied mathematics.
-In general, finding roots is hard to do quickly, precisely,
-and automatically.
-There are other, faster methods of finding roots of polynomials, such
-as Newton's method.  One advantage of the method above is its
-simplicity.  The
-moment we find an interval where the intermediate value theorem
-applies, we are guaranteed to find a root up to a desired
-precision in finitely many steps.  Furthermore, the bisection
-method finds roots of any
-continuous function, not just a polynomial.
+Essa técnica é o método mais simples para encontrar raízes de polinômios,
+um problema comum em matemática aplicada. Em geral, é difícil encontrar raízes
+com rapidez, precisão e de modo automático.
+Há outros métodos mais rápidos para encontrar raízes de polinômios,
+como o método de Newton. Uma vantagem do método acima é sua simplicidade.
+Assim que encontramos um intervalo ao qual se aplica o teorema do valor
+intermediário, temos a garantia de encontrar uma raiz com a precisão desejada
+em um número finito de passos. Além disso, o método da bisseção encontra raízes
+de qualquer função contínua, e não apenas de um polinômio.
 
-The theorem guarantees one $c$ such that $f(c) = y$, but there
-may be other roots of the equation $f(c) = y$.  If we follow
-the procedure of the proof, we are guaranteed to find approximations to
-one such root.  We need to work harder to find any other roots.
+O teorema garante um $c$ tal que $f(c) = y$, mas pode haver outras raízes
+da equação $f(c) = y$. Se seguirmos o procedimento da demonstração,
+teremos a garantia de encontrar aproximações para uma dessas raízes.
+Para encontrar quaisquer outras raízes, precisamos nos esforçar mais.
 
 \medskip
 
-Polynomials of even degree may not have any real roots.
-There is no real number $x$ such that $x^2+1 = 0$.  Odd polynomials, on the
-other hand, always have at least one real root.
+Polinômios de grau par podem não ter raízes reais.
+Não existe número real $x$ tal que $x^2+1 = 0$. Por outro lado,
+todo polinômio de grau ímpar tem pelo menos uma raiz real.
 
 \begin{prop}
-Let $f(x)$ be a polynomial of odd degree.  Then $f$ has a real root.
+Seja $f(x)$ um polinômio de grau ímpar. Então $f$ tem uma raiz real.
 \end{prop}
 
 \begin{proof}
-Suppose $f$ is a polynomial of odd degree $d$.  We write
+Suponha que $f$ seja um polinômio de grau ímpar $d$. Escrevemos
 \begin{equation*}
 f(x) = a_d x^d + a_{d-1} x^{d-1} + \cdots + a_1 x + a_0 ,
 \end{equation*}
-where $a_d \neq 0$.  We divide by $a_d$ to obtain a 
-\emph{\myindex{monic polynomial}}\footnote{The word \emph{monic} means that
-the coefficient of $x^d$ is 1.}
+onde $a_d \neq 0$. Dividimos por $a_d$ para obter um
+\emph{\myindex{polinômio mônico}}\footnote{A palavra \emph{mônico} significa que
+o coeficiente de $x^d$ é 1.}
 \begin{equation*}
 g(x) \coloneqq x^d + b_{d-1} x^{d-1} + \cdots + b_1 x + b_0 ,
 \end{equation*}
-where $b_k = \nicefrac{a_k}{a_d}$.
-Let us show that $g(n)$ is
-positive for some large $n \in \N$.
-We first compare the highest order term with the rest:
+onde $b_k = \nicefrac{a_k}{a_d}$.
+Vamos mostrar que $g(n)$ é positivo para algum $n \in \N$ suficientemente
+grande. Primeiro, comparamos o termo de ordem mais alta com os demais:
 \begin{equation*}
 \begin{split}
 \abs{\frac{b_{d-1} n^{d-1} + \cdots + b_1 n + b_0}{n^d}}
@@ -1758,93 +1743,87 @@ We first compare the highest order term with the rest:
 \bigl(\sabs{b_{d-1}} + \cdots + \sabs{b_1} + \sabs{b_0}\bigr) .
 \end{split}
 \end{equation*}
-Therefore,
+Portanto,
 \begin{equation*}
 \lim_{n\to\infty} \frac{b_{d-1} n^{d-1} + \cdots + b_1 n + b_0}{n^d}
 = 0 .
 \end{equation*}
-Thus there exists an $M \in \N$ such that 
+Logo, existe $M \in \N$ tal que
 \begin{equation*}
 \abs{\frac{b_{d-1} M^{d-1} + \cdots + b_1 M + b_0}{M^d}} < 1 ,
 \end{equation*}
-which implies
+o que implica
 \begin{equation*}
 -(b_{d-1} M^{d-1} + \cdots + b_1 M + b_0) < M^d .
 \end{equation*}
-Therefore, $g(M) > 0$.
+Portanto, $g(M) > 0$.
 
-Next, consider $g(-n)$ for $n \in \N$.  By a similar argument,
-there exists a $K \in \N$ such that
+Em seguida, consideramos $g(-n)$, para $n \in \N$. Por um argumento
+semelhante, existe $K \in \N$ tal que
 $b_{d-1} {(-K)}^{d-1} + \cdots + b_1 (-K) + b_0 < K^d$
-and therefore $g(-K) < 0$ (see \exerciseref{exercise:odddegnegativeK}).
-In the proof,
- make sure you use the fact that $d$ is odd.
-In particular, if $d$ is odd, then ${(-n)}^d = -(n^d)$.
+e, portanto, $g(-K) < 0$ (veja o \exerciseref{exercise:odddegnegativeK}).
+Na demonstração, certifique-se de usar o fato de que $d$ é ímpar.
+Em particular, se $d$ é ímpar, então \${(-n)}^d = -(n^d)$.
 
-We appeal to the intermediate value theorem to find a
-$c \in (-K,M)$ such that $g(c) = 0$.  As $g(x) = \frac{f(x)}{a_d}$,
-then $f(c) = 0$, and the proof is done.
+Aplicamos o teorema do valor intermediário para encontrar
+$c \in (-K,M)$ tal que $g(c) = 0$. Como $g(x) = \frac{f(x)}{a_d}$,
+temos $f(c) = 0$, e a demonstração está concluída.
 \end{proof}
 
 \begin{example}
-You may recall how hard we worked
-in \exampleref{example:sqrt2}
-to show that $\sqrt{2}$ exists.
-With Bolzano's
-theorem, we can prove the existence of a $k$th root of any positive number
-$y > 0$ without any effort.
-We claim that for any $k \in \N$ and any $y > 0$,
-there exists a number $x > 0$ such that $x^k = y$.
+Você talvez se lembre de quanto nos esforçamos em
+\exampleref{example:sqrt2} para mostrar que $\sqrt{2}$ existe.
+Com o teorema de Bolzano, podemos provar sem esforço a existência de uma
+raiz $k$-ésima de qualquer número positivo $y > 0$.
+Afirmamos que, para todo $k \in \N$ e todo $y > 0$,
+existe um número $x > 0$ tal que $x^k = y$.
 
-Proof: If $y=1$, then it is clear, so assume $y\neq 1$.
-Similarly, assume $k \geq 2$.
-Let $f(x) \coloneqq x^k - y$.  We notice $f(0) = -y < 0$.
-If $y < 1$, then $f(1) = 1^k -y > 0$.  If $y > 1$,
-then $f(y) = y^k-y = y(y^{k-1}-1) > 0$.
-In either case, apply Bolzano's theorem to find an $x > 0$ such that $f(x) = 0$,
-or in other words $x^k = y$.
+Demonstração: Se $y=1$, isso é claro; portanto, suponhamos $y\neq 1$.
+De modo semelhante, suponhamos $k \geq 2$.
+Seja $f(x) \coloneqq x^k - y$. Observamos que $f(0) = -y < 0$.
+Se $y < 1$, então $f(1) = 1^k -y > 0$. Se $y > 1$,
+então $f(y) = y^k-y = y(y^{k-1}-1) > 0$.
+Em qualquer dos casos, aplicamos o teorema de Bolzano para encontrar
+$x > 0$ tal que $f(x) = 0$, ou, em outras palavras, $x^k = y$.
 \end{example}
 
 \begin{example}
-Interestingly,
-there exist discontinuous functions with
-the intermediate value property.
-The function
+Curiosamente, existem funções descontínuas com a propriedade do valor
+intermediário. A função
 \begin{equation*}
 f(x) \coloneqq
 \begin{cases}
-\sin(\nicefrac{1}{x}) & \text{if } x \neq 0, \\
-0 & \text{if } x=0,
+\sin(\nicefrac{1}{x}) & \text{se } x \neq 0, \\
+0 & \text{se } x=0,
 \end{cases}
 \end{equation*}
-is not continuous at $0$; however, $f$ has the intermediate value property:
-Whenever $a < b$ and $y$ is such that $f(a) < y < f(b)$
-or $f(a) > y > f(b)$,
-there exists a $c \in (a,b)$ such that $f(c) = y$.
-See \figureref{figsin1x} for a graph of $\sin(\nicefrac{1}{x})$.
-The proof is left as \exerciseref{exercise:meanvaluepropsin1x}.
+não é contínua em $0$; no entanto, $f$ tem a propriedade do valor intermediário:
+sempre que $a < b$ e $y$ é tal que $f(a) < y < f(b)$
+ou $f(a) > y > f(b)$,
+existe $c \in (a,b)$ tal que $f(c) = y$.
+Veja a \figureref{figsin1x} para um gráfico de $\sin(\nicefrac{1}{x})$.
+A demonstração fica como exercício
+(\exerciseref{exercise:meanvaluepropsin1x}).
 \end{example}
 
-The intermediate value theorem says that if $f \colon [a,b] \to \R$ is
-continuous, then $f\bigl([a,b]\bigr)$ contains all the values between $f(a)$ and
-$f(b)$.  In fact, more is true.  Combining all the results of this section
-one can prove the following useful corollary whose proof is left as an exercise.
-Hint: See \figureref{fig:imageinterval} and notice what the endpoints of the
-image interval are.
+O teorema do valor intermediário afirma que, se $f \colon [a,b] \to \R$ é
+contínua, então $f\bigl([a,b]\bigr)$ contém todos os valores entre $f(a)$ e
+$f(b)$. Na verdade, vale algo mais. Combinando todos os resultados desta seção,
+podemos provar o seguinte corolário útil, cuja demonstração fica como exercício.
+Dica: veja a \figureref{fig:imageinterval} e observe quais são os extremos
+do intervalo imagem.
 
 \begin{cor} \label{cor:imageofinterval}
-If $f \colon [a,b] \to \R$ is continuous, then the direct image
-$f\bigl([a,b]\bigr)$
-is a closed and bounded interval or a single number.
+Se $f \colon [a,b] \to \R$ é contínua, então a imagem direta
+$f\bigl([a,b]\bigr)$ é um intervalo fechado e limitado ou um único número.
 \end{cor}
 
 \begin{myfigureht}
 \myincludepdft{figimageinterval}{%
-A graph of a function y equals f of x on the interval
-from a to b marked in a bold line.  On the vertical
-axis, the set of all values achieved by the function
-is marked as f of the closed interval from a to b.}
-\caption{The image of a continuous $f \colon [a,b] \to \R$.\label{fig:imageinterval}}
+Gráfico de uma função y=f(x) no intervalo de a a b, assinalado por
+um traço mais grosso. No eixo vertical, o conjunto de todos os valores
+assumidos pela função está marcado como f([a,b]).}
+\caption{A imagem de uma função contínua $f \colon [a,b] \to \R$.\label{fig:imageinterval}}
 \end{myfigureht}
 
 \subsection{Exercises}

@@ -840,18 +840,18 @@ não converge para $f(c)$. Ela pode convergir ou não, mas certamente
 não converge para $f(c)$.
 \end{proof}
 
-The last item in the proposition is particularly powerful.  It allows us to
-quickly apply what we know about limits of sequences to continuous functions
-and even to prove that certain functions are continuous.
-It can also be strengthened (see \exerciseref{exercise:contseqalt}).
+O último item da proposição é especialmente poderoso. Ele nos permite
+aplicar rapidamente o que sabemos sobre limites de sequências a funções contínuas
+e até provar que certas funções são contínuas.
+Esse resultado também pode ser fortalecido (veja \exerciseref{exercise:contseqalt}).
 
 \begin{example}
-The function $f \colon (0,\infty) \to \R$
-defined by $f(x) \coloneqq \nicefrac{1}{x}$ is continuous.
+A função $f \colon (0,\infty) \to \R$
+definida por $f(x) \coloneqq \nicefrac{1}{x}$ é contínua.
 
-Proof: Fix $c \in (0,\infty)$.  
-Let $\{ x_n \}_{n=1}^\infty$ be a sequence in $(0,\infty)$ such that
-$\lim_{n\to\infty} x_n = c$.  Then
+Demonstração: Fixe $c \in (0,\infty)$.
+Seja $\{ x_n \}_{n=1}^\infty$ uma sequência em $(0,\infty)$ tal que
+$\lim_{n\to\infty} x_n = c$. Então
 \begin{equation*}
 f(c) = \frac{1}{c}
 =
@@ -861,28 +861,28 @@ f(c) = \frac{1}{c}
 =
 \lim_{n \to \infty} f(x_n) .
 \end{equation*}
-Thus $f$ is continuous at $c$.  As $f$ is continuous at all $c \in
-(0,\infty)$, $f$ is continuous.
+Portanto, $f$ é contínua em $c$. Como $f$ é contínua em todo $c \in
+(0,\infty)$, $f$ é contínua.
 \end{example}
 
-We have previously shown $\lim_{x \to c} x^2 = c^2$ directly.  Therefore,
-the function $x^2$ is continuous.  The last item of \propref{contbasic:prop} and the continuity of
-algebraic operations with respect to limits of sequences,
-\propref{prop:contalg}, give a quick proof of a much more general result.
+Já mostramos diretamente que $\lim_{x \to c} x^2 = c^2$. Portanto,
+a função $x^2$ é contínua. O último item da \propref{contbasic:prop} e a continuidade das
+operações algébricas em relação aos limites de sequências,
+\propref{prop:contalg}, fornecem uma demonstração rápida de um resultado muito mais geral.
 
 \begin{prop}
-Let $f \colon \R \to \R$ be a \emph{\myindex{polynomial}}.  That is,
+Seja $f \colon \R \to \R$ um \emph{\myindex{polinômio}}. Isto é,
 \begin{equation*}
 f(x) = a_d x^d + a_{d-1} x^{d-1} + \cdots + a_1 x + a_0 ,
 \end{equation*}
-for some constants $a_0, a_1, \ldots, a_d$.
-Then $f$ is continuous.
+para certas constantes $a_0, a_1, \ldots, a_d$.
+Então $f$ é contínua.
 \end{prop}
 
 \begin{proof}
-Fix $c \in \R$.  
-Let $\{ x_n \}_{n=1}^\infty$ be a sequence such that
-$\lim_{n\to\infty} x_n = c$.  Then
+Fixe $c \in \R$.
+Seja $\{ x_n \}_{n=1}^\infty$ uma sequência tal que
+$\lim_{n\to\infty} x_n = c$. Então
 \begin{equation*}
 \begin{split}
 f(c) &=
@@ -905,13 +905,12 @@ f(x_n) .
 \avoidbreak
 \end{split}
 \end{equation*}
-Thus $f$ is continuous at $c$.  As $f$ is continuous at all $c \in \R$,
-$f$ is continuous.
+Portanto, $f$ é contínua em $c$. Como $f$ é contínua em todo $c \in \R$,
+$f$ é contínua.
 \end{proof}
 
-By similar reasoning, or by appealing to \corref{falg:cor},
-we can prove the following proposition.  The proof is left as an
-exercise.
+Por raciocínio semelhante, ou recorrendo ao \corref{falg:cor},
+podemos provar a seguinte proposição. A demonstração fica como exercício.
 
 \begin{prop} \label{contalg:prop}
 Let $f \colon S \to \R$ and $g \colon S \to \R$ be functions

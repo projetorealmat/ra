@@ -1200,162 +1200,128 @@ e, de fato, $g$ é contínua em $B$.
 \subsection{Exercises}
 
 \begin{exercise}
-Usando diretamente a definição de continuidade, prove que
-$f \colon \R \to \R$ definida por
-$f(x) \coloneqq x^2$ é contínua.
+Encontre um exemplo de função descontínua $f \colon [0,1] \to \R$
+para a qual a conclusão do teorema do valor intermediário não vale.
 \end{exercise}
 
 \begin{exercise}
-Usando diretamente a definição de continuidade, prove que
-$f \colon (0,\infty) \to \R$ definida por
-$f(x) \coloneqq \nicefrac{1}{x}$ é contínua.
+Encontre um exemplo de função descontínua \emph{limitada}
+$f \colon [0,1] \to \R$ que não tenha mínimo absoluto nem máximo absoluto.
 \end{exercise}
 
 \begin{exercise}
-Defina $f \colon \R \to \R$ por
-\begin{equation*}
-f(x) \coloneqq
-\begin{cases}
-x & \text{se } x \text{ é racional,} \\
-x^2 & \text{se } x \text{ é irracional.}
-\end{cases}
-\avoidbreak
-\end{equation*}
-Usando diretamente a definição de continuidade, prove que
-$f$ é contínua em $1$ e descontínua em $2$.
+Seja $f \colon (0,1) \to \R$ uma função contínua tal que
+$\displaystyle \lim_{x\to 0} f(x) =
+\displaystyle \lim_{x\to 1} f(x) = 0$. Mostre que
+$f$ atinge um mínimo absoluto ou um máximo absoluto em $(0,1)$
+(mas talvez não ambos).
 \end{exercise}
 
-\begin{exercise}
-Defina $f \colon \R \to \R$ por
+\begin{exercise} \label{exercise:meanvaluepropsin1x}
+Seja
 \begin{equation*}
 f(x) \coloneqq
 \begin{cases}
 \sin(\nicefrac{1}{x}) & \text{se } x \neq 0, \\
 0 & \text{se } x=0.
 \end{cases}
-\avoidbreak
 \end{equation*}
-$f$ é contínua? Demonstre sua afirmação.
+Mostre que $f$ tem a propriedade do valor intermediário.
+Isto é, sempre que $a < b$, se existe $y$ tal que $f(a) < y < f(b)$
+ou $f(a) > y > f(b)$, então
+existe $c \in (a,b)$ tal que $f(c) = y$.
 \end{exercise}
 
-\begin{exercise}
-Defina $f \colon \R \to \R$ por
+\begin{exercise} \label{exercise:odddegnegativeK}
+Suponha que $g(x)$ seja um polinômio mônico de grau ímpar $d$, isto é,
 \begin{equation*}
-f(x) \coloneqq
-\begin{cases}
-x \sin(\nicefrac{1}{x}) & \text{se } x \neq 0, \\
-0 & \text{se } x=0.
-\end{cases}
-\avoidbreak
+g(x) = x^d + b_{d-1} x^{d-1} + \cdots + b_1 x + b_0 ,
 \end{equation*}
-$f$ é contínua? Demonstre sua afirmação.
+para certos números reais $b_{0}, b_1, \ldots, b_{d-1}$. Mostre que existe
+$K \in \N$ tal que $g(-K) < 0$. Dica: certifique-se de usar o fato de que
+$d$ é ímpar. Você precisará usar que ${(-n)}^d = -(n^d)$.
 \end{exercise}
 
 \begin{exercise}
-Demonstre a \propref{contalg:prop}.
-\end{exercise}
-
-\begin{exercise} \label{exercise:restrictioncontinuous}
-Sejam $S \subset \R$ e $A \subset S$. Seja $f \colon S \to \R$
-uma função contínua.
-Demonstre que a restrição $f|_A$ é contínua.
-\end{exercise}
-
-\begin{exercise}
-Suponha que $S \subset \R$ e que $(c-\alpha,c+\alpha) \subset S$ para algum $c \in \R$
-e $\alpha > 0$.
-Seja $f \colon S \to \R$ uma função e $A \coloneqq (c-\alpha,c+\alpha)$. Demonstre que,
-se $f|_A$ é contínua em $c$, então $f$ é contínua em $c$.
+Suponha que $g(x)$ seja um polinômio mônico de grau par positivo $d$, isto é,
+\begin{equation*}
+g(x) = x^d + b_{d-1} x^{d-1} + \cdots + b_1 x + b_0 ,
+\end{equation*}
+para certos números reais $b_{0}, b_1, \ldots, b_{d-1}$. Suponha
+que $g(0) < 0$. Mostre que $g$ tem pelo menos duas raízes reais distintas.
 \end{exercise}
 
 \begin{exercise}
-Dê um exemplo de funções $f \colon \R \to \R$ e $g \colon \R \to \R$
-tais que a função $h$, definida por $h(x) \coloneqq f(x) + g(x)$, seja contínua,
-mas $f$ e $g$ não sejam contínuas. Você consegue encontrar $f$ e $g$ que não sejam
-contínuas em ponto algum, mas para as quais $h$ seja uma função contínua?
+Demonstre o \corref{cor:imageofinterval}:
+suponha que $f \colon [a,b] \to \R$ seja uma função contínua.
+Demonstre que a imagem direta $f\bigl([a,b]\bigr)$ é um intervalo fechado
+e limitado ou um único número.
 \end{exercise}
 
 \begin{exercise}
-Sejam $f \colon \R \to \R$ e
-$g \colon \R \to \R$ funções contínuas. Suponha que
-$f(r) = g(r)$ para todo $r \in \Q$.
-Mostre que $f(x) = g(x)$ para todo $x \in \R$.
+Suponha que $f \colon \R \to \R$ seja contínua e periódica, com período
+$P > 0$. Isto é, $f(x+P) = f(x)$ para todo $x \in \R$. Mostre que $f$
+atinge um mínimo absoluto e um máximo absoluto.
 \end{exercise}
 
-\begin{exercise} \label{exercise:positivecontneigh}
-Seja $f \colon \R \to \R$ contínua. Suponha que $f(c) > 0$. Mostre que
-existe $\alpha > 0$ tal que, para todo $x \in (c-\alpha,c+\alpha)$,
-temos $f(x) > 0$.
-\end{exercise}
-
-\begin{exercise}
-Seja $f \colon \Z \to \R$ uma função. Mostre que $f$ é contínua.
-\end{exercise}
-
-\begin{exercise} \label{exercise:contseqalt}
-Seja $f \colon S \to \R$ uma função e seja $c \in S$ tal que, para toda
-sequência $\{ x_n \}_{n=1}^\infty$ em $S$ com $\lim_{n\to\infty} x_n = c$, a sequência
-$\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ converge. Mostre que $f$ é contínua em $c$.
+\begin{exercise}[Desafiador]
+Suponha que $f(x)$ seja um polinômio limitado; em outras palavras,
+existe $M$ tal que $\babs{f(x)} \leq M$
+para todo $x \in \R$. Prove que $f$ deve ser constante.
 \end{exercise}
 
 \begin{exercise}
-Suponha que $f \colon [-1,0] \to \R$ e $g \colon [0,1] \to \R$ sejam contínuas
-e que $f(0) = g(0)$. Defina $h \colon [-1,1] \to \R$ por
-$h(x) \coloneqq f(x)$ se $x \leq 0$ e $h(x) \coloneqq g(x)$ se $x > 0$. Mostre que
-$h$ é contínua.
+Suponha que $f \colon [0,1] \to [0,1]$ seja contínua. Mostre que $f$
+tem um ponto fixo; em outras palavras, mostre que existe $x \in [0,1]$ tal que
+$f(x) = x$.
 \end{exercise}
 
 \begin{exercise}
-Suponha que $g \colon \R \to \R$ seja uma função contínua tal que $g(0) = 0$,
-e suponha que $f \colon \R \to \R$ satisfaça
-$\babs{f(x)-f(y)} \leq g(x-y)$ para todos $x$ e $y$. Mostre que $f$ é
-contínua.
-\end{exercise}
-
-\begin{exercise}[Desafio]
-Suponha que $f \colon \R \to \R$ seja contínua em $0$ e
-satisfaça $f(x+y) = f(x) + f(y)$ para todos $x$ e $y$.
-Mostre que $f(x) = ax$ para algum $a \in \R$.
-Dica: mostre que $f(nx) = nf(x)$ e, em seguida, que $f$ é contínua em $\R$.
-Depois mostre que $\nicefrac{f(x)}{x} = f(1)$ para todo racional $x \neq 0$.
-\end{exercise}
-
-\begin{exercise} \label{exercise:minmaxcont}
-Suponha que $S \subset \R$ e sejam
-$f \colon S \to \R$ e $g \colon S \to \R$ funções contínuas.
-Defina $p \colon S \to \R$ por
-$p(x) \coloneqq \max \bigl\{ f(x) , g(x) \bigr\}$ e
-$q \colon S \to \R$ por
-$q(x) \coloneqq \min \bigl\{ f(x) , g(x) \bigr\}$. Demonstre que $p$ e $q$ são
-contínuas.
+Encontre um exemplo de função contínua e limitada $f \colon \R \to \R$ que
+não atinja mínimo absoluto nem máximo absoluto em $\R$.
 \end{exercise}
 
 \begin{exercise}
-Suponha que $f \colon [-1,1] \to \R$ seja uma função contínua em todo $x \in
-[-1,1] \setminus \{ 0 \}$. Mostre que, para todo $\epsilon$ tal
-que $0 < \epsilon < 1$, existe
-uma função $g \colon [-1,1] \to \R$ contínua em todo $[-1,1]$ tal que
-$f(x) = g(x)$ para todo $x \in [-1,-\epsilon] \cup [\epsilon,1]$, e
-$\babs{g(x)} \leq \babs{f(x)}$ para todo $x \in [-1,1]$.
+Suponha que $f \colon \R \to \R$ seja contínua e satisfaça
+$x \leq f(x) \leq x+1$ para todo $x \in \R$. Determine $f(\R)$.
 \end{exercise}
 
-\begin{exercise}[Desafio]
-Uma função $f \colon I \to \R$ é \emph{\myindex{convexa}} se,
-sempre que $a \leq x \leq b$ para $a,x,b$ em $I$, temos
-$f(x) \leq f(a) \frac{b-x}{b-a} + f(b) \frac{x-a}{b-a}$. Em outras palavras,
-a reta que liga $\bigl(a,f(a)\bigr)$ e $\bigl(b,f(b)\bigr)$
-fica acima do gráfico de $f$.
+\begin{exercise}
+Verdadeiro ou falso? Demonstre ou encontre um contraexemplo.
+Se $f \colon \R \to \R$ é uma função contínua tal que $f|_{\Z}$ é limitada,
+então $f$ é limitada.
+\end{exercise}
+
+\begin{exercise}
+Suponha que $f \colon [0,1] \to (0,1)$ seja uma bijeção. Prove que $f$
+não é contínua.
+\end{exercise}
+
+\begin{exercise}
+Suponha que $f \colon \R \to \R$ seja contínua.
 \begin{enumerate}[a)]
 \item
-Demonstre que,
-se $I = (\alpha,\beta)$ é um intervalo aberto e $f \colon I \to \R$ é convexa,
-então $f$ é contínua.
+Prove que, se existe $c$ tal que $f(c)f(-c) < 0$,
+então existe $d \in \R$ tal que $f(d) = 0$.
 \item
-Encontre um exemplo de função convexa $f \colon [0,1] \to \R$ que não seja
-contínua.
+Encontre uma função contínua $f$ tal que
+$f(\R) = \R$, mas $f(x)f(-x) \geq 0$ para todo $x \in \R$.
 \end{enumerate}
 \end{exercise}
 
+\begin{exercise}
+Suponha que $g(x)$ seja um polinômio mônico de grau par $d$, isto é,
+\begin{equation*}
+g(x) = x^d + b_{d-1} x^{d-1} + \cdots + b_1 x + b_0 ,
+\end{equation*}
+para certos números reais $b_{0}, b_1, \ldots, b_{d-1}$.
+Mostre que $g$ atinge um mínimo absoluto em $\R$.
+\end{exercise}
+
+\begin{exercise}
+Suponha que $f(x)$ seja um polinômio de grau $d$ e que
+$f(\R) = \R$. Mostre que $d$ é ímpar.
+\end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

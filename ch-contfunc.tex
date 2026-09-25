@@ -2091,86 +2091,87 @@ subsequência pertence novamente a $[a,b]$ porque o intervalo é fechado.
 
 \subsection{Continuous extension}
 
-Uniformly continuous functions on open intervals extend continuously
-to the endpoints.
-The key is the following lemma, which also has many other uses.
-It says that uniformly continuous functions preserve Cauchy sequences.
-The new issue here is that for a Cauchy sequence,
-the limit may not end up in the domain of the function.
+Funções uniformemente contínuas em intervalos abertos podem ser estendidas
+continuamente aos extremos.
+A ideia central é o lema a seguir, que também tem muitos outros usos.
+Ele afirma que funções uniformemente contínuas preservam sequências de Cauchy.
+A nova questão aqui é que, para uma sequência de Cauchy,
+o limite pode não pertencer ao domínio da função.
 
 \begin{lemma} \label{unifcauchycauchy:lemma}
-Let $S \subset \R$ and let $f \colon S \to \R$ be a uniformly continuous function.  Let
-$\{ x_n \}_{n=1}^\infty$ be a Cauchy sequence in $S$.
-Then $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ is Cauchy.
+Seja $S \subset \R$ e seja $f \colon S \to \R$ uma função uniformemente contínua.
+Seja $\{ x_n \}_{n=1}^\infty$ uma sequência de Cauchy em $S$.
+Então $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ é de Cauchy.
 \end{lemma}
 
 \begin{proof}
-Let $\epsilon > 0$ be given.  There is a $\delta > 0$ such that
-$\babs{f(x)-f(y)} < \epsilon$ whenever $x,y \in S$ and $\sabs{x-y} < \delta$.  Find an $M
-\in \N$ such that for all $n, k \geq M$, we have $\sabs{x_n-x_k} < \delta$.
-Then for all $n, k \geq M$, we have $\babs{f(x_n)-f(x_k)} < \epsilon$.
+Seja $\epsilon > 0$ dado. Existe $\delta > 0$ tal que
+$\babs{f(x)-f(y)} < \epsilon$ sempre que $x,y \in S$ e
+$\sabs{x-y} < \delta$. Encontre $M \in \N$ tal que, para todos $n,k \geq M$,
+tenhamos $\sabs{x_n-x_k} < \delta$.
+Então, para todos $n,k \geq M$, temos $\babs{f(x_n)-f(x_k)} < \epsilon$.
 \end{proof}
 
-An application of the lemma above is the following extension result.  It says that
-a function on an open interval is uniformly continuous if and only if
-it can be extended to a continuous function on the closed interval.
+Uma aplicação do lema acima é o seguinte resultado de extensão. Ele afirma que
+uma função em um intervalo aberto é uniformemente contínua se, e somente se,
+pode ser estendida a uma função contínua no intervalo fechado.
 
 \begin{prop} \label{context:prop}
-A function $f \colon (a,b) \to \R$ is uniformly continuous if and only if
-the limits 
+Uma função $f \colon (a,b) \to \R$ é uniformemente contínua se, e somente se,
+os limites
 \begin{equation*}
-L_a \coloneqq \lim_{x \to a} f(x) \qquad \text{and} \qquad
+L_a \coloneqq \lim_{x \to a} f(x) \qquad \text{e} \qquad
 L_b \coloneqq \lim_{x \to b} f(x)
 \end{equation*}
-exist and the function $\widetilde{f} \colon [a,b] \to \R$
-defined by
+existem e a função $\widetilde{f} \colon [a,b] \to \R$,
+definida por
 \begin{equation*}
 \widetilde{f}(x) \coloneqq
 \begin{cases}
-f(x) & \text{if } x \in (a,b), \\
-L_a & \text{if } x = a, \\
-L_b & \text{if } x = b
+f(x) & \text{se } x \in (a,b), \\
+L_a & \text{se } x = a, \\
+L_b & \text{se } x = b
 \end{cases}
 \end{equation*}
-is continuous.
+é contínua.
 \end{prop}
 
 \begin{proof}
-One direction is quick.  If $\widetilde{f}$ is continuous, then
-it is uniformly continuous by \thmref{unifcont:thm}.  As $f$ is the
-restriction of $\widetilde{f}$ to $(a,b)$, $f$ is also uniformly continuous
-(exercise).
+Uma das implicações é imediata. Se $\widetilde{f}$ é contínua,
+então é uniformemente contínua pelo \thmref{unifcont:thm}. Como $f$ é a
+restrição de $\widetilde{f}$ a $(a,b)$, $f$ também é uniformemente contínua
+(exercício).
 
-Now suppose $f$ is uniformly continuous.  We must first show
-that the limits $L_a$ and $L_b$ exist.  Let us concentrate on $L_a$.
-Take $\{ x_n \}_{n=1}^\infty$ in $(a,b)$ such that
+Suponha agora que $f$ seja uniformemente contínua. Primeiro, precisamos mostrar
+que os limites $L_a$ e $L_b$ existem. Vamos nos concentrar em $L_a$.
+Tome $\{ x_n \}_{n=1}^\infty$ em $(a,b)$ tal que
 $\lim_{n\to\infty} x_n = a$.
-The sequence $\{ x_n \}_{n=1}^\infty$ is Cauchy, so by
-\lemmaref{unifcauchycauchy:lemma}
-the sequence $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ is Cauchy and thus convergent.
-Let $L_1 \coloneqq \lim_{n\to\infty} f(x_n)$.  Take another sequence
-$\{ y_n \}_{n=1}^\infty$ in $(a,b)$ such that $\lim_{n\to\infty} y_n = a$.
-By the same reasoning,
-we get $L_2 \coloneqq \lim_{n\to\infty} f(y_n)$.  If we show that $L_1 = L_2$, then
-the limit $L_a = \lim_{x\to a} f(x)$ exists.  Let $\epsilon > 0$ be given.
-Find $\delta > 0$ such that $\sabs{x-y} < \delta$ implies $\babs{f(x)-f(y)} <
-\nicefrac{\epsilon}{3}$.  Find $M \in \N$ such that for
-$n \geq M$, we have $\sabs{a-x_n} < \nicefrac{\delta}{2}$,
+A sequência $\{ x_n \}_{n=1}^\infty$ é de Cauchy; portanto, pelo
+\lemmaref{unifcauchycauchy:lemma},
+a sequência $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ é de Cauchy e, assim, converge.
+Seja $L_1 \coloneqq \lim_{n\to\infty} f(x_n)$. Tome outra sequência
+$\{ y_n \}_{n=1}^\infty$ em $(a,b)$ tal que $\lim_{n\to\infty} y_n = a$.
+Pelo mesmo raciocínio, obtemos
+$L_2 \coloneqq \lim_{n\to\infty} f(y_n)$. Se mostrarmos que $L_1 = L_2$,
+então o limite $L_a = \lim_{x\to a} f(x)$ existe. Seja $\epsilon > 0$ dado.
+Encontre $\delta > 0$ tal que $\sabs{x-y} < \delta$ implique
+$\babs{f(x)-f(y)} < \nicefrac{\epsilon}{3}$. Encontre $M \in \N$ tal que, para
+$n \geq M$, tenhamos $\sabs{a-x_n} < \nicefrac{\delta}{2}$,
 $\sabs{a-y_n} < \nicefrac{\delta}{2}$,
-$\babs{f(x_n)-L_1} < \nicefrac{\epsilon}{3}$, and
-$\babs{f(y_n)-L_2} < \nicefrac{\epsilon}{3}$.  Then for $n \geq M$,
+$\babs{f(x_n)-L_1} < \nicefrac{\epsilon}{3}$ e
+$\babs{f(y_n)-L_2} < \nicefrac{\epsilon}{3}$. Então, para $n \geq M$,
 \begin{equation*}
-\sabs{x_n-y_n} = 
+\sabs{x_n-y_n} =
 \sabs{x_n-a+a-y_n} \leq
 \sabs{x_n-a}+\sabs{a-y_n} < \nicefrac{\delta}{2} + \nicefrac{\delta}{2} =
 \delta.
 \end{equation*}
-So
+Logo,
 \begin{equation*}
 \begin{split}
 \sabs{L_1-L_2} &=
 \babs{L_1-f(x_n)+f(x_n)-f(y_n)+f(y_n)-L_2} \\
-& \leq 
+& \leq
 \babs{L_1-f(x_n)}+\babs{f(x_n)-f(y_n)}+\babs{f(y_n)-L_2} \\
 & <
 \nicefrac{\epsilon}{3} + \nicefrac{\epsilon}{3} + \nicefrac{\epsilon}{3}
@@ -2178,27 +2179,24 @@ So
 \epsilon .
 \end{split}
 \end{equation*}
-Therefore, $L_1 = L_2$.
-Thus $L_a$ exists.  To show that $L_b$ exists is left as an exercise.
+Portanto, $L_1 = L_2$.
+Assim, $L_a$ existe. Mostrar que $L_b$ existe fica como exercício.
 
-If $L_a = \lim_{x\to a} f(x)$
-exists, then $\lim_{x\to a} \widetilde{f}(x)$ exists
-and equals $L_a$
-(see \propref{prop:limrest}).  Similarly for $L_b$.
-Hence, $\widetilde{f}$ is continuous at $a$ and $b$.  
-And since $f$ is continuous at $c \in (a,b)$,
-we find that
-$\widetilde{f}$ is continuous at $c \in (a,b)$ (\propref{prop:limrest} again).
+Se $L_a = \lim_{x\to a} f(x)$ existe, então $\lim_{x\to a} \widetilde{f}(x)$
+existe e é igual a $L_a$ (veja a \propref{prop:limrest}).
+De modo semelhante, o mesmo vale para $L_b$.
+Logo, $\widetilde{f}$ é contínua em $a$ e em $b$.
+E, como $f$ é contínua em $c \in (a,b)$,
+concluímos que $\widetilde{f}$ é contínua em $c \in (a,b)$
+(\propref{prop:limrest}, novamente).
 \end{proof}
 
-A typical application of this proposition (together with
-\propref{prop:onesidedlimits})
-is the following.
-If $f \colon (-1,0) \cup (0,1) \to \R$ is uniformly continuous,
-then $\lim_{x\to 0} f(x)$ exists and the function
-has a \emph{\myindex{removable singularity}}.
-That is,
-we can extend the function to a continuous function on $(-1,1)$.
+Uma aplicação típica desta proposição (junto com
+\propref{prop:onesidedlimits}) é a seguinte.
+Se $f \colon (-1,0) \cup (0,1) \to \R$ é uniformemente contínua,
+então $\lim_{x\to 0} f(x)$ existe e a função tem uma
+\emph{\myindex{singularidade removível}}.
+Isto é, podemos estender a função a uma função contínua em $(-1,1)$.
 
 
 \subsection{Lipschitz continuous functions}

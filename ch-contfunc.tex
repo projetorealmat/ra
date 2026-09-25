@@ -426,138 +426,140 @@ Então
 \end{equation*}
 \end{cor}
 
-\subsection{Limits of restrictions and one-sided limits}
+\subsection{Limites de restrições e limites laterais}
 
-Sometimes we work with the function defined on a subset.
+Às vezes, trabalhamos com a função definida em um subconjunto.
 
 \begin{defn}
-Let $f \colon S \to \R$ be a function and $A \subset S$.  Define the
-function $f|_A \colon A \to \R$ by
+Seja $f \colon S \to \R$ uma função e seja $A \subset S$. Defina a
+função $f|_A \colon A \to \R$ por
 \begin{equation*}
-f|_A (x) \coloneqq f(x)  \qquad \text{for } x \in A.
+f|_A (x) \coloneqq f(x)  \qquad \text{para } x \in A.
 \end{equation*}
-We call $f|_A$ the \emph{\myindex{restriction}} of $f$ to $A$.
+Chamamos $f|_A$ de \emph{\myindex{restrição}} de $f$ a $A$.
 \end{defn}
 
-The function $f|_A$ is simply the function $f$ taken on a smaller domain.
-The following proposition is the analogue of taking a tail of a sequence.
-It says that the limit is \myquote{local}: The limit only depends on points
-arbitrarily near $c$.
+A função $f|_A$ é simplesmente a função $f$ considerada em um domínio menor.
+A proposição a seguir é análoga a tomar uma cauda de uma sequência.
+Ela afirma que o limite é \myquote{local}: o limite depende apenas dos pontos
+arbitrariamente próximos de $c$.
 
 \begin{prop} \label{prop:limrest}
-Let $S \subset \R$, $c \in \R$, and
-let $f \colon S
-\to \R$ be a function.
-Suppose
-$A \subset S$ is such that for some $\alpha > 0$, we have
+Sejam $S \subset \R$, $c \in \R$ e
+$f \colon S
+\to \R$ uma função.
+Suponha que
+$A \subset S$ seja tal que, para algum $\alpha > 0$,
 $(A \setminus \{ c \}) \cap (c-\alpha,c+\alpha) = (S \setminus \{ c \}) \cap (c-\alpha,c+\alpha)$.
 \begin{enumerate}[(i)]
-\item The point $c$ is a cluster point of $A$ if and only if $c$ is a cluster point
-of $S$.
-\item Supposing $c$ is a cluster point of $S$, then $f(x) \to L$ as $x \to c$ if and only if
-$f|_A(x) \to L$ as $x \to c$.
+\item O ponto $c$ é um ponto de acumulação de $A$ se, e somente se, $c$ é um ponto de acumulação
+de $S$.
+\item Supondo que $c$ seja um ponto de acumulação de $S$, temos que
+$f(x) \to L$ quando $x \to c$ se, e somente se,
+$f|_A(x) \to L$ quando $x \to c$.
 \end{enumerate}
 \end{prop}
 
 \begin{proof}
-First, let $c$ be a cluster point of $A$.
-Since $A \subset S$, if $( A \setminus \{ c\} ) \cap
-(c-\epsilon,c+\epsilon)$ is nonempty for every $\epsilon > 0$,
-then $( S \setminus \{ c\} ) \cap
-(c-\epsilon,c+\epsilon)$ is nonempty for every $\epsilon > 0$.
-Thus $c$ is a cluster point of $S$.
-Second, suppose $c$ is a cluster
-point of $S$.  Then for $\epsilon > 0$ such that $\epsilon < \alpha$
-we get that $( A \setminus \{ c\} ) \cap (c-\epsilon,c+\epsilon) =
-( S \setminus \{ c\} ) \cap (c-\epsilon,c+\epsilon)$, which is nonempty.  This is true for all
-$\epsilon < \alpha$ and hence 
-$( A \setminus \{ c\} ) \cap (c-\epsilon,c+\epsilon)$ must be nonempty for all
-$\epsilon > 0$.  Thus $c$ is a cluster point of $A$.
+Primeiro, suponha que $c$ seja um ponto de acumulação de $A$.
+Como $A \subset S$, se $( A \setminus \{ c\} ) \cap
+(c-\epsilon,c+\epsilon)$ não é vazio para todo $\epsilon > 0$,
+então $( S \setminus \{ c\} ) \cap
+(c-\epsilon,c+\epsilon)$ também não é vazio para todo $\epsilon > 0$.
+Portanto, $c$ é um ponto de acumulação de $S$.
+Em segundo lugar, suponha que $c$ seja um ponto de acumulação
+de $S$. Então, para $\epsilon > 0$ tal que $\epsilon < \alpha$,
+temos $( A \setminus \{ c\} ) \cap (c-\epsilon,c+\epsilon) =
+( S \setminus \{ c\} ) \cap (c-\epsilon,c+\epsilon)$, que é não vazio.
+Isso vale para todo $\epsilon < \alpha$ e, portanto,
+$( A \setminus \{ c\} ) \cap (c-\epsilon,c+\epsilon)$ deve ser não vazio para todo
+$\epsilon > 0$. Assim, $c$ é um ponto de acumulação de $A$.
 
-Now suppose $c$ is a cluster point of $S$ and $f(x) \to L$ as $x \to c$.  That is, for every $\epsilon > 0$
-there is a $\delta > 0$ such that if $x \in S \setminus \{ c \}$
-and $\sabs{x-c} < \delta$, then $\babs{f(x)-L} < \epsilon$.  Because $A \subset S$,
-if $x \in A \setminus \{ c \}$, then $x \in S \setminus \{ c \}$,
-and hence $f|_A(x) \to L$ as $x \to c$.
+Agora suponha que $c$ seja um ponto de acumulação de $S$ e que $f(x) \to L$ quando $x \to c$.
+Isto é, para todo $\epsilon > 0$, existe $\delta > 0$ tal que, se
+$x \in S \setminus \{ c \}$
+e $\sabs{x-c} < \delta$, então $\babs{f(x)-L} < \epsilon$. Como $A \subset S$,
+se $x \in A \setminus \{ c \}$, então $x \in S \setminus \{ c \}$,
+e, portanto, $f|_A(x) \to L$ quando $x \to c$.
 
-Finally, suppose $f|_A(x) \to L$ as $x \to c$ and let $\epsilon > 0$ be
-given.
-There is a $\delta' > 0$ such that if $x \in A \setminus \{ c \}$
-and $\sabs{x-c} < \delta'$, then $\babs{ f|_A(x)-L } < \epsilon$.
-Take $\delta \coloneqq \min \{ \delta', \alpha \}$.
-Now suppose $x \in S \setminus \{ c \}$ and
-$\sabs{x-c} < \delta$.  As $\sabs{x-c} < \alpha$, we find $x \in A \setminus \{ c \}$,
-and as $\sabs{x-c} < \delta'$, 
-we get $\babs{f(x)-L} = \babs{ f|_A(x)-L } < \epsilon$.
+Por fim, suponha que $f|_A(x) \to L$ quando $x \to c$ e seja dado $\epsilon > 0$.
+Existe $\delta' > 0$ tal que, se $x \in A \setminus \{ c \}$
+e $\sabs{x-c} < \delta'$, então $\babs{ f|_A(x)-L } < \epsilon$.
+Defina $\delta \coloneqq \min \{ \delta', \alpha \}$.
+Suponha agora que $x \in S \setminus \{ c \}$ e
+$\sabs{x-c} < \delta$. Como $\sabs{x-c} < \alpha$, temos $x \in A \setminus \{ c \}$,
+e, como $\sabs{x-c} < \delta'$,
+obtemos $\babs{f(x)-L} = \babs{ f|_A(x)-L } < \epsilon$.
 \end{proof}
 
-The hypothesis on $A$ in the proposition is necessary.  For an arbitrary
-restriction we generally get an implication in only one direction
-(see \exerciseref{exercise:restrictionlimitexercise}).
-The usual notation for the limit is
+A hipótese sobre $A$ na proposição é necessária. Para uma restrição
+arbitrária, em geral obtemos uma implicação em apenas uma direção
+(veja \exerciseref{exercise:restrictionlimitexercise}).
+A notação usual para o limite é
 \begin{equation*}
 \lim_{\substack{x \to c\\x \in A}} f(x) \coloneqq \lim_{x \to c} f|_A(x) .
 \end{equation*}
-A common use of restriction with respect to limits, which does not satisfy
-the hypothesis in the proposition, is the
-\emph{\myindex{one-sided limit}}%
+Um uso comum de restrições no estudo de limites, que não satisfaz
+a hipótese da proposição, é o
+\emph{\myindex{limite lateral}}%
 \footnote{%
-One sees a plethora of one-sided limit notations.
-E.g.,
+Há muitas notações para limites laterais.
+Por exemplo,
 $\lim\limits_{\substack{x \to c\\x < c}} f(x)$,
-$\lim\limits_{x \uparrow c} f(x)$, or
-$\lim\limits_{x \nearrow c} f(x)$ for
+$\lim\limits_{x \uparrow c} f(x)$ ou
+$\lim\limits_{x \nearrow c} f(x)$ para
 $\lim\limits_{x \to c^-} f(x)$.}.
 
 \begin{defn} \label{defn:onesidedlimits}
-Let $f \colon S \to \R$ be a function and let $c \in \R$.  If
-$c$ is a cluster point of
+Seja $f \colon S \to \R$ uma função e seja $c \in \R$. Se
+$c$ é um ponto de acumulação de
 $S \cap (c,\infty)$
-and the limit
-of the restriction of $f$ to $S \cap (c,\infty)$ 
- as $x \to c$ exists, define
+e existe o limite
+da restrição de $f$ a $S \cap (c,\infty)$
+quando $x \to c$, definimos
 \glsadd{not:onesidedlim}
 \begin{equation*}
 \lim_{x \to c^+} f(x) \coloneqq \lim_{x\to c} f|_{S \cap (c,\infty)}(x) .
 \end{equation*}
-Similarly, if $c$ is a cluster point of 
-$S \cap (-\infty,c)$ and the limit of the restriction as $x \to c$
-exists, define
+De modo semelhante, se $c$ é um ponto de acumulação de
+$S \cap (-\infty,c)$ e existe o limite da restrição quando $x \to c$,
+definimos
 \begin{equation*}
 \lim_{x \to c^-} f(x) \coloneqq \lim_{x\to c} f|_{S \cap (-\infty,c)}(x) .
 \end{equation*}
 \end{defn}
 
-\propref{prop:limrest} does not apply to one-sided limits.
-It is possible to have one-sided limits, but no limit at a point.  For
-example, define $f \colon \R \to \R$ by $f(x) \coloneqq 1$ for $x < 0$ and
-$f(x) \coloneqq 0$ for $x \geq 0$.
-We leave it to the reader to verify that
+A \propref{prop:limrest} não se aplica a limites laterais.
+Pode haver limites laterais sem que exista o limite em um ponto. Por
+exemplo, defina $f \colon \R \to \R$ por $f(x) \coloneqq 1$ para $x < 0$ e
+$f(x) \coloneqq 0$ para $x \geq 0$.
+Deixamos ao leitor verificar que
 \begin{equation*}
 \lim_{x \to 0^-} f(x) = 1, \qquad
 \lim_{x \to 0^+} f(x) = 0, \qquad
-\lim_{x \to 0} f(x) \quad \text{does not exist.}
+\lim_{x \to 0} f(x) \quad \text{não existe.}
 \end{equation*}
-All is not lost, however, for we have the following replacement.
+Ainda assim, temos o seguinte resultado.
 
 \begin{prop} \label{prop:onesidedlimits}
-Let $S \subset \R$ be such that $c$ is a cluster point
-of both $S \cap (-\infty,c)$ and $S \cap (c,\infty)$, let
-$f \colon S \to \R$ be a function, and let $L \in \R$.  Then $c$ is a cluster point of $S$ and
+Seja $S \subset \R$ tal que $c$ seja um ponto de acumulação
+tanto de $S \cap (-\infty,c)$ quanto de $S \cap (c,\infty)$, seja
+$f \colon S \to \R$ uma função e seja $L \in \R$. Então $c$ é um ponto de acumulação de $S$ e
 \begin{equation*}
 \lim_{x \to c} f(x) = L
-\qquad \text{if and only if} \qquad
+\qquad \text{se, e somente se,} \qquad
 \lim_{x \to c^-} f(x) =
 \lim_{x \to c^+} f(x) =
 L .
 \end{equation*}
 \end{prop}
 
-That is, a limit at $c$ exists if and only if both one-sided limits exist and are equal.  The
-proof is a straightforward application of the definition of limit
-and is left as an exercise.  The key point is that
+Isto é, o limite em $c$ existe se, e somente se, os dois limites laterais existem e são iguais. A
+demonstração é uma aplicação direta da definição de limite e fica como exercício. O ponto central é que
 $\bigl( S \cap (-\infty,c) \bigr) \cup \bigl( S \cap (c,\infty) \bigr)
 = S \setminus \{ c \}$.
+
+
 
 \subsection{Exercises}
 

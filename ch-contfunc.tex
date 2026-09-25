@@ -986,43 +986,42 @@ leitor.
 
 \subsection{Composition of continuous functions}
 
-You probably already realized that one of the basic tools in
-constructing complicated functions out of simple ones is composition.
-Recall that for two functions $f$ and $g$,
-the composition $f \circ g$ is defined by
+Você provavelmente já percebeu que uma das ferramentas básicas para
+construir funções complicadas a partir de funções simples é a composição.
+Lembre-se de que, para duas funções $f$ e $g$,
+a composição $f \circ g$ é definida por
 $(f \circ g)(x) \coloneqq f\bigl(g(x)\bigr)$.
-A composition of
-continuous functions is again
-continuous.
+A composição de
+funções contínuas também é
+contínua.
 
 \begin{prop} \label{prop:compositioncont}
-Let $A, B \subset \R$ and $f \colon B \to \R$ and $g \colon A \to B$ be
-functions.  If $g$ is continuous at $c \in A$ and
-$f$ is continuous at $g(c)$, then $f \circ g \colon A \to \R$ is continuous
-at $c$.
+Sejam $A, B \subset \R$ e sejam $f \colon B \to \R$ e $g \colon A \to B$
+funções. Se $g$ é contínua em $c \in A$ e
+$f$ é contínua em $g(c)$, então $f \circ g \colon A \to \R$ é contínua
+em $c$.
 \end{prop}
 
 \begin{proof}
-Let $\{ x_n \}_{n=1}^\infty$ be a sequence in $A$ such that
+Seja $\{ x_n \}_{n=1}^\infty$ uma sequência em $A$ tal que
 $\lim_{n\to\infty} x_n = c$.
-As $g$ is continuous at $c$, we have  that$\bigl\{ g(x_n) \bigr\}_{n=1}^\infty$ converges to $g(c)$.
-As $f$ is continuous at $g(c)$, we have that $\bigl\{ f\bigl(g(x_n)\bigr)
-\bigr\}_{n=1}^\infty$ converges
-to $f\bigl(g(c)\bigr)$.
-Thus $f \circ g$ is continuous at $c$.
+Como $g$ é contínua em $c$, temos que $\bigl\{ g(x_n) \bigr\}_{n=1}^\infty$ converge para $g(c)$.
+Como $f$ é contínua em $g(c)$, temos que $\bigl\{ f\bigl(g(x_n)\bigr)
+\bigr\}_{n=1}^\infty$ converge
+para $f\bigl(g(c)\bigr)$.
+Portanto, $f \circ g$ é contínua em $c$.
 \end{proof}
 
 \begin{example}
-Claim: \emph{${\bigl(\sin(\nicefrac{1}{x})\bigr)}^2$ is a continuous
-function on $(0,\infty)$.}
+Afirmação: \emph{${\bigl(\sin(\nicefrac{1}{x})\bigr)}^2$ é uma função contínua em $(0,\infty)$.}
 
-Proof: The function $\nicefrac{1}{x}$ is continuous on
-$(0,\infty)$ and $\sin(x)$ is continuous on $(0,\infty)$ (actually
-on $\R$, but $(0,\infty)$ is the range for $\nicefrac{1}{x}$).
-Hence, the composition $\sin(\nicefrac{1}{x})$ is continuous.  Also,
-$x^2$ is continuous on the interval $[-1,1]$ (the range of $\sin$).
-Thus, the composition
-${\bigl(\sin(\nicefrac{1}{x})\bigr)}^2$ is continuous on $(0,\infty)$.
+Demonstração: A função $\nicefrac{1}{x}$ é contínua em
+$(0,\infty)$ e $\sin(x)$ é contínua em $(0,\infty)$ (na verdade,
+em $\R$, mas $(0,\infty)$ é a imagem de $\nicefrac{1}{x}$).
+Logo, a composição $\sin(\nicefrac{1}{x})$ é contínua. Além disso,
+$x^2$ é contínua no intervalo $[-1,1]$ (a imagem de $\sin$).
+Assim, a composição
+${\bigl(\sin(\nicefrac{1}{x})\bigr)}^2$ é contínua em $(0,\infty)$.
 \end{example}
 
 \subsection{Discontinuous functions}

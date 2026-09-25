@@ -75,90 +75,89 @@ $\epsilon > 0$, existe $M$ tal que, em particular, $\sabs{x_M - x} <
 \epsilon$. Isto é, $x_M \in (x-\epsilon,x+\epsilon) \cap S \setminus \{x\}$.
 \end{proof}
 
-\subsection{Limits of functions}
+\subsection{Limites de funções}
 
-If a function $f$ is defined on a set $S$ and $c$ is a cluster point of $S$,
-then we define the limit of $f(x)$ as $x$ approaches $c$.  
-It is irrelevant for the definition whether $f$ is defined at $c$ or not.
-Even if the function is defined at $c$, the limit of the
-function as $x$ goes to $c$ can very well be different
-from $f(c)$.
+Se uma função $f$ está definida em um conjunto $S$ e $c$ é um ponto de
+acumulação de $S$, definimos então o limite de $f(x)$ quando $x$ se aproxima de $c$.
+Para essa definição, é irrelevante se $f$ está definida em $c$ ou não.
+Mesmo que a função esteja definida em $c$, o limite da função quando $x$ tende a
+$c$ pode muito bem ser diferente de $f(c)$.
 
 \begin{defn}
-\index{limit!of a function}%
-Let $f \colon S \to \R$ be a function and $c$ a cluster point of
+\index{limite!de uma função}%
+Seja $f \colon S \to \R$ uma função e seja $c$ um ponto de acumulação de
 $S \subset \R$.
-Suppose there exists an $L \in \R$ and for every $\epsilon > 0$,
-there exists a $\delta > 0$ such that whenever $x \in S \setminus \{ c \}$
-and $\sabs{x - c} < \delta$, we have
+Suponha que exista $L \in \R$ tal que, para todo $\epsilon > 0$,
+exista $\delta > 0$ de modo que, sempre que $x \in S \setminus \{ c \}$
+e $\sabs{x - c} < \delta$, tenhamos
 \begin{equation*}
 \babs{f(x) - L} < \epsilon .
 \end{equation*}
-We then say $f(x)$ \emph{converges}\index{converges!function} to $L$ as $x$ goes
-to $c$, and we write
+Dizemos então que $f(x)$ \emph{converge}\index{convergente!função} para $L$ quando $x$ tende
+a $c$, e escrevemos
 \glsadd{not:limitasarrows}%
 \begin{equation*}
-f(x) \to L \quad\text{as}\quad x \to c .
+f(x) \to L \quad\text{quando}\quad x \to c .
 \end{equation*}
-We say $L$ is a \emph{limit} of $f(x)$ as $x$
-goes to $c$, and if $L$ is unique (it is), we write
+Dizemos que $L$ é um \emph{limite} de $f(x)$ quando $x$
+tende a $c$ e, se $L$ é único (como de fato é), escrevemos
 \glsadd{not:limfunc}%
 \begin{equation*}
 \lim_{x \to c} f(x) \coloneqq L .
 \end{equation*}
-If no such $L$ exists, then we say that the limit does not exist or
-that $f$ \emph{\myindex{diverges}} at $c$.
+Se não existe tal $L$, dizemos que o limite não existe ou
+que $f$ \emph{\myindex{diverge}} em $c$.
 \end{defn}
 
-Again, the notation and language we are using above assumes the limit $L$, if
-it exists, is unique, which needs to be proved.  Note that the fact that $c$
-is a cluster point is important to prove uniqueness.
+Mais uma vez, a notação e a linguagem usadas acima pressupõem que o limite $L$, se
+existir, é único, o que precisa ser demonstrado. Observe que o fato de $c$
+ser um ponto de acumulação é importante para demonstrar a unicidade.
 
 \begin{prop}
-Let $c$ be a cluster point of $S \subset \R$ and let $f \colon S \to \R$
-be a function such that $f(x)$ converges as $x$ goes to $c$.  Then
-the limit of $f(x)$ as $x$ goes to $c$ is unique.
+Seja $c$ um ponto de acumulação de $S \subset \R$ e seja $f \colon S \to \R$
+uma função tal que $f(x)$ converge quando $x$ tende a $c$. Então
+o limite de $f(x)$ quando $x$ tende a $c$ é único.
 \end{prop}
 
 \begin{proof}
-Let $L_1$ and $L_2$ be two numbers that both satisfy the definition.
-Take an $\epsilon > 0$ and find a $\delta_1 > 0$ such that
-$\babs{f(x)-L_1} < \nicefrac{\epsilon}{2}$ 
-for all $x \in S \setminus \{c\}$ with $\sabs{x-c} < \delta_1$.
-Also find $\delta_2 > 0$ such that
+Sejam $L_1$ e $L_2$ dois números que satisfazem a definição.
+Fixe $\epsilon > 0$ e encontre $\delta_1 > 0$ tal que
+$\babs{f(x)-L_1} < \nicefrac{\epsilon}{2}$
+para todo $x \in S \setminus \{c\}$ com $\sabs{x-c} < \delta_1$.
+Encontre também $\delta_2 > 0$ tal que
 $\babs{f(x)-L_2} < \nicefrac{\epsilon}{2}$
-for all $x \in S \setminus \{c\}$ with $\sabs{x-c} < \delta_2$.
-Put $\delta \coloneqq \min \{ \delta_1, \delta_2 \}$.  Suppose $x \in S$,
-$\sabs{x-c} < \delta$, and $x \neq c$.  As $\delta > 0$ and $c$ is a cluster
-point, such an $x$ exists.  Then
+para todo $x \in S \setminus \{c\}$ com $\sabs{x-c} < \delta_2$.
+Defina $\delta \coloneqq \min \{ \delta_1, \delta_2 \}$. Suponha que $x \in S$,
+$\sabs{x-c} < \delta$ e $x \neq c$. Como $\delta > 0$ e $c$ é um ponto de acumulação,
+existe tal $x$. Então
 \begin{equation*}
 \sabs{L_1 - L_2} =
 \babs{L_1 - f(x) + f(x) - L_2} \leq
 \babs{L_1 - f(x)} + \babs{f(x) - L_2} < \frac{\epsilon}{2} + \frac{\epsilon}{2}
 = \epsilon.
 \end{equation*}
-As $\sabs{L_1-L_2} < \epsilon$ for arbitrary $\epsilon > 0$, we have
+Como $\sabs{L_1-L_2} < \epsilon$ para todo $\epsilon > 0$, temos
 $L_1 = L_2$.
 \end{proof}
 
 \begin{example}
-Consider $f \colon \R \to \R$ defined by $f(x) \coloneqq x^2$.  Then
-for any $c \in \R$,
+Considere $f \colon \R \to \R$ definida por $f(x) \coloneqq x^2$. Então,
+para todo $c \in \R$,
 \begin{equation*}
 \lim_{x\to c} f(x) = \lim_{x\to c} x^2 = c^2 .
 \end{equation*}
 
-Proof: Let $c \in \R$ be fixed, and suppose $\epsilon > 0$ is given.  Write
+Demonstração: seja $c \in \R$ fixo e suponha que seja dado $\epsilon > 0$. Escreva
 \begin{equation*}
 \delta \coloneqq \min \left\{ 1 , \, \frac{\epsilon}{2\sabs{c}+1} \right\} .
 \end{equation*}
-Take $x \neq c$ such that $\sabs{x-c} < \delta$.  In particular,
-$\sabs{x-c} < 1$.  By the reverse triangle inequality,
+Tome $x \neq c$ tal que $\sabs{x-c} < \delta$. Em particular,
+$\sabs{x-c} < 1$. Pela desigualdade triangular reversa,
 \begin{equation*}
 \sabs{x}-\sabs{c} \leq \sabs{x-c} < 1 .
 \end{equation*}
-Adding $2\sabs{c}$ to both sides, we obtain
-$\sabs{x} + \sabs{c} < 2\sabs{c} + 1$.  Estimate
+Somando $2\sabs{c}$ aos dois lados, obtemos
+$\sabs{x} + \sabs{c} < 2\sabs{c} + 1$. Estimamos
 \begin{equation*}
 \begin{split}
 \babs{f(x) - c^2} &= \sabs{x^2-c^2} \\
@@ -172,29 +171,28 @@ $\sabs{x} + \sabs{c} < 2\sabs{c} + 1$.  Estimate
 \end{example}
 
 \begin{example}
-Define $f \colon [0,1) \to \R$ by
+Defina $f \colon [0,1) \to \R$ por
 \begin{equation*}
-f(x) \coloneqq 
+f(x) \coloneqq
 \begin{cases}
-x & \text{if } x > 0 , \\
-1 & \text{if } x = 0 .
+x & \text{se } x > 0 , \\
+1 & \text{se } x = 0 .
 \end{cases}
 \end{equation*}
-Then
+Então
 $\lim\limits_{x\to 0} f(x) = 0$,
-even though $f(0) = 1$.  See \figureref{fig:limvaldiff}.
+embora $f(0) = 1$. Veja \figureref{fig:limvaldiff}.
 \begin{myfigureht}
 \myincludegraphics{limvaldiff}{%
-A graph of a function that is 1 when the independent
-variable x is 0, then when the independent variable
-x is any bigger than 0, the function is equal to x.
-It is indicated that the function is not defined at
-x equal to 1 or any x greater, nor at any x less than 0.}
-\caption{Function with a different limit and value at $0$.\label{fig:limvaldiff}}
+Gráfico de uma função que vale 1 quando a variável independente x é 0.
+Quando a variável independente x é maior que 0, a função é igual a x.
+Indica-se que a função não está definida em x=1 nem para valores de x
+maiores que 1, nem para valores de x menores que 0.}
+\caption{Função cujo limite em $0$ difere de seu valor.\label{fig:limvaldiff}}
 \end{myfigureht}
 
-Proof:  Let $\epsilon > 0$ be given.  Let $\delta \coloneqq \epsilon$.
-For $x \in [0,1)$, $x \neq 0$, and $\sabs{x-0} < \delta$, we get
+Demonstração: seja dado $\epsilon > 0$. Defina $\delta \coloneqq \epsilon$.
+Para $x \in [0,1)$, $x \neq 0$ e $\sabs{x-0} < \delta$, temos
 \begin{equation*}
 \babs{f(x) - 0} = \sabs{x} < \delta = \epsilon .
 \end{equation*}

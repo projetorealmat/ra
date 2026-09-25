@@ -522,82 +522,81 @@ sempre que $c < x < c+\delta$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{Mean value theorem}
+\section{Teorema do valor médio}
 \label{sec:mvt}
 
 %mbxINTROSUBSECTION
 
-\sectionnotes{2 lectures (some applications may be skipped)}
+\sectionnotes{2 aulas (algumas aplicações podem ser omitidas)}
 
-\subsection{Relative minima and maxima}
+\subsection{Mínimos e máximos relativos}
 
-We previously talked about absolute maxima and minima.  These are the tallest peaks and
-the lowest valleys in the entire mountain range.  What
-about peaks of individual mountains and bottoms of individual valleys?
-The derivative, being a local concept, is like walking around in a fog; it
-cannot tell you if you are on the highest peak, but it can tell you whether you are
-at the top of some peak.
+Já falamos sobre máximos e mínimos absolutos. Eles são os picos mais altos
+e os vales mais profundos de toda a cadeia de montanhas. E quanto aos picos
+de montanhas individuais e aos fundos de vales específicos?
+A derivada, por ser um conceito local, é como caminhar em meio à neblina:
+ela não pode dizer se você está no pico mais alto, mas pode dizer se está
+no topo de algum pico.
 
 \begin{defn}
-Let $S \subset \R$ be a set and
-let $f \colon S \to \R$ be a function.  The function $f$ is said to have
-a \emph{\myindex{relative maximum}}\index{maximum!relative}
-at $c \in S$ if there exists a $\delta>0$
-such that for all $x \in S$ where $\sabs{x-c} < \delta$,
-we have $f(x) \leq f(c)$.
-The definition of
-\emph{\myindex{relative minimum}}\index{minimum!relative}
-is analogous.
+Seja $S \subset \R$ um conjunto e
+seja $f \colon S \to \R$ uma função. Dizemos que $f$ tem
+um \emph{\myindex{máximo relativo}}\index{máximo!relativo}
+em $c \in S$ se existe $\delta>0$
+tal que, para todo $x \in S$ com $\sabs{x-c} < \delta$,
+temos $f(x) \leq f(c)$.
+A definição de
+\emph{\myindex{mínimo relativo}}\index{mínimo!relativo}
+é análoga.
 \end{defn}
 
 \begin{lemma}\label{relminmax:lemma}
-Suppose $f \colon (a,b) \to \R$ is differentiable at $c \in (a,b)$,
-and $f$ has
-a relative minimum or a relative maximum at $c$.  Then
+Suponha que $f \colon (a,b) \to \R$ seja diferenciável em $c \in (a,b)$
+e que $f$ tenha
+um mínimo relativo ou um máximo relativo em $c$. Então
 $f'(c) = 0$.
 \end{lemma}
 
 \begin{proof}
-Suppose $c$ is a 
-relative maximum of $f$.  That is, there is a $\delta > 0$ such
-that for every $x \in (a,b)$ where
-$\sabs{x-c} < \delta$, we have $f(x)-f(c) \leq 0$.
-Consider the difference
-quotient.  If $c < x < c+\delta$, then
+Suponha que $c$ seja um
+máximo relativo de $f$. Isto é, existe $\delta > 0$ tal
+que, para todo $x \in (a,b)$ com
+$\sabs{x-c} < \delta$, temos $f(x)-f(c) \leq 0$.
+Considere o quociente de diferenças. Se $c < x < c+\delta$, então
 \begin{equation*}
 \frac{f(x)-f(c)}{x-c} \leq 0 ,
 \end{equation*}
-and if $c-\delta < y < c$, then
+e, se $c-\delta < y < c$, então
 \begin{equation*}
 \frac{f(y)-f(c)}{y-c} \geq 0 .
 \end{equation*}
-See \figureref{fig:critpt} for an illustration.
+Veja na \figureref{fig:critpt} uma ilustração.
 \begin{myfigureht}
 \myincludegraphics{critpt}{%
-A graph of a function f is shown.
-Three points are marked on the horizontal axis, from left
-to right, y, c, and x.  The function has a maximum
-at the point c.  The points corresponding to x, c, and y are
-marked on the graph.
-Through the points corresponding
-to y and c is a secant line that slopes upwards and is
-marked with slope equals f of y minus f of c the whole thing
-over quantity y-c is greater than or equal to 0.
-Through the points corresponding
-to c and x is a secant line that slopes downwards and is
-marked with slope equals f of x minus f of c the whole thing
-over quantity x-c is less than or equal to 0.}
-\caption{Slopes of secants at a relative maximum.\label{fig:critpt}}
+Gráfico de uma função f.
+Três pontos estão marcados no eixo horizontal, da esquerda
+para a direita: y, c e x. A função tem um máximo
+no ponto c. Os pontos correspondentes a x, c e y também estão
+marcados no gráfico.
+Uma reta secante passa pelos pontos correspondentes
+a y e c, subindo da esquerda para a direita, e está identificada
+com inclinação igual a f de y menos f de c, tudo isso
+dividido por y menos c, maior ou igual a 0.
+Outra reta secante passa pelos pontos correspondentes
+a c e x, descendo da esquerda para a direita, e está identificada
+com inclinação igual a f de x menos f de c, tudo isso
+dividido por x menos c, menor ou igual a 0.}
+\caption{Inclinações de retas secantes em um máximo relativo.\label{fig:critpt}}
 \end{myfigureht}
 
-As $a < c < b$, there exist
-sequences $\{ x_n \}_{n=1}^\infty$ and
-$\{ y_n \}_{n=1}^\infty$ in $(a,b)$
-such that $c < x_n < c+\delta$ and
-$c-\delta < y_n < c$ for all $n \in \N$, and such that
+Como $a < c < b$, existem
+sequências $\{ x_n \}_{n=1}^\infty$ e
+$\{ y_n \}_{n=1}^\infty$ em $(a,b)$
+tais que $c < x_n < c+\delta$ e
+$c-\delta < y_n < c$ para todo $n \in \N$, e tais que
 $\lim_{n\to\infty} x_n = \lim_{n\to\infty} y_n = c$.
-Since $f$
-is differentiable at $c$,
+Como $f$
+é diferenciável em $c$,
 \begin{equation*}
 0 \geq \lim_{n\to\infty} \frac{f(x_n)-f(c)}{x_n-c} 
 =
@@ -605,131 +604,128 @@ f'(c)
 =
 \lim_{n\to\infty} \frac{f(y_n)-f(c)}{y_n-c} \geq 0.
 \end{equation*}
-We are done with a maximum.
-For a minimum, consider
-the function $-f$.
+Concluímos a demonstração para um máximo.
+Para um mínimo, considere
+a função $-f$.
 \end{proof}
 
-For a differentiable function, a point where 
-$f'(c) = 0$ is called a \emph{\myindex{critical point}}.  When $f$ is not
-differentiable at some points,
-it is common to also say that $c$ is a critical point
-if $f'(c)$ does not exist.
-The theorem says that a relative minimum or maximum at an interior point
-of an interval must be a critical point.
-As you remember from calculus, one finds minima and maxima of a function
-by finding all the critical points together with the endpoints of
-the interval and simply checking at which of these points
-the function is largest or smallest.
+Para uma função diferenciável, chama-se
+\emph{\myindex{ponto crítico}} um ponto em que
+$f'(c) = 0$. Quando $f$ não é diferenciável em alguns pontos,
+também é comum dizer que $c$ é um ponto crítico
+se $f'(c)$ não existe.
+O teorema afirma que um mínimo ou máximo relativo em um ponto interior
+de um intervalo deve ser um ponto crítico.
+Como você se lembra do cálculo, para encontrar os mínimos e máximos de uma
+função, determinamos todos os pontos críticos e também as extremidades
+do intervalo; em seguida, basta verificar em qual desses pontos
+a função assume seu maior ou menor valor.
 
-\subsection{Rolle's theorem}
+\subsection{Teorema de Rolle}
 
-Suppose a function has the same value at both endpoints of an interval.
-Intuitively, it ought to attain a minimum or a maximum in the interior of the
-interval.
-Then at such a minimum or a maximum, the derivative should be zero.
-See \figureref{rollefig} for the geometric idea.
-This is the content of Rolle's theorem%
-\footnote{Named after the French mathematician
+Suponha que uma função tenha o mesmo valor nas duas extremidades de um intervalo.
+Intuitivamente, ela deveria atingir um mínimo ou um máximo no interior do
+intervalo.
+Nesse mínimo ou máximo, a derivada deveria ser nula.
+Veja na \figureref{rollefig} a ideia geométrica.
+Esse é o conteúdo do teorema de Rolle%
+\footnote{Em homenagem ao matemático francês
 \href{https://en.wikipedia.org/wiki/Michel_Rolle}{Michel Rolle}
 (1652--1719).}.
 
 \begin{myfigureht}
 \myincludegraphics{rollefig}{%
-A graph of a function is drawn on the interval from a to b.
-The function is zero at both a and b.  The function goes up to
-a maximum,
-then down to a minimum, then back up.  The maximum of the function occurs
-at a point marked c.  A horizontal tangent line is drawn on the
-corresponding point on the graph.  Note that it is parallel with
-the horizontal axis.}
-\caption{Point where the tangent line is horizontal, that is $f'(c) =
+Gráfico de uma função no intervalo de a a b.
+A função vale zero em a e em b. Ela cresce até
+um máximo, depois decresce até um mínimo e volta a crescer. O máximo da função ocorre
+em um ponto marcado como c. Uma reta tangente horizontal está traçada no
+ponto correspondente do gráfico. Note que ela é paralela ao
+eixo horizontal.}
+\caption{Ponto em que a reta tangente é horizontal, isto é, $f'(c) =
 0$.\label{rollefig}}
 \end{myfigureht}
 
 \begin{thm}[Rolle] \label{thm:rolle}
-\index{Rolle's theorem}
-Let $f \colon [a,b] \to \R$ be a continuous function
-differentiable on $(a,b)$ such that $f(a) = f(b)$.
-Then there exists a $c \in (a,b)$ such that $f'(c) = 0$.
+\index{teorema de Rolle}
+Seja $f \colon [a,b] \to \R$ uma função contínua
+e diferenciável em $(a,b)$ tal que $f(a) = f(b)$.
+Então existe $c \in (a,b)$ tal que $f'(c) = 0$.
 \end{thm}
 
 \begin{proof}
-As $f$ is continuous on $[a,b]$, it attains an absolute minimum and an
-absolute 
-maximum in $[a,b]$.  We wish to apply \lemmaref{relminmax:lemma}, and
-so we need to find some $c \in (a,b)$ where $f$ attains a minimum or a
-maximum.
-Write $K \coloneqq f(a) = f(b)$.
-If there exists an $x$ such that $f(x) > K$, then the absolute
-maximum is larger than $K$ and hence occurs at some $c \in (a,b)$, and
-therefore $f'(c) = 0$.  On the other hand, if there exists an $x$
-such that $f(x) < K$, then the absolute minimum occurs at some
-$c \in (a,b)$, and so $f'(c) = 0$.  If there is no $x$ such that
-$f(x) > K$ or
-$f(x) < K$, then $f(x) = K$ for all $x$ and then
-$f'(x) = 0$ for all $x \in [a,b]$, so any $c \in (a,b)$ works.
+Como $f$ é contínua em $[a,b]$, ela atinge um mínimo absoluto e um
+máximo absoluto em $[a,b]$. Queremos aplicar o
+lema \lemmaref{relminmax:lemma}; portanto,
+precisamos encontrar algum $c \in (a,b)$ em que $f$ atinja um mínimo ou
+um máximo.
+Escreva $K \coloneqq f(a) = f(b)$.
+Se existe $x$ tal que $f(x) > K$, então o máximo absoluto é maior que $K$
+e, portanto, ocorre em algum $c \in (a,b)$; logo, $f'(c) = 0$.
+Por outro lado, se existe $x$ tal que $f(x) < K$, então o mínimo absoluto
+ocorre em algum $c \in (a,b)$ e, assim, $f'(c) = 0$. Se não existe $x$ tal que
+$f(x) > K$ ou
+$f(x) < K$, então $f(x) = K$ para todo $x$ e, portanto,
+$f'(x) = 0$ para todo $x \in [a,b]$. Assim, qualquer $c \in (a,b)$ serve.
 \end{proof}
 
-It is absolutely necessary that the derivative exists for all $x
-\in (a,b)$.  Consider the function $f(x) \coloneqq \sabs{x}$ on $[-1,1]$.
-Clearly $f(-1) = f(1)$, but there is no point $c$ where $f'(c) = 0$.
+É absolutamente necessário que a derivada exista para todo $x
+\in (a,b)$. Considere a função $f(x) \coloneqq \sabs{x}$ em $[-1,1]$.
+É claro que $f(-1) = f(1)$, mas não existe ponto $c$ em que $f'(c) = 0$.
 
-\subsection{Mean value theorem}
+\subsection{Teorema do valor médio}
 
-We extend \hyperref[thm:rolle]{Rolle's theorem}
-to functions that attain different
-values at the endpoints.
+Estendemos o \hyperref[thm:rolle]{teorema de Rolle}
+a funções que assumem valores diferentes
+nas extremidades.
 
-\begin{thm}[Mean value theorem] \label{thm:mvt}
-\index{mean value theorem}
-Let $f \colon [a,b] \to \R$ be a continuous function
-differentiable on $(a,b)$.  Then there exists a point $c \in (a,b)$
-such that
+\begin{thm}[Teorema do valor médio] \label{thm:mvt}
+\index{teorema do valor médio}
+Seja $f \colon [a,b] \to \R$ uma função contínua em $[a,b]$
+e diferenciável em $(a,b)$. Então existe um ponto $c \in (a,b)$
+tal que
 \begin{equation*}
 f(b)-f(a) = f'(c)(b-a) .
 \end{equation*}
 \end{thm}
 
-For a geometric interpretation of the mean value theorem, see
-\figureref{mvtfig}.  The idea is that the value $\frac{f(b)-f(a)}{b-a}$
-is the slope of the line between the points $\bigl(a,f(a)\bigr)$
-and $\bigl(b,f(b)\bigr)$.
-Then $c$ is the point such that $f'(c) = \frac{f(b)-f(a)}{b-a}$, that 
-is, the tangent line at the point $\bigl(c,f(c)\bigr)$ has the same slope as the
-line between $\bigl(a,f(a)\bigr)$ and $\bigl(b,f(b)\bigr)$.
-The name comes from the fact that the slope of the secant line
-is the mean value of the derivative, so the average derivative is achieved
-in the interior of the interval.
+Para uma interpretação geométrica do teorema do valor médio, veja a
+\figureref{mvtfig}. A ideia é que o valor $\frac{f(b)-f(a)}{b-a}$
+é a inclinação da reta que passa pelos pontos $\bigl(a,f(a)\bigr)$
+e $\bigl(b,f(b)\bigr)$.
+Então $c$ é o ponto em que $f'(c) = \frac{f(b)-f(a)}{b-a}$, isto
+é, a reta tangente no ponto $\bigl(c,f(c)\bigr)$ tem a mesma inclinação que a
+reta que passa por $\bigl(a,f(a)\bigr)$ e $\bigl(b,f(b)\bigr)$.
+O nome vem do fato de que a inclinação da reta secante
+é o valor médio da derivada; portanto, o valor médio da derivada é atingido
+no interior do intervalo.
 
-The theorem follows from \hyperref[thm:rolle]{Rolle's theorem}
-by subtracting from $f$ the affine linear function
-with the same values at $a$ and $b$ as $f$.
-The graph of this affine linear function is the 
-secant line---the straight line through
-$\bigl(a,f(a)\bigr)$ and $\bigl(b,f(b)\bigr)$---and
-its derivative is
+O teorema decorre do \hyperref[thm:rolle]{teorema de Rolle}
+subtraindo de $f$ a função afim
+que assume os mesmos valores que $f$ em $a$ e $b$.
+O gráfico dessa função afim é a
+reta secante — a reta que passa por
+$\bigl(a,f(a)\bigr)$ e $\bigl(b,f(b)\bigr)$ — e sua derivada é
 $\frac{f(b)-f(a)}{b-a}$.
-Then we are looking for a point where this
-difference has zero derivative.
+Então procuramos um ponto em que essa
+diferença tenha derivada nula.
 
 \begin{myfigureht}
 \myincludegraphics{mvtfig}{%
-A graph of a function is drawn on the interval from a to b.
-The function looks similar as before but it is no longer
-zero at the endpoints, the left endpoint is negative
-and the right is positive.  A straight line through the endpoints
-of the curve is drawn, that is, it is a line through the point
-(a, f of a) and (b, f of b).  At the point corresponding to 
-c on the horizontal axis the tangent line to the function is
-parallel to the line through the endpoints.}
-\caption{Graphical interpretation of the mean value theorem.\label{mvtfig}}
+Gráfico de uma função no intervalo de a a b.
+A função se parece com a anterior, mas agora não vale zero
+nas extremidades: é negativa na extremidade esquerda
+e positiva na direita. Uma reta que passa pelas extremidades
+da curva está desenhada, isto é, uma reta que passa pelos pontos
+(a, f de a) e (b, f de b). No ponto correspondente a
+c no eixo horizontal, a reta tangente à função é
+paralela à reta que passa pelas extremidades.}
+\caption{Interpretação gráfica do teorema do valor médio.\label{mvtfig}}
 \end{myfigureht}
 
 
 \begin{proof}
-Define the
-function $g \colon [a,b] \to \R$ by
+Defina a
+função $g \colon [a,b] \to \R$ por
 \begin{equation*}
 g(x) \coloneqq
 f(x)-
@@ -738,286 +734,250 @@ f(x)-
 f(x)-
 f(b)-\frac{f(b)-f(a)}{b-a}(x-b) .
 \end{equation*}
-The function $g$ is differentiable on $(a,b)$,
-continuous on $[a,b]$, such that $g(a) = 0$ and $g(b) = 0$.  Thus there exists
-a
-$c \in (a,b)$ such that $g'(c) = 0$, that is,
+A função $g$ é diferenciável em $(a,b)$
+e contínua em $[a,b]$, além de satisfazer $g(a) = 0$ e $g(b) = 0$. Assim, existe
+$c \in (a,b)$ tal que $g'(c) = 0$, isto é,
 \begin{equation*}
 0 = g'(c) = f'(c)-\frac{f(b)-f(a)}{b-a} .
 \end{equation*}
-In other words,
+Em outras palavras,
 $f(b)-f(a) = f'(c)(b-a)$.
 \end{proof}
 
-The proof generalizes.  By considering
+A demonstração pode ser generalizada. Considerando
 $g(x) \coloneqq
 \bigl(f(x)-f(b)\bigr)
 \bigl(\varphi(b)-\varphi(a)\bigr)
 -
 \bigl(f(b)-f(a)\bigr)
 \bigl(\varphi(x)-\varphi(b)\bigr)$,
-one can prove the following version.  We leave the proof as an exercise.
+podemos provar a seguinte versão. Deixamos a demonstração como exercício.
 
-\begin{thm}[Cauchy's mean value theorem] \label{thm:cauchymvt}
-\index{Cauchy's mean value theorem}
-Let $f \colon [a,b] \to \R$ and $\varphi \colon [a,b] \to \R$ be continuous
-functions
-differentiable on $(a,b)$.  Then there exists a point $c \in (a,b)$
-such that
+\begin{thm}[Teorema do valor médio de Cauchy] \label{thm:cauchymvt}
+\index{teorema do valor médio de Cauchy}
+Sejam $f \colon [a,b] \to \R$ e $\varphi \colon [a,b] \to \R$ funções contínuas
+e diferenciáveis em $(a,b)$. Então existe um ponto $c \in (a,b)$
+tal que
 \begin{equation*}
 \bigl(f(b)-f(a)\bigr)\varphi'(c) = f'(c)\bigl(\varphi(b)-\varphi(a)\bigr) .
 \end{equation*}
 \end{thm}
 
-The mean value theorem has the distinction of being one of the few theorems
-cited
-in court.  That is, when police measure the speed of cars by aircraft, or
-via cameras reading license plates, they 
-measure the time the car takes to go between two points.
-The mean value theorem then
-says that the car must have somewhere attained the speed you get by dividing the
-difference in distance by the difference in time.
+O teorema do valor médio tem a particularidade de ser um dos poucos teoremas
+citados
+em tribunais. Por exemplo, quando a polícia mede a velocidade dos carros por
+aeronaves ou por câmeras que leem placas, ela
+mede o tempo que o carro leva para percorrer a distância entre dois pontos.
+Então, o teorema do valor médio
+afirma que, em algum ponto do percurso, o carro deve ter atingido a velocidade
+obtida dividindo-se a diferença entre as distâncias pela diferença entre os tempos.
 
 
 
-\subsection{Applications}
+\subsection{Aplicações}
 
-Let us look at a few applications of the mean value theorem.
-The applications show the typical use of the theorem, which is
-to get rid of a limit by finding the right sort of points where the
-derivative is not just close to some difference quotient, but actually
-equal to it.
-First, we solve our very first differential equation.
+Vejamos algumas aplicações do teorema do valor médio.
+Elas mostram o uso típico do teorema: eliminar um limite encontrando pontos
+adequados em que a derivada não é apenas próxima de algum quociente de diferenças,
+mas efetivamente igual a ele.
+Primeiro, resolveremos nossa primeira equação diferencial.
 
 \begin{prop} \label{prop:derzeroconst}
-Let $I$ be an interval and
-let $f \colon I \to \R$ be a differentiable function such that $f'(x) = 0$
-for all $x \in I$.
-Then $f$ is constant.
+Seja $I$ um intervalo e
+seja $f \colon I \to \R$ uma função diferenciável tal que $f'(x) = 0$
+para todo $x \in I$.
+Então $f$ é constante.
 \end{prop}
 
 \begin{proof}
-Take arbitrary $x,y \in I$ with $x < y$.
-As $I$ is an interval, $[x,y] \subset I$.
-Then $f$ restricted to $[x,y]$ satisfies the hypotheses
-of the \hyperref[thm:mvt]{mean value theorem}.
-Therefore, there is a $c \in (x,y)$ such that
+Tomemos $x,y \in I$ arbitrários, com $x < y$.
+Como $I$ é um intervalo, $[x,y] \subset I$.
+A restrição de $f$ a $[x,y]$ satisfaz as hipóteses
+do \hyperref[thm:mvt]{teorema do valor médio}.
+Portanto, existe $c \in (x,y)$ tal que
 \begin{equation*}
 f(y)-f(x) = f'(c)(y-x).
 \end{equation*}
-As $f'(c) = 0$, we have $f(y) = f(x)$.  Hence,
-the function is constant.
+Como $f'(c) = 0$, temos $f(y) = f(x)$. Logo,
+a função é constante.
 \end{proof}
 
-Now that we know what it means for the function to stay constant, we look
-at increasing and decreasing functions.
-We say $f \colon I \to \R$ is \emph{\myindex{increasing}}
-(resp.\  \emph{\myindex{strictly increasing}}) if
-$x < y$ implies $f(x) \leq f(y)$ (resp.\ $f(x) < f(y)$).
-We define
-\emph{\myindex{decreasing}} and
-\emph{\myindex{strictly decreasing}} in the same way by switching the
-inequalities for $f$.
+Agora que sabemos o que significa uma função permanecer constante, vamos
+considerar as funções crescentes e decrescentes.
+Dizemos que $f \colon I \to \R$ é \emph{\myindex{crescente}}
+(respectivamente, \emph{\myindex{estritamente crescente}}) se
+$x < y$ implica $f(x) \leq f(y)$ (respectivamente, $f(x) < f(y)$).
+Definimos
+\emph{\myindex{decrescente}} e
+\emph{\myindex{estritamente decrescente}} da mesma maneira, invertendo as
+desigualdades para $f$.
 
 \begin{prop} \label{incdecdiffprop}
-Let $I$ be an interval and
-let $f \colon I \to \R$ be a differentiable function.
+Seja $I$ um intervalo e
+seja $f \colon I \to \R$ uma função diferenciável.
 %\begin{enumerate}[(i),itemsep=0.5\itemsep,parsep=0.5\parsep,topsep=0.5\topsep,partopsep=0.5\partopsep]
 \begin{enumerate}[(i)]
-\item $f$ is increasing if and only if $f'(x) \geq 0$ for all $x \in I$.
-\item $f$ is decreasing if and only if $f'(x) \leq 0$ for all $x \in I$.
+\item $f$ é crescente se, e somente se, $f'(x) \geq 0$ para todo $x \in I$.
+\item $f$ é decrescente se, e somente se, $f'(x) \leq 0$ para todo $x \in I$.
 \end{enumerate}
 \end{prop}
 
 \begin{proof}
-Let us prove the first item.  Suppose $f$ is increasing.
-For all $x,c \in I$ with $x \neq c$,
+Demonstremos o primeiro item. Suponha que $f$ seja crescente.
+Para todos $x,c \in I$ com $x \neq c$,
 \begin{equation*}
 \frac{f(x)-f(c)}{x-c} \geq 0 .
 \end{equation*}
-Taking a limit as $x$ goes to $c$, we see that $f'(c) \geq 0$.
+Tomando o limite quando $x$ tende a $c$, vemos que $f'(c) \geq 0$.
 
-For the other direction, suppose $f'(x) \geq 0$ for all $x \in I$.
-Take any $x, y \in I$ where $x < y$, and note that $[x,y] \subset I$.
-By the \hyperref[thm:mvt]{mean value theorem}, there is some $c \in (x,y)$ such that
+Para provar a outra implicação, suponha que $f'(x) \geq 0$ para todo $x \in I$.
+Sejam $x, y \in I$ quaisquer, com $x < y$; note que $[x,y] \subset I$.
+Pelo \hyperref[thm:mvt]{teorema do valor médio}, existe $c \in (x,y)$ tal que
 \begin{equation*}
 f(y)-f(x) = f'(c)(y-x) .
 \end{equation*}
-As $f'(c) \geq 0$ and $y-x > 0$, we have $f(y) - f(x) \geq 0$ or $f(x) \leq
-f(y)$, and so
-$f$ is increasing.
+Como $f'(c) \geq 0$ e $y-x > 0$, temos $f(y) - f(x) \geq 0$, ou seja,
+$f(x) \leq f(y)$; portanto,
+$f$ é crescente.
 
-We leave the second item, decreasing $f$, to the reader as an exercise.
+Deixamos como exercício para o leitor o segundo item, relativo à função $f$
+decrescente.
 \end{proof}
 
-A similar but weaker statement is true for strictly increasing and
-decreasing functions.
+Uma afirmação semelhante, mas mais fraca, vale para funções estritamente
+crescentes e decrescentes.
 
 \begin{prop} \label{incdecdiffstrictprop}
-Let $I$ be an interval and
-let $f \colon I \to \R$ be a differentiable function.
+Seja $I$ um intervalo e
+seja $f \colon I \to \R$ uma função diferenciável.
 \begin{enumerate}[(i)]
 \item
 \label{incdecdiffstrictprop:i}
-If $f'(x) > 0$ for all $x \in I$, then
-$f$ is strictly increasing.
+Se $f'(x) > 0$ para todo $x \in I$, então
+$f$ é estritamente crescente.
 \item
 \label{incdecdiffstrictprop:ii}
-If $f'(x) < 0$ for all $x \in I$,
-then $f$ is strictly decreasing.
+Se $f'(x) < 0$ para todo $x \in I$,
+então $f$ é estritamente decrescente.
 \end{enumerate}
 \end{prop}
 
-The proof of
+A demonstração de
 \ref{incdecdiffstrictprop:i}
-is left as an exercise.
-Then \ref{incdecdiffstrictprop:ii}
-follows from 
-\ref{incdecdiffstrictprop:i} by considering $-f$
-instead.
-The converse of this proposition is not true.  The function
-$f(x) \coloneqq x^3$ is strictly increasing, but $f'(0) = 0$.
+fica como exercício.
+O item \ref{incdecdiffstrictprop:ii}
+decorre de
+\ref{incdecdiffstrictprop:i} considerando-se $-f$.
+A recíproca desta proposição não é verdadeira. A função
+$f(x) \coloneqq x^3$ é estritamente crescente, mas $f'(0) = 0$.
 
 \medskip
 
-Another application of the \hyperref[thm:mvt]{mean value theorem} is the following result about
-the location of extrema, sometimes called the
-\emph{\myindex{first derivative test}}.
-The result is stated for an absolute minimum and maximum.
-To apply it to find relative minima
-and maxima, restrict $f$ to an interval $(c-\delta,c+\delta)$.
+Outra aplicação do \hyperref[thm:mvt]{teorema do valor médio} é o seguinte
+resultado sobre a localização de extremos, às vezes chamado de
+\emph{\myindex{teste da primeira derivada}}.
+O resultado é enunciado para um mínimo e um máximo absolutos.
+Para aplicá-lo na busca de mínimos e máximos relativos,
+restrinja $f$ a um intervalo $(c-\delta,c+\delta)$.
 
 \begin{prop} \label{firstderminmaxtest}
-Let $f \colon (a,b) \to \R$ be continuous.  Let $c \in (a,b)$
-and suppose
-$f$ is differentiable on $(a,c)$ and $(c,b)$.
+Seja $f \colon (a,b) \to \R$ contínua. Seja $c \in (a,b)$
+e suponha que
+$f$ seja diferenciável em $(a,c)$ e $(c,b)$.
 \begin{enumerate}[(i)]
-\item If $f'(x) \leq 0$ whenever $x \in (a,c)$ and
- $f'(x) \geq 0$ whenever $x \in (c,b)$, then $f$ has an absolute minimum 
-at $c$.
-\item If $f'(x) \geq 0$ whenever $x \in (a,c)$ and
- $f'(x) \leq 0$ whenever $x \in (c,b)$, then $f$ has an absolute maximum
-at $c$.
+\item Se $f'(x) \leq 0$ sempre que $x \in (a,c)$ e
+ $f'(x) \geq 0$ sempre que $x \in (c,b)$, então $f$ tem um mínimo absoluto
+em $c$.
+\item Se $f'(x) \geq 0$ sempre que $x \in (a,c)$ e
+ $f'(x) \leq 0$ sempre que $x \in (c,b)$, então $f$ tem um máximo absoluto
+em $c$.
 \end{enumerate}
 \end{prop}
 
 \begin{proof}
-We prove the first item and leave the second to the reader.
-Take $x \in (a,c)$
-and a sequence $\{ y_n\}_{n=1}^\infty$ such that $x < y_n < c$ for all $n$
-and $\lim_{n\to\infty} y_n = c$.
-By the preceding proposition,
-$f$ is decreasing on $(a,c)$ so $f(x) \geq f(y_n)$ for all $n$.
-As $f$ is
-continuous at $c$, we take the limit to get
+Demonstremos o primeiro item e deixemos o segundo para o leitor.
+Tome $x \in (a,c)$
+e uma sequência $\{ y_n\}_{n=1}^\infty$ tal que $x < y_n < c$ para todo $n$
+e $\lim_{n\to\infty} y_n = c$.
+Pela proposição anterior,
+$f$ é decrescente em $(a,c)$, logo $f(x) \geq f(y_n)$ para todo $n$.
+Como $f$ é
+contínua em $c$, passando ao limite obtemos
 $f(x) \geq f(c)$.
 
-Similarly, take $x \in (c,b)$
-and $\{ y_n\}_{n=1}^\infty$ a sequence such that $c < y_n < x$ and
+De modo semelhante, tome $x \in (c,b)$
+e uma sequência $\{ y_n\}_{n=1}^\infty$ tal que $c < y_n < x$ e
 $\lim_{n\to\infty} y_n = c$.
-The function is increasing on $(c,b)$ so $f(x) \geq f(y_n)$ for all $n$.
-By continuity of $f$, we get
-$f(x) \geq f(c)$.  Thus $f(x) \geq f(c)$ for all
+A função é crescente em $(c,b)$, logo $f(x) \geq f(y_n)$ para todo $n$.
+Pela continuidade de $f$, obtemos
+$f(x) \geq f(c)$. Assim, $f(x) \geq f(c)$ para todo
 $x \in (a,b)$.
 \end{proof}
 
-The converse of the proposition does not hold.  See
-\exampleref{baddifffunc:example} below.
+A recíproca da proposição não vale. Veja abaixo o
+\exampleref{baddifffunc:example}.
 
 \medskip
 
-Another often used application of the mean value theorem you have possibly
-seen in calculus is the following result on differentiability at the
-end points of an interval.  The proof is
+Outra aplicação frequente do teorema do valor médio, que talvez você tenha
+visto no cálculo, é o resultado a seguir sobre a diferenciabilidade nas
+extremidades de um intervalo. A demonstração está no
 \exerciseref{exercise:endpointderivative}.
 
 \begin{prop} \label{prop:endpointderivative}
 \leavevmode
 \begin{enumerate}[(i)]
 \item
-Suppose $f \colon [a,b) \to \R$ is continuous, differentiable in $(a,b)$,
-and $\lim_{x \to a} f'(x) = L$.  Then $f$ is differentiable at $a$ and
+Suponha que $f \colon [a,b) \to \R$ seja contínua, diferenciável em $(a,b)$
+e que $\lim_{x \to a} f'(x) = L$. Então $f$ é diferenciável em $a$ e
 $f'(a) = L$.
 \item
-Suppose $f \colon (a,b] \to \R$ is continuous, differentiable in $(a,b)$,
-and $\lim_{x \to b} f'(x) = L$.  Then $f$ is differentiable at $b$ and
+Suponha que $f \colon (a,b] \to \R$ seja contínua, diferenciável em $(a,b)$
+e que $\lim_{x \to b} f'(x) = L$. Então $f$ é diferenciável em $b$ e
 $f'(b) = L$.
 \end{enumerate}
 \end{prop}
 
-In fact, using the extension result \propref{context:prop}, you do not need to assume
-that $f$ is defined at the end point.  See \exerciseref{exercise:extendboundedder}.
+De fato, usando o resultado de extensão \propref{context:prop}, não é
+necessário supor que $f$ esteja definida na extremidade. Veja o
+\exerciseref{exercise:extendboundedder}.
 
-\subsection{Continuity of derivatives and the intermediate value theorem}
+\subsection{Continuidade das derivadas e o teorema do valor intermediário}
 
-Derivatives of functions satisfy an
-intermediate value property.
+As derivadas de funções satisfazem a propriedade do valor intermediário.
 
-\begin{thm}[Darboux] \label{thm:darboux} \index{Darboux's theorem}
-Let $f \colon [a,b] \to \R$ be differentiable.  Suppose $y \in \R$ is such
-that $f'(a) < y < f'(b)$ or
-$f'(a) > y > f'(b)$.  Then there exists a $c \in (a,b)$ such that $f'(c) =
-y$.
+\begin{thm}[Darboux] \label{thm:darboux} \index{teorema de Darboux}
+Seja $f \colon [a,b] \to \R$ diferenciável. Suponha que $y \in \R$ seja tal que $f'(a) < y < f'(b)$ ou $f'(a) > y > f'(b)$. Então existe $c \in (a,b)$ tal que $f'(c) = y$.
 \end{thm}
 
-The proof follows by letting $g$ be the difference of $f$
-and a linear function with derivative $y$.
-The new function $g$ reduces the problem
-to the case $y=0$, where $g'(a) > 0 > g'(b)$.  That is, $g$ is increasing at $a$ and
-decreasing at $b$, so it must attain a maximum inside $(a,b)$,
-where the derivative is zero.  See \figureref{darbouxthmfig}.
+A demonstração consiste em definir $g$ como a diferença entre $f$ e uma função linear cuja derivada é $y$. A nova função $g$ reduz o problema ao caso $y=0$, em que $g'(a) > 0 > g'(b)$. Isto é, $g$ cresce em $a$ e decresce em $b$, portanto deve atingir um máximo no interior de $(a,b)$, onde sua derivada é nula. Veja a \figureref{darbouxthmfig}.
 
 \begin{myfigureht}
 \myincludegraphics{darbouxthmfig}{%
-A graph of a function with three points, a, c, b, in this order,
-marked on the horizontal axis.  Tangent lines are drawn at
-the corresponding points on the graph.  From left to right,
-the first line slopes up and is labeled g prime of a is greater than 0.
-The second line is horizontal and is labeled g prime of c equals 0.
-The third line slopes down and is labeled g prime of b is less than 0.}
-\caption{Idea of the proof of Darboux theorem.\label{darbouxthmfig}}
+Gráfico de uma função com três pontos, a, c e b, nessa ordem, marcados no eixo horizontal. Retas tangentes são traçadas nos pontos correspondentes do gráfico. Da esquerda para a direita, a primeira reta tem inclinação positiva e está identificada por g linha de a maior que zero. A segunda é horizontal e está identificada por g linha de c igual a zero. A terceira tem inclinação negativa e está identificada por g linha de b menor que zero.}
+\caption{Ideia da demonstração do teorema de Darboux.\label{darbouxthmfig}}
 \end{myfigureht}
 
 \begin{proof}
-Suppose 
-$f'(a) < y < f'(b)$.
-Define
+Suponha que $f'(a) < y < f'(b)$. Defina
 \begin{equation*}
 g(x) \coloneqq yx - f(x) .
 \end{equation*}
-The function $g$ is continuous on $[a,b]$, and so $g$ attains a maximum at some $c \in
-[a,b]$.
+A função $g$ é contínua em $[a,b]$ e, portanto, atinge um máximo em algum $c \in [a,b]$.
 
-The function $g$ is also differentiable on $[a,b]$.
-Compute $g'(x) = y-f'(x)$.  Thus $g'(a) > 0$.  As the derivative is
-the limit of difference quotients and is positive, there must be some
-difference quotient that is positive.  That is, there must exist
-an $x > a$ such that
+A função $g$ também é diferenciável em $[a,b]$. Calculando, temos $g'(x) = y-f'(x)$. Logo, $g'(a) > 0$. Como a derivada é o limite dos quocientes incrementais e é positiva, algum quociente incremental deve ser positivo. Isto é, deve existir $x > a$ tal que
 \begin{equation*}
 \frac{g(x)-g(a)}{x-a} > 0 ,
 \end{equation*}
-or $g(x) > g(a)$.  Thus $g$
-cannot possibly have a maximum at $a$.  Similarly, as $g'(b) < 0$,
-we find an $x < b$ (a different $x$) such that
-$\frac{g(x)-g(b)}{x-b} < 0$ or that $g(x) > g(b)$, thus
-$g$ cannot possibly have a maximum at $b$.
-Therefore, $c \in (a,b)$,
-and \lemmaref{relminmax:lemma} applies: As $g$ attains a maximum
-at $c$, we find $g'(c) = 0$
-and so $f'(c) = y$.
+ou seja, $g(x) > g(a)$. Portanto, $g$ não pode atingir um máximo em $a$. Analogamente, como $g'(b) < 0$, encontramos um outro $x < b$ tal que $\frac{g(x)-g(b)}{x-b} < 0$, ou seja, $g(x) > g(b)$; assim, $g$ não pode atingir um máximo em $b$. Logo, $c \in (a,b)$ e podemos aplicar o \lemmaref{relminmax:lemma}: como $g$ atinge um máximo em $c$, temos $g'(c)=0$ e, portanto, $f'(c)=y$.
 
-Similarly, if $f'(a) > y > f'(b)$, consider $g(x) \coloneqq f(x)- yx$.
+De modo semelhante, se $f'(a) > y > f'(b)$, considere $g(x) \coloneqq f(x)- yx$.
 \end{proof}
 
-We have seen already that
-there exist discontinuous functions that have the
-intermediate value property.  While it is hard to imagine at first, there
-also
-exist functions that are differentiable everywhere and the derivative is not
-continuous.
+Já vimos que existem funções descontínuas que possuem a propriedade do valor intermediário. Embora isso possa parecer surpreendente à primeira vista, também existem funções diferenciáveis em todos os pontos cuja derivada não é contínua.
 
 \begin{example} \label{baddifffunc:example}
-Let $f \colon \R \to \R$ be the function defined by
+Seja $f \colon \R \to \R$ a função definida por
 \begin{equation*}
 f(x) \coloneqq
 \begin{cases}
@@ -1025,43 +985,19 @@ f(x) \coloneqq
 0 & \text{if } x = 0.
 \end{cases}
 \end{equation*}
-We claim that $f$ is differentiable everywhere, but
-$f' \colon \R \to \R$ is not continuous at
-the origin.  Furthermore, $f$ has a minimum at $0$, but the derivative
-changes sign infinitely often near the origin.
-See \figureref{fig:nonc1diff}.
+Afirmamos que $f$ é diferenciável em todos os pontos, mas $f' \colon \R \to \R$ não é contínua na origem. Além disso, $f$ tem um mínimo em $0$, mas sua derivada muda de sinal infinitas vezes nas proximidades da origem. Veja a \figureref{fig:nonc1diff}.
 \begin{myfigureht}
 \myincludepdft{nonc1diff_full}{%
-On the left is a graph of a function that oscillates between
-the x-axis and the function x squared, whose graph is given
-as a dashed line.
-On the right is a function that oscillates faster and faster
-as it gets close to the origin, looking somewhat like the graph
-of sine of 1 over x, however the entire graph appears sheared a bit
-so that it goes upwards as well.}
-\caption{A function with a discontinuous derivative. The function $f$ is on the left
-and $f'$ is on the right.  Notice that $f(x) \leq x^2$ on the left graph.\label{fig:nonc1diff}}
+À esquerda está o gráfico de uma função que oscila entre o eixo das abscissas e a função x ao quadrado, cujo gráfico está tracejado. À direita, está uma função que oscila cada vez mais rapidamente à medida que se aproxima da origem, lembrando o gráfico do seno de um sobre x, mas com o gráfico inteiro um pouco inclinado, de modo que também cresce.}
+\caption{Uma função com derivada descontínua. A função $f$ está à esquerda e $f'$ à direita. Observe que $f(x) \leq x^2$ no gráfico da esquerda.\label{fig:nonc1diff}}
 \end{myfigureht}
 
-Proof: It is immediate from the definition that $f$ has an absolute
-minimum at $0$; we know $f(x) \geq 0$ for all $x$ and $f(0) = 0$.
+Demonstração: Pela definição, é imediato que $f$ tem um mínimo absoluto em $0$; sabemos que $f(x) \geq 0$ para todo $x$ e que $f(0)=0$.
 
-For $x \neq 0$,
-$f$ is differentiable
-and
-the derivative 
-is $2 \sin (\nicefrac{1}{x}) \bigl( x \sin (\nicefrac{1}{x}) -
-\cos(\nicefrac{1}{x}) \bigr)$.
-As an exercise, show that for $x_n = \frac{4}{(8n+1)\pi}$,
-we have
-$\lim_{n\to\infty} f'(x_n) = -1$, and for
-$y_n = \frac{4}{(8n+3)\pi}$, we have
-$\lim_{n\to\infty} f'(y_n) = 1$.  So $f'$
-cannot be continuous at $0$
-no matter what $f'(0)$ is.
+Para $x \neq 0$, $f$ é diferenciável, e sua derivada é $2 \sin (\nicefrac{1}{x}) \bigl( x \sin (\nicefrac{1}{x}) - \cos(\nicefrac{1}{x}) \bigr)$. Como exercício, mostre que, para $x_n = \frac{4}{(8n+1)\pi}$, temos $\lim_{n\to\infty} f'(x_n) = -1$, e que, para $y_n = \frac{4}{(8n+3)\pi}$, temos $\lim_{n\to\infty} f'(y_n) = 1$. Portanto, $f'$ não pode ser contínua em $0$, qualquer que seja o valor de $f'(0)$.
 
-Let us show that $f$ is differentiable at $0$ and $f'(0)=0$.
-For $x \neq 0$,
+Mostremos que $f$ é diferenciável em $0$ e que $f'(0)=0$.
+Para $x \neq 0$,
 \begin{equation*}
 \abs{\frac{f(x)-f(0)}{x-0} - 0}
 =
@@ -1071,157 +1007,105 @@ For $x \neq 0$,
 \leq
 \sabs{x} .
 \end{equation*}
-And, of course, as $x$ tends to zero, $\sabs{x}$ tends to zero, and hence
-$\abs{\frac{f(x)-f(0)}{x-0} - 0}$ goes to zero.  Therefore, $f$
-is differentiable at 0 and the derivative at 0 is 0.
-A key point in the calculation above
-is that $\babs{f(x)} \leq x^2$,
-see also Exercises \ref{exercise:bndmuldiff} and
-\ref{exercise:diffsqueeze}.
+Evidentemente, quando $x$ tende a zero, $\sabs{x}$ tende a zero e, portanto, $\abs{\frac{f(x)-f(0)}{x-0} - 0}$ tende a zero. Logo, $f$ é diferenciável em $0$ e sua derivada nesse ponto é $0$. Um ponto essencial no cálculo acima é que $\babs{f(x)} \leq x^2$; veja também os Exercícios \ref{exercise:bndmuldiff} e \ref{exercise:diffsqueeze}.
 \end{example}
 
-It is sometimes useful to assume the derivative of a differentiable
-function is continuous.  If $f \colon I \to \R$ is differentiable and
-the derivative $f'$ is continuous on $I$, then we say $f$ is
-\emph{\myindex{continuously
-differentiable}}\index{differentiable!continuously}.  It is common to
-write $C^1(I)$ for the set of continuously differentiable functions defined
-on $I$.
+Às vezes, é útil supor que a derivada de uma função diferenciável é contínua. Se $f \colon I \to \R$ é diferenciável e sua derivada $f'$ é contínua em $I$, dizemos que $f$ é \emph{\myindex{continuamente diferenciável}}\index{diferenciável!continuamente}. É comum denotar por $C^1(I)$ o conjunto das funções continuamente diferenciáveis definidas em $I$.
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
 \begin{exercise}
-Finish the proof of \propref{incdecdiffprop}.
+Conclua a demonstração de \propref{incdecdiffprop}.
 \end{exercise}
 
 \begin{exercise}
-Finish the proof of \propref{firstderminmaxtest}.
+Conclua a demonstração de \propref{firstderminmaxtest}.
 \end{exercise}
 
 \begin{exercise} \label{exercise:boundeddermeanslip}
-Suppose $f \colon \R \to \R$ is a differentiable
-function such that $f'$ is a bounded function.  Prove
-that $f$ is a Lipschitz continuous function.
+Suponha que $f \colon \R \to \R$ seja uma função diferenciável e que $f'$ seja limitada. Demonstre que $f$ é Lipschitz contínua.
 \end{exercise}
 
 \begin{exercise}
 \pagebreak[1]
-Suppose $f \colon [a,b] \to \R$ is differentiable and $c \in [a,b]$.
-Show there exists a sequence $\{ x_n \}_{n=1}^\infty$ converging to $c$, $x_n
-\neq c$ for all $n$, such that
+Suponha que $f \colon [a,b] \to \R$ seja diferenciável e que $c \in [a,b]$. Mostre que existe uma sequência $\{ x_n \}_{n=1}^\infty$ que converge para $c$, com $x_n \neq c$ para todo $n$, tal que
 \begin{equation*}
 f'(c) = \lim_{n\to \infty} f'(x_n).
 \avoidbreak
 \end{equation*}
-Do note this does \emph{not} imply that $f'$ is continuous (why?).
+Observe que isso \emph{não} implica que $f'$ seja contínua (por quê?).
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon \R \to \R$ is a function such that
-$\babs{f(x)-f(y)} \leq \sabs{x-y}^2$ for all $x$ and $y$.  Show that
-$f(x) = C$ for some constant $C$.  Hint: Show that $f$ is differentiable
-at all points and compute the derivative.
+Suponha que $f \colon \R \to \R$ seja uma função tal que $\babs{f(x)-f(y)} \leq \sabs{x-y}^2$ para todos $x$ e $y$. Mostre que $f(x)=C$ para alguma constante $C$. Dica: mostre que $f$ é diferenciável em todos os pontos e calcule a derivada.
 \end{exercise}
 
 \begin{exercise} \label{exercise:posderincr}
-Finish the proof of \propref{incdecdiffstrictprop}.  That is,
-suppose $I$ is an interval and
-$f \colon I \to \R$ is a differentiable function such that
-$f'(x) > 0$ for all $x \in I$.
-Show that $f$ is strictly increasing.
+Complete a demonstração de \propref{incdecdiffstrictprop}. Isto é, suponha que $I$ seja um intervalo e que $f \colon I \to \R$ seja diferenciável, com $f'(x)>0$ para todo $x \in I$. Mostre que $f$ é estritamente crescente.
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon (a,b) \to \R$ is a differentiable function
-such that
-$f'(x) \neq 0$ for all $x \in (a,b)$.  Suppose there
-exists
-a point $c \in (a,b)$ such that $f'(c) > 0$.
-Prove $f'(x) > 0$ for all $x \in (a,b)$.
+Suponha que $f \colon (a,b) \to \R$ seja diferenciável e que $f'(x) \neq 0$ para todo $x \in (a,b)$. Suponha ainda que exista $c \in (a,b)$ tal que $f'(c)>0$. Demonstre que $f'(x)>0$ para todo $x \in (a,b)$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:samediffconst}
-Suppose $f \colon (a,b) \to \R$ and $g \colon (a,b) \to \R$ are
-differentiable functions such that $f'(x) = g'(x)$ for all $x \in (a,b)$,
-then show that there exists a constant $C$ such that $f(x) = g(x) + C$.
+Suponha que $f \colon (a,b) \to \R$ e $g \colon (a,b) \to \R$ sejam diferenciáveis e que $f'(x)=g\'(x)$ para todo $x \in (a,b)$. Mostre que existe uma constante $C$ tal que $f(x)=g(x)+C$.
 \end{exercise}
 
 \begin{exercise}
-Prove the following version of \myindex{L'H\^opital's rule}\index{L'Hospital's rule}.
-Suppose 
-$f \colon (a,b) \to \R$ and $g \colon (a,b) \to \R$ are differentiable
-functions and $c \in (a,b)$.  Suppose that $f(c) = 0$, $g(c)=0$,
-$g'(x) \neq 0$ when $x \neq c$, and
-that the limit of $\nicefrac{f'(x)}{g'(x)}$ as $x$ goes to $c$ exists.  Show that
+Demonstre a seguinte versão da \myindex{regra de L'Hôpital}\index{regra de L'Hospital}.
+Suponha que $f \colon (a,b) \to \R$ e $g \colon (a,b) \to \R$ sejam diferenciáveis e que $c \in (a,b)$. Suponha que $f(c)=0$, $g(c)=0$, $g'(x) \neq 0$ para $x \neq c$ e que exista o limite de $\nicefrac{f'(x)}{g'(x)}$ quando $x$ tende a $c$. Mostre que
 \begin{equation*}
 \lim_{x \to c} \frac{f(x)}{g(x)} = 
 \lim_{x \to c} \frac{f'(x)}{g'(x)} .
 \end{equation*}
-Compare to \exerciseref{exercise:simpleLHopital}.
-Note: Before you do anything else, prove that $g(x) \neq 0$ when $x \neq c$.
+Compare com \exerciseref{exercise:simpleLHopital}.
+Observação: antes de fazer qualquer outra coisa, demonstre que $g(x) \neq 0$ quando $x \neq c$.
 \end{exercise}
 
 \begin{exercise}
-Let $f \colon (a,b) \to \R$ be an unbounded differentiable function.  Show
-$f' \colon (a,b) \to \R$ is unbounded.
-Remark: It is important that $(a,b)$ is a bounded interval.
+Seja $f \colon (a,b) \to \R$ uma função diferenciável não limitada. Mostre que $f' \colon (a,b) \to \R$ não é limitada.
+Observação: é importante que $(a,b)$ seja um intervalo limitado.
 \end{exercise}
 
 \begin{exercise}
-Prove the theorem Rolle actually proved in 1691:
-\emph{If $f$ is a polynomial,
-$f'(a) = f'(b) = 0$ for some $a < b$,
-and there is no $c \in (a,b)$ such that $f'(c) = 0$,
-then there is at most one root of $f$ in $(a,b)$,
-that is at most one $x \in (a,b)$ such that $f(x) = 0$.}
-In other words, between any two consecutive roots of $f'$ is at most one
-root of $f$.
-Hint: Suppose there are two roots and see what happens.
+Demonstre o teorema que Rolle de fato provou em 1691:
+\emph{Se $f$ é um polinômio, $f'(a)=f'(b)=0$ para certos $a<b$ e não existe $c \in (a,b)$ tal que $f'(c)=0$, então há no máximo uma raiz de $f$ em $(a,b)$, isto é, no máximo um $x \in (a,b)$ tal que $f(x)=0$.}
+Em outras palavras, entre duas raízes consecutivas de $f'$ há no máximo uma raiz de $f$.
+Dica: suponha que haja duas raízes e veja o que acontece.
 \end{exercise}
 
 \begin{exercise}
-Suppose $a,b \in \R$ and $f \colon \R \to \R$ is differentiable,
-$f'(x) = a$ for all $x$, and $f(0) = b$.  Find $f$ and prove that 
-it is the unique differentiable function with this property.
+Suponha que $a,b \in \R$ e que $f \colon \R \to \R$ seja diferenciável, com $f'(x)=a$ para todo $x$ e $f(0)=b$. Determine $f$ e demonstre que ela é a única função diferenciável com essa propriedade.
 \end{exercise}
 
 \begin{exercise} \label{exercise:endpointderivative}
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Prove \propref{prop:endpointderivative}.
+Demonstre \propref{prop:endpointderivative}.
 \item 
-Suppose $f \colon (a,b) \to \R$ is continuous, and suppose $f$ is differentiable everywhere except at $c \in
-(a,b)$ and $\lim_{x \to c} f'(x) = L$.
-Prove that $f$ is differentiable at
-$c$ and $f'(c) = L$.
+Suponha que $f \colon (a,b) \to \R$ seja contínua e diferenciável em todos os pontos, exceto em $c \in (a,b)$, e que $\\lim_{x \to c} f'(x)=L$. Demonstre que $f$ é diferenciável em $c$ e que $f'(c)=L$.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise} \label{exercise:extendboundedder}
-Suppose $f \colon (0,1) \to \R$ is differentiable and $f'$
-is bounded.
+Suponha que $f \colon (0,1) \to \R$ seja diferenciável e que $f'$ seja limitada.
 \begin{enumerate}[a)]
 \item
-Show that there exists a continuous function $g \colon [0,1) \to \R$
-such that $f(x) = g(x)$ for all $x \neq 0$.\\
-Hint: \propref{context:prop} and
-\exerciseref{exercise:boundeddermeanslip}.
+Mostre que existe uma função contínua $g \colon [0,1) \to \R$ tal que $f(x)=g(x)$ para todo $x \neq 0$.\\\
+Dica: use \propref{context:prop} e \exerciseref{exercise:boundeddermeanslip}.
 \item
-Find an example where the $g$ is not differentiable at $x=0$.
+Encontre um exemplo em que $g$ não seja diferenciável em $x=0$.
 \\
-Hint: Consider something based on $\sin(\ln x)$,
-and assume you know basic properties of
-$\sin$ and $\ln$ from calculus.
+Dica: considere uma função baseada em $\sin(\ln x)$ e suponha que você conheça as propriedades básicas de $\sin$ e $\ln$ do cálculo.
 \item
-Instead of assuming that $f'$ is bounded, assume that $\lim_{x \to 0} f'(x)
-= L$.  Prove that not only does $g$ exist but it is differentiable at $0$
-and $g'(0) = L$.
+Em vez de supor que $f'$ seja limitada, suponha que $\lim_{x \to 0} f'(x)=L$. Demonstre que $g$ existe e, além disso, é diferenciável em $0$, com $g'(0)=L$.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Prove \thmref{thm:cauchymvt}.
+Demonstre \thmref{thm:cauchymvt}.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1316,7 +1200,7 @@ f(x_0)
 See \figureref{fig:taylorsin} for
 the odd-degree Taylor polynomials for the sine function at $x_0=0$.
 The even-degree terms are all zero, as even derivatives 
-of sine are again sines, which are zero at the origin.
+of sine are again sines, which are zero at a origem.
 \begin{myfigureht}
 \myincludegraphics{taylorsin}{%
 The graph of the sine function is given.  Also several
@@ -1821,9 +1705,9 @@ no larger.
 Another useful example is $f(x) \coloneqq x^3$.  The function $f \colon \R \to \R$ is
 one-to-one and onto, so $f^{-1}(y) = y^{1/3}$ exists on the entire real
 line, including zero and negative $y$.  The function $f$ has
-a continuous derivative, but $f^{-1}$ has no derivative at the origin.  The
+a continuous derivative, but $f^{-1}$ has no derivative at a origem.  The
 point is that $f'(0) = 0$.  See \figureref{cubecuberootfig} for a graph.
-Notice the vertical tangent on the cube root at the origin.
+Notice the vertical tangent on the cube root at a origem.
 See also \exerciseref{exercise:oddroot}.
 \begin{myfigureht}
 \myincludegraphics{cubecuberoot}{%
@@ -1831,7 +1715,7 @@ The graph y equals the cube root of x in bold line
 and the graph of y equals x cubed in dashed line.
 We note that while the graph of x cubed is tangent to the x-axis
 at the origin, the cube root is a reflection across the x equals y
-line and is therefore tangent to the vertical y-axis at the origin.}
+line and is therefore tangent to the vertical y-axis at a origem.}
 \caption{Graphs of $x^3$ and $x^{1/3}$.\label{cubecuberootfig}}
 \end{myfigureht}
 \end{example}
@@ -1885,7 +1769,7 @@ derivatives.
 Let $f(x) \coloneqq x + 2 x^2 \sin(\nicefrac{1}{x})$ for $x \neq 0$ and
 $f(0) \coloneqq 0$.  Show that $f$ is differentiable at all $x$, that $f'(0) > 0$,
 but that $f$ is not invertible
-on any open interval containing the origin.
+on any open interval containing a origem.
 \end{exercise}
 
 \begin{exercise}

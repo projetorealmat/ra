@@ -1926,131 +1926,127 @@ $f(\R) = \R$.  Show that $d$ is odd.
 
 %mbxINTROSUBSECTION
 
-\sectionnotes{1.5--2 lectures (continuous extension can be optional)}
+\sectionnotes{1,5--2 aulas (a extensão contínua pode ser opcional)}
 
 \subsection{Uniform continuity}
 
-We made a fuss of saying that the $\delta$ in the definition of
-continuity depended on the point $c$.  There are situations when it is
-advantageous to be able to pick a $\delta$ independent of any point, and so we
-give a name to this concept.
+Enfatizamos bastante que o $\delta$ na definição de continuidade dependia
+do ponto $c$. Há situações em que é vantajoso poder escolher um $\delta$
+independente de qualquer ponto; por isso, damos um nome a esse conceito.
 
 \begin{defn}
-Let $S \subset \R$, and let $f \colon S \to \R$ be a function.
-Suppose for every $\epsilon > 0$ there exists a $\delta > 0$
-such that whenever $x, c \in S$ and
-$\sabs{x-c} < \delta$, then $\babs{f(x)-f(c)} < \epsilon$.
-Then we say $f$ is \emph{\myindex{uniformly continuous}}.
+Seja $S \subset \R$ e seja $f \colon S \to \R$ uma função.
+Suponha que, para todo $\epsilon > 0$, exista $\delta > 0$
+tal que, sempre que $x,c \in S$ e
+$\sabs{x-c} < \delta$, tenhamos $\babs{f(x)-f(c)} < \epsilon$.
+Dizemos então que $f$ é \emph{\myindex{uniformemente contínua}}.
 \end{defn}
 
-A uniformly continuous function must be continuous.
-The only difference in the definitions
-is that in uniform continuity,
-for a given $\epsilon > 0$ we pick a $\delta > 0$ that
-works for all $c \in S$.  That is, $\delta$ can no longer depend on $c$;
-it only depends on $\epsilon$.  The domain of definition
-of the function makes a difference now.  A function that is not uniformly
-continuous on a larger set may be uniformly continuous when restricted to a
-smaller set.
-Note that $x$ and $c$ are not treated any differently
-in this definition.
+Uma função uniformemente contínua precisa ser contínua.
+A única diferença entre as definições é que, na continuidade uniforme,
+dado $\epsilon > 0$, escolhemos um $\delta > 0$ que funciona para todo
+$c \in S$. Isto é, $\delta$ não pode mais depender de $c$;
+depende apenas de $\epsilon$. Agora, o domínio da função faz diferença.
+Uma função que não é uniformemente contínua em um conjunto maior pode ser
+uniformemente contínua quando restrita a um conjunto menor.
+Observe que, nesta definição, $x$ e $c$ não recebem tratamentos diferentes.
 
 \begin{example}
-$f \colon [0,1] \to \R$ defined by $f(x) \coloneqq x^2$ is uniformly continuous.
+A função $f \colon [0,1] \to \R$ definida por $f(x) \coloneqq x^2$
+é uniformemente contínua.
 
-Proof: Note that $0 \leq x,c \leq 1$.  Then
+Demonstração: Observe que $0 \leq x,c \leq 1$. Então
 \begin{equation*}
 \sabs{x^2-c^2} = \sabs{x+c}\sabs{x-c}
-\leq \bigl(\sabs{x}+\sabs{c}\bigr) \sabs{x-c}
+\leq \bigl(\sabs{x}+\sabs{c}\bigr)\sabs{x-c}
 \leq (1+1)\sabs{x-c} .
 \end{equation*}
-Therefore, given $\epsilon > 0$, let $\delta \coloneqq \nicefrac{\epsilon}{2}$.
-If $\sabs{x-c} < \delta$, then $\sabs{x^2-c^2} \leq 2 \sabs{x-c} < \epsilon$.
+Portanto, dado $\epsilon > 0$, seja $\delta \coloneqq \nicefrac{\epsilon}{2}$.
+Se $\sabs{x-c} < \delta$, então
+$\sabs{x^2-c^2} \leq 2\sabs{x-c} < \epsilon$.
 
 \medskip
 
-On the other hand, $g \colon \R \to \R$ defined by $g(x) \coloneqq x^2$ is not uniformly
-continuous.
+Por outro lado, a função $g \colon \R \to \R$ definida por $g(x) \coloneqq x^2$
+não é uniformemente contínua.
 
-Proof: Suppose it is uniformly continuous.
-Then for every $\epsilon > 0$,
-there would exist a $\delta > 0$ such that
-if $\sabs{x-c} < \delta$, then $\sabs{x^2 -c^2} < \epsilon$.
-Take $x > 0$ and let
-$c \coloneqq x+\nicefrac{\delta}{2}$.  Write
+Demonstração: Suponha que seja uniformemente contínua.
+Então, para todo $\epsilon > 0$, existiria $\delta > 0$ tal que,
+se $\sabs{x-c} < \delta$, então $\sabs{x^2-c^2} < \epsilon$.
+Tome $x > 0$ e seja
+$c \coloneqq x+\nicefrac{\delta}{2}$. Escrevemos
 \begin{equation*}
 \epsilon >
 \sabs{x^2-c^2} = \sabs{x+c}\sabs{x-c}
 =
-(2x+\nicefrac{\delta}{2})\nicefrac{\delta}{2} 
-\geq 
+(2x+\nicefrac{\delta}{2})\nicefrac{\delta}{2}
+\geq
 \delta x .
 \end{equation*}
-Therefore, $x < \nicefrac{\epsilon}{\delta}$ for all $x > 0$, which is a
-contradiction.
+Portanto, $x < \nicefrac{\epsilon}{\delta}$ para todo $x > 0$,
+o que é uma contradição.
 \end{example}
 
 
 \begin{example}
-The function $f \colon (0,1) \to \R$ defined by $f(x) \coloneqq \nicefrac{1}{x}$ is not
-uniformly continuous.
+A função $f \colon (0,1) \to \R$ definida por
+$f(x) \coloneqq \nicefrac{1}{x}$ não é uniformemente contínua.
 
-Proof: Given $\epsilon > 0$, the inequality $\epsilon >
-\abs{\nicefrac{1}{x}-\nicefrac{1}{y}}$ holds if and only if
+Demonstração: Dado $\epsilon > 0$, a desigualdade
+$\epsilon > \abs{\nicefrac{1}{x}-\nicefrac{1}{y}}$ vale se, e somente se,
 \begin{equation*}
 \epsilon >
 \abs{\nicefrac{1}{x}-\nicefrac{1}{y}}
 =
-\frac{\sabs{y-x}}{\sabs{xy}} 
+\frac{\sabs{y-x}}{\sabs{xy}}
 =
 \frac{\sabs{y-x}}{xy} ,
 \end{equation*}
-or
+ou
 \begin{equation*}
-\sabs{x-y} < xy \epsilon .
+\sabs{x-y} < xy\epsilon .
 \end{equation*}
-Suppose $\epsilon < 1$.
-We wish to see if a 
-small $\delta > 0$ would work.
-If $x \in (0,1)$ and 
+Suponha que $\epsilon < 1$.
+Queremos verificar se um $\delta > 0$ pequeno funcionaria.
+Se $x \in (0,1)$ e
 $y = x+\nicefrac{\delta}{2} \in (0,1)$,
-then $\sabs{x-y} = \nicefrac{\delta}{2} < \delta$.
-We plug $y$ into the inequality above to get $\nicefrac{\delta}{2} <
-x \bigl( x+\nicefrac{\delta}{2} \bigr) \epsilon < x$.
-If the definition of uniform continuity is satisfied, then
-the inequality $\nicefrac{\delta}{2} < x$ would hold for all small $x > 0$.
-But that implies $\delta \leq 0$.
-Therefore, no single $\delta > 0$ works for all points.
+então $\sabs{x-y} = \nicefrac{\delta}{2} < \delta$.
+Substituímos $y$ na desigualdade acima e obtemos
+$\nicefrac{\delta}{2} < x \bigl(x+\nicefrac{\delta}{2}\bigr)\epsilon < x$.
+Se a definição de continuidade uniforme fosse satisfeita,
+a desigualdade $\nicefrac{\delta}{2} < x$ valeria para todo $x > 0$
+suficientemente pequeno. Mas isso implica que $\delta \leq 0$.
+Portanto, nenhum $\delta > 0$ único funciona para todos os pontos.
 \end{example}
 
-The examples show that if $f$ is defined on an interval that is either not closed
-or not bounded, then $f$ can be continuous, but not uniformly continuous.
-For a closed and bounded interval $[a,b]$, we can, however,
-make the following statement.
+Os exemplos mostram que, se $f$ está definida em um intervalo que não é
+fechado ou não é limitado, $f$ pode ser contínua, mas não uniformemente contínua.
+Para um intervalo fechado e limitado $[a,b]$, porém, podemos fazer a seguinte
+afirmação.
 
 \begin{thm} \label{unifcont:thm}
-Let $f \colon [a,b] \to \R$ be a continuous function.  Then $f$
-is uniformly continuous.
+Seja $f \colon [a,b] \to \R$ uma função contínua. Então $f$
+é uniformemente contínua.
 \end{thm}
 
 \begin{proof}
-We prove the statement by contrapositive.
-Suppose $f$ is not uniformly continuous.  We will prove
-that there is some
-$c \in [a,b]$ where $f$ is not continuous.  Let us negate
-the definition of uniform continuouity:
-There exists an $\epsilon > 0$
-such that for every $\delta > 0$, there exist points $x, y$ in $[a,b]$ with
-$\sabs{x-y} < \delta$ and $\babs{f(x)-f(y)} \geq \epsilon$.
+Provaremos a afirmação por contraposição.
+Suponha que $f$ não seja uniformemente contínua. Provaremos
+que existe algum $c \in [a,b]$ em que $f$ não é contínua.
+Neguemos a definição de continuidade uniforme:
+existe $\epsilon > 0$
+tal que, para todo $\delta > 0$, existem pontos $x,y$ em $[a,b]$ com
+$\sabs{x-y} < \delta$ e $\babs{f(x)-f(y)} \geq \epsilon$.
 
-So for the $\epsilon > 0$ above,
-we find sequences $\{ x_n \}_{n=1}^\infty$ and $\{ y_n \}_{n=1}^\infty$ such that
-$\sabs{x_n-y_n} < \nicefrac{1}{n}$ and such that $\babs{f(x_n)-f(y_n)} \geq
-\epsilon$.  By
-\hyperref[thm:bwseq]{Bolzano--Weierstrass},
-there exists a convergent subsequence
-$\{ x_{n_k} \}_{k=1}^\infty$.  Let $c \coloneqq \lim_{k\to\infty} x_{n_k}$.
-As $a \leq x_{n_k} \leq b$ for all $k$, we have $a \leq c \leq b$.  Estimate
+Assim, para o $\epsilon > 0$ acima,
+encontramos sequências $\{ x_n \}_{n=1}^\infty$ e $\{ y_n \}_{n=1}^\infty$
+tais que $\sabs{x_n-y_n} < \nicefrac{1}{n}$ e
+$\babs{f(x_n)-f(y_n)} \geq \epsilon$. Pelo
+\hyperref[thm:bwseq]{teorema de Bolzano--Weierstrass},
+existe uma subsequência convergente
+$\{ x_{n_k} \}_{k=1}^\infty$. Seja
+$c \coloneqq \lim_{k\to\infty} x_{n_k}$.
+Como $a \leq x_{n_k} \leq b$ para todo $k$, temos $a \leq c \leq b$. Estimamos:
 \begin{equation*}
 \sabs{y_{n_k} - c} =
 \sabs{y_{n_k} - x_{n_k} + x_{n_k} - c} \leq
@@ -2058,14 +2054,14 @@ As $a \leq x_{n_k} \leq b$ for all $k$, we have $a \leq c \leq b$.  Estimate
 +
 \sabs{x_{n_k}-c}
 <
-\nicefrac{1}{n_k} 
+\nicefrac{1}{n_k}
 +
 \sabs{x_{n_k}-c} .
 \end{equation*}
-As $\nicefrac{1}{n_k}$ and $\sabs{x_{n_k}-c}$ both go to zero when
-$k$ goes to infinity, $\{ y_{n_k} \}_{k=1}^\infty$ converges and the limit
-is $c$.  We now show that $f$ is not continuous at $c$.
-Estimate
+Como $\nicefrac{1}{n_k}$ e $\sabs{x_{n_k}-c}$ tendem ambos a zero quando
+$k$ tende ao infinito, a sequência $\{ y_{n_k} \}_{k=1}^\infty$ converge,
+e seu limite é $c$. Agora mostraremos que $f$ não é contínua em $c$.
+Estimamos:
 \begin{equation*}
 \begin{split}
 \babs{f(x_{n_k}) - f(c)} & =
@@ -2076,23 +2072,22 @@ Estimate
 \epsilon - \babs{f(y_{n_k})-f(c)} .
 \end{split}
 \end{equation*}
-Or in other words,
+Ou, em outras palavras,
 \begin{equation*}
-\babs{f(x_{n_k})-f(c)} 
+\babs{f(x_{n_k})-f(c)}
 +
-\babs{f(y_{n_k})-f(c)}  \geq
+\babs{f(y_{n_k})-f(c)} \geq
 \epsilon .
 \end{equation*}
-At least one of the sequences $\bigl\{ f(x_{n_k}) \bigr\}_{k=1}^\infty$  or
-$\bigl\{ f(y_{n_k}) \bigr\}_{k=1}^\infty$ cannot converge to $f(c)$.
-Otherwise the
-left-hand side of the inequality would go to zero while the right-hand side is positive.
-Thus $f$ cannot be continuous at $c$.
+Pelo menos uma das sequências $\bigl\{ f(x_{n_k}) \bigr\}_{k=1}^\infty$ ou
+$\bigl\{ f(y_{n_k}) \bigr\}_{k=1}^\infty$ não pode convergir para $f(c)$.
+Caso contrário, o lado esquerdo da desigualdade tenderia a zero, enquanto
+o lado direito é positivo. Portanto, $f$ não pode ser contínua em $c$.
 \end{proof}
 
-As before, note what is key in the proof: We can apply Bolzano--Weierstrass
-because the interval $[a,b]$ is bounded, and the limit of the subsequence is
-back in $[a,b]$ because the interval is closed.
+Como antes, observe o ponto essencial da demonstração: podemos aplicar
+Bolzano--Weierstrass porque o intervalo $[a,b]$ é limitado, e o limite da
+subsequência pertence novamente a $[a,b]$ porque o intervalo é fechado.
 
 \subsection{Continuous extension}
 

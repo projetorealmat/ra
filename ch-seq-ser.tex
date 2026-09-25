@@ -3743,24 +3743,24 @@ Demonstração: escrevemos
 Portanto, a série converge absolutamente pelo critério da razão.
 \end{example}
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
 \begin{exercise}
-Suppose the $k$th partial sum of $\displaystyle \sum_{n=1}^\infty x_n$ is $s_k = \frac{k}{k+1}$.
-Find the series (that is, find $x_n$), prove that the series converges, and
-then find the limit.
+Suponha que a $k$-ésima soma parcial de $\displaystyle \sum_{n=1}^\infty x_n$ seja $s_k = \frac{k}{k+1}$.
+Determine a série (isto é, determine $x_n$), demonstre que a série converge e,
+em seguida, encontre o limite.
 \end{exercise}
 
 \begin{exercise} \label{geometric:exr}
-Prove \propref{geometric:prop}, that is, for $-1 < r < 1$, prove
+Demonstre a \propref{geometric:prop}; isto é, para $-1 < r < 1$, demonstre
 \begin{equation*}
 \sum_{n=0}^\infty r^n = \frac{1}{1-r} .
 \end{equation*}
-Hint:  See \exampleref{example:geometricsum}.
+Dica: veja o \exampleref{example:geometricsum}.
 \end{exercise}
 
 \begin{exercise}
-Decide the convergence or divergence of the following series.
+Determine se as séries a seguir convergem ou divergem.
 
 \medskip
 
@@ -3785,28 +3785,28 @@ $\displaystyle \sum_{n=1}^\infty n e^{-n^2}$
 \begin{exercise}
 \leavevmode
 \begin{enumerate}[a)]
-\item Prove that if
+\item Demonstre que, se
 $\displaystyle
 \sum_{n=1}^\infty x_n
 $
-converges, then
+converge, então
 $\displaystyle
 \sum_{n=1}^\infty ( x_{2n} + x_{2n+1} )
 $
-also converges.
+também converge.
 \item
-Find an explicit example where the converse does not hold.
+Encontre um exemplo explícito em que a recíproca não vale.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
 
 \begin{exercise}
-For $i=1,2,\ldots,n$, let $\{ x_{i,k} \}_{k=1}^\infty$ denote $n$
-sequences.  Suppose that for each $i$,
+Para $i=1,2,\ldots,n$, sejam $\{ x_{i,k} \}_{k=1}^\infty$ $n$
+sequências. Suponha que, para cada $i$,
 \begin{equation*}
 \sum_{k=1}^\infty x_{i,k}
 \end{equation*}
-is convergent.  Prove
+converge. Demonstre
 \begin{equation*}
 \sum_{i=1}^n \left( \sum_{k=1}^\infty x_{i,k} \right)
 =
@@ -3815,51 +3815,51 @@ is convergent.  Prove
 \end{exercise}
 
 \begin{exercise} \label{exercise:strongerratiotest}
-Prove the following stronger version of the ratio test:
-Let $\sum_{n=1}^\infty x_n$ be a series.
+Demonstre a seguinte versão mais forte do teste da razão:
+seja $\sum_{n=1}^\infty x_n$ uma série.
 \begin{enumerate}[a)]
 \item
-If there is an $N$ and a $\rho < 1$ such that
-$\frac{\sabs{x_{n+1}}}{\sabs{x_n}} < \rho$ for all $n \geq N$,
-then the series converges absolutely.
-(Remark: Equivalently the condition can be stated as
+Se existem $N$ e $\rho < 1$ tais que
+$\frac{\sabs{x_{n+1}}}{\sabs{x_n}} < \rho$ para todo $n \geq N$,
+então a série converge absolutamente.
+(Observação: de modo equivalente, a condição pode ser expressa como
 $\limsup\limits_{n\to\infty} \frac{\sabs{x_{n+1}}}{\sabs{x_n}} < 1$.)
 \item
-If there is an $N$ such that
+Se existe $N$ tal que
 $\frac{\sabs{x_{n+1}}}{\sabs{x_n}} \geq 1$
-for all $n \geq N$,
-then the series diverges. 
+para todo $n \geq N$,
+então a série diverge. 
 \end{enumerate}
 \end{exercise}
 
-\begin{exercise}[Challenging]
-Suppose $\{ x_n \}_{n=1}^\infty$ is a decreasing sequence and
-$\sum_{n=1}^\infty x_n$ converges.
-Prove $\displaystyle \lim_{n\to\infty} n x_n = 0$.
+\begin{exercise}[Desafiador]
+Suponha que $\{ x_n \}_{n=1}^\infty$ seja uma sequência decrescente e
+que $\sum_{n=1}^\infty x_n$ convirja.
+Demonstre que $\displaystyle \lim_{n\to\infty} n x_n = 0$.
 \end{exercise}
 
 \begin{exercise}
-Show that $\displaystyle \sum_{n=1}^\infty \frac{{(-1)}^n}{n}$ converges.
-Hint: Consider the sum of two subsequent entries.
+Mostre que $\displaystyle \sum_{n=1}^\infty \frac{{(-1)}^n}{n}$ converge.
+Dica: considere a soma de dois termos consecutivos.
 \end{exercise}
 
 \begin{exercise}
 \leavevmode
 \begin{enumerate}[a)]
-\item Prove that if $\sum_{n=1}^\infty x_n$ and $\sum_{n=1}^\infty y_n$ converge absolutely, then
-$\sum_{n=1}^\infty x_ny_n$ converges absolutely.
-\item Find an explicit example where the converse does not hold.
-\item Find an explicit example where all three series are absolutely convergent,
-are not just finite sums,
-and $\left(\sum_{n=1}^\infty x_n\right)\left(\sum_{n=1}^\infty y_n\right)
-\neq \sum_{n=1}^\infty x_ny_n$.  That is, show that series are
-not multiplied term-by-term.
+\item Demonstre que, se $\sum_{n=1}^\infty x_n$ e $\sum_{n=1}^\infty y_n$ convergem absolutamente, então
+$\sum_{n=1}^\infty x_ny_n$ converge absolutamente.
+\item Encontre um exemplo explícito em que a recíproca não vale.
+\item Encontre um exemplo explícito em que as três séries sejam absolutamente convergentes,
+não sejam apenas somas finitas e satisfaçam
+$\left(\sum_{n=1}^\infty x_n\right)\left(\sum_{n=1}^\infty y_n\right)
+\neq \sum_{n=1}^\infty x_ny_n$. Isto é, mostre que as séries
+não são multiplicadas termo a termo.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Prove the triangle inequality for series:
-If $\sum_{n=1}^\infty x_n$ converges absolutely, then
+Demonstre a desigualdade triangular para séries:
+se $\sum_{n=1}^\infty x_n$ converge absolutamente, então
 \begin{equation*}
 \abs{\sum_{n=1}^\infty x_n} \leq
 \sum_{n=1}^\infty \sabs{x_n} .
@@ -3867,61 +3867,61 @@ If $\sum_{n=1}^\infty x_n$ converges absolutely, then
 \end{exercise}
 
 \begin{exercise}
-Prove the \emph{\myindex{limit comparison test}}.  That is, prove that if
-$a_n > 0$ and $b_n > 0$ for all $n$, and
+Demonstre o \emph{\myindex{teste da comparação pelo limite}}. Isto é, demonstre que, se
+$a_n > 0$ e $b_n > 0$ para todo $n$, e
 \begin{equation*}
 0 < \lim_{n\to\infty} \frac{a_n}{b_n} < \infty ,
 \end{equation*}
-then either $\sum_{n=1}^\infty a_n$ and $\sum_{n=1}^\infty b_n$ both converge or both diverge.
+então $\sum_{n=1}^\infty a_n$ e $\sum_{n=1}^\infty b_n$ ou convergem ambas, ou divergem ambas.
 \end{exercise}
 
 \begin{exercise} \label{exercise:badnocauchy}
-Let $x_n \coloneqq \sum_{i=1}^n \nicefrac{1}{i}$.  Show that for every $k$,
-we get
-$\displaystyle \lim_{n\to\infty} \sabs{x_{n+k}-x_n} = 0$, yet
-$\{ x_n \}_{n=1}^\infty$ is not Cauchy.
+Seja $x_n \coloneqq \sum_{i=1}^n \nicefrac{1}{i}$. Mostre que, para todo $k$,
+temos
+$\displaystyle \lim_{n\to\infty} \sabs{x_{n+k}-x_n} = 0$, mas
+$\{ x_n \}_{n=1}^\infty$ não é de Cauchy.
 \end{exercise}
 
 \begin{samepage}
 \begin{exercise}
-Let $s_k$ be the $k$th partial sum of $\sum_{n=1}^\infty x_n$.
+Seja $s_k$ a $k$-ésima soma parcial de $\sum_{n=1}^\infty x_n$.
 \begin{enumerate}[a)]
 \item
-Suppose there exists an $m \in \N$ such that $\lim\limits_{k\to\infty}
-s_{mk}$ exists and $\lim\limits_{n\to\infty} x_n = 0$.  Show that
-$\sum_{n=1}^\infty x_n$ converges.
+Suponha que exista $m \in \N$ tal que $\lim\limits_{k\to\infty}
+s_{mk}$ exista e $\lim\limits_{n\to\infty} x_n = 0$. Mostre que
+$\sum_{n=1}^\infty x_n$ converge.
 \item
-Find an example where $\lim\limits_{k\to\infty} s_{2k}$ exists and
-$\lim\limits_{n\to\infty} x_n \neq 0$ (and therefore $\sum_{n=1}^\infty x_n$ diverges).
+Encontre um exemplo em que $\lim\limits_{k\to\infty} s_{2k}$ exista e
+$\lim\limits_{n\to\infty} x_n \neq 0$ (e, portanto, $\sum_{n=1}^\infty x_n$ divirja).
 \item
-(Challenging) Find an example where $\lim_{n\to\infty} x_n = 0$, and there exists
-a subsequence $\{ s_{k_i} \}_{i=1}^\infty$ such that $\displaystyle \lim_{i\to\infty} s_{k_i}$ exists,
-but $\sum_{n=1}^\infty x_n$ still diverges.
+(Desafiador) Encontre um exemplo em que $\lim_{n\to\infty} x_n = 0$ e exista
+uma subsequência $\{ s_{k_i} \}_{i=1}^\infty$ tal que $\displaystyle \lim_{i\to\infty} s_{k_i}$ exista,
+mas $\sum_{n=1}^\infty x_n$ ainda divirja.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
 
 \begin{exercise} \label{exercise:squareseriesconv}
-Suppose $\sum_{n=1}^\infty x_n$ converges and $x_n \geq 0$ for all $n$.
-Prove that $\sum_{n=1}^\infty x_n^2$ converges.
+Suponha que $\sum_{n=1}^\infty x_n$ convirja e que $x_n \geq 0$ para todo $n$.
+Demonstre que $\sum_{n=1}^\infty x_n^2$ converge.
 \end{exercise}
 
-\begin{exercise}[Challenging] \label{exercise:cauchycondensation}
-Suppose $\{ x_n\}_{n=1}^\infty$ is a decreasing sequence of positive numbers.
-The proof of convergence/divergence for the $p$-series generalizes.
-Prove the
-\emph{\myindex{Cauchy condensation principle}}:
+\begin{exercise}[Desafiador] \label{exercise:cauchycondensation}
+Suponha que $\{ x_n\}_{n=1}^\infty$ seja uma sequência decrescente de números positivos.
+A demonstração da convergência ou divergência da série $p$ se generaliza.
+Demonstre o
+\emph{\myindex{princípio da condensação de Cauchy}}:
 \begin{equation*}
 \sum_{n=1}^\infty x_n
-\qquad \text{converges if and only if} \qquad
+\qquad \text{converge se, e somente se,} \qquad
 \sum_{n=1}^\infty 2^n x_{2^n} \qquad \text{converges}.
 \end{equation*}
 \end{exercise}
 
 \begin{exercise}
-Use the Cauchy condensation principle
-(see \exerciseref{exercise:cauchycondensation})
-to decide the convergence of
+Use o princípio da condensação de Cauchy
+(veja o \exerciseref{exercise:cauchycondensation})
+para determinar a convergência ou divergência de
 
 \medskip
 
@@ -3937,24 +3937,24 @@ d) $\displaystyle \sum_{n=2}^\infty \frac{1}{n (\ln n ){(\ln \ln n)}^2}$
 \medskip
 
 \noindent
-Note that only the tails of some of these series satisfy the
-hypotheses of the principle; you should argue why that is sufficient.
+Observe que apenas as caudas de algumas dessas séries satisfazem as
+hipóteses do princípio; justifique por que isso é suficiente.
 
 \noindent
-Hint: Feel free to use the identity $\ln (2^n) = n \ln 2$.
+Dica: use, se desejar, a identidade $\ln (2^n) = n \ln 2$.
 \end{exercise}
 
-\begin{exercise}[Challenging]
-Prove \emph{\myindex{Abel's theorem}}:
+\begin{exercise}[Desafiador]
+Demonstre o \emph{\myindex{teorema de Abel}}:
 
 \medskip
 
 \noindent
-\emph{\textbf{Theorem.} Suppose $\sum_{n=1}^\infty x_n$ is a series whose sequence of partial sums
-is bounded, $\{ \lambda_n \}_{n=1}^\infty$ is a sequence with
-$\lim_{n\to\infty} \lambda_n = 0$, and
-$\sum_{n=1}^\infty \sabs{ \lambda_{n+1} - \lambda_n }$ is convergent.
-Then $\sum_{n=1}^\infty \lambda_n x_n$ is convergent.}
+\emph{\textbf{Teorema.} Suponha que $\sum_{n=1}^\infty x_n$ seja uma série cuja sequência de somas parciais
+é limitada, que $\{ \lambda_n \}_{n=1}^\infty$ seja uma sequência tal que
+$\lim_{n\to\infty} \lambda_n = 0$ e que
+$\sum_{n=1}^\infty \sabs{ \lambda_{n+1} - \lambda_n }$ convirja.
+Então $\sum_{n=1}^\infty \lambda_n x_n$ converge.
 \end{exercise}
 
 

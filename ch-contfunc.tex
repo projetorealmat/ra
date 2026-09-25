@@ -564,7 +564,7 @@ $\bigl( S \cap (-\infty,c) \bigr) \cup \bigl( S \cap (c,\infty) \bigr)
 \subsection{Exercícios}
 
 \begin{exercise}
-Determine o limite (e, naturalmente, prove o resultado) ou prove que o limite não
+Determine o limite (e, naturalmente, demonstre o resultado) ou demonstre que o limite não
 existe:
 
 \medskip
@@ -611,8 +611,8 @@ Demonstre o \corref{falg:cor}.
 \end{exercise}
 
 \begin{exercise}
-Let $A \subset S$.  Mostre que if $c$ é um ponto de acumulação de $A$, then $c$
-é um ponto de acumulação de $S$.  Observe a diferença em relação a
+Seja $A \subset S$. Mostre que, se $c$ é um ponto de acumulação de $A$, então $c$
+é um ponto de acumulação de $S$. Observe a diferença em relação a
 \propref{prop:limrest}.
 \end{exercise}
 
@@ -654,7 +654,7 @@ Dica: observe que $f(x)$ pode ser igual a $c_2$ para muitos $x \in A$
 \begin{exercise}
 Suponha que $f \colon \R \to \R$ seja uma função tal que, para toda
 sequência $\{x_n\}_{n=1}^\infty$ em $\R$, a sequência
-$\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ converge. Prove que
+$\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ converge. Demonstre que
 $f$ é constante, isto é,
 $f(x) = f(y)$ para todos $x,y \in \R$.
 \end{exercise}
@@ -690,11 +690,11 @@ quando $x \to c_1$.
 \end{exercise}
 
 \begin{exercise}
-Mostre que the condition of being a cluster point is necessary to have a
-reasonable definition of a limit.  That is, suppose $c$ is not a cluster
-point of $S \subset \R$, and $f \colon S \to \R$ is a function.  Show that
-every $L$ would satisfy the definition of limit at $c$ without the condition
-on $c$ being a cluster point.
+Mostre que a condição de ser ponto de acumulação é necessária para termos uma
+definição razoável de limite. Isto é, suponha que $c$ não seja um ponto de acumulação
+de $S \subset \R$ e que $f \colon S \to \R$ seja uma função. Mostre que
+qualquer $L$ satisfaria a definição de limite em $c$ se não exigíssemos que $c$
+fosse um ponto de acumulação.
 \end{exercise}
 
 \begin{exercise}
@@ -932,7 +932,7 @@ As funções $\sin(x)$ e $\cos(x)$ são contínuas.
 Nos cálculos a seguir, usamos as identidades trigonométricas de soma em produto.
 Também usamos os fatos simples de que
 $\babs{\sin(x)} \leq \sabs{x}$, $\babs{\cos(x)} \leq 1$,
-and $\babs{\sin(x)} \leq 1$.
+e $\babs{\sin(x)} \leq 1$.
 \begin{equation*}
 \begin{split}
 \babs{\sin(x)-\sin(c)} & =
@@ -984,7 +984,7 @@ definição de continuidade. Os detalhes ficam a cargo do
 leitor.
 \end{example}
 
-\subsection{Composition of continuous functions}
+\subsection{Composição de funções contínuas}
 
 Você provavelmente já percebeu que uma das ferramentas básicas para
 construir funções complicadas a partir de funções simples é a composição.
@@ -1024,7 +1024,7 @@ Assim, a composição
 ${\bigl(\sin(\nicefrac{1}{x})\bigr)}^2$ é contínua em $(0,\infty)$.
 \end{example}
 
-\subsection{Discontinuous functions}
+\subsection{Funções descontínuas}
 
 Quando $f$ não é contínua em $c$, dizemos
 que $f$ é \emph{\myindex{descontínua}} em $c$, ou que tem uma
@@ -1129,8 +1129,8 @@ Defina $f \colon (0,1) \to \R$ por
 \begin{equation*}
 f(x) \coloneqq 
 \begin{cases}
-\nicefrac{1}{k} & \text{se } x=\nicefrac{m}{k}, \text{ where } m,k \in \N
-\text{ and have no common divisors (lowest terms),} \\
+\nicefrac{1}{k} & \text{se } x=\nicefrac{m}{k}, \text{ em que } m,k \in \N
+\text{ são coprimos (fração irredutível),} \\
 0 & \text{se } x \text{ é irracional.}
 \end{cases}
 \end{equation*}
@@ -1197,7 +1197,7 @@ De modo semelhante, se $B \coloneqq \R \setminus \{0 \}$, então $g|_B$ também 
 e, de fato, $g$ é contínua em $B$.
 \end{example}
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
 \begin{exercise}
 Encontre um exemplo de função descontínua $f \colon [0,1] \to \R$
@@ -1267,7 +1267,7 @@ atinge um mínimo absoluto e um máximo absoluto.
 \begin{exercise}[Desafiador]
 Suponha que $f(x)$ seja um polinômio limitado; em outras palavras,
 existe $M$ tal que $\babs{f(x)} \leq M$
-para todo $x \in \R$. Prove que $f$ deve ser constante.
+para todo $x \in \R$. Demonstre que $f$ deve ser constante.
 \end{exercise}
 
 \begin{exercise}
@@ -1293,7 +1293,7 @@ então $f$ é limitada.
 \end{exercise}
 
 \begin{exercise}
-Suponha que $f \colon [0,1] \to (0,1)$ seja uma bijeção. Prove que $f$
+Suponha que $f \colon [0,1] \to (0,1)$ seja uma bijeção. Demonstre que $f$
 não é contínua.
 \end{exercise}
 
@@ -1301,7 +1301,7 @@ não é contínua.
 Suponha que $f \colon \R \to \R$ seja contínua.
 \begin{enumerate}[a)]
 \item
-Prove que, se existe $c$ tal que $f(c)f(-c) < 0$,
+Demonstre que, se existe $c$ tal que $f(c)f(-c) < 0$,
 então existe $d \in \R$ tal que $f(d) = 0$.
 \item
 Encontre uma função contínua $f$ tal que
@@ -1512,7 +1512,7 @@ limitado, mas o problema é que
 a função não é contínua em 0.
 \end{example}
 
-\subsection{Bolzano's intermediate value theorem}
+\subsection{Teorema do valor intermediário de Bolzano}
 
 O teorema do valor intermediário de Bolzano é um dos pilares da análise.
 Às vezes, ele é chamado apenas de teorema do valor intermediário ou,
@@ -1792,143 +1792,145 @@ assumidos pela função está marcado como f([a,b]).}
 \caption{A imagem de uma função contínua $f \colon [a,b] \to \R$.\label{fig:imageinterval}}
 \end{myfigureht}
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
 \begin{exercise}
-Find an example of a discontinuous function $f \colon [0,1] \to \R$
-where the conclusion of the intermediate value theorem fails.
+Dê um exemplo de uma função descontínua $f \colon [0,1] \to \R$
+para a qual a conclusão do teorema do valor intermediário não vale.
 \end{exercise}
 
 \begin{exercise}
-Find an example of a \emph{bounded} discontinuous function $f \colon [0,1]
-\to \R$ that has neither an absolute minimum nor an absolute maximum.
+Dê um exemplo de uma função descontínua \emph{limitada} $f \colon [0,1]
+\to \R$ que não atinja nem um mínimo absoluto nem um máximo absoluto.
 \end{exercise}
 
 \begin{exercise}
-Let $f \colon (0,1) \to \R$ be a continuous function such that
+Seja $f \colon (0,1) \to \R$ uma função contínua tal que
 $\displaystyle \lim_{x\to 0} f(x) =
-\displaystyle \lim_{x\to 1} f(x) = 0$.  Show that
-$f$ achieves either an absolute minimum or an absolute maximum on $(0,1)$
-(but perhaps not both).
+\displaystyle \lim_{x\to 1} f(x) = 0$. Mostre que
+$f$ atinge um mínimo absoluto ou um máximo absoluto em $(0,1)$
+(mas talvez não ambos).
 \end{exercise}
 
 \begin{exercise} \label{exercise:meanvaluepropsin1x}
-Let
+Seja
 \begin{equation*}
 f(x) \coloneqq
 \begin{cases}
-\sin(\nicefrac{1}{x}) & \text{if } x \neq 0, \\
-0 & \text{if } x=0.
+\sin(\nicefrac{1}{x}) & \text{se } x \neq 0, \\
+0 & \text{se } x=0.
 \end{cases}
 \end{equation*}
-Show that $f$ has the intermediate value property.
-That is, whenever $a < b$, if there exists a $y$ such that $f(a) < y < f(b)$
-or $f(a) > y > f(b)$, then
-there exists a $c \in (a,b)$ such that $f(c) = y$.
+Mostre que $f$ tem a propriedade do valor intermediário.
+Isto é, sempre que $a < b$, se existe $y$ tal que $f(a) < y < f(b)$
+ou $f(a) > y > f(b)$, então
+existe $c \in (a,b)$ tal que $f(c) = y$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:odddegnegativeK}
-Suppose $g(x)$ is a monic polynomial of odd degree $d$, that is,
+Suponha que $g(x)$ seja um polinômio mônico de grau ímpar $d$, isto é,
 \begin{equation*}
 g(x) = x^d + b_{d-1} x^{d-1} + \cdots + b_1 x + b_0 ,
 \end{equation*}
-for some real numbers $b_{0}, b_1, \ldots, b_{d-1}$.  Show that there exists
-a $K \in \N$ such that $g(-K) < 0$.  Hint: Make sure to use the fact that
-$d$ is odd.  You will have to use that ${(-n)}^d = -(n^d)$.
+para alguns números reais $b_{0}, b_1, \ldots, b_{d-1}$. Mostre que existe
+$K \in \N$ tal que $g(-K) < 0$. Dica: Use o fato de que
+$d$ é ímpar. Você também precisará usar que ${(-n)}^d = -(n^d)$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $g(x)$ is a monic polynomial of positive even degree $d$, that is,
+Suponha que $g(x)$ seja um polinômio mônico de grau par positivo $d$, isto é,
 \begin{equation*}
 g(x) = x^d + b_{d-1} x^{d-1} + \cdots + b_1 x + b_0 ,
 \end{equation*}
-for some real numbers $b_{0}, b_1, \ldots, b_{d-1}$.  Suppose 
-$g(0) < 0$.  Show that $g$ has at least two distinct real roots.
+para alguns números reais $b_{0}, b_1, \ldots, b_{d-1}$. Suponha
+que $g(0) < 0$. Mostre que $g$ tem pelo menos duas raízes reais distintas.
 \end{exercise}
 
 \begin{exercise}
-Prove \corref{cor:imageofinterval}:
-Suppose $f \colon [a,b] \to \R$ is a continuous function.  Prove
-that the direct image $f\bigl([a,b]\bigr)$ is a closed and bounded interval or
-a single number.
+Demonstre a \corref{cor:imageofinterval}:
+Seja $f \colon [a,b] \to \R$ uma função contínua. Demonstre
+que a imagem direta $f\bigl([a,b]\bigr)$ é um intervalo fechado e limitado ou
+um conjunto unitário.
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon \R \to \R$ is continuous and periodic with period
-$P > 0$.  That is, $f(x+P) = f(x)$ for all $x \in \R$.  Show that $f$
-achieves an absolute minimum and an absolute maximum.
+Suponha que $f \colon \R \to \R$ seja contínua e periódica, com período
+$P > 0$. Isto é, $f(x+P) = f(x)$ para todo $x \in \R$. Mostre que $f$
+atinge um mínimo absoluto e um máximo absoluto.
 \end{exercise}
 
-\begin{exercise}[Challenging]
-Suppose $f(x)$ is a bounded polynomial,
-in other words, there is an $M$ such that $\babs{f(x)} \leq M$
-for all $x \in \R$.  Prove that $f$ must be a constant.
+\begin{exercise}[Desafiador]
+Suponha que $f(x)$ seja um polinômio limitado,
+isto é, existe $M$ tal que $\babs{f(x)} \leq M$
+para todo $x \in \R$. Demonstre que $f$ é constante.
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon [0,1] \to [0,1]$ is continuous.  Show that $f$
-has a fixed point, in other words, show that there exists an $x \in [0,1]$ such that
+Suponha que $f \colon [0,1] \to [0,1]$ seja contínua. Mostre que $f$
+tem um ponto fixo; isto é, mostre que existe $x \in [0,1]$ tal que
 $f(x) = x$.
 \end{exercise}
 
 \begin{exercise}
-Find an example of a continuous bounded function $f \colon \R \to \R$ that
-achieves neither an absolute minimum nor an absolute maximum on $\R$.
+Dê um exemplo de uma função contínua e limitada $f \colon \R \to \R$ que
+não atinja nem mínimo absoluto nem máximo absoluto em $\R$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon \R \to \R$ is continuous such that
-$x \leq f(x) \leq x+1$ for all $x \in \R$.  Find $f(\R)$.
+Suponha que $f \colon \R \to \R$ seja contínua e que
+$x \leq f(x) \leq x+1$ para todo $x \in \R$. Determine $f(\R)$.
 \end{exercise}
 
 \begin{exercise}
-True/False, prove or find a counterexample.  If $f \colon \R \to
-\R$ is a continuous function such that $f|_{\Z}$ is bounded, then $f$
-is bounded.
+Verdadeiro ou falso? Demonstre ou dê um contraexemplo. Se $f \colon \R \to
+\R$ é uma função contínua tal que $f|_{\Z}$ é limitada, então $f$
+é limitada.
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon [0,1] \to (0,1)$ is a bijection.  Prove that $f$ is not
-continuous.
+Suponha que $f \colon [0,1] \to (0,1)$ seja uma bijeção. Demonstre que $f$ não é
+contínua.
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon \R \to \R$ is continuous.
+Suponha que $f \colon \R \to \R$ seja contínua.
 \begin{enumerate}[a)]
 \item
-Prove that if there is a $c$ such that $f(c)f(-c) < 0$,
-then there is a $d \in \R$ such that $f(d) = 0$.
+Demonstre que, se existe $c$ tal que $f(c)f(-c) < 0$,
+então existe $d \in \R$ tal que $f(d) = 0$.
 \item
-Find a continuous function $f$ such that
-$f(\R) = \R$, but $f(x)f(-x) \geq 0$ for all $x \in \R$.
+Encontre uma função contínua $f$ tal que
+$f(\R) = \R$, mas $f(x)f(-x) \geq 0$ para todo $x \in \R$.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Suppose $g(x)$ is a monic polynomial of even degree $d$, that is,
+Suponha que $g(x)$ seja um polinômio mônico de grau par $d$, isto é,
 \begin{equation*}
 g(x) = x^d + b_{d-1} x^{d-1} + \cdots + b_1 x + b_0 ,
 \end{equation*}
-for some real numbers $b_{0}, b_1, \ldots, b_{d-1}$.
-Show that $g$ achieves an absolute minimum on $\R$.
+para alguns números reais $b_{0}, b_1, \ldots, b_{d-1}$.
+Mostre que $g$ atinge um mínimo absoluto em $\R$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $f(x)$ is a polynomial of degree $d$ and 
-$f(\R) = \R$.  Show that $d$ is odd.
+Suponha que $f(x)$ seja um polinômio de grau $d$ e que
+$f(\R) = \R$. Mostre que $d$ é ímpar.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{Uniform continuity}
+
+\sectionnewpage
+\section{Continuidade uniforme}
 \label{sec:unifcont}
 
 %mbxINTROSUBSECTION
 
 \sectionnotes{1,5--2 aulas (a extensão contínua pode ser opcional)}
 
-\subsection{Uniform continuity}
+\subsection{Continuidade uniforme}
 
 Enfatizamos bastante que o $\delta$ na definição de continuidade dependia
 do ponto $c$. Há situações em que é vantajoso poder escolher um $\delta$
@@ -2089,7 +2091,7 @@ Como antes, observe o ponto essencial da demonstração: podemos aplicar
 Bolzano--Weierstrass porque o intervalo $[a,b]$ é limitado, e o limite da
 subsequência pertence novamente a $[a,b]$ porque o intervalo é fechado.
 
-\subsection{Continuous extension}
+\subsection{Extensão contínua}
 
 Funções uniformemente contínuas em intervalos abertos podem ser estendidas
 continuamente aos extremos.
@@ -2199,7 +2201,7 @@ então $\lim_{x\to 0} f(x)$ existe e a função tem uma
 Isto é, podemos estender a função a uma função contínua em $(-1,1)$.
 
 
-\subsection{Lipschitz continuous functions}
+\subsection{Funções Lipschitz contínuas}
 
 \begin{defn}
 Uma função $f \colon S \to \R$
@@ -2333,7 +2335,7 @@ Não é difícil mostrar (exercício) que isso significa que $\sqrt{x}$ é uma
 função uniformemente contínua em $[0,\infty)$.
 \end{example}
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
 \begin{exercise}
 Seja $f \colon S \to \R$ uniformemente contínua. Seja $A \subset S$.
@@ -2365,7 +2367,7 @@ a função $h \colon A \cup B \to \R$ por $h(x) \coloneqq f(x)$ se
 $x \in A$ e $h(x) \coloneqq g(x)$ se $x \in B \setminus A$.
 \begin{enumerate}[a)]
 \item
-Prove que, se $A \cap B \neq \emptyset$, então $h$ é uniformemente contínua.
+Demonstre que, se $A \cap B \neq \emptyset$, então $h$ é uniformemente contínua.
 \item
 Encontre um exemplo em que $A \cap B = \emptyset$ e $h$ nem sequer
 seja contínua.
@@ -2403,7 +2405,7 @@ Encontre uma função contínua $f \colon (0,1) \to \R$ e uma sequência
 $\{ x_n \}_{n=1}^\infty$ em $(0,1)$ que seja de Cauchy, mas tal que
 $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ não seja de Cauchy.
 \item
-Prove que, se $f \colon \R \to \R$ é contínua e
+Demonstre que, se $f \colon \R \to \R$ é contínua e
 $\{ x_n \}_{n=1}^\infty$ é de Cauchy, então
 $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ é de Cauchy.
 \end{enumerate}
@@ -2464,7 +2466,7 @@ então $f$ é Lipschitz.
 Suponha que, para $f \colon [0,1] \to \R$, tenhamos
 $\babs{f(x)-f(y)} \leq K \sabs{x-y}$ para todos $x,y$ em $[0,1]$,
 e que $f(0) = f(1) = 0$.
-Prove que $\babs{f(x)} \leq \nicefrac{K}{2}$ para todo $x \in [0,1]$.
+Demonstre que $\babs{f(x)} \leq \nicefrac{K}{2}$ para todo $x \in [0,1]$.
 Mostre também, por meio de um exemplo, que $\nicefrac{K}{2}$ é o melhor
 limite possível. Isto é, encontre uma função contínua desse tipo
 para a qual $\babs{f(x)} = \nicefrac{K}{2}$ para algum $x \in [0,1]$.
@@ -2481,7 +2483,7 @@ Suponha que $f \colon S \to \R$ e $g \colon [0,\infty) \to [0,\infty)$
 sejam funções, que $g$ seja contínua em $0$, que $g(0) = 0$ e que,
 sempre que $x$ e $y$ estiverem em $S$, tenhamos
 $\babs{f(x)-f(y)} \leq g\bigl(\sabs{x-y}\bigr)$.
-Prove que $f$ é uniformemente contínua.
+Demonstre que $f$ é uniformemente contínua.
 \end{exercise}
 
 \begin{exercise}
@@ -2492,7 +2494,7 @@ $(c-\epsilon_c,c+\epsilon_c) \cap [a,b]$. Em outras palavras, $f$ é
 \myquote{localmente Lipschitz}.
 \begin{enumerate}[a)]
 \item
-Prove que existe uma constante global $K > 0$ tal que
+Demonstre que existe uma constante global $K > 0$ tal que
 $\babs{f(x)-f(y)} \leq K \sabs{x-y}$ para todos $x,y$ em $[a,b]$.
 \item
 Encontre um contraexemplo ao item anterior quando o intervalo é aberto;

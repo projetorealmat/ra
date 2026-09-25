@@ -1026,179 +1026,175 @@ ${\bigl(\sin(\nicefrac{1}{x})\bigr)}^2$ é contínua em $(0,\infty)$.
 
 \subsection{Discontinuous functions}
 
-When $f$ is not continuous at $c$, we
-say $f$ is \emph{\myindex{discontinuous}} at $c$, or that it has a
-\emph{\myindex{discontinuity}} at~$c$.
-The following proposition is a useful test and follows immediately
-from the third item of \propref{contbasic:prop}.
+Quando $f$ não é contínua em $c$, dizemos
+que $f$ é \emph{\myindex{descontínua}} em $c$, ou que tem uma
+\emph{\myindex{descontinuidade}} em~$c$.
+A proposição a seguir fornece um critério útil e decorre imediatamente
+do terceiro item da \propref{contbasic:prop}.
 
 \begin{prop}
-Let $f \colon S \to \R$ be a function and $c \in S$.  Suppose 
-there exists a sequence $\{ x_n \}_{n=1}^\infty$, $x_n \in S$ for all $n$,
-and $\lim_{n\to\infty} x_n = c$
-such that $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$
-does not converge to $f(c)$.
-Then $f$ is discontinuous at $c$.
+Seja $f \colon S \to \R$ uma função e seja $c \in S$. Suponha
+que exista uma sequência $\{ x_n \}_{n=1}^\infty$, com $x_n \in S$ para todo $n$,
+e $\lim_{n\to\infty} x_n = c$,
+tal que $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$
+não converge para $f(c)$.
+Então $f$ é descontínua em $c$.
 \end{prop}
 
-Again, 
-saying that 
-$\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ does not converge to $f(c)$
-means that it
-either does not converge
-at all, or it converges to something
-other than $f(c)$.
+Novamente,
+dizer que
+$\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ não converge para $f(c)$
+significa que essa sequência
+ou não converge,
+ou converge para algo diferente de $f(c)$.
 
 \begin{example} \label{example:jumpdiscont}
-The function $f \colon \R \to \R$ defined by
+A função $f \colon \R \to \R$ definida por
 \begin{equation*}
 f(x) \coloneqq 
 \begin{cases}
--1 & \text{if } x < 0, \\
-1 & \text{if } x \geq 0
+-1 & \text{se } x < 0, \\
+1 & \text{se } x \geq 0
 \end{cases}
 \end{equation*}
-is not continuous at 0.
+não é contínua em 0.
 
-Proof: Consider $\{ \nicefrac{-1}{n} \}_{n=1}^\infty$, which converges to 0.  Then
-$f(\nicefrac{-1}{n}) = -1$ for every $n$,
-and so
-$\lim_{n\to\infty} f(\nicefrac{-1}{n}) = -1$, but $f(0) = 1$.  Thus the function is
-not continuous at 0.  See
+Demonstração: Considere $\{ \nicefrac{-1}{n} \}_{n=1}^\infty$, que converge para 0. Então
+$f(\nicefrac{-1}{n}) = -1$ para todo $n$,
+e, portanto,
+$\lim_{n\to\infty} f(\nicefrac{-1}{n}) = -1$, mas $f(0) = 1$. Assim, a função
+não é contínua em 0. Veja a
 \figureref{fig:jumpdiscont}.
 
 \begin{myfigureht}
 \myincludegraphics{jumpdiscont}{%
-A graph of a function that is minus 1 for negative x
-and 1 for nonnegative x.  The points minus 1,
-minus a half, minus a third, etc. are marked on
-the x-axis and the corresponding values on
-the graph are marked with dots.}
-\caption{Jump discontinuity.  The values of
-$f(\nicefrac{-1}{n})$ and $f(0)$ are marked as black dots.\label{fig:jumpdiscont}}
+Gráfico de uma função que vale menos 1 para x negativo
+e 1 para x não negativo. Os pontos menos 1,
+menos um meio, menos um terço etc. estão marcados no
+eixo x, e os valores correspondentes no
+gráfico estão indicados por pontos.}
+\caption{Descontinuidade de salto. Os valores de
+$f(\nicefrac{-1}{n})$ e $f(0)$ estão marcados como pontos pretos.\label{fig:jumpdiscont}}
 \end{myfigureht}
 
-Notice that $f(\nicefrac{1}{n}) = 1$ for all $n \in \N$.
-Hence, $\lim_{n\to\infty} f(\nicefrac{1}{n}) = f(0) = 1$.  So
-$\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ may converge to $f(0)$
-for some specific
-sequence $\{ x_n \}_{n=1}^\infty$ going to 0,
-despite the function being discontinuous at 0.
+Observe que $f(\nicefrac{1}{n}) = 1$ para todo $n \in \N$.
+Logo, $\lim_{n\to\infty} f(\nicefrac{1}{n}) = f(0) = 1$. Portanto,
+$\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ pode convergir para $f(0)$
+para alguma sequência específica
+$\{ x_n \}_{n=1}^\infty$ que tende a 0,
+embora a função seja descontínua em 0.
 
-Finally, consider $f\Bigl(\frac{{(-1)}^n}{n}\Bigr) = {(-1)}^n$.
-This sequence diverges.
+Por fim, considere $f\Bigl(\frac{{(-1)}^n}{n}\Bigr) = {(-1)}^n$.
+Essa sequência diverge.
 \end{example}
 
 \begin{example}
-For an extreme example, consider the
-\emph{\myindex{Dirichlet function}}\footnote{Named after the German
-mathematician
+Como exemplo extremo, considere a
+\emph{\myindex{função de Dirichlet}}\footnote{Nomeada em homenagem ao matemático alemão
 \href{https://en.wikipedia.org/wiki/Peter_Gustav_Lejeune_Dirichlet}{Johann Peter Gustav Lejeune
 Dirichlet}
 (1805--1859).}.
 \begin{equation*}
 f(x) \coloneqq
 \begin{cases}
-1 & \text{if } x \text{ is rational,} \\
-0 & \text{if } x \text{ is irrational.}
+1 & \text{se } x \text{ é racional,} \\
+0 & \text{se } x \text{ é irracional.}
 \end{cases}
 \avoidbreak
 \end{equation*}
-The function $f$ is discontinuous at all $c \in \R$.
+A função $f$ é descontínua em todo $c \in \R$.
 
-Proof:
-If $c$ is rational, take a sequence $\{ x_n \}_{n=1}^\infty$
-of irrational numbers in $(0,1)$ such that $\lim_{n\to\infty} x_n = c$ (why can we?).  Then $f(x_n) = 0$
-and so $\lim_{n\to\infty} f(x_n) = 0$, but $f(c) = 1$.
-If $c$ is irrational, take a sequence
+Demonstração:
+Se $c$ é racional, tome uma sequência $\{ x_n \}_{n=1}^\infty$
+de números irracionais em $(0,1)$ tal que $\lim_{n\to\infty} x_n = c$ (por que isso é possível?). Então $f(x_n) = 0$
+e, portanto, $\lim_{n\to\infty} f(x_n) = 0$, mas $f(c) = 1$.
+Se $c$ é irracional, tome uma sequência
 $\{ x_n \}_{n=1}^\infty$
-of rational numbers in $(0,1)$
-that converges to $c$ (why can we?).  Then $\lim_{n\to\infty} f(x_n) = 1$, but $f(c) = 0$.
+de números racionais em $(0,1)$
+que converge para $c$ (por que isso é possível?). Então $\lim_{n\to\infty} f(x_n) = 1$, mas $f(c) = 0$.
 \end{example}
 
-Let us test the limits of our intuition.  Can
-there exist a function continuous at all irrational numbers, but
-discontinuous at all rational numbers?  There are rational numbers
-arbitrarily close to any irrational number.  Perhaps strangely, the
-answer is yes, such a function exists.  The following example is called the
-\emph{\myindex{Thomae function}}\footnote{Named after the German
-mathematician
+Vamos testar os limites de nossa intuição. Pode
+existir uma função contínua em todos os números irracionais, mas
+descontínua em todos os racionais? Há racionais
+arbitrariamente próximos de qualquer número irracional. Talvez surpreendentemente, a
+resposta seja sim: tal função existe. O exemplo a seguir é chamado de
+\emph{\myindex{função de Thomae}}\footnote{Nomeada em homenagem ao matemático alemão
 \href{https://en.wikipedia.org/wiki/Carl_Johannes_Thomae}{Carl Johannes Thomae}
-(1840--1921).} or the
-\emph{\myindex{popcorn function}}.
+(1840--1921).} ou
+\emph{\myindex{função pipoca}}.
 
 \begin{example} \label{popcornfunction:example}
-Define $f \colon (0,1) \to \R$ as
+Defina $f \colon (0,1) \to \R$ por
 \begin{equation*}
 f(x) \coloneqq 
 \begin{cases}
-\nicefrac{1}{k} & \text{if } x=\nicefrac{m}{k}, \text{ where } m,k \in \N
+\nicefrac{1}{k} & \text{se } x=\nicefrac{m}{k}, \text{ where } m,k \in \N
 \text{ and have no common divisors (lowest terms),} \\
-0 & \text{if } x \text{ is irrational.}
+0 & \text{se } x \text{ é irracional.}
 \end{cases}
 \end{equation*}
-See the graph of $f$
-in \figureref{popcornfig}.
-We claim that
-$f$ is continuous at all irrational $c$ and 
-discontinuous at all rational $c$.
+Veja o gráfico de $f$
+na \figureref{popcornfig}.
+Afirmamos que
+$f$ é contínua em todo irracional $c$ e
+descontínua em todo racional $c$.
 \begin{myfigureht}
 \myincludegraphics{popcornfig}{%
-A graph of a function that is composed of dots.
-These dots seem arranged in what seems like
-various triangles, but it is clear this
-function is discontinuous at all those points,
-and there are more and more of such points
-the closer we get to the x-axis.}
-\caption{Graph of the \myquote{popcorn function.}\label{popcornfig}}
+Gráfico de uma função formada por pontos.
+Esses pontos parecem estar dispostos em
+vários triângulos, mas é claro que a função
+é descontínua em todos esses pontos,
+e há cada vez mais pontos desse tipo
+quanto mais nos aproximamos do eixo x.}
+\caption{Gráfico da \myquote{função pipoca.}\label{popcornfig}}
 \end{myfigureht}
 
-Proof:
-Let $c = \nicefrac{m}{k}$ be rational and in lowest terms.  Take a sequence of
-irrational numbers $\{ x_n \}_{n=1}^\infty$ such that $\lim_{n\to\infty} x_n = c$.  Then
-$\lim_{n\to\infty} f(x_n) = \lim_{n\to\infty} 0 = 0$, but $f(c) = \nicefrac{1}{k} \neq 0$.  So $f$
-is discontinuous at $c$.
+Demonstração:
+Seja $c = \nicefrac{m}{k}$ racional e escrito em termos irredutíveis. Tome uma sequência de
+números irracionais $\{ x_n \}_{n=1}^\infty$ tal que $\lim_{n\to\infty} x_n = c$. Então
+$\lim_{n\to\infty} f(x_n) = \lim_{n\to\infty} 0 = 0$, but $f(c) = \nicefrac{1}{k} \neq 0$.  Portanto, $f$
+é descontínua em $c$.
 
-Now let $c$ be irrational, so $f(c) = 0$.  Take a sequence 
-$\{ x_n \}_{n=1}^\infty$ in $(0,1)$ such that $\lim_{n\to\infty} x_n = c$.
-Given $\epsilon > 0$, find $K \in \N$ such
-that $\nicefrac{1}{K} < \epsilon$
-by the \hyperref[thm:arch:i]{Archimedean property}.
-If $\nicefrac{m}{k} \in (0,1)$ and $m,k \in \N$, then $0 < m < k$.
-So there are only finitely many rational numbers in $(0,1)$
-whose denominator $k$ in lowest terms is less than $K$.
-As $\lim_{n\to\infty} x_n = c$, every number not equal to $c$ can appear at most
-finitely many times in $\{ x_n \}_{n=1}^\infty$.
-Hence,
-there is an $M$ such that for $n \geq M$, all the numbers $x_n$
-that are rational
-have a denominator larger than or equal to $K$.  Thus for $n \geq M$,
+Agora suponha que $c$ seja irracional, de modo que $f(c) = 0$. Tome uma sequência
+$\{ x_n \}_{n=1}^\infty$ em $(0,1)$ tal que $\lim_{n\to\infty} x_n = c$.
+Dado $\epsilon > 0$, encontre $K \in \N$ tal
+que $\nicefrac{1}{K} < \epsilon$
+pela \hyperref[thm:arch:i]{propriedade arquimediana}.
+Se $\nicefrac{m}{k} \in (0,1)$ e $m,k \in \N$, então $0 < m < k$.
+Assim, há apenas um número finito de racionais em $(0,1)$
+cujo denominador $k$, na forma irredutível, é menor que $K$.
+Como $\lim_{n\to\infty} x_n = c$, todo número diferente de $c$ pode aparecer no máximo
+um número finito de vezes em $\{ x_n \}_{n=1}^\infty$.
+Consequentemente,
+existe $M$ tal que, para $n \geq M$, todos os termos racionais $x_n$
+têm denominador maior ou igual a $K$. Portanto, para $n \geq M$,
 \begin{equation*}
 \babs{f(x_n) - 0} = f(x_n) \leq \nicefrac{1}{K} < \epsilon .
 \end{equation*}
-Therefore, $f$ is continuous at irrational $c$.
+Portanto, $f$ é contínua em todo $c$ irracional.
 \end{example}
 
-Let us end on an easier example.
+Terminemos com um exemplo mais simples.
 
 \begin{example} \label{example:removablediscont}
-Define
-$g \colon \R \to \R$ by $g(x) \coloneqq 0$ if $x \neq 0$ and
-$g(0) \coloneqq 1$.  Then $g$ is not continuous at zero, but continuous everywhere else (why?).
-The point $x=0$ is called a \emph{\myindex{removable discontinuity}}.  That
-is because if we would change the definition of $g$, by insisting that
-$g(0)$ be $0$, we would obtain a continuous function.  On the other hand,
-let $f$ be the function of \exampleref{example:jumpdiscont}.
-Then $f$ does not have a
-removable discontinuity at $0$.  No matter how we would define $f(0)$, the function
-would still fail to be continuous.  The difference is that 
-$\lim_{x\to 0} g(x)$ exists while
-$\lim_{x\to 0} f(x)$ does not.
+Defina
+$g \colon \R \to \R$ por $g(x) \coloneqq 0$ se $x \neq 0$ e
+$g(0) \coloneqq 1$. Então $g$ não é contínua em zero, mas é contínua em todos os outros pontos (por quê?).
+O ponto $x=0$ é chamado de \emph{\myindex{descontinuidade removível}}. Isso
+porque, se alterássemos a definição de $g$, estipulando que
+$g(0)$ fosse $0$, obteríamos uma função contínua. Por outro lado,
+seja $f$ a função do \exampleref{example:jumpdiscont}.
+Então $f$ não tem uma
+descontinuidade removível em $0$. Não importa como definamos $f(0)$, a função
+ainda não será contínua. A diferença é que
+$\lim_{x\to 0} g(x)$ existe, enquanto
+$\lim_{x\to 0} f(x)$ não existe.
 
-We stay with this example to show another phenomenon.
-Let $A \coloneqq \{ 0 \}$, then $g|_A$ is continuous (why?), while $g$ is not continuous on $A$.
-Similarly, if $B \coloneqq \R \setminus \{0 \}$, then $g|_B$ is also continuous,
-and $g$ is in fact continuous on $B$.
+Continuemos com este exemplo para mostrar outro fenômeno.
+Seja $A \coloneqq \{ 0 \}$; então $g|_A$ é contínua (por quê?), enquanto $g$ não é contínua em $A$.
+De modo semelhante, se $B \coloneqq \R \setminus \{0 \}$, então $g|_B$ também é contínua,
+e, de fato, $g$ é contínua em $B$.
 \end{example}
 
 \subsection{Exercises}

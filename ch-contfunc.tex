@@ -561,11 +561,11 @@ $\bigl( S \cap (-\infty,c) \bigr) \cup \bigl( S \cap (c,\infty) \bigr)
 
 
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
 \begin{exercise}
-Find the limit (and prove it of course) or prove that the limit does not
-exist:
+Determine o limite (e, naturalmente, prove o resultado) ou prove que o limite não
+existe:
 
 \medskip
 
@@ -599,27 +599,27 @@ $ &
 \end{exercise}
 
 \begin{exercise}
-Prove \corref{fconstineq:cor}.
+Prove o \corref{fconstineq:cor}.
 \end{exercise}
 
 \begin{exercise}
-Prove \corref{fsqueeze:cor}.
+Prove o \corref{fsqueeze:cor}.
 \end{exercise}
 
 \begin{exercise}
-Prove \corref{falg:cor}.
+Prove o \corref{falg:cor}.
 \end{exercise}
 
 \begin{exercise}
-Let $A \subset S$.  Show that if $c$ is a cluster point of $A$, then $c$
-is a cluster point of $S$.  Note the difference from
+Let $A \subset S$.  Mostre que if $c$ é um ponto de acumulação de $A$, then $c$
+é um ponto de acumulação de $S$.  Observe a diferença em relação a
 \propref{prop:limrest}.
 \end{exercise}
 
 \begin{exercise} \label{exercise:restrictionlimitexercise}
-Let $A \subset S$.  Suppose $c$ is a cluster point of $A$ and
+Let $A \subset S$.  Suponha que $c$ é um ponto de acumulação de $A$ and
 it is also a cluster point of $S$.
-Let $f \colon S \to \R$ be a function.  Show that if
+Let $f \colon S \to \R$ be a function.  Mostre que if
 $f(x) \to L$ as $x \to c$, then
 $f|_A(x) \to L$ as $x \to c$.
 Note the difference from
@@ -627,73 +627,71 @@ Note the difference from
 \end{exercise}
 
 \begin{exercise}
-Find an example of a function $f \colon [-1,1] \to \R$, where for
-$A\coloneqq [0,1]$, we have
+Encontre um exemplo de função $f \colon [-1,1] \to \R$ para a qual, tomando
+$A\coloneqq [0,1]$, temos
 $f|_A(x) \to 0$ as $x \to 0$, but the limit of $f(x)$ as $x \to 0$
-does not exist.  Note why you cannot apply
+não existe. Explique por que não podemos aplicar
 \propref{prop:limrest}.
 \end{exercise}
 
 \begin{exercise}
-Find example functions $f$ and $g$ such that the limit of neither $f(x)$
-nor $g(x)$ exists as $x \to 0$, but such that the limit of $f(x)+g(x)$ exists
-as $x \to 0$.
+Encontre funções $f$ e $g$ tais que nem o limite de $f(x)$ nem o de $g(x)$ exista quando $x \to 0$, mas o limite de $f(x)+g(x)$ exista quando $x \to 0$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:contlimitcomposition}
-Let $c_1$ be a cluster point of $A \subset \R$ and $c_2$ be
-a cluster point of $B \subset \R$.  Suppose 
+Seja $c_1$ seja um ponto de acumulação de $A \subset \R$ and $c_2$ be
+a cluster point of $B \subset \R$.  Suponha que 
 $f \colon A \to B$ and $g \colon B \to \R$ are functions
-such that
+tais que
 $f(x) \to c_2$ as $x \to c_1$ and
 $g(y) \to L$ as $y \to c_2$.  If $c_2 \in B$, also suppose that $g(c_2) = L$.
 Let $h(x) \coloneqq g\bigl(f(x)\bigr)$ and show
 $h(x) \to L$ as $x \to c_1$.
-Hint: Note that $f(x)$ could equal $c_2$ for many $x \in A$
+Dica: observe que $f(x)$ pode ser igual a $c_2$ para muitos $x \in A$
 (see also
 \exerciseref{exercise:contlimitbadcomposition}).
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon \R \to \R$ is a function such that for every 
-sequence $\{x_n\}_{n=1}^\infty$ in $\R$, the sequence
-$\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ converges.  Prove that
-$f$ is constant, that is,
-$f(x) = f(y)$ for all $x,y \in \R$.
+Suponha que $f \colon \R \to \R$ seja uma função tal que, para toda
+sequência $\{x_n\}_{n=1}^\infty$ in $\R$, the sequence
+$\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ converge. Prove que
+$f$ é constante, isto é,
+$f(x) = f(y)$ para todos $x,y \in \R$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:seqflimitalt}
-Prove the following stronger version of one direction of
+Prove a seguinte versão mais forte de uma das implicações do
 \lemmaref{seqflimit:lemma}:
-Let $S \subset \R$, $c$ be a cluster point of $S$, and $f \colon S \to
+Let $S \subset \R$, $c$ seja um ponto de acumulação de $S$, and $f \colon S \to
 \R$ be a function.
-Suppose that for every sequence $\{x_n\}_{n=1}^\infty$ in $S \setminus \{c\}$ such that
-$\lim_{n\to\infty} x_n = c$ the sequence $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ is convergent.
-Then show that the limit of $f(x)$ as $x \to c$ exists.
+Suponha que that for every sequence $\{x_n\}_{n=1}^\infty$ in $S \setminus \{c\}$ tais que
+$\lim_{n\to\infty} x_n = c$ the sequence $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ seja convergente.
+Mostre então que existe o limite de $f(x)$ quando $x \to c$.
 \end{exercise}
 
 \begin{exercise}
-Prove \propref{prop:onesidedlimits}.
+Prove a \propref{prop:onesidedlimits}.
 \end{exercise}
 
 \begin{exercise}
-Suppose $S \subset \R$ and $c$ is a cluster point of $S$.  Suppose $f \colon
-S \to \R$ is bounded.  Show that there exists a sequence
+Suponha que $S \subset \R$ and $c$ é um ponto de acumulação de $S$.  Suponha que $f \colon
+S \to \R$ seja limitada.  Mostre que there exists a sequence
 $\{ x_n \}_{n=1}^\infty$
-with $x_n \in S \setminus \{ c \}$ and $\lim_{n\to\infty} x_n = c$ such that
-$\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ converges.
+with $x_n \in S \setminus \{ c \}$ and $\lim_{n\to\infty} x_n = c$ tais que
+$\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ converge.
 \end{exercise}
 
-\begin{exercise}[Challenging] \label{exercise:contlimitbadcomposition}
-Show that the hypothesis that $g(c_2) = L$ in
+\begin{exercise}[Desafio] \label{exercise:contlimitbadcomposition}
+Mostre que a hipótese $g(c_2) = L$ em
 \exerciseref{exercise:contlimitcomposition} is necessary.  That is, find $f$
-and $g$ such that $f(x) \to c_2$ as $x \to c_1$ and
-$g(y) \to L$ as $y \to c_2$, but $g\bigl(f(x)\bigr)$ does not go to $L$
+and $g$ tais que $f(x) \to c_2$ as $x \to c_1$ and
+$g(y) \to L$ as $y \to c_2$, but $g\bigl(f(x)\bigr)$ não tenda a $L$
 as $x \to c_1$.
 \end{exercise}
 
 \begin{exercise}
-Show that the condition of being a cluster point is necessary to have a
+Mostre que the condition of being a cluster point is necessary to have a
 reasonable definition of a limit.  That is, suppose $c$ is not a cluster
 point of $S \subset \R$, and $f \colon S \to \R$ is a function.  Show that
 every $L$ would satisfy the definition of limit at $c$ without the condition
@@ -706,14 +704,18 @@ on $c$ being a cluster point.
 \item
 Prove \corref{fabs:cor}.
 \item
-Find an example showing that the converse of
-the corollary does not hold.
+Encontre um exemplo que mostre que a recíproca do
+corolário não vale.
 \end{enumerate}
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\sectionnewpage
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{Continuous functions}
 \label{sec:cont}
 

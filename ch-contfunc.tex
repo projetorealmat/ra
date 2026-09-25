@@ -14,65 +14,65 @@ more general notion of a limit than that of a sequence.
 Given a function $f \colon S \to
 \R$, we want to see how $f(x)$ behaves as $x$ tends to a certain point.
 
-\subsection{Cluster points}
+\subsection{Pontos de acumulação}
 
-First,
-we return to a concept we have seen previously in an exercise.
-When moving within the set $S$, we can only approach points
-that have elements of $S$ arbitrarily near.
+Primeiro,
+retomemos um conceito que já vimos em um exercício.
+Ao nos movermos dentro do conjunto $S$, só podemos nos aproximar de pontos
+que tenham elementos de $S$ arbitrariamente próximos.
 
 \begin{defn}
-Let $S \subset \R$ be a set.  A number $x \in \R$ is called
-a \emph{\myindex{cluster point}} of $S$
-if for every $\epsilon > 0$, the set $(x-\epsilon,x+\epsilon) \cap S
-\setminus \{ x \}$ is not empty.
+Seja $S \subset \R$ um conjunto. Um número $x \in \R$ é chamado
+\emph{\myindex{ponto de acumulação}} de $S$
+se, para todo $\epsilon > 0$, o conjunto $(x-\epsilon,x+\epsilon) \cap S
+\setminus \{ x \}$ não é vazio.
 \end{defn}
 
-That is, $x$ is a cluster point of $S$ if there are points of $S$
-arbitrarily close to $x$.  Another way to phrase the definition is to say
-that $x$ is a cluster point of $S$ if for every $\epsilon > 0$, there
-exists a $y \in S$ such that $y \neq x$ and $\sabs{x - y} < \epsilon$.
-Note that a cluster point of $S$ need not lie in $S$.
+Isto é, $x$ é um ponto de acumulação de $S$ se há pontos de $S$
+arbitrariamente próximos de $x$. Outra maneira de enunciar a definição é dizer
+que $x$ é um ponto de acumulação de $S$ se, para todo $\epsilon > 0$, existe
+$y \in S$ tal que $y \neq x$ e $\sabs{x - y} < \epsilon$.
+Observe que um ponto de acumulação de $S$ não precisa pertencer a $S$.
 
-Let us see some examples.
+Vejamos alguns exemplos.
 \begin{enumerate}[(i)]
-\item The set
-$\{ \nicefrac{1}{n} : n \in \N \}$ has zero as its unique cluster point.
-\item The cluster points of the open interval $(0,1)$ are
-all points in the closed interval $[0,1]$.
+\item O conjunto
+$\{ \nicefrac{1}{n} : n \in \N \}$ tem zero como seu único ponto de acumulação.
+\item Os pontos de acumulação do intervalo aberto $(0,1)$ são
+todos os pontos do intervalo fechado $[0,1]$.
 \item
-The set of cluster points of $\Q$ is the whole real line $\R$.
-\item 
-The set of cluster points of $[0,1) \cup \{ 2 \}$ is the interval $[0,1]$.
-\item The set $\N$ has no cluster points in $\R$.
+O conjunto dos pontos de acumulação de $\Q$ é toda a reta real $\R$.
+\item
+O conjunto dos pontos de acumulação de $[0,1) \cup \{ 2 \}$ é o intervalo $[0,1]$.
+\item O conjunto $\N$ não tem pontos de acumulação em $\R$.
 \end{enumerate}
 
 \begin{prop}
-Let $S \subset \R$.  Then $x \in \R$ is a cluster point of $S$
-if and only if
-there exists a convergent sequence of numbers $\{ x_n \}_{n=1}^\infty$ such that
-$x_n \neq x$ and $x_n \in S$ for all $n$, and $\lim\limits_{n\to\infty} x_n = x$.
+Seja $S \subset \R$. Então $x \in \R$ é um ponto de acumulação de $S$
+se, e somente se,
+existe uma sequência convergente de números $\{ x_n \}_{n=1}^\infty$ tal que
+$x_n \neq x$ e $x_n \in S$ para todo $n$, e $\lim\limits_{n\to\infty} x_n = x$.
 \end{prop}
 
 \begin{proof}
-First suppose $x$ is a cluster point of $S$.
-For every $n \in \N$, pick $x_n$ to be an arbitrary point of
-$(x-\nicefrac{1}{n},x+\nicefrac{1}{n}) \cap S \setminus \{x\}$, which
-is nonempty because $x$ is a cluster point of $S$.
-Then
-$x_n$ is within $\nicefrac{1}{n}$ of $x$, that is,
+Suponhamos primeiro que $x$ seja um ponto de acumulação de $S$.
+Para todo $n \in \N$, escolha $x_n$ como um ponto arbitrário de
+$(x-\nicefrac{1}{n},x+\nicefrac{1}{n}) \cap S \setminus \{x\}$, que
+não é vazio, pois $x$ é um ponto de acumulação de $S$.
+Então
+$x_n$ está a uma distância menor que $\nicefrac{1}{n}$ de $x$, isto é,
 \begin{equation*}
 \sabs{x-x_n} < \nicefrac{1}{n} .
 \avoidbreak
 \end{equation*}
-As $\{ \nicefrac{1}{n} \}_{n=1}^\infty$ converges to zero,
-$\{ x_n \}_{n=1}^\infty$ converges to $x$.
+Como $\{ \nicefrac{1}{n} \}_{n=1}^\infty$ converge para zero,
+$\{ x_n \}_{n=1}^\infty$ converge para $x$.
 
-On the other hand, if we start with a sequence of numbers
-$\{ x_n \}_{n=1}^\infty$ in $S$
-converging to $x$ such that $x_n \neq x$ for all $n$, then for every
-$\epsilon > 0$ there is an $M$ such that, in particular, $\sabs{x_M - x} <
-\epsilon$.  That is, $x_M \in (x-\epsilon,x+\epsilon) \cap S \setminus \{x\}$.
+Por outro lado, se começarmos com uma sequência de números
+$\{ x_n \}_{n=1}^\infty$ em $S$
+que converge para $x$ e tal que $x_n \neq x$ para todo $n$, então, para todo
+$\epsilon > 0$, existe $M$ tal que, em particular, $\sabs{x_M - x} <
+\epsilon$. Isto é, $x_M \in (x-\epsilon,x+\epsilon) \cap S \setminus \{x\}$.
 \end{proof}
 
 \subsection{Limits of functions}

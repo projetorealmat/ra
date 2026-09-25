@@ -3962,60 +3962,60 @@ Então $\sum_{n=1}^\infty \lambda_n x_n$ converge.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{More on series}
+\section{Mais sobre séries}
 \label{sec:moreonseries}
 
 %mbxINTROSUBSECTION
 
-\sectionnotes{up to 2--3 lectures (optional, can safely be skipped or covered partially)}
+\sectionnotes{até 2--3 aulas (opcional; pode ser omitida sem prejuízo ou abordada parcialmente)}
 
-\subsection{Root test}
+\subsection{Critério da raiz}
 
-A test similar to the ratio test is the
-\emph{\myindex{root test}}.  The proof of this test is similar.
-Again, the idea is to generalize what happens for the geometric series.
+Um critério semelhante ao critério da razão é o
+\emph{\myindex{critério da raiz}}. A demonstração também é semelhante.
+Mais uma vez, a ideia é generalizar o que ocorre com a série geométrica.
 
-\begin{prop}[Root test]
-Let $\sum_{n=1}^\infty x_n$ be a series and let
+\begin{prop}[Critério da raiz]
+Seja $\sum_{n=1}^\infty x_n$ uma série e seja
 \begin{equation*}
 L \coloneqq \limsup_{n\to\infty} {\sabs{x_n}}^{1/n} .
 \end{equation*}
 \begin{enumerate}[(i)]
-\item If $L < 1$, then $\sum_{n=1}^\infty x_n$ converges absolutely.
-\item If $L > 1$, then $\sum_{n=1}^\infty x_n$ diverges.
+\item Se $L < 1$, então $\sum_{n=1}^\infty x_n$ converge absolutamente.
+\item Se $L > 1$, então $\sum_{n=1}^\infty x_n$ diverge.
 \end{enumerate}
 \end{prop}
 
 \begin{proof}
-If $L > 1$, then there exists\footnote{%
-In case $L=\infty$, see \exerciseref{exercise:extendsubseqlimsupinf}.
-Alternatively, note that if $L=\infty$, then $\bigl\{ {\sabs{x_{n}}}^{1/n}
+Se $L > 1$, existe\footnote{%
+No caso $L=\infty$, veja o \exerciseref{exercise:extendsubseqlimsupinf}.
+Como alternativa, observe que, se $L=\infty$, então $\bigl\{ {\sabs{x_{n}}}^{1/n}
 \bigr\}_{n=1}^\infty$
-is unbounded, and thus so is
+é ilimitada e, portanto, o mesmo vale para
 $\{ x_n \}_{n=1}^\infty$.}
-a subsequence $\{ x_{n_k} \}_{k=1}^\infty$ such that
-$L = \lim_{k\to\infty} {\sabs{x_{n_k}}}^{1/n_k}$.  Let
-$r$ be such that $L > r > 1$.  There exists an $M$ such
-that for all $k \geq M$, we have 
-${\sabs{x_{n_k}}}^{1/n_k} > r > 1$, or in other words
+uma subsequência $\{ x_{n_k} \}_{k=1}^\infty$ tal que
+$L = \lim_{k\to\infty} {\sabs{x_{n_k}}}^{1/n_k}$. Seja
+$r$ tal que $L > r > 1$.  Existe $M$ tal
+que, para todo $k \geq M$, temos 
+${\sabs{x_{n_k}}}^{1/n_k} > r > 1$, ou, em outras palavras
 $\sabs{x_{n_k}} > r^{n_k} > 1$.
-The subsequence 
+A subsequência 
 $\bigl\{ \sabs{x_{n_k}} \bigr\}_{k=1}^\infty$,
-and therefore also
+e, portanto, também
 $\bigl\{ \sabs{x_{n}} \bigr\}_{n=1}^\infty$,
-cannot possibly converge to zero, and so the series diverges.
+não pode convergir para zero; logo, a série diverge.
 
-Now suppose $L < 1$.  Pick $r$ such that $L < r < 1$.
-By definition of limit supremum,
-there is an $M$ such that for all $n \geq M$,
+Suponha agora que $L < 1$. Escolha $r$ tal que $L < r < 1$.
+Pela definição de limite superior,
+existe $M$ tal que, para todo $n \geq M$,
 \begin{equation*}
 \sup \bigl\{ {\sabs{x_k}}^{1/k} : k \geq n \bigr\} < r .
 \end{equation*}
-Therefore, for all $n \geq M$,
+Portanto, para todo $n \geq M$,
 \begin{equation*}
-{\sabs{x_n}}^{1/n} < r , \qquad \text{or in other words} \qquad \sabs{x_n} < r^n .
+{\sabs{x_n}}^{1/n} < r , \qquad \text{ou, em outras palavras} \qquad \sabs{x_n} < r^n .
 \end{equation*}
-Let $k > M$, and estimate the $k$th partial sum:
+Seja $k > M$, e estimemos a $k$-ésima soma parcial:
 \begin{equation*}
 \sum_{n=1}^k \sabs{x_n} = 
 \left( \sum_{n=1}^M \sabs{x_n} \right) + 
@@ -4024,34 +4024,34 @@ Let $k > M$, and estimate the $k$th partial sum:
 \left( \sum_{n=1}^M \sabs{x_n} \right) + 
 \left( \sum_{n=M+1}^k r^n \right) .
 \end{equation*}
-As $0 < r < 1$,
-the geometric series $\sum_{n=M+1}^\infty r^n$ converges to
-$\frac{r^{M+1}}{1-r}$.  As everything is positive,
+Como $0 < r < 1$,
+a série geométrica $\sum_{n=M+1}^\infty r^n$ converge para
+$\frac{r^{M+1}}{1-r}$. Como todos os termos são positivos,
 \begin{equation*}
 \sum_{n=1}^k \sabs{x_n} 
 \leq
 \left( \sum_{n=1}^M \sabs{x_n} \right) + 
 \frac{r^{M+1}}{1-r} .
 \end{equation*}
-Thus the sequence of partial sums of $\sum_{n=1}^\infty \sabs{x_n}$ is bounded, and
-the series converges.  Therefore, $\sum_{n=1}^\infty x_n$ converges absolutely.
+Assim, a sequência das somas parciais de $\sum_{n=1}^\infty \sabs{x_n}$ é limitada, e
+a série converge. Portanto, $\sum_{n=1}^\infty x_n$ converge absolutamente.
 \end{proof}
 
-\subsection{Alternating series test}
+\subsection{Critério das séries alternadas}
 
-The tests we have seen so far only addressed absolute convergence.  The
-following test gives a large supply of conditionally convergent series.
+Os critérios que vimos até agora tratam apenas da convergência absoluta. O
+critério a seguir fornece muitos exemplos de séries condicionalmente convergentes.
 
-\begin{prop}[Alternating series]
-Let $\{ x_n \}_{n=1}^\infty$ be a monotone decreasing sequence of positive real numbers such
-that $\lim\limits_{n\to\infty} x_n = 0$.  Then
+\begin{prop}[Série alternada]
+Seja $\{ x_n \}_{n=1}^\infty$ uma sequência monótona decrescente de números reais positivos tal
+que $\lim\limits_{n\to\infty} x_n = 0$. Então
 \begin{equation*}
-\sum_{n=1}^\infty {(-1)}^n x_n \qquad \text{converges.}
+\sum_{n=1}^\infty {(-1)}^n x_n \qquad \text{converge.}
 \end{equation*}
 \end{prop}
 
 \begin{proof}
-Let $s_m \coloneqq \sum_{n=1}^m {(-1)}^n x_n$ be the $m$th partial sum.  Then
+Seja $s_m \coloneqq \sum_{n=1}^m {(-1)}^n x_n$ a $m$-ésima soma parcial. Então
 \begin{equation*}
 s_{2k} =
 \sum_{n=1}^{2k} {(-1)}^n x_n
@@ -4060,50 +4060,44 @@ s_{2k} =
 =
 \sum_{\ell=1}^{k} (-x_{2\ell-1} + x_{2\ell}) .
 \end{equation*}
-The sequence $\{ x_n \}_{n=1}^\infty$ is decreasing, so $(-x_{2\ell-1}+x_{2\ell}) \leq 0$
-for all $\ell$.
-Thus, the subsequence $\{ s_{2k} \}_{k=1}^\infty$ of partial sums
-is a decreasing sequence.  Similarly, $(x_{2\ell}-x_{2\ell+1}) \geq 0$, and so
+A sequência $\{ x_n \}_{n=1}^\infty$ é decrescente, logo $(-x_{2\ell-1}+x_{2\ell}) \leq 0$
+para todo $\ell$.
+Assim, a subsequência $\{ s_{2k} \}_{k=1}^\infty$ das somas parciais
+é decrescente. Analogamente, $(x_{2\ell}-x_{2\ell+1}) \geq 0$ e, portanto,
 \begin{equation*}
 s_{2k} = - x_1 + ( x_2 - x_3 ) + \cdots + ( x_{2k-2} - x_{2k-1} ) + x_{2k}
 \geq -x_1 .
 \end{equation*}
-The intuition behind the bound
-$0 \geq s_{2k} \geq -x_1$ is illustrated in \figureref{fig:seralternate}.
+A intuição por trás da estimativa
+$0 \geq s_{2k} \geq -x_1$ está ilustrada na \figureref{fig:seralternate}.
 \begin{myfigureht}
 \myincludegraphics{ser-alternate}{%
-A diagram in the plane where the values of a sequence plus minus x sub n are shown
-for n from 1 to 8.  In solid lines starting from the horizontal axis,
-we see a "graph" of minus x sub 1, x sub 2, minus x sub 3, x sub 4, etc.
-We can see that each successive solid line is shorter
-as each successive x sub n is smaller than the last.  In dotted lines we
-also have minus x sub 2, minus x sub 4, etc.
-The differences
-minus x sub 1 plus x sub 2,
-minus x sub 3 plus x sub 4,
-minus x sub 5 plus x sub 6,
-and
-minus x sub 7 plus x sub 8, are shown and correspond to the differences
-between the corresponding minus x sub 1 and minus x sub 2.
-We note that these differences take up just part of the total length of the
-line for minus x sub 1.}
-\caption{Showing that $0 \geq s_{2k} \geq -x_1$ where $k=4$ for an alternating series.\label{fig:seralternate}}
+Um diagrama no plano mostra os valores alternados menos x com índice n e x com índice n para n de 1 a 8.
+Em linhas contínuas que partem do eixo horizontal, vemos o "gráfico" de
+menos x de índice 1, x de índice 2, menos x de índice 3, x de índice 4 e assim por diante.
+Cada linha contínua sucessiva é mais curta, pois cada x com índice n é menor que o anterior.
+Linhas pontilhadas também mostram menos x de índice 2, menos x de índice 4 etc.
+As diferenças menos x de índice 1 mais x de índice 2, menos x de índice 3 mais x de índice 4,
+menos x de índice 5 mais x de índice 6 e menos x de índice 7 mais x de índice 8 são indicadas
+e correspondem às diferenças entre os pares de segmentos consecutivos.
+Observamos que essas diferenças ocupam apenas parte do comprimento total
+do segmento correspondente a menos x de índice 1.}
+\caption{Ilustração de $0 \geq s_{2k} \geq -x_1$ para $k=4$ em uma série alternada.\label{fig:seralternate}}
 \end{myfigureht}
 
-As $\{ s_{2k} \}_{k=1}^\infty$ is decreasing and bounded below, it converges.
-Let $a \coloneqq \lim_{k\to\infty} s_{2k}$.
-We wish to show that $\lim_{m\to\infty} s_m = a$ (and not just for the subsequence).
-Given $\epsilon > 0$, pick $M$ such that $\sabs{s_{2k}-a} <
-\nicefrac{\epsilon}{2}$ whenever $k \geq M$.
-Since $\lim_{n\to\infty} x_n = 0$, we also
-make $M$ possibly larger
-to obtain
-$x_{2k+1} < \nicefrac{\epsilon}{2}$ whenever $k \geq M$.  
-Suppose $m \geq 2M+1$.  If $m=2k$, then $k \geq M+\nicefrac{1}{2} \geq M$ and
+Como $\{ s_{2k} \}_{k=1}^\infty$ é decrescente e limitada inferiormente, ela converge.
+Seja $a \coloneqq \lim_{k\to\infty} s_{2k}$.
+Queremos mostrar que $\lim_{m\to\infty} s_m = a$, e não apenas que isso vale para a subsequência.
+Dado $\epsilon > 0$, escolha $M$ de modo que $\sabs{s_{2k}-a} <
+\nicefrac{\epsilon}{2}$ sempre que $k \geq M$.
+Como $\lim_{n\to\infty} x_n = 0$, podemos aumentar $M$, se necessário,
+de modo que
+$x_{2k+1} < \nicefrac{\epsilon}{2}$ sempre que $k \geq M$.  
+Suponha que $m \geq 2M+1$. Se $m=2k$, então $k \geq M+\nicefrac{1}{2} \geq M$, e
 $\sabs{s_{m}-a}=\sabs{s_{2k}-a} < \nicefrac{\epsilon}{2} < \epsilon$.
-If $m=2k+1$, then also $k \geq M$.  Notice
+Se $m=2k+1$, então também temos $k \geq M$. Observe que
 $s_{2k+1} = s_{2k} - x_{2k+1}$.
-Thus
+Portanto
 \begin{equation*}
 \sabs{s_{m}-a} = 
 \sabs{s_{2k+1}-a} = 
@@ -4113,60 +4107,57 @@ Thus
 \end{equation*}
 \end{proof}
 
-Notably, there exist conditionally convergent series
-where the absolute values of the terms go to zero arbitrarily slowly.
-The series
+Observe que existem séries condicionalmente convergentes cujos termos em valor absoluto
+tendem a zero tão lentamente quanto se queira.
+A série
 \begin{equation*}
 \sum_{n=1}^\infty \frac{{(-1)}^n}{n^p}
 \end{equation*}
-converges for arbitrarily small $p > 0$, but it does not converge
-absolutely when $p \leq 1$.
+converge para valores de $p > 0$ arbitrariamente pequenos, mas não converge
+absolutamente quando $p \leq 1$.
 
-\subsection{Rearrangements}
+\subsection{Reordenações}
 
-Absolutely convergent series behave as we imagine they should.  For example,
-absolutely convergent series can be summed in any order whatsoever.  Nothing
-of the sort holds for conditionally convergent series
-(see \exampleref{example:harmonsumanything}
-and \exerciseref{exercise:seriesconvergestoanything}).
+Séries absolutamente convergentes se comportam como esperamos. Por exemplo,
+podem ser somadas em qualquer ordem. Nada disso vale para séries
+condicionalmente convergentes (veja o \exampleref{example:harmonsumanything}
+e o \exerciseref{exercise:seriesconvergestoanything}).
 
-Consider a series
+Considere uma série
 \begin{equation*}
 \sum_{n=1}^\infty x_n .
 \end{equation*}
-Given a bijective function $\sigma \colon \N \to \N$, the corresponding
-rearrangement\index{rearrangement of a series} is the 
-series:
+Dada uma função bijetiva $\sigma \colon \N \to \N$, a reordenação
+correspondente\index{reordenação de uma série} é a série:
 \begin{equation*}
 \sum_{k=1}^\infty x_{\sigma(k)} .
 \end{equation*}
-We simply sum the series in a different order.
+Simplesmente somamos a série em outra ordem.
 
 \begin{prop}
-Let $\sum_{n=1}^\infty x_n$ be an absolutely convergent series converging to a number
-$x$.  Let $\sigma \colon \N \to \N$ be a bijection.  Then
-$\sum_{n=1}^\infty x_{\sigma(n)}$ is absolutely convergent and converges to $x$.
+Seja $\sum_{n=1}^\infty x_n$ uma série absolutamente convergente para um número
+$x$. Seja $\sigma \colon \N \to \N$ uma bijeção. Então
+$\sum_{n=1}^\infty x_{\sigma(n)}$ é absolutamente convergente e converge para $x$.
 \end{prop}
 
-In other words,
-a rearrangement of an absolutely convergent series converges (absolutely)
-to the same number.
+Em outras palavras, uma reordenação de uma série absolutamente convergente
+converge (absolutamente) para o mesmo número.
 
 \begin{proof}
-Let $\epsilon > 0$ be given.  As $\sum_{n=1}^\infty x_n$ is absolutely convergent, take $M$ such that
+Seja dado $\epsilon > 0$. Como $\sum_{n=1}^\infty x_n$ é absolutamente convergente,
+escolha $M$ de modo que
 \begin{equation*}
 \abs{\left(\sum_{n=1}^M x_n \right) - x} < \frac{\epsilon}{2}
-\qquad \text{and} \qquad
+\qquad \text{e} \qquad
 \sum_{n=M+1}^\infty \sabs{x_n} < \frac{\epsilon}{2} .
 \end{equation*}
-As $\sigma$ is a bijection,
-there exists a number $K$ such that for each
-$n \leq M$, there exists $k \leq K$ such that $\sigma(k) = n$.
-In other words
+Como $\sigma$ é uma bijeção, existe um número $K$ tal que, para cada
+$n \leq M$, existe $k \leq K$ com $\sigma(k) = n$.
+Em outras palavras,
 $\{ 1,2,\ldots,M \} \subset \sigma\bigl(\{ 1,2,\ldots,K \} \bigr)$.
 
-For $N \geq K$, let $Q \coloneqq \max \sigma\bigl(\{ 1,2,\ldots,N \}\bigr)$.
-Compute
+Para $N \geq K$, seja $Q \coloneqq \max \sigma\bigl(\{ 1,2,\ldots,N \}\bigr)$.
+Calculemos
 \begin{equation*}
 \begin{split}
 \abs{\left( \sum_{n=1}^N x_{\sigma(n)} \right) - x}
@@ -4188,120 +4179,114 @@ Compute
 & < \nicefrac{\epsilon}{2} + \nicefrac{\epsilon}{2} = \epsilon .
 \end{split}
 \end{equation*}
-So 
-$\sum_{n=1}^\infty x_{\sigma(n)}$ converges to $x$.  To see that the convergence
-is absolute, we apply the argument above to $\sum_{n=1}^\infty \sabs{x_n}$ to show
-that $\sum_{n=1}^\infty \sabs{x_{\sigma(n)}}$ converges.
+Logo, $\sum_{n=1}^\infty x_{\sigma(n)}$ converge para $x$. Para ver que a convergência
+é absoluta, aplicamos o argumento acima a $\sum_{n=1}^\infty \sabs{x_n}$ e mostramos
+que $\sum_{n=1}^\infty \sabs{x_{\sigma(n)}}$ converge.
 \end{proof}
 
 \begin{example} \label{example:harmonsumanything}
-Let us show that the alternating harmonic series
-$\sum_{n=1}^\infty \frac{{(-1)}^{n+1}}{n}$, which does not converge absolutely, can be
-rearranged to converge to anything.
-The odd terms and the even terms diverge to
-plus infinity and minus infinity, respectively (prove this!):
+Vamos mostrar que a série harmônica alternada
+$\sum_{n=1}^\infty \frac{{(-1)}^{n+1}}{n}$, que não converge absolutamente, pode ser
+reordenada para convergir para qualquer número.
+Os termos de índice ímpar e os de índice par divergem para
+mais infinito e menos infinito, respectivamente (prove isso!):
 \begin{equation*}
-\sum_{m=1}^\infty \frac{1}{2m-1} = \infty, \qquad \text{and} \qquad
+\sum_{m=1}^\infty \frac{1}{2m-1} = \infty, \qquad \text{e} \qquad
 \sum_{m=1}^\infty \frac{-1}{2m} = -\infty .
 \end{equation*}
-Let $a_n \coloneqq \frac{{(-1)}^{n+1}}{n}$ for simplicity, 
-let an arbitrary number $L \in \R$ be given, and set $\sigma(1) \coloneqq 1$.
-Suppose we have
-defined $\sigma(n)$ for all $n \leq N$.  If
+Para simplificar, seja $a_n \coloneqq \frac{{(-1)}^{n+1}}{n}$,
+seja dado um número arbitrário $L \in \R$ e defina $\sigma(1) \coloneqq 1$.
+Suponha que já definimos $\sigma(n)$ para todo $n \leq N$. Se
 \begin{equation*}
 \sum_{n=1}^N a_{\sigma(n)} \leq L ,
 \end{equation*}
-then let $\sigma(N+1) \coloneqq k$ be the smallest odd $k \in \N$
-that we have not used yet,
-that is, $\sigma(n) \neq k$ for all $n \leq N$.
-Otherwise, let $\sigma(N+1) \coloneqq k$ 
-be the smallest even $k$ that we have not yet used.
+então seja $\sigma(N+1) \coloneqq k$, em que $k \in \N$ é o menor ímpar
+que ainda não usamos, isto é, $\sigma(n) \neq k$ para todo $n \leq N$.
+Caso contrário, seja $\sigma(N+1) \coloneqq k$, em que $k$ é o menor par
+que ainda não usamos.
 
-By construction, $\sigma \colon \N \to \N$ is one-to-one.
-It is also onto, because if we keep adding either odd (resp.\ even) terms,
-eventually we pass $L$ and switch
-to the evens (resp.\ odds).  So we switch infinitely many times.
+Pela construção, $\sigma \colon \N \to \N$ é injetiva.
+Também é sobrejetiva, pois, se continuarmos somando termos ímpares (respectivamente,
+pares), eventualmente ultrapassaremos $L$ e passaremos aos termos pares
+(respectivamente, ímpares). Assim, alternamos entre eles infinitas vezes.
 
-Finally, let $N$ be the $N$ where we just pass $L$ and switch.
-Suppose we have just switched from odd to even, so we start
-subtracting.
-Suppose we keep subtracting until some
-$N' > N$ and we will switch back from even to odd in the next step.
-Then
+Por fim, seja $N$ aquele índice $N$ em que acabamos de ultrapassar $L$ e alternar.
+Suponha que acabamos de passar dos termos ímpares para os pares e começamos
+a subtrair.
+Suponha que continuemos subtraindo até algum
+$N' > N$, de modo que no passo seguinte voltemos dos pares para os ímpares.
+Então
 \begin{equation*}
 L + \frac{1}{\sigma(N)} \geq \sum_{n=1}^{N} a_{\sigma(n)}
 > \sum_{n=1}^{N'} a_{\sigma(n)} > L- \frac{1}{\sigma(N')}.
 \end{equation*}
-Similarly for switching in the other direction.
-Therefore,
-the sum up to $N'$ is within $\frac{1}{\min \{ \sigma(N), \sigma(N') \}}$
-of $L$.  As
-we switch infinitely many times, $\sigma(N) \to \infty$
-and $\sigma(N') \to \infty$. Hence,
+O mesmo vale ao alternarmos na outra direção.
+Portanto, a soma até $N'$ está a uma distância inferior a
+$\frac{1}{\min \{ \sigma(N), \sigma(N') \}}$ de $L$. Como
+alternamos infinitas vezes, $\sigma(N) \to \infty$
+e $\sigma(N') \to \infty$. Logo,
 \begin{equation*}
 \sum_{n=1}^\infty a_{\sigma(n)} = 
 \sum_{n=1}^\infty \frac{{(-1)}^{\sigma(n)+1}}{\sigma(n)} = L .
 \end{equation*}
 
-Here is an example to illustrate the proof.  When $L=1.2$, the order
-is
+Eis um exemplo que ilustra a demonstração. Para $L=1.2$, a ordem
+é
 \begin{equation*}
 1+\nicefrac{1}{3}-\nicefrac{1}{2}+\nicefrac{1}{5}+\nicefrac{1}{7}+\nicefrac{1}{9}-\nicefrac{1}{4}+\nicefrac{1}{11}+\nicefrac{1}{13}-\nicefrac{1}{6}
 +\nicefrac{1}{15}+\nicefrac{1}{17}+\nicefrac{1}{19} - \nicefrac{1}{8} + \cdots .
 \end{equation*}
-At this point we are no more than $\nicefrac{1}{8}$ from the limit.
-See \figureref{fig:serrearrange}.
+Nesse ponto, estamos a uma distância de no máximo $\nicefrac{1}{8}$ do limite.
+Veja a \figureref{fig:serrearrange}.
 \begin{myfigureht}
 \myincludegraphics{ser-rearrange}{%
-A diagram of a sequence given as dots.  A horizontal dashed line is shown.
-The sequence starts below the dashed line, then is above it in the next
-step.  Then it goes below the dashed line again, then it takes a few steps
-before it is above the dashed line, and the next step is again below the
-dashed line.  And so on and so forth.  The steps get shorter and shorter.}
-\caption{The first 14 partial sums of the rearrangement converging
-to $1.2$.\label{fig:serrearrange}}
+Um diagrama mostra uma sequência representada por pontos e uma linha horizontal tracejada.
+A sequência começa abaixo da linha e, no passo seguinte, fica acima dela.
+Depois volta para baixo da linha, leva alguns passos para ficar acima dela
+e, no passo seguinte, fica novamente abaixo.
+E assim por diante, com passos cada vez menores.}
+\caption{As primeiras 14 somas parciais da reordenação que converge
+para $1.2$.\label{fig:serrearrange}}
 \end{myfigureht}
 \end{example}
 
-\subsection{Multiplication of series}
+\subsection{Multiplicação de séries}
 
-As we have
-already mentioned,
-multiplication of series is somewhat harder than addition.
-If at least one of the series converges
-absolutely, then we can use the following theorem.  For this result, it is
-convenient to start the series at 0, rather than at 1.
+Como já mencionamos,
+multiplicar séries é um pouco mais difícil do que somá-las.
+Se pelo menos uma das séries converge
+absolutamente, podemos usar o teorema a seguir. Para esse resultado, é
+conveniente iniciar as séries em 0, e não em 1.
 
-\begin{thm}[\myindex{Mertens' theorem}\footnote{Proved by
-the German mathematician
+\begin{thm}[\myindex{teorema de Mertens}\footnote{Demonstrado pelo matemático alemão
 \href{https://en.wikipedia.org/wiki/Franz_Mertens}{Franz Mertens}
 (1840--1927).}]
-Suppose $\sum_{n=0}^\infty a_n$ and $\sum_{n=0}^\infty b_n$ are two convergent series, converging
-to $A$ and $B$, respectively.  Suppose at least one of the series
-converges absolutely.  Define
+Suponha que $\sum_{n=0}^\infty a_n$ e $\sum_{n=0}^\infty b_n$ sejam duas séries convergentes, com limites
+respectivos $A$ e $B$. Suponha que pelo menos uma das séries
+converge absolutamente. Defina
 \begin{equation*}
 c_n \coloneqq a_0 b_n + a_1 b_{n-1} + \cdots + a_n b_0 = \sum_{i=0}^n a_i b_{n-i} .
 \end{equation*}
-Then the series $\sum_{n=0}^\infty c_n$
-converges to $AB$.
+Então a série $\sum_{n=0}^\infty c_n$
+converge para $AB$.
 \end{thm}
 
-The series $\sum_{n=0}^\infty c_n$ is called the \emph{\myindex{Cauchy product}} of
-$\sum_{n=0}^\infty a_n$ and $\sum_{n=0}^\infty b_n$.
+A série $\sum_{n=0}^\infty c_n$ é chamada de \emph{\myindex{produto de Cauchy}} de
+$\sum_{n=0}^\infty a_n$ e $\sum_{n=0}^\infty b_n$.
 
 \begin{proof}
-Suppose $\sum_{n=0}^\infty a_n$ converges absolutely, and let $\epsilon > 0$ be
-given.
-In this proof, instead of picking complicated estimates just to make
-the final estimate come out as less than $\epsilon$,
-let us simply obtain an estimate that depends on $\epsilon$
-and can be made arbitrarily small.
+Suponha que $\sum_{n=0}^\infty a_n$ converge absolutamente e seja dado
+$\epsilon > 0$.
+Nesta demonstração, em vez de escolher estimativas complicadas apenas para que
+a estimativa final seja menor que $\epsilon$,
+vamos obter uma estimativa que dependa de $\epsilon$
+e possa ser tornada arbitrariamente pequena.
 
-Write
+Escreva
 \begin{equation*}
 A_m \coloneqq \sum_{n=0}^m a_n , \qquad B_m \coloneqq \sum_{n=0}^m b_n .
 \end{equation*}
-We rearrange the $m$th partial sum of $\sum_{n=0}^\infty c_n$:
+Reescrevemos a $m$-ésima soma parcial de $\sum_{n=0}^\infty c_n$:
 \begin{equation*}
 \begin{split}
 \abs{\left(\sum_{n=0}^m c_n \right) - AB}
@@ -4326,23 +4311,21 @@ We rearrange the $m$th partial sum of $\sum_{n=0}^\infty c_n$:
 \sabs{B}\sabs{A_m - A}
 \end{split}
 \end{equation*}
-We can surely make the second term on the right-hand side small.
-The trick is to handle the first term.
-Pick $K$ such that for all $m \geq K$, we have 
-$\sabs{A_m - A} < \epsilon$ and
-also
+Certamente podemos tornar pequeno o segundo termo do lado direito.
+O ponto é controlar o primeiro termo.
+Escolha $K$ de modo que, para todo $m \geq K$, tenhamos
+$\sabs{A_m - A} < \epsilon$ e também
 $\sabs{B_m - B} < \epsilon$.
-As $\sum_{n=0}^\infty a_n$ converges absolutely,
-there is a $K$ large enough such that
-for all $m \geq K$,
+Como $\sum_{n=0}^\infty a_n$ converge absolutamente,
+existe um $K$ suficientemente grande tal que, para todo $m \geq K$,
 \begin{equation*}
 \sum_{n=K}^m \sabs{a_n} < \epsilon .
 \end{equation*}
-As $\sum_{n=0}^\infty b_n$ converges,
+Como $\sum_{n=0}^\infty b_n$ converge,
 $B_{\text{max}} \coloneqq \sup \bigl\{ \sabs{ B_n - B } : n = 0,1,2,\ldots
 \bigr\}$
-is finite.  Take $m \geq 2K$.
-In particular, $m-K+1 > K$.  So
+é finito. Seja $m \geq 2K$.
+Em particular, $m-K+1 > K$. Portanto,
 \begin{equation*}
 \begin{split}
 \sum_{n=0}^m
@@ -4380,7 +4363,7 @@ B_{\text{max}}
 \right) .
 \end{split}
 \end{equation*}
-Therefore, for $m \geq 2K$, we have
+Portanto, para $m \geq 2K$, temos
 \begin{equation*}
 \begin{split}
 \abs{\left(\sum_{n=0}^m c_n \right) - AB}
@@ -4415,22 +4398,20 @@ B_{\text{max}}
 \right) .
 \end{split}
 \end{equation*}
-The expression in the parentheses on the right-hand side
-is a fixed number.
-Hence,
-we can make the right-hand side arbitrarily small by picking a small enough
-$\epsilon> 0$.  So $\sum_{n=0}^\infty c_n$ converges to $AB$.
+A expressão entre parênteses no lado direito
+é um número fixo.
+Assim, podemos tornar o lado direito arbitrariamente pequeno escolhendo
+$\epsilon> 0$ suficientemente pequeno. Logo, $\sum_{n=0}^\infty c_n$ converge para $AB$.
 \end{proof}
 
 \begin{example}
-If both series are only conditionally convergent, the Cauchy product series
-need not even converge.
-Suppose we take $a_n = b_n = {(-1)}^n \frac{1}{\sqrt{n+1}}$.
-The series $\sum_{n=0}^\infty a_n = \sum_{n=0}^\infty b_n$
-converges
-by the alternating series test; however, it does not converge
-absolutely as can be seen from the $p$-test.  Let us look
-at the Cauchy product.
+Se ambas as séries forem apenas condicionalmente convergentes, a série produto de Cauchy
+pode nem sequer convergir.
+Considere $a_n = b_n = {(-1)}^n \frac{1}{\sqrt{n+1}}$.
+A série $\sum_{n=0}^\infty a_n = \sum_{n=0}^\infty b_n$
+converge pelo critério das séries alternadas; no entanto, não converge
+absolutamente, como se pode verificar pelo critério da série $p$. Vejamos
+o produto de Cauchy.
 \begin{equation*}
 %mbxlatex \begin{aligned}
 c_n
@@ -4451,7 +4432,7 @@ c_n
 \sum_{i=0}^n \frac{1}{\sqrt{(i+1)(n-i+1)}} .
 %mbxlatex \end{aligned}
 \end{equation*}
-Therefore,
+Portanto,
 \begin{equation*}
 \sabs{c_n} 
 =
@@ -4460,37 +4441,36 @@ Therefore,
 \sum_{i=0}^n \frac{1}{\sqrt{(n+1)(n+1)}} 
 = 1 .
 \end{equation*}
-The terms do not go to zero and hence $\sum_{n=0}^\infty c_n$ cannot converge.
+Os termos não tendem a zero e, portanto, $\sum_{n=0}^\infty c_n$ não pode convergir.
 \end{example}
 
-\subsection{Power series}
+\subsection{Séries de potências}
 
-Fix $x_0 \in \R$.
-A \emph{\myindex{power series}} about $x_0$
-is a series of the form
+Fixe $x_0 \in \R$.
+Uma \emph{\myindex{série de potências}} em torno de $x_0$
+é uma série da forma
 \begin{equation*}
 \sum_{n=0}^\infty a_n {(x-x_0)}^n .
 \end{equation*}
-A power series is really a function of $x$, and
-many important functions in analysis can be written
-as power series.  We use the convention that
-$0^0 = 1$ (that is, if $x=x_0$ and $n=0$).
+Uma série de potências é, na verdade, uma função de $x$, e
+muitas funções importantes em análise podem ser escritas
+como séries de potências. Adotamos a convenção
+$0^0 = 1$ (isto é, quando $x=x_0$ e $n=0$).
 
-A power series is said to be
-\emph{convergent}\index{convergent!power series} if
-there is at least one $x \neq x_0$ that makes the series converge.
-If $x=x_0$, then the series always
-converges since all terms except the first are zero.
-If the series does not converge for any point $x \neq x_0$, we say that
-the series is \emph{divergent}\index{divergent!power series}.
+Dizemos que uma série de potências é
+\emph{convergente}\index{convergente!série de potências} se
+existe pelo menos um $x \neq x_0$ para o qual a série converge.
+Se $x=x_0$, a série sempre converge, pois todos os termos, exceto o primeiro, são zero.
+Se a série não converge em nenhum ponto $x \neq x_0$, dizemos que
+ela é \emph{divergente}\index{divergente!série de potências}.
 
 \begin{example} \label{ps:expex}
-The series
+A série
 \begin{equation*}
 \sum_{n=0}^\infty \frac{1}{n!} x^n
 \end{equation*}
-is absolutely convergent for all $x \in \R$ using the ratio test:
-For any $x \in \R$
+converge absolutamente para todo $x \in \R$, pelo critério da razão.
+Para qualquer $x \in \R$,
 \begin{equation*}
 \lim_{n \to \infty}
 \frac{\bigl(1/(n+1)!\bigr) \, x^{n+1}}{(1/n!) \, x^{n}}
@@ -4500,15 +4480,15 @@ For any $x \in \R$
 =
 0.
 \end{equation*}
-Recall from calculus that this series converges to $e^x$.
+Lembre-se, do cálculo, que essa série converge para $e^x$.
 \end{example}
 
 \begin{example} \label{ps:1kex}
-The series
+A série
 \begin{equation*}
 \sum_{n=1}^\infty \frac{1}{n} x^n
 \end{equation*}
-converges absolutely for all $x \in (-1,1)$ via the ratio test:
+converge absolutamente para todo $x \in (-1,1)$, pelo critério da razão:
 \begin{equation*}
 \lim_{n \to \infty}
 \abs{
@@ -4520,24 +4500,21 @@ converges absolutely for all $x \in (-1,1)$ via the ratio test:
 =
 \sabs{x} < 1 .
 \end{equation*}
-The series converges at $x=-1$,
-as
-$\sum_{n=1}^\infty \frac{{(-1)}^n}{n}$ converges
-by the alternating series
-test.
-But the power series does not converge absolutely at $x=-1$, because
-$\sum_{n=1}^\infty \frac{1}{n}$ does not converge.
-The series
-diverges at $x=1$.
-When $\sabs{x} > 1$, then the series diverges via the ratio test.
+A série converge em $x=-1$, pois
+$\sum_{n=1}^\infty \frac{{(-1)}^n}{n}$ converge
+pelo critério das séries alternadas.
+Mas a série de potências não converge absolutamente em $x=-1$, pois
+$\sum_{n=1}^\infty \frac{1}{n}$ diverge.
+A série diverge em $x=1$.
+Se $\sabs{x} > 1$, a série diverge pelo critério da razão.
 \end{example}
 
 \begin{example} \label{ps:divergeex}
-The series
+A série
 \begin{equation*}
 \sum_{n=1}^\infty n^n x^n
 \end{equation*}
-diverges for all $x \neq 0$.  Let us apply the root test
+diverge para todo $x \neq 0$. Vamos aplicar o critério da raiz
 \begin{equation*}
 \limsup_{n\to\infty}
 \,
@@ -4548,52 +4525,50 @@ diverges for all $x \neq 0$.  Let us apply the root test
 n \sabs{x}
 = \infty .
 \end{equation*}
-Therefore, the series diverges for all $x \neq 0$.
+Portanto, a série diverge para todo $x \neq 0$.
 \end{example}
 
-Convergence of power series in general works analogously to
-the three examples above.
+Em geral, a convergência das séries de potências funciona de modo análogo
+aos três exemplos acima.
 
 \begin{prop} \label{prop:powerserrealradius}
-Let $\sum_{n=0}^\infty a_n {(x-x_0)}^n$ be a power series.
-If the series is convergent, then either it converges absolutely at
-all $x \in \R$, or
-there exists a number $\rho$, such that
-the series converges absolutely on the interval
-$(x_0-\rho,x_0+\rho)$ and diverges when $x < x_0-\rho$ or $x > x_0+\rho$.
+Seja $\sum_{n=0}^\infty a_n {(x-x_0)}^n$ uma série de potências.
+Se a série for convergente, então ou converge absolutamente para
+todo $x \in \R$, ou
+existe um número $\rho$ tal que
+a série converge absolutamente no intervalo
+$(x_0-\rho,x_0+\rho)$ e diverge quando $x < x_0-\rho$ ou $x > x_0+\rho$.
 \end{prop}
 
-The number $\rho$ is called the \emph{\myindex{radius of convergence}} of the
-power series.  We write $\rho = \infty$ if the series converges for
-all $x$, and we write $\rho = 0$ if the series is divergent.
-At the endpoints, that is, if $x = x_0+\rho$ or $x = x_0-\rho$,
-the proposition says nothing,
-and the series might or might not converge.
-See \figureref{ps:convfig}.
-In \exampleref{ps:1kex},
-the radius of convergence is $\rho=1$,
-in \exampleref{ps:expex}, the radius of convergence is $\rho=\infty$,
-and in \exampleref{ps:divergeex}, the radius of convergence is $\rho=0$.
+O número $\rho$ é chamado de \emph{\myindex{raio de convergência}} da
+série de potências. Escrevemos $\rho = \infty$ se a série converge para
+todo $x$, e $\rho = 0$ se a série é divergente.
+Nos extremos, isto é, se $x = x_0+\rho$ ou $x = x_0-\rho$,
+a proposição não afirma nada,
+e a série pode ou não convergir.
+Veja a \figureref{ps:convfig}.
+No \exampleref{ps:1kex},
+o raio de convergência é $\rho=1$;
+no \exampleref{ps:expex}, o raio de convergência é $\rho=\infty$;
+e no \exampleref{ps:divergeex}, o raio de convergência é $\rho=0$.
 
 \begin{myfigureht}
 \myincludepdft{ps-conv}{%
-A diagra of the real line with three points marked, from left to
-right, x sub 0 minus rho, x sub 0, and x sub 0 plus rho.
-The part of the line to the left of x sub 0 minus rho and
-the part of the line to the right of x sub 0 plus rho is labeled
-as "diverges".  The interval between x sub 0 minus rho and
-x sub 0 plus rho is shaded and labeled as "converges absolutely". 
-The two points x sub 0 minus rho and x sub 0 plus rho are labeled
-with question marks.}
-\caption{Convergence of a power series.\label{ps:convfig}}
+Um diagrama da reta real com três pontos marcados, da esquerda para a
+direita: x₀ − ρ, x₀ e x₀ + ρ.
+A parte da reta à esquerda de x₀ − ρ e a parte à direita de x₀ + ρ
+estão identificadas como "diverge". O intervalo entre x₀ − ρ
+e x₀ + ρ está sombreado e identificado como "converge absolutamente".
+Os pontos x₀ − ρ e x₀ + ρ estão marcados com pontos de interrogação.}
+\caption{Convergência de uma série de potências.\label{ps:convfig}}
 \end{myfigureht}
 
 \begin{proof}
-Write
+Defina
 \begin{equation*}
 R \coloneqq \limsup_{n\to\infty} {\sabs{a_n}}^{1/n} .
 \end{equation*}
-We apply the root test,
+Aplicamos o critério da raiz:
 \begin{equation*}
 L = \limsup_{n\to\infty} {\babs{a_n {(x-x_0)}^n}}^{1/n} 
 =
@@ -4601,58 +4576,56 @@ L = \limsup_{n\to\infty} {\babs{a_n {(x-x_0)}^n}}^{1/n}
 =
 \sabs{x-x_0} R .
 \end{equation*}
-If $R = \infty$, then $L=\infty$ for every $x \neq x_0$, and
-the series diverges by the root test.
-On the other hand,
-if $R = 0$, then $L=0$ for every $x$,
-and the series converges absolutely for all $x$.
+Se $R = \infty$, então $L=\infty$ para todo $x \neq x_0$, e
+a série diverge pelo critério da raiz.
+Por outro lado,
+se $R = 0$, então $L=0$ para todo $x$,
+e a série converge absolutamente para todo $x$.
 
-Suppose $0 < R < \infty$.
-The series
-converges absolutely if
+Suponha que $0 < R < \infty$.
+A série converge absolutamente se
 $1 > L = R \sabs{x-x_0}$,
-that is,
+isto é,
 \begin{equation*}
 \sabs{x-x_0} < \nicefrac{1}{R} .
 \end{equation*}
-The series diverges when
+A série diverge quando
 $1 < L = R \sabs{x-x_0}$,
-or
+ou seja,
 \begin{equation*}
 \sabs{x-x_0} > \nicefrac{1}{R} .
 \end{equation*}
-Letting $\rho \coloneqq \nicefrac{1}{R}$ completes the proof.
+Tomando $\rho \coloneqq \nicefrac{1}{R}$, concluímos a demonstração.
 \end{proof}
 
-It may be useful to restate what we have learned in the proof
-as a separate proposition.
+Pode ser útil enunciar como uma proposição separada
+o que aprendemos na demonstração.
 
 \begin{prop}
-Let $\sum_{n=0}^\infty a_n {(x-x_0)}^n$ be a power series, and let
+Seja $\sum_{n=0}^\infty a_n {(x-x_0)}^n$ uma série de potências, e seja
 \begin{equation*}
 R \coloneqq \limsup_{n\to\infty} {\sabs{a_n}}^{1/n} .
 \end{equation*}
-If $R = \infty$, the power series is divergent.  If
-$R=0$, then the power series converges everywhere.   Otherwise,
-the radius of convergence $\rho = \nicefrac{1}{R}$.
+Se $R = \infty$, a série de potências é divergente. Se
+$R=0$, então ela converge em toda parte. Caso contrário,
+o raio de convergência é $\rho = \nicefrac{1}{R}$.
 \end{prop}
 
-Often, the radius of convergence is written as $\rho = \nicefrac{1}{R}$ in all
-three cases, with
-the understanding of what $\rho$ should be if $R = 0$ or $R =
+Muitas vezes, escreve-se o raio de convergência como $\rho = \nicefrac{1}{R}$ nos
+três casos, entendendo-se qual deve ser o valor de $\rho$ quando $R = 0$ ou $R =
 \infty$.
 
 \pagebreak[2]
-Convergent power series can be added and multiplied together, and multiplied
-by constants.
-The proposition has a straightforward proof using what we know about series
-in general, and power series in particular.  We leave the proof to the reader.
+Séries de potências convergentes podem ser somadas e multiplicadas entre si,
+além de multiplicadas por constantes.
+A proposição tem uma demonstração direta, baseada no que sabemos sobre séries
+em geral e séries de potências em particular. Deixamos a demonstração a cargo do leitor.
 
 \begin{prop}
-Let $\sum_{n=0}^\infty a_n {(x-x_0)}^n$ and
-$\sum_{n=0}^\infty b_n {(x-x_0)}^n$ be two convergent power series
-with radius of convergence at least $\rho > 0$ and $\alpha \in \R$.  Then
-for all $x$ such that $\sabs{x-x_0} < \rho$, we have 
+Sejam $\sum_{n=0}^\infty a_n {(x-x_0)}^n$ e
+$\sum_{n=0}^\infty b_n {(x-x_0)}^n$ duas séries de potências convergentes
+com raio de convergência pelo menos $\rho > 0$, e seja $\alpha \in \R$. Então,
+para todo $x$ tal que $\sabs{x-x_0} < \rho$, temos 
 \begin{equation*}
 \left(\sum_{n=0}^\infty a_n {(x-x_0)}^n\right)
 +
@@ -4666,7 +4639,7 @@ for all $x$ such that $\sabs{x-x_0} < \rho$, we have
 =
 \sum_{n=0}^\infty \alpha a_n {(x-x_0)}^n ,
 \end{equation*}
-and
+e
 \begin{equation*}
 \left(\sum_{n=0}^\infty a_n {(x-x_0)}^n\right)
 \,
@@ -4674,59 +4647,59 @@ and
 =
 \sum_{n=0}^\infty c_n {(x-x_0)}^n ,
 \end{equation*}
-where
+em que
 $c_n = a_0b_n + a_1 b_{n-1} + \cdots + a_n b_0$.
 \end{prop}
 
-For all $x$ with $\sabs{x-x_0} < \rho$, we have two convergent series, so
-their term-by-term addition and multiplication by constants
-follows by the previous section.
-As for such $x$ the series converges absolutely,
-we can apply Mertens' theorem to find the product of two series.
-Consequently, after performing the algebraic operations, the
-radius of convergence of the resulting series is at least $\rho$.
-The radius of convergence of the result could be strictly larger than
-the radius of convergence of either of the series we started with.
-See the exercises.
+Para todo $x$ com $\sabs{x-x_0} < \rho$, temos duas séries convergentes; portanto,
+a soma termo a termo e a multiplicação por constantes
+seguem da seção anterior.
+Como, para esses valores de $x$, as séries convergem absolutamente,
+podemos aplicar o teorema de Mertens para calcular o produto das duas séries.
+Consequentemente, depois de efetuar as operações algébricas, o
+raio de convergência da série resultante é pelo menos $\rho$.
+O raio de convergência do resultado pode ser estritamente maior do que
+o raio de convergência de qualquer uma das séries iniciais.
+Veja os exercícios.
 
-Let us look at some examples of power series.
-Polynomials are simply finite power series:  A polynomial
-is a power series where
-the $a_n$ are zero for all $n$ large enough.  We expand
-a polynomial as a power series about any point $x_0$ by writing
-the polynomial as a polynomial in $(x-x_0)$.  For example,
-$2x^2-3x+4$ as a power series around $x_0 = 1$ is
+Vejamos alguns exemplos de séries de potências.
+Polinômios são simplesmente séries de potências finitas: um polinômio
+é uma série de potências em que
+os $a_n$ são zero para todo $n$ suficientemente grande. Desenvolvemos
+um polinômio como uma série de potências em torno de qualquer ponto $x_0$,
+escrevendo-o como um polinômio em $(x-x_0)$. Por exemplo,
+$2x^2-3x+4$, escrito como série de potências em torno de $x_0 = 1$, é
 \begin{equation*}
 2x^2-3x+4 = 3 + (x-1) + 2{(x-1)}^2 .
 \end{equation*}
 
-We can also expand
-\emph{\myindex{rational functions}} (that is, ratios of polynomials)
-as power series, although we will not completely prove this fact here.
-Notice that a series for a rational function only defines the function
-on an interval even if the function is defined elsewhere.  For example, for
-the \emph{\myindex{geometric series}}, we have that for
+Também podemos desenvolver
+\emph{\myindex{funções racionais}} (isto é, quocientes de polinômios)
+em séries de potências, embora não demonstremos esse fato por completo aqui.
+Observe que uma série para uma função racional define essa função apenas
+em um intervalo, mesmo que ela esteja definida em outros pontos. Por exemplo, para
+a \emph{\myindex{série geométrica}}, temos, quando
 $x \in (-1,1)$,
 \begin{equation*}
 \frac{1}{1-x} =
 \sum_{n=0}^\infty x^n .
 \end{equation*}
-The series diverges when $\sabs{x} > 1$, even though $\frac{1}{1-x}$ is
-defined for all $x \neq 1$.
+A série diverge quando $\sabs{x} > 1$, embora $\frac{1}{1-x}$ esteja
+definida para todo $x \neq 1$.
 
-We can use the geometric series together with rules for addition and
-multiplication of power series to expand rational functions as power
-series around $x_0$,
-as long as the denominator is not zero at $x_0$.  We state without
-proof that this is always possible, and we give an example of such
-a computation using the geometric series.
+Podemos usar a série geométrica, junto com as regras de adição e
+multiplicação de séries de potências, para desenvolver funções racionais como séries de
+potências em torno de $x_0$,
+desde que o denominador não seja zero em $x_0$. Enunciamos sem
+demonstração que isso sempre é possível e apresentamos um exemplo desse
+cálculo usando a série geométrica.
 
 \begin{example}
-Let us expand $\frac{x}{1+2x+x^2}$ as a power series around the origin ($x_0 = 0$) and
-find the radius of convergence.
+Vamos desenvolver $\frac{x}{1+2x+x^2}$ em série de potências em torno da origem ($x_0 = 0$) e
+encontrar o raio de convergência.
 
-Write $1+2x+x^2 = {(1+x)}^2 = {\bigl(1-(-x)\bigr)}^2$, and suppose
-$\sabs{x} < 1$.  Compute
+Escreva $1+2x+x^2 = {(1+x)}^2 = {\bigl(1-(-x)\bigr)}^2$ e suponha
+que $\sabs{x} < 1$. Calculemos
 \begin{equation*}
 \begin{split}
 \frac{x}{1+2x+x^2}
@@ -4752,20 +4725,20 @@ x \,
 \sum_{n=0}^\infty c_n x^{n+1} .
 \end{split}
 \end{equation*}
-Using the formula for the product of series,
-we obtain $c_0 = 1$, $c_1 = -1 -1 = -2$, $c_2 = 1+1+1 = 3$, etc.
-Hence, for $\sabs{x} < 1$, 
+Usando a fórmula do produto de séries,
+obtemos $c_0 = 1$, $c_1 = -1 -1 = -2$, $c_2 = 1+1+1 = 3$ etc.
+Portanto, para $\sabs{x} < 1$, 
 \begin{equation*}
 \frac{x}{1+2x+x^2}
 =
 \sum_{n=1}^\infty {(-1)}^{n+1} n x^n .
 \end{equation*}
-The radius of convergence is at least 1.  We leave it to the reader to
-verify that the radius of convergence is exactly equal to 1.
+O raio de convergência é pelo menos 1. Deixamos ao leitor a tarefa de
+verificar que o raio de convergência é exatamente 1.
 \end{example}
 
-You can use the method of partial fractions you know from calculus.
-For example, to find the power series for $\frac{x^3+x}{x^2-1}$ at 0, write
+Você pode usar o método de frações parciais estudado no cálculo.
+Por exemplo, para encontrar a série de potências de $\frac{x^3+x}{x^2-1}$ em 0, escreva
 \begin{equation*}
 \frac{x^3+x}{x^2-1}
 =
@@ -4774,10 +4747,10 @@ x + \frac{1}{1+x} - \frac{1}{1-x}
 x + \sum_{n=0}^\infty {(-1)}^n x^n - \sum_{n=0}^\infty x^n .
 \end{equation*}
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
 \begin{exercise}
-Decide the convergence or divergence of the following series.
+Determine se as séries a seguir convergem ou divergem.
 
 \medskip
 
@@ -4796,18 +4769,18 @@ $\displaystyle \sum_{n=1}^\infty \frac{n^n}{{(n+1)}^{2n}}$
 \end{exercise}
 
 \begin{exercise}
-Suppose both $\sum_{n=0}^\infty a_n$ and $\sum_{n=0}^\infty b_n$ 
-converge absolutely.
-Show that the product series, $\sum_{n=0}^\infty c_n$ where
-$c_n = a_0 b_n + a_1 b_{n-1} + \cdots + a_n b_0$, also converges absolutely.
+Suponha que tanto $\sum_{n=0}^\infty a_n$ quanto $\sum_{n=0}^\infty b_n$
+convirjam absolutamente.
+Mostre que a série produto, $\sum_{n=0}^\infty c_n$, em que
+$c_n = a_0 b_n + a_1 b_{n-1} + \cdots + a_n b_0$, também converge absolutamente.
 \end{exercise}
 
-\begin{exercise}[Challenging] \label{exercise:seriesconvergestoanything}
-Let $\sum_{n=1}^\infty a_n$ be conditionally convergent.
-Show that given an arbitrary $x \in \R$
-there exists a rearrangement of $\sum_{n=1}^\infty a_n$
-such that the rearranged series converges to $x$.
-Hint: See \exampleref{example:harmonsumanything}.
+\begin{exercise}[Desafiador] \label{exercise:seriesconvergestoanything}
+Seja $\sum_{n=1}^\infty a_n$ uma série condicionalmente convergente.
+Mostre que, dado um $x \in \R$ arbitrário,
+existe uma reordenação de $\sum_{n=1}^\infty a_n$
+tal que a série reordenada converge para $x$.
+Dica: veja o \exampleref{example:harmonsumanything}.
 \end{exercise}
 
 \begin{exercise}
@@ -4815,24 +4788,24 @@ Hint: See \exampleref{example:harmonsumanything}.
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Show that the alternating harmonic series $\sum_{n=1}^\infty \frac{{(-1)}^{n+1}}{n}$
-has a rearrangement
-such that for every interval $(x,y)$, there exists a partial sum $s_n$
-of the rearranged series such that $s_n \in (x,y)$.
+Mostre que a série harmônica alternada $\sum_{n=1}^\infty \frac{{(-1)}^{n+1}}{n}$
+tem uma reordenação
+tal que, para todo intervalo $(x,y)$, existe uma soma parcial $s_n$
+da série reordenada com $s_n \in (x,y)$.
 \item
-Show that the rearrangement you found does not converge.
-See \exampleref{example:harmonsumanything}.
+Mostre que a reordenação que você encontrou não converge.
+Veja o \exampleref{example:harmonsumanything}.
 \item
-Show that for every $x \in \R$, there exists a subsequence of
-partial sums $\{ s_{n_k} \}_{k=1}^\infty$ of your rearrangement such that 
+Mostre que, para todo $x \in \R$, existe uma subsequência das
+somas parciais $\{ s_{n_k} \}_{k=1}^\infty$ da sua reordenação tal que
 $\lim\limits_{k\to\infty} s_{n_k} = x$.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-For the following power series, find if they are convergent or not, and
-if so find their radius of convergence.
-In part f), do note the factorial in the exponent.
+Para cada uma das séries de potências a seguir, determine se ela converge
+e, em caso afirmativo, encontre seu raio de convergência.
+No item f), observe o fatorial no expoente.
 
 \medskip
 
@@ -4856,42 +4829,42 @@ f) $\displaystyle \sum_{n=0}^\infty n! \, x^{n!}$
 \end{exercise}
 
 \begin{exercise}
-Suppose $\sum_{n=0}^\infty a_n x^n$ converges for $x=1$.
+Suponha que $\sum_{n=0}^\infty a_n x^n$ converge para $x=1$.
 \begin{enumerate}[a)]
 \item
-What can you say about the radius of convergence?
+O que se pode afirmar sobre o raio de convergência?
 \item
-If you further know that at $x=1$ the convergence is not absolute,
-what can you say?
+Se, além disso, você sabe que em $x=1$ a convergência não é absoluta,
+o que pode concluir?
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Expand
-$\dfrac{x}{4-x^2}$ as a power series around $x_0 = 0$,
-and compute its radius of convergence.
+Desenvolva
+$\dfrac{x}{4-x^2}$ em série de potências em torno de $x_0 = 0$
+e calcule seu raio de convergência.
 \end{exercise}
 
 \begin{exercise}
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Find an example where the radii of convergence of $\sum_{n=0}^\infty a_n x^n$ and
-$\sum_{n=0}^\infty b_n x^n$ are both 1, but the radius of convergence of
-the sum of the two series is infinite.
+Encontre um exemplo em que os raios de convergência de $\sum_{n=0}^\infty a_n x^n$ e
+$\sum_{n=0}^\infty b_n x^n$ sejam ambos iguais a 1, mas o raio de convergência
+da soma das duas séries seja infinito.
 \item
-(Trickier)
-Find an example where the radii of convergence of $\sum_{n=0}^\infty a_n x^n$ and
-$\sum_{n=0}^\infty b_n x^n$ are both 1, but the radius of convergence of
-the product of the two series is infinite.
+(Mais difícil)
+Encontre um exemplo em que os raios de convergência de $\sum_{n=0}^\infty a_n x^n$ e
+$\sum_{n=0}^\infty b_n x^n$ sejam ambos iguais a 1, mas o raio de convergência
+do produto das duas séries seja infinito.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Figure out how to compute the radius of convergence using the ratio test.
-That is, suppose $\sum_{n=0}^\infty a_n x^n$ is a power series and
-$R \coloneqq \lim_{n\to\infty} \frac{\sabs{a_{n+1}}}{\sabs{a_n}}$ exists or is $\infty$.
-Find the radius of convergence and prove your claim.
+Descubra como calcular o raio de convergência usando o critério da razão.
+Isto é, suponha que $\sum_{n=0}^\infty a_n x^n$ seja uma série de potências e que
+$R \coloneqq \lim_{n\to\infty} \frac{\sabs{a_{n+1}}}{\sabs{a_n}}$ exista ou seja $\infty$.
+Encontre o raio de convergência e prove sua afirmação.
 \end{exercise}
 
 \begin{samepage}
@@ -4899,82 +4872,82 @@ Find the radius of convergence and prove your claim.
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Prove that $\lim_{n\to\infty} n^{1/n} = 1$ using the following procedure:  Write $n^{1/n} = 1+b_n$ and
-note $b_n > 0$ when $n > 1$.  Then show that ${(1+b_n)}^n \geq 
-\frac{n(n-1)}{2}b_n^2$ and use this to show that $\lim\limits_{n\to\infty} b_n = 0$.
+Prove que $\lim_{n\to\infty} n^{1/n} = 1$ usando o seguinte procedimento: escreva $n^{1/n} = 1+b_n$ e
+observe que $b_n > 0$ quando $n > 1$. Em seguida, mostre que ${(1+b_n)}^n \geq
+\frac{n(n-1)}{2}b_n^2$ e use isso para provar que $\lim\limits_{n\to\infty} b_n = 0$.
 \item
-Use the result of part a) to show that
-if $\sum_{n=0}^\infty a_n x^n$ is a convergent power series with radius of convergence $R$,
-then $\sum_{n=0}^\infty n a_n x^n$ is also convergent with the same radius of convergence.
+Use o resultado do item a) para mostrar que,
+se $\sum_{n=0}^\infty a_n x^n$ é uma série de potências convergente com raio de convergência $R$,
+então $\sum_{n=0}^\infty n a_n x^n$ também converge com o mesmo raio de convergência.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
 
 \begin{exnote}
-There are different notions of summability (convergence)
-of a series
-than just the one we have seen.
-A common one is \emph{\myindex{Ces\`aro summability}}%
-\footnote{Named for the Italian mathematician
+Há diferentes noções de somabilidade (convergência)
+de uma série,
+além daquela que vimos.
+Uma delas, bastante comum, é a \emph{\myindex{somabilidade de Ces\`aro}}%
+\footnote{Nomeada em homenagem ao matemático italiano
 \href{https://en.wikipedia.org/wiki/Ernesto_Ces\%C3\%A0ro}{Ernesto Ces\`aro}
-(1859--1906).}.  Let $\sum_{n=1}^\infty a_n$ be a series
-and let $s_n$ be the $n$th partial sum.  The series is said to
-be Ces\`aro summable to $a$ if
+(1859--1906).}. Seja $\sum_{n=1}^\infty a_n$ uma série
+e seja $s_n$ sua $n$-ésima soma parcial. Dizemos que a série é
+somável no sentido de Ces\`aro para $a$ se
 \begin{equation*}
 a = \lim_{n\to \infty} \frac{s_1 + s_2 + \cdots + s_n}{n} .
 \end{equation*}
 \end{exnote}
 
-\begin{exercise}[Challenging]
+\begin{exercise}[Desafiador]
 \pagebreak[2]
 \leavevmode
 \begin{enumerate}[a)]
 \item
-If $\sum_{n=1}^\infty a_n$ is convergent to $a$ (in the usual sense), show that
-$\sum_{n=1}^\infty a_n$ is Ces\`aro summable (see above) to $a$.
+Se $\sum_{n=1}^\infty a_n$ converge para $a$ (no sentido usual), mostre que
+$\sum_{n=1}^\infty a_n$ é somável no sentido de Ces\`aro (veja acima) para $a$.
 \item
-Show that in the sense of Ces\`aro $\sum_{n=1}^\infty {(-1)}^n$ is summable to
+Mostre que, no sentido de Ces\`aro, $\sum_{n=1}^\infty {(-1)}^n$ é somável para
 $\nicefrac{-1}{2}$.
 \item
-Let $a_n \coloneqq k$ when $n = k^3$ for some $k \in \N$,
-$a_n \coloneqq -k$ when $n = k^3+1$ for some $k \in \N$,
-otherwise
-let $a_n \coloneqq 0$.  Show that $\sum_{n=1}^\infty a_n$ diverges in the usual sense
-(in fact, both the sequence of terms and the partial sums are unbounded), but it is
-Ces\`aro summable to 0 (seems a little paradoxical at first sight).
+Seja $a_n \coloneqq k$ quando $n = k^3$ para algum $k \in \N$,
+$a_n \coloneqq -k$ quando $n = k^3+1$ para algum $k \in \N$;
+caso contrário,
+seja $a_n \coloneqq 0$. Mostre que $\sum_{n=1}^\infty a_n$ diverge no sentido usual
+(de fato, tanto a sequência de termos quanto as somas parciais são ilimitadas), mas é
+somável no sentido de Ces\`aro para 0 (o que pode parecer um pouco paradoxal à primeira vista).
 \end{enumerate}
 \end{exercise}
 
-\begin{exercise}[Challenging]
-Show that the monotonicity in the alternating series test
-is necessary.  That is, find a sequence of positive real numbers
-$\{ x_n \}_{n=1}^\infty$ with $\lim_{n\to\infty} x_n = 0$ but such that
-$\sum_{n=1}^\infty {(-1)}^n x_n$ diverges.
+\begin{exercise}[Desafiador]
+Mostre que a monotonicidade no critério das séries alternadas
+é necessária. Isto é, encontre uma sequência de números reais positivos
+$\{ x_n \}_{n=1}^\infty$ com $\lim_{n\to\infty} x_n = 0$, mas tal que
+$\sum_{n=1}^\infty {(-1)}^n x_n$ diverge.
 \end{exercise}
 
 \begin{exercise}
-Find a series
-$\sum_{n=1}^\infty x_n$ that converges,
-but $\sum_{n=1}^\infty x_n^2$ diverges.
-Hint: Compare \exerciseref{exercise:squareseriesconv}.
+Encontre uma série
+$\sum_{n=1}^\infty x_n$ que converge,
+mas $\sum_{n=1}^\infty x_n^2$ diverge.
+Dica: compare com o \exerciseref{exercise:squareseriesconv}.
 \end{exercise}
 
 \begin{exercise}
-Suppose $\{ c_n \}_{n=1}^\infty$ is a sequence.  Prove that for every $r \in (0,1)$,
-there exists a strictly increasing sequence $\{ n_k \}_{k=1}^\infty$ of natural numbers
-($n_{k+1} > n_k$) such that
+Suponha que $\{ c_n \}_{n=1}^\infty$ seja uma sequência. Prove que, para todo $r \in (0,1)$,
+existe uma sequência estritamente crescente $\{ n_k \}_{k=1}^\infty$ de números naturais
+($n_{k+1} > n_k$) tal que
 \begin{equation*}
 \sum_{k=1}^\infty c_k x^{n_k}
 \end{equation*}
-converges absolutely for all $x \in [-r,r]$.
+converge absolutamente para todo $x \in [-r,r]$.
 \end{exercise}
 
-\begin{exercise}[Tonelli/Fubini for sums, challenging]
+\begin{exercise}[Tonelli/Fubini para somas, desafiador]
 \label{exercise:tonellifubiniforsums}%
-\index{Fubini for sums}\index{Tonelli for sums}%
-Let $\{ x_{k,\ell} \}_{k=1,\ell=1}^\infty$ denote a doubly
-indexed sequence and let $\sigma \colon \N \to \N^2$ be a bijection.
-Consider the series
+\index{Fubini para somas}\index{Tonelli para somas}%
+Seja $\{ x_{k,\ell} \}_{k=1,\ell=1}^\infty$ uma sequência com dois
+índices e seja $\sigma \colon \N \to \N^2$ uma bijeção.
+Considere as séries
 \begin{equation*}
 \text{i)}~\sum_{i=1}^\infty x_{\sigma(i)},
 \qquad
@@ -4982,18 +4955,18 @@ Consider the series
 \qquad
 \text{iii)}~\sum_{\ell=1}^\infty \left( \sum_{k=1}^\infty x_{k,\ell} \right) .
 \end{equation*}
-The expressions ii) and iii) are series of series and so we say they converge
-if the inner series always converges and the outer series then also
-converges.
+As expressões ii) e iii) são séries de séries; dizemos que convergem
+se a série interna sempre converge e, em seguida, a série externa também
+converge.
 \begin{enumerate}[a)]
 \item
-(Tonelli) Suppose $x_{k,\ell} \geq 0$ for all $k,\ell$.
-Show that the three series i), ii), iii) either all diverge (to $\infty$)
-or they all converge to the same number.
-In the case of divergence, some of the \myquote{inner} series might be infinity
-in which case we consider the entire sum to diverge.
+(Tonelli) Suponha que $x_{k,\ell} \geq 0$ para todos $k,\ell$.
+Mostre que as três séries i), ii), iii) ou divergem (para $\infty$)
+ou convergem todas para o mesmo número.
+No caso de divergência, algumas das séries \myquote{internas} podem ser iguais a infinito;
+nesse caso, consideramos que a soma inteira diverge.
 \item
-(Fubini) Suppose i) converges absolutely.  Show that ii) and iii)
-converge and they both converge to the same number as i).
+(Fubini) Suponha que i) converge absolutamente. Mostre que ii) e iii)
+convergem e que ambas convergem para o mesmo número que i).
 \end{enumerate}
 \end{exercise}

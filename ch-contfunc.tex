@@ -2861,159 +2861,155 @@ f(1) = f(-1) .
 
 \sectionnewpage
 
-\section{Monotone functions and continuity}
+\section{Funções monótonas e continuidade}
 \label{sec:monotonefunc}
 
 %mbxINTROSUBSECTION
 
-\sectionnotes{1 lecture (optional, can safely be omitted unless
-\sectionref{sec:ift} is also covered, requires \sectionref{sec:limitatinf})}
+\sectionnotes{1 aula (opcional; pode ser omitida com segurança, a menos que
+\sectionref{sec:ift} também seja abordada; requer \sectionref{sec:limitatinf})}
 
 \begin{defn}
-Let $S \subset \R$.
-We say $f \colon S \to \R$ is \emph{\myindex{increasing}}
-(resp.\  \emph{\myindex{strictly increasing}}) if $x,y \in S$ with
-$x < y$ implies $f(x) \leq f(y)$ (resp.\ $f(x) < f(y)$).
-We define
-\emph{\myindex{decreasing}} and
-\emph{\myindex{strictly decreasing}} in the same way by switching the
-inequalities for $f$.
+Seja $S \subset \R$.
+Dizemos que $f \colon S \to \R$ é \emph{\myindex{crescente}}
+(respectivamente, \emph{\myindex{estritamente crescente}}) se $x,y \in S$
+e $x < y$ implicar $f(x) \leq f(y)$ (respectivamente, $f(x) < f(y)$).
+Definimos
+\emph{\myindex{decrescente}} e
+\emph{\myindex{estritamente decrescente}} da mesma maneira, invertendo as
+desigualdades para $f$.
 
-If a function is either increasing or decreasing, we say it is
-\emph{monotone}\index{monotone function}.  If it is
-strictly increasing or strictly decreasing, we say it is
-\emph{strictly monotone}\index{strictly monotone function}.
+Se uma função é crescente ou decrescente, dizemos que ela é
+\emph{monótona}\index{função monótona}. Se é
+estritamente crescente ou estritamente decrescente, dizemos que é
+\emph{estritamente monótona}\index{função!estritamente monótona}.
 \end{defn}
 
-Sometimes \emph{\myindex{nondecreasing}}
-(resp.\ \emph{\myindex{nonincreasing}}) is used
-for increasing (resp.\ decreasing) function to emphasize it is not
-strictly increasing (resp.\ strictly decreasing).
+Às vezes, usam-se os termos \emph{\myindex{não decrescente}}
+(respectivamente, \emph{\myindex{não crescente}})
+para uma função crescente (respectivamente, decrescente), a fim de enfatizar
+que ela não é estritamente crescente (respectivamente, estritamente decrescente).
 
-If $f$ is increasing, then $-f$ is decreasing and vice versa.  Therefore,
-many results about monotone functions can just be proved for, say, increasing
-functions, and the results follow easily for decreasing functions.
+Se $f$ é crescente, então $-f$ é decrescente, e vice-versa. Portanto,
+muitos resultados sobre funções monótonas podem ser demonstrados apenas para,
+digamos, funções crescentes; os resultados para funções decrescentes seguem facilmente.
 
-\subsection{Continuity of monotone functions}
+\subsection{Continuidade de funções monótonas}
 
-One-sided limits for monotone functions are computed
-by computing infima and suprema.
+Calculamos os limites laterais de funções monótonas por meio de ínfimos e supremos.
 
 \begin{prop} \label{prop:monotlimits}
-Let $S \subset \R$, $c \in \R$,
-$f \colon S \to \R$ be increasing,
-and
-$g \colon S \to \R$ be decreasing.
-If $c$ is a cluster point of $S \cap (-\infty,c)$, then
+Sejam $S \subset \R$, $c \in \R$,
+$f \colon S \to \R$ uma função crescente
+e
+$g \colon S \to \R$ uma função decrescente.
+Se $c$ é um ponto de acumulação de $S \cap (-\infty,c)$, então
 \begin{equation*}
 \lim_{x \to c^-} f(x) = \sup \{ f(x) : x < c, x \in S \}
 %mbxSTARTIGNORE
-\qquad \text{and} \qquad
+\qquad \text{e} \qquad
 %mbxENDIGNORE
-%mbxlatex \quad \text{and} \quad
+%mbxlatex \quad \text{e} \quad
 \lim_{x \to c^-} g(x) = \inf \{ g(x) : x < c, x \in S \} .
 \end{equation*}
-If $c$ is a cluster point of $S \cap (c,\infty)$, then
+Se $c$ é um ponto de acumulação de $S \cap (c,\infty)$, então
 \begin{equation*}
 \lim_{x \to c^+} f(x) = \inf \{ f(x) : x > c, x \in S \}
 %mbxSTARTIGNORE
-\qquad \text{and} \qquad
+\qquad \text{e} \qquad
 %mbxENDIGNORE
-%mbxlatex \quad \text{and} \quad
+%mbxlatex \quad \text{e} \quad
 \lim_{x \to c^+} g(x) = \sup \{ g(x) : x > c, x \in S \} .
 \end{equation*}
-If $\infty$ is a cluster point of $S$, then
+Se $\infty$ é um ponto de acumulação de $S$, então
 \begin{equation*}
 \lim_{x \to \infty} f(x) = \sup \{ f(x) : x \in S \}
 %mbxSTARTIGNORE
-\qquad \text{and} \qquad
+\qquad \text{e} \qquad
 %mbxENDIGNORE
-%mbxlatex \quad \text{and} \quad
+%mbxlatex \quad \text{e} \quad
 \lim_{x \to \infty} g(x) = \inf \{ g(x) : x \in S \} .
 \end{equation*}
-If $-\infty$ is a cluster point of $S$, then
+Se $-\infty$ é um ponto de acumulação de $S$, então
 \begin{equation*}
 \lim_{x \to -\infty} f(x) = \inf \{ f(x) : x \in S \}
 %mbxSTARTIGNORE
-\qquad \text{and} \qquad
+\qquad \text{e} \qquad
 %mbxENDIGNORE
-%mbxlatex \quad \text{and} \quad
+%mbxlatex \quad \text{e} \quad
 \lim_{x \to -\infty} g(x) = \sup \{ g(x) : x \in S \} .
 \end{equation*}
 \end{prop}
 
-Namely, all the one-sided limits exist whenever they make
-sense.  Therefore, for monotone functions, when we say
-the left-hand limit $x \to c^-$
-exists, we mean that $c$ is a cluster point of $S \cap (-\infty,c)$,
-and same for the right-hand limit.
+Em particular, todos os limites laterais existem sempre que fizerem
+sentido. Portanto, para funções monótonas, quando dizemos que
+existe o limite pela esquerda $x \to c^-$,
+queremos dizer que $c$ é um ponto de acumulação de $S \cap (-\infty,c)$;
+o mesmo vale para o limite pela direita.
 
 \begin{proof}
-Let us assume $f$ is increasing, and we will show the first
-equality.  The rest of the proof is very similar and is left as an
-exercise.
+Suponhamos que $f$ seja crescente e provemos a primeira
+igualdade. A demonstração do restante é muito semelhante e fica como exercício.
 
-Let $a \coloneqq \sup \{ f(x) : x < c, x \in S \}$.  If $a = \infty$,
-then given an $M \in \R$, there exists an $x_M \in S$, $x_M < c$, such that $f(x_M) > M$. 
-As $f$ is increasing, $f(x) \geq f(x_M) >  M$ for all $x \in S$ with $x > x_M$.
-Take $\delta \coloneqq c-x_M > 0$ to satisfy the definition of the limit
-being infinity.
+Seja $a \coloneqq \sup \{ f(x) : x < c, x \in S \}$. Se $a = \infty$,
+então, dado $M \in \R$, existe $x_M \in S$, com $x_M < c$, tal que $f(x_M) > M$.
+Como $f$ é crescente, $f(x) \geq f(x_M) > M$ para todo $x \in S$ com $x > x_M$.
+Tome $\delta \coloneqq c-x_M > 0$ para satisfazer a definição de limite
+igual a infinito.
 
-Next suppose $a < \infty$.
-Let $\epsilon > 0$ be given.  Because $a$ is the supremum and
-$S \cap (-\infty,c)$ is nonempty, $a \in \R$ and
-there exists an
+Agora suponha que $a < \infty$.
+Seja $\epsilon > 0$ dado. Como $a$ é o supremo e
+$S \cap (-\infty,c)$ não é vazio, temos $a \in \R$ e
+existe
 $x_\epsilon \in S$,
-$x_\epsilon < c$,
-such that $f(x_\epsilon) > a-\epsilon$.  As $f$ is increasing,
-if $x \in S$ and $x_\epsilon < x < c$, we have
-$a-\epsilon < f(x_\epsilon) \leq f(x) \leq a$.  Let
-$\delta \coloneqq c-x_\epsilon$.  Then for $x \in S \cap (-\infty,c)$
-with $\sabs{x-c} < \delta$,
-we have $\babs{f(x)-a} < \epsilon$.
+com $x_\epsilon < c$,
+tal que $f(x_\epsilon) > a-\epsilon$. Como $f$ é crescente,
+se $x \in S$ e $x_\epsilon < x < c$, então
+$a-\epsilon < f(x_\epsilon) \leq f(x) \leq a$. Seja
+$\delta \coloneqq c-x_\epsilon$. Então, para $x \in S \cap (-\infty,c)$
+com $\sabs{x-c} < \delta$,
+temos $\babs{f(x)-a} < \epsilon$.
 \end{proof}
 
-Suppose $f \colon S \to \R$ is increasing, $c \in S$, and
-that both one-sided limits exist.
-Since $f(x) \leq f(c) \leq f(y)$
-whenever $x < c < y$, taking the limits we obtain
+Suponha que $f \colon S \to \R$ seja crescente, que $c \in S$ e
+que existam os dois limites laterais.
+Como $f(x) \leq f(c) \leq f(y)$
+sempre que $x < c < y$, passando aos limites obtemos
 \begin{equation*}
 \lim_{x \to c^-} f(x) \leq f(c) \leq \lim_{x \to c^+} f(x) .
 \end{equation*}
-Then $f$ is continuous at $c$ if and only if both limits are equal
-to each other (and hence equal to $f(c)$).  See also
+Então $f$ é contínua em $c$ se, e somente se, os dois limites são iguais
+entre si (e, portanto, iguais a $f(c)$). Veja também
 \propref{prop:onesidedlimits}.
-See \figureref{fig:figinccont} to get an idea of what a discontinuity
-looks like.
-
+Consulte a \figureref{fig:figinccont} para visualizar como é uma descontinuidade.
 
 \begin{cor} \label{cor:continterval}
-If $I \subset \R$ is an interval and $f \colon I \to \R$ is 
-monotone and not constant, then $f(I)$ is an interval if and only if $f$
-is continuous.
+Se $I \subset \R$ é um intervalo e $f \colon I \to \R$ é
+monótona e não constante, então $f(I)$ é um intervalo se, e somente se, $f$
+é contínua.
 \end{cor}
 
-Assuming $f$ is not constant is to avoid the technicality
-that $f(I)$ is a single point: $f(I)$ is a single
-point if and only if $f$ is constant.  A constant function is 
-continuous.
+A hipótese de que $f$ não seja constante evita a complicação técnica
+de que $f(I)$ seja um conjunto unitário: $f(I)$ é um conjunto unitário
+se, e somente se, $f$ é constante. Toda função constante é
+contínua.
 
 \begin{proof}
-Without loss of generality, suppose $f$ is increasing.
+Sem perda de generalidade, suponhamos que $f$ seja crescente.
 
-First suppose $f$ is continuous.  Take two points
-$f(x_1), f(x_2)$ in $f(I)$ and suppose
+Suponha primeiro que $f$ seja contínua. Tomemos dois pontos
+$f(x_1), f(x_2)$ de $f(I)$ e suponhamos que
 $f(x_1) < f(x_2)$.
-As $f$ is increasing, $x_1 < x_2$.  By the
-\hyperref[IVT:thm]{intermediate value theorem},
-given $y$ with $f(x_1) < y < f(x_2)$, we find
-a $c \in (x_1,x_2) \subset I$ such that $f(c) = y$, so $y \in f(I)$. 
-Hence, $f(I)$ is an interval.
+Como $f$ é crescente, $x_1 < x_2$. Pelo
+\hyperref[IVT:thm]{teorema do valor intermediário},
+dado $y$ com $f(x_1) < y < f(x_2)$, encontramos
+$c \in (x_1,x_2) \subset I$ tal que $f(c) = y$, logo $y \in f(I)$.
+Portanto, $f(I)$ é um intervalo.
 
-Let us prove the reverse direction by contrapositive.
-Suppose $f$ is not continuous at $c \in I$,
-and that $c$ is not an endpoint of $I$.
-Let
+Provemos a recíproca por contraposição.
+Suponha que $f$ não seja contínua em $c \in I$
+e que $c$ não seja uma extremidade de $I$.
+Seja
 \begin{equation*}
 %mbxlatex \begin{aligned}
 a
@@ -3028,60 +3024,60 @@ b
 \coloneqq \lim_{x \to c^+} f(x) = \inf \bigl\{ f(x) : x \in I, x > c \bigr\} .
 %mbxlatex \end{aligned}
 \end{equation*}
-As $c$ is a discontinuity, $a < b$.
-If $x < c$, then $f(x) \leq a$, and
-if $x > c$, then $f(x) \geq b$.  Therefore,
-no point
-in $(a,b) \setminus \bigl\{ f(c) \bigr\}$ is in $f(I)$.
-There exists $x_1 \in I$ with $x_1 < c$, so
-$f(x_1) \leq a$, and there exists $x_2 \in I$ with $x_2 > c$,
-so $f(x_2) \geq b$.  Both $f(x_1)$ and $f(x_2)$ are in $f(I)$,
-but there are points in between them that are not in $f(I)$.
-So $f(I)$ is not an interval.  See \figureref{fig:figinccont}.
+Como $c$ é um ponto de descontinuidade, $a < b$.
+Se $x < c$, então $f(x) \leq a$, e
+se $x > c$, então $f(x) \geq b$. Portanto,
+nenhum ponto de
+$(a,b) \setminus \bigl\{ f(c) \bigr\}$ pertence a $f(I)$.
+Existe $x_1 \in I$ com $x_1 < c$, logo
+$f(x_1) \leq a$, e existe $x_2 \in I$ com $x_2 > c$,
+logo $f(x_2) \geq b$. Tanto $f(x_1)$ quanto $f(x_2)$ pertencem a $f(I)$,
+mas há pontos entre eles que não pertencem a $f(I)$.
+Assim, $f(I)$ não é um intervalo. Veja a \figureref{fig:figinccont}.
 
-When $c \in I$ is an endpoint, the proof is similar and is left as an exercise.
+Quando $c \in I$ é uma extremidade, a demonstração é semelhante e fica como exercício.
 \end{proof}
 
 \begin{myfigureht}
 \myincludepdft{figinccont}{%
-A diagram of a graph of a function with a jump discontinuity and the effect
-on the image of the function.
-The function is defined on an interval marked I.  Points x sub 1, c, and
-x sub 2 are marked inside I and come in that order from left to right.
-The function increases continuously until x equals c,
-where the function approaches a, that is, the limit of f of x as x approaches
-c from below is a.  The value of f at c is f of c, which is larger than a
-and smaller than b, where b is the limit of f of x as x approaches c from
-above.  Then the function keeps rising continuously until the end of the
-interval I.  The image of f is split in three pieces.
-The lowest piece is
-an interval whose upper bound is a, and this interval contains
-f of x sub 1.
-The next piece is simply the point f of c.
-The third, the highest, piece is an interval starting at b
-and this interval contains f of x sub 2.}
-\caption{Increasing function $f \colon I \to \R$ discontinuity at
+Diagrama do gráfico de uma função com uma descontinuidade de salto e do efeito
+dela sobre a imagem da função.
+A função está definida em um intervalo marcado como I.
+Os pontos x sub 1, c e x sub 2 estão marcados dentro de I, nessa ordem da esquerda para a direita.
+A função cresce continuamente até x igual a c,
+onde tende a a, isto é, o limite de f de x quando x tende
+a c pela esquerda é a. O valor de f em c é f de c, que é maior que a
+e menor que b, onde b é o limite de f de x quando x tende a c pela
+direita. Em seguida, a função continua crescendo até o fim do intervalo I.
+A imagem de f se divide em três partes.
+A parte inferior é
+um intervalo cujo extremo superior é a e que contém
+f de x sub 1.
+A parte seguinte consiste apenas no ponto f de c.
+A terceira parte, a superior, é um intervalo que começa em b
+e contém f de x sub 2.}
+\caption{Descontinuidade da função crescente $f \colon I \to \R$ em
 $c$.\label{fig:figinccont}}
 \end{myfigureht}
 
-A striking property of monotone functions is that they cannot have
-too many discontinuities.
+Uma propriedade marcante das funções monótonas é que elas não podem ter
+muitas descontinuidades.
 
 \begin{cor} \label{cor:monotcountcont}
-Let $I \subset \R$ be an interval and
-$f \colon I \to \R$ be monotone.  Then $f$ has at most
-countably many discontinuities.
+Seja $I \subset \R$ um intervalo e
+$f \colon I \to \R$ uma função monótona. Então $f$ tem no máximo
+um número enumerável de descontinuidades.
 \end{cor}
 
 \begin{proof}
-Let $E \subset I$ be the set of all discontinuities
-that are not endpoints of $I$.  As there are
-only two endpoints, it is enough to show that $E$ is countable.
-Without loss of generality, suppose $f$ is increasing.
-We will define an injection $h \colon E \to \Q$.
-For each $c \in E$,
-both one-sided limits of $f$ exist as $c$ is not an endpoint.
-Let
+Seja $E \subset I$ o conjunto de todas as descontinuidades
+que não são extremidades de $I$. Como há
+no máximo duas extremidades, basta mostrar que $E$ é enumerável.
+Sem perda de generalidade, suponhamos que $f$ seja crescente.
+Definiremos uma injeção $h \colon E \to \Q$.
+Para cada $c \in E$,
+existem os dois limites laterais de $f$, pois $c$ não é uma extremidade.
+Seja
 \begin{equation*}
 %mbxlatex \begin{aligned}
 a
@@ -3096,79 +3092,69 @@ b
 \coloneqq \lim_{x \to c^+} f(x) = \inf \bigl\{ f(x) : x \in I, x > c \bigr\} .
 %mbxlatex \end{aligned}
 \end{equation*}
-As $c$ is a discontinuity, $a < b$.  
-There exists a rational number $q \in (a,b)$, so let $h(c) \coloneqq q$.
-Suppose $d \in E$ is another discontinuity.
-If $d > c$, there
-exists an $x \in I$ with $c < x < d$, and so $\lim_{x \to d^-} f(x) \geq b$.
-Hence, the rational number we choose for $h(d)$ is different from $q$,
-since $q=h(c) < b$ and $h(d) > b$.
-Similarly if $d < c$.  After making such a choice for
-every element of $E$, we have a 
-one-to-one (injective) function into $\Q$.  Therefore, $E$ is countable.
+Como $c$ é uma descontinuidade, $a < b$.
+Existe um número racional $q \in (a,b)$; definimos $h(c) \coloneqq q$.
+Suponha que $d \in E$ seja outra descontinuidade.
+Se $d > c$, existe
+$x \in I$ com $c < x < d$ e, assim, $\lim_{x \to d^-} f(x) \geq b$.
+Portanto, o número racional escolhido para $h(d)$ é diferente de $q$,
+pois $q=h(c) < b$ e $h(d) > b$.
+O caso $d < c$ é semelhante. Depois de fazer essa escolha para
+cada elemento de $E$, obtemos uma função injetiva em $\Q$. Portanto, $E$ é enumerável.
 \end{proof}
 
 \begin{example} \label{example:countdiscont}
-Denote the largest integer less than or equal to $x$
-by $\lfloor x \rfloor$.
-Define $f \colon [0,1] \to \R$ by
+Denotemos por $\lfloor x \rfloor$ o maior inteiro menor ou igual a $x$.
+Defina $f \colon [0,1] \to \R$ por
 \begin{equation*}
 f(x) \coloneqq
 x +
 \sum_{n=0}^{\lfloor 1/(1-x) \rfloor}
 2^{-n} ,
 \end{equation*}
-for $x < 1$ and $f(1) \coloneqq 3$.
-It is an exercise to show that $f$ is strictly increasing, bounded, and
-has a discontinuity at all points $1-\nicefrac{1}{k}$ for $k \in \N$.  In particular,
-there are countably many discontinuities, but the function is bounded and
-defined on a closed bounded interval.  See \figureref{fig:countdiscont}.
+para $x < 1$, e $f(1) \coloneqq 3$.
+É um exercício mostrar que $f$ é estritamente crescente, limitada e
+descontínua em todos os pontos $1-\nicefrac{1}{k}$, para $k \in \N$. Em particular,
+há um número enumerável de descontinuidades, mas a função é limitada e está definida em um intervalo fechado e limitado. Veja a \figureref{fig:countdiscont}.
 \begin{myfigureht}
 \myincludegraphics{increasing-discont-fig}{%
-A graph of a function on the interval from 0 to 1
-that is composed of straight line segments sloped upwards.  There is
-a first segment going across half the graph starting at 
-y equal to 1.5 and ending at y equal to 2.  Then there is an upward
-jump discontinuity and another much shorter line segment
-also sloped upwards.  This set of smaller and smaller upward jumps and
-shorter and shorter upward sloped line segments keeps going until
-at x equal to 1 we get to y equal to 3.}
-\caption{Strictly increasing function on $[0,1]$ with countably many
-discontinuities.\label{fig:countdiscont}}
+Gráfico de uma função no intervalo de 0 a 1
+composto por segmentos de reta inclinados para cima. Há
+um primeiro segmento que atravessa metade do gráfico, começando em
+y igual a 1,5 e terminando em y igual a 2. Em seguida, há uma descontinuidade de salto para cima e outro segmento de reta
+mais curto, também inclinado para cima. Essa sequência de saltos para cima cada vez menores e de segmentos de reta inclinados para cima cada vez mais curtos continua até que,
+em x igual a 1, chegamos a y igual a 3.}
+\caption{Função estritamente crescente em $[0,1]$ com um número enumerável de
+descontinuidades.\label{fig:countdiscont}}
 \end{myfigureht}
 
-Similarly, one can find an example of a monotone function discontinuous on a dense set
-such as the rational numbers.  See the exercises.
+De modo semelhante, podemos encontrar um exemplo de função monótona descontínua em um conjunto denso,
+como o dos números racionais. Veja os exercícios.
 \end{example}
 
+\subsection{Continuidade de funções inversas}
 
-\subsection{Continuity of inverse functions}
-
-
-A strictly monotone function $f$ is one-to-one (injective).
-To see this fact,
-notice that if $x \neq y$, then we can assume $x < y$.  Either $f(x) <
-f(y)$ if $f$ is strictly increasing or $f(x) > f(y)$ if $f$ is strictly
-decreasing, so $f(x) \neq f(y)$.
-Hence, $f$ must have an inverse $f^{-1}$ defined on its range.
+Uma função estritamente monótona $f$ é injetiva.
+De fato, se $x \neq y$, podemos supor que $x < y$. Se $f$ for estritamente crescente, então $f(x) < f(y)$; se $f$ for estritamente decrescente, $f(x) > f(y)$. Em ambos os casos, $f(x) \neq f(y)$.
+Logo, $f$ possui uma inversa $f^{-1}$ definida em sua imagem.
 
 \begin{prop} \label{prop:invcont}
-If $I \subset \R$ is an interval and $f \colon I \to \R$ is strictly
-monotone, then the inverse $f^{-1} \colon f(I) \to I$ is continuous.
+Se $I \subset \R$ é um intervalo e $f \colon I \to \R$ é estritamente
+monótona, então a inversa $f^{-1} \colon f(I) \to I$ é contínua.
 \end{prop}
 
 \begin{proof}
-Suppose $f$ is strictly increasing.  The proof is almost
-identical for a strictly decreasing function.
-Since $f$ is strictly increasing, so is $f^{-1}$.  That is, if $f(x) <
-f(y)$, then we must have $x < y$ and therefore
+Suponhamos que $f$ seja estritamente crescente. A demonstração para uma função estritamente decrescente é quase
+idêntica.
+Como $f$ é estritamente crescente, $f^{-1}$ também é. Isto é, se $f(x) <
+f(y)$, então $x < y$ e, portanto,
 $f^{-1}\bigl(f(x)\bigr) < f^{-1}\bigl(f(y)\bigr)$.
 
-Take $c \in f(I)$.
-If $c$ is not a cluster point of $f(I)$, then $f^{-1}$ is continuous at $c$
-automatically.  So let $c$ be a cluster point of $f(I)$.
-Suppose both of the following one-sided limits exist, that is, they both
-make sense:
+Seja $c \in f(I)$.
+Se $c$ não é ponto de acumulação de $f(I)$, então $f^{-1}$ é contínua em $c$
+automaticamente. Suponhamos, então, que $c$ seja ponto de acumulação de $f(I)$.
+Suponhamos que existam os dois limites laterais a seguir, isto é, que ambos
+façam sentido:
 \begin{align*}
 x_0 & \coloneqq \lim_{y \to c^-} f^{-1}(y) =
 \sup \bigl\{ f^{-1}(y) : y < c, y \in f(I) \bigr\}
@@ -3179,174 +3165,171 @@ x_1 & \coloneqq \lim_{y \to c^+} f^{-1}(y) =
 =
 \inf \bigl\{ x \in I : f(x) > c \bigr\} .
 \end{align*}
-We have $x_0 \leq x_1$ as $f^{-1}$ is increasing.
-For all $x \in I$ where $x > x_0$, we have $f(x) \geq c$.  As $f$ is strictly increasing,
-we must have $f(x) > c$ for all $x \in I$ where $x > x_0$.  Therefore,
+Como $f^{-1}$ é crescente, temos $x_0 \leq x_1$.
+Para todo $x \in I$ com $x > x_0$, temos $f(x) \geq c$. Como $f$ é estritamente crescente,
+na verdade $f(x) > c$ para todo $x \in I$ com $x > x_0$. Portanto,
 \begin{equation*}
 \{ x \in I : x > x_0 \} \subset \bigl\{ x \in I : f(x) > c \bigr\}.
 \end{equation*}
-The infimum of the left-hand set is $x_0$, and the infimum of the right-hand
-set is $x_1$, so we obtain $x_0 \geq x_1$.
-So $x_1 = x_0$, and $f^{-1}$ is continuous at $c$.
+O ínfimo do conjunto à esquerda é $x_0$, e o ínfimo do conjunto à direita
+é $x_1$; logo, $x_0 \geq x_1$.
+Assim, $x_1 = x_0$, e $f^{-1}$ é contínua em $c$.
 
-If one of the one-sided limits does not exist (that is, when it does not
-make sense to take the limit from that side), the argument is similar
-and is left as an exercise.
+Se um dos limites laterais não existir (isto é, quando não
+fizer sentido tomar o limite por aquele lado), o argumento é semelhante
+e fica como exercício.
 \end{proof}
 
 \begin{example}
-The proposition does not require $f$ itself to be continuous.  Let
-$f \colon \R \to \R$ be defined by
+A proposição não exige que a própria função $f$ seja contínua. Seja
+$f \colon \R \to \R$ definida por
 \begin{equation*}
 f(x) \coloneqq
 \begin{cases}
-x & \text{if } x < 0, \\
-x+1 & \text{if } x \geq 0. \\
+x & \text{se } x < 0, \\
+x+1 & \text{se } x \geq 0. \\
 \end{cases}
 \end{equation*}
-The function $f$ is not continuous at $0$.
-The image of $I = \R$ is the set 
-$(-\infty,0)\cup [1,\infty)$, not an interval.
-Then $f^{-1} \colon (-\infty,0)\cup [1,\infty)
-\to \R$ can be written as
+A função $f$ não é contínua em $0$.
+A imagem de $I = \R$ é o conjunto
+$(-\infty,0)\cup [1,\infty)$, que não é um intervalo.
+Então $f^{-1} \colon (-\infty,0)\cup [1,\infty)
+\to \R$ pode ser escrita como
 \begin{equation*}
 f^{-1}(y) =
 \begin{cases}
-y & \text{if } y < 0, \\
-y-1 & \text{if } y \geq 1. 
+y & \text{se } y < 0, \\
+y-1 & \text{se } y \geq 1.
 \end{cases}
 \end{equation*}
-It is not difficult to see that $f^{-1}$ is a continuous function.  See
-\figureref{invcontfig} for the graphs.
+É fácil ver que $f^{-1}$ é contínua. Veja os gráficos na
+\figureref{invcontfig}.
 \begin{myfigureht}
 \myincludepdft{invcontfigAB}{%
-Two graphs.  On the left, an upward sloping diagonal line that goes from
-bottom left to the origin (not including the origin),
-then jumps up and then continues diagonally up.
-On the right graph, the first line giving the
-graph is the same, but then the graph skips a short
-interval and the line starts again on the horizontal
-axis going diagonally up again.}
-\caption{Graph of $f$ on the left and $f^{-1}$ on the right.\label{invcontfig}}
+Dois gráficos. À esquerda, uma reta diagonal crescente que vai da parte
+inferior esquerda até a origem, sem incluir a origem;
+em seguida, há um salto para cima, e a reta continua crescendo na diagonal.
+No gráfico à direita, a primeira reta é igual à do gráfico esquerdo; depois,
+o gráfico deixa de fora um intervalo curto, e a reta recomeça sobre o eixo
+horizontal, voltando a crescer na diagonal.}
+\caption{Gráficos de $f$, à esquerda, e de $f^{-1}$, à direita.\label{invcontfig}}
 \end{myfigureht}
 \end{example}
 
-Notice what happens with the proposition if $f(I)$ is an interval.
-In that case, we could simply
-apply \corref{cor:continterval} to both $f$ and $f^{-1}$.  That is, if
-$f \colon I \to J$ is an onto strictly monotone function and $I$ and $J$ are intervals,
-then both $f$ and $f^{-1}$ are continuous.  Furthermore, $f(I)$ is an
-interval precisely when $f$ is continuous.
+Observe o que acontece com a proposição quando $f(I)$ é um intervalo.
+Nesse caso, poderíamos simplesmente
+aplicar \corref{cor:continterval} tanto a $f$ quanto a $f^{-1}$. Isto é, se
+$f \colon I \to J$ é uma função sobrejetiva e estritamente monótona e $I$ e $J$ são intervalos,
+então tanto $f$ quanto $f^{-1}$ são contínuas. Além disso, $f(I)$ é um
+intervalo precisamente quando $f$ é contínua.
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
 \begin{exercise}
-Suppose $f \colon [0,1] \to \R$ is monotone.  Prove $f$ is bounded.
+Suponha que $f \colon [0,1] \to \R$ seja monótona. Demonstre que $f$ é limitada.
 \end{exercise}
 
 \begin{exercise}
-Finish the proof of \propref{prop:monotlimits}.
-Hint: You can halve your work by noticing that if $g$ is decreasing,
-then $-g$ is increasing.
+Complete a demonstração da \propref{prop:monotlimits}.
+Dica: Você pode reduzir o trabalho pela metade observando que, se $g$ é decrescente,
+então $-g$ é crescente.
 \end{exercise}
 
 \begin{exercise}
-Finish the proof of \corref{cor:continterval}.
+Complete a demonstração da \corref{cor:continterval}.
 \end{exercise}
 
 \begin{exercise}
-Prove the claims in \exampleref{example:countdiscont}.
+Demonstre as afirmações do \exampleref{example:countdiscont}.
 \end{exercise}
 
 \begin{exercise}
-Finish the proof of \propref{prop:invcont}.
+Complete a demonstração da \propref{prop:invcont}.
 \end{exercise}
 
 \begin{samepage}
 \begin{exercise}
-Suppose $S \subset \R$, and $f \colon S \to \R$ is an increasing
-function.  Prove:
+Suponha que $S \subset \R$ e que $f \colon S \to \R$ seja uma função crescente.
+Demonstre:
 \begin{enumerate}[a)]
 \item
-If $c$ is a cluster point
-of $S \cap (c,\infty)$, then
+Se $c$ é ponto de acumulação de
+$S \cap (c,\infty)$, então
 $\lim\limits_{x\to c^+} f(x) < \infty$.
 \item
-If $c$ is a cluster point of $S \cap (-\infty,c)$
-and $\lim\limits_{x\to c^-} f(x) = \infty$, then
+Se $c$ é ponto de acumulação de $S \cap (-\infty,c)$
+e $\lim\limits_{x\to c^-} f(x) = \infty$, então
 $S \subset (-\infty,c)$.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
 
 \begin{exercise}
-Let $I \subset \R$ be an interval and $f \colon I \to \R$ a function.
-Suppose that for each $c \in I$, there exist $a, b \in \R$ with
-$a > 0$ such that $f(x) \geq a x + b$ for all $x \in I$
-and $f(c) = a c + b$.  Show that $f$ is strictly increasing.
+Seja $I \subset \R$ um intervalo e $f \colon I \to \R$ uma função.
+Suponha que, para cada $c \in I$, existam $a, b \in \R$, com
+$a > 0$, tais que $f(x) \geq a x + b$ para todo $x \in I$
+e $f(c) = a c + b$. Mostre que $f$ é estritamente crescente.
 \end{exercise}
 
 \begin{exercise}
-Suppose $I$ and $J$ are intervals and
-$f \colon I \to J$ is a continuous, bijective (one-to-one and onto)
-function.  Show that $f$ is strictly monotone.
+Suponha que $I$ e $J$ sejam intervalos e que
+$f \colon I \to J$ seja uma função contínua e bijetiva (injetiva e sobrejetiva).
+Mostre que $f$ é estritamente monótona.
 \end{exercise}
 
 \begin{exercise}
-Consider a monotone function $f \colon I \to \R$ on an interval $I$.  Prove that there exists
-a function $g \colon I \to \R$ such that
-$\lim\limits_{x \to c^-} g(x) = g(c)$ for all $c$ in $I$ except the
-smaller (left) endpoint of $I$, and such that
-$g(x) = f(x)$ for all but countably many $x \in I$.
+Considere uma função monótona $f \colon I \to \R$ definida em um intervalo $I$.
+Demonstre que existe uma função $g \colon I \to \R$ tal que
+$\lim\limits_{x \to c^-} g(x) = g(c)$ para todo $c$ em $I$, exceto a
+extremidade menor (à esquerda) de $I$, e tal que
+$g(x) = f(x)$ para todo $x \in I$, com exceção de um conjunto enumerável de pontos.
 \end{exercise}
 
 \begin{exercise}
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Let $S \subset \R$ be a subset.  If $f \colon S \to \R$ is increasing and
-bounded,
-then show that there exists an increasing $F \colon \R \to \R$
-such that $f(x) = F(x)$ for all $x \in S$.
+Seja $S \subset \R$. Mostre que, se $f \colon S \to \R$ é crescente e
+limitada,
+então existe uma função crescente $F \colon \R \to \R$
+tal que $f(x) = F(x)$ para todo $x \in S$.
 \item
-Find an example of a strictly increasing bounded $f \colon S \to \R$ such that
-an increasing $F$ as above cannot be strictly increasing no matter how we
-choose it.
+Dê um exemplo de uma função limitada e estritamente crescente $f \colon S \to \R$ tal que
+nenhuma escolha da função crescente $F$ acima possa torná-la estritamente crescente.
 \end{enumerate}
 \end{exercise}
 
-\begin{exercise}[Challenging] \label{exercise:increasingfuncdiscatQ}
-Find an example of an increasing function $f \colon [0,1] \to \R$
-that has a discontinuity at each rational number.  Then show that the image
-$f\bigl([0,1]\bigr)$ contains no interval.  Hint: Enumerate
-the rational numbers and define
-the function with a series.
+\begin{exercise}[Desafiador] \label{exercise:increasingfuncdiscatQ}
+Dê um exemplo de uma função crescente $f \colon [0,1] \to \R$
+que seja descontínua em todo número racional. Mostre, em seguida, que a imagem
+$f\bigl([0,1]\bigr)$ não contém nenhum intervalo. Dica: Enumere
+os números racionais e defina a função por meio de uma série.
 \end{exercise}
 
 \begin{exercise}
-Suppose $I$ is an interval and $f \colon I \to \R$ is monotone.
-Show that $\R \setminus f(I)$ is a countable union of disjoint intervals.
+Suponha que $I$ seja um intervalo e que $f \colon I \to \R$ seja monótona.
+Mostre que $\R \setminus f(I)$ é uma união enumerável de intervalos disjuntos.
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon [0,1] \to (0,1)$ is increasing.  Show that for every
-$\epsilon > 0$, there exists
-a strictly increasing $g \colon [0,1] \to (0,1)$ such that
-$g(0) = f(0)$, $f(x) \leq g(x)$ for all $x$, and $g(1)-f(1) < \epsilon$.
+Suponha que $f \colon [0,1] \to (0,1)$ seja crescente. Mostre que, para todo
+$\epsilon > 0$, existe uma função estritamente crescente
+$g \colon [0,1] \to (0,1)$ tal que
+$g(0) = f(0)$, $f(x) \leq g(x)$ para todo $x$ e $g(1)-f(1) < \epsilon$.
 \end{exercise}
 
 \begin{exercise}
-Prove that the \myindex{Dirichlet function}
-$f \colon [0,1] \to\R$, defined by $f(x) \coloneqq 1$
-if $x$ is rational and $f(x) \coloneqq 0$ otherwise, cannot be written as a
-difference of two increasing functions.  That is, there do not exist
-increasing $g$ and $h$ such that $f(x) = g(x) - h(x)$.
+Demonstre que a \myindex{função de Dirichlet}
+$f \colon [0,1] \to\R$, definida por $f(x) \coloneqq 1$
+se $x$ é racional e $f(x) \coloneqq 0$ caso contrário, não pode ser escrita como a
+diferença de duas funções crescentes. Isto é, não existem funções crescentes
+$g$ e $h$ tais que $f(x) = g(x) - h(x)$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon (a,b) \to (c,d)$ is a strictly increasing
-onto function.  Prove that there exists a $g \colon (a,b) \to (c,d)$,
-which is also strictly increasing and onto, and $g(x) < f(x)$ for all $x \in
+Suponha que $f \colon (a,b) \to (c,d)$ seja uma função estritamente crescente
+e sobrejetiva. Demonstre que existe uma função $g \colon (a,b) \to (c,d)$,
+também estritamente crescente e sobrejetiva, tal que $g(x) < f(x)$ para todo $x \in
 (a,b)$.
 \end{exercise}
 

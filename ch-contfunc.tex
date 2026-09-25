@@ -2202,140 +2202,135 @@ Isto é, podemos estender a função a uma função contínua em $(-1,1)$.
 \subsection{Lipschitz continuous functions}
 
 \begin{defn}
-A function $f \colon S \to \R$
-is \emph{\myindex{Lipschitz continuous}}\index{function!Lipschitz}%
-\footnote{Named after the German mathematician
+Uma função $f \colon S \to \R$
+é \emph{\myindex{Lipschitz contínua}}\index{função!Lipschitz}%
+\footnote{Nomeada em homenagem ao matemático alemão
 \href{https://en.wikipedia.org/wiki/Rudolf_Lipschitz}{Rudolf Otto Sigismund Lipschitz}
-(1832--1903).} if there exists a $K \in \R$ such that
+(1832--1903).} se existe $K \in \R$ tal que
 \begin{equation*}
-\babs{f(x)-f(y)} \leq K \sabs{x-y} 
-\qquad \text{for all } x \text{ and } y \text{ in } S.
+\babs{f(x)-f(y)} \leq K \sabs{x-y}
+\qquad \text{para todo } x \text{ and } y \text{ in } S.
 \end{equation*}
 \end{defn}
 
-A large class of functions is Lipschitz continuous.  Be careful. Just as
-for uniformly continuous functions, the
-domain of definition of the function is important.  See the examples below
-and the exercises.  First, we justify the use of the word \emph{continuous}.
+Uma grande classe de funções é Lipschitz contínua. Cuidado: assim como no
+caso das funções uniformemente contínuas, o domínio da função é importante.
+Veja os exemplos abaixo e os exercícios. Primeiro, justificamos o uso da
+palavra \emph{contínua}.
 
 \begin{prop}
-A Lipschitz continuous function is uniformly continuous.
+Uma função Lipschitz contínua é uniformemente contínua.
 \end{prop}
 
 \begin{proof}
-Let $f \colon S \to \R$ be a function and let $K$ be a constant such that
+Seja $f \colon S \to \R$ uma função e seja $K$ uma constante tal que
 $\babs{f(x)-f(y)} \leq K \sabs{x-y}$
-for all $x, y$ in $S$.
-Let $\epsilon > 0$ be given.  Take $\delta \coloneqq
+para todos $x, y$ em $S$.
+Seja $\epsilon > 0$ dado. Tome $\delta \coloneqq
 \nicefrac{\epsilon}{K}$.
-For all $x$ and $y$ in $S$ such that
+Para todos $x$ e $y$ em $S$ tais que
 $\sabs{x-y} < \delta$,
 \begin{equation*}
 \babs{f(x)-f(y)} \leq K \sabs{x-y} < K \delta = K \frac{\epsilon}{K} =
 \epsilon .
 \end{equation*}
-Therefore, $f$ is uniformly continuous.
+Portanto, $f$ é uniformemente contínua.
 \end{proof}
 
-We interpret Lipschitz continuity geometrically.  Let $f$ be a Lipschitz
-continuous function with some constant $K$.  We rewrite the inequality 
-to say that for $x \neq y$, we have
+Interpretamos geometricamente a continuidade de Lipschitz. Seja $f$ uma função
+Lipschitz contínua com alguma constante $K$. Reescrevemos a desigualdade
+para dizer que, para $x \neq y$, temos
 \begin{equation*}
 \abs{\frac{f(x)-f(y)}{x-y}} \leq K .
 \end{equation*}
-The quantity $\frac{f(x)-f(y)}{x-y}$ is the slope of the line
-between the points $\bigl(x,f(x)\bigr)$
-and $\bigl(y,f(y)\bigr)$, that is, a \emph{\myindex{secant line}}.  Therefore, $f$ is Lipschitz
-continuous if and only if every line that intersects the graph of $f$ in at least two
-distinct
-points has slope in absolute value less than or equal to $K$.  See \figureref{fig:lipschitz}.
+A quantidade $\frac{f(x)-f(y)}{x-y}$ é a inclinação da reta que passa pelos
+pontos $\bigl(x,f(x)\bigr)$ e $\bigl(y,f(y)\bigr)$, isto é, uma
+\emph{\myindex{reta secante}}. Portanto, $f$ é Lipschitz contínua se, e
+somente se, toda reta que intersecta o gráfico de $f$ em pelo menos dois
+pontos distintos tem inclinação, em valor absoluto, menor ou igual a $K$.
+Veja a \figureref{fig:lipschitz}.
 \begin{myfigureht}
 \myincludegraphics{lipschitzfig}{%
-A graph of a function with some corners.  Two
-points on the horizontal axis are marked with x
-and y.  A line through the corresponding points
-on the graph is drawn and its slope is labeled
-as f of x minus f of y all divided by x minus y.}
-\caption{The slope of a secant line.
-A function is Lipschitz if %$\abs{\text{slope}} =
-$\abs{\frac{f(x)-f(y)}{x-y}} \leq K$ for all $x$ and $y$.\label{fig:lipschitz}}
+Gráfico de uma função com alguns vértices. Dois pontos no eixo horizontal
+estão marcados com x e y. Uma reta que passa pelos pontos correspondentes
+no gráfico está desenhada, e sua inclinação está indicada como
+f de x menos f de y, tudo dividido por x menos y.}
+\caption{A inclinação de uma reta secante.
+Uma função é Lipschitz se %$\abs{\text{slope}} =
+$\abs{\frac{f(x)-f(y)}{x-y}} \leq K$ para todos $x$ e $y$. \label{fig:lipschitz}}
 \end{myfigureht}
 
 \begin{example}
-The functions $\sin(x)$ and $\cos(x)$ are Lipschitz continuous.
-In \exampleref{sincos:example} we have seen the following two inequalities.
+As funções $\sin(x)$ e $\cos(x)$ são Lipschitz contínuas.
+No \exampleref{sincos:example}, vimos as seguintes duas desigualdades:
 \begin{equation*}
-\babs{\sin(x)-\sin(y)} 
+\babs{\sin(x)-\sin(y)}
 \leq \sabs{x-y}
-\qquad \text{and} \qquad
+\qquad \text{e} \qquad
 \babs{\cos(x)-\cos(y)}
 \leq \sabs{x-y} .
 \end{equation*}
 
-Hence, sine and cosine are Lipschitz continuous with $K=1$.
+Logo, seno e cosseno são Lipschitz contínuas com $K=1$.
 \end{example}
 
 \begin{example}
-The function $f \colon [1,\infty) \to \R$ defined by $f(x) \coloneqq \sqrt{x}$
-is Lipschitz continuous. Proof:
+A função $f \colon [1,\infty) \to \R$ definida por $f(x) \coloneqq \sqrt{x}$
+é Lipschitz contínua. Demonstração:
 \begin{equation*}
-\abs{\sqrt{x}-\sqrt{y}} = 
+\abs{\sqrt{x}-\sqrt{y}} =
 \abs{\frac{x-y}{\sqrt{x}+\sqrt{y}}}
 =
 \frac{\sabs{x-y}}{\sqrt{x}+\sqrt{y}} .
 \end{equation*}
-As $x \geq 1$ and $y \geq 1$, we see that $\frac{1}{\sqrt{x}+\sqrt{y}}
-\leq \frac{1}{2}$.  Therefore,
+Como $x \geq 1$ e $y \geq 1$, vemos que
+$\frac{1}{\sqrt{x}+\sqrt{y}} \leq \frac{1}{2}$. Portanto,
 \begin{equation*}
-\abs{\sqrt{x}-\sqrt{y}} = 
+\abs{\sqrt{x}-\sqrt{y}} =
 \abs{\frac{x-y}{\sqrt{x}+\sqrt{y}}}
 \leq
 \frac{1}{2}
 \sabs{x-y}.
 \end{equation*}
 
-On the other hand, $g \colon [0,\infty) \to \R$ defined by
-$g(x) \coloneqq \sqrt{x}$ is not Lipschitz continuous.  Proof:
-Suppose there is a $K$ so that for all $x,y \in [0,\infty)$,
+Por outro lado, a função $g \colon [0,\infty) \to \R$ definida por
+$g(x) \coloneqq \sqrt{x}$ não é Lipschitz contínua. Demonstração:
+Suponha que exista $K$ tal que, para todos $x,y \in [0,\infty)$,
 \begin{equation*}
-\abs{\sqrt{x}-\sqrt{y}} 
+\abs{\sqrt{x}-\sqrt{y}}
 \leq
 K \sabs{x-y} ,
 \end{equation*}
-We find that $K > 0$, as $K < 0$ is impossible,
-and $K=0$ would mean that $f$ is constant.
-Set $y=0$ to obtain
-$\sqrt{x} \leq K x$.
-For $x > 0$, we get
-$\nicefrac{1}{K} \leq \sqrt{x}$ or $\nicefrac{1}{K^2} \leq x$.
-This cannot possibly be true for all
-$x > 0$.  Thus no $K$ exists and $g$ is not
-Lipschitz continuous.  See \figureref{fig:sqrtgraph} and note how secant
-lines would be more and more vertical as we get closer to $x=0$.
+Concluímos que $K > 0$, pois $K < 0$ é impossível,
+e $K=0$ significaria que $f$ é constante.
+Tomamos $y=0$ para obter
+$\sqrt{x} \leq Kx$.
+Para $x > 0$, obtemos
+$\nicefrac{1}{K} \leq \sqrt{x}$ ou $\nicefrac{1}{K^2} \leq x$.
+Isso não pode ser verdade para todo $x > 0$. Assim, não existe $K$,
+e $g$ não é Lipschitz contínua. Veja a \figureref{fig:sqrtgraph} e observe
+como as retas secantes ficariam cada vez mais verticais ao nos aproximarmos
+de $x=0$.
 \begin{myfigureht}
 \myincludegraphics{sqrtgraph}{%
-A graph of a function that starts rising vertically
-at the left endpoint and quickly curves to become
-much more horizontal at the right endpoint.
-Secant lines through the left endpoint and a
-sequence of points on the graph getting closer
-and closer to the left endpoint are drawn.
-We notice that the secant lines are more
-and more vertical as the second
-point on the secant line is closer
-to the left endpoint.}
-\caption{Graph of $\sqrt{x}$ and some secant lines through $(0,0)$ and
-$(x,\sqrt{x})$.\label{fig:sqrtgraph}}
+Gráfico de uma função que começa subindo verticalmente no extremo esquerdo
+e logo se curva, tornando-se muito mais horizontal no extremo direito.
+Estão desenhadas retas secantes que passam pelo extremo esquerdo e por uma
+sequência de pontos no gráfico que se aproximam cada vez mais desse extremo.
+Observamos que as retas secantes ficam cada vez mais verticais à medida que
+o segundo ponto da reta secante se aproxima do extremo esquerdo.}
+\caption{Gráfico de $\sqrt{x}$ e algumas retas secantes que passam por
+$(0,0)$ e $(x,\sqrt{x})$.\label{fig:sqrtgraph}}
 \end{myfigureht}
 
-The last example $g$ is a function that is uniformly
-continuous but not Lipschitz continuous.
-To see that $\sqrt{x}$ is
-uniformly continuous as a function on $[0,\infty)$,
-note that it is uniformly continuous when restricted to $[0,1]$ by \thmref{unifcont:thm}.
-It is also Lipschitz (and so uniformly continuous) when restricted to $[1,\infty)$.
-It is not hard (exercise) to show that this means that $\sqrt{x}$ is a
-uniformly continuous function on $[0,\infty)$.
+O último exemplo mostra uma função $g$ uniformemente contínua,
+mas não Lipschitz contínua.
+Para ver que $\sqrt{x}$ é uniformemente contínua como função em $[0,\infty)$,
+observe que ela é uniformemente contínua quando restrita a $[0,1]$ pelo
+\thmref{unifcont:thm}. Ela também é Lipschitz (e, portanto, uniformemente
+contínua) quando restrita a $[1,\infty)$.
+Não é difícil mostrar (exercício) que isso significa que $\sqrt{x}$ é uma
+função uniformemente contínua em $[0,\infty)$.
 \end{example}
 
 \subsection{Exercises}

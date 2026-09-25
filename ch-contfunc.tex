@@ -2504,357 +2504,354 @@ Lipschitz, mas não Lipschitz.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{Limits at infinity}
+\section{Limites no infinito}
 \label{sec:limitatinf}
 
 %mbxINTROSUBSECTION
 
-\sectionnotes{less than 1 lecture (optional, can safely be omitted unless
-\sectionref{sec:monotonefunc} or
-\sectionref{sec:impropriemann} is also covered)}
+\sectionnotes{menos de 1 aula (opcional; pode ser omitida com segurança, a menos que
+\sectionref{sec:monotonefunc} ou
+\sectionref{sec:impropriemann} também seja abordada)}
 
-\subsection{Limits at infinity}
+\subsection{Limites no infinito}
 
-Just as with sequences, a continuous variable can also approach infinity.
+Assim como no caso de sequências, uma variável contínua também pode tender ao infinito.
 
 \begin{defn}
-We say $\infty$ is a \emph{\myindex{cluster point}} of $S \subset \R$ if for every
-$M \in \R$, there exists an $x \in S$ such that $x \geq M$.  Similarly,
-$- \infty$ is a \emph{cluster point} of $S \subset \R$ if for every
-$M \in \R$, there exists an $x \in S$ such that $x \leq M$.
+Dizemos que $\infty$ é um \emph{\myindex{ponto de acumulação}} de $S \subset \R$ se, para todo
+$M \in \R$, existe $x \in S$ tal que $x \geq M$. De modo semelhante,
+$-\infty$ é um \emph{ponto de acumulação} de $S \subset \R$ se, para todo
+$M \in \R$, existe $x \in S$ tal que $x \leq M$.
 
-\index{limit!of a function at infinity}%
-Let $f \colon S \to \R$ be a function, where 
-$\infty$ is a cluster point of $S$.
-If there exists an $L \in \R$
-with the property
-that for every $\epsilon > 0$, there is an $M \in \R$ such that
+\index{limite!de uma função no infinito}%
+Seja $f \colon S \to \R$ uma função, em que
+$\infty$ é um ponto de acumulação de $S$.
+Se existe $L \in \R$
+com a propriedade de que, para todo $\epsilon > 0$, existe $M \in \R$ tal que
 \begin{equation*}
-\babs{f(x) - L} < \epsilon 
+\babs{f(x) - L} < \epsilon
 \end{equation*}
-whenever $x \in S$ and $x \geq M$, then we say $f(x)$
-\emph{converges}\index{converges!function} to $L$
-as $x$ goes to $\infty$.  We call $L$ a \emph{limit}
-and, if unique, write
+sempre que $x \in S$ e $x \geq M$, dizemos que $f(x)$
+\emph{converge}\index{converge!função} para $L$
+quando $x$ tende a $\infty$. Chamamos $L$ de \emph{limite}
+e, se for único, escrevemos
 \glsadd{not:limfuncinf}
 \begin{equation*}
 \lim_{x \to \infty} f(x) \coloneqq L .
 \end{equation*}
-Alternatively, we write $f(x) \to L$ as $x \to \infty$.
+Como alternativa, escrevemos $f(x) \to L$ quando $x \to \infty$.
 
-Similarly, if $-\infty$ is a cluster point of $S$
-and
-there exists an $L \in \R$
-such that for every $\epsilon > 0$, there is an $M \in \R$ such that
+De modo semelhante, se $-\infty$ é um ponto de acumulação de $S$
+e existe $L \in \R$
+tal que, para todo $\epsilon > 0$, existe $M \in \R$ tal que
 \begin{equation*}
-\babs{f(x) - L} < \epsilon 
+\babs{f(x) - L} < \epsilon
 \end{equation*}
-whenever $x \in S$ and $x \leq M$, then we say $f(x)$ \emph{converges} to $L$
-as $x$ goes to $-\infty$.
-Alternatively, we write $f(x) \to L$ as $x \to -\infty$.
-We call $L$ a \emph{limit} and, if unique, write
+sempre que $x \in S$ e $x \leq M$, dizemos que $f(x)$ \emph{converge} para $L$
+quando $x$ tende a $-\infty$.
+Como alternativa, escrevemos $f(x) \to L$ quando $x \to -\infty$.
+Chamamos $L$ de \emph{limite} e, se for único, escrevemos
 \begin{equation*}
 \lim_{x \to -\infty} f(x) \coloneqq L .
 \end{equation*}
 \end{defn}
 
-The first thing to do, as usual, is to prove that the limit, if it exists,
-is unique.
-We leave it as an exercise for the reader.
+Como de costume, primeiro provamos que o limite, se existir,
+é único.
+Deixamos isso como exercício.
 
 \begin{prop} \label{liminfty:unique}
-The limit at $\infty$ or $-\infty$ as defined above is unique if it exists.
+O limite em $\infty$ ou em $-\infty$, conforme definido acima, é único, se existir.
 \end{prop}
 
 \begin{example}
-Let $f(x) \coloneqq \frac{1}{\sabs{x}+1}$.  Then
+Seja $f(x) \coloneqq \frac{1}{\sabs{x}+1}$. Então
 \begin{equation*}
-\lim_{x\to \infty} f(x) = 0 \qquad \text{and} \qquad
+\lim_{x\to \infty} f(x) = 0 \qquad \text{e} \qquad
 \lim_{x\to -\infty} f(x) = 0 .
 \end{equation*}
 
-Proof:
-Let $\epsilon > 0$ be given.  Find $M > 0$ large enough
-so that $\frac{1}{M+1} < \epsilon$.  If
-$x \geq M$, then $0 < \frac{1}{\sabs{x}+1} = \frac{1}{x+1} \leq \frac{1}{M+1} < \epsilon$.
-The first limit follows.
-The proof for $-\infty$ is left to the reader.
+Demonstração:
+Seja $\epsilon > 0$ dado. Escolha $M > 0$ suficientemente grande
+para que $\frac{1}{M+1} < \epsilon$. Se
+$x \geq M$, então $0 < \frac{1}{\sabs{x}+1} = \frac{1}{x+1} \leq \frac{1}{M+1} < \epsilon$.
+Segue o primeiro limite.
+A demonstração para $-\infty$ fica como exercício.
 \end{example}
 
 \begin{example}
-Let $f(x) \coloneqq \sin(\pi x)$.  Then $\lim_{x\to\infty} f(x)$ does not exist.
-To prove this fact, note that if $x = 2n+\nicefrac{1}{2}$ for some $n \in
-\N$, then $f(x)=1$,
-while if $x = 2n+\nicefrac{3}{2}$, then $f(x)=-1$.
-Both of these values, $1$ and $-1$, cannot be
-within a small $\epsilon$ of a single real number.
+Seja $f(x) \coloneqq \sin(\pi x)$. Então $\lim_{x\to\infty} f(x)$ não existe.
+Para provar isso, note que, se $x = 2n+\nicefrac{1}{2}$ para algum $n \in
+\N$, então $f(x)=1$,
+enquanto, se $x = 2n+\nicefrac{3}{2}$, então $f(x)=-1$.
+Esses dois valores, $1$ e $-1$, não podem estar ambos
+a uma distância menor que um $\epsilon$ pequeno de um mesmo número real.
 
-Be careful not to confuse continuous limits with limits of sequences.
-We could say
+Tenha cuidado para não confundir limites de funções com limites de sequências.
+Podemos dizer que
 \begin{equation*}
-\lim_{n \to \infty} \sin(\pi n) = 0, \qquad \text{but} \qquad
-\lim_{x \to \infty} \sin(\pi x) \enspace \text{does not exist}.
+\lim_{n \to \infty} \sin(\pi n) = 0, \qquad \text{mas} \qquad
+\lim_{x \to \infty} \sin(\pi x) \enspace \text{não existe}.
 \end{equation*}
-Of course, the notation is ambiguous:  Are we thinking of the
-sequence $\bigl\{ \sin (\pi n) \bigr\}_{n=1}^\infty$ or the function $\sin(\pi x)$
-of a real variable?  We are simply using the convention
-that $n \in \N$, while $x \in \R$.  When the notation is not clear,
-it is good to explicitly mention where the variable lives, or what kind
-of limit you are using.  If there is a possibility of confusion, one can
-write, for example,
+É claro que a notação é ambígua: estamos pensando na
+sequência $\bigl\{ \sin (\pi n) \bigr\}_{n=1}^\infty$ ou na função $\sin(\pi x)$
+de uma variável real? Usamos apenas a convenção
+de que $n \in \N$, enquanto $x \in \R$. Quando a notação não estiver clara,
+convém mencionar explicitamente onde a variável está definida ou que tipo
+de limite está sendo considerado. Se houver possibilidade de confusão, podemos
+escrever, por exemplo,
 \begin{equation*}
 \lim_{\substack{n \to \infty\\n \in \N}} \sin(\pi n) .
 \end{equation*}
 \end{example}
 
-There is a connection between continuous limits and limits of sequences, but we must take all
-sequences going to infinity, just as before in \lemmaref{seqflimit:lemma}.
+Existe uma relação entre limites de funções e limites de sequências, mas precisamos considerar todas as
+sequências que tendem ao infinito, como antes no \lemmaref{seqflimit:lemma}.
 
 \begin{lemma} \label{seqflimitinf:lemma}
-Suppose $f \colon S \to \R$ is a function, $\infty$ is a cluster
-point of $S \subset \R$, and $L \in \R$.  Then
+Suponha que $f \colon S \to \R$ seja uma função, que $\infty$ seja um ponto de acumulação
+de $S \subset \R$ e que $L \in \R$. Então
 \begin{equation*}
 \lim_{x\to\infty} f(x) = L
-\qquad \text{if and only if} \qquad
+\qquad \text{se, e somente se,} \qquad
 \lim_{n\to\infty} f(x_n) = L
 \end{equation*}
-for all sequences $\{ x_n \}_{n=1}^\infty$ in $S$ such that $\lim\limits_{n\to\infty} x_n = \infty$.
+para todas as sequências $\{ x_n \}_{n=1}^\infty$ em $S$ tais que $\lim\limits_{n\to\infty} x_n = \infty$.
 \end{lemma}
 
-The lemma also holds for the limit as $x \to -\infty$.
-Its proof is almost identical and
-is left as an exercise.
+O lema também vale para o limite quando $x \to -\infty$.
+Sua demonstração é quase idêntica e
+fica como exercício.
 
 \begin{proof}
-First suppose $f(x) \to L$ as $x \to \infty$.
-Given an $\epsilon > 0$, there exists an $M$ such that for all $x \in S$
-where $x \geq M$,
-we have $\babs{f(x)-L} < \epsilon$.
-Let $\{ x_n \}_{n=1}^\infty$
-be a sequence in $S$ such that $\lim_{n\to\infty} x_n = \infty$.  Then there exists an
-$N$ such that
+Suponha primeiro que $f(x) \to L$ quando $x \to \infty$.
+Dado $\epsilon > 0$, existe $M$ tal que, para todo $x \in S$
+com $x \geq M$,
+temos $\babs{f(x)-L} < \epsilon$.
+Seja $\{ x_n \}_{n=1}^\infty$
+uma sequência em $S$ tal que $\lim_{n\to\infty} x_n = \infty$. Então existe
+$N$ tal que
 $x_n \geq M$
-for all $n \geq N$.
-Thus
+para todo $n \geq N$.
+Assim,
 $\babs{f(x_n)-L} < \epsilon$.
 
-We prove the converse by contrapositive.  Suppose $f(x)$ does
-not go to $L$ as $x \to \infty$.
-This means that there exists an $\epsilon > 0$
-such that for every $n \in \N$, there exists an $x \in S$, $x \geq n$, let
-us call it $x_n$, such that $\babs{f(x_n)-L} \geq \epsilon$.
-Consider the sequence $\{ x_n \}_{n=1}^\infty$.  Clearly 
-$\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ does not converge to $L$.  It remains to note
-that $\lim_{n\to\infty} x_n = \infty$ because $x_n \geq n$ for all $n$.
+Provemos a recíproca por contraposição. Suponha que $f(x)$ não
+tenda a $L$ quando $x \to \infty$.
+Isso significa que existe $\epsilon > 0$
+tal que, para todo $n \in \N$, existe $x \in S$, com $x \geq n$; chamemo-lo
+$x_n$, tal que $\babs{f(x_n)-L} \geq \epsilon$.
+Considere a sequência $\{ x_n \}_{n=1}^\infty$. É claro
+que $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ não converge para $L$. Resta observar
+que $\lim_{n\to\infty} x_n = \infty$, pois $x_n \geq n$ para todo $n$.
 \end{proof}
 
-Using the lemma, we again translate results about sequential
-limits into results about continuous limits as $x$ goes to infinity.  That
-is, we have almost immediate analogues of the corollaries
-in \sectionref{subseq:sequentiallimits}.  We simply allow 
-the cluster point $c$ to be either $\infty$ or $-\infty$, in addition
-to a real number.  We leave it to
-the student to verify these statements.
+Usando o lema, traduzimos novamente resultados sobre limites de sequências
+em resultados sobre limites de funções quando $x$ tende ao infinito. Ou seja,
+temos quase imediatamente os análogos dos corolários
+da \sectionref{subseq:sequentiallimits}. Basta permitir
+que o ponto de acumulação $c$ seja $\infty$ ou $-\infty$,
+além de um número real. Deixamos para
+o estudante verificar essas afirmações.
 
-\subsection{Infinite limit}
+\subsection{Limite infinito}
 
-Just as for sequences, it is often convenient to distinguish certain
-divergent sequences, and talk about limits being infinite
-almost as if the limits existed.
+Assim como no caso de sequências, muitas vezes é conveniente distinguir certas
+sequências divergentes e falar de limites infinitos
+quase como se os limites existissem.
 
 \begin{defn}
-\index{infinite limit!of a function}\index{limit!infinite}%
-Let $f \colon S \to \R$ be a function and suppose 
-$S$ has $\infty$ as a cluster point.
-We say $f(x)$
-\emph{\myindex{diverges to infinity}} 
-as $x$ goes to $\infty$
-if for every $N \in \R$
-there exists an $M \in \R$ such that
+\index{limite infinito!de uma função}\index{limite!infinito}%
+Seja $f \colon S \to \R$ uma função e suponha que
+$\infty$ seja um ponto de acumulação de $S$.
+Dizemos que $f(x)$
+\emph{\myindex{diverge para infinito}}
+quando $x$ tende a $\infty$
+se, para todo $N \in \R$,
+existe $M \in \R$ tal que
 \begin{equation*}
 f(x) > N
 \end{equation*}
-whenever $x \in S$ and $x \geq M$.
-We write
+sempre que $x \in S$ e $x \geq M$.
+Escrevemos
 \begin{equation*}
 \lim_{x \to \infty} f(x) \coloneqq \infty ,
 \end{equation*}
-or we say that $f(x) \to \infty$ as $x \to \infty$.
+ou dizemos que $f(x) \to \infty$ quando $x \to \infty$.
 \end{defn}
 
-A similar definition can be made for limits as $x \to -\infty$
-or as $x \to c$ for a finite $c$.  Also, similar definitions can be
-made for limits being $-\infty$.  Stating these definitions is left
-as an exercise.
-Note that
-sometimes the slightly incorrect (in this context)
-wording
-\emph{\myindex{converges to infinity}} is used.
-We can again use sequential limits, and an analogue of 
-\lemmaref{seqflimit:lemma} is left as an exercise.
+Podemos formular uma definição semelhante para limites quando $x \to -\infty$
+ou quando $x \to c$, com $c$ finito. Também podemos formular definições
+semelhantes para limites iguais a $-\infty$. Enunciar essas definições fica
+como exercício.
+Note que, às vezes, usa-se a expressão
+\emph{\myindex{converge para infinito}}, ligeiramente incorreta
+nesse contexto.
+Também podemos usar limites de sequências; um análogo do
+\lemmaref{seqflimit:lemma} fica como exercício.
 
 \begin{example}
-Let us show that $\lim\limits_{x \to \infty} \frac{1+x^2}{1+x} = \infty$.
+Vamos mostrar que $\lim\limits_{x \to \infty} \frac{1+x^2}{1+x} = \infty$.
 
-Proof: For $x \geq 1$, we have
+Demonstração: Para $x \geq 1$, temos
 \begin{equation*}
-\frac{1+x^2}{1+x} \geq 
-\frac{x^2}{x+x}  = 
+\frac{1+x^2}{1+x} \geq
+\frac{x^2}{x+x}  =
 \frac{x}{2} .
 \end{equation*}
-Given $N \in \R$, take $M = \max \{ 2N+1 , 1 \}$.
-If $x \geq M$, then $x \geq 1$ and $\nicefrac{x}{2} > N$.
-So
+Dado $N \in \R$, tome $M = \max \{ 2N+1 , 1 \}$.
+Se $x \geq M$, então $x \geq 1$ e $\nicefrac{x}{2} > N$.
+Assim,
 \begin{equation*}
-\frac{1+x^2}{1+x} \geq 
+\frac{1+x^2}{1+x} \geq
 \frac{x}{2} > N .
 \end{equation*}
 \end{example}
 
-\subsection{Compositions}
+\subsection{Composições}
 
-Finally, just as for limits at finite numbers,
-limits play nice with compositions given a
-continuity assumption.
+Por fim, assim como para limites em pontos finitos,
+os limites se comportam bem com composições, desde que haja uma
+hipótese de continuidade.
 
 \begin{prop} \label{prop:inflimcompositions}
-Suppose $f \colon A \to B$, $g \colon B \to \R$, $A, B \subset \R$, 
-$a \in \R \cup \{ -\infty, \infty\}$ is a cluster point of $A$,
-and $b \in \R \cup \{ -\infty, \infty\}$ is a cluster point of $B$.
-Suppose 
+Suponha que $f \colon A \to B$, $g \colon B \to \R$, $A, B \subset \R$,
+$a \in \R \cup \{ -\infty, \infty\}$ seja um ponto de acumulação de $A$,
+e que $b \in \R \cup \{ -\infty, \infty\}$ seja um ponto de acumulação de $B$.
+Suponha que
 \begin{equation*}
-\lim_{x \to a} f(x) = b\qquad \text{and} \qquad \lim_{y \to b} g(y) = c
+\lim_{x \to a} f(x) = b\qquad \text{e} \qquad \lim_{y \to b} g(y) = c
 \end{equation*}
-for some $c \in \R \cup \{ -\infty, \infty \}$.
-If $b \in B$, then suppose $g(b) = c$.
-Then
+para algum $c \in \R \cup \{ -\infty, \infty \}$.
+Se $b \in B$, suponha também que $g(b) = c$.
+Então
 \begin{equation*}
 \lim_{x \to a} g\bigl(f(x)\bigr) = c .
 \end{equation*}
 \end{prop}
 
-The proof is straightforward, and left as an exercise.  We already
-know the proposition when $a, b, c \in \R$ (see Exercises
-\ref{exercise:contlimitcomposition} and
-\ref{exercise:contlimitbadcomposition}).  Again, the requirement that $g$ is
-continuous at $b$, if $b \in B$, is necessary.
+A demonstração é direta e fica como exercício. Já conhecemos a proposição quando $a, b, c \in \R$
+(veja os exercícios
+\ref{exercise:contlimitcomposition} e
+\ref{exercise:contlimitbadcomposition}). Novamente, a exigência de que $g$ seja
+contínua em $b$, quando $b \in B$, é necessária.
 
 \begin{example}
-Let $h(x) \coloneqq e^{-x^2+x}$.  Then
+Seja $h(x) \coloneqq e^{-x^2+x}$. Então
 \begin{equation*}
 \lim_{x\to \infty} h(x) = 0 .
 \end{equation*}
 
-Proof:
-The claim follows once we know
+Demonstração:
+A afirmação segue assim que soubermos que
 \begin{equation*}
 \lim_{x\to \infty} (-x^2+x) = -\infty
 \end{equation*}
-and
+e
 \begin{equation*}
 \lim_{y\to -\infty} e^y = 0 ,
 \end{equation*}
-which is usually proved when the exponential function is defined.
+o que geralmente é provado quando a função exponencial é definida.
 \end{example}
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
 \begin{exercise}
-Prove \propref{liminfty:unique}.
+Demonstre \propref{liminfty:unique}.
 \end{exercise}
 
 \begin{exercise}
-Let $f \colon [1,\infty) \to \R$ be a function.  Define
-$g \colon (0,1] \to \R$ via $g(x) \coloneqq f(\nicefrac{1}{x})$.
-Using the definitions of limits directly,
-show that $\lim_{x\to 0^+} g(x)$
-exists if and only if $\lim_{x\to \infty} f(x)$ exists, in which
-case they are equal.
+Seja $f \colon [1,\infty) \to \R$ uma função. Defina
+$g \colon (0,1] \to \R$ por $g(x) \coloneqq f(\nicefrac{1}{x})$.
+Usando diretamente as definições de limite,
+mostre que $\lim_{x\to 0^+} g(x)$
+existe se, e somente se, $\lim_{x\to \infty} f(x)$ existe; nesse
+caso, os limites são iguais.
 \end{exercise}
 
 \begin{exercise}
-Prove \propref{prop:inflimcompositions}.
+Demonstre \propref{prop:inflimcompositions}.
 \end{exercise}
 
 \begin{exercise}
-Let us justify terminology.
-Let $f \colon \R \to \R$ be a function such that
-$\lim_{x \to \infty} f(x) = \infty$ (diverges to infinity).
-Show that $f(x)$ diverges (i.e.\ does not converge) as $x \to \infty$.
+Justifique a terminologia.
+Seja $f \colon \R \to \R$ uma função tal que
+$\lim_{x \to \infty} f(x) = \infty$ (diverge para infinito).
+Mostre que $f(x)$ diverge (isto é, não converge) quando $x \to \infty$.
 \end{exercise}
 
 \begin{exercise}
-Come up with the definitions for limits of $f(x)$ going to $-\infty$ as $x \to
-\infty$, $x \to -\infty$, and as $x \to c$ for a finite $c \in \R$.
-Then state the definitions for limits of $f(x)$ going to $\infty$ 
-as $x \to -\infty$, and as $x \to c$ for a finite $c \in \R$.
+Enuncie as definições para os limites de $f(x)$ iguais a $-\infty$ quando $x \to
+\infty$, $x \to -\infty$ e $x \to c$, com $c \in \R$ finito.
+Em seguida, enuncie as definições para os limites de $f(x)$ iguais a $\infty$
+quando $x \to -\infty$ e quando $x \to c$, com $c \in \R$ finito.
 \end{exercise}
 
 \begin{exercise}
-Suppose $P(x) \coloneqq x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0$ is a \emph{\myindex{monic polynomial}}
-of degree $n \geq 1$ (monic means that the coefficient of $x^n$ is 1).
+Suponha que $P(x) \coloneqq x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0$ seja um \emph{\myindex{polinômio mônico}}
+de grau $n \geq 1$ (mônico significa que o coeficiente de $x^n$ é 1).
 \begin{enumerate}[a)]
 \item
-Show that if $n$ is even, then $\lim\limits_{x\to\infty} P(x) = 
+Mostre que, se $n$ é par, então $\lim\limits_{x\to\infty} P(x) =
 \lim\limits_{x\to-\infty} P(x) = \infty$.
 \item
-Show that if $n$ is odd, then
-$\lim\limits_{x\to\infty} P(x) = \infty$ and
-$\lim\limits_{x\to-\infty} P(x) = -\infty$ (see previous exercise).
+Mostre que, se $n$ é ímpar, então
+$\lim\limits_{x\to\infty} P(x) = \infty$ e
+$\lim\limits_{x\to-\infty} P(x) = -\infty$ (veja o exercício anterior).
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Let $\{ x_n \}_{n=1}^\infty$ be a sequence.  Consider $S \coloneqq \N \subset \R$, and
-$f \colon S \to \R$ defined by $f(n) \coloneqq x_n$.  Show that
-the two notions of limit,
+Seja $\{ x_n \}_{n=1}^\infty$ uma sequência. Considere $S \coloneqq \N \subset \R$ e
+$f \colon S \to \R$ definida por $f(n) \coloneqq x_n$. Mostre que as duas noções de limite,
 \begin{equation*}
-\lim_{n\to\infty} x_n \qquad \text{and} \qquad
-\lim_{x\to\infty} f(x) 
+\lim_{n\to\infty} x_n \qquad \text{e} \qquad
+\lim_{x\to\infty} f(x)
 \end{equation*}
-are equivalent.  That is, show that if one exists so does
-the other one, and in this case they are equal.
+são equivalentes. Isto é, mostre que, se uma existe, a outra também existe
+e, nesse caso, elas são iguais.
 \end{exercise}
 
 \begin{exercise}
-Extend \lemmaref{seqflimitinf:lemma} as follows.
-Suppose $S \subset \R$ has a cluster point $c \in \R$, $c = \infty$,
-or $c = -\infty$.  Let $f \colon S \to \R$ be a function and suppose
-$L = \infty$ or $L = -\infty$.  Show that
+Estenda o \lemmaref{seqflimitinf:lemma} da seguinte maneira.
+Suponha que $S \subset \R$ tenha um ponto de acumulação $c \in \R$, $c = \infty$
+ou $c = -\infty$. Seja $f \colon S \to \R$ uma função e suponha que
+$L = \infty$ ou $L = -\infty$. Mostre que
 \begin{equation*}
 \begin{aligned}
 &
 \lim_{x\to c} f(x) = L
 \\
 &
-\qquad \text{if and only if}
+\qquad \text{se, e somente se,} \qquad
 \\
 &
-\lim_{n\to\infty} f(x_n) = L \enspace \text{for all sequences }
-\{ x_n \}_{n=1}^\infty \text{ such that } \lim_{n\to\infty} x_n = c
-\text{ and } x_n \in S \setminus \{c\}
-\text{ for all } n  .
+\lim_{n\to\infty} f(x_n) = L \enspace \text{para todas as sequências }
+\{ x_n \}_{n=1}^\infty \text{ tais que } \lim_{n\to\infty} x_n = c
+\text{ e } x_n \in S \setminus \{c\}
+\text{ para todo } n .
 \end{aligned}
 \end{equation*}
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon \R \to \R$ is a 2-periodic function, that is $f(x + 2) =
-f(x)$ for all $x$.  Define $g \colon \R \to \R$ by 
-$g(0) \coloneqq f(0)$ and for $x \neq 0$ by
+Suponha que $f \colon \R \to \R$ seja uma função 2-periódica, isto é, $f(x + 2) =
+f(x)$ para todo $x$. Defina $g \colon \R \to \R$ por
+$g(0) \coloneqq f(0)$ e, para $x \neq 0$, por
 \begin{equation*}
-g(x) \coloneqq f\left(\frac{\sqrt{x^2+1}-1}{x}\right)
+g(x) \coloneqq f\left(\frac{\sqrt{x^2+1}-1}{x}\right).
 \end{equation*}
 \begin{enumerate}[a)]
 \item
-Find the function $\varphi \colon (-1,1) \to \R$ such that
-$g\bigl(\varphi(t)\bigr) = f(t)$, that is, $\varphi^{-1}(x) = 
-\frac{\sqrt{x^2+1}-1}{x}$ for $x \neq 0$.
+Determine a função $\varphi \colon (-1,1) \to \R$ tal que
+$g\bigl(\varphi(t)\bigr) = f(t)$, isto é,
+$\varphi^{-1}(x) =
+\frac{\sqrt{x^2+1}-1}{x}$ para $x \neq 0$.
 \item
-Show that $f$ is continuous if and only if $g$ is continuous and
+Mostre que $f$ é contínua se, e somente se, $g$ é contínua e
 \begin{equation*}
-\lim_{x \to \infty} g(x) = 
-\lim_{x \to -\infty} g(x) = 
+\lim_{x \to \infty} g(x) =
+\lim_{x \to -\infty} g(x) =
 f(1) = f(-1) .
 \end{equation*}
 \end{enumerate}
@@ -2863,6 +2860,7 @@ f(1) = f(-1) .
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
+
 \section{Monotone functions and continuity}
 \label{sec:monotonefunc}
 

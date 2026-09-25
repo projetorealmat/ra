@@ -1200,166 +1200,166 @@ e, de fato, $g$ é contínua em $B$.
 \subsection{Exercises}
 
 \begin{exercise}
-Using the definition of continuity directly, prove that
-$f \colon \R \to \R$ defined by
-$f(x) \coloneqq x^2$ is continuous.
+Usando diretamente a definição de continuidade, prove que
+$f \colon \R \to \R$ definida por
+$f(x) \coloneqq x^2$ é contínua.
 \end{exercise}
 
 \begin{exercise}
-Using the definition of continuity directly, prove that
-$f \colon (0,\infty) \to \R$ defined by
-$f(x) \coloneqq \nicefrac{1}{x}$ is continuous.
+Usando diretamente a definição de continuidade, prove que
+$f \colon (0,\infty) \to \R$ definida por
+$f(x) \coloneqq \nicefrac{1}{x}$ é contínua.
 \end{exercise}
 
 \begin{exercise}
-Define $f \colon \R \to \R$ by
+Defina $f \colon \R \to \R$ por
 \begin{equation*}
 f(x) \coloneqq
 \begin{cases}
-x & \text{if } x \text{ is rational,} \\
-x^2 & \text{if } x \text{ is irrational.}
+x & \text{se } x \text{ é racional,} \\
+x^2 & \text{se } x \text{ é irracional.}
 \end{cases}
 \avoidbreak
 \end{equation*}
-Using the definition of continuity directly, prove that
-$f$ is continuous at $1$ and discontinuous at $2$.
+Usando diretamente a definição de continuidade, prove que
+$f$ é contínua em $1$ e descontínua em $2$.
 \end{exercise}
 
 \begin{exercise}
-Define $f \colon \R \to \R$ by
+Defina $f \colon \R \to \R$ por
 \begin{equation*}
 f(x) \coloneqq
 \begin{cases}
-\sin(\nicefrac{1}{x}) & \text{if } x \neq 0, \\
-0 & \text{if } x=0.
+\sin(\nicefrac{1}{x}) & \text{se } x \neq 0, \\
+0 & \text{se } x=0.
 \end{cases}
 \avoidbreak
 \end{equation*}
-Is $f$ continuous?  Prove your assertion.
+$f$ é contínua? Demonstre sua afirmação.
 \end{exercise}
 
 \begin{exercise}
-Define $f \colon \R \to \R$ by
+Defina $f \colon \R \to \R$ por
 \begin{equation*}
 f(x) \coloneqq
 \begin{cases}
-x \sin(\nicefrac{1}{x}) & \text{if } x \neq 0, \\
-0 & \text{if } x=0.
+x \sin(\nicefrac{1}{x}) & \text{se } x \neq 0, \\
+0 & \text{se } x=0.
 \end{cases}
 \avoidbreak
 \end{equation*}
-Is $f$ continuous?  Prove your assertion.
+$f$ é contínua? Demonstre sua afirmação.
 \end{exercise}
 
 \begin{exercise}
-Prove \propref{contalg:prop}.
+Demonstre a \propref{contalg:prop}.
 \end{exercise}
 
 \begin{exercise} \label{exercise:restrictioncontinuous}
-Let $S \subset \R$ and $A \subset S$.  Let $f \colon S \to \R$
-be a continuous function.
-Prove that the restriction $f|_A$ is continuous.
+Sejam $S \subset \R$ e $A \subset S$. Seja $f \colon S \to \R$
+uma função contínua.
+Demonstre que a restrição $f|_A$ é contínua.
 \end{exercise}
 
 \begin{exercise}
-Suppose $S \subset \R$ such that $(c-\alpha,c+\alpha) \subset S$ for some $c \in \R$
-and $\alpha > 0$.
-Let $f \colon S \to \R$ be a function and $A \coloneqq (c-\alpha,c+\alpha)$.  Prove that
-if $f|_A$ is continuous at $c$, then $f$ is continuous at $c$.
+Suponha que $S \subset \R$ e que $(c-\alpha,c+\alpha) \subset S$ para algum $c \in \R$
+e $\alpha > 0$.
+Seja $f \colon S \to \R$ uma função e $A \coloneqq (c-\alpha,c+\alpha)$. Demonstre que,
+se $f|_A$ é contínua em $c$, então $f$ é contínua em $c$.
 \end{exercise}
 
 \begin{exercise}
-Give an example of functions $f \colon \R \to \R$ and $g \colon \R \to \R$
-such that the function $h$, defined by $h(x) \coloneqq f(x) + g(x)$, is continuous,
-but $f$ and $g$ are not continuous.  Can you find $f$ and $g$ that are nowhere
-continuous, but $h$ is a continuous function?
+Dê um exemplo de funções $f \colon \R \to \R$ e $g \colon \R \to \R$
+tais que a função $h$, definida por $h(x) \coloneqq f(x) + g(x)$, seja contínua,
+mas $f$ e $g$ não sejam contínuas. Você consegue encontrar $f$ e $g$ que não sejam
+contínuas em ponto algum, mas para as quais $h$ seja uma função contínua?
 \end{exercise}
 
 \begin{exercise}
-Let $f \colon \R \to \R$ and 
-$g \colon \R \to \R$ be continuous functions.  Suppose that
-$f(r) = g(r)$ for all $r \in \Q$.
-Show that $f(x) = g(x)$ for all $x \in \R$.
+Sejam $f \colon \R \to \R$ e
+$g \colon \R \to \R$ funções contínuas. Suponha que
+$f(r) = g(r)$ para todo $r \in \Q$.
+Mostre que $f(x) = g(x)$ para todo $x \in \R$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:positivecontneigh}
-Let $f \colon \R \to \R$ be continuous.  Suppose $f(c) > 0$.  Show that
-there exists an $\alpha > 0$ such that for all $x \in (c-\alpha,c+\alpha)$,
-we have $f(x) > 0$.
+Seja $f \colon \R \to \R$ contínua. Suponha que $f(c) > 0$. Mostre que
+existe $\alpha > 0$ tal que, para todo $x \in (c-\alpha,c+\alpha)$,
+temos $f(x) > 0$.
 \end{exercise}
 
 \begin{exercise}
-Let $f \colon \Z \to \R$ be a function.  Show that $f$ is continuous.
+Seja $f \colon \Z \to \R$ uma função. Mostre que $f$ é contínua.
 \end{exercise}
 
 \begin{exercise} \label{exercise:contseqalt}
-Let $f \colon S \to \R$ be a function and $c \in S$ such that for every
-sequence $\{ x_n \}_{n=1}^\infty$ in $S$ with $\lim_{n\to\infty} x_n = c$, the sequence
-$\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ converges.  Show that $f$ is continuous at $c$.
+Seja $f \colon S \to \R$ uma função e seja $c \in S$ tal que, para toda
+sequência $\{ x_n \}_{n=1}^\infty$ em $S$ com $\lim_{n\to\infty} x_n = c$, a sequência
+$\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ converge. Mostre que $f$ é contínua em $c$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon [-1,0] \to \R$ and $g \colon [0,1] \to \R$ are continuous
-and $f(0) = g(0)$.  Define $h \colon [-1,1] \to \R$ by 
-$h(x) \coloneqq f(x)$ if $x \leq 0$ and $h(x) \coloneqq g(x)$ if $x > 0$.  Show that
-$h$ is continuous.
+Suponha que $f \colon [-1,0] \to \R$ e $g \colon [0,1] \to \R$ sejam contínuas
+e que $f(0) = g(0)$. Defina $h \colon [-1,1] \to \R$ por
+$h(x) \coloneqq f(x)$ se $x \leq 0$ e $h(x) \coloneqq g(x)$ se $x > 0$. Mostre que
+$h$ é contínua.
 \end{exercise}
 
 \begin{exercise}
-Suppose $g \colon \R \to \R$ is a continuous function such that $g(0) = 0$,
-and suppose $f \colon \R \to \R$ is such that
-$\babs{f(x)-f(y)} \leq g(x-y)$ for all $x$ and $y$.  Show that $f$ is
-continuous.
+Suponha que $g \colon \R \to \R$ seja uma função contínua tal que $g(0) = 0$,
+e suponha que $f \colon \R \to \R$ satisfaça
+$\babs{f(x)-f(y)} \leq g(x-y)$ para todos $x$ e $y$. Mostre que $f$ é
+contínua.
 \end{exercise}
 
-\begin{exercise}[Challenging]
-Suppose $f \colon \R \to \R$ is continuous at $0$ and
-such that $f(x+y) = f(x) + f(y)$ for every $x$ and $y$.
-Show that $f(x) = ax$ for some $a \in \R$.
-Hint: Show that $f(nx) = nf(x)$, then show $f$ is continuous on $\R$.
-Then show that $\nicefrac{f(x)}{x} = f(1)$ for all rational $x \neq 0$.
+\begin{exercise}[Desafio]
+Suponha que $f \colon \R \to \R$ seja contínua em $0$ e
+satisfaça $f(x+y) = f(x) + f(y)$ para todos $x$ e $y$.
+Mostre que $f(x) = ax$ para algum $a \in \R$.
+Dica: mostre que $f(nx) = nf(x)$ e, em seguida, que $f$ é contínua em $\R$.
+Depois mostre que $\nicefrac{f(x)}{x} = f(1)$ para todo racional $x \neq 0$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:minmaxcont}
-Suppose $S \subset \R$ and
-let $f \colon S \to \R$ and
-$g \colon S \to \R$ be continuous functions.
-Define $p \colon S \to \R$ by
-$p(x) \coloneqq \max \bigl\{ f(x) , g(x) \bigr\}$ and
-$q \colon S \to \R$ by
-$q(x) \coloneqq \min \bigl\{ f(x) , g(x) \bigr\}$.  Prove that $p$ and $q$ are
-continuous.
+Suponha que $S \subset \R$ e sejam
+$f \colon S \to \R$ e $g \colon S \to \R$ funções contínuas.
+Defina $p \colon S \to \R$ por
+$p(x) \coloneqq \max \bigl\{ f(x) , g(x) \bigr\}$ e
+$q \colon S \to \R$ por
+$q(x) \coloneqq \min \bigl\{ f(x) , g(x) \bigr\}$. Demonstre que $p$ e $q$ são
+contínuas.
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon [-1,1] \to \R$ is a function continuous at all $x \in
-[-1,1] \setminus \{ 0 \}$.  Show that for every $\epsilon$ such
-that $0 < \epsilon < 1$, there exists
-a function $g \colon [-1,1] \to \R$ continuous on all of $[-1,1]$ such that
-$f(x) = g(x)$ for all $x \in [-1,-\epsilon] \cup [\epsilon,1]$, and 
-$\babs{g(x)} \leq \babs{f(x)}$ for all $x \in [-1,1]$.
+Suponha que $f \colon [-1,1] \to \R$ seja uma função contínua em todo $x \in
+[-1,1] \setminus \{ 0 \}$. Mostre que, para todo $\epsilon$ tal
+que $0 < \epsilon < 1$, existe
+uma função $g \colon [-1,1] \to \R$ contínua em todo $[-1,1]$ tal que
+$f(x) = g(x)$ para todo $x \in [-1,-\epsilon] \cup [\epsilon,1]$, e
+$\babs{g(x)} \leq \babs{f(x)}$ para todo $x \in [-1,1]$.
 \end{exercise}
 
-\begin{exercise}[Challenging]
-A function $f \colon I \to \R$ is \emph{\myindex{convex}} if
-whenever $a \leq x \leq b$ for $a,x,b$ in $I$, we have
-$f(x) \leq f(a) \frac{b-x}{b-a} + f(b) \frac{x-a}{b-a}$.  In other words,
-the line drawn between $\bigl(a,f(a)\bigr)$ and $\bigl(b,f(b)\bigr)$ 
-is above the graph of $f$.
+\begin{exercise}[Desafio]
+Uma função $f \colon I \to \R$ é \emph{\myindex{convexa}} se,
+sempre que $a \leq x \leq b$ para $a,x,b$ em $I$, temos
+$f(x) \leq f(a) \frac{b-x}{b-a} + f(b) \frac{x-a}{b-a}$. Em outras palavras,
+a reta que liga $\bigl(a,f(a)\bigr)$ e $\bigl(b,f(b)\bigr)$
+fica acima do gráfico de $f$.
 \begin{enumerate}[a)]
 \item
-Prove that
-if $I = (\alpha,\beta)$ an open interval and $f \colon I \to \R$ is convex,
-then $f$ is continuous.
+Demonstre que,
+se $I = (\alpha,\beta)$ é um intervalo aberto e $f \colon I \to \R$ é convexa,
+então $f$ é contínua.
 \item
-Find an example of a convex $f \colon [0,1] \to \R$ that is
-not continuous.
+Encontre um exemplo de função convexa $f \colon [0,1] \to \R$ que não seja
+contínua.
 \end{enumerate}
 \end{exercise}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\sectionnewpage
 \sectionnewpage
 \section{Extreme and intermediate value theorems}
 \label{sec:minmaxint}

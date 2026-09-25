@@ -1361,190 +1361,189 @@ contínua.
 
 \sectionnewpage
 \sectionnewpage
-\section{Extreme and intermediate value theorems}
+\section{Teoremas do valor extremo e do valor intermediário}
 \label{sec:minmaxint}
 
 %mbxINTROSUBSECTION
 
-\sectionnotes{1.5 lectures}
+\sectionnotes{1,5 aulas}
 
-Continuous functions on closed and bounded intervals
-are quite well behaved.
+Funções contínuas em intervalos fechados e limitados
+têm um comportamento bastante regular.
 
-\subsection{Min-max or extreme value theorem}
+\subsection{Teorema do máximo-mínimo ou do valor extremo}
 
-Recall that $f \colon [a,b] \to \R$ is
-\emph{bounded}\index{bounded function}\index{function!bounded}
-if there exists a $B \in \R$ such that
-$\babs{f(x)} \leq B$ for all $x \in [a,b]$.
-For a continuous function on a closed and bounded interval, we have the following lemma.
+Lembre-se de que $f \colon [a,b] \to \R$ é
+\emph{limitada}\index{função limitada}\index{função!limitada}
+se existe $B \in \R$ tal que
+$\babs{f(x)} \leq B$ para todo $x \in [a,b]$.
+Para uma função contínua em um intervalo fechado e limitado, temos o lema a seguir.
 
 \begin{lemma}
-A continuous function $f \colon [a,b] \to \R$ is bounded.
+Uma função contínua $f \colon [a,b] \to \R$ é limitada.
 \end{lemma}
 
 \begin{proof}
-We prove the claim by contrapositive.  Suppose $f$ is not bounded.
-Then for each
-$n \in \N$, there is an $x_n \in [a,b]$ such that
+Provaremos a afirmação por contraposição. Suponha que $f$ não seja limitada.
+Então, para cada
+$n \in \N$, existe $x_n \in [a,b]$ tal que
 \begin{equation*}
 \babs{f(x_n)} \geq n .
 \end{equation*}
-The sequence $\{ x_n \}_{n=1}^\infty$ is bounded as $a \leq x_n \leq b$.
-By the \hyperref[thm:bwseq]{Bolzano--Weierstrass theorem},
-there is a convergent subsequence $\{ x_{n_i} \}_{i=1}^\infty$.
-Let $x \coloneqq \lim_{i\to\infty} x_{n_i}$.
-Since $a \leq x_{n_i} \leq b$ for all $i$, we have $a \leq x \leq b$.
-The sequence $\bigl\{ f(x_{n_i}) \bigr\}_{i=1}^\infty$ is not bounded 
-as 
+A sequência $\{ x_n \}_{n=1}^\infty$ é limitada, pois $a \leq x_n \leq b$.
+Pelo \hyperref[thm:bwseq]{teorema de Bolzano--Weierstrass},
+existe uma subsequência convergente $\{ x_{n_i} \}_{i=1}^\infty$.
+Seja $x \coloneqq \lim_{i\to\infty} x_{n_i}$.
+Como $a \leq x_{n_i} \leq b$ para todo $i$, temos $a \leq x \leq b$.
+A sequência $\bigl\{ f(x_{n_i}) \bigr\}_{i=1}^\infty$ não é limitada,
+pois
 $\babs{f(x_{n_i})} \geq n_i \geq i$.
-Thus $f$ is not continuous at $x$ as
+Assim, $f$ não é contínua em $x$, pois
 \begin{equation*}
 f(x)
 =
 f\Bigl( \lim_{i\to\infty} x_{n_i} \Bigr) ,
-\qquad \text{but} \qquad
-\lim_{i\to\infty} f(x_{n_i}) \enspace \text{does not exist.} \qedhere
+\qquad \text{mas} \qquad
+\lim_{i\to\infty} f(x_{n_i}) \enspace \text{não existe.} \qedhere
 \end{equation*}
 \end{proof}
 
-Notice a key point of the proof.
-Boundedness of $[a,b]$ allows us to use Bolzano--Weierstrass,
-while the fact that it is closed gives us that the limit is back in $[a,b]$.
-The technique is a common one: Find a sequence with a certain property,
-then use Bolzano--Weierstrass to make such a sequence that also converges.
+Observe um ponto importante da demonstração.
+O fato de $[a,b]$ ser limitado nos permite usar Bolzano--Weierstrass,
+enquanto o fato de ser fechado garante que o limite continua em $[a,b]$.
+A técnica é comum: encontrar uma sequência com certa propriedade
+e então usar Bolzano--Weierstrass para obter uma subsequência que também convirja.
 
-Recall from calculus that $f \colon S \to \R$ achieves an
-\emph{\myindex{absolute minimum}}\index{minimum!absolute}%
-\index{achieves absolute minimum}
-at $c \in S$ if
+Relembre do cálculo que $f \colon S \to \R$ atinge um
+\emph{\myindex{mínimo absoluto}}\index{mínimo!absoluto}%
+\index{atinge mínimo absoluto}
+em $c \in S$ se
 \begin{equation*}
-f(x) \geq f(c) \qquad \text{for all } x \in S.
+f(x) \geq f(c) \qquad \text{para todo } x \in S.
 \end{equation*}
-On the other hand, $f$ achieves an 
-\emph{\myindex{absolute maximum}}\index{maximum!absolute}%
-\index{achieves absolute maximum}
-at $c \in S$ if
+Por outro lado, $f$ atinge um
+\emph{\myindex{máximo absoluto}}\index{máximo!absoluto}%
+\index{atinge máximo absoluto}
+em $c \in S$ se
 \begin{equation*}
-f(x) \leq f(c) \qquad \text{for all } x \in S.
+f(x) \leq f(c) \qquad \text{para todo } x \in S.
 \end{equation*}
-If such a $c \in S$ exists, then we say
-$f$ \emph{achieves an absolute minimum (resp.\ absolute maximum) on
-$S$}, and we call
-$f(c)$ the \emph{absolute minimum (resp.\ absolute maximum)}.
+Se tal $c \in S$ existe, dizemos que
+$f$ \emph{atinge um mínimo absoluto (respectivamente, máximo absoluto) em
+$S$}, e chamamos
+$f(c)$ de \emph{mínimo absoluto (respectivamente, máximo absoluto)}.
 %See \figureref{fig:minmax}.
 \begin{myfigureht}
 \myincludegraphics{minmax}{%
-A graph  of a function on the interval from a to b.
-The graph is between two horizontal lines,
-one marked as the absolute maximum of f which equals
-f of c, and
-one marked as the absolute minimum of f which equals
-f of d.}
-\caption{$f \colon [a,b] \to \R$ achieves an absolute maximum $f(c)$ at
-$c$, and an absolute minimum $f(d)$ at $d$.\label{fig:minmax}}
+Gráfico de uma função no intervalo de a até b.
+O gráfico está entre duas retas horizontais,
+uma indicada como o máximo absoluto de f, que é igual a
+f de c, e
+a outra indicada como o mínimo absoluto de f, que é igual a
+f de d.}
+\caption{$f \colon [a,b] \to \R$ atinge um máximo absoluto $f(c)$ em
+$c$ e um mínimo absoluto $f(d)$ em $d$.\label{fig:minmax}}
 \end{myfigureht}
 
-If $S$ is a closed
-and bounded interval, then a continuous $f$
-is not just bounded, it must achieve an absolute minimum and an absolute
-maximum on $S$.
+Se $S$ é um intervalo fechado
+e limitado, então uma função contínua $f$
+não é apenas limitada: ela também atinge um mínimo absoluto e um máximo absoluto
+em $S$.
 
-\begin{thm}[Minimum-maximum theorem / Extreme value theorem]
-\index{minimum-maximum theorem}%
-\index{maximum-minimum theorem}%
-\index{extreme value theorem}%
-A continuous function $f \colon [a,b] \to \R$
-achieves both an absolute minimum and an absolute maximum on $[a,b]$.
+\begin{thm}[Teorema do máximo-mínimo / Teorema do valor extremo]
+\index{teorema do mínimo-máximo}%
+\index{teorema do máximo-mínimo}%
+\index{teorema do valor extremo}%
+Uma função contínua $f \colon [a,b] \to \R$
+atinge um mínimo absoluto e um máximo absoluto em $[a,b]$.
 \end{thm}
 
-Again, we remark that it is important that the domain of $f$ is a closed and bounded interval $[a,b]$.
+Mais uma vez, ressaltamos que é importante que o domínio de $f$ seja um intervalo fechado e limitado $[a,b]$.
 
 \begin{proof}
-The lemma says that $f$ is bounded, so
-the set $f\bigl([a,b]\bigr) = \bigl\{ f(x) : x \in [a,b] \bigr\}$ has a supremum and an infimum.
-There exist sequences
-in the set $f\bigl([a,b]\bigr)$ that approach its supremum and its infimum.
-That is, there are sequences
-$\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ and $\bigl\{ f(y_n)
-\bigr\}_{n=1}^\infty$, where $x_n$ and $y_n$ are in $[a,b]$,
-such that
+O lema afirma que $f$ é limitada; portanto,
+o conjunto $f\bigl([a,b]\bigr) = \bigl\{ f(x) : x \in [a,b] \bigr\}$ tem supremo e ínfimo.
+Existem sequências
+no conjunto $f\bigl([a,b]\bigr)$ que se aproximam de seu supremo e de seu ínfimo.
+Isto é, há sequências
+$\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ e $\bigl\{ f(y_n)
+\bigr\}_{n=1}^\infty$, em que $x_n$ e $y_n$ pertencem a $[a,b]$,
+tais que
 \begin{equation*}
-\lim_{n\to\infty} f(x_n) = \inf f\bigl([a,b]\bigr) \qquad \text{and} \qquad
+\lim_{n\to\infty} f(x_n) = \inf f\bigl([a,b]\bigr) \qquad \text{e} \qquad
 \lim_{n\to\infty} f(y_n) = \sup f\bigl([a,b]\bigr).
 \end{equation*}
-We are not done yet; we need to find where the minima and the maxima are.
-The problem is that the sequences $\{ x_n \}_{n=1}^\infty$ and
-$\{ y_n \}_{n=1}^\infty$ need not converge.
-We know $\{ x_n \}_{n=1}^\infty$ and $\{ y_n \}_{n=1}^\infty$ are bounded
-(their elements belong to a bounded interval $[a,b]$).
-Apply the 
-\hyperref[thm:bwseq]{Bolzano--Weierstrass theorem}
-to find
-convergent subsequences
-$\{ x_{n_i} \}_{i=1}^\infty$ and 
-$\{ y_{m_i} \}_{i=1}^\infty$.  Let
+Ainda não terminamos: precisamos encontrar onde estão os mínimos e máximos.
+O problema é que as sequências $\{ x_n \}_{n=1}^\infty$ e
+$\{ y_n \}_{n=1}^\infty$ não precisam convergir.
+Sabemos que $\{ x_n \}_{n=1}^\infty$ e $\{ y_n \}_{n=1}^\infty$ são limitadas
+(seus termos pertencem ao intervalo limitado $[a,b]$).
+Apliquemos o
+\hyperref[thm:bwseq]{teorema de Bolzano--Weierstrass}
+para encontrar
+subsequências convergentes
+$\{ x_{n_i} \}_{i=1}^\infty$ e
+$\{ y_{m_i} \}_{i=1}^\infty$. Seja
 \begin{equation*}
 x \coloneqq \lim_{i\to\infty} x_{n_i}
-\qquad \text{and} \qquad
+\qquad \text{e} \qquad
 y \coloneqq \lim_{i\to\infty} y_{m_i}.
 \end{equation*}
-As $a \leq x_{n_i} \leq b$ for all $i$, we have $a \leq x \leq b$.
-Similarly, $a \leq y \leq b$.  So $x$ and $y$ are in $[a,b]$.
-For convergence sequences,
-a limit of a subsequence is the same as the limit of the
-sequence.  Also, we can take a limit past the continuous function $f$.  So,
+Como $a \leq x_{n_i} \leq b$ para todo $i$, temos $a \leq x \leq b$.
+De modo semelhante, $a \leq y \leq b$. Portanto, $x$ e $y$ pertencem a $[a,b]$.
+Para sequências convergentes,
+o limite de uma subsequência é igual ao limite da
+sequência. Além disso, podemos passar o limite pela função contínua $f$. Assim,
 \begin{equation*}
 \inf f\bigl([a,b]\bigr) = \lim_{n\to\infty} f(x_n)
 = \lim_{i\to\infty} f(x_{n_i}) = 
 f \Bigl( \lim_{i\to\infty} x_{n_i} \Bigr) = f(x) .
 \end{equation*}
-Similarly,
+De modo semelhante,
 \begin{equation*}
 \sup f\bigl([a,b]\bigr) = \lim_{n\to\infty} f(y_n)
 = \lim_{i\to\infty} f(y_{m_i}) = 
 f \Bigl( \lim_{i\to\infty} y_{m_i} \Bigr) = f(y) .
 \end{equation*}
-Hence, $f$ achieves an absolute minimum at $x$ and
-an absolute maximum at $y$.
+Portanto, $f$ atinge um mínimo absoluto em $x$ e
+um máximo absoluto em $y$.
 \end{proof}
 
 \begin{example}
-The function $f(x) \coloneqq x^2+1$ defined on the interval $[-1,2]$ achieves a minimum
-at $x=0$ when $f(0) = 1$.  It achieves a maximum at $x=2$ where $f(2) = 5$.
-Do note that the domain of definition matters.  If we instead took the domain
-to be $[-10,10]$, then $f$ would no longer have a maximum at $x=2$.
-Instead,
-the maximum would be achieved at $x=10$ and also at $x=-10$.
+A função $f(x) \coloneqq x^2+1$ definida no intervalo $[-1,2]$ atinge um mínimo
+em $x=0$, onde $f(0) = 1$. Atinge um máximo em $x=2$, onde $f(2) = 5$.
+Observe que o domínio é relevante. Se, em vez disso, tomássemos o domínio
+como $[-10,10]$, então $f$ não teria mais um máximo em $x=2$.
+O máximo seria atingido em $x=10$ e também em $x=-10$.
 \end{example}
 
-We show by examples that the different hypotheses of the theorem are
-truly needed.
+Mostraremos com exemplos que as diferentes hipóteses do teorema são
+realmente necessárias.
 
 \begin{example}
-The function $f \colon \R \to \R$ defined by $f(x) \coloneqq x$
-achieves neither a minimum nor a maximum.  So it is important that
-we are looking at a bounded interval.
-\end{example}
-
-\begin{example}
-The function $f \colon (0,1) \to \R$ defined by $f(x) \coloneqq \nicefrac{1}{x}$
-achieves neither a minimum, nor a maximum.
-It is continuous, but $(0,1)$ is not closed.
-The values of the function are
-unbounded as we approach $0$.  Also as we approach $x=1$, the values of the
-function approach $1$, but $f(x) > 1$ for all $x \in (0,1)$.  There is
-no $x \in (0,1)$ such that $f(x) = 1$.  So it is important that
-we are looking at a closed interval.
+A função $f \colon \R \to \R$ definida por $f(x) \coloneqq x$
+não atinge mínimo nem máximo. Portanto, é importante
+considerarmos um intervalo limitado.
 \end{example}
 
 \begin{example}
-Continuity is important.
-Define $f \colon [0,1] \to \R$ by 
-$f(x) \coloneqq \nicefrac{1}{x}$ for $x > 0$ and let $f(0) \coloneqq 0$.
-The function does not achieve a maximum.  The domain $[0,1]$ is closed and
-bounded, but the problem is that
-the function is not continuous at 0.
+A função $f \colon (0,1) \to \R$ definida por $f(x) \coloneqq \nicefrac{1}{x}$
+não atinge mínimo nem máximo.
+Ela é contínua, mas $(0,1)$ não é fechado.
+Os valores da função são
+ilimitados quando nos aproximamos de $0$. Além disso, quando nos aproximamos de $x=1$, os valores da
+função se aproximam de $1$, mas $f(x) > 1$ para todo $x \in (0,1)$. Não existe
+$x \in (0,1)$ tal que $f(x) = 1$. Portanto, é importante
+considerarmos um intervalo fechado.
+\end{example}
+
+\begin{example}
+A continuidade é importante.
+Defina $f \colon [0,1] \to \R$ por
+$f(x) \coloneqq \nicefrac{1}{x}$ para $x > 0$ e seja $f(0) \coloneqq 0$.
+A função não atinge um máximo. O domínio $[0,1]$ é fechado e
+limitado, mas o problema é que
+a função não é contínua em 0.
 \end{example}
 
 \subsection{Bolzano's intermediate value theorem}

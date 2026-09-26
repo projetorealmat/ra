@@ -1,5 +1,5 @@
-Basic Analysis: Introduction to Real Analysis
----------------------------------------------
+Análise Básica I — Introdução à Análise Real
+--------------------------------------------
 
 A free online textbook.  See https://www.jirka.org/ra/ or https://jirilebl.github.io/ra/
 
@@ -55,7 +55,7 @@ take out the "sort=use" option from the glossaries package.
 
 ## REALMat integration
 
-This repository is the REALMat Volume I edition in preparation, based on the English source repository. Translation and adaptation will take place here; the upstream repository is retained only for provenance, credits, and license information.
+Esta é a edição brasileira do Volume I, baseada na obra de Jiří Lebl. A tradução é de Carlos André Duarte Costa, com revisão editorial da equipe de revisão da edição brasileira. O projeto REALMat organiza e disponibiliza a edição; o repositório de origem é mantido para registrar procedência, créditos e licença.
 
 The automated Pages build preserves both volumes from realanal12.tex. Volume I is translated to Portuguese and Volume II remains in English. The official PDF release corresponds to Volume I and is offered for download from the REALMat portal.
 

@@ -1,36 +1,36 @@
-\chapter{Metric Spaces} \label{ms:chapter}
+\chapter{Espaços métricos} \label{ms:chapter}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Metric spaces}
+\section{Espaços métricos}
 \label{sec:metric}
 
-\sectionnotes{1.5 lectures}
+\sectionnotes{1,5 aulas}
 
-As mentioned in the introduction, the main idea in analysis is to take
-limits.  In \chapterref{seq:chapter}, we learned to take limits of sequences of
-real numbers.  In \chapterref{lim:chapter}, we learned to take limits
-of functions as a real variable approached some real number.
+Como mencionamos na introdução, a ideia principal da análise é tomar
+limites. Em \chapterref{seq:chapter}, aprendemos a calcular limites de
+sequências de números reais. Em \chapterref{lim:chapter}, aprendemos a
+calcular limites de funções quando uma variável real se aproxima de certo
+número real.
 
-We want to take limits in more complicated contexts.  For
-example, we want to have sequences of points in 3-dimensional space.
-We wish to define continuous functions of several variables.
-We even want to define functions on spaces that are a little harder to
-describe, such as the surface of the earth.  We still want to talk about
-limits there.
+Queremos calcular limites em contextos mais complicados. Por exemplo,
+queremos considerar sequências de pontos no espaço tridimensional.
+Queremos definir funções contínuas de várias variáveis.
+Queremos até definir funções em espaços um pouco mais difíceis de descrever,
+como a superfície da Terra. Ainda queremos falar de limites nesses espaços.
 
-Finally, we have seen the limit of a sequence of
-functions in \chapterref{fs:chapter}.
-We wish to unify all these notions so that we do not have to
-reprove theorems over and over again in each context.  The concept of a
-metric space is an elementary yet powerful tool in analysis.  And while it
-is not sufficient to describe every type of limit we find in modern
-analysis, it gets us very far indeed.
+Por fim, vimos o limite de uma sequência de funções em
+\chapterref{fs:chapter}.
+Queremos unificar todas essas noções para não ter de demonstrar os mesmos
+teoremas repetidas vezes em cada contexto. O conceito de espaço métrico é
+uma ferramenta elementar, mas poderosa, em análise. Embora não seja suficiente
+para descrever todos os tipos de limite encontrados na análise moderna, ele
+nos permite avançar bastante.
 
 \begin{defn}
-Let $X$ be a set, and let
+Seja $X$ um conjunto, e seja
 $d \colon X \times X \to \R$
-be a function such that for all $x,y,z \in X$
+uma função tal que, para quaisquer $x,y,z \in X$,
 \begin{enumerate}[(i)]
 %
 \item \label{metric:pos}
@@ -38,99 +38,92 @@ be a function such that for all $x,y,z \in X$
 \makebox[2.8in][l]{$d(x,y) \geq 0$.}
 %mbxENDIGNORE
 %mbxlatex $d(x,y) \geq 0$. \qquad
-(\emph{nonnegativity})\index{nonnegativity of a metric}
+(\emph{não negatividade})\index{não negatividade!de uma métrica}
 %
 \item \label{metric:zero}
 %mbxSTARTIGNORE
-\makebox[2.8in][l]{$d(x,y) = 0$ if and only if $x = y$.}
+\makebox[2.8in][l]{$d(x,y) = 0$ se, e somente se, $x = y$.}
 %mbxENDIGNORE
-%mbxlatex $d(x,y) = 0$ if and only if $x = y$. \qquad
-(\emph{\myindex{identity of indiscernibles}})
+%mbxlatex $d(x,y) = 0$ se, e somente se, $x = y$. \qquad
+(\emph{\myindex{identidade dos indiscerníveis}})
 %
 \item \label{metric:com}
 %mbxSTARTIGNORE
 \makebox[2.8in][l]{$d(x,y) = d(y,x)$.} 
 %mbxENDIGNORE
 %mbxlatex $d(x,y) = d(y,x)$. \qquad
-(\emph{symmetry})\index{symmetry of a metric}
+(\emph{simetria})\index{simetria!de uma métrica}
 %
 \item \label{metric:triang}
 %mbxSTARTIGNORE
 \makebox[2.8in][l]{$d(x,z) \leq d(x,y)+ d(y,z)$.}
 %mbxENDIGNORE
 %mbxlatex $d(x,z) \leq d(x,y)+ d(y,z)$. \qquad
-(\emph{\myindex{triangle inequality}})
+(\emph{\myindex{desigualdade triangular}})
 \end{enumerate}
-The pair $(X,d)$ is called a \emph{\myindex{metric space}}.  The
-function $d$ is called the \emph{\myindex{metric}} or the
-\emph{\myindex{distance function}}.
-Sometimes we write just $X$ as the metric space instead of $(X,d)$
-if the metric is clear from context.
+O par $(X,d)$ é chamado de \emph{\myindex{espaço métrico}}. A função $d$ é
+chamada de \emph{\myindex{métrica}} ou de \emph{\myindex{função distância}}.
+Às vezes, escrevemos simplesmente $X$ para indicar o espaço métrico, em vez
+de $(X,d)$, quando a métrica fica clara pelo contexto.
 \end{defn}
 
-The geometric idea is that $d$ is the distance between two points. 
-Items \ref{metric:pos}--\ref{metric:com} have an obvious geometric
-interpretation: Distance is always nonnegative, the only point that is
-distance 0 away from $x$ is $x$ itself, and finally that the distance from
-$x$ to $y$ is the same as the distance from $y$ to $x$.  The triangle
-inequality \ref{metric:triang} has the interpretation given in
-\figureref{fig:mstriang}.
+A ideia geométrica é que $d$ representa a distância entre dois pontos.
+Os itens \ref{metric:pos}--\ref{metric:com} têm uma interpretação geométrica
+óbvia: a distância é sempre não negativa; o único ponto cuja distância a
+$x$ é zero é o próprio $x$; e a distância de $x$ a $y$ é igual à distância
+de $y$ a $x$. A desigualdade triangular \ref{metric:triang} tem a
+interpretação ilustrada na \figureref{fig:mstriang}.
 \begin{myfigureht}
 \myincludepdft{ms-triang}{%
-A triangle with three vertices x, y, and z.
-The distance between x and z is marked as
-d of x comma z, the distance from x to y
-is marked as d of x comma y, and the distance
-from y to z is marked as d of y comma z.
-An arrow from x to z is labeled "shorter", and
-an arrow that goes from x to y and then turns to z
-is labeled "longer".}
-\caption{Diagram of the triangle inequality in metric spaces.\label{fig:mstriang}}
+Um triângulo com vértices x, y e z.
+A distância entre x e z é indicada por d(x,z); a distância de x a y,
+por d(x,y); e a distância de y a z, por d(y,z).
+Uma seta de x a z está identificada como "mais curto", e uma seta que vai
+de x a y e depois segue até z está identificada como "mais longo".}
+\caption{Diagrama da desigualdade triangular em espaços métricos.\label{fig:mstriang}}
 \end{myfigureht}
 
-For the purposes of drawing, it is convenient to draw figures and
-diagrams in the plane with the metric being the euclidean distance.
-However, that is only one particular metric space.  Just because a
-certain fact seems to be clear from drawing a picture does not mean it is
-true in every metric space.
-You might be getting sidetracked by intuition from euclidean geometry,
-whereas the concept of a metric space is a lot more general.
+Para desenhar, é conveniente representar figuras e diagramas no plano, usando
+a distância euclidiana como métrica.
+No entanto, esse é apenas um espaço métrico particular. O fato de algo parecer
+claro ao observar um desenho não significa que seja verdadeiro em todo espaço
+métrico.
+Talvez a intuição da geometria euclidiana esteja desviando sua atenção, embora
+o conceito de espaço métrico seja muito mais geral.
 
-Let us give some examples of metric spaces.
+Vejamos alguns exemplos de espaços métricos.
 
 \begin{example}
-The set of real numbers $\R$ is a metric space with the metric
+O conjunto dos números reais $\R$ é um espaço métrico com a métrica
 \begin{equation*}
 d(x,y) \coloneqq \sabs{x-y} .
 \end{equation*}
-Items \ref{metric:pos}--\ref{metric:com} of the definition
-are easy to verify.  The
-triangle inequality \ref{metric:triang} follows immediately
-from the standard triangle inequality for real numbers:
+É fácil verificar os itens \ref{metric:pos}--\ref{metric:com} da definição.
+A desigualdade triangular \ref{metric:triang} decorre imediatamente da
+desigualdade triangular usual para números reais:
 \begin{equation*}
 d(x,z) = \sabs{x-z} = 
 \sabs{x-y+y-z} \leq
 \sabs{x-y}+\sabs{y-z} =
 d(x,y)+ d(y,z) .
 \end{equation*}
-This metric is the \emph{\myindex{standard metric on $\R$}}.  If we talk
-about $\R$ as a metric space without mentioning a specific metric, we 
-mean this particular metric.
+Essa métrica é a \emph{\myindex{métrica usual em $\R$}}. Se falarmos de $\R$
+como espaço métrico sem especificar uma métrica, estaremos nos referindo a
+essa métrica.
 \end{example}
 
 \begin{example}
-We can also put a different metric on the set of real numbers.
-For example, take the set of real numbers $\R$ together with the metric
+Também podemos definir outra métrica no conjunto dos números reais.
+Por exemplo, consideremos o conjunto dos números reais $\R$ com a métrica
 \begin{equation*}
 d(x,y) \coloneqq
 \frac{\sabs{x-y}}{\sabs{x-y}+1} .
 \end{equation*}
-Items \ref{metric:pos}--\ref{metric:com} are again easy to verify.  The
-triangle inequality \ref{metric:triang} is a little bit more difficult.
-Note that $d(x,y) = \varphi\bigl(\sabs{x-y}\bigr)$ where $\varphi(t) =
-\frac{t}{t+1}$ and $\varphi$ is an increasing function
-(positive derivative, see \figureref{fig:tovertp1}).
-Hence,
+Novamente, é fácil verificar os itens \ref{metric:pos}--\ref{metric:com}.
+A desigualdade triangular \ref{metric:triang} é um pouco mais difícil.
+Observe que $d(x,y) = \varphi\bigl(\sabs{x-y}\bigr)$, em que
+$\varphi(t) = \frac{t}{t+1}$, e que $\varphi$ é uma função crescente (sua
+derivada é positiva; veja a \figureref{fig:tovertp1}). Portanto,
 \begin{equation*}
 \begin{split}
 d(x,z) = \varphi\bigl(\sabs{x-z}\bigr)
@@ -151,46 +144,41 @@ d(x,z) = \varphi\bigl(\sabs{x-z}\bigr)
 d(x,y)+ d(y,z) .
 \end{split}
 \end{equation*}
-The function $d$ is thus a metric, and gives
-an example of a nonstandard metric on $\R$.  With this metric,
-$d(x,y) < 1$ for all $x,y \in \R$.  That is,
-every two points are less than 1 unit apart.
+Assim, $d$ é uma métrica e fornece um exemplo de métrica não usual em $\R$.
+Nessa métrica, $d(x,y) < 1$ para todos $x,y \in \R$. Isto é, quaisquer dois
+pontos estão a uma distância menor que 1 unidade.
 \begin{myfigureht}
 \myincludegraphics{tovertp1graph}{%
-A graph of a function that starts going diagonally
-up from the horizontal axis and then slowly turns
-so that it becomes almost horizontal at the right
-end of the graph and a horizontal asymptote above
-the graph is marked with a dashed line.}
-\caption{Graph of $\frac{t}{t+1}$ for positive $t$ with an asymptote at 1.\label{fig:tovertp1}}
+Gráfico de uma função que parte da origem subindo diagonalmente e depois se
+curva lentamente, tornando-se quase horizontal na extremidade direita.
+Uma linha tracejada acima do gráfico indica uma assíntota horizontal.}
+\caption{Gráfico de $\frac{t}{t+1}$ para $t$ positivo, com assíntota em 1.\label{fig:tovertp1}}
 \end{myfigureht}
 \end{example}
 
-An important metric space is the
-$n$-dimensional \emph{\myindex{euclidean space}}
+Um espaço métrico importante é o
+\emph{\myindex{espaço euclidiano}} $n$-dimensional
 \glsadd{not:euclidspace}
-$\R^n = \R \times \R \times \cdots \times \R$.   We use the following
-notation for points: $x =(x_1,x_2,\ldots,x_n) \in \R^n$.  We will not write
-$\vec{x}$ nor $\mathbf{x}$ for a point in $\R^n$ as is common in
-multivariable calculus,
-we simply give it a name such as $x$ and we will remember that $x$
-is an element of $\R^n$.
-We also
-write simply $0 \in \R^n$ to mean the point $(0,0,\ldots,0)$.  Before
-making $\R^n$ a metric space, we prove an important inequality, the
-Cauchy--Schwarz inequality.
+$\R^n = \R \times \R \times \cdots \times \R$. Usamos a seguinte notação
+para os pontos: $x =(x_1,x_2,\ldots,x_n) \in \R^n$. Não escreveremos
+$\vec{x}$ nem $\mathbf{x}$ para indicar um ponto de $\R^n$, como é comum no
+cálculo de várias variáveis; simplesmente lhe daremos um nome, como $x$, e
+lembraremos que $x$ é um elemento de $\R^n$.
+Também escreveremos simplesmente $0 \in \R^n$ para indicar o ponto
+$(0,0,\ldots,0)$. Antes de tornar $\R^n$ um espaço métrico, demonstraremos
+uma desigualdade importante: a desigualdade de Cauchy--Schwarz.
 
 \begin{lemma}[\myindex{Cauchy--Schwarz inequality}%
 \footnote{%
-Sometimes it is called the \myindex{Cauchy--Bunyakovsky--Schwarz inequality}.
+Às vezes, ela é chamada de \myindex{desigualdade de Cauchy--Bunyakovsky--Schwarz}.
 \href{https://en.wikipedia.org/wiki/Hermann_Schwarz}{Karl Hermann Amandus
-Schwarz} (1843--1921) was a German mathematician and
+Schwarz} (1843--1921) foi um matemático alemão e
 \href{https://en.wikipedia.org/wiki/Viktor_Bunyakovsky}{Viktor Yakovlevich
-Bunyakovsky} (1804--1889) was a Ukrainian mathematician.  What we
-stated should really be called the Cauchy inequality, as
-Bunyakovsky and Schwarz provided proofs for infinite-dimensional versions.}]
-Suppose $x =(x_1,x_2,\ldots,x_n) \in \R^n$, $y =(y_1,y_2,\ldots,y_n) \in \R^n$.
-Then
+Bunyakovsky} (1804--1889) foi um matemático ucraniano. O que enunciamos
+deveria, a rigor, ser chamado de desigualdade de Cauchy, pois Bunyakovsky e
+Schwarz demonstraram versões em dimensão infinita.}]
+Sejam $x =(x_1,x_2,\ldots,x_n) \in \R^n$ e $y =(y_1,y_2,\ldots,y_n) \in \R^n$.
+Então,
 \begin{equation*}
 {\biggl( \sum_{k=1}^n x_k y_k \biggr)}^2
 \leq
@@ -200,8 +188,8 @@ Then
 \end{lemma}
 
 \begin{proof}
-A square of a real number is nonnegative.  Hence, a sum of squares is
-nonnegative:
+O quadrado de um número real é não negativo. Portanto, uma soma de quadrados
+é não negativa:
 \begin{equation*}
 \begin{split}
 0 & \leq 
@@ -224,7 +212,7 @@ y_\ell \bigr)
 \biggl( \sum_{\ell=1}^n x_\ell y_\ell \biggr) .
 \end{split}
 \end{equation*}
-We relabel and divide by 2 to obtain precisely what we wanted,
+Renomeando os índices e dividindo por 2, obtemos exatamente o que queríamos:
 \begin{equation*}
 0 \leq 
 \biggl( \sum_{k=1}^n x_k^2 \biggr)
@@ -236,8 +224,7 @@ We relabel and divide by 2 to obtain precisely what we wanted,
 \end{proof}
 
 \begin{example}
-Let us construct the
-standard metric\index{standard metric on $\R^n$} for $\R^n$.  Define
+Vamos definir a métrica usual\index{métrica usual em $\R^n$} em $\R^n$:
 \begin{equation*}
 d(x,y) \coloneqq
 \sqrt{
@@ -251,11 +238,11 @@ d(x,y) \coloneqq
 {(x_k-y_k)}^2 
 } .
 \end{equation*}
-For $n=1$, the real line, this metric agrees with what we defined above.
-For $n > 1$,
-the only tricky part of the definition to check, as before, is the triangle inequality.
-It is less messy to work with the square of the metric.  In the
-following estimate, note the use of the Cauchy--Schwarz inequality.
+Para $n=1$, isto é, na reta real, essa métrica coincide com a que definimos
+acima. Para $n > 1$, como antes, o único ponto delicado da definição a
+verificar é a desigualdade triangular.
+É mais simples trabalhar com o quadrado da métrica. Na estimativa a seguir,
+observe o uso da desigualdade de Cauchy--Schwarz.
 \begin{equation*}
 \begin{split}
 {\bigl(d(x,z)\bigr)}^2 & =
@@ -314,84 +301,77 @@ following estimate, note the use of the Cauchy--Schwarz inequality.
 {\bigl( d(x,y) + d(y,z) \bigr)}^2 .
 \end{split}
 \end{equation*}
-Because the square root is an increasing function, the
-inequality is preserved when we 
-take the square root of both sides, and we obtain the triangle inequality.
+Como a raiz quadrada é uma função crescente, a desigualdade é preservada ao
+extrairmos a raiz quadrada dos dois lados, e obtemos a desigualdade triangular.
 \end{example}
 
 \begin{example}
-The set of complex numbers $\C$ is the set of numbers $z = x+iy$, where $x$
-and $y$ are in $\R$.  By imposing $i^2 = -1$, we make $\C$ into a
-field.
-For the purposes of taking limits,
-the set $\C$ is regarded as the metric space $\R^2$, where $z=x+iy \in \C$
-corresponds to $(x,y) \in \R^2$.
-For $z=x+iy$ define the \emph{\myindex{complex modulus}}\index{modulus}
-by $\sabs{z} \coloneqq \sqrt{x^2+y^2}$.
-Then for two complex numbers
-$z_1 = x_1 + iy_1$ and $z_2 = x_2 + iy_2$, the distance is
+O conjunto dos números complexos $\C$ é formado pelos números $z = x+iy$,
+em que $x$ e $y$ pertencem a $\R$. Ao impormos $i^2 = -1$, transformamos
+$\C$ em um corpo.
+Para calcular limites, consideramos $\C$ como o espaço métrico $\R^2$, em
+que $z=x+iy \in \C$ corresponde a $(x,y) \in \R^2$.
+Para $z=x+iy$, definimos o \emph{\myindex{módulo complexo}}\index{módulo}
+por $\sabs{z} \coloneqq \sqrt{x^2+y^2}$.
+Então, para dois números complexos $z_1 = x_1 + iy_1$ e
+$z_2 = x_2 + iy_2$, a distância é
 \begin{equation*}
 d(z_1,z_2) = \sqrt{{(x_1-x_2)}^2+ {(y_1-y_2)}^2} = \sabs{z_1-z_2}.
 \end{equation*}
-Furthermore, when working with complex numbers
-it is often convenient to write the metric in terms of
-the
-\emph{\myindex{complex conjugate}}: The conjugate of $z=x+iy$
-is $\bar{z} \coloneqq x-iy$.  Then 
-${\sabs{z}}^2 = x^2 +y^2 = z\bar{z}$, and so ${\sabs{z_1-z_2}}^2 =
+Além disso, ao trabalhar com números complexos, muitas vezes é conveniente
+escrever a métrica em termos do \emph{\myindex{conjugado complexo}}: o
+conjugado de $z=x+iy$ é $\bar{z} \coloneqq x-iy$. Então,
+${\sabs{z}}^2 = x^2 +y^2 = z\bar{z}$, e, portanto, ${\sabs{z_1-z_2}}^2 =
 (z_1-z_2)\overline{(z_1-z_2)}$.
 \end{example}
 
 \begin{example}
-An example to keep in mind is the
-\emph{\myindex{discrete metric}}.
-For any set $X$, define
+Um exemplo útil para ter em mente é a \emph{\myindex{métrica discreta}}.
+Para qualquer conjunto $X$, definimos
 \begin{equation*}
 d(x,y) \coloneqq
 \begin{cases}
-1 & \text{if } x \neq y, \\
-0 & \text{if } x = y.
+1 & \text{se } x \neq y, \\
+0 & \text{se } x = y.
 \end{cases}
 \end{equation*}
-That is, all points are equally distant from each other.  When $X$ is a
-finite set, we can draw a diagram, see for example
-\figureref{fig:msdiscmetric}.  Of course, in the diagram the distances 
-are not the normal euclidean distances in the plane.
-Things become subtle when $X$ is an infinite set such
-as the real numbers.
+Isto é, quaisquer dois pontos distintos estão à mesma distância. Quando $X$
+é finito, podemos desenhar um diagrama, como o da \figureref{fig:msdiscmetric}.
+É claro que, no diagrama, as distâncias não são as distâncias euclidianas
+usuais do plano.
+As coisas ficam mais sutis quando $X$ é infinito, como no caso dos números
+reais.
 \begin{myfigureht}
 \myincludepdft{msdiscmetric}{%
-A diagram of 5 points a, b, c, d, and e.  Each point
-is connected to each other point with a line and each line is labeled
-with the number 1.}
-\caption{Sample discrete metric space $\{ a,b,c,d,e \}$, the distance
-between any two points is $1$.\label{fig:msdiscmetric}}
+Diagrama com cinco pontos a, b, c, d e e. Cada ponto está ligado a
+todos os demais por um segmento, e cada segmento está identificado com o
+número 1.}
+\caption{Exemplo de espaço métrico discreto $\{ a,b,c,d,e \}$: a distância
+entre quaisquer dois pontos distintos é $1$.\label{fig:msdiscmetric}}
 \end{myfigureht}
 
-While this particular
-example may seldom come up in practice, it gives a useful 
-\myquote{smell test.}  If you make a statement about metric spaces,
-try it with the discrete metric.
-To show that $(X,d)$ is indeed a metric space is left as an exercise.
+Embora esse exemplo talvez raramente apareça na prática, ele fornece um
+\myquote{teste de plausibilidade} útil. Se você fizer uma afirmação sobre
+espaços métricos, experimente verificá-la para a métrica discreta.
+Demonstrar que $(X,d)$ é de fato um espaço métrico fica como exercício.
 \end{example}
 
 \begin{example} \label{example:msC01}
-Let $C\bigl([a,b],\R\bigr)$\glsadd{not:contfuncs} be the set of
-continuous real-valued functions on the interval $[a,b]$.
-Define the metric on $C\bigl([a,b],\R\bigr)$ as
+Seja $C\bigl([a,b],\R\bigr)$\glsadd{not:contfuncs} o conjunto das funções
+contínuas de valores reais definidas no intervalo $[a,b]$.
+Definimos a métrica em $C\bigl([a,b],\R\bigr)$ por
 \begin{equation*}
 d(f,g) \coloneqq \sup_{x \in [a,b]} \babs{f(x)-g(x)} .
 \end{equation*}
-Let us check the properties.  First, $d(f,g)$ is finite as
-$\babs{f(x)-g(x)}$ is a continuous function on a closed bounded interval
-$[a,b]$, and so is bounded.
-It is clear that $d(f,g) \geq 0$;
-it is the supremum of nonnegative numbers.  If $f = g$,
-then $\babs{f(x)-g(x)} = 0$ for all $x$, and hence $d(f,g) = 0$.  Conversely,
-if $d(f,g) = 0$, then for every $x$, we have $\babs{f(x)-g(x)} \leq d(f,g) = 0$,
-and hence $f(x) = g(x)$ for all $x$, and so $f=g$.  That $d(f,g) = d(g,f)$
-is equally trivial.  To show the triangle inequality, we use the standard
-triangle inequality.
+Verifiquemos as propriedades. Primeiro, $d(f,g)$ é finito, pois
+$\babs{f(x)-g(x)}$ é uma função contínua em um intervalo fechado e limitado
+$[a,b]$ e, portanto, é limitada.
+É claro que $d(f,g) \geq 0$, pois se trata do supremo de números não negativos.
+Se $f = g$, então $\babs{f(x)-g(x)} = 0$ para todo $x$ e, logo,
+$d(f,g) = 0$. Reciprocamente, se $d(f,g) = 0$, então, para todo $x$,
+$\babs{f(x)-g(x)} \leq d(f,g) = 0$; portanto, $f(x) = g(x)$ para todo $x$,
+e assim $f=g$. Também é trivial que $d(f,g) = d(g,f)$. Para demonstrar a
+desigualdade triangular, usamos a desigualdade triangular usual.
 \begin{equation*}
 \begin{split}
 d(f,g) & =
@@ -406,220 +386,217 @@ d(f,g) & =
 \sup_{x \in [a,b]} \babs{h(x)-g(x)} = d(f,h) + d(h,g) .
 \end{split}
 \end{equation*}
-When treating $C\bigl([a,b],\R\bigr)$ as a metric space without mentioning a metric,
-we mean this particular metric.
-Notice that $d(f,g) = \snorm{f-g}_{[a,b]}$, the uniform norm of \defnref{def:unifnorm}.
+Quando consideramos $C\bigl([a,b],\R\bigr)$ como espaço métrico sem mencionar
+uma métrica específica, estamos nos referindo a essa métrica.
+Observe que $d(f,g) = \snorm{f-g}_{[a,b]}$, a norma uniforme da
+\defnref{def:unifnorm}.
 
-This example may seem esoteric at first, but it turns out that working with
-spaces such as $C\bigl([a,b],\R\bigr)$ is really the meat of a large part of modern 
-analysis.  Treating sets of functions as metric spaces allows us to
-abstract away a lot of the grubby detail and prove powerful results such as
-\hyperref[thm:fs:picard]{Picard's theorem} with less work.
+À primeira vista, esse exemplo pode parecer esotérico, mas trabalhar com
+espaços como $C\bigl([a,b],\R\bigr)$ está no cerne de boa parte da análise
+moderna. Considerar conjuntos de funções como espaços métricos nos permite
+abstrair muitos detalhes técnicos e demonstrar com menos trabalho resultados
+poderosos, como o \hyperref[thm:fs:picard]{teorema de Picard}.
 \end{example}
 
 \begin{example}
-Another useful example of a metric space is the sphere
-with a metric usually called the \emph{\myindex{great circle distance}}.
-Let $S^2$ be the \myindex{unit sphere}\index{sphere} in $\R^3$,
-that is $S^2 \coloneqq \{ x \in \R^3 : x_1^2+x_2^2+x_3^2 = 1 \}$.
-Take $x$ and $y$ in $S^2$, draw a line through the origin and $x$,
-and another line through the origin and $y$,
-and let $\theta$ be the angle that the two lines make.
-Then define $d(x,y) \coloneqq \theta$.  See \figureref{fig:spheremetric}.
-The law of cosines from vector calculus says
+Outro exemplo útil de espaço métrico é a esfera com uma métrica geralmente
+chamada de \emph{\myindex{distância ortodrômica}}.
+Seja $S^2$ a \myindex{esfera unitária}\index{esfera} em $\R^3$, isto é,
+$S^2 \coloneqq \{ x \in \R^3 : x_1^2+x_2^2+x_3^2 = 1 \}$.
+Tomemos $x$ e $y$ em $S^2$, tracemos uma reta pela origem e por $x$ e outra
+reta pela origem e por $y$, e seja $\theta$ o ângulo entre essas retas.
+Definimos então $d(x,y) \coloneqq \theta$. Veja a
+\figureref{fig:spheremetric}.
+A lei dos cossenos da geometria vetorial fornece
 $d(x,y) = \arccos(x_1y_1+x_2y_2+x_3y_3)$.
-It is relatively easy to see that this function satisfies the first three
-properties of a metric.
-The triangle inequality is harder to prove, and requires a bit more
-trigonometry and linear algebra than we wish to indulge in right now, so let
-us leave it without proof.
+É relativamente fácil ver que essa função satisfaz as três primeiras
+propriedades de uma métrica.
+A desigualdade triangular é mais difícil de demonstrar e exige um pouco mais
+de trigonometria e álgebra linear do que pretendemos usar agora; por isso,
+deixaremos a demonstração de lado.
 
 \begin{myfigureht}
 \myincludepdft{spheremetric}{%
-A diagram of a sphere in 3-dimensional space
-that is marked S superscript 2.  The origin is marked as 0,
-and there are two points on the sphere, x and y.  There is
-a line between the origin and x, a line between the origin and y,
-and the angle between these two lines is labeled with a theta.}
-\caption{The great circle distance on the unit
-sphere.\label{fig:spheremetric}}
+Diagrama de uma esfera no espaço tridimensional, identificada por S ao
+quadrado. A origem está indicada por 0, e os pontos x e y pertencem à esfera.
+Há uma reta entre a origem e x, outra entre a origem e y, e o ângulo entre
+elas está identificado por teta.}
+\caption{Distância ortodrômica na esfera
+unitária.\label{fig:spheremetric}}
 \end{myfigureht}
 
-This distance is the shortest distance between points on a sphere if
-we are allowed to travel on the sphere only.  It is easy to
-generalize to arbitrary diameters.  If we take a sphere of radius
-$r$, we let the distance be $d(x,y) \coloneqq r \theta$.  As an example, this is the
-standard distance you would use if you compute a distance on the
-surface of the earth, such as computing the distance a plane travels from London to
-Los Angeles.
+Essa distância é o menor caminho entre pontos da esfera quando só podemos
+percorrer a própria esfera. É fácil generalizá-la para esferas de qualquer
+diâmetro. Se considerarmos uma esfera de raio $r$, definimos a distância por
+$d(x,y) \coloneqq r \theta$. Por exemplo, essa é a distância usual para
+calcular distâncias sobre a superfície da Terra, como a distância percorrida
+por um avião entre Londres e Los Angeles.
 \end{example}
 
-Oftentimes it is useful to consider a subset of a larger metric space
-as a metric space itself.  We obtain the following proposition, which has
-a trivial proof.
+Muitas vezes, é útil considerar um subconjunto de um espaço métrico maior
+como um espaço métrico por si só. Obtemos a proposição a seguir, cuja
+demonstração é imediata.
 
 \begin{prop}
-Let $(X,d)$ be a metric space and $Y \subset X$.  Then the restriction
-$d|_{Y \times Y}$ is a metric on $Y$.
+Seja $(X,d)$ um espaço métrico e $Y \subset X$. Então, a restrição
+$d|_{Y \times Y}$ é uma métrica em $Y$.
 \end{prop}
 
 \begin{defn}
-If $(X,d)$ is a metric space, $Y \subset X$, and $d' \coloneqq d|_{Y \times Y}$,
-then $(Y,d')$ is said to be a \emph{\myindex{subspace}} of $(X,d)$.
+Se $(X,d)$ é um espaço métrico, $Y \subset X$ e $d' \coloneqq d|_{Y \times Y}$,
+então $(Y,d')$ é chamado de \emph{\myindex{subespaço}} de $(X,d)$.
 \end{defn}
 
-It is common to simply write $d$ for the metric on $Y$, as it is 
-the restriction of the metric on $X$.  Sometimes we say $d'$ is
-the \emph{\myindex{subspace metric}} and $Y$ has the
-\emph{\myindex{subspace topology}}.
+É comum escrever simplesmente $d$ para a métrica em $Y$, pois ela é a
+restrição da métrica em $X$. Às vezes, dizemos que $d'$ é a
+\emph{\myindex{métrica de subespaço}} e que $Y$ tem a
+\emph{\myindex{topologia de subespaço}}.
 
 \medskip
 
-A subset of the real
-numbers is bounded whenever all its elements are at most some fixed distance
-from 0.
-When dealing with an arbitrary metric space there may not be some
-natural fixed point 0, but for the purposes of boundedness it does not matter.
+Um subconjunto dos números reais é limitado quando todos os seus elementos
+distam de 0 no máximo uma constante fixa.
+Em um espaço métrico qualquer, talvez não haja um ponto 0 natural e fixo,
+mas isso não importa para a definição de limitação.
 
 \begin{defn}
-Let $(X,d)$ be a metric space.  A subset $S \subset X$ is said to be
-\emph{bounded}\index{bounded set} if there exists a $p \in X$ and a
-$B \in \R$ such that
+Seja $(X,d)$ um espaço métrico. Dizemos que um subconjunto $S \subset X$ é
+\emph{limitado}\index{conjunto limitado} se existem $p \in X$ e $B \in \R$
+tais que
 \begin{equation*}
-d(p,x) \leq B \quad \text{for all } x \in S.
+d(p,x) \leq B \quad \text{para todo } x \in S.
 \end{equation*}
-We say $(X,d)$ is bounded if $X$ itself is a bounded subset.
+Dizemos que $(X,d)$ é limitado se o próprio $X$ é um subconjunto limitado.
 \end{defn}
 
-For example, the set of real numbers with the standard metric is not a
-bounded metric space.  It is not hard to see that a
-subset of the real numbers is bounded in the
-sense of \chapterref{rn:chapter} if and only if it is bounded as a subset of the
-metric space of real numbers with the standard metric.
+Por exemplo, o conjunto dos números reais com a métrica usual não é um
+espaço métrico limitado. Não é difícil ver que um subconjunto dos números
+reais é limitado no sentido de \chapterref{rn:chapter} se, e somente se,
+é limitado como subconjunto do espaço métrico dos números reais com a métrica
+usual.
 
-On the other hand, if we take the real numbers with the discrete metric,
-then we obtain a bounded metric space.  In fact, any set with the
-discrete metric is bounded.
+Por outro lado, se considerarmos os números reais com a métrica discreta,
+obtemos um espaço métrico limitado. Na verdade, qualquer conjunto com a
+métrica discreta é limitado.
 
-There are other equivalent ways we could generalize boundedness,
-which are left as exercises.  Suppose $X$ is nonempty to avoid a technicality.
-Then $S \subset X$ being bounded is equivalent to either
+Há outras maneiras equivalentes de generalizar a noção de conjunto limitado,
+que ficam como exercícios. Suponha que $X$ não seja vazio, para evitar uma
+questão técnica. Então, $S \subset X$ ser limitado equivale a qualquer uma
+das condições a seguir:
 \begin{enumerate}[(i)]
 \item
-For every $p \in X$, there exists a $B > 0$ such that $d(p,x) \leq B$ for
-all $x \in S$.
+Para todo $p \in X$, existe $B > 0$ tal que $d(p,x) \leq B$ para todo $x \in S$.
 \item
 \glsadd{not:diam}%
 $\operatorname{diam}(S) \coloneqq \sup \bigl\{ d(x,y) : x,y \in S \bigr\} < \infty$.
 \end{enumerate}
-The quantity $\operatorname{diam}(S)$ is called the
-\emph{\myindex{diameter}} of a set and is usually only defined for
-a nonempty set.
+A quantidade $\operatorname{diam}(S)$ é chamada de
+\emph{\myindex{diâmetro}} de um conjunto e, em geral, só é definida para
+conjuntos não vazios.
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
 \begin{exercise}
-Show that for every set $X$, the discrete metric ($d(x,y) = 1$ if $x \neq y$ and
-$d(x,x) = 0$) does give a metric space $(X,d)$.
+Demonstre que, para todo conjunto $X$, a métrica discreta ($d(x,y) = 1$ se
+$x \neq y$ e $d(x,x) = 0$) de fato define um espaço métrico $(X,d)$.
 \end{exercise}
 
 \begin{exercise}
-Let $X \coloneqq \{ 0 \}$ be a set.  Can you make it into a metric space?
+Seja $X \coloneqq \{ 0 \}$ um conjunto. É possível torná-lo um espaço métrico?
 \end{exercise}
 
 \begin{exercise}
-Let $X \coloneqq \{ a, b \}$ be a set.  Can you make it into two distinct metric
-spaces?  (define two distinct metrics on it)
+Seja $X \coloneqq \{ a, b \}$ um conjunto. É possível torná-lo dois espaços
+métricos distintos? (Defina duas métricas distintas sobre esse conjunto.)
 \end{exercise}
 
 \begin{exercise}
-Let the set $X \coloneqq \{ A, B, C \}$ represent 3 buildings on campus.  Suppose we
-wish our distance to be the time it takes to walk from one building to
-the other.
-It takes 5 minutes either way between buildings $A$ and $B$.  However,
-building $C$ is on a hill and it takes 10 minutes from $A$ and 15 minutes
-from $B$ to get to $C$.  On the other hand it takes 5 minutes to go
-from $C$ to $A$ and 7 minutes to go from $C$ to $B$, as we are going
-downhill.  Do these distances define a metric?  If so, prove it; if not, say
-why not.
+Seja o conjunto $X \coloneqq \{ A, B, C \}$ o conjunto de três edifícios do
+campus. Suponha que queiramos definir a distância como o tempo necessário
+para caminhar de um edifício a outro.
+O percurso entre os edifícios $A$ e $B$ leva 5 minutos em qualquer direção.
+No entanto, o edifício $C$ fica em uma colina, e de $A$ são necessários
+10 minutos e de $B$, 15 minutos, para chegar até $C$. Por outro lado,
+de $C$ até $A$ são 5 minutos e de $C$ até $B$ são 7 minutos, pois o caminho é
+descida. Essas distâncias definem uma métrica? Se sim, demonstre; caso
+contrário, explique por quê.
 \end{exercise}
 
 \begin{exercise}
-Suppose $(X,d)$ is a metric space and
-$\varphi \colon [0,\infty) \to \R$ is
-an increasing function such that 
-$\varphi(t) \geq 0$ for all $t$ and $\varphi(t) = 0$ if and only if
-$t=0$.  Also suppose $\varphi$ is \emph{\myindex{subadditive}},
-that is, $\varphi(s+t) \leq \varphi(s)+\varphi(t)$.
-Show that with $d'(x,y) \coloneqq \varphi\bigl(d(x,y)\bigr)$, we obtain a new
-metric space $(X,d')$.
+Suponha que $(X,d)$ seja um espaço métrico e que
+$\varphi \colon [0,\infty) \to \R$ seja uma função crescente tal que
+$\varphi(t) \geq 0$ para todo $t$ e $\varphi(t) = 0$ se, e somente se,
+$t=0$. Suponha também que $\varphi$ seja \emph{\myindex{subaditiva}}, isto é,
+$\varphi(s+t) \leq \varphi(s)+\varphi(t)$.
+Mostre que, com $d'(x,y) \coloneqq \varphi\bigl(d(x,y)\bigr)$, obtemos um
+novo espaço métrico $(X,d')$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:mscross}
-Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces.
+Sejam $(X,d_X)$ e $(Y,d_Y)$ espaços métricos.
 \begin{enumerate}[a)]
 \item
-Show that $(X \times Y,d)$ with
-$d\bigl( (x_1,y_1), (x_2,y_2) \bigr) \coloneqq d_X(x_1,x_2) + d_Y(y_1,y_2)$ is
-a metric space.
+Mostre que $(X \times Y,d)$, com
+$d\bigl( (x_1,y_1), (x_2,y_2) \bigr) \coloneqq d_X(x_1,x_2) + d_Y(y_1,y_2)$
+é um espaço métrico.
 \item
-Show that $(X \times Y,d)$ with
+Mostre que $(X \times Y,d)$, com
 $d\bigl( (x_1,y_1), (x_2,y_2) \bigr) \coloneqq \max \bigl\{ d_X(x_1,x_2) ,
-d_Y(y_1,y_2) \bigr\}$ is
-a metric space.
+d_Y(y_1,y_2) \bigr\}$
+é um espaço métrico.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Let $X$ be the set of continuous functions on $[0,1]$.  Let $\varphi \colon
-[0,1] \to (0,\infty)$ be continuous.  Define
+Seja $X$ o conjunto das funções contínuas em $[0,1]$. Seja $\varphi \colon
+[0,1] \to (0,\infty)$ uma função contínua. Defina
 \begin{equation*}
 d(f,g) \coloneqq \int_0^1 \babs{f(x)-g(x)}\varphi(x)\,dx .
 \end{equation*}
-Show that $(X,d)$ is a metric space.
+Demonstre que $(X,d)$ é um espaço métrico.
 \end{exercise}
 
 \begin{exercise} \label{exercise:mshausdorffpseudo}
-Let $(X,d)$ be a metric space.  For nonempty bounded subsets $A$ and $B$ let
+Seja $(X,d)$ um espaço métrico. Para subconjuntos limitados não vazios $A$ e
+$B$, defina
 \begin{equation*}
 d(x,B) \coloneqq \inf \bigl\{ d(x,b) : b \in B \bigr\}
-\qquad \text{and} \qquad
+\qquad \text{e} \qquad
 d(A,B) \coloneqq \sup \bigl\{ d(a,B) : a \in A \bigr\} .
 \end{equation*}
-Now define the \emph{\myindex{Hausdorff metric}} as
+Defina então a \emph{\myindex{métrica de Hausdorff}} por
 \begin{equation*}
 d_H(A,B) \coloneqq \max \bigl\{ d(A,B) , d(B,A) \bigr\} .
 \end{equation*}
-Note: $d_H$ can be defined for arbitrary nonempty subsets if we allow the
-extended reals.
+Observação: podemos definir $d_H$ para quaisquer subconjuntos não vazios se
+admitirmos os reais estendidos.
 \begin{enumerate}[a)]
 \item
-Let $Y \subset \sP(X)$ be the set of bounded nonempty subsets.
-Prove that
-$(Y,d_H)$ is what we call a \emph{\myindex{pseudometric space}}:
-$d_H$ satisfies the metric properties
+Seja $Y \subset \sP(X)$ o conjunto dos subconjuntos limitados não vazios.
+Demonstre que $(Y,d_H)$ é o que chamamos de
+\emph{\myindex{espaço pseudométrico}}: $d_H$ satisfaz as propriedades métricas
 \ref{metric:pos},
 \ref{metric:com}, 
-\ref{metric:triang}, and further
-$d_H(A,A) = 0$ for all $A \in Y$. 
+\ref{metric:triang}, e também
+$d_H(A,A) = 0$ para todo $A \in Y$.
 \item
-Show by example that $d$ itself is not symmetric,
-that is, $d(A,B) \neq d(B,A)$.
+Mostre por meio de um exemplo que a própria função $d$ não é simétrica, isto
+é, $d(A,B) \neq d(B,A)$.
 \item
-Find a metric space $X$ and two different
-nonempty bounded subsets $A$ and $B$ such that $d_H(A,B) = 0$.
+Encontre um espaço métrico $X$ e dois subconjuntos limitados não vazios e
+distintos $A$ e $B$ tais que $d_H(A,B) = 0$.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Let $(X,d)$ be a nonempty metric space and $S \subset X$ a subset.  Prove:
+Seja $(X,d)$ um espaço métrico não vazio e $S \subset X$ um subconjunto.
+Demonstre:
 \begin{enumerate}[a)]
 \item
-$S$ is bounded if and only if
-for every $p \in X$, there exists a $B > 0$ such that $d(p,x) \leq B$ for
-all $x \in S$.
+$S$ é limitado se, e somente se, para todo $p \in X$ existe $B > 0$ tal que
+$d(p,x) \leq B$ para todo $x \in S$.
 \item
-A nonempty $S$ is bounded if and only if
+Um subconjunto $S$ não vazio é limitado se, e somente se,
 $\operatorname{diam}(S) \coloneqq \sup \{ d(x,y) : x,y \in S \} < \infty$.
 \end{enumerate}
 \end{exercise}
@@ -629,16 +606,16 @@ $\operatorname{diam}(S) \coloneqq \sup \{ d(x,y) : x,y \in S \} < \infty$.
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Working in $\R$, compute $\operatorname{diam}\bigl([a,b]\bigr)$.
+Trabalhando em $\R$, calcule $\operatorname{diam}\bigl([a,b]\bigr)$.
 \item
-Working in $\R^n$, for every $r > 0$, let $B_r \coloneqq \{ x_1^2+x_2^2+\cdots+x_n^2
-< r^2 \}$.  Compute $\operatorname{diam}(B_r)$.
+Trabalhando em $\R^n$, para todo $r > 0$, seja
+$B_r \coloneqq \{ x_1^2+x_2^2+\cdots+x_n^2 < r^2 \}$. Calcule
+$\operatorname{diam}(B_r)$.
 \item
-Suppose $(X,d)$ is a metric space with at least two points,
-$d$ is the discrete metric, and $p \in X$.
-Compute
-$\operatorname{diam}(\{ p \})$ and $\operatorname{diam}(X)$,
-then conclude that $(X,d)$ is bounded.
+Suponha que $(X,d)$ seja um espaço métrico com pelo menos dois pontos, que
+$d$ seja a métrica discreta e que $p \in X$.
+Calcule $\operatorname{diam}(\{ p \})$ e $\operatorname{diam}(X)$ e, em
+seguida, conclua que $(X,d)$ é limitado.
 \end{enumerate}
 \end{exercise}
 
@@ -647,35 +624,37 @@ then conclude that $(X,d)$ is bounded.
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Find a metric $d$ on $\N$ such that $\N$ is an unbounded set in $(\N,d)$.
+Encontre uma métrica $d$ em $\N$ tal que $\N$ seja um conjunto ilimitado em
+$(\N,d)$.
 \item
-Find a metric $d$ on $\N$ such that $\N$ is a bounded set in $(\N,d)$.
+Encontre uma métrica $d$ em $\N$ tal que $\N$ seja um conjunto limitado em
+$(\N,d)$.
 \item
-Find a metric $d$ on $\N$ such that for every $n \in \N$ and every $\epsilon > 0$,
-there exists an $m \in \N$, $m \neq n$, such that $d(n,m) < \epsilon$.
+Encontre uma métrica $d$ em $\N$ tal que, para todo $n \in \N$ e todo
+$\epsilon > 0$, exista $m \in \N$, $m \neq n$, tal que $d(n,m) < \epsilon$.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise} \label{exercise:C1ab}
-Let $C^1\bigl([a,b],\R\bigr)$\glsadd{not:contdifffuncs} be the set of once continuously differentiable
-functions on $[a,b]$.
-Define
+Seja $C^1\bigl([a,b],\R\bigr)$\glsadd{not:contdifffuncs} o conjunto das
+funções continuamente diferenciáveis em $[a,b]$.
+Defina
 \begin{equation*}
 d(f,g) \coloneqq \snorm{f-g}_{[a,b]} + \snorm{f'-g'}_{[a,b]},
 \end{equation*}
-where $\snorm{\cdot}_{[a,b]}$ is the uniform norm.  Prove that $d$ is a metric.
+em que $\snorm{\cdot}_{[a,b]}$ é a norma uniforme. Demonstre que $d$ é uma
+métrica.
 \end{exercise}
 
 \begin{samepage}
 \begin{exercise}
-Consider $\ell^2$ the set of sequences $\{ x_n \}_{n=1}^\infty$
-of real numbers
-such that $\sum_{n=1}^\infty x_n^2 < \infty$.
+Considere $\ell^2$, o conjunto das sequências $\{ x_n \}_{n=1}^\infty$ de
+números reais tais que $\sum_{n=1}^\infty x_n^2 < \infty$.
 \begin{enumerate}[a)]
 \item
-Prove the \myindex{Cauchy--Schwarz inequality} for two sequences
-$\{x_n \}_{n=1}^\infty$ and $\{ y_n \}_{n=1}^\infty$ in $\ell^2$:  Prove that
-$\sum_{n=1}^\infty x_n y_n$ converges (absolutely) and
+Demonstre a \myindex{desigualdade de Cauchy--Schwarz} para duas sequências
+$\{x_n \}_{n=1}^\infty$ e $\{ y_n \}_{n=1}^\infty$ em $\ell^2$: demonstre
+que $\sum_{n=1}^\infty x_n y_n$ converge (absolutamente) e que
 \begin{equation*}
 {\biggl( \sum_{n=1}^\infty x_n y_n \biggr)}^2
 \leq
@@ -683,10 +662,10 @@ $\sum_{n=1}^\infty x_n y_n$ converges (absolutely) and
 \biggl(\sum_{n=1}^\infty y_n^2 \biggr) .
 \end{equation*}
 \item
-Prove that $\ell^2$ is a metric space with the metric
+Demonstre que $\ell^2$ é um espaço métrico com a métrica
 $d(x,y) \coloneqq \sqrt{\sum_{n=1}^\infty {(x_n-y_n)}^2}$.
-Hint: Don't forget to show that the series for $d(x,y)$ always converges
-to some finite number.
+Dica: não se esqueça de mostrar que a série que define $d(x,y)$ sempre
+converge para um número finito.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
@@ -855,7 +834,7 @@ $\lambda \in I$.
 As $V_\lambda$ is open, there exists a $\delta > 0$
 such that $B(x,\delta) \subset V_\lambda$.  But then
 $B(x,\delta) \subset \bigcup_{\lambda \in I} V_\lambda$,
-and so the union is open.
+e, portanto, the union is open.
 \end{proof}
 
 \begin{example}
@@ -933,7 +912,7 @@ The proof that $C(x,\delta)$ is closed is left as an exercise.
 
 Again, be careful about which metric space we are in.
 The set $[0,\nicefrac{1}{2})$ is
-an open ball in $[0,1]$, and so $[0,\nicefrac{1}{2})$ is
+an open ball in $[0,1]$, e, portanto, $[0,\nicefrac{1}{2})$ is
 an open set in $[0,1]$.  On the other hand, $[0,\nicefrac{1}{2})$
 is neither open nor closed in $\R$.
 
@@ -1300,7 +1279,7 @@ Given $x \in A^\circ$, there is a $\delta > 0$ such that $B(x,\delta)
 \subset A$.  If $z \in B(x,\delta)$, then as open balls are open,
 there is an $\epsilon > 0$ such that $B(z,\epsilon) \subset B(x,\delta)
 \subset A$.  So $z \in A^\circ$.  Therefore, $B(x,\delta) \subset
-A^\circ$, and so $A^\circ$ is open.
+A^\circ$, e, portanto, $A^\circ$ is open.
 
 As $A^\circ$ is open,
 $\partial A = \widebar{A} \setminus A^\circ = \widebar{A} \cap
@@ -1548,7 +1527,7 @@ the sequence, and for the whole sequence use the notation
 A sequence $\{ x_n \}_{n=1}^\infty$ is \emph{bounded}\index{bounded sequence} if
 there exists a point $p \in X$ and $B \in \R$ such that
 \begin{equation*}
-d(p,x_n) \leq B \qquad \text{for all } n \in \N.
+d(p,x_n) \leq B \qquad \text{para todo } n \in \N.
 \end{equation*}
 In other words, the sequence $\{x_n\}_{n=1}^\infty$ is bounded whenever
 the set $\{ x_n : n \in \N \}$
@@ -1627,7 +1606,7 @@ d(y,x_n) + d(x_n,x) \\
 \end{split}
 \end{equation*}
 As $d(y,x) < \epsilon$ for all $\epsilon > 0$, we have $d(x,y) = 0$
-and so $y=x$.  Hence, the limit (if it exists) is unique.
+e, portanto, $y=x$.  Hence, the limit (if it exists) is unique.
 \end{proof}
 
 The proofs of the following propositions are left as exercises.
@@ -1641,7 +1620,7 @@ A sequence $\{ x_n \}_{n=1}^\infty$ in a metric space $(X,d)$ converges to $p \i
 if and only
 if there exists a sequence $\{ a_n \}_{n=1}^\infty$ of real numbers such that
 \begin{equation*}
-d(x_n,p) \leq a_n \quad \text{for all } n \in \N,
+d(x_n,p) \leq a_n \quad \text{para todo } n \in \N,
 \qquad
 \text{and}
 \qquad
@@ -2318,7 +2297,7 @@ K \subset \bigcup_{x \in K} B(x,\alpha_x) .
 \end{equation*}
 Any finite collection of these balls contains at most finitely many
 elements of $\{ x_n \}_{n=1}^\infty$,
-and so there must be an $x_n \in K$
+e, portanto, there must be an $x_n \in K$
 not in their union.  Hence, $K$ is not compact and the claim is
 proved.
 
@@ -2428,7 +2407,7 @@ See \propref{prop:topology:subspacesame}.
 Let $\{ x_n \}_{n=1}^\infty$ be a sequence in $E$.  It is also a sequence in $K$.
 Therefore, it has a convergent subsequence $\{ x_{n_j} \}_{j=1}^\infty$ that converges to
 some $x \in K$.  As $E$ is closed, the limit of a sequence in $E$ is also in $E$
-and so $x \in E$.  Thus $E$ must be compact.
+e, portanto, $x \in E$.  Thus $E$ must be compact.
 \end{proof}
 
 \begin{thm}[Heine--Borel%
@@ -2843,12 +2822,12 @@ a point in $f(K)$, and $f(K)$ is compact by \thmref{thm:mscompactisseqcpt}.
 As before, $f \colon X \to \R$ achieves an
 \emph{\myindex{absolute minimum}} at $c \in X$ if
 \begin{equation*}
-f(x) \geq f(c) \qquad \text{for all } x \in X.
+f(x) \geq f(c) \qquad \text{para todo } x \in X.
 \end{equation*}
 On the other hand, $f$ achieves an 
 \emph{\myindex{absolute maximum}} at $c \in X$ if
 \begin{equation*}
-f(x) \leq f(c) \qquad \text{for all } x \in X.
+f(x) \leq f(c) \qquad \text{para todo } x \in X.
 \end{equation*}
 
 \begin{thm}
@@ -2873,7 +2852,7 @@ and some $y \in X$ such that $f(y) = \inf f(X)$.
 
 Let us see how to define continuity in terms of the topology, that is,
 the open sets.  We have already seen that topology determines which 
-sequences converge, and so it is no wonder that the topology also
+sequences converge, e, portanto, it is no wonder that the topology also
 determines continuity of functions.
 
 \begin{lemma} \label{lemma:mstopocontloc}
@@ -3079,7 +3058,7 @@ $(X,d_X)$ and $(Y,d_Y)$ are metric spaces, then $f \colon X \to Y$
 is called Lipschitz or $K$-Lipschitz if there exists a $K \in \R$ such that
 \begin{equation*}
 d_Y\bigl(f(p),f(q)\bigr) \leq K \, d_X(p,q)
-\qquad \text{for all } p,q \in X.
+\qquad \text{para todo } p,q \in X.
 \end{equation*}
 A Lipschitz function is uniformly continuous:
 Take $\delta = \nicefrac{\epsilon}{K}$ (assuming that $K > 0$).
@@ -3364,8 +3343,8 @@ Define
 \begin{equation*}
 f(x,y) \coloneqq
 \begin{cases}
-\frac{2xy}{x^4+y^2} & \text{if } (x,y) \neq (0,0), \\
-0 & \text{if } (x,y) = (0,0) .
+\frac{2xy}{x^4+y^2} & \text{se } (x,y) \neq (0,0), \\
+0 & \text{se } (x,y) = (0,0) .
 \end{cases}
 \end{equation*}
 \begin{enumerate}[a)]
@@ -3419,7 +3398,7 @@ $\varphi \colon X \to Y$ is a \emph{\myindex{contraction}}
 a $k$-Lipschitz map for some $k < 1$, i.e.\ if there exists a $k < 1$ such that
 \begin{equation*}
 d_Y\bigl(\varphi(p),\varphi(q)\bigr) \leq k\, d_X(p,q)
-\qquad \text{for all } p,q \in X.
+\qquad \text{para todo } p,q \in X.
 \end{equation*}
 
 \medskip
@@ -3560,7 +3539,7 @@ and Lipschitz in the second variable, that is, there exists
 an $L \in \R$ such that
 \begin{equation*}
 \babs{F(x,y) - F(x,z)} \leq L \sabs{y-z}
-\qquad \text{for all } y,z \in J, x \in I .
+\qquad \text{para todo } y,z \in J, x \in I .
 \end{equation*}
 Then there exists an $h > 0$ such that $[x_0-h,x_0+h] \subset I$ and a unique differentiable
 function $f \colon [x_0 - h, x_0 + h] \to J \subset \R$ such that

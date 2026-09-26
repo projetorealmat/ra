@@ -673,321 +673,317 @@ converge para um número finito.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{Open and closed sets}
+\section{Conjuntos abertos e fechados}
 \label{sec:mettop}
 
 %mbxINTROSUBSECTION
 
-\sectionnotes{2 lectures}
+\sectionnotes{2 aulas}
 
-\subsection{Topology}
+\subsection{Topologia}
 
-Before we get to convergence,
-we define the \emph{\myindex{topology}}.
-That is,
-we define the notion of open and closed sets.
-And before that,
-we define two special open and closed sets.
+Antes de tratar da convergência,
+definiremos a \emph{\myindex{topologia}}.
+Isto é,
+definiremos as noções de conjunto aberto e conjunto fechado.
+Antes disso,
+definiremos dois conjuntos abertos e fechados especiais.
 
 \begin{defn}
-Let $(X,d)$ be a metric space, $x \in X$, and $\delta > 0$.  Define
-the \emph{\myindex{open ball}}, or simply \emph{\myindex{ball}}, of radius $\delta$
-around $x$ as
+Sejam $(X,d)$ um espaço métrico, $x \in X$ e $\delta > 0$. Definimos a
+\emph{\myindex{bola aberta}}, ou simplesmente \emph{\myindex{bola}}, de raio
+$\delta$ centrada em $x$ por
 \glsadd{not:openball}
 \begin{equation*}
 B(x,\delta) \coloneqq \bigl\{ y \in X : d(x,y) < \delta \bigr\} .
 \end{equation*}
-Define the \emph{\myindex{closed ball}} as
+Definimos a \emph{\myindex{bola fechada}} por
 \glsadd{not:closedball}
 \begin{equation*}
 C(x,\delta) \coloneqq \bigl\{ y \in X : d(x,y) \leq \delta \bigr\} .
 \end{equation*}
 \end{defn}
 
-When dealing with different metric spaces, it is sometimes 
-vital to emphasize which metric space the ball is in.  We do this by
-writing $B_X(x,\delta) \coloneqq B(x,\delta)$ or $C_X(x,\delta) \coloneqq C(x,\delta)$.
+Ao trabalhar com espaços métricos diferentes, às vezes é essencial destacar
+em qual deles está a bola. Fazemos isso escrevendo
+$B_X(x,\delta) \coloneqq B(x,\delta)$ ou
+$C_X(x,\delta) \coloneqq C(x,\delta)$.
 
 \begin{example}
-Take the metric space $\R$ with the standard metric.  For
-$x \in \R$ and $\delta > 0$,
+Consideremos o espaço métrico $\R$ com a métrica usual. Para
+$x \in \R$ e $\delta > 0$,
 \begin{equation*}
-B(x,\delta) = (x-\delta,x+\delta) \qquad \text{and} \qquad
+B(x,\delta) = (x-\delta,x+\delta) \qquad \text{e} \qquad
 C(x,\delta) = [x-\delta,x+\delta] .
 \end{equation*}
 \end{example}
 
 \begin{example}
-Be careful when working on a subspace.  Consider the
-metric space $[0,1]$ as a subspace of $\R$.  Then in $[0,1]$,
+Tenha cuidado ao trabalhar em um subespaço. Consideremos o espaço métrico
+$[0,1]$ como subespaço de $\R$. Então, em $[0,1]$,
 \begin{equation*}
 B(0,\nicefrac{1}{2}) = B_{[0,1]}(0,\nicefrac{1}{2})
 = \bigl\{ y \in [0,1] : \sabs{0-y} < \nicefrac{1}{2} \bigr\}
 = [0,\nicefrac{1}{2}) .
 \end{equation*}
-This is different from $B_{\R}(0,\nicefrac{1}{2}) =
+Isso é diferente de $B_{\R}(0,\nicefrac{1}{2}) =
 (\nicefrac{-1}{2},\nicefrac{1}{2})$.
-The important thing to keep in mind is which metric space we are working
-in.
+O importante é ter em mente em qual espaço métrico estamos trabalhando.
 \end{example}
 
 \begin{defn}
-Let $(X,d)$ be a metric space.  A subset $V \subset X$
-is \emph{open}\index{open set}
-if for every $x \in V$, there exists a $\delta > 0$ such that
-$B(x,\delta) \subset V$.  See \figureref{fig:msopenset}.  A subset $E \subset X$ is 
-\emph{closed}\index{closed set} if the complement $E^c = X \setminus E$ is open.
-When the ambient space $X$ is not clear from context,
-we say \emph{$V$ is open in $X$} and \emph{$E$ is closed in $X$}.
+Seja $(X,d)$ um espaço métrico. Um subconjunto $V \subset X$ é
+\emph{aberto}\index{conjunto aberto} se, para todo $x \in V$, existe
+$\delta > 0$ tal que $B(x,\delta) \subset V$. Veja a
+\figureref{fig:msopenset}. Um subconjunto $E \subset X$ é
+\emph{fechado}\index{conjunto fechado} se seu complementar
+$E^c = X \setminus E$ é aberto.
+Quando o espaço ambiente $X$ não está claro pelo contexto,
+dizemos que \emph{$V$ é aberto em $X$} e que \emph{$E$ é fechado em $X$}.
 
-If $x \in V$ and $V$ is open, then we say 
-$V$ is an \emph{\myindex{open neighborhood}} of $x$ (or
-sometimes just \emph{\myindex{neighborhood}}).
+Se $x \in V$ e $V$ é aberto, dizemos que $V$ é uma
+\emph{\myindex{vizinhança aberta}} de $x$ (ou, às vezes, simplesmente uma
+\emph{\myindex{vizinhança}}).
 \end{defn}
 
 \begin{myfigureht}
 \myincludepdft{msopenset}{%
-A region in the plane marked in light gray,
-with a dotted boundary and labeled as V.
-Inside the region there is a dotted
-circle with center
-at a point marked x of radius delta and labeled
-as B of x comma delta.  The circle with its inside
-shaded darker gray lies completely inside the
-lighter gray region.}
-\caption{Open set in a metric space.  Note that $\delta$ depends on $x$.\label{fig:msopenset}}
+Uma região do plano, marcada em cinza-claro,
+com fronteira pontilhada e identificada por V.
+Dentro da região há um círculo pontilhado, centrado
+em um ponto identificado por x, de raio delta e identificado
+como B de x e delta. O círculo e seu interior,
+sombreados em cinza mais escuro, estão inteiramente dentro da
+região em cinza-claro.}
+\caption{Conjunto aberto em um espaço métrico. Note que $\delta$ depende de $x$.\label{fig:msopenset}}
 \end{myfigureht}
 
-Intuitively, an open set $V$ is a set that does not include its
-\myquote{boundary.}
-Wherever we are in $V$,
-we are allowed to \myquote{wiggle} a little bit and
-stay in $V$.  Similarly, a set $E$ is closed if everything not in $E$
-is some distance away from $E$.
-The open and closed balls are examples of open and closed sets
-(this must still be proved).
-But not every set is either open or closed.  Generally, most subsets are neither.
+Intuitivamente, um conjunto aberto $V$ é um conjunto que não inclui sua
+\myquote{fronteira}.
+Em qualquer ponto de $V$, podemos nos \myquote{mover} um pouco e
+continuar em $V$. Da mesma forma, um conjunto $E$ é fechado se todos os pontos
+que não pertencem a $E$ estão a alguma distância de $E$.
+As bolas abertas e fechadas são exemplos de conjuntos abertos e fechados
+(isso ainda precisa ser demonstrado).
+Mas nem todo conjunto é aberto ou fechado. Em geral, a maioria dos
+subconjuntos não é nenhum dos dois.
 
 \begin{example}
-The set $(0,\infty) \subset \R$ is open:  Given any $x \in (0,\infty)$,
-let $\delta \coloneqq x$.  Then $B(x,\delta) = (0,2x) \subset (0,\infty)$.
+O conjunto $(0,\infty) \subset \R$ é aberto: dado qualquer $x \in (0,\infty)$,
+seja $\delta \coloneqq x$. Então $B(x,\delta) = (0,2x) \subset (0,\infty)$.
 
-The set $[0,\infty) \subset \R$ is closed:  Given $x \in (-\infty,0) =
+O conjunto $[0,\infty) \subset \R$ é fechado: dado $x \in (-\infty,0) =
 [0,\infty)^c$,
-let $\delta \coloneqq -x$.  Then $B(x,\delta) = (-2x,0) \subset
+seja $\delta \coloneqq -x$. Então $B(x,\delta) = (-2x,0) \subset
 (-\infty,0) = [0,\infty)^c$.
 
-The set $[0,1) \subset \R$ is neither open nor closed.  First,
-every ball in $\R$ around $0$, $B(0,\delta) = (-\delta,\delta)$, contains negative
-numbers and hence is not contained in $[0,1)$.  So $[0,1)$ is not open.
-Second, every ball in $\R$ around $1$,
-$B(1,\delta) = (1-\delta,1+\delta)$, contains
-numbers strictly less than 1 and greater than 0
-(e.g.\ $1-\nicefrac{\delta}{2}$ as long as $\delta < 2$).
-Thus $[0,1)^c = \R \setminus
-[0,1)$ is not open, and $[0,1)$ is not closed.
+O conjunto $[0,1) \subset \R$ não é aberto nem fechado. Primeiro, toda bola
+em $\R$ centrada em $0$, $B(0,\delta) = (-\delta,\delta)$, contém números
+negativos e, portanto, não está contida em $[0,1)$. Logo, $[0,1)$ não é
+aberto. Segundo, toda bola em $\R$ centrada em $1$,
+$B(1,\delta) = (1-\delta,1+\delta)$, contém números estritamente menores
+que 1 e maiores que 0 (por exemplo, $1-\nicefrac{\delta}{2}$, desde que
+$\delta < 2$).
+Assim, $[0,1)^c = \R \setminus [0,1)$ não é aberto, e $[0,1)$ não é fechado.
 
-If $(X,d)$ is any metric space, and $x \in X$ is a point, then $\{ x \}$ is
-closed (exercise).
-On the other hand, $\{ x \}$ may or may not be open depending on $X$.
-The set $\{ 0 \} \subset \R$ is not open as $B(0,\delta)$
-contains nonzero numbers for every $\delta > 0$.
-If $X=\{ x \}$, then $\{ x \}$ is open.
+Se $(X,d)$ é um espaço métrico qualquer e $x \in X$, então $\{ x \}$ é
+fechado (exercício).
+Por outro lado, dependendo de $X$, $\{ x \}$ pode ou não ser aberto.
+O conjunto $\{ 0 \} \subset \R$ não é aberto, pois $B(0,\delta)$ contém
+números diferentes de zero para todo $\delta > 0$.
+Se $X=\{ x \}$, então $\{ x \}$ é aberto.
 \end{example}
 
 \begin{prop} \label{prop:topology:open}
-Let $(X,d)$ be a metric space.
+Seja $(X,d)$ um espaço métrico.
 \begin{enumerate}[(i)]
-\item \label{topology:openi} $\emptyset$ and $X$ are open.
-\item \label{topology:openii} If $V_1, V_2, \ldots, V_k$ are open subsets of $X$, then
+\item \label{topology:openi} $\emptyset$ e $X$ são abertos.
+\item \label{topology:openii} Se $V_1, V_2, \ldots, V_k$ são subconjuntos abertos de $X$, então
 \begin{equation*}
 \bigcap_{j=1}^k V_j
 \end{equation*}
-is also open.  That is, a finite intersection of open sets is open.
-\item \label{topology:openiii} If $\{ V_\lambda \}_{\lambda \in I}$ is
-an arbitrary collection of open subsets of $X$, then
+também é aberto. Isto é, uma interseção finita de conjuntos abertos é aberta.
+\item \label{topology:openiii} Se $\{ V_\lambda \}_{\lambda \in I}$ é
+uma coleção arbitrária de subconjuntos abertos de $X$, então
 \begin{equation*}
 \bigcup_{\lambda \in I} V_\lambda
 \end{equation*}
-is also open.  That is, a union of open sets is open.
+também é aberto. Isto é, uma união de conjuntos abertos é aberta.
 \end{enumerate}
 \end{prop}
 
-The index set $I$ in \ref{topology:openiii} can be arbitrarily large.
-By $\bigcup_{\lambda \in I} V_\lambda$, we simply mean the set of
-all~$x$ such that $x \in V_\lambda$ for at least one $\lambda \in I$.
+O conjunto de índices $I$ em \ref{topology:openiii} pode ser arbitrariamente
+grande.
+Por $\bigcup_{\lambda \in I} V_\lambda$, queremos dizer simplesmente o
+conjunto de todos os $x$ tais que $x \in V_\lambda$ para pelo menos um
+$\lambda \in I$.
 
 \begin{proof}
-The sets $\emptyset$ and $X$ are obviously open in $X$.
+Os conjuntos $\emptyset$ e $X$ são obviamente abertos em $X$.
 
-Let us prove \ref{topology:openii}.
-If $x \in \bigcap_{j=1}^k V_j$, then $x \in V_j$ for all $j$.
-As $V_j$ are all open, for every $j$ there exists a $\delta_j > 0$ 
-such that $B(x,\delta_j) \subset V_j$.  Take $\delta \coloneqq \min \{
-\delta_1,\delta_2,\ldots,\delta_k \}$ and notice $\delta > 0$.  We have
-$B(x,\delta) \subset B(x,\delta_j) \subset V_j$ for every $j$ and so
-$B(x,\delta) \subset \bigcap_{j=1}^k V_j$.  Consequently the intersection is open.
+Demonstremos \ref{topology:openii}.
+Se $x \in \bigcap_{j=1}^k V_j$, então $x \in V_j$ para todo $j$.
+Como todos os $V_j$ são abertos, para cada $j$ existe $\delta_j > 0$ tal que
+$B(x,\delta_j) \subset V_j$. Tome $\delta \coloneqq \min \{
+\delta_1,\delta_2,\ldots,\delta_k \}$ e observe que $\delta > 0$. Temos
+$B(x,\delta) \subset B(x,\delta_j) \subset V_j$ para todo $j$ e, portanto,
+$B(x,\delta) \subset \bigcap_{j=1}^k V_j$. Consequentemente, a interseção é
+aberta.
 
-Let us prove \ref{topology:openiii}.
-If $x \in \bigcup_{\lambda \in I} V_\lambda$, then $x \in V_\lambda$ for some
-$\lambda \in I$.
-As $V_\lambda$ is open, there exists a $\delta > 0$
-such that $B(x,\delta) \subset V_\lambda$.  But then
+Demonstremos \ref{topology:openiii}.
+Se $x \in \bigcup_{\lambda \in I} V_\lambda$, então $x \in V_\lambda$ para
+algum $\lambda \in I$.
+Como $V_\lambda$ é aberto, existe $\delta > 0$ tal que
+$B(x,\delta) \subset V_\lambda$. Mas, então,
 $B(x,\delta) \subset \bigcup_{\lambda \in I} V_\lambda$,
-e, portanto, the union is open.
+e, portanto, a união é aberta.
 \end{proof}
 
 \begin{example}
-Notice the difference between
-items
-\ref{topology:openii} and \ref{topology:openiii}.
-Item \ref{topology:openii} is not true for an arbitrary intersection.
-For instance,
+Observe a diferença entre os
+itens
+\ref{topology:openii} e \ref{topology:openiii}.
+O item \ref{topology:openii} não vale para uma interseção arbitrária.
+Por exemplo,
 $\bigcap_{n=1}^\infty (\nicefrac{-1}{n},\nicefrac{1}{n}) = \{ 0 \}$,
-which is not open.
+que não é aberto.
 \end{example}
 
 
-The proof of the following analogous proposition for closed sets
-is left as an exercise.
+A demonstração da proposição análoga a seguir, para conjuntos fechados,
+fica como exercício.
 
 \begin{prop} \label{prop:topology:closed}
 %FIXMEevillayouthack
 \pagebreak[2]
-Let $(X,d)$ be a metric space.
+Seja $(X,d)$ um espaço métrico.
 \begin{enumerate}[(i)]
-\item \label{topology:closedi} $\emptyset$ and $X$ are closed.
-\item \label{topology:closedii} If $\{ E_\lambda \}_{\lambda \in I}$ is
-an arbitrary collection of closed subsets of $X$, then
+\item \label{topology:closedi} $\emptyset$ e $X$ são fechados.
+\item \label{topology:closedii} Se $\{ E_\lambda \}_{\lambda \in I}$ é
+uma coleção arbitrária de subconjuntos fechados de $X$, então
 \begin{equation*}
 \bigcap_{\lambda \in I} E_\lambda
 \end{equation*}
-is also closed.  That is, an intersection of closed sets is closed.
-\item \label{topology:closediii} If $E_1, E_2, \ldots, E_k$ are closed
-subsets of $X$, then
+também é fechado. Isto é, uma interseção de conjuntos fechados é fechada.
+\item \label{topology:closediii} Se $E_1, E_2, \ldots, E_k$ são
+subconjuntos fechados de $X$, então
 \begin{equation*}
 \bigcup_{j=1}^k E_j
 \end{equation*}
-is also closed.  That is, a finite union of closed sets is closed.
+também é fechado. Isto é, uma união finita de conjuntos fechados é fechada.
 \end{enumerate}
 \end{prop}
 
-Despite the naming,
-we have not yet shown that the open ball is open and the closed ball is
-closed.  Let us show these facts now to justify the terminology.
+Apesar dos nomes,
+ainda não demonstramos que a bola aberta é aberta e que a bola fechada é
+fechada. Demonstremos esses fatos agora para justificar a terminologia.
 
 \begin{prop} \label{prop:topology:ballsopenclosed}
-Let $(X,d)$ be a metric space, $x \in X$, and $\delta > 0$.  Then
-$B(x,\delta)$ is open and 
-$C(x,\delta)$ is closed.
+Sejam $(X,d)$ um espaço métrico, $x \in X$ e $\delta > 0$. Então,
+$B(x,\delta)$ é aberto e $C(x,\delta)$ é fechado.
 \end{prop}
 
 \begin{proof}
-Let $y \in B(x,\delta)$.  Let $\alpha \coloneqq \delta-d(x,y)$.  As $\alpha
-> 0$, consider $z \in B(y,\alpha)$.  Then
+Seja $y \in B(x,\delta)$. Seja $\alpha \coloneqq \delta-d(x,y)$. Como
+$\alpha > 0$, consideremos $z \in B(y,\alpha)$. Então,
 \begin{equation*}
 d(x,z) \leq d(x,y) + d(y,z) < d(x,y) + \alpha = d(x,y) + \delta-d(x,y) =
 \delta .
 \end{equation*}
-Therefore, $z \in B(x,\delta)$ for every $z \in B(y,\alpha)$.  So
-$B(y,\alpha) \subset B(x,\delta)$, and so
-$B(x,\delta)$ is open.  See \figureref{fig:ballisopen}.
+Portanto, $z \in B(x,\delta)$ para todo $z \in B(y,\alpha)$. Assim,
+$B(y,\alpha) \subset B(x,\delta)$ e, portanto,
+$B(x,\delta)$ é aberto. Veja a \figureref{fig:ballisopen}.
 
 \begin{myfigureht}
 \myincludepdft{ballisopen}{%
-A shaded disc with a dotted boundary of radius delta 
-is centered at x and labeled as B of x comma delta.
-There is another disc that lies completely inside the bigger disc
-touching its boundary from the inside and is centered
-at y and is of radius alpha.
-A third point z is inside the
-smaller disc.  The points x, y, and z give a
-dashed triangle.}
-\caption{Proof that $B(x,\delta)$ is open: $B(y,\alpha) \subset
-B(x,\delta)$ with the triangle inequality illustrated.\label{fig:ballisopen}}
+Um disco sombreado, com fronteira pontilhada e raio delta, está centrado em x
+e identificado como B de x e delta. Outro disco menor está inteiramente
+dentro do disco maior, toca sua fronteira por dentro, está centrado em y e tem
+raio alpha. Um terceiro ponto z está dentro do disco menor. Os pontos x, y e z
+formam um triângulo tracejado.}
+\caption{Demonstração de que $B(x,\delta)$ é aberto: $B(y,\alpha) \subset
+B(x,\delta)$, com a desigualdade triangular ilustrada.\label{fig:ballisopen}}
 \end{myfigureht}
 
-The proof that $C(x,\delta)$ is closed is left as an exercise.
+A demonstração de que $C(x,\delta)$ é fechado fica como exercício.
 \end{proof}
 
-Again, be careful about which metric space we are in.
-The set $[0,\nicefrac{1}{2})$ is
-an open ball in $[0,1]$, e, portanto, $[0,\nicefrac{1}{2})$ is
-an open set in $[0,1]$.  On the other hand, $[0,\nicefrac{1}{2})$
-is neither open nor closed in $\R$.
+Novamente, tenha cuidado com o espaço métrico em que estamos.
+O conjunto $[0,\nicefrac{1}{2})$ é uma bola aberta em $[0,1]$ e, portanto,
+$[0,\nicefrac{1}{2})$ é aberto em $[0,1]$. Por outro lado,
+$[0,\nicefrac{1}{2})$ não é aberto nem fechado em $\R$.
 
 \begin{prop} \label{prop:topology:intervals:openclosed}
-Let $a, b$ be two real numbers, $a < b$.  Then $(a,b)$, $(a,\infty)$,
-and $(-\infty,b)$ are open in $\R$.
-Also $[a,b]$, $[a,\infty)$,
-and $(-\infty,b]$ are closed in $\R$.
+Sejam $a,b$ números reais, com $a < b$. Então $(a,b)$, $(a,\infty)$ e
+$(-\infty,b)$ são abertos em $\R$.
+Além disso, $[a,b]$, $[a,\infty)$ e $(-\infty,b]$ são fechados em $\R$.
 \end{prop}
 
-The proof is left as an exercise.  Keep in mind that
-there are many other open and
-closed sets in the set of real numbers. %$\R$.
+A demonstração fica como exercício. Tenha em mente que há muitos outros
+conjuntos abertos e fechados nos números reais. %$\R$.
 
 \begin{prop} \label{prop:topology:subspaceopen}
-Suppose $(X,d)$ is a metric space, and $Y \subset X$.  Then $U \subset Y$
-is open in $Y$ (in the subspace topology) if and only if
-there exists an open set $V \subset X$ (so open in $X$) such that
+Suponha que $(X,d)$ seja um espaço métrico e $Y \subset X$. Então,
+$U \subset Y$ é aberto em $Y$ (na topologia de subespaço) se, e somente se,
+existe um conjunto aberto $V \subset X$ (isto é, aberto em $X$) tal que
 $V \cap Y = U$.
 \end{prop}
 
-For example, let $X \coloneqq \R$, $Y \coloneqq [0,1]$, $U \coloneqq [0,\nicefrac{1}{2})$.
-We saw that $U$ is an open set in $Y$.
-We may take $V \coloneqq (\nicefrac{-1}{2},\nicefrac{1}{2})$.
+Por exemplo, sejam $X \coloneqq \R$, $Y \coloneqq [0,1]$ e
+$U \coloneqq [0,\nicefrac{1}{2})$.
+Vimos que $U$ é aberto em $Y$.
+Podemos tomar $V \coloneqq (\nicefrac{-1}{2},\nicefrac{1}{2})$.
 
 \begin{proof}
-Suppose $V \subset X$ is open and $V \cap Y = U$.
-Let $x \in U$.
-As $V$ is open and $x \in V$, there
-exists a $\delta > 0$ such that $B_X(x,\delta) \subset V$.
-Then
+Suponha que $V \subset X$ seja aberto e $V \cap Y = U$.
+Seja $x \in U$.
+Como $V$ é aberto e $x \in V$, existe $\delta > 0$ tal que
+$B_X(x,\delta) \subset V$.
+Então,
 \begin{equation*}
 B_Y(x,\delta) = B_X(x,\delta) \cap Y \subset V \cap Y = U .
 \end{equation*}
-So $U$ is open in $Y$.
+Aí, $U$ é aberto em $Y$.
 
-The proof of the opposite direction, that is, that if $U \subset Y$
-is open in the subspace topology there exists a $V$ is left as
+A demonstração da recíproca, isto é, de que, se $U \subset Y$ é aberto na
+topologia de subespaço, então existe um conjunto $V$, fica como
 \exerciseref{exercise:mssubspace}.
 \end{proof}
 
-A hint for finishing the proof (the exercise) is that
-a useful way to think about an open set is as a union of open balls.  If $U$ is
-open, then for each $x \in U$, there is a $\delta_x > 0$ (depending on $x$) such that
-$B(x,\delta_x) \subset U$.  Then $U = \bigcup_{x\in U} B(x,\delta_x)$.
+Uma dica para concluir a demonstração (o exercício) é pensar em um conjunto
+aberto como uma união de bolas abertas. Se $U$ é aberto, então, para cada
+$x \in U$, existe $\delta_x > 0$ (dependente de $x$) tal que
+$B(x,\delta_x) \subset U$. Então $U = \bigcup_{x\in U} B(x,\delta_x)$.
 
-In the case of an open subset of an open set or a closed subset of a closed
-set, matters are simpler.
+No caso de um subconjunto aberto de um conjunto aberto ou de um subconjunto
+fechado de um conjunto fechado, a situação é mais simples.
 
 \begin{prop} \label{prop:topology:subspacesame}
-Suppose $(X,d)$ is a metric space, $V \subset X$ is open,
-and $E \subset X$ is closed.
+Suponha que $(X,d)$ seja um espaço métrico, que $V \subset X$ seja aberto
+e que $E \subset X$ seja fechado.
 \begin{enumerate}[(i)]
 \item \label{prop:topology:subspacesame:i}
-$U \subset V$ is open in the subspace topology if and only if $U$ is open
-in $X$.
+$U \subset V$ é aberto na topologia de subespaço se, e somente se, $U$ é
+aberto em $X$.
 \item \label{prop:topology:subspacesame:ii}
-$F \subset E$ is closed in the subspace topology if and only if $F$ is
-closed in $X$.
+$F \subset E$ é fechado na topologia de subespaço se, e somente se, $F$ é
+fechado em $X$.
 \end{enumerate}
 \end{prop}
 
 \begin{proof}
-We prove
+Demonstramos
 \ref{prop:topology:subspacesame:i}
-and leave 
-\ref{prop:topology:subspacesame:ii} as an exercise.
+e deixamos
+\ref{prop:topology:subspacesame:ii} como exercício.
 
-If $U \subset V$ is open in the subspace topology, by
-\propref{prop:topology:subspaceopen}, there is a set $W \subset X$
-open in $X$ such that $U = W \cap V$.  Intersection of two open sets
-is open so $U$ is open in $X$.
+Se $U \subset V$ é aberto na topologia de subespaço, pela
+\propref{prop:topology:subspaceopen} existe um conjunto $W \subset X$ aberto
+em $X$ tal que $U = W \cap V$. A interseção de dois conjuntos abertos é
+aberta; portanto, $U$ é aberto em $X$.
 
-Now suppose $U$ is open in $X$.  Then $U = U \cap V$. So
-$U$ is open in $V$ again by \propref{prop:topology:subspaceopen}.
+Agora suponha que $U$ seja aberto em $X$. Então $U = U \cap V$. Logo,
+$U$ é aberto em $V$, novamente pela \propref{prop:topology:subspaceopen}.
 \end{proof}
 
 \subsection{Connected sets}
@@ -1279,7 +1275,7 @@ Given $x \in A^\circ$, there is a $\delta > 0$ such that $B(x,\delta)
 \subset A$.  If $z \in B(x,\delta)$, then as open balls are open,
 there is an $\epsilon > 0$ such that $B(z,\epsilon) \subset B(x,\delta)
 \subset A$.  So $z \in A^\circ$.  Therefore, $B(x,\delta) \subset
-A^\circ$, e, portanto, $A^\circ$ is open.
+A^\circ$, and so $A^\circ$ is open.
 
 As $A^\circ$ is open,
 $\partial A = \widebar{A} \setminus A^\circ = \widebar{A} \cap
@@ -1527,7 +1523,7 @@ the sequence, and for the whole sequence use the notation
 A sequence $\{ x_n \}_{n=1}^\infty$ is \emph{bounded}\index{bounded sequence} if
 there exists a point $p \in X$ and $B \in \R$ such that
 \begin{equation*}
-d(p,x_n) \leq B \qquad \text{para todo } n \in \N.
+d(p,x_n) \leq B \qquad \text{for all } n \in \N.
 \end{equation*}
 In other words, the sequence $\{x_n\}_{n=1}^\infty$ is bounded whenever
 the set $\{ x_n : n \in \N \}$
@@ -1606,7 +1602,7 @@ d(y,x_n) + d(x_n,x) \\
 \end{split}
 \end{equation*}
 As $d(y,x) < \epsilon$ for all $\epsilon > 0$, we have $d(x,y) = 0$
-e, portanto, $y=x$.  Hence, the limit (if it exists) is unique.
+and so $y=x$.  Hence, the limit (if it exists) is unique.
 \end{proof}
 
 The proofs of the following propositions are left as exercises.
@@ -1620,7 +1616,7 @@ A sequence $\{ x_n \}_{n=1}^\infty$ in a metric space $(X,d)$ converges to $p \i
 if and only
 if there exists a sequence $\{ a_n \}_{n=1}^\infty$ of real numbers such that
 \begin{equation*}
-d(x_n,p) \leq a_n \quad \text{para todo } n \in \N,
+d(x_n,p) \leq a_n \quad \text{for all } n \in \N,
 \qquad
 \text{and}
 \qquad
@@ -2297,7 +2293,7 @@ K \subset \bigcup_{x \in K} B(x,\alpha_x) .
 \end{equation*}
 Any finite collection of these balls contains at most finitely many
 elements of $\{ x_n \}_{n=1}^\infty$,
-e, portanto, there must be an $x_n \in K$
+and so there must be an $x_n \in K$
 not in their union.  Hence, $K$ is not compact and the claim is
 proved.
 
@@ -2407,7 +2403,7 @@ See \propref{prop:topology:subspacesame}.
 Let $\{ x_n \}_{n=1}^\infty$ be a sequence in $E$.  It is also a sequence in $K$.
 Therefore, it has a convergent subsequence $\{ x_{n_j} \}_{j=1}^\infty$ that converges to
 some $x \in K$.  As $E$ is closed, the limit of a sequence in $E$ is also in $E$
-e, portanto, $x \in E$.  Thus $E$ must be compact.
+and so $x \in E$.  Thus $E$ must be compact.
 \end{proof}
 
 \begin{thm}[Heine--Borel%
@@ -2822,12 +2818,12 @@ a point in $f(K)$, and $f(K)$ is compact by \thmref{thm:mscompactisseqcpt}.
 As before, $f \colon X \to \R$ achieves an
 \emph{\myindex{absolute minimum}} at $c \in X$ if
 \begin{equation*}
-f(x) \geq f(c) \qquad \text{para todo } x \in X.
+f(x) \geq f(c) \qquad \text{for all } x \in X.
 \end{equation*}
 On the other hand, $f$ achieves an 
 \emph{\myindex{absolute maximum}} at $c \in X$ if
 \begin{equation*}
-f(x) \leq f(c) \qquad \text{para todo } x \in X.
+f(x) \leq f(c) \qquad \text{for all } x \in X.
 \end{equation*}
 
 \begin{thm}
@@ -2852,7 +2848,7 @@ and some $y \in X$ such that $f(y) = \inf f(X)$.
 
 Let us see how to define continuity in terms of the topology, that is,
 the open sets.  We have already seen that topology determines which 
-sequences converge, e, portanto, it is no wonder that the topology also
+sequences converge, and so it is no wonder that the topology also
 determines continuity of functions.
 
 \begin{lemma} \label{lemma:mstopocontloc}
@@ -3058,7 +3054,7 @@ $(X,d_X)$ and $(Y,d_Y)$ are metric spaces, then $f \colon X \to Y$
 is called Lipschitz or $K$-Lipschitz if there exists a $K \in \R$ such that
 \begin{equation*}
 d_Y\bigl(f(p),f(q)\bigr) \leq K \, d_X(p,q)
-\qquad \text{para todo } p,q \in X.
+\qquad \text{for all } p,q \in X.
 \end{equation*}
 A Lipschitz function is uniformly continuous:
 Take $\delta = \nicefrac{\epsilon}{K}$ (assuming that $K > 0$).
@@ -3343,8 +3339,8 @@ Define
 \begin{equation*}
 f(x,y) \coloneqq
 \begin{cases}
-\frac{2xy}{x^4+y^2} & \text{se } (x,y) \neq (0,0), \\
-0 & \text{se } (x,y) = (0,0) .
+\frac{2xy}{x^4+y^2} & \text{if } (x,y) \neq (0,0), \\
+0 & \text{if } (x,y) = (0,0) .
 \end{cases}
 \end{equation*}
 \begin{enumerate}[a)]
@@ -3398,7 +3394,7 @@ $\varphi \colon X \to Y$ is a \emph{\myindex{contraction}}
 a $k$-Lipschitz map for some $k < 1$, i.e.\ if there exists a $k < 1$ such that
 \begin{equation*}
 d_Y\bigl(\varphi(p),\varphi(q)\bigr) \leq k\, d_X(p,q)
-\qquad \text{para todo } p,q \in X.
+\qquad \text{for all } p,q \in X.
 \end{equation*}
 
 \medskip
@@ -3539,7 +3535,7 @@ and Lipschitz in the second variable, that is, there exists
 an $L \in \R$ such that
 \begin{equation*}
 \babs{F(x,y) - F(x,z)} \leq L \sabs{y-z}
-\qquad \text{para todo } y,z \in J, x \in I .
+\qquad \text{for all } y,z \in J, x \in I .
 \end{equation*}
 Then there exists an $h > 0$ such that $[x_0-h,x_0+h] \subset I$ and a unique differentiable
 function $f \colon [x_0 - h, x_0 + h] \to J \subset \R$ such that

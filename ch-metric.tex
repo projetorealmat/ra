@@ -3345,65 +3345,65 @@ Dica: primeiro integre em $[a+\nicefrac{1}{n},b-\nicefrac{1}{n}]$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{Fixed point theorem and Picard's theorem again}
+\section{Teorema do ponto fixo e novamente o teorema de Picard}
 \label{sec:metpicard}
 
 %mbxINTROSUBSECTION
 
-\sectionnotes{1 lecture (optional, does not require \sectionref{sec:picard})}
+\sectionnotes{1 aula (opcional, não requer \sectionref{sec:picard})}
 
-In this section we prove the fixed point theorem for contraction
-mappings.  As an application we prove Picard's theorem, which we proved
-without metric spaces in \sectionref{sec:picard}.
-The proof presented here is similar, but it goes much
-more smoothly with metric spaces and the fixed point theorem.
+Nesta seção demonstramos o teorema do ponto fixo para
+aplicações contrativas. Como aplicação, demonstramos o teorema de Picard,
+que demonstramos sem espaços métricos na \sectionref{sec:picard}.
+A demonstração apresentada aqui é semelhante, mas fica muito
+mais simples com espaços métricos e com o teorema do ponto fixo.
 
-\subsection{Fixed point theorem}
+\subsection{Teorema do ponto fixo}
 
 \begin{defn}
-Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces.
-A map
-$\varphi \colon X \to Y$ is a \emph{\myindex{contraction}}
-(or a contractive map) if it is
-a $k$-Lipschitz map for some $k < 1$, i.e.\ if there exists a $k < 1$ such that
+Sejam $(X,d_X)$ e $(Y,d_Y)$ espaços métricos.
+Uma aplicação
+$\varphi \colon X \to Y$ é uma \emph{\myindex{contração}}
+(ou aplicação contrativa) se é uma aplicação $k$-Lipschitz para algum $k < 1$,
+isto é, se existe um $k < 1$ tal que
 \begin{equation*}
 d_Y\bigl(\varphi(p),\varphi(q)\bigr) \leq k\, d_X(p,q)
-\qquad \text{for all } p,q \in X.
+\qquad \text{para todos } p,q \in X.
 \end{equation*}
 
 \medskip
 
-Given a map $\varphi \colon X \to X$, a point $x \in X$ is called a
-\emph{\myindex{fixed point}}
-if $\varphi(x)=x$.
+Dada uma aplicação $\varphi \colon X \to X$, dizemos que um ponto $x \in X$ é
+um \emph{\myindex{ponto fixo}}
+se $\varphi(x)=x$.
 \end{defn}
 
 \begin{thm}%
-[Contraction mapping principle\index{contraction mapping principle}
-or \myindex{Banach fixed point theorem}\index{fixed point theorem}%
-\footnote{Named after the Polish mathematician
+[Princípio da contração\index{princípio da contração}
+ou \myindex{teorema do ponto fixo de Banach}\index{teorema do ponto fixo}%
+\footnote{Nomeado em homenagem ao matemático polonês
 \href{https://en.wikipedia.org/wiki/Stefan_Banach}{Stefan Banach}
-(1892--1945) who first stated the theorem in 1922.}]
+(1892--1945), que enunciou o teorema pela primeira vez em 1922.}]
 \label{thm:contr}
-Let $(X,d)$ be a nonempty complete metric space and $\varphi \colon X \to X$ a
-contraction.
-Then $\varphi$ has a unique fixed point.
+Seja $(X,d)$ um espaço métrico completo não vazio e seja $\varphi \colon X \to X$ uma
+contração.
+Então $\varphi$ tem um único ponto fixo.
 \end{thm}
 
-The words \emph{complete} and \emph{contraction} are necessary.
-See \exerciseref{exercise:nofixedpoint}.
+As hipóteses de \emph{completude} e de \emph{contração} são necessárias.
+Veja \exerciseref{exercise:nofixedpoint}.
 
 \begin{proof}
-Pick $x_0 \in X$.
-Define a sequence $\{ x_n \}_{n=1}^\infty$ by $x_{n+1} \coloneqq \varphi(x_n)$.  Then
+Escolha $x_0 \in X$.
+Defina uma sequência $\{ x_n \}_{n=1}^\infty$ por $x_{n+1} \coloneqq \varphi(x_n)$. Então
 \begin{equation*}
 d(x_{n+1},x_n) = d\bigl(\varphi(x_n),\varphi(x_{n-1})\bigr)
 \leq k d(x_n,x_{n-1}) .
 %\leq \cdots
 %\leq k^n d(x_1,x_0) .
 \end{equation*}
-Repeating $n$ times, we get $d(x_{n+1},x_n) \leq k^n d(x_1,x_0)$.
-For $m > n$,
+Repetindo esse argumento $n$ vezes, obtemos $d(x_{n+1},x_n) \leq k^n d(x_1,x_0)$.
+Para $m > n$,
 \begin{equation*}
 \begin{split}
 d(x_m,x_n)
@@ -3414,149 +3414,149 @@ d(x_m,x_n)
 = k^n d(x_1,x_0) \frac{1}{1-k} .
 \end{split}
 \end{equation*}
-In particular, the sequence is Cauchy (why?).  Since $X$ is complete,
-we let $x \coloneqq \lim_{n\to\infty} x_n$, and we claim that $x$
-is our unique fixed point.
+Em particular, a sequência é de Cauchy (por quê?). Como $X$ é completo,
+definimos $x \coloneqq \lim_{n\to\infty} x_n$ e afirmamos que $x$
+é o único ponto fixo.
 
-Fixed point?  The function $\varphi$ is a contraction,
-so it is Lipschitz continuous:
+É ponto fixo? A função $\varphi$ é uma contração,
+portanto é contínua:
 \begin{equation*}
 \varphi(x) = \varphi\Bigl( \lim_{n\to\infty} x_n\Bigr) = \lim_{n\to\infty}
 \varphi(x_n) =
 \lim_{n\to\infty} x_{n+1} = x .
 \end{equation*}
-Unique?  Let $x$ and $y$ be fixed points.
+É único? Sejam $x$ e $y$ pontos fixos.
 \begin{equation*}
 d(x,y) = d\bigl(\varphi(x),\varphi(y)\bigr) \leq k\, d(x,y) .
 \end{equation*}
-As $k < 1$, the inequality means that $d(x,y) = 0$, and hence $x=y$.  The theorem is
-proved.
+Como $k < 1$, a desigualdade implica que $d(x,y) = 0$ e, portanto, $x=y$. O teorema está
+demonstrado.
 \end{proof}
 
-The proof is constructive.  Not only do we know 
-a unique fixed point exists, we know how to find it.  Start with
-any point $x_0 \in X$, then iterate $\varphi(x_0)$,
+A demonstração é construtiva. Além de sabermos
+que existe um único ponto fixo, sabemos como encontrá-lo. Comece com
+qualquer ponto $x_0 \in X$ e, em seguida, itere $\varphi(x_0)$,
 $\varphi(\varphi(x_0))$,
-$\varphi(\varphi(\varphi(x_0)))$, etc.\ to find better and better approximations.
-We can even find how far away
-from the fixed point we are.
-See the exercises.  The idea of the proof is
-therefore useful in real-world applications.
+$\varphi(\varphi(\varphi(x_0)))$ etc.\ para obter aproximações cada vez melhores.
+Também podemos determinar quão longe estamos
+do ponto fixo.
+Veja os exercícios. Portanto, a ideia da demonstração
+é útil em aplicações do mundo real.
 
-\subsection{Picard's theorem}
+\subsection{Teorema de Picard}
 
-We start with the metric space where we will apply the
-fixed point theorem:
-the space $C\bigl([a,b],\R\bigr)$ of \exampleref{example:msC01},
-the space of continuous functions $f \colon [a,b] \to \R$ with the metric
+Começamos pelo espaço métrico em que aplicaremos o
+teorema do ponto fixo:
+o espaço $C\bigl([a,b],\R\bigr)$ de \exampleref{example:msC01},
+formado pelas funções contínuas $f \colon [a,b] \to \R$, com a métrica
 \begin{equation*}
 d(f,g) \coloneqq \snorm{f-g}_{[a,b]} = \sup_{x \in [a,b]} \babs{f(x)-g(x)} .
 \end{equation*}
-Convergence in this metric is convergence in uniform norm, or in other
-words, uniform convergence.  Therefore,
-$C\bigl([a,b],\R\bigr)$ is a complete metric space,
-see \propref{prop:CabRcomplete}.
+Convergir nessa métrica equivale a convergir na norma uniforme, ou seja,
+a convergir uniformemente. Portanto,
+$C\bigl([a,b],\R\bigr)$ é um espaço métrico completo;
+veja \propref{prop:CabRcomplete}.
 
 \medskip
 
-Consider now the ordinary differential equation
+Consideremos agora a equação diferencial ordinária
 \begin{equation*}
 \frac{dy}{dx} = F(x,y) .
 \end{equation*}
-Given some $x_0, y_0$, we desire a function $y=f(x)$ such that
-$f(x_0) = y_0$ and such that
+Dados $x_0,y_0$, queremos uma função $y=f(x)$ tal que
+$f(x_0) = y_0$ e
 \begin{equation*}
 f'(x) = F\bigl(x,f(x)\bigr) .
 \end{equation*}
-To avoid having to come up with many names, we often simply write $y' = F(x,y)$
-for the equation
-and $y(x)$ for the solution.
+Para evitar a introdução de muitos nomes, escrevemos muitas vezes apenas $y' = F(x,y)$
+para a equação
+e $y(x)$ para a solução.
 
-The simplest example is the equation $y' = y$, $y(0) = 1$.
-The solution is the exponential $y(x) = e^x$.  A somewhat more complicated
-example is $y' = -2xy$, $y(0) = 1$, whose solution is the Gaussian
+O exemplo mais simples é a equação $y' = y$, $y(0) = 1$.
+Sua solução é a função exponencial $y(x) = e^x$. Um exemplo um pouco mais complicado
+é $y' = -2xy$, $y(0) = 1$, cuja solução é a função gaussiana
 $y(x) = e^{-x^2}$.
 
-A subtle issue is how long the solution exists.
-Consider the equation $y' = y^2$, $y(0)=1$.  Then $y(x) = \frac{1}{1-x}$ is a
-solution.  While $F$ is a reasonably \myquote{nice} function and in particular
-it exists for all $x$ and $y$, the solution \myquote{blows up} at $x=1$.
-For more examples related to Picard's theorem, see \sectionref{sec:picard}.
+Uma questão sutil é por quanto tempo a solução existe.
+Considere a equação $y' = y^2$, $y(0)=1$. Então $y(x) = \frac{1}{1-x}$ é uma
+solução. Embora $F$ seja uma função razoavelmente \myquote{bem-comportada} e, em particular,
+esteja definida para todos os valores de $x$ e $y$, a solução \myquote{se torna ilimitada} em $x=1$.
+Para mais exemplos relacionados ao teorema de Picard, veja \sectionref{sec:picard}.
 
-We will look for the solution in 
-$C\bigl([a,b],\R\bigr)$, which may feel strange at first as
-we are searching for a differentiable function.
-The explanation is that we consider the
-corresponding integral equation
+Procuraremos a solução em
+$C\bigl([a,b],\R\bigr)$, o que pode parecer estranho à primeira vista, pois
+estamos procurando uma função diferenciável.
+A explicação é que consideramos a
+equação integral correspondente
 \begin{equation*}
 f(x)
 =
 y_0 + \int_{x_0}^x F\bigl(t,f(t)\bigr)\,dt .
 \end{equation*}
-To solve this integral equation, we only need a continuous function, so
-in some sense our task should be easier---we have more candidate functions
-to try.  This way of thinking is quite typical when solving differential
-equations.
+Para resolver essa equação integral, basta uma função contínua; portanto,
+em certo sentido, a tarefa fica mais fácil — temos mais funções candidatas
+a testar. Essa maneira de pensar é bastante comum na resolução de equações
+diferenciais.
 
 \begin{samepage}
-\begin{thm}[Picard's theorem on existence and uniqueness]%
-\index{existence and uniqueness theorem}\index{Picard's theorem}
-Let $I, J \subset \R$ be closed and bounded intervals,
-let $I^\circ$ and $J^\circ$ be their interiors, and 
-let $(x_0,y_0) \in I^\circ \times J^\circ$.
-Suppose $F \colon I \times J \to \R$ is continuous
-and Lipschitz in the second variable, that is, there exists
-an $L \in \R$ such that
+\begin{thm}[Teorema de existência e unicidade de Picard]%
+\index{teorema da existência e unicidade}\index{teorema de Picard}
+Sejam $I, J \subset \R$ intervalos fechados e limitados,
+sejam $I^\circ$ e $J^\circ$ seus interiores, e seja
+$(x_0,y_0) \in I^\circ \times J^\circ$.
+Suponha que $F \colon I \times J \to \R$ seja contínua
+e Lipschitz na segunda variável, isto é, que exista
+um $L \in \R$ tal que
 \begin{equation*}
 \babs{F(x,y) - F(x,z)} \leq L \sabs{y-z}
-\qquad \text{for all } y,z \in J, x \in I .
+\qquad \text{para todos } y,z \in J, x \in I .
 \end{equation*}
-Then there exists an $h > 0$ such that $[x_0-h,x_0+h] \subset I$ and a unique differentiable
-function $f \colon [x_0 - h, x_0 + h] \to J \subset \R$ such that
+Então existe um $h > 0$ tal que $[x_0-h,x_0+h] \subset I$ e uma única função diferenciável
+$f \colon [x_0 - h, x_0 + h] \to J \subset \R$ tal que
 \begin{equation*}
-f'(x) = F\bigl(x,f(x)\bigr) \qquad \text{and} \qquad f(x_0) = y_0.
+f'(x) = F\bigl(x,f(x)\bigr) \qquad \text{e} \qquad f(x_0) = y_0.
 \end{equation*}
 \end{thm}
 \end{samepage}
 
 \begin{proof}
-Without loss of generality, assume $x_0 =0$ (exercise).
-As $I \times J$ is compact and
-$F$ is continuous, $F$ is bounded.
-So find an $M > 0$ such that
-$\babs{F(x,y)} \leq M$ for all $(x,y) \in I\times J$.
-Pick $\alpha > 0$ such that
-$[-\alpha,\alpha] \subset I$ and $[y_0-\alpha, y_0 + \alpha] \subset J$.
-Let
+Sem perda de generalidade, suponha que $x_0 =0$ (exercício).
+Como $I \times J$ é compacto e
+$F$ é contínua, $F$ é limitada.
+Escolha então um $M > 0$ tal que
+$\babs{F(x,y)} \leq M$ para todo $(x,y) \in I\times J$.
+Escolha $\alpha > 0$ tal que
+$[-\alpha,\alpha] \subset I$ e $[y_0-\alpha, y_0 + \alpha] \subset J$.
+Defina
 \begin{equation*}
 h \coloneqq \min \left\{ \alpha, \frac{\alpha}{M+L\alpha} \right\} .
 \end{equation*}
-Note $[-h,h] \subset I$.  Let
+Note que $[-h,h] \subset I$. Seja
 \begin{equation*}
 Y \coloneqq \Bigl\{ f \in C\bigl([-h,h],\R\bigr) : f\bigl([-h,h]\bigr) \subset J \Bigr\} .
 \end{equation*}
-That is, $Y$ is the set of continuous functions on $[-h,h]$ with values in
-$J$, in other words,
-exactly those functions where $F\bigl(x,f(x)\bigr)$ makes sense.
-It is left as an exercise to show that $Y$ is a closed subset of $C\bigl([-h,h],\R\bigr)$
-(because $J$ is closed).
-The space $C\bigl([-h,h],\R\bigr)$ is complete, and
-a closed subset of a complete metric space is a complete metric space with
-the subspace metric, see \propref{prop:closedcomplete}.  So $Y$ with the
-subspace metric is a complete metric space.
-We will write $d(f,g) = \snorm{f-g}_{[-h,h]}$ for this metric.
+Isto é, $Y$ é o conjunto das funções contínuas em $[-h,h]$ com valores em
+$J$, ou seja,
+exatamente as funções para as quais $F\bigl(x,f(x)\bigr)$ está definida.
+Deixamos como exercício demonstrar que $Y$ é um subconjunto fechado de $C\bigl([-h,h],\R\bigr)$
+(pois $J$ é fechado).
+O espaço $C\bigl([-h,h],\R\bigr)$ é completo, e
+um subconjunto fechado de um espaço métrico completo é completo com
+a métrica de subespaço; veja \propref{prop:closedcomplete}. Portanto, $Y$ com a
+métrica de subespaço é um espaço métrico completo.
+Escreveremos $d(f,g) = \snorm{f-g}_{[-h,h]}$ para essa métrica.
 
-Define a mapping
-$T \colon Y \to C\bigl([-h,h],\R\bigr)$ by
+Defina uma aplicação
+$T \colon Y \to C\bigl([-h,h],\R\bigr)$ por
 \begin{equation*}
 T(f)(x)
 \coloneqq
 y_0 + \int_0^x F\bigl(t,f(t)\bigr)\,dt .
 \end{equation*}
-It is an exercise to check that
-$T$ is well-defined, and that for $f \in Y$, $T(f)$ really is in $C\bigl([-h,h],\R\bigr)$.
-Let $f \in Y$ and $\sabs{x} \leq h$.
-As $F$ is bounded by $M$, we have
+Deixamos como exercício verificar que
+$T$ está bem definida e que, para $f \in Y$, $T(f)$ de fato pertence a $C\bigl([-h,h],\R\bigr)$.
+Sejam $f \in Y$ e $\sabs{x} \leq h$.
+Como $F$ é limitada por $M$, temos
 \begin{equation*}
 \begin{split}
 \babs{T(f)(x) - y_0}
@@ -3565,17 +3565,17 @@ As $F$ is bounded by $M$, we have
 \sabs{x} M \leq hM \leq \frac{\alpha M}{M+ L\alpha} \leq \alpha .
 \end{split}
 \end{equation*}
-So $T(f)\bigl([-h,h]\bigr) \subset [y_0-\alpha,y_0+\alpha] \subset J$, and
-$T(f) \in Y$.  In other words, $T(Y) \subset Y$.  From now on,
-we consider $T$ as a mapping of $Y$ to $Y$.
+Assim, $T(f)\bigl([-h,h]\bigr) \subset [y_0-\alpha,y_0+\alpha] \subset J$ e
+$T(f) \in Y$. Em outras palavras, $T(Y) \subset Y$. A partir daqui,
+consideramos $T$ como uma aplicação de $Y$ em $Y$.
 
-We claim $T \colon Y \to Y$ is a contraction.  First, for $x \in [-h,h]$
-and $f,g \in Y$, we have
+Afirmamos que $T \colon Y \to Y$ é uma contração. Primeiro, para $x \in [-h,h]$
+e $f,g \in Y$, temos
 \begin{equation*}
 \Babs{F\bigl(x,f(x)\bigr) - F\bigl(x,g(x)\bigr)} \leq
 L\babs{f(x)- g(x)} \leq L \, d(f,g) .
 \end{equation*}
-Therefore,
+Portanto,
 \begin{equation*}
 \begin{split}
 \babs{T(f)(x) - T(g)(x)}
@@ -3585,82 +3585,84 @@ Therefore,
  \leq \frac{L\alpha}{M+L\alpha} \, d(f,g) .
 \end{split}
 \end{equation*}
-We chose $M > 0$ and so
+Escolhemos $M > 0$ e, portanto,
 $\frac{L\alpha}{M+L\alpha} < 1$.
-Take supremum over $x \in [-h,h]$ of the left-hand side above to obtain
+Tomando o supremo em $x \in [-h,h]$ do lado esquerdo da desigualdade acima, obtemos
 $d\bigl(T(f),T(g)\bigr) \leq \frac{L\alpha}{M+L\alpha} \, d(f,g)$,
-that is, $T$ is a contraction.
+isto é, $T$ é uma contração.
 
-The fixed point theorem (\thmref{thm:contr})
-gives a unique $f \in Y$ such that $T(f) = f$.
-In other words,
+O teorema do ponto fixo (\thmref{thm:contr})
+fornece uma única $f \in Y$ tal que $T(f) = f$.
+Em outras palavras,
 \begin{equation*} %\label{equation:msinteqpicard}
 f(x) = y_0 + \int_0^x F\bigl(t,f(t)\bigr)\,dt .
 \end{equation*}
-Clearly, $f(0) = y_0$.
-By the fundamental theorem of calculus (\thmref{thm:FTCv2}),
-$f$ is differentiable and its derivative is
+Claramente, $f(0) = y_0$.
+Pelo teorema fundamental do cálculo (\thmref{thm:FTCv2}),
+$f$ é diferenciável e sua derivada é
 $F\bigl(x,f(x)\bigr)$.
-Differentiable functions are continuous, so
-$f$ is the unique differentiable $f \colon [-h,h] \to J$
-such that
- $f'(x) = F\bigl(x,f(x)\bigr)$ and $f(0) = y_0$.
+Funções diferenciáveis são contínuas; portanto,
+$f$ é a única função diferenciável $f \colon [-h,h] \to J$
+tal que
+ $f'(x) = F\bigl(x,f(x)\bigr)$ e $f(0) = y_0$.
 \end{proof}
 
-\subsection{Exercises}
+\subsection{Exercícios}
+
+
 
 \begin{exnote}
-For more exercises related to Picard's theorem see \sectionref{sec:picard}.
+Para mais exercícios relacionados ao teorema de Picard, veja \sectionref{sec:picard}.
 \end{exnote}
 
 \begin{exercise}
-Let $J$ be a closed and bounded interval and
+Seja $J$ um intervalo fechado e limitado e
 $Y \coloneqq \bigl\{ f \in C\bigl([-h,h],\R\bigr) : f\bigl([-h,h]\bigr) \subset J \bigr\}$.
-Show that $Y \subset C\bigl([-h,h],\R\bigr)$ is closed.  Hint: $J$ is closed.
+Demonstre que $Y \subset C\bigl([-h,h],\R\bigr)$ é fechado. Dica: $J$ é fechado.
 \end{exercise}
 
 \begin{exercise}
-In the proof of Picard's theorem,
-show that if $f \colon [-h,h] \to J$ is continuous, then $F\bigl(t,f(t)\bigr)$
-is continuous on $[-h,h]$ as a function of $t$.  Use this to show that
+Na demonstração do teorema de Picard,
+prove que, se $f \colon [-h,h] \to J$ é contínua, então $F\bigl(t,f(t)\bigr)$
+é contínua em $[-h,h]$ como função de $t$. Use isso para demonstrar que
 \begin{equation*}
 T(f)(x)
 \coloneqq
 y_0 + \int_0^x F\bigl(t,f(t)\bigr)\,dt
 \end{equation*}
-is well-defined and that $T(f) \in C\bigl([-h,h],\R\bigr)$.
+está bem definida e que $T(f) \in C\bigl([-h,h],\R\bigr)$.
 \end{exercise}
 
 
 \begin{exercise}
-Prove that in the proof of Picard's theorem,
-the statement \myquote{Without loss of generality assume $x_0 = 0$} is
-justified.  That is, prove that if we know the theorem with $x_0 = 0$, the
-theorem is true as stated.
+Demonstre que, na demonstração do teorema de Picard,
+a afirmação \myquote{sem perda de generalidade, suponha que $x_0 = 0$} está
+justificada. Isto é, prove que, se o teorema vale para $x_0 = 0$, então
+vale como enunciado.
 \end{exercise}
 
 \begin{exercise}
 \pagebreak[2]
-Let $F \colon \R \to \R$ be defined by
-$F(x) \coloneqq kx + b$ where $0 < k < 1$, $b \in \R$.
+Seja $F \colon \R \to \R$ definida por
+$F(x) \coloneqq kx + b$, onde $0 < k < 1$ e $b \in \R$.
 \begin{enumerate}[a)]
 \item
-Show that $F$ is a contraction.
+Demonstre que $F$ é uma contração.
 \item
-Find the fixed point and show directly that it is unique.
+Encontre o ponto fixo e demonstre diretamente que ele é único.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
 \pagebreak[2]
-Let $f \colon [0,\nicefrac{1}{4}] \to [0,\nicefrac{1}{4}]$ be defined by
+Seja $f \colon [0,\nicefrac{1}{4}] \to [0,\nicefrac{1}{4}]$ definida por
 $f(x) \coloneqq x^2$.
 \begin{enumerate}[a)]
 \item
-Show that $f$
-is a contraction, and find the best (smallest) $k$ from the definition that works.
+Demonstre que $f$
+é uma contração e encontre o menor valor de $k$ que funciona na definição.
 \item
-Find the fixed point and show directly that it is unique.
+Encontre o ponto fixo e demonstre diretamente que ele é único.
 \end{enumerate}
 \end{exercise}
 
@@ -3669,71 +3671,69 @@ Find the fixed point and show directly that it is unique.
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Find an example of a contraction $f \colon X \to X$
-of a non-complete metric space $X$ with no
-fixed point.
+Encontre um exemplo de contração $f \colon X \to X$
+em um espaço métrico incompleto $X$ que não tenha
+ponto fixo.
 \item
-Find a 1-Lipschitz map $f \colon X \to X$ of a complete metric space $X$ with no fixed point.
+Encontre uma aplicação 1-Lipschitz $f \colon X \to X$ em um espaço métrico completo $X$ que não tenha ponto fixo.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
 
 \begin{exercise}
-Consider $y' =y^2$, $y(0)=1$.  Use the iteration scheme
-from the proof of the contraction mapping principle.
-Start with $f_0(x) = 1$.  Find a 
-few iterates (at least up to $f_2$).  Prove that
-the pointwise limit of $f_n$ is $\frac{1}{1-x}$, that is, for every $x$
-with $\sabs{x} < h$ for some $h > 0$,
-prove that $\lim\limits_{n\to\infty}f_n(x) = \frac{1}{1-x}$.
+Considere $y' =y^2$, $y(0)=1$. Use o esquema de iteração
+da demonstração do princípio da contração.
+Comece com $f_0(x) = 1$. Encontre algumas
+iterações (pelo menos até $f_2$). Demonstre que
+o limite pontual de $f_n$ é $\frac{1}{1-x}$, isto é, para todo $x$
+com $\sabs{x} < h$ para algum $h > 0$,
+demonstre que $\lim\limits_{n\to\infty}f_n(x) = \frac{1}{1-x}$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon X \to X$ is a contraction for $k < 1$.  Suppose you use the iteration
-procedure with $x_{n+1} \coloneqq f(x_n)$ as in the proof of the fixed point theorem.
-Suppose $x$ is the fixed
-point of $f$.
+Suponha que $f \colon X \to X$ seja uma contração com $k < 1$. Considere a iteração $x_{n+1} \coloneqq f(x_n)$, como na demonstração do teorema do ponto fixo,
+e seja $x$ o ponto fixo de $f$.
 \begin{enumerate}[a)]
 \item
-Show that $d(x,x_n) \leq k^n d(x_1,x_0) \frac{1}{1-k}$ for all $n \in \N$.
+Demonstre que $d(x,x_n) \leq k^n d(x_1,x_0) \frac{1}{1-k}$ para todo $n \in \N$.
 \item
-Suppose $d(y_1,y_2) \leq 16$ for all $y_1,y_2 \in X$, and $k=
-\nicefrac{1}{2}$.  Find an $N$ such that starting at any given point $x_0 \in X$, 
-$d(x,x_n) \leq 2^{-16}$ for all $n \geq N$.
+Suponha que $d(y_1,y_2) \leq 16$ para todos $y_1,y_2 \in X$ e que $k=
+\nicefrac{1}{2}$. Encontre um $N$ tal que, começando em qualquer ponto dado $x_0 \in X$,
+$d(x,x_n) \leq 2^{-16}$ para todo $n \geq N$.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Let $f(x) \coloneqq x-\frac{x^2-2}{2x}$ (you may recognize Newton's method for
+Seja $f(x) \coloneqq x-\frac{x^2-2}{2x}$ (talvez você reconheça o método de Newton para
 $\sqrt{2}$).
 \begin{enumerate}[a)]
 \item
-Prove $f\bigl([1,\infty)\bigr) \subset [1,\infty)$.
+Demonstre que $f\bigl([1,\infty)\bigr) \subset [1,\infty)$.
 \item
-Prove that $f \colon [1,\infty) \to [1,\infty)$ is a contraction.
+Demonstre que $f \colon [1,\infty) \to [1,\infty)$ é uma contração.
 \item
-Show that the fixed point theorem applies,
-find the unique $x \geq 1$ such that $f(x) = x$,
-and show that $x = \sqrt{2}$.
-Note: In particular, the technique from the proof of the theorem
-can be used to approximate $\sqrt{2}$.
+Mostre que o teorema do ponto fixo se aplica,
+encontre o único $x \geq 1$ tal que $f(x) = x$
+e demonstre que $x = \sqrt{2}$.
+Observação: Em particular, a técnica da demonstração do teorema
+pode ser usada para aproximar $\sqrt{2}$.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon X \to X$ is a contraction, and $(X,d)$ is a metric space
-with the discrete metric, that is, $d(x,y) = 1$ whenever $x \neq y$.
-Show that $f$ is constant, that is,
-there exists a $c \in X$ such that $f(x) = c$ for all $x \in X$.
+Suponha que $f \colon X \to X$ seja uma contração e que $(X,d)$ seja um espaço métrico
+com a métrica discreta, isto é, $d(x,y) = 1$ sempre que $x \neq y$.
+Demonstre que $f$ é constante, isto é,
+existe um $c \in X$ tal que $f(x) = c$ para todo $x \in X$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $(X,d)$ is a nonempty complete metric space,
-$f \colon X \to X$ is a mapping, and denote
-by $f^n$ the $n$th iterate of $f$.  Suppose
-for every $n$ there exists a $k_n > 0$ such that
+Seja $(X,d)$ um espaço métrico completo não vazio,
+seja $f \colon X \to X$ uma aplicação, e denote
+por $f^n$ a $n$-ésima iterada de $f$. Suponha que,
+para todo $n$, exista um $k_n > 0$ tal que
 $d\bigl(f^n(x),f^n(y)\bigr) \leq k_n \, d(x,y)$
-for all $x,y \in X$,
-where $\sum_{n=1}^\infty k_n < \infty$.
-Prove that $f$ has a unique fixed point in $X$.
+para todos $x,y \in X$,
+onde $\sum_{n=1}^\infty k_n < \infty$.
+Demonstre que $f$ tem um único ponto fixo em $X$.
 \end{exercise}

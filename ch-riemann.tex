@@ -1,49 +1,49 @@
-\chapter{The Riemann Integral} \label{int:chapter}
+\chapter{A integral de Riemann} \label{int:chapter}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{The Riemann integral}
+\section{A integral de Riemann}
 \label{sec:rint}
 
 %mbxINTROSUBSECTION
 
-\sectionnotes{1.5 lectures}
+\sectionnotes{1,5 aulas}
 
-An integral is a way to \myquote{sum} the values of a function.
-There is sometimes confusion among students of
-calculus between the \emph{integral} and the \emph{antiderivative}.
-The integral is (informally) the area under the curve, nothing else.
-That we can compute an antiderivative using the integral is a nontrivial
-result we must prove.  
-We will define the \emph{Riemann integral}%
-\footnote{Named after the German mathematician
+Uma integral é uma maneira de \myquote{somar} os valores de uma função.
+Às vezes, estudantes de cálculo confundem a \emph{integral} com a
+\emph{primitiva}.
+Informalmente, a integral é a área sob a curva, e nada mais.
+O fato de podermos calcular uma primitiva usando a integral é um resultado
+nada trivial, que precisamos demonstrar.
+Vamos definir a \emph{integral de Riemann}%
+\footnote{Nomeada em homenagem ao matemático alemão
 \href{https://en.wikipedia.org/wiki/Riemann}{Georg Friedrich Bernhard Riemann}
 (1826--1866).}
-using the Darboux integral%
-\footnote{Named after the French mathematician
+usando a integral de Darboux%
+\footnote{Nomeada em homenagem ao matemático francês
 \href{https://en.wikipedia.org/wiki/Darboux}{Jean-Gaston Darboux} (1842--1917).},
-an equivalent but technically simpler definition.
+uma definição equivalente, mas tecnicamente mais simples.
 
-\subsection{Partitions and lower and upper integrals}
+\subsection{Partições e integrais inferior e superior}
 
-We want to integrate a bounded function defined on an interval $[a,b]$.
-We first define two auxiliary integrals that are defined for all
-bounded functions.  Only then can we talk about the Riemann integral and
-the functions which it can integrate, the Riemann integrable functions.
+Queremos integrar uma função limitada definida em um intervalo $[a,b]$.
+Primeiro definimos duas integrais auxiliares, que estão definidas para todas
+as funções limitadas. Só então podemos falar da integral de Riemann e das
+funções que ela pode integrar, isto é, das funções integráveis à Riemann.
 
 \begin{defn}
-A \emph{\myindex{partition}} $P$ of $[a,b]$ is
-a finite set of numbers $\{ x_0,x_1,x_2,\ldots,x_n \}$ such that
+Uma \emph{\myindex{partição}} $P$ de $[a,b]$ é
+um conjunto finito de números $\{ x_0,x_1,x_2,\ldots,x_n \}$ tal que
 \begin{equation*}
 a = x_0 < x_1 < x_2 < \cdots < x_{n-1} < x_n = b .
 \end{equation*}
-We write
+Escrevemos
 \begin{equation*}
 \Delta x_i \coloneqq x_i - x_{i-1} .
 \end{equation*}
-Suppose $f \colon [a,b] \to \R$ is bounded and $P$ is a partition of
-$[a,b]$.
-Define
+Suponha que $f \colon [a,b] \to \R$ seja limitada e que $P$ seja uma partição
+de $[a,b]$.
+Definimos
 \begin{align*}
 & m_i \coloneqq \inf \, \bigl\{ f(x) : x_{i-1} \leq x \leq x_i \bigr\} , &
 & M_i \coloneqq \sup \, \bigl\{ f(x) : x_{i-1} \leq x \leq x_i \bigr\} , \\
@@ -53,40 +53,40 @@ Define
 \sum_{i=1}^n M_i \Delta x_i .
 \avoidbreak
 \end{align*}
-We call $L(P,f)$ the \emph{\myindex{lower Darboux sum}} and
-$U(P,f)$ the \emph{\myindex{upper Darboux sum}}\index{Darboux sum}.
+Chamamos $L(P,f)$ de \emph{\myindex{soma inferior de Darboux}} e
+$U(P,f)$ de \emph{\myindex{soma superior de Darboux}}\index{soma de Darboux}.
 \glsadd{not:lowerdarbouxsum}
 \glsadd{not:upperdarbouxsum}
 \end{defn}
 
-The geometric idea of Darboux sums is indicated in
-\figureref{darbouxfig}.  The lower sum is the area of the shaded
-rectangles, and the upper sum is the area of the entire
-rectangles, shaded plus unshaded parts.  The width of the $i$th rectangle is $\Delta x_i$,
-the height of the shaded rectangle is $m_i$, and the height
-of the entire rectangle is $M_i$.
+A ideia geométrica das somas de Darboux está indicada na
+\figureref{darbouxfig}. A soma inferior é a área dos retângulos
+sombreados, e a soma superior é a área de todos os retângulos, incluindo
+as partes sombreadas e as não sombreadas. A largura do $i$-ésimo retângulo é
+$\Delta x_i$, a altura do retângulo sombreado é $m_i$ e a altura do retângulo
+inteiro é $M_i$.
 
 \begin{myfigureht}
 \myincludegraphics{darbouxfig}{%
-A diagram of a graph of a function in a bold black line, all above the x
-axis.
-The domain is divided into 8 intervals and
-the endpoints are marked, from left to right, x sub 0 through x sub 8.
-The interval between x sub 4 and x sub 5 is marked as being of width
-Delta x sub 5.
-Above each interval are two rectangles.  For example,
-there is a shaded rectangle of width Delta x sub 5
-with the bottom side being exactly the interval from
-x sub 4 to x sub 5 and of height m sub 5, which is the minimum value of the
-function on the interval.  The rectangle is extended upwards unshaded until
-M sub 5 which is the maximum value of the function on the interval.}
-\caption{Sample Darboux sums.\label{darbouxfig}}
+Diagrama do gráfico de uma função, representado por uma linha preta espessa
+inteiramente acima do eixo $x$.
+O domínio está dividido em 8 intervalos, cujas extremidades estão marcadas,
+da esquerda para a direita, de $x_0$ a $x_8$.
+O intervalo entre $x_4$ e $x_5$ está indicado como tendo largura
+$\Delta x_5$.
+Acima de cada intervalo há dois retângulos. Por exemplo,
+há um retângulo sombreado de largura $\Delta x_5$,
+cujo lado inferior coincide exatamente com o intervalo de
+$x_4$ a $x_5$ e cuja altura é $m_5$, o valor mínimo da função nesse
+intervalo. O retângulo se prolonga para cima, sem sombreamento, até
+$M_5$, o valor máximo da função no intervalo.}
+\caption{Exemplos de somas de Darboux.\label{darbouxfig}}
 \end{myfigureht}
 
 \begin{prop} \label{sumulbound:prop}
-Let $f \colon [a,b] \to \R$ be a bounded function.  Let $m, M \in \R$ be 
-such that for all $x \in [a,b]$, we have $m \leq f(x) \leq M$.  Then for every partition $P$
-of $[a,b]$,
+Seja $f \colon [a,b] \to \R$ uma função limitada. Sejam $m, M \in \R$
+tais que $m \leq f(x) \leq M$ para todo $x \in [a,b]$. Então, para toda
+partição $P$ de $[a,b]$,
 \begin{equation}
 \label{sumulbound:eq}
 m(b-a) \leq
@@ -96,9 +96,9 @@ L(P,f) \leq U(P,f)
 \end{prop}
 
 \begin{proof}
-Let $P$ be a partition of $[a,b]$.  Note that for all $i$, we
-have $m \leq m_i \leq M_i \leq M$.  We also have
-$\sum_{i=1}^n \Delta x_i = (b-a)$.  Therefore,
+Seja $P$ uma partição de $[a,b]$. Observe que, para todo $i$,
+temos $m \leq m_i \leq M_i \leq M$. Além disso,
+$\sum_{i=1}^n \Delta x_i = (b-a)$. Portanto,
 \begin{multline*}
 m(b-a) =
 m \left( \sum_{i=1}^n \Delta x_i \right)
@@ -116,107 +116,108 @@ M \left( \sum_{i=1}^n \Delta x_i \right)
 =
 M(b-a) .
 \end{multline*}
-Hence, we get \eqref{sumulbound:eq}.  In particular, the sets of lower and
-upper sums are bounded sets.
+Logo, obtemos \eqref{sumulbound:eq}. Em particular, os conjuntos das somas
+inferiores e superiores são limitados.
 \end{proof}
 
 \begin{defn}
-As the sets of lower and upper Darboux sums are bounded, we define
+Como os conjuntos das somas inferiores e superiores de Darboux são limitados,
+definimos
 \begin{align*}
 & \underline{\int_a^b} f(x)\,dx \coloneqq
-\sup \, \bigl\{ L(P,f) : P \text{ a partition of } [a,b] \bigr\} , \\
+\sup \, \bigl\{ L(P,f) : P \text{ é uma partição de } [a,b] \bigr\} , \\
 & \overline{\int_a^b} f(x)\,dx \coloneqq
-\inf \, \bigl\{ U(P,f) : P \text{ a partition of } [a,b] \bigr\} .
+\inf \, \bigl\{ U(P,f) : P \text{ é uma partição de } [a,b] \bigr\} .
 \end{align*}
-We call $\underline{\int}$\glsadd{not:lowerdarboux}
-the \emph{\myindex{lower Darboux integral}} and
-$\overline{\int}$\glsadd{not:upperdarboux} the
-\emph{\myindex{upper Darboux integral}}\index{Darboux integral}.
-To avoid worrying about the variable of integration, 
-we often simply write
+Chamamos $\underline{\int}$\glsadd{not:lowerdarboux}
+de \emph{\myindex{integral inferior de Darboux}} e
+$\overline{\int}$\glsadd{not:upperdarboux} de
+\emph{\myindex{integral superior de Darboux}}\index{integral de Darboux}.
+Para não nos preocuparmos com a variável de integração,
+frequentemente escrevemos apenas
 \begin{equation*}
 \underline{\int_a^b} f \coloneqq
 \underline{\int_a^b} f(x)\,dx 
-\qquad \text{and} \qquad
+\qquad \text{e} \qquad
 \overline{\int_a^b} f \coloneqq
 \overline{\int_a^b} f(x)\,dx  .
 \end{equation*}
 \end{defn}
 
-If integration is to make sense, then the lower and upper Darboux
-integrals should be the same number, as we want a single number to call
-\emph{the integral}.  However, these two integrals may differ for
-some functions.
+Para que a integração faça sentido, as integrais inferior e superior de
+Darboux deveriam ser o mesmo número, pois queremos ter um único número que
+possamos chamar de \emph{integral}. No entanto, essas duas integrais podem ser
+diferentes para algumas funções.
 
 \begin{example} \label{example:dirichletfunc}
-Take the \myindex{Dirichlet function}
-$f \colon [0,1] \to \R$, where $f(x) \coloneqq 1$ if
-$x \in \Q$ and $f(x) \coloneqq 0$ if $x \notin \Q$.  Then
+Considere a \myindex{função de Dirichlet}
+$f \colon [0,1] \to \R$, definida por $f(x) \coloneqq 1$ se
+$x \in \Q$ e $f(x) \coloneqq 0$ se $x \notin \Q$. Então,
 \begin{equation*}
-\underline{\int_0^1} f = 0 \qquad \text{and} \qquad
+\underline{\int_0^1} f = 0 \qquad \text{e} \qquad
 \overline{\int_0^1} f = 1 .
 \end{equation*}
-The reason is that for any partition $P$ and every $i$, we have 
-$m_i = \inf \bigl\{ f(x) : x \in [x_{i-1},x_i] \bigr\} = 0$  and
-$M_i = \sup \bigl\{ f(x) : x \in [x_{i-1},x_i] \bigr\} = 1$.  Thus
+Isso ocorre porque, para qualquer partição $P$ e todo $i$, temos
+$m_i = \inf \bigl\{ f(x) : x \in [x_{i-1},x_i] \bigr\} = 0$ e
+$M_i = \sup \bigl\{ f(x) : x \in [x_{i-1},x_i] \bigr\} = 1$. Logo,
 \begin{equation*}
-L(P,f) = \sum_{i=1}^n 0 \cdot \Delta x_i = 0 , \quad \text{and} \quad
+L(P,f) = \sum_{i=1}^n 0 \cdot \Delta x_i = 0 , \quad \text{e} \quad
 U(P,f) = \sum_{i=1}^n 1 \cdot \Delta x_i = \sum_{i=1}^n \Delta x_i = 1  .
 \end{equation*}
 \end{example}
 
 \begin{remark}
-The same definition of $\underline{\int_a^b} f$ and
+Usamos a mesma definição de $\underline{\int_a^b} f$ e
 $\overline{\int_a^b} f$
-is used when $f$ is defined on a larger set $S$ such that
-$[a,b] \subset S$.  In that case, we use the restriction of $f$ to $[a,b]$
-and we must ensure that the restriction is bounded on $[a,b]$.
+quando $f$ está definida em um conjunto maior $S$ tal que
+$[a,b] \subset S$. Nesse caso, usamos a restrição de $f$ a $[a,b]$
+e devemos garantir que essa restrição seja limitada em $[a,b]$.
 \end{remark}
 
-To compute the integral, we often take a partition $P$ and make it finer.
-That is, we cut intervals in the partition into yet smaller pieces.
+Para calcular a integral, frequentemente tomamos uma partição $P$ e a
+refinamos. Isto é, subdividimos os intervalos da partição em partes ainda
+menores.
 
 \begin{defn}
-Let $P = \{ x_0, x_1, \ldots, x_n \}$ and
+Sejam $P = \{ x_0, x_1, \ldots, x_n \}$ e
 $\widetilde{P} = \{ \widetilde{x}_0, \widetilde{x}_1, \ldots,
-\widetilde{x}_{\ell} \}$ be
-partitions of $[a,b]$.  We say $\widetilde{P}$ is a
-\emph{refinement}\index{refinement of a partition} of $P$
-if as sets $P \subset \widetilde{P}$.
+\widetilde{x}_{\ell} \}$ sejam
+partições de $[a,b]$. Dizemos que $\widetilde{P}$ é um
+\emph{refinamento}\index{refinamento de uma partição} de $P$
+se, como conjuntos, $P \subset \widetilde{P}$.
 \end{defn}
 
-That is, $\widetilde{P}$ is a refinement of a partition if it contains all the
-numbers in $P$ and perhaps some other numbers in between.  For example,
-$\{ 0, 0.5, 1, 2 \}$ is a partition of $[0,2]$ and
-$\{ 0, 0.2, 0.5, 1, 1.5, 1.75, 2 \}$ is a refinement.
-The main reason for introducing refinements is the following proposition.
+Isto é, $\widetilde{P}$ é um refinamento de uma partição quando contém todos
+os números de $P$ e, possivelmente, outros números entre eles. Por exemplo,
+$\{ 0, 0.5, 1, 2 \}$ é uma partição de $[0,2]$, e
+$\{ 0, 0.2, 0.5, 1, 1.5, 1.75, 2 \}$ é um refinamento.
+A principal razão para introduzir refinamentos é a seguinte proposição.
 
 \begin{prop} \label{prop:refinement}
-Let $f \colon [a,b] \to \R$ be a bounded function, and let $P$
-be a partition of $[a,b]$.  Let $\widetilde{P}$ be a refinement of $P$.
-Then
+Seja $f \colon [a,b] \to \R$ uma função limitada, e seja $P$
+uma partição de $[a,b]$. Seja $\widetilde{P}$ um refinamento de $P$.
+Então
 \begin{equation*}
 L(P,f) \leq L(\widetilde{P},f) 
-\qquad \text{and} \qquad
+\qquad \text{e} \qquad
 U(\widetilde{P},f) \leq U(P,f) .
 \end{equation*}
 \end{prop}
 
 \begin{proof}
-The tricky part of this proof is to get the notation correct.
-Let $\widetilde{P} = \{ \widetilde{x}_0, \widetilde{x}_1, \ldots,
-\widetilde{x}_{\ell} \}$ be
-a refinement of 
-$P = \{ x_0, x_1, \ldots, x_n \}$.  Then
-$x_0 = \widetilde{x}_0$ and 
-$x_n = \widetilde{x}_{\ell}$.  In fact, there are integers
-$k_0 < k_1 < \cdots < k_n$ such that $x_i = \widetilde{x}_{k_i}$ for
+O ponto delicado desta demonstração é estabelecer corretamente a notação.
+Seja $\widetilde{P} = \{ \widetilde{x}_0, \widetilde{x}_1, \ldots,
+\widetilde{x}_{\ell} \}$ um refinamento de
+$P = \{ x_0, x_1, \ldots, x_n \}$. Então
+$x_0 = \widetilde{x}_0$ e
+$x_n = \widetilde{x}_{\ell}$. De fato, existem inteiros
+$k_0 < k_1 < \cdots < k_n$ tais que $x_i = \widetilde{x}_{k_i}$ para
 $i=0,1,2,\ldots,n$.
 
-Let $\Delta \widetilde{x}_q \coloneqq \widetilde{x}_q - \widetilde{x}_{q-1}$ for
+Defina $\Delta \widetilde{x}_q \coloneqq \widetilde{x}_q - \widetilde{x}_{q-1}$ para
 $q=0,1,2,\ldots,\ell$.
-See \figureref{fig:refinement}.
-We get 
+Veja a \figureref{fig:refinement}.
+Obtemos
 \begin{equation*}
 \Delta x_i
 =
@@ -229,35 +230,35 @@ x_i - x_{i-1} =
 \end{equation*}
 \begin{myfigureht}
 \myincludepdft{figrefinement}{%
-A diagram of an interval between x sub quantity i minus 1 and x sub i of
-width Delta x sub i.
-It is divided into three smaller intervals.
-The left hand endpoint x sub quantity i minus 1
-is also marked as tilde x sub quantity q minus 3
-and tilde x sub quantity k sub quantity i minus 1.
-Similarly the right hand endpoint x sub i
-is also marked as tilde x sub q and tilde x sub k sub i.
-The two inside points are marked as
-tilde x sub quantity q minus 2 and
-tilde x sub quantity q minus 1.
-The three intervals are of length
-Delta tilde x sub quantity q minus 2,
-Delta tilde x sub quantity q minus 1,
-and
-Delta tilde x sub q.}
-\caption{Refinement of a subinterval.  Notice $\Delta x_i =
+A figura mostra um intervalo de extremidades $x_{i-1}$ e $x_i$ e largura
+$\Delta x_i$.
+Ele está dividido em três intervalos menores.
+A extremidade esquerda $x_{i-1}$
+também está indicada por $\widetilde{x}_{q-3}$
+e por $\widetilde{x}_{k_{i-1}}$.
+De modo semelhante, a extremidade direita $x_i$
+também está indicada por $\widetilde{x}_q$ e por $\widetilde{x}_{k_i}$.
+Os dois pontos interiores estão indicados por
+$\widetilde{x}_{q-2}$ e
+$\widetilde{x}_{q-1}$.
+Os três intervalos têm comprimentos
+$\Delta \widetilde{x}_{q-2}$,
+$\Delta \widetilde{x}_{q-1}$
+e
+$\Delta \widetilde{x}_q$.}
+\caption{Refinamento de um subintervalo. Observe que $\Delta x_i =
 \Delta \widetilde{x}_{q-2} +
 \Delta \widetilde{x}_{q-1} +
 \Delta \widetilde{x}_{q}$,
-and also
-$k_{i-1}+1 = q-2$ and
+e também que
+$k_{i-1}+1 = q-2$ e
 $k_{i} = q$.\label{fig:refinement}}
 \end{myfigureht}
 
-Let $m_i$ be as before and correspond to the partition $P$.
-Let $\widetilde{m}_q \coloneqq \inf \bigl\{ f(x) : \widetilde{x}_{q-1} \leq x \leq
+Seja $m_i$ como antes, correspondente à partição $P$.
+Defina $\widetilde{m}_q \coloneqq \inf \bigl\{ f(x) : \widetilde{x}_{q-1} \leq x \leq
 \widetilde{x}_q \bigr\}$.
-Now, $m_i \leq \widetilde{m}_q$ for $k_{i-1} < q \leq k_i$.  Therefore,
+Temos $m_i \leq \widetilde{m}_q$ para $k_{i-1} < q \leq k_i$. Portanto,
 \begin{equation*}
 m_i \Delta x_i
 =
@@ -267,7 +268,7 @@ m_i \sum_{q=k_{i-1}+1}^{k_i} \Delta \widetilde{x}_q
 \leq
 \sum_{q=k_{i-1}+1}^{k_i} \widetilde{m}_q \Delta \widetilde{x}_q .
 \end{equation*}
-So
+Assim,
 \begin{equation*}
 L(P,f) =
 \sum_{i=1}^n m_i \Delta x_i
@@ -279,17 +280,16 @@ L(P,f) =
 \widetilde{m}_q \Delta \widetilde{x}_q = L(\widetilde{P},f).
 \end{equation*}
 
-The proof of $U(\widetilde{P},f) \leq U(P,f)$ is left as an exercise.
+A demonstração de $U(\widetilde{P},f) \leq U(P,f)$ fica como exercício.
 \end{proof}
 
-Armed with refinements, we prove the following.
-The key point of this next proposition is that
-the lower Darboux integral is less than or equal to the upper Darboux
-integral.
+Com os refinamentos à disposição, provamos o seguinte.
+O ponto principal desta proposição é que a integral inferior de Darboux é
+menor ou igual à integral superior de Darboux.
 
 \begin{prop} \label{intulbound:prop}
-Let $f \colon [a,b] \to \R$ be a bounded function.  Let $m, M \in \R$ be 
-such that for all $x \in [a,b]$, we have $m \leq f(x) \leq M$.  Then
+Seja $f \colon [a,b] \to \R$ uma função limitada. Sejam $m, M \in \R$
+tais que $m \leq f(x) \leq M$ para todo $x \in [a,b]$. Então
 \begin{equation}
 \label{intulbound:eq}
 m(b-a) \leq
@@ -299,77 +299,77 @@ m(b-a) \leq
 \end{prop}
 
 \begin{proof}
-By \propref{sumulbound:prop}, for every partition $P$,
+Pela \propref{sumulbound:prop}, para toda partição $P$,
 \begin{equation*}
 m(b-a) \leq L(P,f) \leq U(P,f) \leq M(b-a).
 \end{equation*}
-The inequality
+Da desigualdade
 $m(b-a) \leq L(P,f)$ implies $m(b-a) \leq \underline{\int_a^b} f$.
-The inequality
+Da desigualdade
 $U(P,f) \leq M(b-a)$ implies $\overline{\int_a^b} f \leq M(b-a)$.
 
-The middle inequality in
-\eqref{intulbound:eq} is the main point of the proposition.
-Let $P_1, P_2$ be partitions of $[a,b]$.  Define 
+A desigualdade central em
+\eqref{intulbound:eq} é o ponto principal da proposição.
+Sejam $P_1, P_2$ partições de $[a,b]$. Defina
 $\widetilde{P} \coloneqq P_1 \cup P_2$.
-The set $\widetilde{P}$ is a partition of $[a,b]$, which
-is a refinement of $P_1$ and a refinement of $P_2$.
-By \propref{prop:refinement},
-$L(P_1,f) \leq L(\widetilde{P},f)$ and
-$U(\widetilde{P},f) \leq U(P_2,f)$.  So
+O conjunto $\widetilde{P}$ é uma partição de $[a,b]$ e um refinamento
+tanto de $P_1$ quanto de $P_2$.
+Pela \propref{prop:refinement},
+$L(P_1,f) \leq L(\widetilde{P},f)$ e
+$U(\widetilde{P},f) \leq U(P_2,f)$. Assim,
 \begin{equation*}
 L(P_1,f) \leq L(\widetilde{P},f) \leq U(\widetilde{P},f) \leq U(P_2,f) .
 \end{equation*}
-In other words, for two arbitrary partitions $P_1$ and $P_2$, we have
-$L(P_1,f) \leq U(P_2,f)$.  
-Recall \propref{infsupineq:prop}, and take the supremum and
-infimum over all partitions:
+Em outras palavras, para duas partições arbitrárias $P_1$ e $P_2$, temos
+$L(P_1,f) \leq U(P_2,f)$.
+Lembrando a \propref{infsupineq:prop}, tomamos o supremo e o ínfimo sobre
+todas as partições:
 \begin{multline*}
 \underline{\int_a^b} f = 
-\sup \, \bigl\{ L(P,f) : P \text{ a partition of } [a,b] \bigr\}
+\sup \, \bigl\{ L(P,f) : P \text{ é uma partição de } [a,b] \bigr\}
 \\
 \leq
-\inf \, \bigl\{ U(P,f) : P \text{ a partition of } [a,b] \bigr\}
+\inf \, \bigl\{ U(P,f) : P \text{ é uma partição de } [a,b] \bigr\}
 =
 \overline{\int_a^b} f . \qedhere
 \end{multline*}
 \end{proof}
 
-\subsection{Riemann integral}
+\subsection{Integral de Riemann}
 
-We can finally define the Riemann integral.  However, the Riemann
-integral is only defined on a certain class of functions, called the
-Riemann integrable functions.
+Finalmente podemos definir a integral de Riemann. No entanto, ela só está
+definida para certa classe de funções, chamadas funções integráveis à
+Riemann.
 
 \begin{defn}
-Let $f \colon [a,b] \to \R$ be a bounded function such that
+Seja $f \colon [a,b] \to \R$ uma função limitada tal que
 \begin{equation*}
 \underline{\int_a^b} f(x)\,dx = \overline{\int_a^b} f(x)\,dx .
 \end{equation*}
-Then $f$ is said to be \emph{\myindex{Riemann integrable}}.
-The set of Riemann integrable functions on $[a,b]$ is denoted
-by $\sR\bigl([a,b]\bigr)$.\glsadd{not:integrablefunc}
-When $f \in \sR\bigl([a,b]\bigr)$, we define\glsadd{not:riemannint}
+Então dizemos que $f$ é \emph{\myindex{integrável à Riemann}}.
+O conjunto das funções integráveis à Riemann em $[a,b]$ é denotado
+por $\sR\bigl([a,b]\bigr)$.\glsadd{not:integrablefunc}
+Quando $f \in \sR\bigl([a,b]\bigr)$, definimos\glsadd{not:riemannint}
 \begin{equation*}
 \int_a^b f(x)\,dx \coloneqq 
 \underline{\int_a^b} f(x)\,dx = \overline{\int_a^b} f(x)\,dx .
 \end{equation*}
-As before, we often write
+Como antes, frequentemente escrevemos
 \begin{equation*}
 \int_a^b f \coloneqq \int_a^b f(x)\,dx.
 \end{equation*}
-The number $\int_a^b f$ is called the \emph{\myindex{Riemann integral}}
-of $f$, or sometimes simply the \emph{integral} of $f$.
+O número $\int_a^b f$ é chamado de \emph{\myindex{integral de Riemann}}
+de $f$ ou, às vezes, simplesmente de \emph{integral} de $f$.
 \end{defn}
 
-By definition, a Riemann integrable function is bounded.
-Appealing to \propref{intulbound:prop}, we immediately obtain
-the following proposition.  See also \figureref{fig:integralminmax}.
+Por definição, uma função integrável à Riemann é limitada.
+Recorrendo à \propref{intulbound:prop}, obtemos imediatamente
+a proposição a seguir. Veja também a \figureref{fig:integralminmax}.
 
 \begin{prop} \label{intbound:prop}
-Let $f \colon [a,b] \to \R$ be a Riemann integrable function.
-Let $m, M \in \R$ be 
-such that $m \leq f(x) \leq M$ for all $x \in [a,b]$.  Then
+Seja $f \colon [a,b] \to \R$ uma função integrável à Riemann.
+Sejam $m, M \in \R$
+tais que $m \leq f(x) \leq M$ para todo $x \in [a,b]$. Então
 \begin{equation*}
 m(b-a) \leq
 \int_a^b f
@@ -378,47 +378,46 @@ m(b-a) \leq
 \end{prop}
 \begin{myfigureht}
 \myincludegraphics{integralminmax}{%
-A diagram of a rectangle in the plane
-that is horizontally between a and b, and vertically between the x axis
-and capital M.  The rectangle is divided into the upper part
-that is white and contains the graph of some function, and the lower
-part that is shaded.  The dividing horizontal line is labeled as
-lowercase m.}
-\caption{The area under the curve is bounded from above by
-the area of the entire rectangle, $M(b-a)$, and from below by
-the area of the shaded part, $m(b-a)$.\label{fig:integralminmax}}
+Diagrama de um retângulo no plano,
+com extensão horizontal entre $a$ e $b$ e extensão vertical entre o eixo $x$
+e o nível $M$. O retângulo está dividido em uma parte superior branca,
+que contém o gráfico de uma função, e uma parte inferior sombreada.
+A reta horizontal que as separa está marcada com $m$.}
+\caption{A área sob a curva é limitada superiormente pela área do retângulo
+inteiro, $M(b-a)$, e inferiormente pela área da parte sombreada,
+$m(b-a)$.\label{fig:integralminmax}}
 \end{myfigureht}
 
-A weaker form of this proposition is often useful:
-If $\babs{f(x)} \leq M$ for all $x \in [a,b]$, then
+Uma forma mais fraca desta proposição é frequentemente útil:
+Se $\babs{f(x)} \leq M$ para todo $x \in [a,b]$, então
 \begin{equation*}
 \abs{\int_a^b f} \leq M(b-a) .
 \end{equation*}
 
 \begin{example}
-We integrate constant functions using
+Integramos funções constantes usando a
 \propref{intulbound:prop}.
-If $f(x) \coloneqq c$ for some constant $c$, then we take $m = M = c$.
-In inequality \eqref{intulbound:eq}
-all the inequalities must be equalities.
-Thus $f$ is integrable on $[a,b]$ and $\int_a^b f = c(b-a)$.
+Se $f(x) \coloneqq c$ para alguma constante $c$, tomamos $m = M = c$.
+Na desigualdade \eqref{intulbound:eq},
+todas as desigualdades devem ser igualdades.
+Logo, $f$ é integrável em $[a,b]$ e $\int_a^b f = c(b-a)$.
 \end{example}
 
 \begin{example}
-Let $f \colon [0,2] \to \R$ be defined by
+Seja $f \colon [0,2] \to \R$ definida por
 \begin{equation*}
 f(x) \coloneqq
 \begin{cases}
-1               & \text{if } x < 1,\\
-\nicefrac{1}{2} & \text{if } x = 1,\\
-0               & \text{if } x > 1.
+1               & \text{se } x < 1,\\
+\nicefrac{1}{2} & \text{se } x = 1,\\
+0               & \text{se } x > 1.
 \end{cases}
 \end{equation*}
-We claim $f$ is Riemann integrable and $\int_0^2 f = 1$.
+Afirmamos que $f$ é integrável à Riemann e que $\int_0^2 f = 1$.
 
-Proof: Let $0 < \epsilon < 1$ be arbitrary.
-Let $P \coloneqq \{0, 1-\epsilon, 1+\epsilon, 2\}$ be a partition.  We use the notation from
-the definition of the Darboux sums.  Then
+Demonstração: Seja $0 < \epsilon < 1$ arbitrário.
+Seja $P \coloneqq \{0, 1-\epsilon, 1+\epsilon, 2\}$ uma partição. Usamos a
+notação da definição das somas de Darboux. Então
 \begin{align*}
 m_1 &= \inf  \bigl\{ f(x) : x \in [0,1-\epsilon] \bigr\} = 1 , & 
 M_1 &= \sup  \bigl\{ f(x) : x \in [0,1-\epsilon] \bigr\} = 1 , \\
@@ -427,32 +426,31 @@ M_2 &= \sup  \bigl\{ f(x) : x \in [1-\epsilon,1+\epsilon] \bigr\} = 1 , \\
 m_3 &= \inf  \bigl\{ f(x) : x \in [1+\epsilon,2] \bigr\} = 0 , & 
 M_3 &= \sup  \bigl\{ f(x) : x \in [1+\epsilon,2] \bigr\} = 0 .
 \end{align*}
-Furthermore, $\Delta x_1 = 1-\epsilon$, $\Delta x_2 = 2\epsilon$, and
+Além disso, $\Delta x_1 = 1-\epsilon$, $\Delta x_2 = 2\epsilon$ e
 $\Delta x_3 = 1-\epsilon$.
-See \figureref{darbouxfigstep}.
+Veja a \figureref{darbouxfigstep}.
 \begin{myfigureht}
 \myincludegraphics{darbouxfigstep}{%
-A diagram of a graph of a function that is 1 from 0 to 1
-at 1 it is one half, and from 1 to 2 the function is 0.
-The horizontal axis is divided into three intervals,
-from 0 to 1 minus epsilon, then to 1 plus epsilon, then to 2.
-Their lengths are Delta x sub 1 equals 1 minus epsilon,
-Delta x sub 2 equals 2 epsilon, and 
-Delta x sub 3 equals 1 minus epsilon, respectively.
-There is a shaded rectangle of height 1 for x between 0 and
-1 minus epsilon.  There is a white rectangle of height 1
-for x between 1 minus epsilon to 1 plus epsilon.
-On the vertical axis,
-the lower point is marked as M sub 3 equals m sub 2
-equals m sub 3 equals 0.
-The upper point is marked as M sub 1 equals M sub 2
-equals m sub 1 equals 1.}
-\caption{Darboux sums for the step function.  $L(P,f)$ is the area of the
-shaded rectangle, $U(P,f)$ is the area of both rectangles, and
-$U(P,f)-L(P,f)$ is the area of the unshaded rectangle.\label{darbouxfigstep}}
+Diagrama do gráfico de uma função que vale 1 de 0 a 1,
+vale um meio em 1 e vale 0 de 1 a 2.
+O eixo horizontal está dividido em três intervalos:
+de 0 a 1 menos épsilon, de 1 menos épsilon a 1 mais épsilon e de 1 mais
+épsilon a 2.
+Seus comprimentos são $\Delta x_1 = 1-\epsilon$,
+$\Delta x_2 = 2\epsilon$ e
+$\Delta x_3 = 1-\epsilon$, respectivamente.
+Há um retângulo sombreado de altura 1 para $x$ entre 0 e
+1 menos épsilon. Há um retângulo branco de altura 1
+para $x$ entre 1 menos épsilon e 1 mais épsilon.
+No eixo vertical,
+o ponto inferior está marcado como $M_3=m_2=m_3=0$.
+O ponto superior está marcado como $M_1=M_2=m_1=1$.}
+\caption{Somas de Darboux para a função em degraus. $L(P,f)$ é a área do
+retângulo sombreado, $U(P,f)$ é a área dos dois retângulos, e
+$U(P,f)-L(P,f)$ é a área do retângulo não sombreado.\label{darbouxfigstep}}
 \end{myfigureht}
 
-We compute
+Calculamos
 \begin{align*}
 & L(P,f) = \sum_{i=1}^3 m_i \Delta x_i =
 1 \cdot (1-\epsilon) + 0 \cdot 2\epsilon + 0 \cdot (1-\epsilon)
@@ -461,7 +459,7 @@ We compute
 1 \cdot (1-\epsilon) + 1 \cdot 2\epsilon + 0 \cdot (1-\epsilon)
 = 1+\epsilon .
 \end{align*}
-Thus,
+Logo,
 \begin{equation*}
 \overline{\int_0^2} f - 
 \underline{\int_0^2} f
@@ -471,33 +469,33 @@ U(P,f) - L(P,f)
 (1+\epsilon)
 - (1-\epsilon) = 2 \epsilon .
 \end{equation*}
-By \propref{intulbound:prop}, $\underline{\int_0^2} f \leq \overline{\int_0^2} f$.
-As $\epsilon$ was arbitrary,
-$\overline{\int_0^2} f = \underline{\int_0^2} f$.  So $f$ is Riemann
-integrable.  Finally,
+Pela \propref{intulbound:prop}, $\underline{\int_0^2} f \leq \overline{\int_0^2} f$.
+Como $\epsilon$ era arbitrário,
+$\overline{\int_0^2} f = \underline{\int_0^2} f$. Portanto, $f$ é integrável
+à Riemann. Por fim,
 \begin{equation*}
 1-\epsilon = L(P,f) \leq \int_0^2 f \leq U(P,f) =
 1+\epsilon.
 \end{equation*}
-Hence, $\bigl\lvert \int_0^2 f - 1 \bigr\rvert \leq \epsilon$.  As $\epsilon$ was arbitrary,
-we conclude $\int_0^2 f = 1$.
+Logo, $\bigl\lvert \int_0^2 f - 1 \bigr\rvert \leq \epsilon$. Como
+$\epsilon$ era arbitrário, concluímos que $\int_0^2 f = 1$.
 \end{example}
 
-It may be worthwhile to extract part of the technique of the example into a
-proposition.  Note that $U(P,f)-L(P,f)$ is exactly the total area of the
-unshaded part of the rectangles in \figureref{darbouxfig}.
+Pode ser útil destacar parte da técnica do exemplo em uma proposição.
+Observe que $U(P,f)-L(P,f)$ é exatamente a área total das partes não
+sombreadas dos retângulos da \figureref{darbouxfig}.
 
 \begin{prop}
-Let $f \colon [a,b] \to \R$ be a bounded function.  Then $f$ is Riemann
-integrable if for every $\epsilon > 0$, there exists a partition $P$ of
-$[a,b]$ such that
+Seja $f \colon [a,b] \to \R$ uma função limitada. Então $f$ é integrável à
+Riemann se, para todo $\epsilon > 0$, existe uma partição $P$ de
+$[a,b]$ tal que
 \begin{equation*}
 U(P,f) - L(P,f) < \epsilon .
 \end{equation*}
 \end{prop}
 
 \begin{proof}
-If for every $\epsilon > 0$ such a $P$ exists, then
+Se existe tal partição $P$ para todo $\epsilon > 0$, então
 \begin{equation*}
 0 \leq
 \overline{\int_a^b} f - 
@@ -505,20 +503,20 @@ If for every $\epsilon > 0$ such a $P$ exists, then
 \leq
 U(P,f) - L(P,f) < \epsilon .
 \end{equation*}
-Therefore, 
-$\overline{\int_a^b} f = \underline{\int_a^b} f$, and $f$ is integrable.
+Portanto,
+$\overline{\int_a^b} f = \underline{\int_a^b} f$, e $f$ é integrável.
 \end{proof}
 
 \begin{example}
-Let us show $\frac{1}{1+x}$ is integrable on $[0,b]$ for all $b > 0$.
-We will see later that continuous functions are integrable, but let us
-demonstrate how we do it directly.
+Vamos mostrar que $\frac{1}{1+x}$ é integrável em $[0,b]$ para todo $b > 0$.
+Mais adiante veremos que funções contínuas são integráveis, mas vamos
+demonstrar diretamente como fazer isso.
 
-Let $\epsilon > 0$ be given.  Take $n \in \N$ and
-let $x_i \coloneqq \nicefrac{ib}{n}$ form the 
-partition $P \coloneqq \{ x_0,x_1,\ldots,x_n \}$ of $[0,b]$.
-Then $\Delta x_i = \nicefrac{b}{n}$ for all $i$.  
-As $f$ is decreasing, for every subinterval $[x_{i-1},x_i]$,
+Seja $\epsilon > 0$. Tome $n \in \N$ e
+considere $x_i \coloneqq \nicefrac{ib}{n}$, de modo que os pontos formem a
+partição $P \coloneqq \{ x_0,x_1,\ldots,x_n \}$ de $[0,b]$.
+Então $\Delta x_i = \nicefrac{b}{n}$ para todo $i$.
+Como $f$ é decrescente, em todo subintervalo $[x_{i-1},x_i]$,
 \begin{equation*}
 %mbxlatex \begin{aligned}
 m_i
@@ -536,7 +534,7 @@ M_i
 \frac{1}{1+x_{i-1}} .
 %mbxlatex \end{aligned}
 \end{equation*}
-Then
+Então
 \begin{multline*}
 U(P,f)-L(P,f)
 =
@@ -555,76 +553,73 @@ U(P,f)-L(P,f)
 =
 \frac{b^2}{n(b+1)} .
 \end{multline*}
-The sum telescopes---the terms successively cancel each other, something
-we have seen before.
-Picking $n$ to be such that
-$\frac{b^2}{n(b+1)} < \epsilon$, the proposition is satisfied, and the
-function is integrable.
+A soma é telescópica: os termos se cancelam sucessivamente, como já vimos.
+Escolhendo $n$ de modo que
+$\frac{b^2}{n(b+1)} < \epsilon$, satisfazemos a proposição e, portanto, a
+função é integrável.
 \end{example}
 
 \begin{remark}
-A way of thinking of the integral is that it adds up (integrates) lots of
-local information---it sums $f(x)\,dx$ over all $x$.
-The integral sign was chosen by Leibniz to be the long S to mean summation.
-Unlike derivatives, which are \myquote{local,} 
-integrals show up in applications when
-one wants a \myquote{global} answer: total distance travelled, average
-temperature, total charge, etc.
+Uma maneira de pensar na integral é que ela soma (integra) muitas informações
+locais: soma $f(x)\,dx$ sobre todos os valores de $x$.
+Leibniz escolheu o sinal de integral como um $S$ alongado para representar
+uma soma.
+Ao contrário das derivadas, que são \myquote{locais},
+as integrais aparecem em aplicações quando se busca uma resposta
+\myquote{global}: distância total percorrida, temperatura média, carga total
+etc.
 \end{remark}
 
-\subsection{More notation}
+\subsection{Mais notação}
 
-When $f \colon S \to \R$ is defined on a larger set $S$ and
+Quando $f \colon S \to \R$ está definida em um conjunto maior $S$ e
 $[a,b] \subset S$,
-we say $f$ is Riemann integrable on $[a,b]$ if the restriction of $f$
-to $[a,b]$ is Riemann integrable. 
-In this case,
-we say $f \in \sR\bigl([a,b]\bigr)$,
-and
-we write $\int_a^b f$ to mean the Riemann integral
-of the restriction of $f$ to $[a,b]$.
+dizemos que $f$ é integrável à Riemann em $[a,b]$ se a restrição de $f$
+a $[a,b]$ for integrável à Riemann.
+Nesse caso, escrevemos $f \in \sR\bigl([a,b]\bigr)$
+e usamos $\int_a^b f$ para indicar a integral de Riemann
+da restrição de $f$ a $[a,b]$.
 
-It is useful to define the integral $\int_a^b f$ even if
-$a \nless b$.  Suppose $b < a$ and $f \in \sR\bigl([b,a]\bigr)$.
-Define
+É útil definir a integral $\int_a^b f$ mesmo quando
+$a \nless b$. Suponha que $b < a$ e $f \in \sR\bigl([b,a]\bigr)$.
+Defina
 \begin{equation*}
 \int_a^b f \coloneqq - \int_b^a f .
 \end{equation*}
-For any function $f$, define
+Para qualquer função $f$, definimos
 \begin{equation*}
 \int_a^a f \coloneqq 0 .
 \end{equation*}
 
-At times, the variable $x$ may already have some other meaning.  When
-we need to write down the variable of integration, we may simply
-use a different letter.  For example,
+Às vezes, a variável $x$ já pode ter outro significado. Quando
+precisamos indicar a variável de integração, podemos simplesmente
+usar outra letra. Por exemplo,
 \begin{equation*}
 \int_a^b f(s)\,ds \coloneqq \int_a^b f(x)\,dx .
 \end{equation*}
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
 \begin{exercise}
-Define $f \colon [0,1] \to \R$ by $f(x) \coloneqq x^3$
-and let $P \coloneqq \{ 0, 0.1, 0.4, 1 \}$.  Compute $L(P,f)$ and $U(P,f)$.
+Defina $f \colon [0,1] \to \R$ por $f(x) \coloneqq x^3$
+e seja $P \coloneqq \{ 0, 0.1, 0.4, 1 \}$. Calcule $L(P,f)$ e $U(P,f)$.
 \end{exercise}
 
 \begin{exercise}
-Let $f \colon [0,1] \to \R$ be defined by $f(x) \coloneqq x$.
-Show that $f \in \sR\bigl([0,1]\bigr)$ and
-compute $\int_0^1 f$ using the definition of the integral
-(but
-feel free to use the propositions of this section).%\propref{intulbound:prop}).
+Seja $f \colon [0,1] \to \R$ definida por $f(x) \coloneqq x$.
+Mostre que $f \in \sR\bigl([0,1]\bigr)$ e
+calcule $\int_0^1 f$ usando a definição de integral
+(mas sinta-se à vontade para usar as proposições desta seção).%\propref{intulbound:prop}).
 \end{exercise}
 
 \begin{exercise}
-Let $f \colon [a,b] \to \R$ be a bounded function.
-Suppose there exists a sequence of partitions $\{ P_k \}_{k=1}^\infty$ of $[a,b]$
-such that
+Seja $f \colon [a,b] \to \R$ uma função limitada.
+Suponha que exista uma sequência de partições $\{ P_k \}_{k=1}^\infty$ de $[a,b]$
+tal que
 \begin{equation*}
 \lim_{k \to \infty} \bigl( U(P_k,f) - L(P_k,f) \bigr) = 0 .
 \end{equation*}
-Show that $f$ is Riemann integrable and that
+Mostre que $f$ é integrável à Riemann e que
 \begin{equation*}
 \int_a^b f = 
 \lim_{k \to \infty} U(P_k,f)
@@ -634,160 +629,158 @@ Show that $f$ is Riemann integrable and that
 \end{exercise}
 
 \begin{exercise}
-Finish the proof of \propref{prop:refinement}.
+Complete a demonstração da \propref{prop:refinement}.
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon [-1,1] \to \R$ is defined as
+Suponha que $f \colon [-1,1] \to \R$ seja definida por
 \begin{equation*}
 f(x) \coloneqq
 \begin{cases}
-1 & \text{if } x > 0, \\
-0 & \text{if } x \leq 0.
+1 & \text{se } x > 0, \\
+0 & \text{se } x \leq 0.
 \end{cases}
 \end{equation*}
-Prove that $f \in \sR\bigl([-1,1]\bigr)$ and
-compute $\int_{-1}^1 f$ using the definition of the integral
-(but
-feel free to use the propositions of this section).
+Prove que $f \in \sR\bigl([-1,1]\bigr)$ e
+calcule $\int_{-1}^1 f$ usando a definição de integral
+(mas sinta-se à vontade para usar as proposições desta seção).
 %(feel free to use \propref{intulbound:prop}).
 \end{exercise}
 
 \begin{exercise}
-Let $c \in (a,b)$ and let $d \in \R$.
-Define $f \colon [a,b] \to \R$ as
+Sejam $c \in (a,b)$ e $d \in \R$.
+Defina $f \colon [a,b] \to \R$ por
 \begin{equation*}
 f(x) \coloneqq
 \begin{cases}
-d & \text{if } x = c, \\
-0 & \text{if } x \neq c.
+d & \text{se } x = c, \\
+0 & \text{se } x \neq c.
 \end{cases}
 \end{equation*}
-Prove that $f \in \sR\bigl([a,b]\bigr)$ and
-compute
-$\int_a^b f$ using the definition of the integral
+Prove que $f \in \sR\bigl([a,b]\bigr)$ e
+calcule
+$\int_a^b f$ usando a definição de integral
 %(feel free to use \propref{intulbound:prop}).
-(but
-feel free to use the propositions of this section).
+(mas sinta-se à vontade para usar as proposições desta seção).
 \end{exercise}
 
 \begin{exercise} \label{exercise:taggedpartition}
-Suppose $f \colon [a,b] \to \R$ is Riemann integrable.  Let $\epsilon
-> 0$ be given.  Then show that there exists a partition $P = \{ x_0, x_1,
+Suponha que $f \colon [a,b] \to \R$ seja integrável à Riemann. Seja
+$\epsilon > 0$. Mostre que existe uma partição $P = \{ x_0, x_1,
 \ldots, x_n \}$
-such that for every
-set of numbers $\{ c_1, c_2, \ldots, c_n \}$ with
-$c_k \in [x_{k-1},x_k]$ for all $k$, we have
+tal que, para todo
+conjunto de números $\{ c_1, c_2, \ldots, c_n \}$ com
+$c_k \in [x_{k-1},x_k]$ para todo $k$, temos
 \begin{equation*}
 \abs{\int_a^b f - \sum_{k=1}^n f(c_k) \Delta x_k} < \epsilon .
 \end{equation*}
 \end{exercise}
 
 \begin{exercise}
-Let $f \colon [a,b] \to \R$ be a Riemann integrable function.
-Let $\alpha > 0$ and $\beta \in \R$.
-Then define $g(x) \coloneqq f(\alpha x + \beta)$ on the interval
-$I = [\frac{a-\beta}{\alpha}, \frac{b-\beta}{\alpha}]$.  Show
-that $g$ is Riemann integrable on $I$.
+Seja $f \colon [a,b] \to \R$ uma função integrável à Riemann.
+Sejam $\alpha > 0$ e $\beta \in \R$.
+Defina $g(x) \coloneqq f(\alpha x + \beta)$ no intervalo
+$I = [\frac{a-\beta}{\alpha}, \frac{b-\beta}{\alpha}]$. Mostre
+que $g$ é integrável à Riemann em $I$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon [0,1] \to \R$ and $g \colon [0,1] \to \R$
-are such that for all $x \in (0,1]$,
-we have $f(x) = g(x)$.  Suppose $f$ is Riemann integrable. 
-Prove $g$ is Riemann integrable and $\int_{0}^1 f = \int_{0}^1 g$.
+Suponha que $f \colon [0,1] \to \R$ e $g \colon [0,1] \to \R$
+sejam tais que $f(x) = g(x)$ para todo $x \in (0,1]$.
+Suponha que $f$ seja integrável à Riemann.
+Prove que $g$ é integrável à Riemann e que $\int_{0}^1 f = \int_{0}^1 g$.
 \end{exercise}
 
 \begin{exercise}
-Let $f \colon [0,1] \to \R$ be a bounded function.
-Let $P_n = \{ x_0,x_1,\ldots,x_n \}$ be a uniform partition of $[0,1]$,
-that is, $x_i = \nicefrac{i}{n}$.  Is $\bigl\{ L(P_n,f) \bigr\}_{n=1}^\infty$
-always monotone?  Yes/No: Prove or find a counterexample.
+Seja $f \colon [0,1] \to \R$ uma função limitada.
+Seja $P_n = \{ x_0,x_1,\ldots,x_n \}$ uma partição uniforme de $[0,1]$,
+isto é, $x_i = \nicefrac{i}{n}$. A sequência $\bigl\{ L(P_n,f) \bigr\}_{n=1}^\infty$
+é sempre monótona? Sim ou não: prove ou encontre um contraexemplo.
 \end{exercise}
 
-\begin{exercise}[Challenging]
-For a bounded function $f \colon [0,1] \to \R$, let
-$R_n \coloneqq (\nicefrac{1}{n})\sum_{i=1}^n f(\nicefrac{i}{n})$ (the
-uniform right-hand rule).
+\begin{exercise}[Desafiador]
+Para uma função limitada $f \colon [0,1] \to \R$, defina
+$R_n \coloneqq (\nicefrac{1}{n})\sum_{i=1}^n f(\nicefrac{i}{n})$ (a
+soma uniforme pela regra à direita).
 \begin{enumerate}[a)]
 \item
-If $f$ is Riemann integrable show $\int_0^1 f = \lim\limits_{n\to\infty} R_n$.
+Se $f$ for integrável à Riemann, mostre que
+$\int_0^1 f = \lim\limits_{n\to\infty} R_n$.
 \item
-Find an $f$ that is not Riemann integrable, but $\lim\limits_{n\to\infty} R_n$ exists.
+Encontre uma função $f$ que não seja integrável à Riemann, mas para a qual
+$\lim\limits_{n\to\infty} R_n$ exista.
 \end{enumerate}
 \end{exercise}
 
-\begin{exercise}[Challenging] \label{exercise:riemannintdarboux}
-Generalize the previous exercise.
-Show that $f \in \sR\bigl([a,b]\bigr)$ if and only if there exists an $I \in \R$,
-such that for every $\epsilon > 0$ there exists
-a $\delta > 0$ such that if $P$ is a partition with $\Delta x_i < \delta$
-for all $i$, then
-$\babs{L(P,f) - I} < \epsilon$ and
-$\babs{U(P,f) - I} < \epsilon$.  If $f \in \sR\bigl([a,b]\bigr)$, then $I = \int_a^b f$.
+\begin{exercise}[Desafiador] \label{exercise:riemannintdarboux}
+Generalize o exercício anterior.
+Mostre que $f \in \sR\bigl([a,b]\bigr)$ se, e somente se, existe um $I \in \R$
+tal que, para todo $\epsilon > 0$, existe
+um $\delta > 0$ tal que, se $P$ é uma partição com $\Delta x_i < \delta$
+para todo $i$, então
+$\babs{L(P,f) - I} < \epsilon$ e
+$\babs{U(P,f) - I} < \epsilon$. Se $f \in \sR\bigl([a,b]\bigr)$, então $I = \int_a^b f$.
 \end{exercise}
 
 \begin{exercise}
-Using \exerciseref{exercise:riemannintdarboux} and the idea of
-the proof in \exerciseref{exercise:taggedpartition}, show that 
-Darboux integral is the same as the standard definition
-of Riemann integral, which you have most likely seen in calculus.  That is,
-show that
-$f \in \sR\bigl([a,b]\bigr)$ if and only if there exists an $I \in \R$,
-such that for every $\epsilon > 0$ there exists
-a $\delta > 0$ such that if $P = \{ x_0,x_1,\ldots,x_n \}$
-is a partition with $\Delta x_i < \delta$
-for all $i$, then
-$\abs{\sum_{i=1}^n f(c_i) \Delta x_i - I} < \epsilon$ for every set
-$\{ c_1,c_2,\ldots,c_n \}$ with $c_i \in [x_{i-1},x_i]$.
-If $f \in \sR\bigl([a,b]\bigr)$, then $I = \int_a^b f$.
+Usando o \exerciseref{exercise:riemannintdarboux} e a ideia da demonstração
+do \exerciseref{exercise:taggedpartition}, mostre que a integral de Darboux
+é equivalente à definição usual da integral de Riemann, provavelmente vista
+em cálculo. Isto é, mostre que
+$f \in \sR\bigl([a,b]\bigr)$ se, e somente se, existe um $I \in \R$
+tal que, para todo $\epsilon > 0$, existe
+um $\delta > 0$ tal que, se $P = \{ x_0,x_1,\ldots,x_n \}$
+é uma partição com $\Delta x_i < \delta$
+para todo $i$, então
+$\abs{\sum_{i=1}^n f(c_i) \Delta x_i - I} < \epsilon$ para todo conjunto
+$\{ c_1,c_2,\ldots,c_n \}$ com $c_i \in [x_{i-1},x_i]$.
+Se $f \in \sR\bigl([a,b]\bigr)$, então $I = \int_a^b f$.
 \end{exercise}
 
 
-\begin{exercise}[Challenging]
-Construct functions $f$ and $g$, 
-where
-$f \colon [0,1] \to \R$ is Riemann integrable,
-$g \colon [0,1] \to [0,1]$ is one-to-one and onto,
-and such that the composition $f \circ g$ is not Riemann integrable.
+\begin{exercise}[Desafiador]
+Construa funções $f$ e $g$ tais que
+$f \colon [0,1] \to \R$ seja integrável à Riemann,
+$g \colon [0,1] \to [0,1]$ seja injetiva e sobrejetiva,
+mas a composição $f \circ g$ não seja integrável à Riemann.
 \end{exercise}
 
 \begin{exercise}
-Suppose that $f \colon [a,b] \to \R$ is a bounded function, and $P$ is a
-partition of $[a,b]$ such that $L(P,f)=U(P,f)$.  Prove that $f$ is a
-constant function.
+Suponha que $f \colon [a,b] \to \R$ seja uma função limitada e que $P$ seja
+uma partição de $[a,b]$ tal que $L(P,f)=U(P,f)$. Prove que $f$ é constante.
 \end{exercise}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{Properties of the integral}
+\section{Propriedades da integral}
 \label{sec:rintprop}
 
 %mbxINTROSUBSECTION
 
-\sectionnotes{2 lectures, integrability of functions with 
-discontinuities can safely be skipped}
+\sectionnotes{2 aulas; pode-se omitir sem prejuízo a integrabilidade de funções
+com descontinuidades}
 
-\subsection{Additivity}
+\subsection{Aditividade}
 
-Adding a bunch of things in two parts and then adding those two parts
-should be the same as adding everything all at once.
-The corresponding property for integrals is called the
-\myindex{additive property of the integral}.  First, we prove the additivity
-property for the lower and upper Darboux integrals.
+Somar vários termos separadamente em duas partes e, em seguida, somar essas
+duas partes
+deveria dar o mesmo que somar tudo de uma só vez.
+A propriedade correspondente para integrais é chamada de
+\myindex{propriedade aditiva da integral}. Primeiro, provamos a propriedade
+aditiva para as integrais inferior e superior de Darboux.
 
 \begin{lemma} \label{lemma:darbouxadd}
-Suppose $a < b < c$ and $f \colon [a,c] \to \R$ is a bounded function.
-Then
+Suponha que $a < b < c$ e que $f \colon [a,c] \to \R$ seja uma função limitada.
+Então
 \begin{equation*}
 \underline{\int_a^c} f
 =
 \underline{\int_a^b} f
 +
 \underline{\int_b^c} f
-\quad \text{and} \quad
+\quad \text{e} \quad
 \overline{\int_a^c} f
 =
 \overline{\int_a^b} f
@@ -797,10 +790,11 @@ Then
 \end{lemma}
 
 \begin{proof}
-If we have partitions $P_1 = \{ x_0,x_1,\ldots,x_k \}$
-of $[a,b]$ and $P_2 = \{ x_k, x_{k+1}, \ldots, x_n \}$ of $[b,c]$,
-then the set $P \coloneqq P_1 \cup P_2 = \{ x_0, x_1, \ldots, x_n \}$ is
-a partition of $[a,c]$.  We find
+Sejam $P_1 = \{ x_0,x_1,\ldots,x_k \}$
+uma partição de $[a,b]$ e $P_2 = \{ x_k, x_{k+1}, \ldots, x_n \}$ uma partição
+de $[b,c]$.
+Então o conjunto $P \coloneqq P_1 \cup P_2 = \{ x_0, x_1, \ldots, x_n \}$ é
+uma partição de $[a,c]$. Obtemos
 \begin{equation*}
 L(P,f) =
 \sum_{i=1}^n m_i \Delta x_i
@@ -811,39 +805,39 @@ L(P,f) =
 =
 L(P_1,f) + L(P_2,f) .
 \end{equation*}
-When we take the supremum of the right-hand side over all $P_1$ and $P_2$,
-we are taking a supremum of the left-hand side
-over all partitions $P$ of $[a,c]$ that contain $b$.  If $Q$ is a partition
-of $[a,c]$ and $P = Q \cup \{ b \}$, then $P$ is a refinement of $Q$
-and so $L(Q,f) \leq L(P,f)$.  Therefore, taking a supremum only over the $P$
-that contain $b$ is sufficient to find the supremum of $L(P,f)$
-over all partitions $P$, see \exerciseref{exercise:dominatingb}.
-Finally, recall \exerciseref{exercise:supofsum}
-to compute
+Ao tomarmos o supremo do lado direito sobre todas as escolhas de $P_1$ e $P_2$,
+tomamos o supremo do lado esquerdo sobre todas as partições $P$ de $[a,c]$
+que contêm $b$. Se $Q$ é uma partição de $[a,c]$ e $P = Q \cup \{ b \}$,
+então $P$ é um refinamento de $Q$ e, portanto, $L(Q,f) \leq L(P,f)$.
+Assim, basta tomar o supremo apenas sobre as partições $P$ que contêm $b$
+para obter o supremo de $L(P,f)$ sobre todas as partições $P$; veja o
+\exerciseref{exercise:dominatingb}.
+Por fim, lembrando o \exerciseref{exercise:supofsum},
+calculamos
 \begin{equation*}
 \begin{split}
 \underline{\int_a^c} f
 & =
-\sup \, \bigl\{ L(P,f) : P \text{ a partition of } [a,c] \bigr\}
+\sup \, \bigl\{ L(P,f) : P \text{ é uma partição de } [a,c] \bigr\}
 \\
 & =
-\sup \, \bigl\{ L(P,f) : P \text{ a partition of } [a,c], b \in P \bigr\}
+\sup \, \bigl\{ L(P,f) : P \text{ é uma partição de } [a,c], b \in P \bigr\}
 \\
 & =
 \sup \, \bigl\{ L(P_1,f) + L(P_2,f) :
-P_1 \text{ a partition of } [a,b], P_2 \text{ a partition of } [b,c] \bigr\}
+P_1 \text{ é uma partição de } [a,b], P_2 \text{ é uma partição de } [b,c] \bigr\}
 \\
 & =
-\sup \, \bigl\{ L(P_1,f) : P_1 \text{ a partition of } [a,b] \bigr\}
+\sup \, \bigl\{ L(P_1,f) : P_1 \text{ é uma partição de } [a,b] \bigr\}
 +
-\sup \, \bigl\{ L(P_2,f) : P_2 \text{ a partition of } [b,c] \bigr\}
+\sup \, \bigl\{ L(P_2,f) : P_2 \text{ é uma partição de } [b,c] \bigr\}
 \\
 &=
 \underline{\int_a^b} f + \underline{\int_b^c} f .
 \end{split}
 \end{equation*}
 
-Similarly, for $P$, $P_1$, and $P_2$ as above, we obtain
+De modo semelhante, para $P$, $P_1$ e $P_2$ como acima, obtemos
 \begin{equation*}
 U(P,f) =
 \sum_{i=1}^n M_i \Delta x_i
@@ -854,14 +848,14 @@ U(P,f) =
 =
 U(P_1,f) + U(P_2,f) .
 \end{equation*}
-We wish to take the infimum on the right
-over all $P_1$ and $P_2$, and so we are taking the infimum
-over all partitions $P$ of $[a,c]$ that contain $b$.  If $Q$ is a partition
-of $[a,c]$ and $P = Q \cup \{ b \}$, then $P$ is a refinement of $Q$
-and so $U(Q,f) \geq U(P,f)$.  Therefore, taking an infimum only over the $P$
-that contain $b$ is sufficient to find the infimum of $U(P,f)$ for
-all $P$.
-We obtain
+Queremos tomar o ínfimo do lado direito
+sobre todas as escolhas de $P_1$ e $P_2$; assim, tomamos o ínfimo
+sobre todas as partições $P$ de $[a,c]$ que contêm $b$. Se $Q$ é uma partição
+de $[a,c]$ e $P = Q \cup \{ b \}$, então $P$ é um refinamento de $Q$
+e, portanto, $U(Q,f) \geq U(P,f)$. Assim, basta tomar o ínfimo apenas sobre
+as partições $P$ que contêm $b$ para obter o ínfimo de $U(P,f)$ sobre
+todas as partições $P$.
+Obtemos
 \begin{equation*}
 \overline{\int_a^c} f
 =
@@ -870,9 +864,9 @@ We obtain
 \end{proof}
 
 \begin{prop}
-Let $a < b < c$.  A function $f \colon [a,c] \to \R$ is Riemann integrable
-if and only if $f$ is Riemann integrable on $[a,b]$ and $[b,c]$.  If
-$f$ is Riemann integrable, then
+Seja $a < b < c$. Uma função $f \colon [a,c] \to \R$ é integrável à Riemann
+se, e somente se, $f$ é integrável à Riemann em $[a,b]$ e $[b,c]$. Se
+$f$ for integrável à Riemann, então
 \begin{equation*}
 \int_a^c f
 =
@@ -883,10 +877,10 @@ $f$ is Riemann integrable, then
 \end{prop}
 
 \begin{proof}
-Suppose $f \in \sR\bigl([a,c]\bigr)$.  Then it is bounded and
+Suponha que $f \in \sR\bigl([a,c]\bigr)$. Então $f$ é limitada e
 $\overline{\int_a^c} f = 
 \underline{\int_a^c} f = 
-\int_a^c f$.  The lemma gives
+\int_a^c f$. O lema fornece
 \begin{equation*}
 \int_a^c f
 =
@@ -900,31 +894,30 @@ $\overline{\int_a^c} f =
  =
 \int_a^c f .
 \end{equation*}
-Thus the inequality is an equality:
+Portanto, a desigualdade é uma igualdade:
 \begin{equation*}
 \underline{\int_a^b} f + \underline{\int_b^c} f
 =
 \overline{\int_a^b} f + \overline{\int_b^c} f .
 \end{equation*}
-As we also know 
+Como também sabemos que
 $\underline{\int_a^b} f \leq \overline{\int_a^b} f$
-and
-$\underline{\int_b^c} f \leq \overline{\int_b^c} f$, we 
-conclude 
+e
+$\underline{\int_b^c} f \leq \overline{\int_b^c} f$; concluímos que
 \begin{equation*}
 \underline{\int_a^b} f
 =
 \overline{\int_a^b} f
-\qquad \text{and} \qquad
+\qquad \text{e} \qquad
 \underline{\int_b^c} f
 =
 \overline{\int_b^c} f .
 \end{equation*}
-Thus $f$ is Riemann integrable on $[a,b]$ and $[b,c]$ and the desired formula
-holds.
+Assim, $f$ é integrável à Riemann em $[a,b]$ e $[b,c]$, e a fórmula desejada
+vale.
 
-Now assume $f$ is Riemann integrable on $[a,b]$ and on $[b,c]$.
-Again it is bounded, and the lemma gives
+Agora suponha que $f$ seja integrável à Riemann em $[a,b]$ e em $[b,c]$.
+Novamente, $f$ é limitada, e o lema fornece
 \begin{equation*}
 \underline{\int_a^c} f
 =
@@ -936,32 +929,32 @@ Again it is bounded, and the lemma gives
 =
 \overline{\int_a^c} f .
 \end{equation*}
-Therefore, $f$ is Riemann integrable on $[a,c]$, and the integral is computed
-as indicated.
+Portanto, $f$ é integrável à Riemann em $[a,c]$, e a integral é calculada
+como indicado.
 \end{proof}
 
-An easy consequence of the additivity is the following corollary.  We
-leave the details to the reader as an exercise.
+Uma consequência imediata da aditividade é o corolário a seguir. Deixamos
+os detalhes como exercício para o leitor.
 
 \begin{cor} \label{intsubcor}
-If $f \in \sR\bigl([a,b]\bigr)$ and
-$[c,d] \subset [a,b]$, then
-the restriction $f|_{[c,d]}$ is in $\sR\bigl([c,d]\bigr)$.
+Se $f \in \sR\bigl([a,b]\bigr)$ e
+$[c,d] \subset [a,b]$, então
+a restrição $f|_{[c,d]}$ pertence a $\sR\bigl([c,d]\bigr)$.
 \end{cor}
 
-\subsection{Linearity and monotonicity}
+\subsection{Linearidade e monotonicidade}
 
-A sum is a linear function of the summands.  So is the integral.
+Uma soma é uma função linear de suas parcelas. O mesmo vale para a integral.
 
-\begin{prop}[Linearity]
-\index{linearity of the integral}\label{prop:integrallinear}
-Let $f$ and $g$ be in $\sR\bigl([a,b]\bigr)$ and $\alpha \in \R$.
+\begin{prop}[Linearidade]
+\index{linearidade da integral}\label{prop:integrallinear}
+Sejam $f$ e $g$ pertencentes a $\sR\bigl([a,b]\bigr)$ e $\alpha \in \R$.
 \begin{enumerate}[(i)]
-\item $\alpha f$ is in $\sR\bigl([a,b]\bigr)$ and
+\item $\alpha f$ pertence a $\sR\bigl([a,b]\bigr)$ e
 \begin{equation*}
 \int_a^b \alpha f(x) \,dx = \alpha \int_a^b f(x) \,dx .
 \end{equation*}
-\item $f+g$ is in $\sR\bigl([a,b]\bigr)$ and
+\item $f+g$ pertence a $\sR\bigl([a,b]\bigr)$ e
 \begin{equation*}
 \int_a^b \bigl( f(x)+g(x) \bigr) \,dx = 
 \int_a^b f(x) \,dx 
@@ -973,84 +966,85 @@ Let $f$ and $g$ be in $\sR\bigl([a,b]\bigr)$ and $\alpha \in \R$.
 
 \begin{proof}
 \pagebreak[2]
-Let us prove the first item for $\alpha \geq 0$. 
-Let $P$ be a partition of $[a,b]$, and
-$m_i \coloneqq \inf \bigl\{ f(x) : x \in [x_{i-1},x_i] \bigr\}$ as usual.
-As $\alpha \geq 0$, the multiplication by $\alpha$ moves
-past the infimum,
+Vamos provar o primeiro item para $\alpha \geq 0$.
+Seja $P$ uma partição de $[a,b]$, e
+seja $m_i \coloneqq \inf \bigl\{ f(x) : x \in [x_{i-1},x_i] \bigr\}$, como de costume.
+Como $\alpha \geq 0$, a multiplicação por $\alpha$ pode ser colocada
+para fora do ínfimo:
 \begin{equation*}
 \inf \bigl\{ \alpha f(x) : x \in [x_{i-1},x_i] \bigr\}
 =
 \alpha \inf \bigl\{ f(x) : x \in [x_{i-1},x_i] \bigr\} = \alpha m_i .
 \end{equation*}
-Therefore,
+Portanto,
 \begin{equation*}
 L(P,\alpha f) =
 \sum_{i=1}^n \alpha m_i \Delta x_i = \alpha \sum_{i=1}^n m_i \Delta x_i = \alpha
 L(P,f).
 \end{equation*}
-Similarly,
+De modo semelhante,
 \begin{equation*}
 U(P,\alpha f) = \alpha U(P,f) .
 \end{equation*}
-Again, as $\alpha \geq 0$, we
-may move multiplication by $\alpha$ past the supremum.  Hence,
+Novamente, como $\alpha \geq 0$, podemos colocar a multiplicação por $\alpha$
+para fora do supremo. Portanto,
 \begin{equation*}
 \begin{split}
 \underline{\int_a^b} \alpha f(x)\,dx & =
-\sup \, \bigl\{ L(P,\alpha f) : P \text{ a partition of } [a,b] \bigr\}
+\sup \, \bigl\{ L(P,\alpha f) : P \text{ é uma partição de } [a,b] \bigr\}
 \\
 & =
-\sup \, \bigl\{ \alpha L(P,f) : P \text{ a partition of } [a,b] \bigr\}
+\sup \, \bigl\{ \alpha L(P,f) : P \text{ é uma partição de } [a,b] \bigr\}
 \\
 & =
 \alpha \,
-\sup \, \bigl\{ L(P,f) : P \text{ a partition of } [a,b] \bigr\}
+\sup \, \bigl\{ L(P,f) : P \text{ é uma partição de } [a,b] \bigr\}
 \\
 & =
 \alpha
 \underline{\int_a^b} f(x)\,dx .
 \end{split}
 \end{equation*}
-Similarly, we show 
+De modo semelhante, mostramos que
 \begin{equation*}
 \overline{\int_a^b} \alpha f(x)\,dx
 =
 \alpha
 \overline{\int_a^b} f(x)\,dx .
 \end{equation*}
-The conclusion now follows for $\alpha \geq 0$.
+Agora, a conclusão segue para $\alpha \geq 0$.
 
-To finish the proof of the first item (for $\alpha < 0$), we need to show 
-that $-f$ is Riemann integrable and
+Para concluir a demonstração do primeiro item (quando $\alpha < 0$), precisamos
+mostrar que $-f$ é integrável à Riemann e que
 $\int_a^b - f(x)\,dx =
 -
-\int_a^b f(x)\,dx$.  The proof of this fact is left as
+\int_a^b f(x)\,dx$. Deixamos a demonstração desse fato como
 \exerciseref{exercise:proofoflinpropparti}.
 
-The proof of the second item is left as
+A demonstração do segundo item fica como
 \exerciseref{exercise:proofoflinproppartii}.
-It is not difficult, but it is not as
-trivial as it may appear at first glance.
+O argumento não é difícil, mas tampouco é tão
+trivial quanto pode parecer à primeira vista.
 \end{proof}
 
-The second item in the proposition does not hold with
-equality for the Darboux integrals, but we do obtain inequalities.
-The proof of the following proposition is \exerciseref{exercise:upperlowerlinineq}.
-It follows for upper and lower sums on a fixed partition by \exerciseref{exercise:sumofsup},
-that is, supremum of a sum is less than or equal to the sum of
-suprema and similarly for infima.
+O segundo item da proposição não vale como igualdade para as integrais de
+Darboux, mas obtemos desigualdades.
+A demonstração da proposição a seguir é o
+\exerciseref{exercise:upperlowerlinineq}.
+Para somas superiores e inferiores em uma partição fixa, ela decorre do
+\exerciseref{exercise:sumofsup}, isto é, o supremo de uma soma é menor ou
+igual à soma dos supremos; vale uma afirmação análoga para ínfimos.
 
 \begin{prop} \label{prop:upperlowerlinineq}
-Let $f \colon [a,b] \to \R$ and $g \colon [a,b] \to \R$ be bounded
-functions.  Then
+Sejam $f \colon [a,b] \to \R$ e $g \colon [a,b] \to \R$ funções limitadas.
+Então
 \begin{equation*}
 %\overline{\int_a^b} \bigl(f(x)+g(x)\bigr)\,dx \leq
 %\overline{\int_a^b}f(x)\,dx+\overline{\int_a^b}g(x)\,dx
 \overline{\int_a^b} (f+g) \leq \overline{\int_a^b}f+\overline{\int_a^b}g
 ,
 \qquad
-\text{and}
+\text{e}
 \qquad
 \underline{\int_a^b} (f+g) \geq \underline{\int_a^b}f+\underline{\int_a^b}g
 %\underline{\int_a^b} \bigl(f(x)+g(x)\bigr)\,dx \geq
@@ -1059,24 +1053,24 @@ functions.  Then
 \end{equation*}
 \end{prop}
 
-Adding up smaller numbers should give us a smaller result.
-That is true for an integral as well.
+Somar números menores deve produzir um resultado menor.
+O mesmo vale para uma integral.
 
-\begin{prop}[Monotonicity]
-\index{monotonicity of the integral}
-Let $f \colon [a,b] \to \R$ and $g \colon [a,b] \to \R$ be
-bounded, and $f(x) \leq g(x)$
-for all $x \in [a,b]$.  Then
+\begin{prop}[Monotonicidade]
+\index{monotonicidade da integral}
+Sejam $f \colon [a,b] \to \R$ e $g \colon [a,b] \to \R$
+limitadas, com $f(x) \leq g(x)$
+para todo $x \in [a,b]$. Então
 \begin{equation*}
 \underline{\int_a^b} f 
 \leq
 \underline{\int_a^b} g 
-\qquad \text{and} \qquad
+\qquad \text{e} \qquad
 \overline{\int_a^b} f 
 \leq
 \overline{\int_a^b} g .
 \end{equation*}
-Moreover, if $f$ and $g$ are in $\sR\bigl([a,b]\bigr)$, then
+Além disso, se $f$ e $g$ pertencem a $\sR\bigl([a,b]\bigr)$, então
 \begin{equation*}
 \int_a^b f 
 \leq
@@ -1085,15 +1079,14 @@ Moreover, if $f$ and $g$ are in $\sR\bigl([a,b]\bigr)$, then
 \end{prop}
 
 \begin{proof}
-Let $P = \{ x_0, x_1, \ldots, x_n \}$ be a partition of $[a,b]$.  Then
-let
+Seja $P = \{ x_0, x_1, \ldots, x_n \}$ uma partição de $[a,b]$. Defina
 \begin{equation*}
 m_i \coloneqq \inf \, \bigl\{ f(x) : x \in [x_{i-1},x_i] \bigr\}
-\qquad \text{and} \qquad
+\qquad \text{e} \qquad
 \widetilde{m}_i \coloneqq \inf \, \bigl\{ g(x) : x \in [x_{i-1},x_i] \bigr\} .
 \end{equation*}
-As $f(x) \leq g(x)$, we have $m_i \leq \widetilde{m}_i$.
-Therefore,
+Como $f(x) \leq g(x)$, temos $m_i \leq \widetilde{m}_i$.
+Portanto,
 \begin{equation*}
 L(P,f)
 =
@@ -1103,57 +1096,57 @@ L(P,f)
 =
 L(P,g) .
 \end{equation*}
-We take the supremum over all $P$ (see \propref{prop:funcsupinf}) to obtain 
+Tomamos o supremo sobre todas as partições $P$ (veja a
+\propref{prop:funcsupinf}) e obtemos
 \begin{equation*}
 \underline{\int_a^b} f 
 \leq
 \underline{\int_a^b} g .
 \end{equation*}
-Similarly, we obtain the same conclusion for the upper integrals.
-Finally,
-if $f$ and $g$ are Riemann integrable all the integrals are equal,
-and the conclusion follows.
+De modo semelhante, obtemos a mesma conclusão para as integrais superiores.
+Por fim, se $f$ e $g$ são integráveis à Riemann, todas as integrais envolvidas
+são iguais, e a conclusão segue.
 \end{proof}
 
-\subsection{Continuous functions}
+\subsection{Funções contínuas}
 
-Let us show that continuous functions are Riemann integrable.
-We can even allow some discontinuities.  We start with a
-function continuous on the whole closed interval $[a,b]$.
+Vamos mostrar que funções contínuas são integráveis à Riemann.
+Podemos até permitir algumas descontinuidades. Começamos com uma
+função contínua em todo o intervalo fechado $[a,b]$.
 
 \begin{lemma} \label{lemma:contint}
-If $f \colon [a,b] \to \R$ is a continuous function,
-then $f \in \sR\bigl([a,b]\bigr)$.
+Se $f \colon [a,b] \to \R$ é contínua,
+então $f \in \sR\bigl([a,b]\bigr)$.
 \end{lemma}
 
 \begin{proof}
-As $f$ is continuous on a closed bounded interval, it is
-bounded and
-uniformly continuous.
-Given $\epsilon > 0$, find a $\delta > 0$ such that
-$\sabs{x-y} < \delta$ implies $\babs{f(x)-f(y)} < \frac{\epsilon}{b-a}$.
+Como $f$ é contínua em um intervalo fechado e limitado, ela é
+limitada e
+uniformemente contínua.
+Dado $\epsilon > 0$, escolha $\delta > 0$ de modo que
+$\sabs{x-y} < \delta$ implique $\babs{f(x)-f(y)} < \frac{\epsilon}{b-a}$.
 
-Let $P = \{ x_0, x_1, \ldots, x_n \}$
-be a partition of $[a,b]$ such that $\Delta x_i < \delta$ for all $i = 1,2,
-\ldots, n$.  For example,
-take $n$ such that $\frac{b-a}{n} < \delta$, and
-let $x_i \coloneqq \frac{i}{n}(b-a) + a$.
-Then for all $x, y \in [x_{i-1},x_i]$, we have 
-$\sabs{x-y} \leq \Delta x_i < \delta$, and so
+Seja $P = \{ x_0, x_1, \ldots, x_n \}$
+uma partição de $[a,b]$ tal que $\Delta x_i < \delta$ para todo $i = 1,2,
+\ldots, n$. Por exemplo,
+tome $n$ tal que $\frac{b-a}{n} < \delta$ e
+defina $x_i \coloneqq \frac{i}{n}(b-a) + a$.
+Então, para todos $x, y \in [x_{i-1},x_i]$, temos
+$\sabs{x-y} \leq \Delta x_i < \delta$; portanto,
 \begin{equation*}
 f(x)-f(y) \leq \babs{f(x)-f(y)} < \frac{\epsilon}{b-a} .
 \end{equation*}
-As $f$ is continuous on $[x_{i-1},x_i]$, it attains a maximum and a minimum
-on this interval.
-Let $x$ be a point where $f$ attains the maximum and $y$ be a point
-where $f$ attains the minimum.  Then $f(x) = M_i$
-and $f(y) = m_i$ in the notation from the definition of the integral.
-Therefore,
+Como $f$ é contínua em $[x_{i-1},x_i]$, ela atinge um máximo e um mínimo
+nesse intervalo.
+Seja $x$ um ponto em que $f$ atinge o máximo e seja $y$ um ponto
+em que $f$ atinge o mínimo. Então $f(x) = M_i$
+e $f(y) = m_i$, segundo a notação da definição da integral.
+Portanto,
 \begin{equation*}
 M_i-m_i = f(x)-f(y) < 
 \frac{\epsilon}{b-a} .
 \end{equation*}
-And so
+Assim,
 \begin{equation*}
 \begin{split}
 \overline{\int_a^b} f - 
@@ -1186,24 +1179,24 @@ m_i \Delta x_i
 = \epsilon .
 \end{split}
 \end{equation*}
-As $\epsilon > 0$ was arbitrary,
+Como $\epsilon > 0$ era arbitrário,
 \begin{equation*}
 \overline{\int_a^b} f = \underline{\int_a^b} f ,
 \end{equation*}
-and $f$ is Riemann integrable on $[a,b]$.
+e $f$ é integrável à Riemann em $[a,b]$.
 \end{proof}
 
-The second lemma says that we need the function to only be \myquote{Riemann integrable
-inside the interval,} as long as it is bounded.  It also tells us how to
-compute the integral.
+O segundo lema afirma que basta a função ser \myquote{integrável à Riemann no
+interior do intervalo}, desde que seja limitada. Ele também nos diz como
+calcular a integral.
 
 \begin{lemma} \label{lemma:boundedimpriemann}
-Let $f \colon [a,b] \to \R$ be a bounded function,
-$\{ a_n \}_{n=1}^\infty$ and $\{b_n \}_{n=1}^\infty$ be sequences such that
-$a < a_n < b_n < b$ for all $n$, with
-$\lim_{n\to\infty} a_n = a$ and $\lim_{n\to\infty} b_n = b$.
-Suppose $f \in \sR\bigl([a_n,b_n]\bigr)$ for all $n$.
-Then $f \in \sR\bigl([a,b]\bigr)$ and
+Seja $f \colon [a,b] \to \R$ uma função limitada, e sejam
+$\{ a_n \}_{n=1}^\infty$ e $\{b_n \}_{n=1}^\infty$ sequências tais que
+$a < a_n < b_n < b$ para todo $n$, com
+$\lim_{n\to\infty} a_n = a$ e $\lim_{n\to\infty} b_n = b$.
+Suponha que $f \in \sR\bigl([a_n,b_n]\bigr)$ para todo $n$.
+Então $f \in \sR\bigl([a,b]\bigr)$ e
 \begin{equation*}
 \int_a^b f = 
 \lim_{n \to \infty} \int_{a_n}^{b_n} f .
@@ -1211,8 +1204,8 @@ Then $f \in \sR\bigl([a,b]\bigr)$ and
 \end{lemma}
 
 \begin{proof}
-Let $M > 0$ be a real number such that $\babs{f(x)} \leq M$.
-As $(b-a) \geq (b_n-a_n)$,
+Seja $M > 0$ um número real tal que $\babs{f(x)} \leq M$.
+Como $(b-a) \geq (b_n-a_n)$,
 \begin{equation*}
 -M(b-a) \leq
 -M(b_n-a_n) \leq
@@ -1221,18 +1214,16 @@ As $(b-a) \geq (b_n-a_n)$,
 M(b_n-a_n) \leq
 M(b-a) .
 \end{equation*}
-Therefore, the sequence of numbers
-$\bigl\{ \int_{a_n}^{b_n} f \bigr\}_{n=1}^\infty$ is bounded and by
+Portanto, a sequência de números
+$\bigl\{ \int_{a_n}^{b_n} f \bigr\}_{n=1}^\infty$ é limitada e, pelo
 \hyperref[thm:bwseq]{Bolzano--Weierstrass}
-has a convergent subsequence indexed by $n_k$.  Let us call
-$L$ the limit of the subsequence
+possui uma subsequência convergente indexada por $n_k$. Denotemos por
+$L$ o limite da subsequência
 $\bigl\{ \int_{a_{n_k}}^{b_{n_k}} f \bigr\}_{k=1}^\infty$.
 
-\lemmaref{lemma:darbouxadd} says that
-the lower and upper integral are additive
-and the hypothesis says that
-$f$ is integrable on $[a_{n_k},b_{n_k}]$.
-Therefore,
+O \lemmaref{lemma:darbouxadd} afirma que as integrais inferior e superior
+são aditivas, e a hipótese diz que $f$ é integrável em
+$[a_{n_k},b_{n_k}]$. Portanto,
 \begin{equation*}
 \underline{\int_a^b} f
 =
@@ -1248,7 +1239,7 @@ Therefore,
 -
 M(b-b_{n_k}) .
 \end{equation*}
-We take the limit as $k$ goes to $\infty$ on the right-hand side,
+Tomamos o limite, quando $k \to \infty$, do lado direito:
 \begin{equation*}
 \underline{\int_a^b} f
 \geq
@@ -1260,7 +1251,7 @@ M\cdot 0
 = L .
 \end{equation*}
 
-Next we use additivity of the upper integral,
+Em seguida, usamos a aditividade da integral superior:
 \begin{equation*}
 \overline{\int_a^b} f
 =
@@ -1276,9 +1267,8 @@ M(a_{n_k}-a)
 +
 M(b-b_{n_k}) .
 \end{equation*}
-We take the same subsequence 
-$\{ \int_{a_{n_k}}^{b_{n_k}} f \}_{k=1}^\infty$ and take the limit 
-to obtain
+Tomamos o limite ao longo da mesma subsequência
+$\{ \int_{a_{n_k}}^{b_{n_k}} f \}_{k=1}^\infty$ e obtemos
 \begin{equation*}
 \overline{\int_a^b} f
 \leq
@@ -1289,285 +1279,273 @@ L
 M\cdot 0
 = L .
 \end{equation*}
-Thus $\overline{\int_a^b} f = \underline{\int_a^b} f = L$
-and hence $f$ is Riemann integrable and $\int_a^b f = L$.
-In particular, no matter what
-subsequence we choose,
-the $L$ is the same number.
+Assim, $\overline{\int_a^b} f = \underline{\int_a^b} f = L$;
+logo, $f$ é integrável à Riemann e $\int_a^b f = L$.
+Em particular, qualquer que seja a subsequência escolhida,
+o valor de $L$ é o mesmo.
 
-To prove the final statement of the lemma we use 
-\propref{seqconvsubseqconv:prop}.  We have shown that every convergent
-subsequence
-$\bigl\{ \int_{a_{n_k}}^{b_{n_k}} f \bigr\}_{k=1}^\infty$ converges to $L = \int_a^b f$.
-Therefore, the sequence
-$\bigl\{ \int_{a_n}^{b_n} f \bigr\}_{n=1}^\infty$ is convergent and converges to $\int_a^b f$.
+Para provar a afirmação final do lema, usamos a
+\propref{seqconvsubseqconv:prop}. Mostramos que toda subsequência convergente
+$\bigl\{ \int_{a_{n_k}}^{b_{n_k}} f \bigr\}_{k=1}^\infty$ converge a
+$L = \int_a^b f$. Portanto, a sequência
+$\bigl\{ \int_{a_n}^{b_n} f \bigr\}_{n=1}^\infty$ é convergente e converge a
+$\int_a^b f$.
 \end{proof}
 
-We say a function $f \colon [a,b] \to \R$ has \emph{\myindex{finitely many
-discontinuities}} if there exists a finite set $S = \{ x_1, x_2, \ldots, x_n \}
-\subset [a,b]$, and $f$ is continuous
-at all points of $[a,b] \setminus S$.
+Dizemos que uma função $f \colon [a,b] \to \R$ tem \emph{\myindex{um número
+finito de descontinuidades}} se existe um conjunto finito
+$S = \{ x_1, x_2, \ldots, x_n \} \subset [a,b]$ tal que $f$ é contínua
+em todos os pontos de $[a,b] \setminus S$.
 
 \begin{thm}
-Let $f \colon [a,b] \to \R$ be a bounded function with finitely
-many discontinuities.  Then $f \in \sR\bigl([a,b]\bigr)$.
+Seja $f \colon [a,b] \to \R$ uma função limitada com um número finito
+de descontinuidades. Então $f \in \sR\bigl([a,b]\bigr)$.
 \end{thm}
 
 \begin{proof}
-We divide the interval into finitely many intervals $[a_i,b_i]$
-so that $f$ is continuous
-on the interior $(a_i,b_i)$.  If $f$ is continuous on $(a_i,b_i)$,
-then it is continuous and hence integrable on $[c_i,d_i]$ whenever $a_i < c_i < d_i < b_i$.  By
-\lemmaref{lemma:boundedimpriemann},
-the restriction
-of $f$ to $[a_i,b_i]$ is integrable.
-By additivity of the integral (and \hyperref[induction:thm]{induction}),
-$f$ is integrable on the union of the intervals.
+Dividimos o intervalo em um número finito de intervalos $[a_i,b_i]$
+de modo que $f$ seja contínua no interior $(a_i,b_i)$. Se $f$ é contínua
+em $(a_i,b_i)$, então é contínua e, portanto, integrável em $[c_i,d_i]$
+sempre que $a_i < c_i < d_i < b_i$. Pelo \lemmaref{lemma:boundedimpriemann},
+a restrição de $f$ a $[a_i,b_i]$ é integrável.
+Pela aditividade da integral (e por \hyperref[induction:thm]{indução}),
+$f$ é integrável na união desses intervalos.
 \end{proof}
 
-\subsection{More on integrable functions}
+\subsection{Mais sobre funções integráveis}
 
-Sometimes it is convenient (or necessary)
-to change certain values of a function and
-then integrate.  The next result says
-that if we change the values at finitely
-many points, the integral does not change.
+Às vezes é conveniente (ou necessário)
+alterar alguns valores de uma função e, em seguida, integrá-la. O resultado
+a seguir afirma que, se alterarmos os valores em um número finito de pontos,
+a integral não muda.
 
 \begin{prop}
-Let $f \colon [a,b] \to \R$ be Riemann integrable.  Let $g \colon [a,b] \to
-\R$ be such that $f(x) = g(x)$ for all $x \in [a,b] \setminus S$,
-where $S$ is a finite set.
-Then $g$ is Riemann integrable and
+Seja $f \colon [a,b] \to \R$ integrável à Riemann. Seja
+$g \colon [a,b] \to \R$ tal que $f(x) = g(x)$ para todo
+$x \in [a,b] \setminus S$, onde $S$ é um conjunto finito.
+Então $g$ é integrável à Riemann e
 \begin{equation*}
 \int_a^b g = \int_a^b f.
 \end{equation*}
 \end{prop}
 
 \begin{proof}[Sketch of proof]
-Using additivity of the integral, split the interval $[a,b]$ into
-smaller intervals such that $f(x) = g(x)$ holds for all $x$ except at the
-endpoints (details are left to the reader).
+Usando a aditividade da integral, dividimos o intervalo $[a,b]$ em
+intervalos menores de modo que $f(x) = g(x)$ para todo $x$, exceto talvez
+nos extremos (os detalhes ficam a cargo do leitor).
 
-Therefore, without loss of generality suppose $f(x) = g(x)$ for
-all $x \in (a,b)$.  The proof follows by \lemmaref{lemma:boundedimpriemann},
-and is left as \exerciseref{exercise:changeendpointsintegral}.
+Portanto, sem perda de generalidade, suponhamos que $f(x) = g(x)$ para
+todo $x \in (a,b)$. A demonstração decorre do
+\lemmaref{lemma:boundedimpriemann} e fica como exercício em
+\exerciseref{exercise:changeendpointsintegral}.
 \end{proof}
 
-Finally, monotone (increasing or decreasing) functions are always
-Riemann integrable.  The proof is left to the reader as part of
+Por fim, funções monótonas (crescentes ou decrescentes) são sempre
+integráveis à Riemann. A demonstração fica a cargo do leitor como parte do
 \exerciseref{exercise:boundedvariationintegrable}.
 
 \begin{prop} \label{prop:monotoneintegrable}
-Let $f \colon [a,b] \to \R$ be a monotone function.  Then $f \in
+Seja $f \colon [a,b] \to \R$ uma função monótona. Então $f \in
 \sR\bigl([a,b]\bigr)$.
 \end{prop}
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
 \begin{exercise} \label{exercise:proofoflinpropparti}
-Finish the proof of the first part of \propref{prop:integrallinear}.
-Let $f$ be in $\sR\bigl([a,b]\bigr)$.  Prove that
-$-f$ is in $\sR\bigl([a,b]\bigr)$ and 
+Complete a demonstração do primeiro item da
+\propref{prop:integrallinear}. Seja $f \in \sR\bigl([a,b]\bigr)$.
+Prove que $-f \in \sR\bigl([a,b]\bigr)$ e
 \begin{equation*}
 \int_a^b - f(x) \,dx = - \int_a^b f(x) \,dx .
 \end{equation*}
 \end{exercise}
 
 \begin{exercise} \label{exercise:proofoflinproppartii}
-Prove the second part of \propref{prop:integrallinear}.
-Let $f$ and $g$ be in $\sR\bigl([a,b]\bigr)$.
-Prove, without using \propref{prop:upperlowerlinineq}, that $f+g$ is in
-$\sR\bigl([a,b]\bigr)$ and
+Prove o segundo item da \propref{prop:integrallinear}.
+Sejam $f,g \in \sR\bigl([a,b]\bigr)$.
+Prove, sem usar a \propref{prop:upperlowerlinineq}, que $f+g$ pertence a
+$\sR\bigl([a,b]\bigr)$ e que
 \begin{equation*}
 \int_a^b \bigl( f(x)+g(x) \bigr) \,dx = 
 \int_a^b f(x) \,dx 
 +
 \int_a^b g(x) \,dx .
 \end{equation*}
-Hint: One way to do it is to use \propref{prop:refinement} to find a single partition $P$
-such that $U(P,f)-L(P,f) < \nicefrac{\epsilon}{2}$ and
+Sugestão: uma maneira de fazer isso é usar a \propref{prop:refinement} para encontrar
+uma única partição $P$ tal que $U(P,f)-L(P,f) < \nicefrac{\epsilon}{2}$ e
 $U(P,g)-L(P,g) < \nicefrac{\epsilon}{2}$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:changeendpointsintegral}
-Let $f \colon [a,b] \to \R$ be Riemann integrable, and $g \colon [a,b] \to \R$
-be such that $f(x) = g(x)$ for all $x \in (a,b)$.
-Prove that $g$ is Riemann integrable and that
+Seja $f \colon [a,b] \to \R$ integrável à Riemann, e seja
+$g \colon [a,b] \to \R$ tal que $f(x) = g(x)$ para todo $x \in (a,b)$.
+Prove que $g$ é integrável à Riemann e que
 \begin{equation*}
 \int_a^b g = \int_a^b f.
 \end{equation*}
 \end{exercise}
 
 \begin{exercise}
-Prove the \emph{\myindex{mean value theorem for integrals}}:
-If $f \colon [a,b] \to \R$ is continuous, then there exists
-a $c \in [a,b]$ such that $\int_a^b f = f(c)(b-a)$.
+Prove o \emph{\myindex{teorema do valor médio para integrais}}:
+se $f \colon [a,b] \to \R$ é contínua, então existe
+$c \in [a,b]$ tal que $\int_a^b f = f(c)(b-a)$.
 \end{exercise}
 
 \begin{exercise}
-Let $f \colon [a,b] \to \R$ be a continuous function such that $f(x) \geq 0$
-for all $x \in [a,b]$ and $\int_a^b f = 0$.  Prove that $f(x) = 0$
-for all $x$.
+Seja $f \colon [a,b] \to \R$ uma função contínua tal que $f(x) \geq 0$
+para todo $x \in [a,b]$ e $\int_a^b f = 0$. Prove que $f(x) = 0$
+para todo $x$.
 \end{exercise}
 
 \begin{exercise}
-Let $f \colon [a,b] \to \R$ be a continuous function
-and $\int_a^b f = 0$.  Prove that
-there exists a $c \in [a,b]$ such that $f(c) = 0$. (Compare with the
-previous exercise.)
+Seja $f \colon [a,b] \to \R$ uma função contínua
+e suponha que $\int_a^b f = 0$. Prove que existe
+$c \in [a,b]$ tal que $f(c) = 0$. (Compare com o exercício anterior.)
 \end{exercise}
 
 \begin{exercise}
-Let $f \colon [a,b] \to \R$ and $g \colon [a,b] \to \R$
-be continuous functions such that $\int_a^b f = \int_a^b g$.
-Show that there exists a $c \in [a,b]$ such that $f(c) = g(c)$.
+Sejam $f \colon [a,b] \to \R$ e $g \colon [a,b] \to \R$
+funções contínuas tais que $\int_a^b f = \int_a^b g$.
+Mostre que existe $c \in [a,b]$ tal que $f(c) = g(c)$.
 \end{exercise}
 
 \begin{exercise}
-Let $f \in \sR\bigl([a,b]\bigr)$.  Let $\alpha, \beta, \gamma$ be arbitrary numbers in
-$[a,b]$ (not necessarily ordered in any way).  Prove 
+Seja $f \in \sR\bigl([a,b]\bigr)$. Sejam $\alpha, \beta, \gamma$ números
+arbitrários em $[a,b]$ (não necessariamente em alguma ordem específica). Prove
 \begin{equation*}
 \int_\alpha^\gamma f =
 \int_\alpha^\beta f +
 \int_\beta^\gamma f .
 \end{equation*}
-Recall what $\int_a^b f$ means if $b \leq a$.
+Lembre-se do significado de $\int_a^b f$ quando $b \leq a$.
 \end{exercise}
 
 \begin{exercise}
-Prove \corref{intsubcor}.
+Prove o \corref{intsubcor}.
 \end{exercise}
 
 \begin{exercise} \label{exercise:easyabsint}
-Suppose $f \colon [a,b] \to \R$ is bounded and
-has finitely many discontinuities.
-Show that as a function of $x$ the expression $\babs{f(x)}$ is bounded with finitely many
-discontinuities and is thus Riemann integrable.  Then show 
+Suponha que $f \colon [a,b] \to \R$ seja limitada e
+tenha um número finito de descontinuidades.
+Mostre que, como função de $x$, a expressão $\babs{f(x)}$ é limitada e tem um número finito de
+descontinuidades; portanto, é integrável à Riemann. Em seguida, mostre que
 \begin{equation*}
 \abs{\int_a^b f(x)\,dx} \leq \int_a^b \babs{f(x)}\,dx .
 \end{equation*}
 \end{exercise}
 
-\begin{exercise}[Hard]
-Show that the
-Thomae\index{Thomae function} or \myindex{popcorn function}
-(see \exampleref{popcornfunction:example})
-is Riemann integrable.  Therefore, there exists a
-function discontinuous at all rational numbers (a dense set)
-that is Riemann integrable.
+\begin{exercise}[Difícil]
+Mostre que a função de
+Thomae\index{função de Thomae}, ou \myindex{função pipoca}
+(veja o \exampleref{popcornfunction:example}),
+é integrável à Riemann. Portanto, existe uma função integrável à Riemann
+que é descontínua em todos os números racionais (um conjunto denso).
 
-That is,
-define $f \colon [0,1] \to \R$ by $f(0)=1$ and for $x > 0$ by
+Mais precisamente, defina $f \colon [0,1] \to \R$ por $f(0)=1$ e, para $x > 0$, por
 \begin{equation*}
 f(x) \coloneqq 
 \begin{cases}
-\nicefrac{1}{k} & \text{if } x=\nicefrac{m}{k} \text{ where }
-m,k \in \N \text{ and } m \text{ and } k \text{ have no common divisors,} \\
-0               & \text{if } x \text{ is irrational.}
+\nicefrac{1}{k} & \text{se } x=\nicefrac{m}{k}, \text{ com }
+m,k \in \N \text{ e } m \text{ e } k \text{ primos entre si,} \\
+0               & \text{se } x \text{ is irrational.}
 \end{cases}
 \end{equation*}
-Show $\int_0^1 f = 0$.
+Mostre que $\int_0^1 f = 0$.
 \end{exercise}
 
 
 \begin{exnote}
-If $I \subset \R$ is a bounded interval, then
-the function
+Se $I \subset \R$ é um intervalo limitado, então a função
 \begin{equation*}
 \varphi_I(x) \coloneqq
 \begin{cases}
-1 & \text{if } x \in I, \\
-0 & \text{otherwise,}
+1 & \text{se } x \in I, \\
+0 & \text{caso contrário,}
 \end{cases}
 \end{equation*}
-is called an \emph{\myindex{elementary step function}}.
+é chamada de \emph{\myindex{função escada elementar}}.
 \end{exnote}
 
 \begin{exercise} \label{exercise:stepfunctionintegrable}
-Let $I$ be an arbitrary bounded interval (you should consider all types
-of intervals: closed, open, half-open) and $a < b$, then
-using only the definition of the integral
-show that
-the elementary step function $\varphi_I$ is integrable
-on $[a,b]$, and find the integral in terms of $a$, $b$, and the
-endpoints of $I$.
+Seja $I$ um intervalo limitado qualquer (considere todos os tipos de
+intervalos: fechados, abertos e semiabertos) e sejam $a < b$. Usando apenas a
+definição de integral, mostre que a função escada elementar $\varphi_I$ é
+integrável em $[a,b]$ e determine a integral em termos de $a$, $b$ e dos
+extremos de $I$.
 \end{exercise}
 
 \begin{exnote}
-A function $f$ is called a
-\emph{\myindex{step function}} if it
-can be written as
+Uma função $f$ é chamada de
+\emph{\myindex{função escada}} se pode ser escrita como
 \begin{equation*}
 f(x) = \sum_{k=1}^n \alpha_k \varphi_{I_k} (x)
 \end{equation*}
-for some real numbers $\alpha_1,\alpha_2, \ldots, \alpha_n$
-and some bounded intervals $I_1,I_2,\ldots,I_n$.
+para certos números reais $\alpha_1,\alpha_2, \ldots, \alpha_n$
+e certos intervalos limitados $I_1,I_2,\ldots,I_n$.
 \end{exnote}
 
 \begin{exercise}
-Using \exerciseref{exercise:stepfunctionintegrable}, show that a step
-function (see above) is integrable
-on every interval $[a,b]$.  Furthermore, find the integral in terms of
-$a$, $b$, the endpoints of $I_k$ and the $\alpha_k$.
+Usando o \exerciseref{exercise:stepfunctionintegrable}, mostre que uma função
+escada (veja acima) é integrável em todo intervalo $[a,b]$. Além disso,
+determine a integral em termos de $a$, $b$, dos extremos de $I_k$ e dos
+$\alpha_k$.
 \end{exercise}
 
 \begin{exercise}
 \label{exercise:boundedvariationintegrable}
-Let $f \colon [a,b] \to \R$ be a function.
+Seja $f \colon [a,b] \to \R$ uma função.
 \begin{enumerate}[a)]
 \item
-Show that if $f$ is increasing, then it is Riemann
-integrable.  Hint: Use a uniform partition; each subinterval of same length.
+Mostre que, se $f$ é crescente, então é integrável à Riemann.
+Sugestão: use uma partição uniforme, cujos subintervalos têm todos o mesmo comprimento.
 \item
-Use part a) to show that if $f$ is decreasing, then it is Riemann
-integrable.
+Use o item a) para mostrar que, se $f$ é decrescente, então é integrável à Riemann.
 \item
-Suppose\footnote{Such an $h$ is said to be of \emph{\myindex{bounded variation}}.}
-$h = f-g$ where $f$ and $g$ are increasing
-functions on $[a,b]$.  Show that $h$ is Riemann integrable.
+Suponha\footnote{Dizemos que uma função $h$ assim é de
+\emph{\myindex{variação limitada}}.} que $h = f-g$, onde $f$ e $g$ são
+funções crescentes em $[a,b]$. Mostre que $h$ é integrável à Riemann.
 \end{enumerate}
 \end{exercise}
 
-\begin{exercise}[Challenging] \label{exercise:hardabsint}
-Suppose $f \in \sR\bigl([a,b]\bigr)$.  Prove that the function that takes $x$ to
-$\babs{f(x)}$ is also Riemann integrable on $[a,b]$.
-Then show the same inequality as \exerciseref{exercise:easyabsint}.
+\begin{exercise}[Desafiador] \label{exercise:hardabsint}
+Suponha que $f \in \sR\bigl([a,b]\bigr)$. Prove que a função que associa a $x$
+o valor $\babs{f(x)}$ também é integrável à Riemann em $[a,b]$.
+Em seguida, prove a mesma desigualdade do \exerciseref{exercise:easyabsint}.
 \end{exercise}
 
 \begin{exercise}  \label{exercise:upperlowerlinineq}
-Suppose $f \colon [a,b] \to \R$ and $g \colon [a,b] \to \R$
-are bounded.
+Suponha que $f \colon [a,b] \to \R$ e $g \colon [a,b] \to \R$
+sejam limitadas.
 \begin{enumerate}[a)]
 \item
-Show
-$\overline{\int_a^b} (f+g) \leq \overline{\int_a^b}f+\overline{\int_a^b}g$ and
+Mostre que
+$\overline{\int_a^b} (f+g) \leq \overline{\int_a^b}f+\overline{\int_a^b}g$ e
 $\underline{\int_a^b} (f+g) \geq
 \underline{\int_a^b}f+\underline{\int_a^b}g$.
 \item
-Find example $f$ and $g$ where
-the inequality is strict.  Hint: $f$ and $g$ should not be Riemann
-integrable.
+Encontre exemplos de $f$ e $g$ para os quais
+a desigualdade é estrita. Sugestão: $f$ e $g$ não devem ser integráveis à Riemann.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon [a,b] \to \R$ is continuous and $g \colon \R \to \R$ is
-Lipschitz continuous.  Define
+Suponha que $f \colon [a,b] \to \R$ seja contínua e que $g \colon \R \to \R$ seja
+Lipschitz contínua. Defina
 \begin{equation*}
 h(x) \coloneqq \int_a^b g(t-x) f(t) \, dt .
 \end{equation*}
-Prove that $h$ is Lipschitz continuous.
+Prove que $h$ é Lipschitz contínua.
 \end{exercise}
 
 \begin{exercise} \label{exercise:rieleblem}
-Prove a version of the \emph{\myindex{Riemann--Lebesgue Lemma}}
-(one of several so named):
-Suppose $f \colon [a,b] \to \R$ is continuous and define the sequence
-$\{ x_n \}_{n=1}^\infty$ by
+Prove uma versão do \emph{\myindex{lema de Riemann--Lebesgue}}
+(há vários resultados com esse nome):
+suponha que $f \colon [a,b] \to \R$ seja contínua e defina a sequência
+$\{ x_n \}_{n=1}^\infty$ por
 \begin{equation*}
 x_n \coloneqq \int_a^b f(t) \sin(nt) \, dt .
 \end{equation*}
-Prove that $\lim\limits_{n\to\infty} x_n = 0$.
+Prove que $\lim\limits_{n\to\infty} x_n = 0$.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1936,7 +1914,7 @@ Finally, $g$ is not continuous
 on $[-1,1]$, let alone continuously differentiable.
 \end{example}
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
 \begin{exercise}
 Compute
@@ -2139,7 +2117,7 @@ $L$ is differentiable and $L'(x) = \nicefrac{1}{x}$.
 \item \label{it:log:iii}
 $L$ is strictly increasing, bijective, and
 \begin{equation*}
-\lim_{x\to 0} L(x) = -\infty , \qquad \text{and} \qquad
+\lim_{x\to 0} L(x) = -\infty , \qquad \text{e} \qquad
 \lim_{x\to \infty} L(x) = \infty .
 \end{equation*}
 \item \label{it:log:iv}
@@ -2280,7 +2258,7 @@ $E$ is differentiable and $E'(x) = E(x)$.
 \item \label{it:exp:iii}
 $E$ is strictly increasing, bijective, and
 \begin{equation*}
-\lim_{x\to -\infty} E(x) = 0 \qquad \text{and} \qquad
+\lim_{x\to -\infty} E(x) = 0 \qquad \text{e} \qquad
 \lim_{x\to \infty} E(x) = \infty .
 \end{equation*}
 \item \label{it:exp:iv}
@@ -2318,7 +2296,7 @@ an $x_0$ such that $E(x_0) = \epsilon$ and
 $E(x) < \epsilon$ for all $x < x_0$.
 Therefore,
 \begin{equation*}
-\lim_{x\to -\infty} E(x) = 0 \qquad \text{and} \qquad
+\lim_{x\to -\infty} E(x) = 0 \qquad \text{e} \qquad
 \lim_{x\to \infty} E(x) = \infty .
 \end{equation*}
 
@@ -2455,7 +2433,7 @@ Alternatively, uniqueness also follows
 from the laws of exponents, see the exercises.
 \end{remark}
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
 \begin{exercise}
 Given a real number $y$ and $b > 0$, define $f \colon (0,\infty) \to \R$
@@ -2596,8 +2574,8 @@ Since $(e^x)' = e^x$, it is easy to see that $e^x$ is
 (has derivatives of all orders).  Define the function $f \colon \R \to \R$.
 \begin{equation*}
 f(x) \coloneqq \begin{cases}
-e^{-1/x} & \text{if } x > 0, \\
-0 & \text{if } x \leq 0.
+e^{-1/x} & \text{se } x > 0, \\
+0 & \text{se } x \leq 0.
 \end{cases}
 \end{equation*}
 \begin{enumerate}[a)]
@@ -3175,8 +3153,8 @@ in both pure and applied mathematics.  Define
 \begin{equation*}
 \operatorname{sinc}(x) \coloneqq
 \begin{cases}
-\frac{\sin(x)}{x} & \text{if } x \neq 0 , \\
-1 & \text{if } x = 0 .
+\frac{\sin(x)}{x} & \text{se } x \neq 0 , \\
+1 & \text{se } x = 0 .
 \end{cases}
 \end{equation*}
 \begin{myfigureht}
@@ -3530,7 +3508,7 @@ obtain
 The actual sum is $\nicefrac{\pi^2}{6} \approx 1.6449\ldots$. 
 \end{example}
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
 \begin{exercise}
 Finish the proof of \propref{impropriemann:ptest}.
@@ -3701,7 +3679,7 @@ is well-defined for all $x \in \R$.
 \item
 Suppose $\int_{-\infty}^\infty \babs{f(x)}\,dx < \infty$.  Prove that
 \begin{equation*}
-\lim_{x \to -\infty} (g * f)(x) = 0, \qquad \text{and} \qquad
+\lim_{x \to -\infty} (g * f)(x) = 0, \qquad \text{e} \qquad
 \lim_{x \to \infty} (g * f)(x) = 0 .
 \end{equation*}
 \end{enumerate}

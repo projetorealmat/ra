@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this work, please cite it."
 title: "Análise Básica: Introdução à Análise Real, Volume I"
-version: "0.1.0"
+version: "0.1.1"
 authors:
   - family-names: Lebl
     given-names: Jiří

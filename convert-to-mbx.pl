@@ -11,7 +11,7 @@ $num_errors = 0;
 
 my @ins;
 
-# Pass the desired driver file explicitly; the Pages build uses realanal.tex for Volume I.
+# Pass the desired driver file explicitly; the Pages build uses realanal12.tex for both volumes.
  
 my $input_file = @ARGV ? shift @ARGV : "realanal12.tex";
 die "Usage: $0 [input.tex]\n" if @ARGV;

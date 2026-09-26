@@ -23,26 +23,7 @@ BUILD_TMP="$(mktemp -d)"
 trap 'rm -rf "$BUILD_TMP"' EXIT
 
 cd "$ROOT_DIR"
-python3 - "$ROOT_DIR/realanal12.tex" "$BUILD_TMP/realanal-volume-i.tex" <<'PY'
-from pathlib import Path
-import sys
-
-source_path, output_path = map(Path, sys.argv[1:])
-source = source_path.read_text(encoding="utf-8")
-volume_ii_inputs = (
-    r"\input{ch-several-vars-ders.tex}",
-    r"\input{ch-one-dim-ints-sv.tex}",
-    r"\input{ch-multivar-int.tex}",
-    r"\input{ch-approximate.tex}",
-)
-for input_line in volume_ii_inputs:
-    if source.count(input_line) != 1:
-        raise SystemExit(f"Esperada exatamente uma entrada {input_line!r} em realanal12.tex.")
-    source = source.replace(input_line, "% Omitido: capítulo do Volume II.")
-output_path.write_text(source, encoding="utf-8")
-PY
-
-if ! perl "$ROOT_DIR/convert-to-mbx.pl" "$BUILD_TMP/realanal-volume-i.tex" >"$BUILD_TMP/converter.log" 2>&1; then
+if ! perl "$ROOT_DIR/convert-to-mbx.pl" realanal12.tex >"$BUILD_TMP/converter.log" 2>&1; then
   tail -n 80 "$BUILD_TMP/converter.log" >&2
   exit 1
 fi
@@ -53,11 +34,12 @@ if grep -q "UNHANDLED escape" "$BUILD_TMP/converter.log"; then
 fi
 test -s "$ROOT_DIR/realanal-out.xml"
 grep -q '<pretext xml:lang="pt-BR">' "$ROOT_DIR/realanal-out.xml"
-grep -q '<chapter[^>]*number="7"' "$ROOT_DIR/realanal-out.xml"
-if grep -Eq '<chapter[^>]*number="8"' "$ROOT_DIR/realanal-out.xml"; then
-  echo "A conversão incluiu capítulos do Volume II." >&2
-  exit 1
-fi
+for chapter_number in {1..11}; do
+  if ! grep -q "<chapter[^>]*number=\"${chapter_number}\"" "$ROOT_DIR/realanal-out.xml"; then
+    echo "O capítulo ${chapter_number} não foi convertido para o HTML." >&2
+    exit 1
+  fi
+done
 perl -0777 -i -pe 's:<rahr/>[ \r\n]*<rahr/>:<rahr/>:igs' "$ROOT_DIR/realanal-out.xml"
 python3 - "$ROOT_DIR/realanal-out.xml" <<'PY'
 from pathlib import Path
@@ -111,11 +93,6 @@ PUBLISHER_URI="$(python3 -c 'from pathlib import Path; import sys; print(Path(sy
     --stringparam publisher "$PUBLISHER_URI" \
     "$BUILD_TMP/realanal-html.xsl" \
     "$ROOT_DIR/realanal-out.xml"
-
-  while IFS= read -r -d '' page; do
-    perl "$ROOT_DIR/fixup-html-file.pl" < "$page" > "$page.tmp"
-    mv "$page.tmp" "$page"
-  done < <(find . -maxdepth 1 -type f -name '*.html' -print0)
 )
 
 mkdir -p "$ROOT_DIR/_site"

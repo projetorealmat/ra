@@ -1,4 +1,4 @@
-name: Publicar HTML traduzido — Basic Analysis I
+name: Publicar HTML de dois volumes — Basic Analysis
 
 on:
   pull_request:
@@ -13,7 +13,7 @@ concurrency:
 
 jobs:
   build:
-    name: Gerar HTML do Volume I
+    name: Gerar HTML dos volumes I e II
     runs-on: ubuntu-24.04
     timeout-minutes: 30
     permissions:
@@ -39,7 +39,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install --yes poppler-utils xsltproc
 
-      - name: Gerar HTML pt-BR do Volume I
+      - name: Gerar HTML pt-BR dos dois volumes
         run: PRETEXT_DIR="$GITHUB_WORKSPACE/pretext" scripts/build-html-pages.sh
 
       - name: Validar arquivos de entrada do Pages
@@ -48,8 +48,6 @@ jobs:
           test -s _site/index.html
           test -s _site/_static/pretext/css/theme.css
           test -s _site/_static/pretext/js/dist/pretext-core.js
-          test ! -e _site/realanal2.pdf
-          test ! -e _site/realanal12.pdf
 
       - name: Configurar GitHub Pages
         if: github.event_name != 'pull_request'

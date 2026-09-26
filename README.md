@@ -11,8 +11,8 @@ Volume I and II are both in this directory
   files ch-???.tex
 * realanal.tex must be complied first as realanal2.tex uses the realanal.aux
   file
-* The file realanal12.tex does both volumes together and is used by the legacy
-  manual HTML conversion. The REALMat Pages workflow builds Volume I from realanal.tex.
+* The file realanal12.tex contains both volumes and drives the REALMat HTML build.
+  Volume I is translated to Portuguese; Volume II remains in English.
 
 Notes on figures:
 
@@ -44,8 +44,8 @@ On the scripts:
 * publish2.sh compiles the volume II file to pdf
 * resizetocrownquatro.sh resize a PDF to crown quatro size using ghostscript
 * convert-to-mbx.sh is the beta, manual HTML conversion through PreTeXt and uses
-  the combined realanal12.tex. scripts/build-html-pages.sh builds Volume I for
-  REALMat Pages from realanal.tex.
+  the combined realanal12.tex. scripts/build-html-pages.sh builds both volumes
+  for REALMat Pages with PreTeXt.
 
 *Note:* The tex sources require a somewhat recent LaTeX.  If your latex does
 not have a recent enough ocgx2 package, you can simply comment out that line
@@ -57,7 +57,7 @@ take out the "sort=use" option from the glossaries package.
 
 This repository is the REALMat Volume I edition in preparation, based on the English source repository. Translation and adaptation will take place here; the upstream repository is retained only for provenance, credits, and license information.
 
-The automated Pages build publishes HTML from realanal.tex only. The official PDF remains attached to each versioned release and is offered for download from the REALMat portal.
+The automated Pages build preserves both volumes from realanal12.tex. Volume I is translated to Portuguese and Volume II remains in English. The official PDF release corresponds to Volume I and is offered for download from the REALMat portal.
 
 ## Publicações
 

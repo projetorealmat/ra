@@ -23,14 +23,33 @@ BUILD_TMP="$(mktemp -d)"
 trap 'rm -rf "$BUILD_TMP"' EXIT
 
 cd "$ROOT_DIR"
-if ! perl "$ROOT_DIR/convert-to-mbx.pl" realanal.tex >"$BUILD_TMP/converter.log" 2>&1; then
+python3 - "$ROOT_DIR/realanal12.tex" "$BUILD_TMP/realanal-volume-i.tex" <<'PY'
+from pathlib import Path
+import sys
+
+source_path, output_path = map(Path, sys.argv[1:])
+source = source_path.read_text(encoding="utf-8")
+volume_ii_inputs = (
+    r"\input{ch-several-vars-ders.tex}",
+    r"\input{ch-one-dim-ints-sv.tex}",
+    r"\input{ch-multivar-int.tex}",
+    r"\input{ch-approximate.tex}",
+)
+for input_line in volume_ii_inputs:
+    if source.count(input_line) != 1:
+        raise SystemExit(f"Esperada exatamente uma entrada {input_line!r} em realanal12.tex.")
+    source = source.replace(input_line, "% Omitido: capítulo do Volume II.")
+output_path.write_text(source, encoding="utf-8")
+PY
+
+if ! perl "$ROOT_DIR/convert-to-mbx.pl" "$BUILD_TMP/realanal-volume-i.tex" >"$BUILD_TMP/converter.log" 2>&1; then
   tail -n 80 "$BUILD_TMP/converter.log" >&2
   exit 1
 fi
 tail -n 20 "$BUILD_TMP/converter.log"
 if grep -q "UNHANDLED escape" "$BUILD_TMP/converter.log"; then
   echo "Comandos LaTeX não tratados pelo conversor (contagem):"
-  grep "UNHANDLED escape" "$BUILD_TMP/converter.log" | sort | uniq -c | head -n 40
+  grep "UNHANDLED escape" "$BUILD_TMP/converter.log" | sort | uniq -c | head -n 40 || true
 fi
 test -s "$ROOT_DIR/realanal-out.xml"
 grep -q '<pretext xml:lang="pt-BR">' "$ROOT_DIR/realanal-out.xml"
@@ -52,7 +71,7 @@ except ET.ParseError as error:
     line, column = error.position
     lines = path.read_text(encoding="utf-8").splitlines()
     print(f"XML inválido: {error}", file=sys.stderr)
-    for index in range(max(0, line - 4), min(len(lines), line + 3)):
+    for index in range(max(0, line - 12), min(len(lines), line + 4)):
         print(f"{index + 1}: {lines[index]}", file=sys.stderr)
     raise SystemExit(1)
 PY

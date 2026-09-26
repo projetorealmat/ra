@@ -11,9 +11,11 @@ $num_errors = 0;
 
 my @ins;
 
-# FIXME: same script should be used for realanal.tex and realanal2.tex, perhaps both volumes all at once?
+# Pass the desired driver file explicitly; the Pages build uses realanal.tex for Volume I.
  
-open(my $in,'<', "realanal12.tex") or die $!; 
+my $input_file = @ARGV ? shift @ARGV : "realanal12.tex";
+die "Usage: $0 [input.tex]\n" if @ARGV;
+open(my $in, "<", $input_file) or die "Cannot open input $input_file: $!"; 
 open(my $out, '>' ,"realanal-out.xml") or die $!; 
 
 # This is used for checking texts for grammar etc on alt texts
@@ -27,7 +29,7 @@ $commands = "";
 
 print $out <<END;
 <?xml version="1.0" encoding="UTF-8" ?>
-<pretext>
+<pretext xml:lang="pt-BR">
 END
 
 $docinfoextra = "";

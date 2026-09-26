@@ -16,7 +16,7 @@ while($line = <STDIN>)
 	# no longer needed
 	#$line =~ s{<span[^>]*><button id="light-dark-button".*</button></span>}{};
 
-	if ($line =~ m/<title>[A-Za-z ]*Index<\/title>/) {
+	if ($line =~ m/<title>.*(?:Index|Índice).*<\/title>/i) {
 	  	$isindex = 1;
 	}
 	# This is the redirect page, do not do anything to it
@@ -27,18 +27,9 @@ while($line = <STDIN>)
 		}
 	 	exit 0;
 	}
-	if ($line =~ m/<a class="index-button.*title="Index"/) {
+	if ($line =~ m/<a class="index-button.*title="(?:Index|Índice)"/) {
 		# Add extra buttons
-		$extra = "<a class=\"index-button button\" href=\"..\" title=\"Home\" alt=\"Book Home\"><span class=\"name\">Home</span></a>\n";
-
-		$extra .= "<a class=\"index-button button\" href=\"../realanal.pdf\" title=\"PDF\"><span class=\"name\">PDF(I)</span></a>\n";
-
-		$extra .= "<a class=\"index-button button\" href=\"../realanal2.pdf\" title=\"PDF\"><span class=\"name\">PDF(II)</span></a>\n";
-
-		##FIXME: add paperback buttons
-		$extra .= "<a class=\"index-button button\" href=\"https://www.amazon.com/dp/B0C9S99TKF\" title=\"Paperback\" alt=\"Buy Paperback\"><span class=\"name\">Book(I)</span></a>\n";
-
-		$extra .= "<a class=\"index-button button\" href=\"https://www.amazon.com/dp/B0C9S7P6M8\" title=\"Paperback\" alt=\"Buy Paperback\"><span class=\"name\">Book(II)</span></a>\n";
+		$extra = "<a class=\"index-button button\" href=\"https://projetorealmat.github.io/livros/ra/\" title=\"Edição no REALMat\"><span class=\"name\">REALMat</span></a>\n";
 
 		if (not ($line =~ s/<div class="searchbox"/$extra<div class="searchbox"/)) {
 			print STDERR "ERROR: Can't add extra buttons!";
@@ -67,11 +58,8 @@ while($line = <STDIN>)
 	}
 	if ($line =~ m/<\/body>/) {
 		print "<p class=\"print-pdf-warning\">\n";
-		print " <em>For a higher quality printout use the PDF versions: ";
-		print "<tt>https://www.jirka.org/ra/realanal.pdf</tt>, ";
-		print "<tt>https://www.jirka.org/ra/realanal2.pdf</tt>\n";
-		print "or <tt>https://jirilebl.github.io/ra/realanal.pdf</tt>, ";
-		print "<tt>https://jirilebl.github.io/ra/realanal2.pdf</tt></em>\n";
+		print " <em>Para uma cópia com qualidade de impressão, acesse a página desta edição no ";
+		print "<a href=\"https://projetorealmat.github.io/livros/ra/\">portal REALMat</a>, que oferece o HTML de leitura e o PDF oficial.</em>\n";
 		print "</p>\n";
 		$didprintwarn ++;
 	}

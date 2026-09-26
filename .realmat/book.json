@@ -4,8 +4,14 @@
   "short_title": "Basic Analysis I",
   "subject": "Real analysis",
   "translation_stage": "unreviewed",
-  "entrypoint": "pdf",
+  "entrypoint": "html",
   "publications": [
+    {
+      "id": "html",
+      "label": "Ler o livro",
+      "format": "html",
+      "url": "https://projetorealmat.github.io/ra/"
+    },
     {
       "id": "pdf",
       "label": "PDF",

@@ -2045,87 +2045,83 @@ mostre que o limite a seguir existe e determine seu valor:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{The logarithm and the exponential}
+\section{O logaritmo e a função exponencial}
 \label{sec:logandexp}
 
 %mbxINTROSUBSECTION
 
-\sectionnotes{1 lecture (optional, requires the optional sections 
+\sectionnotes{1 aula (opcional; requer as seções opcionais
 \sectionref{sec:limitatinf},
-\sectionref{sec:monotonefunc},
+\sectionref{sec:monotonefunc} e
 \sectionref{sec:ift})}
 
-We now have the tools required to properly define the exponential
-and the
-logarithm that you know from calculus so well.  We start with
-exponentiation.
-If $n$ is a positive integer, we define
+Agora temos as ferramentas necessárias para definir rigorosamente a função
+exponencial e o logaritmo que você conhece tão bem do cálculo. Começamos
+pela potenciação.
+Se $n$ é um inteiro positivo, definimos
 \begin{equation*}
-x^n \coloneqq \underbrace{x \cdot x \cdots x}_{n \text{ times}} .
+x^n \coloneqq \underbrace{x \cdot x \cdots x}_{n \text{ vezes}} .
 \end{equation*}
-It makes sense to define $x^0 \coloneqq 1$.
-For negative integers, let $x^{-n} \coloneqq \nicefrac{1}{x^n}$ as long as
+Faz sentido definir $x^0 \coloneqq 1$.
+Para inteiros negativos, definimos $x^{-n} \coloneqq \nicefrac{1}{x^n}$, desde que
 $x \neq 0$.
-Next suppose $x > 0$.
-Define
-$x^{1/n}$ as
-the unique positive $n$th root.  Finally, for a rational
-number $\nicefrac{n}{m}$ (in lowest terms), define
+Agora suponha que $x > 0$.
+Definimos $x^{1/n}$ como
+a única raiz $n$-ésima positiva. Por fim, para um número racional
+$\nicefrac{n}{m}$ (em sua forma irredutível), definimos
 \begin{equation*}
 x^{n/m} \coloneqq {\bigl(x^{1/m}\bigr)}^n .
 \end{equation*}
-It is not difficult to show 
-we get the same number no matter what
-representation of $\nicefrac{n}{m}$ we use, so we do not need to use
-lowest terms.
+Não é difícil mostrar que obtemos o mesmo número, qualquer que seja a
+representação de $\nicefrac{n}{m}$ usada; portanto, não precisamos escrevê-la
+na forma irredutível.
 
-However, what do we mean by $\sqrt{2}^{\sqrt{2}}$?  Or
-$x^y$ in general?  In particular, what is $e^x$ for all~$x$?
-And how do we solve $y=e^x$ for~$x$?
-This section answers these questions and more.
+Mas o que queremos dizer com $\sqrt{2}^{\sqrt{2}}$? E com
+$x^y$ em geral? Em particular, o que é $e^x$ para todo $x$?
+E como resolvemos $y=e^x$ em relação a $x$?
+Esta seção responde a essas perguntas e a outras.
 
-\subsection{The logarithm}
-\index{logarithm}
+\subsection{O logaritmo}
+\index{logaritmo}
 
-It is convenient to define the logarithm first.
-Let us show that
-a unique function with the right properties exists, and only then will
-we call it \emph{the} logarithm.
+É conveniente definir primeiro o logaritmo.
+Vamos mostrar que existe uma única função com as propriedades adequadas;
+somente então a chamaremos de \emph{o} logaritmo.
 
 \begin{prop}
-There exists a unique function $L \colon (0,\infty) \to \R$ such that
+Existe uma única função $L \colon (0,\infty) \to \R$ tal que
 \begin{enumerate}[(i)]
 \item \label{it:log:i}
 $L(1) = 0$.
 \item \label{it:log:ii}
-$L$ is differentiable and $L'(x) = \nicefrac{1}{x}$.
+$L$ é diferenciável e $L'(x) = \nicefrac{1}{x}$.
 \item \label{it:log:iii}
-$L$ is strictly increasing, bijective, and
+$L$ é estritamente crescente, bijetiva e
 \begin{equation*}
 \lim_{x\to 0} L(x) = -\infty , \qquad \text{e} \qquad
 \lim_{x\to \infty} L(x) = \infty .
 \end{equation*}
 \item \label{it:log:iv}
-$L(xy) = L(x)+L(y)$ for all $x,y \in (0,\infty)$.
+$L(xy) = L(x)+L(y)$ para todos $x,y \in (0,\infty)$.
 \item \label{it:log:v}
-If $q$ is a rational number and $x > 0$, then
+Se $q$ é racional e $x > 0$, então
 $L(x^q) = q L(x)$.
 \end{enumerate}
 \end{prop}
 
 \begin{proof}
-To prove existence, we define a candidate and show it satisfies
-all the properties.  Let
+Para provar a existência, definimos uma candidata e mostramos que ela satisfaz
+todas as propriedades. Seja
 \begin{equation*}
 L(x) \coloneqq \int_1^x \frac{1}{t}\,dt .
 \end{equation*}
 
-Obviously, \ref{it:log:i} holds.  Property \ref{it:log:ii} holds
-via the second form of the fundamental theorem of calculus
+É claro que vale \ref{it:log:i}. A propriedade \ref{it:log:ii} decorre
+da segunda forma do teorema fundamental do cálculo
 (\thmref{thm:FTCv2}).
 
-To prove property \ref{it:log:iv},
-we change variables $u=yt$ to obtain
+Para provar a propriedade \ref{it:log:iv},
+fazemos a mudança de variável $u=yt$ e obtemos
 \begin{equation*}
 L(x) =
 \int_1^{x} \frac{1}{t}\,dt
@@ -2139,34 +2135,34 @@ L(x) =
 L(xy)-L(y) .
 \end{equation*}
 
-Let us prove \ref{it:log:iii}.
-Property \ref{it:log:ii} together with the fact that $L'(x) = \nicefrac{1}{x} > 0$ 
-for $x > 0$, implies that $L$
-is strictly increasing and hence one-to-one.
-Let us show $L$ is onto.  
-As $\nicefrac{1}{t} \geq \nicefrac{1}{2}$ when $t \in [1,2]$,
+Vamos provar \ref{it:log:iii}.
+A propriedade \ref{it:log:ii}, juntamente com o fato de que
+$L'(x) = \nicefrac{1}{x} > 0$ para $x > 0$, implica que $L$
+é estritamente crescente e, portanto, injetiva.
+Vamos mostrar que $L$ é sobrejetiva.
+Como $\nicefrac{1}{t} \geq \nicefrac{1}{2}$ quando $t \in [1,2]$,
 \begin{equation*}
 L(2) = \int_1^2 \frac{1}{t} \,dt \geq \nicefrac{1}{2} .
 \end{equation*}
-By induction, \ref{it:log:iv} implies that for $n \in \N$,
+Por indução, \ref{it:log:iv} implica que, para $n \in \N$,
 \begin{equation*}
 L(2^n) = L(2) + L(2) + \cdots + L(2) = n L(2) .
 \end{equation*}
-Given $y > 0$, 
-by the \hyperref[thm:arch:i]{Archimedean property} of the real numbers
-(notice $L(2) > 0$), there is an $n \in \N$ such that
-$L(2^n) > y$.  The
-\hyperref[IVT:thm]{intermediate value theorem}
-gives an $x_1 \in (1,2^n)$ such that $L(x_1) = y$.  Thus
-$(0,\infty)$ is in the image of $L$.
-As $L$ is increasing, $L(x) > y$ for all $x > 2^n$, and so
+Seja $y > 0$.
+Pela \hyperref[thm:arch:i]{propriedade arquimediana} dos números reais
+(observe que $L(2) > 0$), existe $n \in \N$ tal que
+$L(2^n) > y$. O
+\hyperref[IVT:thm]{teorema do valor intermediário}
+fornece $x_1 \in (1,2^n)$ tal que $L(x_1) = y$. Assim,
+todos os números positivos pertencem à imagem de $L$.
+Como $L$ é crescente, $L(x) > y$ para todo $x > 2^n$ e, portanto,
 \begin{equation*}
 \lim_{x\to\infty} L(x) = \infty .
 \end{equation*}
-Next
-$0 = L(\nicefrac{x}{x}) = L(x) + L(\nicefrac{1}{x})$, and
-so $L(x) = - L(\nicefrac{1}{x})$.  Using $x=2^{-n}$, we obtain
-as above that $L$ achieves all negative numbers.  And
+Além disso,
+$0 = L(\nicefrac{x}{x}) = L(x) + L(\nicefrac{1}{x})$ e, portanto,
+$L(x) = - L(\nicefrac{1}{x})$. Tomando $x=2^{-n}$, obtemos,
+como antes, que $L$ assume todos os valores negativos. Além disso,
 \begin{equation*}
 \lim_{x \to 0} L(x) = 
 \lim_{x \to 0} -L(\nicefrac{1}{x})
@@ -2174,141 +2170,138 @@ as above that $L$ achieves all negative numbers.  And
 \lim_{x \to \infty} -L(x)
 =  - \infty .
 \end{equation*}
-In the limits, note that only $x > 0$ are in the domain of $L$.
+Nos limites, observe que apenas $x > 0$ pertence ao domínio de $L$.
 
-Let us prove \ref{it:log:v}.
-Fix $x > 0$.
-As above, \ref{it:log:iv} implies
+Vamos provar \ref{it:log:v}.
+Fixe $x > 0$.
+Como vimos, \ref{it:log:iv} implica
 $L(x^n) = n L(x)$
-for all $n \in \N$.
-We already found that
+para todo $n \in \N$.
+Já vimos que
 $L(x) = - L(\nicefrac{1}{x})$,
-so $L(x^{-n}) = - L(x^n) = -n L(x)$.  Then for $m \in \N$
+so $L(x^{-n}) = - L(x^n) = -n L(x)$. Então, para $m \in \N$,
 \begin{equation*}
 L(x) = L\Bigl({(x^{1/m})}^m\Bigr) = m L\bigl(x^{1/m}\bigr) .
 \end{equation*}
-Putting everything together for $n \in \Z$ and $m \in \N$, we have
+Reunindo esses resultados para $n \in \Z$ e $m \in \N$, obtemos
 $L(x^{n/m}) = n L(x^{1/m}) = (\nicefrac{n}{m}) L(x)$.
 
-Uniqueness follows using properties \ref{it:log:i} and
-\ref{it:log:ii}.  Via the first form of the
-fundamental theorem of calculus (\thmref{thm:FTCv1}),
+A unicidade decorre das propriedades \ref{it:log:i} e
+\ref{it:log:ii}. Pela primeira forma do teorema fundamental do cálculo
+(\thmref{thm:FTCv1}),
 \begin{equation*}
 L(x) = \int_1^x \frac{1}{t}\,dt
 \end{equation*}
-is the unique function such that $L(1) = 0$ and $L'(x) = \nicefrac{1}{x}$.
+é a única função tal que $L(1) = 0$ e $L'(x) = \nicefrac{1}{x}$.
 \end{proof}
 
-Having proved
-that there is a unique function with these properties,
-we simply define the \emph{\myindex{logarithm}}, sometimes called the
-\emph{\myindex{natural logarithm}}:
+Depois de provar que existe uma única função com essas propriedades,
+definimos o \emph{\myindex{logaritmo}}, também chamado de
+\emph{\myindex{logaritmo natural}}:
 \glsadd{not:ln}
 \begin{equation*}
 \ln(x) \coloneqq L(x) .
 \end{equation*}
-See \figureref{fig:log}.
-Mathematicians usually write $\log(x)$ instead of $\ln(x)$, which is
-more familiar to calculus students.  For all practical purposes, there is only one logarithm:
-the natural logarithm.  See \exerciseref{exercise:otherlogbases}.
+Veja a \figureref{fig:log}.
+Os matemáticos geralmente escrevem $\log(x)$ em vez de $\ln(x)$, notação
+mais familiar a estudantes de cálculo. Para todos os fins práticos, há um
+único logaritmo: o logaritmo natural. Veja o \exerciseref{exercise:otherlogbases}.
 \begin{myfigureht}
 \myincludegraphics{logfig}{%
-A graph y equals ln of x in a bold line starting steeply
-on the left in the 
-negative values and crossing the x-axis at 1, and getting less and less
-steep as we go further right.
-A plot of y equals 1 over x is in dashed line, it is a line
-that is always positive starting high on the left and getting
-less and less steep as we go to the right.
-The area between the dashed line and the x-axis
-for x between 1 and 4 is shaded and the height of the graph
-of ln at 4 is marked as 'shaded area equals ln of 4'.}
-\caption{Plot of $\ln(x)$ together with $\nicefrac{1}{x}$, showing the value
-$\ln(4)$.\label{fig:log}}
+Gráfico da função y igual ao logaritmo natural de x, em traço espesso,
+começando íngreme à esquerda, com valores negativos, cruzando o eixo x em 1
+e ficando cada vez menos íngreme à medida que avançamos para a direita.
+O gráfico de y igual a 1 sobre x aparece em linha tracejada; é sempre
+positivo, começa alto à esquerda e fica cada vez menos íngreme à medida que
+avançamos para a direita. A região entre a linha tracejada e o eixo x,
+para x entre 1 e 4, está sombreada; a altura do gráfico do logaritmo natural
+em 4 está indicada como “área sombreada igual ao logaritmo natural de 4”.}
+\caption{Gráfico de $\ln(x)$ junto com $\nicefrac{1}{x}$, mostrando o valor
+de $\ln(4)$.\label{fig:log}}
 \end{myfigureht}
 
-\subsection{The exponential}
-\index{exponential}
+\subsection{A função exponencial}
+\index{função exponencial}
 
-Just as with the logarithm we define the exponential via a list of
-properties.
+Assim como fizemos com o logaritmo, definimos a função exponencial por meio
+de uma lista de propriedades.
 
 \begin{prop}
-There exists a unique function $E \colon \R \to (0,\infty)$ such that
+Existe uma única função $E \colon \R \to (0,\infty)$ tal que
 \begin{enumerate}[(i)]
 \item \label{it:exp:i}
 $E(0) = 1$.
 \item \label{it:exp:ii}
-$E$ is differentiable and $E'(x) = E(x)$.
+$E$ é diferenciável e $E'(x) = E(x)$.
 \item \label{it:exp:iii}
-$E$ is strictly increasing, bijective, and
+$E$ é estritamente crescente, bijetiva e
 \begin{equation*}
 \lim_{x\to -\infty} E(x) = 0 \qquad \text{e} \qquad
 \lim_{x\to \infty} E(x) = \infty .
 \end{equation*}
 \item \label{it:exp:iv}
-$E(x+y) = E(x)E(y)$ for all $x,y \in \R$.
+$E(x+y) = E(x)E(y)$ para todos $x,y \in \R$.
 \item \label{it:exp:v}
-If $q \in \Q$, then
+Se $q \in \Q$, então
 $E(qx) = {E(x)}^q$.
 \end{enumerate}
 \end{prop}
 
 \begin{proof}
-Again, we prove existence of such a function by defining a candidate
-and proving that it satisfies all the properties.
-The $L = \ln$ defined above is invertible.  Let $E$ be the
-inverse function of $L$.  Property \ref{it:exp:i} is immediate.
+Novamente, provamos a existência dessa função definindo uma candidata
+e mostrando que ela satisfaz todas as propriedades.
+A função $L = \ln$ definida acima é invertível. Seja $E$ a função inversa
+de $L$. A propriedade \ref{it:exp:i} é imediata.
 
-Property \ref{it:exp:ii} follows
-via the inverse function theorem, in particular
-via \lemmaref{lemma:ift}:  $L$~satisfies
-all the hypotheses of the lemma, and hence
+A propriedade \ref{it:exp:ii} decorre do teorema da função inversa,
+em particular do \lemmaref{lemma:ift}: $L$ satisfaz todas as hipóteses
+do lema e, portanto,
 \begin{equation*}
 E'(x) = \frac{1}{L'\bigl(E(x)\bigr)} = E(x) .
 \end{equation*}
 
-Let us look at property \ref{it:exp:iii}.
-The function $E$ is strictly increasing since 
-$E'(x) = E(x) > 0$.  As $E$ is the inverse of $L$, it must also
-be bijective.  
-To find the limits, we use that 
-$E$ is strictly increasing and onto $(0,\infty)$.
-For every $M > 0$, there is an $x_0$ such that
-$E(x_0) = M$ and $E(x) \geq M$ for all $x \geq x_0$.
-Similarly, for every $\epsilon > 0$, there is
-an $x_0$ such that $E(x_0) = \epsilon$ and
-$E(x) < \epsilon$ for all $x < x_0$.
-Therefore,
+Vejamos a propriedade \ref{it:exp:iii}.
+A função $E$ é estritamente crescente, pois
+$E'(x) = E(x) > 0$. Como $E$ é a inversa de $L$, também é bijetiva.
+Para determinar os limites, usamos o fato de que $E$ é estritamente crescente
+e sobrejetiva em $(0,\infty)$.
+Para todo $M > 0$, existe $x_0$ tal que
+$E(x_0) = M$ e $E(x) \geq M$ para todo $x \geq x_0$.
+De modo semelhante, para todo $\epsilon > 0$, existe
+$x_0$ tal que $E(x_0) = \epsilon$ e
+$E(x) < \epsilon$ para todo $x < x_0$.
+Portanto,
 \begin{equation*}
 \lim_{x\to -\infty} E(x) = 0 \qquad \text{e} \qquad
 \lim_{x\to \infty} E(x) = \infty .
 \end{equation*}
 
-To prove property \ref{it:exp:iv}, we use the corresponding
-property for the logarithm.
-Take $x, y \in \R$.
-As $L$ is bijective, find $a$ and $b$ such that $x = L(a)$ and $y = L(b)$.  Then
+Para provar a propriedade \ref{it:exp:iv}, usamos a propriedade
+correspondente do logaritmo.
+Sejam $x, y \in \R$.
+Como $L$ é bijetiva, existem $a$ e $b$ tais que $x = L(a)$ e $y = L(b)$.
+Então
 \begin{equation*}
 E(x+y) =
 E\bigl(L(a)+L(b)\bigr) = 
 E\bigl(L(ab)\bigr) = ab = E(x)E(y)  .
 \end{equation*}
 
-Property \ref{it:exp:v} also follows from the corresponding property of $L$.
-Given $x \in \R$, let $a$ be such that $x = L(a)$ and
+A propriedade \ref{it:exp:v} também decorre da propriedade correspondente
+de $L$.
+Dado $x \in \R$, seja $a$ tal que $x = L(a)$ e
 \begin{equation*}
 E(qx) = E\bigl(qL(a)\bigr)
 =
 E\bigl(L(a^q)\bigr) = a^q = {E(x)}^q .
 \end{equation*}
 
-Uniqueness follows from
-\ref{it:exp:i} and
+A unicidade decorre de
+\ref{it:exp:i} e
 \ref{it:exp:ii}.
-Let $E$ and $F$
-be two functions satisfying
-\ref{it:exp:i} and \ref{it:exp:ii}.  
+Sejam $E$ e $F$
+duas funções que satisfazem
+\ref{it:exp:i} e \ref{it:exp:ii}.
 \begin{equation*}
 \frac{d}{dx} \Bigl( F(x)E(-x) \Bigr)
 =
@@ -2316,159 +2309,154 @@ F'(x)E(-x) - E'(-x)F(x)
 =
 F(x)E(-x) - E(-x)F(x) = 0 .
 \end{equation*}
-Therefore, by \propref{prop:derzeroconst},
-$F(x)E(-x) = F(0)E(-0) = 1$ for all $x \in \R$.
-Doing the computation with $F = E$,
-we obtain $E(x)E(-x) = 1$.
-Then
+Portanto, pela \propref{prop:derzeroconst},
+$F(x)E(-x) = F(0)E(-0) = 1$ para todo $x \in \R$.
+Fazendo o cálculo com $F = E$,
+obtemos $E(x)E(-x) = 1$.
+Logo,
 \begin{equation*}
 0 = 1-1 = F(x)E(-x) - E(x)E(-x) = \bigl(F(x)-E(x)\bigr) E(-x) .
 \end{equation*}
 %Since $E(x)E(-x) = 1$,
-Finally, $E(-x) \neq 0$\footnote{%
-$E$ is a function into $(0,\infty)$ after all.
-However, $E(-x) \neq 0$ also follows
-from $E(x)E(-x) = 1$.  Therefore, we can prove uniqueness of $E$ 
-given \ref{it:exp:i} and \ref{it:exp:ii}, even for functions $E \colon \R
-\to \R$.}
-for all $x \in \R$.
-So
-$F(x)-E(x) = 0$ for all $x$, and we are done.
+Por fim, $E(-x) \neq 0$\footnote{Afinal,
+$E$ assume valores em $(0,\infty)$. No entanto, $E(-x) \neq 0$ também decorre
+de $E(x)E(-x) = 1$. Portanto, podemos provar a unicidade de $E$
+usando \ref{it:exp:i} e \ref{it:exp:ii}, mesmo para funções
+$E \colon \R \to \R$.}
+para todo $x \in \R$.
+Assim,
+$F(x)-E(x) = 0$ para todo $x$, e a demonstração está concluída.
 \end{proof}
 
-Having proved $E$ is unique, we define the
-\emph{\myindex{exponential}} function (see \figureref{fig:exp}) as
+Depois de provar que $E$ é única, definimos a
+\emph{\myindex{função exponencial}} (veja a \figureref{fig:exp}) por
 \glsadd{not:exp}
 \begin{equation*}
 \exp(x) \coloneqq E(x) .
 \end{equation*}
 \begin{myfigureht}
 \myincludegraphics{expfig}{%
-A slope field graphed on the xy-plane for x between roughly minus 1 to 1
-and y between 0 and 4.  The slope field is a grid of short line segments of
-a given slope.  In this case the slopes are the same in every row.
-They are all upwards (positive) and
-get progressively steeper as we move up.  The graph of the exponential
-function is given.  It is an increasing function coming from the left
-and it follows the slopes given:
-Starting above the x-axis, it passes through the point (0,1), and then gets
-steeper and steeper as it exits the picture on the right.}
-\caption{Plot of $e^x$, together with a slope field giving slope $y$ at
-every point $(x,y)$.
-The equation $\frac{d}{dx} e^x = e^x$ means that $y=e^x$ follows these slopes.\label{fig:exp}}
+Campo de direções no plano $xy$, aproximadamente para $x$ entre $-1$ e $1$
+e $y$ entre 0 e 4. O campo é uma malha de pequenos segmentos com inclinações
+determinadas; neste caso, as inclinações são iguais em cada linha.
+Todas são positivas e ficam cada vez mais acentuadas à medida que subimos.
+Também aparece o gráfico da função exponencial, crescente, vindo da esquerda
+e seguindo as inclinações indicadas: acima do eixo $x$, passa pelo ponto
+$(0,1)$ e fica cada vez mais íngreme até sair da figura pela direita.}
+\caption{Gráfico de $e^x$ junto com um campo de direções que indica a
+inclinação $y$ em cada ponto $(x,y)$. A equação
+$\frac{d}{dx} e^x = e^x$ significa que $y=e^x$ segue essas inclinações.\label{fig:exp}}
 \end{myfigureht}
 
-If $y \in \Q$ and $x > 0$, then
+Se $y \in \Q$ e $x > 0$, então
 \begin{equation*}
 x^y = \exp\bigl(\ln(x^y)\bigr) = \exp\bigl(y\ln(x)\bigr) .
 \end{equation*}
-We can now make sense of exponentiation $x^y$ for arbitrary $y \in \R$;
-if $x > 0$ and $y$ is irrational, define
+Agora podemos dar sentido à potenciação $x^y$ para qualquer $y \in \R$;
+se $x > 0$ e $y$ é irracional, definimos
 \glsadd{not:pow}
 \begin{equation*}
 x^y \coloneqq \exp\bigl(y\ln(x)\bigr) .
 \end{equation*}
-As $\exp$ is continuous, $x^y$ is a continuous function of $y$.
-Therefore, we would
-obtain the same result had we taken a sequence of rational numbers
-$\{ y_n \}_{n=1}^\infty$
-approaching $y$ and defined $x^y = \lim_{n\to\infty} x^{y_n}$.
+Como $\exp$ é contínua, $x^y$ é uma função contínua de $y$.
+Portanto, obteríamos o mesmo resultado se tomássemos uma sequência de números
+racionais $\{ y_n \}_{n=1}^\infty$ que se aproxima de $y$ e definíssemos
+$x^y = \lim_{n\to\infty} x^{y_n}$.
 
-Define the number $e$,
-called \emph{\myindex{Euler's number}} or
-the \emph{\myindex{base of the natural logarithm}}, as
+Definimos o número $e$,
+chamado de \emph{\myindex{número de Euler}} ou
+de \emph{\myindex{base do logaritmo natural}}, por
 \glsadd{not:e}
 \begin{equation*}
 e \coloneqq \exp(1) .
 \end{equation*}
-Let us justify the notation $e^x$ for $\exp(x)$:
+Justifiquemos a notação $e^x$ para $\exp(x)$:
 \begin{equation*}
 e^x = \exp\bigl(x \ln(e) \bigr) = \exp(x) .
 \end{equation*}
 
-The properties of the logarithm and the exponential extend to
-irrational powers.  The proof is immediate.
+As propriedades do logaritmo e da função exponencial se estendem às
+potências irracionais. A demonstração é imediata.
 
 \begin{prop}
-Let $x, y \in \R$.
+Sejam $x, y \in \R$.
 \begin{enumerate}[(i)]
 \item
 $\exp(xy) = {\bigl(\exp(x)\bigr)}^y$.
 \item
-If $x > 0$, then $\ln(x^y) = y \ln (x)$.
+Se $x > 0$, então $\ln(x^y) = y \ln (x)$.
 \end{enumerate}
 \end{prop}
 
 \begin{remark}
-There are other equivalent ways to define the exponential and the logarithm.
-A common way is to define $E$ as the solution to the differential equation
-$E'(x) = E(x)$, $E(0) = 1$.  See \exampleref{example:picardexponential},
-for a sketch of that approach.  Yet another
-approach is to define the exponential function by
-power series, see \exampleref{example:exponentialbypowerseries}.
+Há outras maneiras equivalentes de definir a função exponencial e o logaritmo.
+Uma maneira comum é definir $E$ como solução da equação diferencial
+$E'(x) = E(x)$, $E(0) = 1$. Veja o \exampleref{example:picardexponential}
+para um esboço dessa abordagem. Outra possibilidade
+é definir a função exponencial por meio de séries de potências; veja o
+\exampleref{example:exponentialbypowerseries}.
 \end{remark}
 
 \begin{remark}
-We proved the uniqueness of the functions $L$ and $E$ from
-just the properties $L(1)=0$, $L'(x) = \nicefrac{1}{x}$
-and the equivalent condition for the exponential
-$E'(x) = E(x)$, $E(0) = 1$.  Existence also follows
-from just these properties.
-Alternatively, uniqueness also follows
-from the laws of exponents, see the exercises.
+Provamos a unicidade das funções $L$ e $E$ usando apenas as propriedades
+$L(1)=0$, $L'(x) = \nicefrac{1}{x}$
+e a condição equivalente para a função exponencial,
+$E'(x) = E(x)$, $E(0) = 1$. A existência também decorre
+apenas dessas propriedades.
+Como alternativa, a unicidade também decorre
+das leis das potências; veja os exercícios.
 \end{remark}
 
 \subsection{Exercícios}
 
 \begin{exercise}
-Given a real number $y$ and $b > 0$, define $f \colon (0,\infty) \to \R$
-and $g \colon \R \to \R$ as $f(x) \coloneqq x^y$ and $g(x) \coloneqq b^x$.  Show that $f$
-and $g$ are differentiable and find their derivative.
+Dados um número real $y$ e $b > 0$, definam-se $f \colon (0,\infty) \to \R$
+e $g \colon \R \to \R$ por $f(x) \coloneqq x^y$ e $g(x) \coloneqq b^x$.
+Mostre que $f$ e $g$ são diferenciáveis e determine suas derivadas.
 \end{exercise}
 
 \begin{samepage}
 \begin{exercise} \label{exercise:otherlogbases}
-Let $b > 0$, $b\neq 1$ be given.
+Seja $b > 0$, $b\neq 1$.
 \begin{enumerate}[a)]
 \item
-Show that for every $y > 0$, there exists a unique number $x$
-such that $y = b^x$.  Define
-the \emph{\myindex{logarithm base $b$}},
+Mostre que, para todo $y > 0$, existe um único número $x$
+tal que $y = b^x$. Defina o \emph{\myindex{logaritmo na base $b$}},
 $\log_b \colon (0,\infty) \to \R$, by
 $\log_b(y) \coloneqq x$.
 \item
-Show that $\log_b(x) = \frac{\ln(x)}{\ln(b)}$.
+Mostre que $\log_b(x) = \frac{\ln(x)}{\ln(b)}$.
 \item
-Prove that if $c > 0$, $c \neq 1$, then
+Prove que, se $c > 0$ e $c \neq 1$, então
 $\log_b(x) = \frac{\log_c(x)}{\log_c(b)}$.
 \item
-Prove $\log_b(xy) =
-\log_b(x)+\log_b(y)$, and $\log_b(x^y) = y \log_b(x)$.
+Prove que $\log_b(xy) =
+\log_b(x)+\log_b(y)$ e $\log_b(x^y) = y \log_b(x)$.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
 
-\begin{exercise}[requires \sectionref{sec:taylor}]
-Use \hyperref[thm:taylor]{Taylor's theorem} to study the remainder term and show that for
-all $x \in \R$
+\begin{exercise}[requer a \sectionref{sec:taylor}]
+Use o \hyperref[thm:taylor]{teorema de Taylor} para estudar o termo de resto
+e mostrar que, para todo $x \in \R$,
 \begin{equation*}
 e^x = \sum_{n=0}^\infty \frac{x^n}{n!} .
 \end{equation*}
-Hint: Do not differentiate the series term by term (unless you prove that
-you can do that).
+Sugestão: não derive a série termo a termo, a menos que prove que isso é
+válido.
 \end{exercise}
 
 \begin{exercise}
-Use the geometric sum formula to show (for $t \neq -1$)
+Use a fórmula da soma geométrica para mostrar (para $t \neq -1$) que
 \begin{equation*}
 1-t+t^2-\cdots+{(-1)}^n t^n = \frac{1}{1+t} - \frac{{(-1)}^{n+1}t^{n+1}}{1+t}.
 \end{equation*}
-Using this fact, show
+Usando esse fato, mostre que
 \begin{equation*}
 \ln (1+x) = \sum_{n=1}^\infty \frac{{(-1)}^{n+1}x^n}{n} 
 \end{equation*}
-for all $x \in (-1,1]$ (note that $x=1$ is included).  Finally,
-find the limit of the alternating harmonic series
+para todo $x \in (-1,1]$ (observe que $x=1$ está incluído). Por fim,
+determine o limite da série harmônica alternada
 \begin{equation*}
 \sum_{n=1}^\infty \frac{{(-1)}^{n+1}}{n} = 1 - \frac{1}{2} +
 \frac{1}{3} - \frac{1}{4} + \cdots
@@ -2476,18 +2464,17 @@ find the limit of the alternating harmonic series
 \end{exercise}
 
 \begin{exercise}
-Show 
+Mostre que
 \begin{equation*}
 e^x = \lim_{n\to\infty} {\left( 1 + \frac{x}{n} \right)}^n .
 \end{equation*}
-Hint: Take the logarithm.\\
-Note: The expression 
-${\left( 1 + \frac{x}{n} \right)}^n$ arises in compound interest
-calculations.  It is the amount of money in a bank account after 1 year
-if 1 dollar was deposited initially at interest rate $x$ (e.g., $x=0.01$ for
-$1\%$) and the interest was compounded $n$
-times during the year.  The exponential $e^x$ is the result of continuous
-compounding.
+Sugestão: tome o logaritmo.\\
+Observação: a expressão
+${\left( 1 + \frac{x}{n} \right)}^n$ aparece em cálculos de juros compostos.
+Ela representa o montante em uma conta bancária após um ano, se inicialmente
+for depositado 1 dólar a uma taxa de juros $x$ (por exemplo, $x=0.01$ para
+$1\%$) e os juros forem capitalizados $n$ vezes durante o ano. A função
+exponencial $e^x$ corresponde à capitalização contínua.
 \end{exercise}
 
 \begin{samepage}
@@ -2495,7 +2482,7 @@ compounding.
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Prove that for all integers $n \geq 2$,
+Prove que, para todo inteiro $n \geq 2$,
 \begin{equation*}
 \sum_{k=2}^{n}
 \frac{1}{k}
@@ -2506,39 +2493,39 @@ Prove that for all integers $n \geq 2$,
 \frac{1}{k} .
 \end{equation*}
 \item
-Prove that the limit
+Prove que o limite
 \begin{equation*}
 \gamma \coloneqq \lim_{n\to\infty}
 \left( \left( \sum_{k=1}^{n} \frac{1}{k} \right) - \ln (n) \right)
 \end{equation*}
-exists.  This constant $\gamma$ is known as the
-\emph{\myindex{Euler--Mascheroni constant}}%
-\footnote{Named for the Swiss mathematician
+existe. Essa constante $\gamma$ é chamada de
+\emph{\myindex{constante de Euler--Mascheroni}}%
+\footnote{Nomeada em homenagem ao matemático suíço
 \href{https://en.wikipedia.org/wiki/Leonhard_Euler}{Leonhard Euler}
 (1707--1783)
-and the Italian mathematician
+e ao matemático italiano
 \href{https://en.wikipedia.org/wiki/Lorenzo_Mascheroni}{Lorenzo Mascheroni}
-(1750--1800).}.  It is not known if $\gamma$ is rational or not.
-Approximately, $\gamma \approx 0.5772$.
+(1750--1800).}. Não se sabe se $\gamma$ é racional.
+Seu valor aproximado é $\gamma \approx 0.5772$.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
 
 \begin{exercise}
-Show
+Mostre que
 \begin{equation*}
 \lim_{x\to\infty} \frac{\ln(x)}{x} = 0 .
 \end{equation*}
 \end{exercise}
 
 \begin{exercise}
-Show that $e^x$ is \emph{\myindex{convex}}, in other words, show that 
-if $a \leq x \leq b$, then
+Mostre que $e^x$ é \emph{\myindex{convexa}}; em outras palavras, mostre que,
+se $a \leq x \leq b$, então
 $e^x \leq e^a \frac{b-x}{b-a} + e^b \frac{x-a}{b-a}$.
 \end{exercise}
 
 \begin{exercise}
-Using the logarithm find
+Usando o logaritmo, determine
 \begin{equation*}
 %\lim_{n\to\infty} {\left( 1 + \nicefrac{1}{n} \right)}^n = e .
 \lim_{n\to\infty} n^{1/n} .
@@ -2546,17 +2533,16 @@ Using the logarithm find
 \end{exercise}
 
 \begin{exercise}
-Show that $E(x) = e^x$ is the unique continuous function such that
-$E(x+y) = E(x)E(y)$ and $E(1) = e$.   Similarly, prove that $L(x) = \ln(x)$
-is the unique continuous
-function defined on positive $x$ such that $L(xy) = L(x)+L(y)$
-and $L(e) = 1$.
+Mostre que $E(x) = e^x$ é a única função contínua tal que
+$E(x+y) = E(x)E(y)$ e $E(1) = e$. De modo semelhante, prove que
+$L(x) = \ln(x)$ é a única função contínua definida para $x$ positivo tal que
+$L(xy) = L(x)+L(y)$ e $L(e) = 1$.
 \end{exercise}
 
-\begin{exercise}[requires \sectionref{sec:taylor}]\label{exercise:nonanalytic}
-Since $(e^x)' = e^x$, it is easy to see that $e^x$ is
-\myindex{infinitely differentiable}\index{differentiable!infinitely}
-(has derivatives of all orders).  Define the function $f \colon \R \to \R$.
+\begin{exercise}[requer a \sectionref{sec:taylor}]\label{exercise:nonanalytic}
+Como $(e^x)' = e^x$, é fácil ver que $e^x$ é
+\myindex{infinitamente diferenciável}\index{diferenciável!infinitamente}
+(tem derivadas de todas as ordens). Defina a função $f \colon \R \to \R$.
 \begin{equation*}
 f(x) \coloneqq \begin{cases}
 e^{-1/x} & \text{se } x > 0, \\
@@ -2565,20 +2551,20 @@ e^{-1/x} & \text{se } x > 0, \\
 \end{equation*}
 \begin{enumerate}[a)]
 \item
-Prove that for every $m \in \N$,
+Prove que, para todo $m \in \N$,
 \begin{equation*}
 \lim_{x \to 0^+} \frac{e^{-1/x}}{x^m} = 0 .
 \end{equation*}
 \item
-Prove that $f$ is infinitely differentiable.
+Prove que $f$ é infinitamente diferenciável.
 \item
-Compute the Taylor series for $f$ at the origin, that is,
+Calcule a série de Taylor de $f$ na origem, isto é,
 \begin{equation*}
 \sum_{k=0}^\infty
 \frac{f^{(k)}(0)}{k!}x^k .
 \end{equation*}
-Show that it converges, but show that it does not converge to $f(x)$
-for any given $x > 0$.
+Mostre que ela converge, mas que não converge para $f(x)$
+para nenhum $x > 0$.
 \end{enumerate}
 \end{exercise}
 

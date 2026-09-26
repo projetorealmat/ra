@@ -1040,8 +1040,8 @@ S =
 Duas regiões sombreadas, cada uma com fronteira contínua,
 estão identificadas por S. Uma linha pontilhada contorna cada
 região.
-O interior da primeira está identificado por U sub 1,
-e o da segunda, por U sub 2.
+O interior da primeira está identificado por U de índice 1,
+e o da segunda, por U de índice 2.
 Os interiores das duas linhas pontilhadas se intersectam, mas
 cada região sombreada está dentro de apenas uma das linhas
 pontilhadas.}
@@ -1125,9 +1125,9 @@ Veja a \figureref{fig:intervalcon}.
 Diagrama da reta real com um ponto x indicado à esquerda e um ponto y à
 direita. Entre x e y estão os pontos z e w. Um intervalo aberto que começa
 em algum ponto à esquerda e se estende além de w (contendo x, z e w) está
-identificado como U sub 1.
+identificado como U de índice 1.
 Um intervalo aberto que parte de z e segue até além do diagrama, à direita,
-está identificado como U sub 2.
+está identificado como U de índice 2.
 Um pequeno intervalo aberto entre z menos delta e z mais delta, contendo w,
 está indicado.}
 \caption{Demonstração de que um intervalo é conexo.\label{fig:intervalcon}}
@@ -1548,8 +1548,8 @@ Caso contrário, ela é \emph{divergente}\index{divergente!sequência em um espa
 \begin{myfigureht}
 \myincludegraphics{sequence-convergence-metric}{%
 Um círculo pontilhado de raio epsilon está centrado em p.
-Vários pontos do início da sequência são mostrados, desde x sub 1 até
-x sub 10. Os pontos x sub 1, x sub 3, x sub 4, x sub 5 e x sub 6
+Vários pontos do início da sequência são mostrados, desde x de índice 1 até
+x de índice 10. Os pontos x de índice 1, x de índice 3, x de índice 4, x de índice 5 e x de índice 6
 estão fora do círculo, mas todos os outros estão dentro.}
 \caption{Sequência convergente a $p$. São mostrados os primeiros 10 pontos,
 e $M=7$ para esse $\epsilon$.\label{fig:sequence-convergence-metric}}
@@ -2022,492 +2022,476 @@ seja fechado.
 Então $E$ é um espaço métrico completo com a métrica de subespaço.
 \end{prop}
 
-\subsection{Compactness}
+\subsection{Compacidade}
 
 \begin{defn}
-Let $(X,d)$ be a metric space and $K \subset X$. 
-The set $K$ is said to be \emph{\myindex{compact}}
-if for every collection
-of open sets $\{ U_{\lambda} \}_{\lambda \in I}$ such that
+Seja $(X,d)$ um espaço métrico e $K \subset X$. 
+O conjunto $K$ é \emph{\myindex{compacto}}
+se, para toda coleção
+de conjuntos abertos $\{ U_{\lambda} \}_{\lambda \in I}$ tal que
 \begin{equation*}
 K \subset \bigcup_{\lambda \in I} U_\lambda ,
 \end{equation*}
-there exists a finite subset
+existe um subconjunto finito
 $\{ \lambda_1, \lambda_2,\ldots,\lambda_m \} \subset I$
-such that
+tal que
 \begin{equation*}
 K \subset \bigcup_{j=1}^m U_{\lambda_j} .
 \end{equation*}
 \end{defn}
 
-A collection of open sets $\{ U_{\lambda} \}_{\lambda \in I}$ as above is
-said to be an \emph{\myindex{open cover}} of $K$.  A way to say that
-$K$ is compact is to say that \emph{every open cover of $K$ has a finite
-\myindex{subcover}}.
+Uma coleção de conjuntos abertos $\{ U_{\lambda} \}_{\lambda \in I}$ como
+a anterior é chamada de \emph{\myindex{cobertura aberta}} de $K$.
+Podemos dizer que $K$ é compacto quando \emph{toda cobertura aberta de $K$
+tem uma \myindex{subcobertura} finita}.
 
 \begin{example}
-Let $\R$ be the metric space with the standard metric.
+Considere $\R$ como espaço métrico com a métrica usual.
 
-The set $\R$ is not compact.  Proof: For $j \in \N$, let $U_j \coloneqq (-j,j)$.
-Any $x \in \R$ is in some $U_j$ (by the
-\hyperref[thm:arch:i]{Archimedean property}), so we have an open cover.
-Suppose we have a finite
-subcover $\R \subset U_{j_1} \cup U_{j_2} \cup \cdots \cup U_{j_m}$,
-and suppose $j_1 < j_2 < \cdots < j_m$.  Then $\R \subset U_{j_m}$, but that is
-a contradiction as $j_m \in \R$ on one hand and $j_m \notin U_{j_m} =
-(-j_m,j_m)$ on the
-other.
+O conjunto $\R$ não é compacto. Demonstração: para $j \in \N$, seja
+$U_j \coloneqq (-j,j)$.
+Todo $x \in \R$ pertence a algum $U_j$ (pela
+\hyperref[thm:arch:i]{propriedade arquimediana}), portanto, temos uma
+cobertura aberta.
+Suponha que exista uma subcobertura finita
+$\R \subset U_{j_1} \cup U_{j_2} \cup \cdots \cup U_{j_m}$,
+com $j_1 < j_2 < \cdots < j_m$. Então $\R \subset U_{j_m}$, o que é
+contraditório, pois $j_m \in \R$, mas $j_m \notin U_{j_m} =
+(-j_m,j_m)$.
 
-The set $(0,1) \subset \R$ is also not compact.  Proof:  Take the 
-sets $U_{j} \coloneqq (\nicefrac{1}{j},1-\nicefrac{1}{j})$ for $j=3,4,5,\ldots$.
-As above, $(0,1) = \bigcup_{j=3}^\infty U_j$.  And similarly as above,
-if there exists a finite subcover, then there is one $U_j$ such that $(0,1)
-\subset U_j$, which again leads to a contradiction.
+O conjunto $(0,1) \subset \R$ também não é compacto. Demonstração: tome os
+conjuntos $U_{j} \coloneqq (\nicefrac{1}{j},1-\nicefrac{1}{j})$ para
+$j=3,4,5,\ldots$.
+Como acima, $(0,1) = \bigcup_{j=3}^\infty U_j$. De modo semelhante, se
+existisse uma subcobertura finita, haveria um conjunto $U_j$ tal que
+$(0,1) \subset U_j$, o que novamente levaria a uma contradição.
 
-The set $\{ 0 \} \subset \R$ is compact.  Proof: Given an open cover $\{
-U_{\lambda} \}_{\lambda \in I}$, there must exist a $\lambda_0 \in I$ such that $0
-\in U_{\lambda_0}$
-since $\{ U_{\lambda} \}_{\lambda \in I}$ is a cover.
-The single $U_{\lambda_0}$ gives a
-finite subcover.
+O conjunto $\{ 0 \} \subset \R$ é compacto. Demonstração: dada uma cobertura
+aberta $\{ U_{\lambda} \}_{\lambda \in I}$, deve existir $\lambda_0 \in I$
+tal que $0 \in U_{\lambda_0}$, pois $\{ U_{\lambda} \}_{\lambda \in I}$ é uma
+cobertura.
+O único conjunto $U_{\lambda_0}$ forma uma subcobertura finita.
 
-We will prove below that $[0,1]$, and in fact every closed and bounded
-interval $[a,b]$, is compact.
+Demonstraremos abaixo que $[0,1]$, e de fato todo intervalo fechado e
+limitado $[a,b]$, é compacto.
 \end{example}
 
 \begin{prop}
-Let $(X,d)$ be a metric space.  If $K \subset X$ is compact, then
-$K$ is closed and bounded.
+Seja $(X,d)$ um espaço métrico. Se $K \subset X$ é compacto, então
+$K$ é fechado e limitado.
 \end{prop}
 
 \begin{proof}
-First, we prove that a compact set is bounded.
-Fix $p \in X$.  We have the open cover
+Primeiro, provaremos que um conjunto compacto é limitado.
+Fixe $p \in X$. Temos a cobertura aberta
 \begin{equation*}
 K \subset \bigcup_{n=1}^\infty B(p,n) = X .
 \end{equation*}
-If $K$ is compact, then there exists some set of indices
-$n_1 < n_2 < \ldots < n_m$ such that
+Se $K$ é compacto, existem índices
+$n_1 < n_2 < \ldots < n_m$ tais que
 \begin{equation*}
 K \subset \bigcup_{j=1}^m B(p,n_j) = B(p,n_m) .
 \end{equation*}
-As $K$ is contained in a ball, $K$ is bounded.
-See the left-hand side of \figureref{fig:compactbndclosed}.
+Como $K$ está contido em uma bola, $K$ é limitado.
+Veja o lado esquerdo da \figureref{fig:compactbndclosed}.
 
-Next, we show that a set that is not closed is not compact.  Suppose 
-$\widebar{K} \neq K$, that is, there is a point $x \in \widebar{K}
+Agora mostraremos que um conjunto que não é fechado não é compacto. Suponha
+que $\widebar{K} \neq K$, isto é, que exista um ponto $x \in \widebar{K}
 \setminus K$.
-If $y \neq x$, then
+Se $y \neq x$, então
 $y \notin C(x,\nicefrac{1}{n})$
-for $n \in \N$
-such that $\nicefrac{1}{n} < d(x,y)$.
-Furthermore, $x \notin K$, so
+para $n \in \N$
+tal que $\nicefrac{1}{n} < d(x,y)$.
+Além disso, $x \notin K$, logo
 \begin{equation*}
 K \subset \bigcup_{n=1}^\infty {C(x,\nicefrac{1}{n})}^c .
 \end{equation*}
-A closed ball is closed, so its complement ${C(x,\nicefrac{1}{n})}^c$ is open, and
-we have an open cover.
-If we take any
-finite collection of indices $n_1 < n_2 < \ldots < n_m$, then 
+Uma bola fechada é fechada, portanto, seu complementar ${C(x,\nicefrac{1}{n})}^c$
+é aberto e temos uma cobertura aberta.
+Se tomarmos qualquer
+coleção finita de índices $n_1 < n_2 < \ldots < n_m$, então
 \begin{equation*}
 \bigcup_{j=1}^m {C(x,\nicefrac{1}{n_j})}^c 
 =
-{C(x,\nicefrac{1}{n_m})}^c 
+{C(x,\nicefrac{1}{n_m})}^c .
 \end{equation*}
-As $x$ is in the closure of $K$,
-then
-$C(x,\nicefrac{1}{n_m}) \cap K \neq \emptyset$.  So there is no
-finite subcover and $K$ is not compact.
-See the right-hand side of \figureref{fig:compactbndclosed}.
+Como $x$ pertence ao fecho de $K$,
+temos
+$C(x,\nicefrac{1}{n_m}) \cap K \neq \emptyset$. Portanto, não há
+subcobertura finita e $K$ não é compacto.
+Veja o lado direito da \figureref{fig:compactbndclosed}.
 \end{proof}
 
 \begin{myfigureht}
 \myincludepdft{compact_bnd_closed}{%
-Two diagrams.  A set K is given as a shaded region with solid
-boundary.  In the left diagram, a point p is highlighted
-together with 3 nested open balls (circles in this case)
-of radius 1, 2, and 3 all centered at p with dotted boundary.
-The set K lies in
-the largest one.
-In the right diagram, the background of the diagram is shaded.
-A point x that is on the boundary of K is shown, and 4 closed balls
-are drawn as circles with the inside shaded in lighter and lighter gray,
-indicating that we are looking at the complements.
-The outer ball is of radius 1, then there is a ball of radius one half,
-then a ball of radius one third, then a ball of radius one fourth.
-We note that as x sits on the boundary, the complements of the balls
-cover more and more of K.  On the other hand we also note that K
-has nonempty intersection with all the closed balls.}
-\caption{Proving compact set is bounded (left) and closed (right).\label{fig:compactbndclosed}}
+Dois diagramas. Um conjunto K aparece como região sombreada, delimitada por
+uma linha contínua. No diagrama da esquerda, um ponto p está destacado, junto com
+três bolas abertas encaixadas (círculos neste caso), de raios 1, 2 e 3,
+todas centradas em p e com fronteiras pontilhadas. O conjunto K está
+contido na maior delas.
+No diagrama da direita, o fundo está sombreado.
+Um ponto x na fronteira de K está indicado, e quatro bolas fechadas estão
+desenhadas como círculos, com o interior sombreado em tons de cinza cada vez
+mais claros, indicando que consideramos os complementares.
+A bola externa tem raio 1; seguem-se bolas de raios um meio, um terço e um
+quarto. Como x está na fronteira, os complementares das bolas cobrem porções
+cada vez maiores de K. Por outro lado, K também tem interseção não vazia com
+todas as bolas fechadas.}
+\caption{Demonstração de que um conjunto compacto é limitado (à esquerda)
+e fechado (à direita).\label{fig:compactbndclosed}}
 \end{myfigureht}
 
-We prove below that 
-in a finite-dimensional euclidean space,
-every closed bounded set is compact.
-So closed bounded sets
-of $\R^n$ are examples of compact sets.
-It is not true that in every metric space, closed and bounded is equivalent
-to compact.  A simple example is an incomplete metric space such as
-$(0,1)$ with the subspace metric from $\R$.
-There are many complete and very useful metric spaces
-where closed and bounded is not
-enough to give compactness: $C\bigl([a,b],\R\bigr)$ is a complete metric
-space, but the closed unit ball $C(0,1)$ is not compact, see
-\exerciseref{exercise:msclbounnotcompt}.  However, see also
+Demonstraremos abaixo que, em um espaço euclidiano de dimensão finita,
+todo conjunto fechado e limitado é compacto. Portanto, os conjuntos fechados
+e limitados de $\R^n$ são exemplos de conjuntos compactos.
+Isso não vale em todo espaço métrico: ser fechado e limitado não é
+equivalente a ser compacto. Um exemplo simples é o espaço métrico incompleto
+$(0,1)$ com a métrica de subespaço herdada de $\R$.
+Há muitos espaços métricos completos e muito úteis nos quais ser fechado e
+limitado não basta para garantir compacidade: $C\bigl([a,b],\R\bigr)$ é um
+espaço métrico completo, mas a bola unitária fechada $C(0,1)$ não é compacta;
+veja \exerciseref{exercise:msclbounnotcompt}. Consulte também
 \exerciseref{exercise:mstotbound}.
 
-Not worrying about the boundedness for a moment,
-note further the difference between being closed and being compact.  Being
-closed depends on the ambient metric space:
-The set $(0,1]$ is not closed in $\R$,
-but it is closed in the subspace $(0,\infty)$.
-However, a set $K$ is compact
-in some metric space $(X,d)$ if and only if it is compact in the subspace
-metric on $K$.  So for a compact set, we do not have to ask
-what metric space it lives in.
-On the other hand, every set is always closed in the 
-subspace metric as a subset of itself.
-See also \exerciseref{exercise:subspacecompact}.
+Deixando a limitação de lado por um instante, observe também a diferença
+entre ser fechado e ser compacto. Ser fechado depende do espaço métrico
+ambiente: o conjunto $(0,1]$ não é fechado em $\R$, mas é fechado no
+subespaço $(0,\infty)$.
+No entanto, um conjunto $K$ é compacto em um espaço métrico $(X,d)$ se, e
+somente se, é compacto com a métrica de subespaço em $K$. Assim, para um
+conjunto compacto, não precisamos perguntar em qual espaço métrico ele está.
+Por outro lado, todo conjunto é sempre fechado na métrica de subespaço,
+considerado como subconjunto de si mesmo.
+Veja também \exerciseref{exercise:subspacecompact}.
 
-A useful property of compact sets in a metric space is that every
-sequence in the set has a convergent subsequence converging
-to a point in the set.
-Such sets are called
-\emph{\myindex{sequentially compact}}.
-We will prove that in the
-context of metric spaces, a set is compact if and only if it is sequentially
-compact.
-First we prove a lemma.
+Uma propriedade útil dos conjuntos compactos em um espaço métrico é que toda
+sequência no conjunto tem uma subsequência convergente a um ponto do próprio
+conjunto.
+Esses conjuntos são chamados de
+\emph{\myindex{sequencialmente compacto}}.
+Demonstraremos que, em espaços métricos, um conjunto é compacto se, e
+somente se, é sequencialmente compacto.
+Primeiro, provaremos um lema.
 
-\begin{lemma}[Lebesgue covering lemma%
-\footnote{Named after the French mathematician
+\begin{lemma}[Lema da cobertura de Lebesgue%
+\footnote{Nomeado em homenagem ao matemático francês
 \href{https://en.wikipedia.org/wiki/Henri_Lebesgue}{Henri L\'eon Lebesgue}
 (1875--1941).
-The number $\delta$ is sometimes called the \myindex{Lebesgue number} of the
-cover.}]\label{ms:lebesgue}
-\index{Lebesgue covering lemma}
-Let $(X,d)$ be a metric space and $K \subset X$.  Suppose 
-every sequence in $K$ has a subsequence convergent in $K$.  Given
-an open cover $\{ U_\lambda \}_{\lambda \in I}$ of $K$, there exists a
-$\delta > 0$ such that for every $x \in K$, there exists a $\lambda \in I$
-with $B(x,\delta) \subset U_\lambda$.
+O número $\delta$ às vezes é chamado de \myindex{número de Lebesgue} da
+cobertura.}]\label{ms:lebesgue}
+\index{lema da cobertura de Lebesgue}
+Seja $(X,d)$ um espaço métrico e $K \subset X$. Suponha que toda sequência
+em $K$ tenha uma subsequência convergente em $K$. Dada
+uma cobertura aberta $\{ U_\lambda \}_{\lambda \in I}$ de $K$, existe
+$\delta > 0$ tal que, para todo $x \in K$, existe $\lambda \in I$
+com $B(x,\delta) \subset U_\lambda$.
 \end{lemma}
 
 \begin{proof}
-We prove the lemma by contrapositive.
-If the conclusion is not true, then
-there is
-an open cover $\{ U_\lambda \}_{\lambda \in I}$ of $K$ with
-the following property.
-For every $n \in \N$, there exists an $x_n \in K$ such that
-$B(x_n,\nicefrac{1}{n})$ is not a subset of any $U_\lambda$.
-Take any $x \in K$.  There is
-a $\lambda \in I$ such that $x \in U_\lambda$.  As $U_\lambda$ is open,
-there is an $\epsilon > 0$ 
-such that $B(x,\epsilon) \subset U_\lambda$.  Take $M$ such that
-$\nicefrac{1}{M} < \nicefrac{\epsilon}{2}$.  If $y \in 
-B(x,\nicefrac{\epsilon}{2})$ and $n \geq M$, then 
+Demonstraremos o lema por contraposição.
+Se a conclusão não for verdadeira, então existe
+uma cobertura aberta $\{ U_\lambda \}_{\lambda \in I}$ de $K$ com
+a seguinte propriedade.
+Para todo $n \in \N$, existe $x_n \in K$ tal que
+$B(x_n,\nicefrac{1}{n})$ não está contida em nenhum $U_\lambda$.
+Tome qualquer $x \in K$. Existe
+$\lambda \in I$ tal que $x \in U_\lambda$. Como $U_\lambda$ é aberto,
+existe $\epsilon > 0$
+tal que $B(x,\epsilon) \subset U_\lambda$. Escolha $M$ tal que
+$\nicefrac{1}{M} < \nicefrac{\epsilon}{2}$. Se $y \in
+B(x,\nicefrac{\epsilon}{2})$ e $n \geq M$, então
 \begin{equation*}
 B(y,\nicefrac{1}{n}) \subset
 B(y,\nicefrac{1}{M}) \subset
 B(y,\nicefrac{\epsilon}{2}) \subset B(x,\epsilon)
 \subset U_\lambda ,
 \end{equation*}
-where 
+em que
 $B(y,\nicefrac{\epsilon}{2}) \subset B(x,\epsilon)$
-follows by triangle inequality.
-See \figureref{fig:lebesguedelta}.
-Thus $y \neq x_n$.
-In other words, for all $n \geq M$, $x_n \notin B(x,\nicefrac{\epsilon}{2})$. 
-The sequence cannot have a subsequence converging to $x$.  As $x \in K$ was
-arbitrary, we are done.
+decorre da desigualdade triangular.
+Veja a \figureref{fig:lebesguedelta}.
+Assim, $y \neq x_n$.
+Em outras palavras, para todo $n \geq M$, $x_n \notin B(x,\nicefrac{\epsilon}{2})$.
+A sequência não pode ter uma subsequência que convirja a $x$. Como $x \in K$
+era arbitrário, concluímos a demonstração.
 \end{proof}
 
 \begin{myfigureht}
 \myincludepdft{lebesguedelta}{%
-A diagram of a shaded open set U sub lambda.
-A point x in U sub lambda is marked and a ball of radius
-epsilon centered at x is drawn and this ball sits within U sub lambda.
-A ball of radius epsilon over 2 centered at x is also drawn which
-sits within the larger ball.  A point y in the smaller ball is marked
-and a ball of radius epsilon over 2 centered at y is shown.  We note
-that this ball centered at y sits entirely within the ball
-of radius epsilon centered at x, the largest ball, and hence also within U
-sub lambda.  One last small ball of radius 1 over n centered at y is shown
-that sits within the epsilon over 2 ball centered at y.}
-\caption{Proof of Lebesgue covering lemma.
-Note that $B(y,\nicefrac{\epsilon}{2}) \subset
-B(x,\epsilon)$ by triangle inequality.\label{fig:lebesguedelta}}
+Um diagrama mostra um conjunto aberto U de índice lambda, sombreado.
+Um ponto x nesse conjunto está marcado, e uma bola de raio
+epsilon centrada em x está desenhada dentro dele.
+Também está desenhada uma bola de raio epsilon dividido por 2 centrada em x,
+contida na bola maior.
+Um ponto y na bola menor está marcado, e uma bola de raio epsilon dividido por 2
+centrada em y está representada. Essa bola centrada em y está inteiramente
+dentro da bola de raio epsilon centrada em x, a maior, e portanto também
+dentro do conjunto aberto. Por fim, aparece uma pequena bola de raio 1 dividido por n
+centrada em y, contida na bola de raio epsilon dividido por 2 centrada em y.}
+\caption{Demonstração do lema da cobertura de Lebesgue.
+Note que $B(y,\nicefrac{\epsilon}{2}) \subset
+B(x,\epsilon)$ pela desigualdade triangular.\label{fig:lebesguedelta}}
 \end{myfigureht}
 
-It is important to recognize what the lemma says.  It says that
-if $K$ is sequentially compact, then for any given
-cover, there is a single $\delta > 0$.  The $\delta$ depends on the cover,
-but, of course, it does not depend on $x$.
+É importante compreender o que o lema afirma. Se $K$ é sequencialmente
+compacto, então, para qualquer cobertura dada, existe um mesmo
+$\delta > 0$ que serve para todos os pontos. O valor de $\delta$ depende
+da cobertura, mas, naturalmente, não depende de $x$.
 
-For example, let $K \coloneqq [-10,10]$ and let
-$U_n \coloneqq (n,n+2)$ for $n \in \Z$
-give an open cover.
-Consider $x \in K$. There is an $n \in \Z$, 
-such that $n \leq x < n+1$.
-If $n \leq x < n+\nicefrac{1}{2}$, then
+Por exemplo, seja $K \coloneqq [-10,10]$ e considere a cobertura aberta
+formada por $U_n \coloneqq (n,n+2)$, para $n \in \Z$.
+Tome $x \in K$. Existe $n \in \Z$ tal que $n \leq x < n+1$.
+Se $n \leq x < n+\nicefrac{1}{2}$, então
 $B\bigl(x,\nicefrac{1}{2}\bigr) \subset U_{n-1}$.
-If $n+ \nicefrac{1}{2} \leq x < n+1$, then
-$B\bigl(x,\nicefrac{1}{2}\bigr) \subset U_{n}$.  So $\delta =
-\nicefrac{1}{2}$ will do.  The sets 
-$U'_n \coloneqq \bigl(\frac{n}{2},\frac{n+2}{2} \bigr)$,
-again give an open cover,
-but now the largest $\delta$ that works is $\nicefrac{1}{4}$.
+Se $n+ \nicefrac{1}{2} \leq x < n+1$, então
+$B\bigl(x,\nicefrac{1}{2}\bigr) \subset U_{n}$. Portanto,
+$\delta = \nicefrac{1}{2}$ serve. Os conjuntos
+$U'_n \coloneqq \bigl(\frac{n}{2},\frac{n+2}{2} \bigr)$
+também formam uma cobertura aberta,
+mas agora o maior valor de $\delta$ que serve é $\nicefrac{1}{4}$.
 
-On the other hand, $\N \subset \R$ is not sequentially compact.
-It is an exercise to find a cover for which no $\delta > 0$ works.
-
+Por outro lado, $\N \subset \R$ não é sequencialmente compacto.
+Fica como exercício encontrar uma cobertura para a qual nenhum
+$\delta > 0$ sirva.
 
 \begin{thm} \label{thm:mscompactisseqcpt}
-Let $(X,d)$ be a metric space.  Then $K \subset X$ is compact if
-and only if every sequence in $K$ has a subsequence converging to
-a point in $K$.
+Seja $(X,d)$ um espaço métrico. Então $K \subset X$ é compacto se, e
+somente se, toda sequência em $K$ tem uma subsequência que converge a
+um ponto de $K$.
 \end{thm}
 
 \begin{proof}
-Claim: \emph{Let $K \subset X$ be a subset of $X$ and
-$\{ x_n \}_{n=1}^\infty$ a sequence in $K$.  Suppose that for each $x \in K$,
-there is a ball $B(x,\alpha_x)$ for some $\alpha_x > 0$ such that
-$x_n \in B(x,\alpha_x)$ for only finitely many $n \in \N$.
-Then $K$ is not compact.}
+Afirmação: \emph{Seja $K \subset X$ um subconjunto de $X$ e
+$\{ x_n \}_{n=1}^\infty$ uma sequência em $K$. Suponha que, para cada
+$x \in K$, exista uma bola $B(x,\alpha_x)$, com $\alpha_x > 0$, tal que
+$x_n \in B(x,\alpha_x)$ para apenas um número finito de $n \in \N$.
+Então $K$ não é compacto.}
 
-Proof of the claim:
-Notice
+Demonstração da afirmação:
+Observe que
 \begin{equation*}
 K \subset \bigcup_{x \in K} B(x,\alpha_x) .
 \end{equation*}
-Any finite collection of these balls contains at most finitely many
-elements of $\{ x_n \}_{n=1}^\infty$,
-and so there must be an $x_n \in K$
-not in their union.  Hence, $K$ is not compact and the claim is
-proved.
+Qualquer coleção finita dessas bolas contém apenas um número finito de
+elementos da sequência $\{ x_n \}_{n=1}^\infty$,
+portanto, existe um $x_n \in K$
+que não pertence à união. Logo, $K$ não é compacto, e a afirmação está
+demonstrada.
 
-So suppose that $K$ is compact and $\{ x_n \}_{n=1}^\infty$ is a sequence in $K$.
-Then there exists an $x \in K$ such that
-for all $\delta > 0$,
-$B(x,\delta)$ contains $x_n$ for infinitely many $n \in \N$.
-We define the subsequence inductively.
-The ball $B(x,1)$ contains some $x_k$, so let $n_1 \coloneqq k$.
-Suppose $n_{j-1}$ is defined.
-There must exist a $k > n_{j-1}$
-such that $x_k \in B(x,\nicefrac{1}{j})$.  Define
+Suponha agora que $K$ seja compacto e que $\{ x_n \}_{n=1}^\infty$ seja
+uma sequência em $K$.
+Então existe $x \in K$ tal que, para todo $\delta > 0$,
+$B(x,\delta)$ contém $x_n$ para infinitos $n \in \N$.
+Definiremos a subsequência por indução.
+A bola $B(x,1)$ contém algum $x_k$; seja $n_1 \coloneqq k$.
+Suponha que $n_{j-1}$ esteja definido.
+Deve existir $k > n_{j-1}$
+tal que $x_k \in B(x,\nicefrac{1}{j})$. Defina
 $n_j \coloneqq k$.
-We now possess a subsequence $\{ x_{n_j} \}_{j=1}^\infty$.
-Since
-$d(x,x_{n_j}) < \nicefrac{1}{j}$,  \propref{prop:msconvifa} says
+Assim, temos a subsequência $\{ x_{n_j} \}_{j=1}^\infty$.
+Como
+$d(x,x_{n_j}) < \nicefrac{1}{j}$, a \propref{prop:msconvifa} afirma que
 $\lim_{j\to\infty} x_{n_j} = x$.
 
-For the other direction, suppose every sequence in~$K$
-has a 
-subsequence converging in~$K$.
-Take
-an open cover $\{ U_\lambda \}_{\lambda \in I}$ of $K$.
-Using the Lebesgue covering lemma above, find a $\delta > 0$
-such that for every $x \in K$, there is a $\lambda \in I$ with
+Para a implicação contrária, suponha que toda sequência em $K$
+tenha uma subsequência que converge em $K$.
+Considere uma cobertura aberta $\{ U_\lambda \}_{\lambda \in I}$ de $K$.
+Pelo lema da cobertura de Lebesgue acima, existe $\delta > 0$
+tal que, para todo $x \in K$, existe $\lambda \in I$ com
 $B(x,\delta) \subset U_\lambda$.
 
-Pick $x_1 \in K$ and find $\lambda_1 \in I$ such that $B(x_1,\delta) \subset
-U_{\lambda_1}$.
-If $K \subset U_{\lambda_1}$, we stop as we have found a
-finite subcover.
-Otherwise, there must be
-a point $x_2 \in K \setminus U_{\lambda_1}$.
-Note that $d(x_2,x_1) \geq \delta$.
-There must exist some $\lambda_2 \in I$ such that
+Escolha $x_1 \in K$ e encontre $\lambda_1 \in I$ tal que
+$B(x_1,\delta) \subset U_{\lambda_1}$.
+Se $K \subset U_{\lambda_1}$, paramos, pois encontramos uma
+subcobertura finita.
+Caso contrário, existe
+$x_2 \in K \setminus U_{\lambda_1}$.
+Note que $d(x_2,x_1) \geq \delta$.
+Existe algum $\lambda_2 \in I$ tal que
 $B(x_2,\delta) \subset U_{\lambda_2}$.
-We work inductively.  Suppose $\lambda_{n-1}$ is defined.
-Either
+Prosseguimos por indução. Suponha que $\lambda_{n-1}$ esteja definido.
+Ou
 $U_{\lambda_1} \cup
 U_{\lambda_2} \cup \cdots \cup
-U_{\lambda_{n-1}}$ is a finite cover of $K$, in which case we
-stop, or
-there must be 
-a point $x_n \in K \setminus \bigl( U_{\lambda_1} \cup
+U_{\lambda_{n-1}}$ é uma cobertura finita de $K$, caso em que
+paramos; ou existe
+$x_n \in K \setminus \bigl( U_{\lambda_1} \cup
 U_{\lambda_2} \cup \cdots \cup
 U_{\lambda_{n-1}}\bigr)$.
-Note that $d(x_n,x_j) \geq \delta$ for all $j = 1,2,\ldots,n-1$.
-Next, there must be some $\lambda_n \in I$
-such that $B(x_n,\delta) \subset U_{\lambda_n}$.
-See \figureref{fig:seqcompactiscompact}.
+Note que $d(x_n,x_j) \geq \delta$ para todo $j = 1,2,\ldots,n-1$.
+Em seguida, existe algum $\lambda_n \in I$
+tal que $B(x_n,\delta) \subset U_{\lambda_n}$.
+Veja a \figureref{fig:seqcompactiscompact}.
 
 \begin{myfigureht}
 \myincludepdft{seqcompactiscompact}{%
-A shaded region with a solid boundary is marked K.
-Four points in K are marked x sub 1, x sub 2, x sub 3, and x sub 4.
-Circles of radius delta are drawn centered at x sub 1, x sub 2, and x sub 3.
-Around each of these circles there are three regions outlined in dotted
-line marked U sub lambda sub 1, 
-U sub lambda sub 2,  and
-U sub lambda sub 3.
-The discs, and therefore the surrounding regions, seem to be slowly
-covering the set K entirely on the left-hand side of the picture.}
-\caption{Covering $K$ by $U_{\lambda}$.  The points
-$x_1,x_2,x_3,x_4$, 
-the three sets 
+Uma região sombreada com fronteira contínua está identificada por K.
+Quatro pontos de K estão identificados como x de índice 1, x de índice 2,
+x de índice 3 e x de índice 4.
+Círculos de raio delta estão desenhados com centros em x de índice 1,
+x de índice 2 e x de índice 3.
+Ao redor de cada círculo, há três regiões delimitadas por linhas pontilhadas,
+identificadas como U de índice lambda 1,
+U de índice lambda 2 e
+U de índice lambda 3.
+Os discos e, portanto, as regiões ao redor deles parecem cobrir lentamente
+todo o conjunto K no lado esquerdo da imagem.}
+\caption{Cobertura de $K$ por $U_{\lambda}$. Estão desenhados os pontos
+$x_1,x_2,x_3,x_4$,
+os três conjuntos
 $U_{\lambda_1}$,
 $U_{\lambda_2}$,
 $U_{\lambda_3}$,
-and 
-the first three balls
-of radius $\delta$ are drawn.\label{fig:seqcompactiscompact}}
+e as três primeiras bolas
+de raio $\delta$.\label{fig:seqcompactiscompact}}
 \end{myfigureht}
 
-Either at some point we obtain a finite subcover of $K$,
-or we obtain an
-infinite
-sequence $\{ x_n \}_{n=1}^\infty$ as above.
-For contradiction, suppose that
-there is no finite subcover and we have the sequence $\{ x_n \}_{n=1}^\infty$.
-For all $n$ and $k$, $n \neq k$, 
-we have $d(x_n,x_k) \geq \delta$.
-So no subsequence of $\{ x_n \}_{n=1}^\infty$ is Cauchy.
-Hence, no subsequence of $\{ x_n \}_{n=1}^\infty$ is convergent,
-which is a contradiction.
+Ou, em algum momento, obtemos uma subcobertura finita de $K$,
+ou construímos uma sequência infinita $\{ x_n \}_{n=1}^\infty$ como acima.
+Para obter uma contradição, suponha que não haja subcobertura finita e que
+tenhamos construído a sequência $\{ x_n \}_{n=1}^\infty$.
+Para quaisquer $n$ e $k$ com $n \neq k$,
+temos $d(x_n,x_k) \geq \delta$.
+Logo, nenhuma subsequência de $\{ x_n \}_{n=1}^\infty$ é de Cauchy.
+Portanto, nenhuma subsequência de $\{ x_n \}_{n=1}^\infty$ é convergente,
+o que é uma contradição.
 \end{proof}
 
 \begin{example} \label{example:intervalcompact}
-\thmref{thm:bwseq},
-the Bolzano--Weierstrass theorem for sequences of real numbers,
-says that every bounded sequence in $\R$ has a convergent
-subsequence.  Therefore, every sequence in a closed interval $[a,b] \subset \R$ has 
-a convergent subsequence.  The limit is also in $[a,b]$ as limits
-preserve non-strict inequalities.  Hence, a closed bounded interval $[a,b]
-\subset \R$ is (sequentially) compact.
+O \thmref{thm:bwseq},
+teorema de Bolzano--Weierstrass para sequências de números reais,
+afirma que toda sequência limitada em $\R$ tem uma subsequência convergente.
+Portanto, toda sequência em um intervalo fechado $[a,b] \subset \R$ tem
+uma subsequência convergente. O limite também pertence a $[a,b]$, pois os
+limites preservam desigualdades não estritas. Logo, um intervalo fechado e
+limitado $[a,b] \subset \R$ é compacto (sequencialmente).
 \end{example}
 
 \begin{prop} \label{prop:closedsubsetcompact}
-Let $(X,d)$ be a metric space and let $K \subset X$ be compact.  If
-$E \subset K$ is a closed set, then $E$ is compact.
+Seja $(X,d)$ um espaço métrico e seja $K \subset X$ compacto. Se
+$E \subset K$ é fechado, então $E$ é compacto.
 \end{prop}
 
-Because $K$ is closed, $E$ is closed in $K$ if
-and only if it is closed in $X$.
-See \propref{prop:topology:subspacesame}.
+Como $K$ é fechado, $E$ é fechado em $K$ se, e somente se, é fechado em $X$.
+Veja \propref{prop:topology:subspacesame}.
 
 \begin{proof}
-Let $\{ x_n \}_{n=1}^\infty$ be a sequence in $E$.  It is also a sequence in $K$.
-Therefore, it has a convergent subsequence $\{ x_{n_j} \}_{j=1}^\infty$ that converges to
-some $x \in K$.  As $E$ is closed, the limit of a sequence in $E$ is also in $E$
-and so $x \in E$.  Thus $E$ must be compact.
+Seja $\{ x_n \}_{n=1}^\infty$ uma sequência em $E$. Ela também é uma
+sequência em $K$.
+Portanto, tem uma subsequência convergente $\{ x_{n_j} \}_{j=1}^\infty$ cujo
+limite é algum $x \in K$. Como $E$ é fechado, o limite de uma sequência em
+$E$ também pertence a $E$, logo $x \in E$. Assim, $E$ é compacto.
 \end{proof}
 
 \begin{thm}[Heine--Borel%
-\footnote{Named after the German mathematician 
+\footnote{Nomeado em homenagem ao matemático alemão
 \href{https://en.wikipedia.org/wiki/Eduard_Heine}{Heinrich Eduard Heine}
-(1821--1881),
-and the French mathematician
+(1821--1881)
+e ao matemático francês
 \href{https://en.wikipedia.org/wiki/\%C3\%89mile_Borel}{F\'elix \'Edouard Justin \'Emile Borel}
 (1871--1956).}]%
-\index{Heine--Borel theorem}
+\index{teorema de Heine--Borel}
 \label{thm:msbw}
-A closed bounded subset $K \subset \R^n$ is compact.
+Todo subconjunto fechado e limitado $K \subset \R^n$ é compacto.
 \end{thm}
 
-So subsets of $\R^n$ are compact if and only if they are closed and bounded,
-a condition that is much easier to check.
-Let us reiterate that the Heine--Borel theorem only holds for $\R^n$ and not
-for metric spaces in general.
-The theorem does not hold even for subspaces of $\R^n$, just in $\R^n$
-itself.
-In general, compact implies closed and
-bounded, but not vice versa.
+Assim, os subconjuntos de $\R^n$ são compactos se, e somente se, são
+fechados e limitados, uma condição bem mais fácil de verificar.
+Reiteramos que o teorema de Heine--Borel vale somente para $\R^n$,
+não para espaços métricos em geral.
+O teorema não vale sequer para subespaços de $\R^n$, apenas para o próprio
+$\R^n$.
+Em geral, compacidade implica ser fechado e limitado, mas a recíproca não
+vale.
 
 \begin{proof}
-For $\R = \R^1$, suppose $K \subset \R$ is closed and bounded.
-Then $K \subset [a,b]$ for some closed and bounded interval,
-which is compact by \exampleref{example:intervalcompact}.
-As $K$ is a closed subset of a compact set,
-it is compact by \propref{prop:closedsubsetcompact}.
+Para $\R = \R^1$, suponha que $K \subset \R$ seja fechado e limitado.
+Então $K \subset [a,b]$ para algum intervalo fechado e limitado,
+que é compacto pelo \exampleref{example:intervalcompact}.
+Como $K$ é um subconjunto fechado de um conjunto compacto,
+é compacto pela \propref{prop:closedsubsetcompact}.
 
-We carry out the proof for $n=2$ and leave arbitrary $n$ as an exercise.
-As $K \subset \R^2$ is bounded, there exists a set
-$B=[a,b]\times[c,d] \subset \R^2$ such that $K \subset B$.  We will show
-that $B$ is compact.  Then $K$, being a closed subset of a compact $B$, is
-also compact.  
+Faremos a demonstração para $n=2$ e deixaremos o caso de $n$ arbitrário como exercício.
+Como $K \subset \R^2$ é limitado, existe um conjunto
+$B=[a,b]\times[c,d] \subset \R^2$ tal que $K \subset B$. Mostraremos
+que $B$ é compacto. Então $K$, por ser um subconjunto fechado de $B$,
+que é compacto, também é compacto.
 
-Let $\bigl\{ (x_k,y_k) \bigr\}_{k=1}^\infty$ be a sequence in $B$.  That is,
-$a \leq x_k \leq b$ and
-$c \leq y_k \leq d$ for all $k$.  A bounded sequence of real numbers
-has a convergent
-subsequence, so there is a subsequence $\{ x_{k_j} \}_{j=1}^\infty$
-that is convergent.  The subsequence 
-$\{ y_{k_j} \}_{j=1}^\infty$ is also a bounded sequence so there exists
-a subsequence
-$\{ y_{k_{j_i}} \}_{i=1}^\infty$ that is convergent.  A subsequence of a
-convergent sequence is still convergent, so 
-$\{ x_{k_{j_i}} \}_{i=1}^\infty$ is convergent.
-Let
+Seja $\bigl\{ (x_k,y_k) \bigr\}_{k=1}^\infty$ uma sequência em $B$. Isto é,
+$a \leq x_k \leq b$ e
+$c \leq y_k \leq d$ para todo $k$. Uma sequência limitada de números reais
+tem uma subsequência convergente, portanto existe uma subsequência
+$\{ x_{k_j} \}_{j=1}^\infty$
+convergente. A subsequência
+$\{ y_{k_j} \}_{j=1}^\infty$ também é limitada; logo, existe uma
+subsequência
+$\{ y_{k_{j_i}} \}_{i=1}^\infty$ convergente. Uma subsequência de uma
+sequência convergente continua convergente, portanto
+$\{ x_{k_{j_i}} \}_{i=1}^\infty$ converge.
+Sejam
 \begin{equation*}
 x \coloneqq \lim_{i\to\infty} x_{k_{j_i}}
-\qquad \text{and} \qquad
+\qquad \text{e} \qquad
 y \coloneqq \lim_{i\to\infty} y_{k_{j_i}} .
 \end{equation*}
-By \propref{prop:msconveuc},
-$\bigl\{ (x_{k_{j_i}},y_{k_{j_i}}) \bigr\}_{i=1}^\infty$ converges to $(x,y)$.
-Furthermore, as $a \leq x_k \leq b$ and
-$c \leq y_k \leq d$ for all $k$, we know that $(x,y) \in B$.
+Pela \propref{prop:msconveuc},
+$\bigl\{ (x_{k_{j_i}},y_{k_{j_i}}) \bigr\}_{i=1}^\infty$ converge a $(x,y)$.
+Além disso, como $a \leq x_k \leq b$ e
+$c \leq y_k \leq d$ para todo $k$, sabemos que $(x,y) \in B$.
 \end{proof}
 
 \begin{example}
-The discrete metric provides interesting counterexamples again.
-Let $(X,d)$ be a metric space with the discrete metric, that is, $d(x,y) = 1$
-if $x \neq y$.  Suppose
-$X$ is an infinite set.  Then
+A métrica discreta oferece novamente contraexemplos interessantes.
+Seja $(X,d)$ um espaço métrico com a métrica discreta, isto é,
+$d(x,y) = 1$
+se $x \neq y$. Suponha que
+$X$ seja infinito. Então
 \begin{enumerate}[(i)]
-\item $(X,d)$ is a complete metric space.
-\item Any subset $K \subset X$ is closed and bounded.
-\item A subset $K \subset X$ is compact if and only if it is a finite set.
-\item The conclusion of the Lebesgue covering lemma is always satisfied,
-e.g. with $\delta = \nicefrac{1}{2}$,
-even for noncompact $K \subset X$.
+\item $(X,d)$ é um espaço métrico completo.
+\item Todo subconjunto $K \subset X$ é fechado e limitado.
+\item Um subconjunto $K \subset X$ é compacto se, e somente se, é finito.
+\item A conclusão do lema da cobertura de Lebesgue sempre vale,
+por exemplo, com $\delta = \nicefrac{1}{2}$,
+mesmo para subconjuntos não compactos $K \subset X$.
 \end{enumerate}
-The proofs
-of the statements above are either trivial or are relegated to the exercises
-below.
+As demonstrações das afirmações acima ou são triviais, ou ficam como
+exercício abaixo.
 \end{example}
 
 \begin{remark}
-A subtle issue with Cauchy sequences, completeness, compactness,
-and convergence is that compactness and convergence only depend on the
-topology, that is, on which sets are the open sets.  On the other hand,
-Cauchy sequences and completeness depend on the actual metric.
-See \exerciseref{exercise:cauchydepndsonmetric}.
+Uma questão sutil sobre sequências de Cauchy, completude, compacidade
+e convergência é que a compacidade e a convergência dependem apenas da
+topologia, isto é, de quais conjuntos são abertos. Por outro lado,
+sequências de Cauchy e completude dependem da métrica propriamente dita.
+Veja \exerciseref{exercise:cauchydepndsonmetric}.
 \end{remark}
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
 \begin{exercise}
-Let $(X,d)$ be a metric space and $A$ a finite subset of $X$.
-Show that $A$ is compact.
+Seja $(X,d)$ um espaço métrico e $A$ um subconjunto finito de $X$.
+Mostre que $A$ é compacto.
 \end{exercise}
 
 \begin{samepage}
 \begin{exercise}
-Let $A \coloneqq \{ \nicefrac{1}{n} : n \in \N \} \subset \R$.
+Seja $A \coloneqq \{ \nicefrac{1}{n} : n \in \N \} \subset \R$.
 \begin{enumerate}[a)]
 \item
-Show that $A$ is
-not compact directly using the definition.
+Mostre diretamente pela definição que $A$ não é compacto.
 \item
-Show that $A \cup \{ 0 \}$ is
-compact directly using the definition.
+Mostre diretamente pela definição que $A \cup \{ 0 \}$ é compacto.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
 
-
 \begin{exercise}
-Let $(X,d)$ be a metric space with the discrete metric.
+Seja $(X,d)$ um espaço métrico com a métrica discreta.
 \begin{enumerate}[a)]
 \item
-Prove that $X$ is complete.
+Demonstre que $X$ é completo.
 \item
-Prove that $X$ is compact if and only if $X$ is a finite set.
+Demonstre que $X$ é compacto se, e somente se, $X$ é finito.
 \end{enumerate}
 \end{exercise}
 
@@ -2515,143 +2499,144 @@ Prove that $X$ is compact if and only if $X$ is a finite set.
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Show that the union of finitely many compact sets is a compact set.
+Mostre que a união de um número finito de conjuntos compactos é compacta.
 \item
-Find an example where the union of infinitely many compact sets is not
-compact.
+Encontre um exemplo em que a união de infinitos conjuntos compactos não
+seja compacta.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Prove \thmref{thm:msbw} for arbitrary dimension.
-Hint: The trick is to use the correct notation.
+Demonstre \thmref{thm:msbw} para dimensão arbitrária.
+Dica: o segredo é usar a notação correta.
 \end{exercise}
 
 \begin{exercise} \label{exercise:subspacecompact}
-Show that a compact set $K$ (in any metric space)
-is itself a complete metric space (using the subspace metric).
+Mostre que um conjunto compacto $K$ (em qualquer espaço métrico)
+é, por si só, um espaço métrico completo (com a métrica de subespaço).
 \end{exercise}
 
 \begin{exercise} \label{exercise:CabRcomplete}
-Let $C\bigl([a,b],\R\bigr)$ be the metric space as in \exampleref{example:msC01}.  Show that
-$C\bigl([a,b],\R\bigr)$ is a complete metric space.
+Seja $C\bigl([a,b],\R\bigr)$ o espaço métrico definido em
+\exampleref{example:msC01}. Mostre que
+$C\bigl([a,b],\R\bigr)$ é um espaço métrico completo.
 \end{exercise}
 
-\begin{exercise}[Challenging] \label{exercise:msclbounnotcompt}
-Let $C\bigl([0,1],\R\bigr)$ be the metric space of \exampleref{example:msC01}.  Let $0$
-denote the zero function.  Then show that the closed ball
-$C(0,1)$ is not compact (even though it is closed and bounded).
-Hints: Construct a sequence of distinct continuous functions
-$\{ f_n \}_{n=1}^\infty$ such that
-$d(f_n,0) = 1$ and $d(f_n,f_k) = 1$ for all $n \neq k$.  Show that
-the set $\{ f_n : n \in \N \} \subset C(0,1)$ is closed but not compact.
-See \chapterref{fs:chapter} for inspiration.
+\begin{exercise}[Desafio] \label{exercise:msclbounnotcompt}
+Seja $C\bigl([0,1],\R\bigr)$ o espaço métrico de
+\exampleref{example:msC01}. Seja $0$
+a função nula. Mostre que a bola fechada
+$C(0,1)$ não é compacta (embora seja fechada e limitada).
+Dicas: construa uma sequência de funções contínuas distintas
+$\{ f_n \}_{n=1}^\infty$ tal que
+$d(f_n,0) = 1$ e $d(f_n,f_k) = 1$ para todo $n \neq k$. Mostre que
+o conjunto $\{ f_n : n \in \N \} \subset C(0,1)$ é fechado, mas não compacto.
+Busque inspiração em \chapterref{fs:chapter}.
 \end{exercise}
 
-\begin{exercise}[Challenging]
-Show that there exists a metric on $\R$ that makes $\R$ into a compact set.
+\begin{exercise}[Desafio]
+Mostre que existe uma métrica em $\R$ que torna $\R$ um conjunto compacto.
 \end{exercise}
 
 \begin{exercise}
-Suppose $(X,d)$ is complete and suppose we have a countably infinite
-collection of nonempty compact sets $E_1 \supset E_2 \supset E_3 \supset
-\cdots$.  Prove $\bigcap_{j=1}^\infty E_j \neq \emptyset$.
+Suponha que $(X,d)$ seja completo e que tenhamos uma coleção enumerável infinita
+de conjuntos compactos não vazios $E_1 \supset E_2 \supset E_3 \supset
+\cdots$. Demonstre que $\bigcap_{j=1}^\infty E_j \neq \emptyset$.
 \end{exercise}
 
-\begin{exercise}[Challenging]
-Let $C\bigl([0,1],\R\bigr)$ be the metric space of \exampleref{example:msC01}.
-Let $K$ be the set of $f \in C\bigl([0,1],\R\bigr)$ such that
-$f$ is equal to a quadratic polynomial, i.e.\ $f(x) = a+bx+cx^2$, and such that
-$\babs{f(x)} \leq 1$ for all $x \in [0,1]$,
-that is $f \in C(0,1)$.  Show that $K$ is compact.
+
+\begin{exercise}[Desafio]
+Seja $C\bigl([0,1],\R\bigr)$ o espaço métrico de \exampleref{example:msC01}.
+Seja $K$ o conjunto das funções $f \in C\bigl([0,1],\R\bigr)$ tais que
+$f$ é um polinômio quadrático, isto é, $f(x) = a+bx+cx^2$, e tais que
+$\babs{f(x)} \leq 1$ para todo $x \in [0,1]$,
+ou seja, $f \in C(0,1)$. Mostre que $K$ é compacto.
 \end{exercise}
 
-\begin{exercise}[Challenging] \label{exercise:mstotbound}
-Let $(X,d)$ be a complete metric space.
-Show that $K \subset X$ is compact if and only if $K$ is closed
-and such that for every $\epsilon > 0$
-there exists a finite set of points $x_1,x_2,\ldots,x_n$ with
+\begin{exercise}[Desafio] \label{exercise:mstotbound}
+Seja $(X,d)$ um espaço métrico completo.
+Mostre que $K \subset X$ é compacto se, e somente se, $K$ é fechado
+e, para todo $\epsilon > 0$,
+existe um conjunto finito de pontos $x_1,x_2,\ldots,x_n$ tal que
 $K \subset \bigcup_{j=1}^n B(x_j,\epsilon)$.
-Note: Such a set $K$ is said to be \emph{\myindex{totally bounded}},
-so in a complete metric space a set is compact if and only
-if it is closed and totally bounded.
+Observação: Dizemos que um conjunto $K$ assim é \emph{\myindex{totalmente limitado}},
+portanto, em um espaço métrico completo, um conjunto é compacto se, e somente
+se, é fechado e totalmente limitado.
 \end{exercise}
 
 \begin{exercise}
-Take $\N \subset \R$ using the standard metric.  Find an open cover of $\N$
-such that the conclusion of the Lebesgue covering lemma does not hold.
+Considere $\N \subset \R$ com a métrica usual. Encontre uma cobertura aberta de $\N$
+para a qual a conclusão do lema da cobertura de Lebesgue não vale.
 \end{exercise}
 
 \begin{exercise}
-Prove the general \myindex{Bolzano--Weierstrass theorem}:
-Any bounded sequence $\{ x_k \}_{k=1}^\infty$ in $\R^n$
-has a convergent subsequence.
+Demonstre o \myindex{teorema de Bolzano--Weierstrass} geral:
+toda sequência limitada $\{ x_k \}_{k=1}^\infty$ em $\R^n$
+tem uma subsequência convergente.
 \end{exercise}
 
 \begin{exercise}
-Let $X$ be a metric space and
-$C \subset \sP(X)$ the set of nonempty compact subsets of $X$.
-Using the Hausdorff metric from \exerciseref{exercise:mshausdorffpseudo},
-show that $(C,d_H)$ is a metric space.  That is, show that
-if $L$ and $K$ are nonempty compact subsets, then $d_H(L,K) = 0$
-if and only if $L=K$.
+Seja $X$ um espaço métrico e seja
+$C \subset \sP(X)$ o conjunto dos subconjuntos compactos não vazios de $X$.
+Usando a métrica de Hausdorff de \exerciseref{exercise:mshausdorffpseudo},
+mostre que $(C,d_H)$ é um espaço métrico. Isto é, mostre que
+se $L$ e $K$ são subconjuntos compactos não vazios, então $d_H(L,K) = 0$
+se, e somente se, $L=K$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:closedcomplete}
-Prove \propref{prop:closedcomplete}.  That is,
-let $(X,d)$ be a complete metric space and $E \subset X$ a closed set.
-Show that $E$ with the subspace metric is a complete metric space.
+Demonstre \propref{prop:closedcomplete}. Isto é,
+seja $(X,d)$ um espaço métrico completo e seja $E \subset X$ um conjunto fechado.
+Mostre que $E$, com a métrica de subespaço, é um espaço métrico completo.
 \end{exercise}
 
 \begin{exercise}
-Let $(X,d)$ be an incomplete metric space.  Show that there exists a
-closed and bounded set $E \subset X$ that is not compact.
+Seja $(X,d)$ um espaço métrico incompleto. Mostre que existe um
+conjunto fechado e limitado $E \subset X$ que não é compacto.
 \end{exercise}
 
 \begin{exercise}
-Let $(X,d)$ be a metric space and $K \subset X$.
-Prove that $K$ is compact as a subset of $(X,d)$ if and only if $K$ is
-compact as a subset of itself with the subspace metric.
+Seja $(X,d)$ um espaço métrico e $K \subset X$.
+Demonstre que $K$ é compacto como subconjunto de $(X,d)$ se, e somente se, $K$ é
+compacto como subconjunto de si mesmo com a métrica de subespaço.
 \end{exercise}
 
 \begin{exercise} \label{exercise:cauchydepndsonmetric}
-Consider two metrics on $\R$.
-Let $d(x,y) \coloneqq \sabs{x-y}$ be the standard metric,
-and let
+Considere duas métricas em $\R$.
+Seja $d(x,y) \coloneqq \sabs{x-y}$ a métrica usual,
+e seja
 $d'(x,y) \coloneqq
 \babs{ \frac{x}{1+\sabs{x}} - \frac{y}{1+\sabs{y}} }$.
 \begin{enumerate}[a)]
 \item
-Show that $(\R,d')$ is a metric space (if you have done
-\exerciseref{exercise:extendedrealsmetric}, the computation is the same).
+Mostre que $(\R,d')$ é um espaço métrico (se você resolveu
+\exerciseref{exercise:extendedrealsmetric}, o cálculo é o mesmo).
 \item
-Show that the topology is the same, that is, a set is open in
-$(\R,d)$ if and only if it is open in $(\R,d')$.
+Mostre que a topologia é a mesma, isto é, um conjunto é aberto em
+$(\R,d)$ se, e somente se, é aberto em $(\R,d')$.
 \item
-Show that a set is compact in
-$(\R,d)$ if and only if it is compact in $(\R,d')$.
+Mostre que um conjunto é compacto em
+$(\R,d)$ se, e somente se, é compacto em $(\R,d')$.
 \item
-Show that a sequence converges in $(\R,d)$ if and only if
-it converges in $(\R,d')$.
+Mostre que uma sequência converge em $(\R,d)$ se, e somente se,
+converge em $(\R,d')$.
 \item
-Find a sequence of real numbers that is Cauchy
-in $(\R,d')$ but not Cauchy in $(\R,d)$.
+Encontre uma sequência de números reais que seja de Cauchy
+em $(\R,d')$, mas não seja de Cauchy em $(\R,d)$.
 \item
-While $(\R,d)$ is complete, show that $(\R,d')$ is not complete.
+Embora $(\R,d)$ seja completo, mostre que $(\R,d')$ não é completo.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise} \label{exercise:relativelycompactseq}
 \pagebreak[2]
-Let $(X,d)$ be a complete metric space.
-We say a set $S \subset X$ is \emph{\myindex{relatively compact}}
-if the closure $\widebar{S}$ is compact.
-Prove that $S \subset X$ is relatively compact if and only if
-given any sequence $\{ x_n \}_{n=1}^\infty$ in $S$, there exists a subsequence
-$\{ x_{n_k} \}_{k=1}^\infty$ that converges (in $X$).
+Seja $(X,d)$ um espaço métrico completo.
+Dizemos que um conjunto $S \subset X$ é \emph{\myindex{relativamente compacto}}
+se seu fecho $\widebar{S}$ é compacto.
+Demonstre que $S \subset X$ é relativamente compacto se, e somente se,
+dada qualquer sequência $\{ x_n \}_{n=1}^\infty$ em $S$, existe uma subsequência
+$\{ x_{n_k} \}_{k=1}^\infty$ que converge (em $X$).
 \end{exercise}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
 \section{Continuous functions}

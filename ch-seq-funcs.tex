@@ -1,310 +1,287 @@
-\chapter{Sequences of Functions} \label{fs:chapter}
+\chapter{Sequências de funções} \label{fs:chapter}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Pointwise and uniform convergence}
+\section{Convergência pontual e uniforme}
 \label{sec:puconv}
 
 %mbxINTROSUBSECTION
 
-\sectionnotes{1--1.5 lecture}
+\sectionnotes{1--1,5 aulas}
 
-Up till now, when we talked about limits of sequences we talked about
-sequences of numbers.
-A very useful concept in analysis is a sequence of functions.
-For example, a solution to some differential equation
-might be found by finding only approximate solutions.
-Then the actual solution is some sort of limit of those approximate solutions.
+Até agora, quando falamos de limites de sequências, tratamos de sequências
+de números. Um conceito muito útil em análise é o de sequência de funções.
+Por exemplo, uma solução de certa equação diferencial pode ser encontrada
+determinando-se apenas soluções aproximadas. A solução propriamente dita é,
+então, algum tipo de limite dessas soluções aproximadas.
 
-When talking about sequences of functions, the 
-tricky part is that there are multiple notions of a limit.
-Let us describe two common
-notions of a limit of a sequence of functions.
+Ao tratar de sequências de funções, a dificuldade está no fato de haver
+várias noções de limite. Vamos descrever duas noções comuns de limite para
+uma sequência de funções.
 
-\subsection{Pointwise convergence}
+\subsection{Convergência pontual}
 
 \begin{defn}
-\index{pointwise convergence}
-For every $n \in \N$,
-let $f_n \colon S \to \R$ be a function.  The sequence
+\index{convergência pontual}
+Para todo $n\in\N$, seja $f_n \colon S \to \R$ uma função. Dizemos que a sequência
 $\{ f_n \}_{n=1}^\infty$
-\emph{\myindex{converges pointwise}}\footnote{Unless otherwise specified,
-\emph{converges} generally means \emph{converges pointwise}.}
-to $f \colon S \to \R$ if for every $x
-\in S$,
-we have
+\emph{\myindex{converge pontualmente}}\footnote{Salvo indicação em
+contrário, \emph{convergir} geralmente significa \emph{convergir
+pontualmente}.} para $f \colon S \to \R$ se, para
+todo $x\in S$,
 \begin{equation*}
 f(x) =
 \lim_{n\to\infty} f_n(x) .
 \end{equation*}
 \end{defn}
 
-Limits of sequences of numbers are unique, and so if a sequence
-$\{ f_n \}_{n=1}^\infty$
-converges pointwise, the limit function $f$ is unique.
-It is common to say that $f_n \colon S \to \R$
-\emph{converges pointwise to $f$ on $T \subset S$}
-for some $f \colon T \to \R$.  In that case we mean 
-$f(x) = \lim_{n\to\infty} f_n(x)$ for every $x \in T$.  In other words, the
-restrictions of $f_n$ to $T$ converge pointwise to $f$.
+Os limites de sequências de números são únicos; portanto, se uma sequência
+$\{f_n\}_{n=1}^\infty$ converge pontualmente, a função limite $f$ é única.
+É comum dizer que $f_n \colon S \to \R$ \emph{converge pontualmente para
+$f$ em $T\subset S$}, para alguma função $f \colon T \to \R$. Nesse caso,
+queremos dizer que $f(x)=\lim_{n\to\infty}f_n(x)$ para todo $x\in T$. Em
+outras palavras, as restrições de $f_n$ a $T$ convergem pontualmente para $f$.
 
 
 \begin{example}
-On $[-1,1]$, the sequence of functions defined by $f_n(x) \coloneqq x^{2n}$
-converges pointwise to $f \colon [-1,1] \to \R$, where
+Em $[-1,1]$, a sequência de funções definida por $f_n(x) \coloneqq x^{2n}$
+converge pontualmente para $f \colon [-1,1] \to \R$, dada por
 \begin{equation*}
 f(x) =
 \begin{cases}
-1 & \text{if } x=-1 \text{ or } x=1, \\
-0 & \text{otherwise.}
+1 & \text{se } x=-1 \text{ ou } x=1, \\
+0 & \text{caso contrário.}
 \end{cases}
 \avoidbreak
 \end{equation*}
-See \figureref{x2nfig}.
+Veja a \figureref{x2nfig}.
 
 \begin{myfigureht}
 \myincludegraphics{x2nfig}{%
-Graphs of the functions x squared, x to the fourth, x to the sixth, and
-x to the sixteenth.  The graphs are over the region from minus 1 to 1,
-and all start at the same point on the left-hand side and all end
-at the same point on the right-hand side (as the functions are all 1
-at the endpoints).  Inside the interval the higher powers make the graph
-flatter and closer to the x-axis in the middle, but they have to then rise more
-steeply back to 1 when we get to the ends of the interval.}
-\caption{Graphs of $f_1$, $f_2$, $f_3$, and $f_8$ for $f_n(x) \coloneqq
-x^{2n}$.\label{x2nfig}}
+Gráficos das funções x ao quadrado, x à quarta potência, x à sexta potência
+e x à décima sexta potência, no intervalo de menos 1 a 1. Todos começam no
+mesmo ponto à esquerda e terminam no mesmo ponto à direita, pois as funções
+valem 1 nas extremidades. No interior do intervalo, as potências maiores
+deixam o gráfico mais plano e mais próximo do eixo x no centro; perto das
+extremidades, porém, ele precisa subir mais rapidamente até 1.}
+\caption{Gráficos de $f_1$, $f_2$, $f_3$ e $f_8$, para
+$f_n(x) \coloneqq x^{2n}$.\label{x2nfig}}
 \end{myfigureht}
 
-To see this is so, first take $x \in (-1,1)$.  Then 
-$0 \leq x^2 < 1$.
-We have seen before that
+Para verificar isso, primeiro suponha que $x\in(-1,1)$. Então
+$0\leq x^2<1$. Já vimos que
 \begin{equation*}
 \sabs{x^{2n} - 0} = {(x^2)}^n \to 0 \quad \text{as} \quad n \to \infty .
 \end{equation*}
-Therefore, $\lim_{n\to\infty}f_n(x) = 0$.
-When $x = 1$ or $x=-1$, we have $x^{2n} = 1$ for all $n$ and hence
-$\lim_{n\to\infty}f_n(x) = 1$.
+Portanto, $\lim_{n\to\infty}f_n(x)=0$. Quando $x=1$ ou $x=-1$, temos
+$x^{2n}=1$ para todo $n$ e, consequentemente,
+$\lim_{n\to\infty}f_n(x)=1$.
 
-Note that for $x$ not in $[-1,1]$, the sequence
-$\{ x^{2n} \}_{n=1}^\infty$ does not converge.
-So if we defined $f_n$ on a set larger than $[-1,1]$,
-then $\{ f_n \}_{n=1}^\infty$
-would converge pointwise only on $[-1,1]$.
+Observe que, para $x\notin[-1,1]$, a sequência $\{x^{2n}\}_{n=1}^\infty$
+não converge. Assim, se definíssemos $f_n$ em um conjunto maior que
+$[-1,1]$, a sequência $\{f_n\}_{n=1}^\infty$ convergiria pontualmente
+apenas em $[-1,1]$.
 \end{example}
 
-Often, functions are given as a series.  In this case, we use
-the notion of pointwise convergence to find the values of the function.
+Frequentemente, as funções são dadas por uma série. Nesse caso, usamos a
+noção de convergência pontual para determinar os valores da função.
 
 \begin{example} \label{example:geomsumptconv}
-We write
+Escrevemos
 \begin{equation*}
 \sum_{k=0}^\infty x^k
 \end{equation*}
-to denote the limit of the functions
+para denotar o limite das funções
 \begin{equation*}
 f_n(x) \coloneqq \sum_{k=0}^n x^k .
 \end{equation*}
-When studying series, 
-we saw that for $(-1,1)$ the $f_n$ converge pointwise to
+Ao estudar séries, vimos que, em $(-1,1)$, as funções $f_n$ convergem
+pontualmente para
 \begin{equation*}
 \frac{1}{1-x} .
 \end{equation*}
 
-The subtle point here is that while
-$\frac{1}{1-x}$ is defined for all $x \neq 1$, and $f_n$ are 
-defined for all $x$ (even at $x=1$), convergence only happens on $(-1,1)$.
-Therefore, when we write
+O ponto sutil é que, embora $\frac{1}{1-x}$ esteja definida para todo
+$x\neq 1$ e $f_n$ estejam definidas para todo $x$ (inclusive $x=1$), a
+convergência só ocorre em $(-1,1)$. Portanto, quando escrevemos
 \begin{equation*}
 f(x) \coloneqq \sum_{k=0}^\infty x^k ,
 \end{equation*}
-we mean that $f$ is defined on $(-1,1)$ and is the pointwise limit
-of the partial sums.
+queremos dizer que $f$ está definida em $(-1,1)$ e é o limite pontual das
+somas parciais.
 \end{example}
 
 \begin{example}
-Let $f_n(x) \coloneqq \sin(nx)$.  Then $f_n$ does not converge pointwise
-to any function on any interval.  It may converge at certain points, such
-as when $x=0$ or $x=\pi$.  It is left as an exercise that in any interval
-$[a,b]$, there exists an $x$ such that $\sin(xn)$ does not have a limit
-as $n$ goes to infinity.  See \figureref{fig:nonconvsinxn}.
+Seja $f_n(x) \coloneqq \sin(nx)$. Então $f_n$ não converge pontualmente
+para nenhuma função em qualquer intervalo. A sequência pode convergir em
+certos pontos, como $x=0$ ou $x=\pi$. Deixamos como exercício mostrar que,
+em qualquer intervalo $[a,b]$, existe um $x$ tal que $\sin(xn)$ não tem
+limite quando $n$ tende a infinito. Veja a \figureref{fig:nonconvsinxn}.
 \begin{myfigureht}
 \myincludegraphics{nonconvsinxn}{%
-Graphs of a number of sine waves, with higher frequencies in lighter
-gray.  It is almost like we are trying to fill out
-a horizontal strip by drawing wavy lines.
-All the curves start at the same point on the
-x-axis on the left-hand side
-going upwards, and all go through same point on the x-axis on
-the right hand side going up.
-All the curves go through the center on the x-axis, but some upwards 
-and some downwards.
-Similar patterns repeat at other points, but only some
-of the higher frequency lines go through those points.}
-\caption{Graphs of $\sin(nx)$ for
-$n=1,2,\ldots,10$, with higher $n$ in fainter gray.%
+Gráficos de várias ondas senoidais, com as frequências maiores em cinza mais
+claro. É quase como se tentássemos preencher uma faixa horizontal desenhando
+linhas onduladas. Todas as curvas começam no mesmo ponto do eixo x, à
+esquerda, subindo, e passam pelo mesmo ponto do eixo x à direita, também
+subindo. Todas passam pelo centro do eixo x, algumas subindo e outras
+descendo. Padrões semelhantes se repetem em outros pontos, mas apenas algumas
+das curvas de maior frequência passam por esses pontos.}
+\caption{Gráficos de $\sin(nx)$ para $n=1,2,\ldots,10$, com os valores
+maiores de $n$ em cinza mais claro.%
 \label{fig:nonconvsinxn}}
 \end{myfigureht}
 \end{example}
 
-Before we move to uniform convergence, let us reformulate pointwise
-convergence in a different way.
-We leave the proof to the reader---it is a simple application of the
-definition of convergence of a sequence of real numbers.
+Antes de passar à convergência uniforme, vamos reformular a convergência
+pontual de outra maneira. Deixamos a demonstração para o leitor: trata-se de
+uma aplicação simples da definição de convergência de uma sequência de
+números reais.
 
 \begin{prop} \label{ptwsconv:prop}
-Let $f_n \colon S \to \R$ and $f \colon S \to \R$ be functions.
-Then $\{ f_n \}_{n=1}^\infty$ converges pointwise to $f$ if and only if
-for every $x \in S$ and every $\epsilon > 0$, there exists
-an $N \in \N$ such that
+Sejam $f_n \colon S \to \R$ e $f \colon S \to \R$ funções. Então
+$\{f_n\}_{n=1}^\infty$ converge pontualmente para $f$ se, e somente se,
+para todo $x\in S$ e todo $\epsilon>0$, existe $N\in\N$ tal que
 \begin{equation*}
-\babs{f_n(x)-f(x)} < \epsilon \quad \text{for all } n \geq N .
+\babs{f_n(x)-f(x)} < \epsilon \quad \text{para todo } n \geq N .
 \end{equation*}
 \end{prop}
 
-The key point is that $N$ can depend on $x$, not just on
-$\epsilon$.  For each $x$, we can pick a different $N$.
-If we could pick one $N$ for all $x$, we would have what is called
-uniform convergence.
+O ponto essencial é que $N$ pode depender de $x$, e não apenas de
+$\epsilon$. Para cada $x$, podemos escolher um $N$ diferente.
+Se pudéssemos escolher um único $N$ para todos os valores de $x$, teríamos
+o que se chama convergência uniforme.
 
-\subsection{Uniform convergence}
+\subsection{Convergência uniforme}
 
 \begin{defn}
-\index{uniform convergence}
-Let $f_n \colon S \to \R$
-and $f \colon S \to \R$
-be functions.  The sequence $\{ f_n \}_{n=1}^\infty$
-\emph{\myindex{converges uniformly}} to $f$ if for
-every $\epsilon > 0$, there exists an $N \in \N$ such that 
-for all $n \geq N$,
+\index{convergência uniforme}
+Sejam $f_n \colon S \to \R$ e $f \colon S \to \R$ funções. Dizemos que a
+sequência $\{f_n\}_{n=1}^\infty$ \emph{\myindex{converge uniformemente}}
+para $f$ se, para todo $\epsilon>0$, existe $N\in\N$ tal que, para todo
+$n\geq N$,
 \begin{equation*}
-\babs{f_n(x) - f(x)} < \epsilon \qquad \text{for all } x \in S.
+\babs{f_n(x) - f(x)} < \epsilon \qquad \text{para todo } x \in S.
 \end{equation*}
 \end{defn}
 \begin{myfigureht}
 \myincludegraphics{uniformconv}{%
-A graph of a function marked f with a strip marked around the function
-with its boundary marked f minus epsilon and f plus epsilon.  A function
-marked f sub n is shown as a wiggly line that fits entirely within
-this strip.}
-\caption{In uniform convergence,
-for $n \geq N$,
-the functions $f_n$ are within a strip of $\pm\epsilon$ from $f$.%
+Gráfico de uma função indicada por f, cercada por uma faixa cujos limites
+são indicados por f menos épsilon e f mais épsilon. Uma função indicada por
+f índice n aparece como uma linha ondulada inteiramente contida nessa faixa.}
+\caption{Na convergência uniforme, para $n\geq N$, as funções $f_n$ ficam
+entre os gráficos de $f-\epsilon$ e $f+\epsilon$.%
 \label{fig:uniformconv}}
 \end{myfigureht}
 
-In uniform convergence, $N$ cannot depend on $x$.  Given $\epsilon > 0$,
-we must find an $N$ that works for all $x \in S$.  See
-\figureref{fig:uniformconv} for an illustration.
-Uniform convergence
-implies pointwise convergence, and the proof follows by
+Na convergência uniforme, $N$ não pode depender de $x$. Dado $\epsilon>0$,
+precisamos encontrar um $N$ que sirva para todo $x\in S$. Veja na
+\figureref{fig:uniformconv} uma ilustração. A convergência uniforme implica
+a convergência pontual, como mostra a demonstração a seguir, que decorre da
 \propref{ptwsconv:prop}:
 
 \begin{prop}
-Let $\{ f_n \}_{n=1}^\infty$ be a sequence of functions $f_n \colon S \to \R$.
-If $\{ f_n \}_{n=1}^\infty$ converges
-uniformly to $f \colon S \to \R$, then $\{ f_n \}_{n=1}^\infty$ converges pointwise to $f$.
+Seja $\{f_n\}_{n=1}^\infty$ uma sequência de funções
+$f_n \colon S \to \R$. Se $\{f_n\}_{n=1}^\infty$ converge uniformemente
+para $f \colon S \to \R$, então $\{f_n\}_{n=1}^\infty$ converge
+pontualmente para $f$.
 \end{prop}
 
-The converse does not hold.
+A recíproca não vale.
 
 \begin{example}
-The functions $f_n(x) \coloneqq x^{2n}$ do not converge uniformly on $[-1,1]$,
-even though they converge pointwise.  To see this, suppose for contradiction
-that the convergence is uniform.  For $\epsilon \coloneqq \nicefrac{1}{2}$, there would have
-to exist an $N$ such that $x^{2N} = \sabs{x^{2N} - 0} < \nicefrac{1}{2}$ for all $x \in
-(-1,1)$ (as $f_n(x)$ converges to 0 on $(-1,1)$).  But that means that
-for every sequence $\{ x_k \}_{k=1}^\infty$ in $(-1,1)$ such that $\lim_{k\to\infty} x_k = 1$,
-we have $x_k^{2N} < \nicefrac{1}{2}$ for all $k$.  On the other hand,
-$x^{2N}$ is a continuous function of $x$ (it is a polynomial).  Therefore,
-we obtain a contradiction
+As funções $f_n(x) \coloneqq x^{2n}$ não convergem uniformemente em $[-1,1]$,
+embora convirjam pontualmente. Para ver isso, suponha, por contradição, que
+a convergência seja uniforme. Para $\epsilon \coloneqq \nicefrac{1}{2}$,
+existiria um $N$ tal que $x^{2N}=\sabs{x^{2N}-0}<\nicefrac{1}{2}$ para todo
+$x\in(-1,1)$ (pois $f_n(x)$ converge para 0 em $(-1,1)$). Mas isso implica
+que, para toda sequência $\{x_k\}_{k=1}^\infty$ em $(-1,1)$ tal que
+$\lim_{k\to\infty}x_k=1$, temos $x_k^{2N}<\nicefrac{1}{2}$ para todo $k$.
+Por outro lado, $x^{2N}$ é uma função contínua de $x$ (é um polinômio).
+Assim, obtemos a contradição
 \begin{equation*}
 1 = 1^{2N}  = \lim_{k\to\infty} x_k^{2N} \leq \nicefrac{1}{2} .
 \end{equation*}
 
-However, if we restrict our domain to $[-a,a]$ where $0 < a < 1$, then
-$\{ f_n \}_{n=1}^\infty$ converges uniformly to 0 on $[-a,a]$.  Note that
-$a^{2n} \to 0$ as $n \to \infty$.  Given $\epsilon > 0$,
-pick $N \in \N$ such that
-$a^{2n} < \epsilon$ for all $n \geq N$.
-If $x \in [-a,a]$, then
-$\sabs{x} \leq a$.  So
-for all $n \geq N$ and all $x \in [-a,a]$,
+No entanto, se restringirmos o domínio a $[-a,a]$, com $0<a<1$, então
+$\{f_n\}_{n=1}^\infty$ converge uniformemente para 0 em $[-a,a]$. Observe
+que $a^{2n}\to0$ quando $n\to\infty$. Dado $\epsilon>0$, escolha
+$N\in\N$ tal que $a^{2n}<\epsilon$ para todo $n\geq N$.
+Se $x\in[-a,a]$, então $\sabs{x}\leq a$. Logo, para todo $n\geq N$ e
+todo $x\in[-a,a]$,
 \begin{equation*}
 \sabs{x^{2n}} = \sabs{x}^{2n} \leq a^{2n} < \epsilon .
 \end{equation*}
 \end{example}
 
-\subsection{Convergence in uniform norm}
+\subsection{Convergência na norma uniforme}
 
-For bounded functions, there is another more abstract way to 
-think of uniform convergence.  To every bounded function we assign
-a certain nonnegative number that
-measures the \myquote{distance} of the function from the constant
-function $0$.
-This number allows us to
-\myquote{measure}
-how far two functions are from each other.  We then translate
-a statement about uniform convergence into a statement about a certain
-sequence of real numbers converging to zero.
+Para funções limitadas, há outra maneira, mais abstrata, de pensar na
+convergência uniforme. A cada função limitada associamos um certo número
+não negativo que mede a \myquote{distância} da função à função constante
+$0$. Esse número nos permite \myquote{medir} a distância entre duas
+funções. Então traduzimos uma afirmação sobre convergência uniforme em uma
+afirmação sobre uma certa sequência de números reais que converge a zero.
 
 \begin{defn} \label{def:unifnorm}
-Let $f \colon S \to \R$ be a bounded function.  Define
+Seja $f \colon S \to \R$ uma função limitada. Definimos
 \glsadd{not:uniformnorm}
 \begin{equation*}
 \snorm{f}_S \coloneqq
 \sup \Bigl\{ \babs{f(x)} : x \in S \Bigr\} .
 \avoidbreak
 \end{equation*}
-We call $\snorm{\cdot}_S$ the \emph{\myindex{uniform norm}}.
-Sometimes other notation\footnote{The notation and terminology
-are not completely standardized.  The norm is also called the
-\emph{\myindex{sup norm}} or
-\emph{\myindex{infinity norm}}, and in addition
-to $\snorm{f}_u$ and $\snorm{f}_S$ it is sometimes written
-as $\snorm{f}_{\infty}$ or $\snorm{f}_{\infty,S}$.}
-is used, such as $\snorm{f}_u$.
+Chamamos $\snorm{\cdot}_S$ de \emph{\myindex{norma uniforme}}.
+Às vezes, usa-se outra notação\footnote{A notação e a terminologia não
+são totalmente padronizadas. Essa norma também é chamada de
+\emph{\myindex{norma do supremo}} ou
+\emph{\myindex{norma infinito}}; além de $\snorm{f}_u$ e $\snorm{f}_S$,
+às vezes ela é escrita como $\snorm{f}_{\infty}$ ou
+$\snorm{f}_{\infty,S}$.}, como $\snorm{f}_u$.
 \end{defn}
 
-The subscript is the set over which the supremum is taken.
-So if $K \subset S$, then
+O subscrito indica o conjunto sobre o qual se toma o supremo.
+Assim, se $K \subset S$, então
 \begin{equation*}
 \snorm{f}_K =
 \sup \Bigl\{ \babs{f(x)} : x \in K \Bigr\} .
 \end{equation*}
 
 \begin{prop}
-A sequence of bounded functions $f_n \colon S \to \R$ converges
-uniformly to $f \colon S \to \R$ if and only if
+Uma sequência de funções limitadas $f_n \colon S \to \R$ converge
+uniformemente para $f \colon S \to \R$ se, e somente se,
 \begin{equation*}
 \lim_{n\to\infty} \snorm{f_n - f}_S = 0 .
 \end{equation*}
 \end{prop}
 
 \begin{proof}
-First suppose 
-$\lim_{n\to\infty} \snorm{f_n - f}_S = 0$.  Let $\epsilon > 0$ be
-given.  There exists an $N$ such that
-for $n \geq N$, we have $\snorm{f_n - f}_S < \epsilon$.  As $\snorm{f_n-f}_S$
-is the supremum of $\babs{f_n(x)-f(x)}$, we see that for all $x \in S$,
-we have $\babs{f_n(x)-f(x)} \leq \snorm{f_n - f}_S < \epsilon$.
+Suponha primeiro que
+$\lim_{n\to\infty} \snorm{f_n - f}_S = 0$. Seja $\epsilon > 0$ dado.
+Existe um $N$ tal que, para $n \geq N$, temos
+$\snorm{f_n - f}_S < \epsilon$. Como $\snorm{f_n-f}_S$ é o supremo de
+$\babs{f_n(x)-f(x)}$, concluímos que, para todo $x \in S$,
+$\babs{f_n(x)-f(x)} \leq \snorm{f_n - f}_S < \epsilon$.
 
-On the other hand, suppose $\{ f_n \}_{n=1}^\infty$ converges uniformly to $f$.
-Let $\epsilon > 0$ be given.  Then find $N$ such that 
-for all $n \geq N$, we have
-$\babs{f_n(x)-f(x)} < \epsilon$ for all $x \in S$.
-Taking the supremum over $x \in S$, we see that
-$\snorm{f_n - f}_S \leq \epsilon$.  Hence, $\lim_{n\to\infty} \snorm{f_n-f}_S = 0$.
+Por outro lado, suponha que $\{ f_n \}_{n=1}^\infty$ converge
+uniformemente para $f$. Seja $\epsilon > 0$ dado. Então existe $N$ tal
+que, para todo $n \geq N$, temos $\babs{f_n(x)-f(x)} < \epsilon$ para
+todo $x \in S$. Tomando o supremo em relação a $x \in S$, obtemos
+$\snorm{f_n - f}_S \leq \epsilon$. Portanto,
+$\lim_{n\to\infty} \snorm{f_n-f}_S = 0$.
 \end{proof}
 
-Sometimes it is said that
-\emph{$\{ f_n \}_{n=1}^\infty$ converges to $f$ in uniform norm}%
-\index{converges in uniform norm}\index{uniform norm convergence}
-instead of \emph{converges uniformly} if $\snorm{f_n-f}_S \to 0$.  The proposition
-says that the two notions are the same thing for bounded functions.
+Às vezes, dizemos que
+\emph{$\{ f_n \}_{n=1}^\infty$ converge para $f$ na norma uniforme}%
+\index{converge na norma uniforme}\index{convergência na norma uniforme}
+em vez de dizer que \emph{converge uniformemente}, quando
+$\snorm{f_n-f}_S \to 0$. A proposição afirma que, para funções limitadas,
+as duas noções são equivalentes.
 
 \begin{example}
-Let $f_n \colon [0,1] \to \R$ be defined by $f_n(x) \coloneqq \frac{nx+ \sin(nx^2)}{n}$.
-We claim $\{ f_n \}_{n=1}^\infty$ converges uniformly to $f(x) \coloneqq x$.  Let us compute:
+Seja $f_n \colon [0,1] \to \R$ dada por
+$f_n(x) \coloneqq \frac{nx+ \sin(nx^2)}{n}$.
+Vamos mostrar que $\{ f_n \}_{n=1}^\infty$ converge uniformemente para
+$f(x) \coloneqq x$. Calculemos:
 \begin{equation*}
 \begin{split}
 \snorm{f_n-f}_{[0,1]}
@@ -322,61 +299,59 @@ We claim $\{ f_n \}_{n=1}^\infty$ converges uniformly to $f(x) \coloneqq x$.  Le
 \end{equation*}
 \end{example}
 
-Using the uniform norm, we define Cauchy sequences similarly to
-how we define Cauchy sequences of real numbers.
+Usando a norma uniforme, definimos sequências de Cauchy de modo semelhante
+à definição para sequências de números reais.
 
 \begin{defn}
-Let $f_n \colon S \to \R$ be bounded functions.
-The sequence is \emph{\myindex{Cauchy in the uniform norm}}
-or \emph{\myindex{uniformly Cauchy}}
-if for every $\epsilon > 0$, there exists an $N \in \N$ such
-that for all $m,k \geq N$,
+Sejam $f_n \colon S \to \R$ funções limitadas.
+Dizemos que a sequência é \emph{\myindex{de Cauchy na norma uniforme}}
+ou \emph{\myindex{uniformemente de Cauchy}}
+se, para todo $\epsilon > 0$, existe $N \in \N$ tal que, para todos
+$m,k \geq N$,
 \begin{equation*}
 \snorm{f_m-f_k}_S < \epsilon .
 \end{equation*}
 \end{defn}
 
 \begin{prop} \label{prop:uniformcauchy}
-Let $f_n \colon S \to \R$ be bounded functions.
-Then $\{ f_n \}_{n=1}^\infty$ is Cauchy in the uniform norm if and only if
-there exists an $f \colon S \to \R$ and $\{ f_n \}_{n=1}^\infty$ converges
-uniformly to $f$.
+Sejam $f_n \colon S \to \R$ funções limitadas.
+Então $\{ f_n \}_{n=1}^\infty$ é de Cauchy na norma uniforme se, e somente
+se existe uma função $f \colon S \to \R$ para a qual
+$\{ f_n \}_{n=1}^\infty$ converge uniformemente.
 \end{prop}
 
 \begin{proof}
-First suppose $\{ f_n \}_{n=1}^\infty$ is Cauchy in the uniform norm.
-Let us define $f$.  Fix $x$.
-The sequence $\bigl\{ f_n(x) \bigr\}_{n=1}^\infty$ is Cauchy because
+Suponha primeiro que $\{ f_n \}_{n=1}^\infty$ seja de Cauchy na norma
+uniforme. Vamos definir $f$. Fixe $x$.
+A sequência $\bigl\{ f_n(x) \bigr\}_{n=1}^\infty$ é de Cauchy, pois
 \begin{equation*}
 \babs{f_m(x)-f_k(x)}
 \leq
 \snorm{f_m-f_k}_S .
 \end{equation*}
-Thus $\bigl\{ f_n(x) \bigr\}_{n=1}^\infty$ converges to some real number.  Define $f \colon S
-\to \R$ by
+Assim, $\bigl\{ f_n(x) \bigr\}_{n=1}^\infty$ converge para algum número real. Defina $f \colon S
+\to \R$ por
 \begin{equation*}
 f(x) \coloneqq \lim_{n \to \infty} f_n(x) .
 \end{equation*}
-The sequence
-$\{ f_n \}_{n=1}^\infty$ converges pointwise to $f$.  To show that the convergence
-is uniform, let $\epsilon > 0$ be given.  Find an $N$ such that
-for all $m, k \geq N$, we have
-$\snorm{f_m-f_k}_S < \nicefrac{\epsilon}{2}$.  In other words, for
-all $x$, we have
-$\babs{f_m(x)-f_k(x)} < \nicefrac{\epsilon}{2}$.  For any fixed $x$, take the limit
-as $k$ goes to infinity.  Then $\babs{f_m(x)-f_k(x)}$
-goes to $\babs{f_m(x)-f(x)}$.
-Consequently for all $x$,
+Logo, $\{ f_n \}_{n=1}^\infty$ converge pontualmente para $f$. Para
+mostrar que a convergência é uniforme, seja $\epsilon > 0$ dado. Escolha
+um $N$ tal que, para todos $m,k \geq N$,
+$\snorm{f_m-f_k}_S < \nicefrac{\epsilon}{2}$. Em outras palavras, para
+todo $x$, temos $\babs{f_m(x)-f_k(x)} < \nicefrac{\epsilon}{2}$.
+Fixado $x$, façamos $k$ tender ao infinito. Então
+$\babs{f_m(x)-f_k(x)}$ tende a $\babs{f_m(x)-f(x)}$.
+Consequentemente, para todo $x$,
 \begin{equation*}
 \babs{f_m(x)-f(x)} \leq \nicefrac{\epsilon}{2} < \epsilon .
 \end{equation*}
-Hence, $\{ f_n \}_{n=1}^\infty$ converges uniformly.
+Portanto, $\{ f_n \}_{n=1}^\infty$ converge uniformemente.
 
-Next, we prove the other direction.
-Suppose $\{ f_n \}_{n=1}^\infty$ converges uniformly to
-$f$.  Given $\epsilon > 0$, find $N$ such that for all $n \geq N$,
-we have $\babs{f_n(x)-f(x)} < \nicefrac{\epsilon}{4}$ for all $x \in S$.
-Therefore, for all $m, k \geq N$ and all $x$,
+Agora, provemos a outra implicação.
+Suponha que $\{ f_n \}_{n=1}^\infty$ converge uniformemente para $f$.
+Dado $\epsilon > 0$, escolha $N$ tal que, para todo $n \geq N$,
+$\babs{f_n(x)-f(x)} < \nicefrac{\epsilon}{4}$ para todo $x \in S$.
+Portanto, para todos $m,k \geq N$ e todo $x$,
 \begin{multline*}
 \babs{f_m(x)-f_k(x)} = 
 \babs{f_m(x)-f(x)+f(x)-f_k(x)}
@@ -385,16 +360,16 @@ Therefore, for all $m, k \geq N$ and all $x$,
 \babs{f_m(x)-f(x)}+\babs{f(x)-f_k(x)} < \nicefrac{\epsilon}{4} +
 \nicefrac{\epsilon}{4} = \nicefrac{\epsilon}{2} .
 \end{multline*}
-Take the supremum over all $x$ to obtain
+Tomando o supremo em relação a todo $x$, obtemos
 \begin{equation*}
 \snorm{f_m-f_k}_S \leq \nicefrac{\epsilon}{2} < \epsilon .  \qedhere
 \end{equation*}
 \end{proof}
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
 \begin{exercise}
-Let $f$ and $g$ be bounded functions on $[a,b]$.  Prove 
+Sejam $f$ e $g$ funções limitadas em $[a,b]$. Prove que
 \begin{equation*}
 \snorm{f+g}_{[a,b]} \leq \snorm{f}_{[a,b]} + \snorm{g}_{[a,b]} .
 \end{equation*}
@@ -404,130 +379,128 @@ Let $f$ and $g$ be bounded functions on $[a,b]$.  Prove
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Find the pointwise limit of
-$\left\{ \dfrac{e^{x/n}}{n} \right\}_{n=1}^\infty$ for $x \in \R$.
+Determine o limite pontual de
+$\left\{ \dfrac{e^{x/n}}{n} \right\}_{n=1}^\infty$ para $x \in \R$.
 \item
-Is the limit uniform on $\R$?
+O limite é uniforme em $\R$?
 \item
-Is the limit uniform on $[0,1]$?
+O limite é uniforme em $[0,1]$?
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Suppose $f_n \colon S \to \R$ are functions that converge uniformly
-to $f \colon S \to \R$.  Suppose $A \subset S$.  Show that
-the sequence of restrictions $\{ f_n|_A \}_{n=1}^\infty$ converges uniformly to $f|_A$.
+Suponha que as funções $f_n \colon S \to \R$ convirjam uniformemente
+para $f \colon S \to \R$ e que $A \subset S$. Mostre que a sequência das
+restrições $\{ f_n|_A \}_{n=1}^\infty$ converge uniformemente para $f|_A$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $\{ f_n \}_{n=1}^\infty$ and $\{ g_n \}_{n=1}^\infty$ defined on some set $A$ converge to
-$f$ and $g$ respectively pointwise.  Show that $\{ f_n+g_n \}_{n=1}^\infty$ converges
-pointwise to $f+g$.
+Suponha que $\{ f_n \}_{n=1}^\infty$ e $\{ g_n \}_{n=1}^\infty$, definidas
+em um conjunto $A$, convirjam pontualmente para $f$ e $g, respectivamente.
+Mostre que $\{ f_n+g_n \}_{n=1}^\infty$ converge pontualmente para $f+g$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $\{ f_n \}_{n=1}^\infty$ and $\{ g_n \}_{n=1}^\infty$ defined on some set $A$ converge to
-$f$ and $g$ respectively uniformly on $A$.
-Show that $\{ f_n+g_n \}_{n=1}^\infty$
-converges uniformly to $f+g$ on $A$.
+Suponha que $\{ f_n \}_{n=1}^\infty$ e $\{ g_n \}_{n=1}^\infty$, definidas
+em um conjunto $A$, convirjam uniformemente em $A$ para $f$ e $g,
+respectivamente. Mostre que $\{ f_n+g_n \}_{n=1}^\infty$ converge
+uniformemente em $A$ para $f+g$.
 \end{exercise}
 
 \begin{exercise}
-Find an example of a pair of sequences of functions $\{ f_n \}_{n=1}^\infty$ and
+Encontre um exemplo de um par de sequências de funções $\{ f_n \}_{n=1}^\infty$ e
 $\{ g_n \}_{n=1}^\infty$
-that converge uniformly to some $f$ and $g$ on some set $A$, but such that
-$\{ f_ng_n \}_{n=1}^\infty$ (the multiple) does not converge uniformly to $fg$ on $A$.
-Hint: Let $A \coloneqq \R$, let $f(x)\coloneqq g(x) \coloneqq x$.  You can even pick $f_n = g_n$.
+que convirjam uniformemente em algum conjunto $A$ para certas funções $f$
+e $g$, mas para as quais $\{ f_ng_n \}_{n=1}^\infty$ (o produto) não
+convirja uniformemente para $fg$ em $A$. Dica: tome $A \coloneqq \R$ e
+$f(x)\coloneqq g(x) \coloneqq x$. Você pode até escolher $f_n = g_n$.
 \end{exercise}
 
 \begin{exercise}
-Suppose there exists a sequence of functions $\{ g_n \}_{n=1}^\infty$ uniformly
-converging to $0$ on $A$.  Now suppose we have a sequence of functions
-$\{ f_n \}_{n=1}^\infty$ and a function $f$ on $A$ such that
+Suponha que exista uma sequência de funções $\{ g_n \}_{n=1}^\infty$ que
+convirja uniformemente para $0$ em $A$. Suponha também que tenhamos uma
+sequência de funções $\{ f_n \}_{n=1}^\infty$ e uma função $f$ em $A$ tais que
 \begin{equation*}
 \babs{f_n(x) - f(x)} \leq g_n(x) 
 \end{equation*}
-for all $x \in A$.  Show that $\{ f_n \}_{n=1}^\infty$ converges uniformly to $f$ on $A$.
+para todo $x \in A$. Mostre que $\{ f_n \}_{n=1}^\infty$ converge
+uniformemente para $f$ em $A$.
 \end{exercise}
 
 \begin{exercise}
-Let $\{ f_n \}_{n=1}^\infty$, $\{ g_n \}_{n=1}^\infty$ and
-$\{ h_n \}_{n=1}^\infty$ be sequences of functions on
-$[a,b]$.  Suppose $\{ f_n \}_{n=1}^\infty$ and $\{ h_n \}_{n=1}^\infty$ converge uniformly to some function
-$f \colon [a,b] \to \R$ and suppose $f_n(x) \leq g_n(x) \leq h_n(x)$
-for all $x \in [a,b]$.  Show that $\{ g_n \}_{n=1}^\infty$ converges uniformly to $f$.
+Sejam $\{ f_n \}_{n=1}^\infty$, $\{ g_n \}_{n=1}^\infty$ e
+$\{ h_n \}_{n=1}^\infty$ sequências de funções em $[a,b]$. Suponha que
+$\{ f_n \}_{n=1}^\infty$ e $\{ h_n \}_{n=1}^\infty$ convirjam
+uniformemente para uma função $f \colon [a,b] \to \R$ e que
+$f_n(x) \leq g_n(x) \leq h_n(x)$ para todo $x \in [a,b]$. Mostre que
+$\{ g_n \}_{n=1}^\infty$ converge uniformemente para $f$.
 \end{exercise}
 
 \begin{exercise}
-Let $f_n \colon [0,1] \to \R$ be a sequence of increasing functions (that
-is, $f_n(x) \geq f_n(y)$ whenever $x \geq y$).  Suppose $f_n(0) = 0$
-and $\lim\limits_{n \to \infty} f_n(1) = 0$.  Show that
-$\{ f_n \}_{n=1}^\infty$
-converges uniformly to $0$.
+Seja $f_n \colon [0,1] \to \R$ uma sequência de funções crescentes (isto
+é, $f_n(x) \geq f_n(y)$ sempre que $x \geq y$). Suponha que $f_n(0) = 0$
+e que $\lim\limits_{n \to \infty} f_n(1) = 0$. Mostre que
+$\{ f_n \}_{n=1}^\infty$ converge uniformemente para $0$.
 \end{exercise}
 
 \begin{exercise}
-Consider a sequence of functions $f_n \colon [0,1] \to \R$ so that there
-is a sequence of distinct numbers $x_n \in [0,1]$ such that
-for all $n$,
+Considere uma sequência de funções $f_n \colon [0,1] \to \R$ para a qual
+existe uma sequência de números distintos $x_n \in [0,1]$ tal que, para
+todo $n$,
 \begin{equation*}
 f_n(x_n) = 1.
 \end{equation*}
-Prove or disprove the following statements:
+Prove ou refute as afirmações seguintes:
 \begin{enumerate}[a)]
 \item
-True or false: There exists $\{ f_n \}_{n=1}^\infty$ as above that
-converges pointwise to $0$.
+Verdadeiro ou falso: existe uma sequência $\{ f_n \}_{n=1}^\infty$ como
+acima que converge pontualmente para $0$.
 \item
-True or false: There exists $\{ f_n \}_{n=1}^\infty$ as above that
-converges uniformly to $0$.
+Verdadeiro ou falso: existe uma sequência $\{ f_n \}_{n=1}^\infty$ como
+acima que converge uniformemente para $0$.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Fix a continuous $h \colon [a,b] \to \R$.
-Let $f(x) \coloneqq h(x)$ for $x \in [a,b]$,
-$f(x) \coloneqq h(a)$ for $x < a$ and $f(x) \coloneqq h(b)$ for all $x > b$.  First show
-that $f \colon \R \to \R$ is continuous.
-Now let $f_n$ be
-the function $g$ from \exerciseref{exercise:smoothingout} with
-$\epsilon = \nicefrac{1}{n}$, defined on the interval $[a,b]$.  That is,
+Fixe uma função contínua $h \colon [a,b] \to \R$.
+Defina $f(x) \coloneqq h(x)$ para $x \in [a,b]$,
+$f(x) \coloneqq h(a)$ para $x < a$ e $f(x) \coloneqq h(b)$ para todo
+$x > b$. Primeiro, mostre que $f \colon \R \to \R$ é contínua.
+Agora, seja $f_n$ a função $g$ do
+\exerciseref{exercise:smoothingout}, com $\epsilon = \nicefrac{1}{n}$,
+definida no intervalo $[a,b]$. Isto é,
 \begin{equation*}
 f_n(x) \coloneqq \frac{n}{2} \int_{x-1/n}^{x+1/n} f .
 \end{equation*}
-Show that $\{ f_n \}_{n=1}^\infty$ converges uniformly to $h$ on $[a,b]$.
+Mostre que $\{ f_n \}_{n=1}^\infty$ converge uniformemente para $h$ em $[a,b]$.
 \end{exercise}
 
 
 \begin{exercise}
-Prove that
-if a sequence of functions $f_n \colon S \to \R$
-converge uniformly to a bounded function $f \colon S \to \R$,
-then there exists an $N$ such that for all $n \geq N$, the $f_n$
-are bounded.
+Prove que, se uma sequência de funções $f_n \colon S \to \R$ converge
+uniformemente para uma função limitada $f \colon S \to \R$, então existe
+um $N$ tal que $f_n$ é limitada para todo $n \geq N$.
 \end{exercise}
 
 \begin{exercise}
-Suppose there is a single constant $B$ and
-a sequence of functions
-$f_n \colon S \to \R$ that are bounded by $B$,
-that is $\babs{f_n(x)} \leq B$ for all $x \in S$.
-Suppose that $\{ f_n \}_{n=1}^\infty$ converges pointwise
-to $f \colon S \to \R$.
-Prove that $f$ is bounded.
+Suponha que exista uma constante $B$ tal que uma sequência de funções
+$f_n \colon S \to \R$ seja limitada por $B$, isto é,
+$\babs{f_n(x)} \leq B$ para todo $x \in S$.
+Suponha que $\{ f_n \}_{n=1}^\infty$ convirja pontualmente para
+$f \colon S \to \R$. Prove que $f$ é limitada.
 \end{exercise}
 
-\begin{exercise}[requires \sectionref{sec:moreonseries}]
-In \exampleref{example:geomsumptconv} we saw
-$\sum_{k=0}^\infty x^k$ converges pointwise to $\frac{1}{1-x}$ on
+\begin{exercise}[requer \sectionref{sec:moreonseries}]
+No \exampleref{example:geomsumptconv}, vimos que
+$\sum_{k=0}^\infty x^k$ converge pontualmente para $\frac{1}{1-x}$ em
 $(-1,1)$.
 \begin{enumerate}[a)]
 \item
-Show that whenever $0 \leq c < 1$, the series
-$\sum_{k=0}^\infty x^k$ converges uniformly on $[-c,c]$.
+Mostre que, sempre que $0 \leq c < 1$, a série
+$\sum_{k=0}^\infty x^k$ converge uniformemente em $[-c,c]$.
 \item
-Show that the series $\sum_{k=0}^\infty x^k$ does not converge uniformly
-on $(-1,1)$.
+Mostre que a série $\sum_{k=0}^\infty x^k$ não converge uniformemente
+em $(-1,1)$.
 \end{enumerate}
 \end{exercise}
 

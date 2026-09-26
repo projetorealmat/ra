@@ -1551,118 +1551,114 @@ Prove que $\lim\limits_{n\to\infty} x_n = 0$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{Fundamental theorem of calculus}
+\section{Teorema fundamental do cálculo}
 \label{sec:ftc}
 
 %mbxINTROSUBSECTION
 
-\sectionnotes{1.5 lectures}
+\sectionnotes{1,5 aulas}
 
-In this section we discuss and prove the
-\emph{\myindex{fundamental theorem of calculus}}.
-The entirety of integral calculus is built upon this theorem,
-ergo the name.
-The theorem relates the seemingly unrelated concepts of integral and
-derivative.  It tells us how to compute the antiderivative of a function
-using the integral and vice versa.
+Nesta seção, discutimos e demonstramos o
+\emph{\myindex{teorema fundamental do cálculo}}.
+Todo o cálculo integral se baseia nesse teorema, daí seu nome.
+O teorema relaciona os conceitos aparentemente desconexos de integral e
+derivada. Ele nos diz como calcular uma primitiva usando a integral e
+vice-versa.
 
-\subsection{First form of the theorem}
+\subsection{Primeira forma do teorema}
 
 \begin{thm} \label{thm:FTCv1}
-Let $F \colon [a,b] \to \R$ be a continuous function, differentiable
-on $(a,b)$.  Let $f \in \sR\bigl([a,b]\bigr)$ be such that $f(x) = F'(x)$ for $x \in
-(a,b)$.  Then
+Seja $F \colon [a,b] \to \R$ uma função contínua e diferenciável
+em $(a,b)$. Seja $f \in \sR\bigl([a,b]\bigr)$ tal que $f(x) = F'(x)$ para
+$x \in (a,b)$. Então
 \begin{equation*}
 \int_a^b f = F(b)-F(a) .
 \end{equation*}
 \end{thm}
 
-It is not hard to generalize the theorem to allow a finite number of points
-in $[a,b]$ where $F$ is not differentiable, as long as it is continuous.
-This generalization is left as an exercise.
+É fácil generalizar o teorema para permitir um número finito de pontos
+de $[a,b]$ nos quais $F$ não seja diferenciável, desde que continue sendo
+contínua. Essa generalização fica como exercício.
 
 \begin{proof}
-Let $P = \{ x_0, x_1, \ldots, x_n \}$ be a partition of $[a,b]$.
-For each interval $[x_{i-1},x_i]$, use the
-\hyperref[thm:mvt]{mean value theorem} to find a
-$c_i \in (x_{i-1},x_i)$ such that
+Seja $P = \{ x_0, x_1, \ldots, x_n \}$ uma partição de $[a,b]$.
+Para cada intervalo $[x_{i-1},x_i]$, aplicamos o
+\hyperref[thm:mvt]{teorema do valor médio} para encontrar um
+$c_i \in (x_{i-1},x_i)$ tal que
 \begin{equation*}
 f(c_i) \Delta x_i = F'(c_i) (x_i - x_{i-1}) = F(x_i) - F(x_{i-1}) .
 \end{equation*}
-See \figureref{fig:fundthmfig}, and
-note that the area of the
-$i$th rectangle is
+Veja a \figureref{fig:fundthmfig} e observe que a área do
+$i$-ésimo retângulo é
 $F(x_{i})-F(x_{i-1})$,
-and the total area of all three rectangles pictured is
+e que a área total dos três retângulos ilustrados é
 $F(x_{i+1})-F(x_{i-2})$.
-The idea is that taking smaller and smaller subintervals,
-the total area of all these rectangles converges to the integral of $f$.
+A ideia é que, ao tomarmos subintervalos cada vez menores,
+a área total desses retângulos converge para a integral de $f$.
 \begin{myfigureht}
 \myincludegraphics{fundthmfig}{%
-A diagram of a graph of a function in dark bold
-marked as y equals f of x equals F prime of x
-and three subintervals of the x coordinates.
-The middle subinterval is labeled as going from
-x sub quantity i minus 1 to x sub i and is of length Delta x sub i.
-A point c sub i is marked inside this subinterval and a
-dashed line goes up vertically until f of c sub i where it hits
-the graph of f.  A shaded rectangle of this height and the subinterval
-as the base is drawn and labeled with 'area equals f of c sub i times Delta
-x sub i equals F of x sub i minus F of x sub quantity i minus 1'.
-The other two subintervals are similar except on the left
-we replace i with i minus 1 and on the right we replace i with
-i plus 1.}
-\caption{Mean value theorem on subintervals of a partition
-approximating the area under the curve.\label{fig:fundthmfig}}
+Diagrama do gráfico de uma função, em traço escuro e espesso,
+identificado pela expressão “y igual a f de x, igual à derivada de F em x”,
+com três subintervalos no eixo das abscissas.
+O subintervalo central vai de $x_{i-1}$ a $x_i$ e tem comprimento $\Delta x_i$.
+Um ponto $c_i$ está marcado nesse subintervalo; uma linha tracejada sobe
+verticalmente até $f(c_i)$, onde encontra o gráfico de $f$. Há um retângulo
+sombreado com essa altura e o subintervalo como base. Ele está identificado
+por “área igual a f de c sub i vezes delta x sub i, igual a F de x com índice
+i menos F de x com índice i menos 1”. Os outros dois
+subintervalos são semelhantes: no da esquerda, substituímos i por i menos 1;
+no da direita, substituímos i por i mais 1.}
+\caption{Teorema do valor médio aplicado aos subintervalos de uma partição
+para aproximar a área sob a curva.\label{fig:fundthmfig}}
 \end{myfigureht}
 
-Using the notation from the definition of the integral,
-$m_i \leq f(c_i) \leq M_i$, and multiplying by $\Delta x_i$ gets
+Usando a notação da definição da integral,
+$m_i \leq f(c_i) \leq M_i$; ao multiplicarmos por $\Delta x_i$, obtemos
 \begin{equation*}
 m_i \Delta x_i \leq F(x_i) - F(x_{i-1}) \leq M_i \Delta x_i .
 \end{equation*}
-We sum over $i = 1,2, \ldots, n$ to get
+Somamos para $i = 1,2, \ldots, n$ e obtemos
 \begin{equation*}
 \sum_{i=1}^n m_i \Delta x_i
 \leq \sum_{i=1}^n \bigl(F(x_i) - F(x_{i-1}) \bigr)
 \leq \sum_{i=1}^n M_i \Delta x_i .
 \end{equation*}
-In the middle sum, all the terms except the first and last cancel 
-and we end up with $F(x_n)-F(x_0) = F(b)-F(a)$.  The sums on the left
-and on the right are the lower and the upper sums, respectively.  So
+Na soma do meio, todos os termos, exceto o primeiro e o último, se cancelam,
+e obtemos $F(x_n)-F(x_0) = F(b)-F(a)$. As somas à esquerda e à direita
+são, respectivamente, as somas inferior e superior. Portanto,
 \begin{equation*}
 L(P,f) \leq F(b)-F(a) \leq U(P,f) .
 \end{equation*}
-We take the supremum of $L(P,f)$ over all partitions $P$ and the left inequality
-yields 
+Tomamos o supremo de $L(P,f)$ sobre todas as partições $P$, e a desigualdade
+à esquerda fornece
 \begin{equation*}
 \underline{\int_a^b} f \leq F(b)-F(a) .
 \end{equation*}
-Similarly, taking
-the infimum of $U(P,f)$ over all partitions $P$ yields
+De modo semelhante, tomando o ínfimo de $U(P,f)$ sobre todas as partições
+$P$, obtemos
 \begin{equation*}
 F(b)-F(a) \leq \overline{\int_a^b} f .
 \end{equation*}
-As $f$ is Riemann integrable, we have
+Como $f$ é integrável à Riemann, temos
 \begin{equation*}
 \int_a^b f =
 \underline{\int_a^b} f \leq F(b)-F(a) \leq \overline{\int_a^b} f
 = \int_a^b f .
 \end{equation*}
-The inequalities must be equalities and we are done.
+As desigualdades devem ser igualdades, e a demonstração está concluída.
 \end{proof}
 
-The theorem is used to compute integrals.  Suppose we know that
-the function $f(x)$ is a derivative of some other function $F(x)$,
-then we can find an explicit expression for $\int_a^b f$. 
+Usamos o teorema para calcular integrais. Se sabemos que a função $f(x)$ é
+a derivada de outra função $F(x)$, podemos encontrar uma expressão explícita
+para $\int_a^b f$.
 
 \begin{example}
-To compute
+Para calcular
 \begin{equation*}
 \int_0^1 x^2 \,dx ,
 \end{equation*}
-we notice $x^2$ is the derivative of $\frac{x^3}{3}$.
-The fundamental theorem says
+observamos que $x^2$ é a derivada de $\frac{x^3}{3}$.
+O teorema fundamental afirma que
 \begin{equation*}
 \int_0^1 x^2 \,dx =
 \frac{1^3}{3}
@@ -1672,26 +1668,26 @@ The fundamental theorem says
 \end{equation*}
 \end{example}
 
-\subsection{Second form of the theorem}
+\subsection{Segunda forma do teorema}
 
-The second form of the fundamental theorem gives us a way to solve
-the differential equation $F'(x) = f(x)$, where $f$ is a known
-function and we are trying to find an $F$ that satisfies the equation.
+A segunda forma do teorema fundamental nos dá um modo de resolver
+a equação diferencial $F'(x) = f(x)$, na qual $f$ é conhecida e queremos
+encontrar uma função $F$ que satisfaça a equação.
 
 \begin{thm} \label{thm:FTCv2}
-Let $f \colon [a,b] \to \R$ be a Riemann integrable function.  Define
+Seja $f \colon [a,b] \to \R$ uma função integrável à Riemann. Defina
 \begin{equation*}
 F(x) \coloneqq \int_a^x f .
 \end{equation*}
-First, $F$ is continuous on $[a,b]$.  Second,
-if $f$ is continuous at $c \in [a,b]$, then $F$ is differentiable at $c$
-and $F'(c) = f(c)$.
+Primeiro, $F$ é contínua em $[a,b]$. Segundo,
+se $f$ é contínua em $c \in [a,b]$, então $F$ é diferenciável em $c$
+e $F'(c) = f(c)$.
 \end{thm}
 
 \begin{proof}
-As $f$ is bounded, there is an $M > 0$
-such that $\babs{f(x)} \leq M$ for all $x \in [a,b]$.  Suppose $x,y \in [a,b]$
-with $x > y$.  Then
+Como $f$ é limitada, existe $M > 0$
+tal que $\babs{f(x)} \leq M$ para todo $x \in [a,b]$. Sejam $x,y \in [a,b]$
+com $x > y$. Então
 \begin{equation*}
 \babs{F(x)-F(y)} =
 \abs{\int_a^x f - \int_a^y f}
@@ -1700,25 +1696,23 @@ with $x > y$.  Then
 \leq
 M\sabs{x-y} .
 \end{equation*}
-By symmetry, the same also holds if $x < y$.
-So $F$ is Lipschitz continuous and hence continuous.
+Por simetria, o mesmo vale se $x < y$.
+Logo, $F$ é Lipschitz contínua e, portanto, contínua.
 
-Now suppose $f$ is continuous at $c$.
-Let $\epsilon > 0$ be given.  Let $\delta > 0$ be such that
-for $x \in [a,b]$,
-$\sabs{x-c} < \delta$ implies $\babs{f(x)-f(c)} < \epsilon$.
-In particular,
-for such $x$, we have
+Agora suponha que $f$ seja contínua em $c$.
+Seja $\epsilon > 0$. Escolha $\delta > 0$ de modo que, para $x \in [a,b]$,
+$\sabs{x-c} < \delta$ implique $\babs{f(x)-f(c)} < \epsilon$.
+Em particular, para esses valores de $x$, temos
 \begin{equation*}
 f(c)-\epsilon < f(x) < f(c) + \epsilon.
 \end{equation*}
-Thus if $x > c$, then
+Assim, se $x > c$, então
 \begin{equation*}
 \bigl(f(c)-\epsilon\bigr) (x-c) \leq \int_c^x f \leq
 \bigl(f(c) + \epsilon\bigr)(x-c).
 \end{equation*}
-When $c > x$, then the inequalities are reversed.  Therefore,
-assuming $x \neq c$, we get
+Se $c > x$, as desigualdades se invertem. Portanto,
+supondo que $x \neq c$, obtemos
 \begin{equation*}
 f(c)-\epsilon
 \leq
@@ -1726,7 +1720,7 @@ f(c)-\epsilon
 \leq
 f(c)+\epsilon .
 \end{equation*}
-As 
+Como
 \begin{equation*}
 \frac{F(x)-F(c)}{x-c}
 =
@@ -1734,88 +1728,84 @@ As
 =
 \frac{\int_c^{x} f}{x-c} ,
 \end{equation*}
-we have 
+temos
 \begin{equation*}
 \abs{\frac{F(x)-F(c)}{x-c} - f(c)} \leq \epsilon .
 \end{equation*}
-The result follows.  It is left to the reader to see why is it OK that we
-just have a non-strict inequality.
+O resultado segue. Fica a cargo do leitor verificar por que é suficiente
+obter uma desigualdade não estrita.
 \end{proof}
 
-Of course, if $f$ is continuous on $[a,b]$, then it is automatically Riemann
-integrable, $F$ is differentiable on all of $[a,b]$ and $F'(x) = f(x)$ for
-all $x \in [a,b]$.
+É claro que, se $f$ é contínua em $[a,b]$, então é automaticamente integrável
+à Riemann, $F$ é diferenciável em todo $[a,b]$ e $F'(x) = f(x)$ para todo
+$x \in [a,b]$.
 
 \begin{remark} \label{remark:fundthmbase}
-The second form of the fundamental theorem of calculus still holds if
-we let $d \in [a,b]$ and define
+A segunda forma do teorema fundamental do cálculo continua válida se
+tomarmos $d \in [a,b]$ e definirmos
 \begin{equation*}
 F(x) \coloneqq \int_d^x f .
 \end{equation*}
-That is, we can use any point of $[a,b]$ as our base point.  The proof is
-left as an exercise.
+Isto é, podemos usar qualquer ponto de $[a,b]$ como ponto de partida. A
+demonstração fica como exercício.
 \end{remark}
 
-Let us look at what a simple discontinuity can do.  Take $f(x) \coloneqq -1$ if $x
-< 0$, and $f(x) \coloneqq 1$ if $x \geq 0$.  Let $F(x) \coloneqq \int_0^x f$.  It is not
-difficult to see that $F(x) = \sabs{x}$.  Notice that $f$ is discontinuous at
-$0$ and $F$ is not differentiable at $0$.  However, the converse in the
-theorem does not
-hold.
-Let $g(x) \coloneqq 0$ if $x \neq 0$, and $g(0) \coloneqq 1$.
-Letting $G(x) \coloneqq \int_0^x g$,
-we find that $G(x) = 0$ for all $x$.  So $g$ is discontinuous
-at $0$, but $G'(0)$ exists and is equal to 0.
+Vejamos o efeito de uma descontinuidade simples. Tome $f(x) \coloneqq -1$ se $x
+< 0$ e $f(x) \coloneqq 1$ se $x \geq 0$. Seja $F(x) \coloneqq \int_0^x f$. Não é
+difícil ver que $F(x) = \sabs{x}$. Observe que $f$ é descontínua em
+$0$ e $F$ não é diferenciável em $0$. No entanto, a recíproca do teorema
+não vale.
+Seja $g(x) \coloneqq 0$ se $x \neq 0$ e $g(0) \coloneqq 1$.
+Definindo $G(x) \coloneqq \int_0^x g$,
+obtemos $G(x) = 0$ para todo $x$. Assim, $g$ é descontínua
+em $0$, mas $G'(0)$ existe e é igual a $0$.
 
-A common misunderstanding of the integral for calculus students is to
-think of integrals whose solution cannot be given in closed-form as somehow
-deficient.  This is not the case.  Most integrals we write down are not
-computable in closed-form.  Even some integrals that we consider
-in closed-form are not really such.  We define
-the natural logarithm as the antiderivative of $\nicefrac{1}{x}$
-such that $\ln 1 = 0$:
+Um equívoco comum entre estudantes de cálculo é considerar de algum modo
+insuficientes as integrais cuja solução não pode ser expressa em forma
+fechada. Não é o caso. A maioria das integrais que escrevemos não pode ser
+calculada em forma fechada. Mesmo algumas integrais que consideramos
+expressas dessa forma não o são de fato. Definimos o logaritmo natural como
+a primitiva de $\nicefrac{1}{x}$ tal que $\ln 1 = 0$:
 \begin{equation*}
 \ln x \coloneqq \int_1^x \frac{1}{s}\,ds .
 \end{equation*}
-How does a computer find the value of $\ln x$?
-One way to do it is to numerically approximate this integral.
-Morally,
-we did not really \myquote{simplify} $\int_1^x \frac{1}{s}\,ds$ by
-writing down $\ln x$.  We simply gave the integral a name.
-If we require numerical answers,
-it is possible we end up doing
-the calculation by approximating an integral anyway.
-In the next section, we even define the exponential using
-the logarithm, which we define in terms of the integral.
+Como um computador calcula o valor de $\ln x$?
+Uma possibilidade é aproximar numericamente essa integral.
+Em certo sentido, não \myquote{simplificamos} de fato
+$\int_1^x \frac{1}{s}\,ds$ ao escrever $\ln x$; simplesmente demos um nome
+à integral. Se precisarmos de valores numéricos, talvez acabemos fazendo
+o cálculo por meio de uma aproximação da integral.
+Na próxima seção, definiremos a função exponencial usando o logaritmo,
+que, por sua vez, definimos em termos da integral.
 
-Another common function defined by an integral that cannot
-be evaluated symbolically in terms of elementary functions
-is the $\operatorname{erf}$ function, defined as
+Outra função comum definida por uma integral que não pode
+ser calculada simbolicamente em termos de funções elementares
+é a função $\operatorname{erf}$, definida por
 \begin{equation*}
 \operatorname{erf}(x) \coloneqq \frac{2}{\sqrt{\pi}} \int_0^x e^{-s^2} \,ds .
 \end{equation*}
-This function comes up often in applied mathematics.  It is simply 
-the antiderivative of $\left(\nicefrac{2}{\sqrt{\pi}}\right) e^{-x^2}$
-that is zero at zero.
-The second form of the fundamental theorem tells us that we can write the function
-as an integral.  If we wish to compute any particular value, we 
-numerically approximate the integral.
+Essa função aparece com frequência na matemática aplicada. Ela é simplesmente
+a primitiva de $\left(\nicefrac{2}{\sqrt{\pi}}\right) e^{-x^2}$ que se anula
+em zero.
+A segunda forma do teorema fundamental nos diz que podemos escrever a função
+como uma integral. Se quisermos calcular algum valor específico, aproximamos
+numericamente a integral.
 
-\subsection{Change of variables}
+\subsection{Mudança de variáveis}
 
-A theorem often used in calculus to solve integrals is the change of
-variables theorem, you may have called it
-\emph{$u$-substitution}\index{u-substitution@$u$-substitution}.
-To make it easy to connect to your calculus class, we will also
-call the new variable $u$, that is, we make the substitution $u=g(x)$.
-Recall a function is continuously differentiable if
-it is differentiable and the derivative is continuous.
+Um teorema frequentemente usado no cálculo para resolver integrais é o
+teorema da mudança de variáveis, também conhecido como
+\emph{substituição $u$}\index{substituição $u$@substituição $u$}.
+Para facilitar a conexão com o que você viu em cálculo, também chamaremos
+a nova variável de $u$; isto é, faremos a substituição $u=g(x)$.
+Lembre-se de que uma função é continuamente diferenciável quando
+é diferenciável e sua derivada é contínua.
 
-\begin{thm}[Change of variables]
-\index{change of variables theorem}
-Let $g \colon [a,b] \to \R$ be a continuously differentiable function,
-let $f \colon [c,d] \to \R$ be continuous, and suppose
-$g\bigl([a,b]\bigr) \subset [c,d]$.  Then
+\begin{thm}[Mudança de variáveis]
+\index{teorema da mudança de variáveis}
+Seja $g \colon [a,b] \to \R$ uma função continuamente diferenciável,
+seja $f \colon [c,d] \to \R$ contínua e suponha que
+$g\bigl([a,b]\bigr) \subset [c,d]$. Então
 \begin{equation*}
 \int_a^b f\bigl(g(x)\bigr)\, g'(x)\, dx =
 \int_{g(a)}^{g(b)} f(u)\, du .
@@ -1823,28 +1813,25 @@ $g\bigl([a,b]\bigr) \subset [c,d]$.  Then
 \end{thm}
 
 \begin{proof}
-As $g$, $g'$, and $f$ are continuous, $f\bigl(g(x)\bigr)\,g'(x)$
-is a continuous function of $[a,b]$, therefore it is Riemann integrable.
-Similarly, $f$ is integrable on every subinterval of $[c,d]$.
+Como $g$, $g'$ e $f$ são contínuas, $f\bigl(g(x)\bigr)\,g'(x)$
+é uma função contínua em $[a,b]$ e, portanto, integrável à Riemann.
+De modo semelhante, $f$ é integrável em todo subintervalo de $[c,d]$.
 
-Define $F \colon [c,d] \to \R$ by
+Defina $F \colon [c,d] \to \R$ por
 \begin{equation*}
 F(y) \coloneqq \int_{g(a)}^{y} f(u)\,du .
 \end{equation*}
-By the second form of the fundamental
-theorem of calculus
-(see \remarkref{remark:fundthmbase} and \exerciseref{secondftc:exercise}),
-$F$ is a differentiable function and $F'(y) = f(y)$.  Apply the chain
-rule,
+Pela segunda forma do teorema fundamental do cálculo
+(veja a \remarkref{remark:fundthmbase} e o \exerciseref{secondftc:exercise}),
+$F$ é diferenciável e $F'(y) = f(y)$. Aplicamos a regra da cadeia:
 \begin{equation*}
 \bigl( F \circ g \bigr)' (x) =
 F'\bigl(g(x)\bigr) g'(x)
 =
 f\bigl(g(x)\bigr) g'(x) .
 \end{equation*}
-Note that $F\bigl(g(a)\bigr) = 0$ and
-use the first form of the fundamental theorem
-to obtain
+Observe que $F\bigl(g(a)\bigr) = 0$ e use a primeira forma do teorema
+fundamental para obter
 \begin{multline*}
 %mbxSTARTIGNORE
 \qquad %to center things more
@@ -1865,13 +1852,13 @@ f\bigl(g(x)\bigr) g'(x)
 \end{multline*}
 \end{proof}
 
-The change of variables theorem is often used to solve integrals by changing them
-to integrals that we know or that we can solve using the fundamental theorem of
-calculus.
+O teorema da mudança de variáveis é frequentemente usado para resolver
+integrais, transformando-as em integrais que já conhecemos ou que podemos
+calcular pelo teorema fundamental do cálculo.
 
 \begin{example}
-The derivative of $\sin(x)$ is $\cos(x)$.
-Using $g(x) \coloneqq x^2$, we solve
+A derivada de $\sin(x)$ é $\cos(x)$.
+Usando $g(x) \coloneqq x^2$, calculamos
 \begin{equation*}
 \int_0^{\sqrt{\pi}} x \cos(x^2) \, dx = \int_0^\pi \frac{\cos(u)}{2} \, du
 =
@@ -1886,69 +1873,69 @@ Using $g(x) \coloneqq x^2$, we solve
 \end{equation*}
 \end{example}
 
-However, beware that we must satisfy the hypotheses of the theorem.  The
-following example demonstrates why we should not just 
-move symbols around mindlessly.
-We must be careful that those symbols really make sense.
+No entanto, devemos verificar se as hipóteses do teorema são satisfeitas.
+O exemplo a seguir mostra por que não devemos simplesmente
+manipular símbolos sem pensar.
+Precisamos nos certificar de que as expressões usadas fazem sentido.
 
 \begin{example}
-Consider
+Considere
 \begin{equation*}
 \int_{-1}^{1} \frac{\ln \sabs{x}}{x} \,dx .
 \end{equation*}
-It may be tempting to take $g(x) \coloneqq \ln \sabs{x}$.  Compute $g'(x) =
-\nicefrac{1}{x}$ and try to write
+Pode ser tentador tomar $g(x) \coloneqq \ln \sabs{x}$. Calcule
+$g'(x) = \nicefrac{1}{x}$ e tente escrever
 \begin{equation*}
 \int_{g(-1)}^{g(1)} u \,du = 
 \int_{0}^{0} u \,du = 0. 
 \end{equation*}
-This \myquote{solution} is incorrect, and it does not say
-that we can solve the given integral.  The first problem is that
-$\frac{\ln \sabs{x}}{x}$ is not continuous on $[-1,1]$.
-It is not defined at 0, and cannot be made continuous by defining a value at
-0.
-Second, $\frac{\ln \sabs{x}}{x}$ is not even Riemann integrable on $[-1,1]$
-(it is unbounded).
-The integral we wrote down simply does not make sense.
-Finally, $g$ is not continuous 
-on $[-1,1]$, let alone continuously differentiable.
+Essa \myquote{solução} está incorreta e não permite concluir
+que podemos calcular a integral dada. O primeiro problema é que
+$\frac{\ln \sabs{x}}{x}$ não é contínua em $[-1,1]$.
+Ela não está definida em $0$ e não pode se tornar contínua pela escolha de
+um valor nesse ponto.
+Além disso, $\frac{\ln \sabs{x}}{x}$ nem sequer é integrável à Riemann em
+$[-1,1]$ (é ilimitada).
+A integral que escrevemos simplesmente não faz sentido.
+Por fim, $g$ não é contínua em $[-1,1]$, muito menos continuamente
+diferenciável.
 \end{example}
 
 \subsection{Exercícios}
 
 \begin{exercise}
-Compute
+Calcule
 $\displaystyle
 \frac{d}{dx} \biggl( \int_{-x}^x e^{s^2}\,ds \biggr)$.
 \end{exercise}
 
 \begin{exercise}
-Compute
+Calcule
 $\displaystyle
 \frac{d}{dx} \biggl( \int_{0}^{x^2} \sin(s^2)\,ds \biggr)$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $F \colon [a,b] \to \R$ is continuous and differentiable
-on $[a,b] \setminus S$, where $S$ is a finite set.  Suppose there
-exists an $f \in \sR\bigl([a,b]\bigr)$ such that $f(x) = F'(x)$ for $x \in [a,b]
-\setminus S$.  Show that
+Suponha que $F \colon [a,b] \to \R$ seja contínua e diferenciável
+em $[a,b] \setminus S$, onde $S$ é um conjunto finito. Suponha que
+exista $f \in \sR\bigl([a,b]\bigr)$ tal que $f(x) = F'(x)$ para
+$x \in [a,b] \setminus S$. Mostre que
 $\int_a^b f = F(b)-F(a)$.
 \end{exercise}
 
 \begin{exercise} \label{secondftc:exercise}
-Let $f \colon [a,b] \to \R$ be a continuous function.  Let $c \in [a,b]$
-be arbitrary.  Define
+Seja $f \colon [a,b] \to \R$ uma função contínua e seja $c \in [a,b]$
+arbitrário. Defina
 \begin{equation*}
 F(x) \coloneqq \int_c^x f .
 \end{equation*}
-Prove that $F$ is differentiable and that $F'(x) = f(x)$ for all $x \in
-[a,b]$.
+Prove que $F$ é diferenciável e que $F'(x) = f(x)$ para todo
+$x \in [a,b]$.
 \end{exercise}
 
 \begin{exercise}
-Prove \emph{\myindex{integration by parts}}.  That is, suppose $F$ and
-$G$ are continuously differentiable functions on $[a,b]$.  Then prove
+Prove a \emph{\myindex{integração por partes}}. Isto é, suponha que $F$ e
+$G$ sejam funções continuamente diferenciáveis em $[a,b]$. Prove que
 \begin{equation*}
 \int_a^b F(x)G'(x)\,dx
 =
@@ -1959,63 +1946,61 @@ F(b)G(b)-F(a)G(a)
 \end{exercise}
 
 \begin{exercise}
-Suppose $F$ and $G$ are
-continuously\footnote{
-Compare this hypothesis to \exerciseref{exercise:samediffconst}.}
-differentiable
-functions defined on $[a,b]$
-such that $F'(x) = G'(x)$ for all $x \in [a,b]$.
-Using the fundamental theorem of calculus,
-show that $F$ and $G$ differ by a constant.  That is, show that
-there exists a $C \in \R$ such that
+Suponha que $F$ e $G$ sejam funções continuamente\footnote{
+Compare esta hipótese com a do \exerciseref{exercise:samediffconst}.}
+diferenciáveis definidas em $[a,b]$
+tais que $F'(x) = G'(x)$ para todo $x \in [a,b]$.
+Usando o teorema fundamental do cálculo,
+mostre que $F$ e $G$ diferem por uma constante. Isto é, mostre que
+existe $C \in \R$ tal que
 $F(x)-G(x) = C$.
 \end{exercise}
 
 \begin{exnote}
-The next exercise shows how we can use the integral to \myquote{smooth out} a
-non-differentiable function.
+O próximo exercício mostra como podemos usar a integral para \myquote{suavizar} uma
+função que não é diferenciável.
 \end{exnote}
 
 \begin{exercise} \label{exercise:smoothingout}
-Let $f \colon [a,b] \to \R$ be a continuous function.  Let $\epsilon > 0$
-be a constant such that $a+\epsilon < b-\epsilon$.  For $x \in [a+\epsilon,b-\epsilon]$, define
+Seja $f \colon [a,b] \to \R$ uma função contínua. Seja $\epsilon > 0$
+uma constante tal que $a+\epsilon < b-\epsilon$. Para $x \in [a+\epsilon,b-\epsilon]$, defina
 \begin{equation*}
 g(x) \coloneqq \frac{1}{2\epsilon} \int_{x-\epsilon}^{x+\epsilon} f .
 \end{equation*}
 \begin{enumerate}[a)]
 \item
-Show that $g$ is differentiable and find the derivative.
+Mostre que $g$ é diferenciável e determine sua derivada.
 \item
-Let $f$ be differentiable and fix $x \in (a,b)$ (let $\epsilon$
-be small enough).  What happens to $g'(x)$ as $\epsilon$ gets smaller?
+Suponha que $f$ seja diferenciável e fixe $x \in (a,b)$ (tome $\epsilon$
+suficientemente pequeno). O que acontece com $g'(x)$ quando $\epsilon$ diminui?
 \item
-Find $g$ for $f(x) \coloneqq \sabs{x}$, $\epsilon = 1$ (you can assume 
-$[a,b]$ is large enough).
+Determine $g$ para $f(x) \coloneqq \sabs{x}$ e $\epsilon = 1$ (suponha que
+$[a,b]$ seja suficientemente grande).
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon [a,b] \to \R$ is continuous and
-$\int_a^x f = \int_x^b f$ for all $x \in [a,b]$.  Show that $f(x) = 0$
-for all $x \in [a,b]$.
+Suponha que $f \colon [a,b] \to \R$ seja contínua e que
+$\int_a^x f = \int_x^b f$ para todo $x \in [a,b]$. Mostre que $f(x) = 0$
+para todo $x \in [a,b]$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon [a,b] \to \R$ is continuous and
-$\int_a^x f = 0$ for all rational $x$ in $[a,b]$.  Show that $f(x) = 0$
-for all $x \in [a,b]$.
+Suponha que $f \colon [a,b] \to \R$ seja contínua e que
+$\int_a^x f = 0$ para todo $x$ racional em $[a,b]$. Mostre que $f(x) = 0$
+para todo $x \in [a,b]$.
 \end{exercise}
 
 \begin{samepage}
 \begin{exercise}
-A function $f$ is an \emph{\myindex{odd function}} if $f(x) = -f(-x)$,
-and $f$ is an \emph{\myindex{even function}} if $f(x) = f(-x)$.  Let $a >
-0$.  Assume $f$ is continuous.  Prove:
+Uma função $f$ é \emph{\myindex{função ímpar}} se $f(x) = -f(-x)$,
+e é \emph{\myindex{função par}} se $f(x) = f(-x)$. Seja $a >
+0$. Suponha que $f$ seja contínua. Prove:
 \begin{enumerate}[a)]
 \item
-If $f$ is odd, then $\int_{-a}^a f = 0$.
+Se $f$ é ímpar, então $\int_{-a}^a f = 0$.
 \item
-If $f$ is even, then $\int_{-a}^a f = 2 \int_0^a f$.
+Se $f$ é par, então $\int_{-a}^a f = 2 \int_0^a f$.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
@@ -2024,34 +2009,34 @@ If $f$ is even, then $\int_{-a}^a f = 2 \int_0^a f$.
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Show that $f(x) \coloneqq \sin(\nicefrac{1}{x})$
-is integrable on every interval (you can define $f(0)$ to be anything).
+Mostre que $f(x) \coloneqq \sin(\nicefrac{1}{x})$
+é integrável em todo intervalo (você pode definir $f(0)$ como quiser).
 \item
-Compute $\int_{-1}^1 \sin(\nicefrac{1}{x})\,dx$ (mind the
-discontinuity).
+Calcule $\int_{-1}^1 \sin(\nicefrac{1}{x})\,dx$ (atenção à
+descontinuidade).
 \end{enumerate}
 \end{exercise}
 
-\begin{exercise}[uses \sectionref{sec:monotonefunc}]
+\begin{exercise}[usa a \sectionref{sec:monotonefunc}]
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Suppose $f \colon [a,b] \to \R$ is increasing.
-By \propref{prop:monotoneintegrable},
+Suponha que $f \colon [a,b] \to \R$ seja crescente.
+Pela \propref{prop:monotoneintegrable},
 %\exerciseref{exercise:boundedvariationintegrable},
-$f$ is Riemann integrable.  Show that if $f$ has a discontinuity at $c \in
-(a,b)$, then $F(x) \coloneqq \int_a^x f$ is not differentiable at $c$.
+$f$ é integrável à Riemann. Mostre que, se $f$ tem uma descontinuidade em
+$c \in (a,b)$, então $F(x) \coloneqq \int_a^x f$ não é diferenciável em $c$.
 \item
-In \exerciseref{exercise:increasingfuncdiscatQ}, you constructed an increasing
-function $f \colon [0,1] \to \R$ that is discontinuous at every
-$x \in [0,1] \cap \Q$.  Use this $f$ to construct a function $F(x)$ that is
-continuous on $[0,1]$, but not differentiable at all $x \in [0,1] \cap \Q$.
+No \exerciseref{exercise:increasingfuncdiscatQ}, você construiu uma função
+crescente $f \colon [0,1] \to \R$ que é descontínua em todo
+$x \in [0,1] \cap \Q$. Use essa função $f$ para construir uma função $F(x)$
+contínua em $[0,1]$, mas não diferenciável em nenhum $x \in [0,1] \cap \Q$.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-For any $\ell \in \N$,
-show that the following limit exists and find what it is:
+Para todo $\ell \in \N$,
+mostre que o limite a seguir existe e determine seu valor:
 \begin{equation*}
 \lim_{n\to\infty} \sum_{k=1}^n \frac{k^\ell}{n^{\ell+1}}
 \end{equation*}

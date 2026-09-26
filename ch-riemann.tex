@@ -2571,82 +2571,78 @@ para nenhum $x > 0$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{Improper integrals}
+\section{Integrais impróprias}
 \label{sec:impropriemann}
 
 %mbxINTROSUBSECTION
 
-\sectionnotes{2--3 lectures (optional section, can safely be skipped, 
-requires the optional \sectionref{sec:limitatinf})}
+\sectionnotes{2--3 aulas (seção opcional, que pode ser omitida sem prejuízo;
+requer a seção opcional \sectionref{sec:limitatinf})}
 
-Often it is necessary to integrate over the
-entire real line, or an unbounded interval of the form $[a,\infty)$ or
-$(-\infty,b]$.  We may also wish to integrate unbounded functions
-defined on an open bounded interval $(a,b)$.
-For such intervals or functions, the Riemann integral is not defined,
-but we will write down
-the integral anyway in the spirit of \lemmaref{lemma:boundedimpriemann}.
-These integrals are called \emph{\myindex{improper integrals}}
-and are limits
-of integrals rather than integrals themselves.
+Às vezes é necessário integrar em toda a reta real ou em um intervalo
+ilimitado da forma $[a,\infty)$ ou $(-\infty,b]$.
+Também podemos querer integrar funções ilimitadas definidas em um intervalo
+aberto e limitado $(a,b)$.
+Para esses intervalos ou funções, a integral de Riemann não está definida,
+mas ainda assim escreveremos a integral, seguindo a ideia do
+\lemmaref{lemma:boundedimpriemann}.
+Essas integrais são chamadas de \emph{\myindex{integrais impróprias}}
+e são limites de integrais, e não integrais propriamente ditas.
 
 \begin{defn}
-Suppose $f \colon [a,b) \to \R$ is a function (not necessarily bounded)
-that is Riemann integrable on $[a,c]$ for all $c < b$.  We define
+Suponha que $f \colon [a,b) \to \R$ seja uma função (não necessariamente
+limitada) integrável à Riemann em $[a,c]$ para todo $c < b$. Definimos
 \begin{equation*}
 \int_a^b f \coloneqq \lim_{c \to b^-} \int_a^{c} f
 \end{equation*}
-if the limit exists.
+se o limite existir.
 
-Suppose $f \colon [a,\infty) \to \R$ is a function such that
-$f$ is Riemann integrable on $[a,c]$ for all $c < \infty$.  
-We define
+Suponha que $f \colon [a,\infty) \to \R$ seja uma função integrável à
+Riemann em $[a,c]$ para todo $c < \infty$.
+Definimos
 \begin{equation*}
 \int_a^\infty f \coloneqq \lim_{c \to \infty} \int_a^c f
 \end{equation*}
-if the limit exists.
+se o limite existir.
 
-If the limit exists, we say the improper integral
-\emph{converges}\index{convergent!improper integral}.
-If the limit does not exist, we say the improper integral
-\emph{diverges}\index{divergent!improper integral}.
+Se o limite existir, dizemos que a integral imprópria
+\emph{converge}\index{convergente!integral imprópria}.
+Se o limite não existir, dizemos que a integral imprópria
+\emph{diverge}\index{divergente!integral imprópria}.
 
-We similarly define improper integrals for the left-hand endpoint.
-We leave this definition to the reader.
+Definimos de modo semelhante as integrais impróprias para o extremo esquerdo.
+Deixamos essa definição a cargo do leitor.
 \end{defn}
 
-For a finite endpoint $b$, if $f$ is bounded,
-then
-\lemmaref{lemma:boundedimpriemann} says that we defined nothing new.  What is new is that
-we can apply this definition to unbounded functions.
-The following set of examples is
-so useful that we state it as a proposition.
+Se $b$ é um extremo finito e $f$ é limitada, então o
+\lemmaref{lemma:boundedimpriemann} mostra que não definimos nada de novo.
+A novidade é que podemos aplicar essa definição a funções ilimitadas.
+O conjunto de exemplos a seguir é tão útil que o enunciamos como proposição.
 
-\begin{prop}[$p$-test for integrals]%
-\index{p-test for integrals@$p$-test for integrals}
+\begin{prop}[Teste $p$ para integrais impróprias]%
+\index{teste p para integrais impróprias@$p$-teste para integrais impróprias}
 \label{impropriemann:ptest}
-The improper integral
+A integral imprópria
 \begin{equation*}
 \int_1^\infty \frac{1}{x^p} \,dx
 \end{equation*}
-converges to $\frac{1}{p-1}$ if $p > 1$ and diverges if $0 < p \leq 1$.
+converge para $\frac{1}{p-1}$ se $p > 1$ e diverge se $0 < p \leq 1$.
 
-The improper integral
+A integral imprópria
 \begin{equation*}
 \int_0^1 \frac{1}{x^p} \,dx
 \end{equation*}
-converges to $\frac{1}{1-p}$ if $0 < p < 1$ and diverges if $p \geq 1$.
+converge para $\frac{1}{1-p}$ se $0 < p < 1$ e diverge se $p \geq 1$.
 \end{prop}
 
 \begin{proof}
-The proof follows by application of the
-\hyperref[thm:FTCv1]{fundamental theorem of calculus}.
-Let us do the proof for $p > 1$ for the infinite right endpoint and
-leave the rest to the reader.  Hint: You should handle $p=1$
-separately.
+ A demonstração decorre da aplicação do
+\hyperref[thm:FTCv1]{teorema fundamental do cálculo}.
+Vamos provar o caso $p > 1$ com extremo direito infinito e deixar os demais
+casos a cargo do leitor. Sugestão: trate $p=1$
+separadamente.
 
-Suppose $p > 1$.  Then
-using the fundamental theorem,
+Suponha que $p > 1$. Então, usando o teorema fundamental,
 \begin{equation*}
 \int_1^b \frac{1}{x^p} \,dx
 =
@@ -2660,20 +2656,20 @@ using the fundamental theorem,
 +
 \frac{1}{p-1} .
 \end{equation*}
-As $p > 1$, we have $p-1 > 0$.  Take the limit as $b \to \infty$
-to obtain that $\frac{1}{b^{p-1}}$ goes to 0.  The result follows.
+Como $p > 1$, temos $p-1 > 0$. Tomamos o limite quando $b \to \infty$
+e obtemos $\frac{1}{b^{p-1}} \to 0$. O resultado segue.
 \end{proof}
 
-We state the following proposition on \myquote{tails} for just one type
-of improper integral, though the proof is straightforward
-and the same for other types of improper integrals.
+Enunciamos a proposição a seguir sobre \myquote{caudas} apenas para um tipo
+de integral imprópria, embora a demonstração seja direta e análoga para os
+outros tipos de integrais impróprias.
 
 \begin{prop} \label{impropriemann:tail}
-Let $f \colon [a,\infty) \to \R$ be a function
-that is Riemann integrable on $[a,b]$ for all $b > a$.
-For every $b > a$, the integral
-$\int_b^\infty f$ converges if and only if $\int_a^\infty f$
-converges, in which case
+Seja $f \colon [a,\infty) \to \R$ uma função integrável à Riemann
+em $[a,b]$ para todo $b > a$.
+Para todo $b > a$, a integral
+$\int_b^\infty f$ converge se, e somente se, $\int_a^\infty f$
+converge; nesse caso,
 \begin{equation*}
 \int_a^\infty f
 =
@@ -2683,153 +2679,151 @@ converges, in which case
 \end{prop}
 
 \begin{proof}
-Let $c > b$.  Then
+Seja $c > b$. Então
 \begin{equation*}
 \int_a^c f
 =
 \int_a^b f +
 \int_b^c f .
 \end{equation*}
-Taking the limit $c \to \infty$ finishes the proof.
+Tomar o limite quando $c \to \infty$ conclui a demonstração.
 \end{proof}
 
-Nonnegative functions are easier to work with
-as the following proposition demonstrates.
-The exercises will show that this proposition
-holds only for nonnegative functions.
-Analogues of this proposition
-exist for all the other types of improper integrals and are left to the
-student.
+Funções não negativas são mais fáceis de trabalhar,
+como mostra a proposição a seguir.
+Os exercícios mostrarão que esta proposição
+vale apenas para funções não negativas.
+Existem versões análogas para todos os outros tipos de integrais impróprias;
+elas ficam a cargo do estudante.
 
 \begin{prop} \label{impropriemann:possimp}
-Suppose $f \colon [a,\infty) \to \R$ is nonnegative ($f(x)
-\geq 0$ for all $x$) and
-$f$ is Riemann integrable on $[a,b]$ for all $b > a$.
+Suponha que $f \colon [a,\infty) \to \R$ seja não negativa
+($f(x) \geq 0$ para todo $x$) e integrável à Riemann em $[a,b]$ para todo
+$b > a$.
 \begin{enumerate}[(i)]
 \item 
 \begin{equation*}
 \int_a^\infty f = \sup \left\{ \int_a^x f : x \geq a \right\} .
 \end{equation*}
 \item
-Suppose $\{ x_n \}_{n=1}^\infty$
-is a sequence with $\lim_{n\to\infty} x_n = \infty$.  Then
-$\int_a^\infty f$ converges if and only if $\lim_{n\to\infty} \int_a^{x_n} f$ exists, in
-which case
+Suponha que $\{ x_n \}_{n=1}^\infty$
+seja uma sequência tal que $\lim_{n\to\infty} x_n = \infty$. Então
+$\int_a^\infty f$ converge se, e somente se, existe
+$\lim_{n\to\infty} \int_a^{x_n} f$; nesse caso,
 \begin{equation*}
 \int_a^\infty f = \lim_{n\to\infty} \int_a^{x_n} f .
 \end{equation*}
 \end{enumerate}
 \end{prop}
 
-In the first item we allow for the value of $\infty$ in the
-supremum indicating that the integral diverges to infinity.
+No primeiro item, admitimos que o supremo seja $\infty$,
+o que indica que a integral diverge para infinito.
 
 \begin{proof}
-We start with the first item.
-As $f$ is nonnegative,
-$\int_a^x f$ is increasing as a function of $x$.
-If the supremum is infinite, then for every $M \in \R$
-we find $N$ such that $\int_a^N f \geq M$.  As $\int_a^x f$
-is increasing, $\int_a^x f \geq M$ for all $x \geq N$.  So
-$\int_a^\infty f$ diverges to infinity.
+Começamos pelo primeiro item.
+Como $f$ é não negativa,
+$\int_a^x f$ é crescente em função de $x$.
+Se o supremo é infinito, então, para todo $M \in \R$,
+encontramos $N$ tal que $\int_a^N f \geq M$. Como $\int_a^x f$
+é crescente, $\int_a^x f \geq M$ para todo $x \geq N$. Portanto,
+$\int_a^\infty f$ diverge para infinito.
 
-Next suppose the supremum is finite, say
+Agora suponha que o supremo seja finito e denote
 $A \coloneqq \sup \left\{ \int_a^x f : x \geq a \right\}$.
-For every $\epsilon > 0$, we find an $N$ such that
-$A - \int_a^N f < \epsilon$.  As $\int_a^x f$ is increasing,
-then
-$A - \int_a^x f < \epsilon$ for all $x \geq N$ and hence
-$\int_a^\infty f$ converges to $A$.
+Para todo $\epsilon > 0$, encontramos $N$ tal que
+$A - \int_a^N f < \epsilon$. Como $\int_a^x f$ é crescente,
+temos
+$A - \int_a^x f < \epsilon$ para todo $x \geq N$ e, portanto,
+$\int_a^\infty f$ converge para $A$.
 
-Let us look at the second item.
-If $\int_a^\infty f$ converges, then every sequence $\{ x_n \}_{n=1}^\infty$ going to
-infinity works.  The trick is
-proving the other direction.  Suppose $\{ x_n \}_{n=1}^\infty$ is such that
-$\lim_{n\to\infty} x_n = \infty$ and
+Vejamos o segundo item.
+Se $\int_a^\infty f$ converge, qualquer sequência $\{ x_n \}_{n=1}^\infty$ que tenda a
+infinito serve. O ponto delicado é provar a recíproca.
+Suponha que $\{ x_n \}_{n=1}^\infty$ seja tal que
+$\lim_{n\to\infty} x_n = \infty$ e que
 \begin{equation*}
 \lim_{n\to\infty} \int_a^{x_n} f = A
 \end{equation*}
-converges.  Given $\epsilon > 0$, pick $N$ such that for
-all $n \geq N$, we have
+converge. Dado $\epsilon > 0$, escolha $N$ de modo que, para
+todo $n \geq N$, tenhamos
 $A - \epsilon < \int_a^{x_n} f < A + \epsilon$.
-Because $\int_a^x f$ is increasing as a function of $x$, we have that for all
-$x \geq x_N$
+Como $\int_a^x f$ é crescente em função de $x$, para todo
+$x \geq x_N$ temos
 \begin{equation*}
 A - \epsilon < \int_a^{x_N} f \leq \int_a^x f .
 \end{equation*}
-As $\{ x_n \}_{n=1}^\infty$ goes to $\infty$, we have that for any 
-$x$, there is an $x_m$ such that $m \geq N$ and $x \leq x_m$.  Then
+Como $\{ x_n \}_{n=1}^\infty$ tende a $\infty$, para todo $x$
+existe $x_m$ tal que $m \geq N$ e $x \leq x_m$. Então
 \begin{equation*}
 \int_a^{x} f \leq \int_a^{x_m} f < A + \epsilon .
 \end{equation*}
-In particular, for all $x \geq x_N$, we have
+Em particular, para todo $x \geq x_N$, temos
 $\abs{\int_a^{x} f - A} < \epsilon$.
 \end{proof}
 
-\begin{prop}[Comparison test for improper integrals]%
-\index{comparison test for improper integrals}
-Let
-$f \colon [a,\infty) \to \R$ and
-$g \colon [a,\infty) \to \R$ be functions
-that are Riemann integrable on $[a,b]$ for all $b > a$.   Suppose
-that for all $x \geq a$,
+\begin{prop}[Teste da comparação para integrais impróprias]%
+\index{teste da comparação para integrais impróprias}
+Sejam
+$f \colon [a,\infty) \to \R$ e
+$g \colon [a,\infty) \to \R$ funções
+integráveis à Riemann em $[a,b]$ para todo $b > a$. Suponha
+que, para todo $x \geq a$,
 \begin{equation*}
 \babs{f(x)} \leq g(x) .
 \end{equation*}
 \begin{enumerate}[(i)]
-\item If $\int_a^\infty g$ converges, then $\int_a^\infty f$ converges,
-and in this case 
+\item Se $\int_a^\infty g$ converge, então $\int_a^\infty f$ converge,
+e, nesse caso,
 $\abs{\int_a^\infty f} \leq \int_a^\infty g$.
-\item If $\int_a^\infty f$ diverges, then $\int_a^\infty g$ diverges.
+\item Se $\int_a^\infty f$ diverge, então $\int_a^\infty g$ diverge.
 \end{enumerate}
 \end{prop}
 
 \begin{proof}
-We start with the first item.
-For every $b$ and $c$, such that $a \leq b \leq c$, we have 
-$-g(x) \leq f(x) \leq g(x)$, and so
+Começamos pelo primeiro item.
+Para quaisquer $b$ e $c$ tais que $a \leq b \leq c$, temos
+$-g(x) \leq f(x) \leq g(x)$ e, portanto,
 \begin{equation*}
 \int_b^c -g \leq \int_b^c f \leq \int_b^c g  .
 \end{equation*}
-In other words, $\abs{\int_b^c f} \leq \int_b^c g$.
+Em outras palavras, $\abs{\int_b^c f} \leq \int_b^c g$.
 
-Let $\epsilon > 0$ be given.  Because
-of \propref{impropriemann:tail},
+Seja $\epsilon > 0$. Pela
+\propref{impropriemann:tail},
 \begin{equation*}
 \int_a^\infty g =
 \int_a^b g +
 \int_b^\infty g .
 \end{equation*}
-As $\int_a^b g$ goes to
-$\int_a^\infty g$ as $b$ goes to infinity,
-$\int_b^\infty g$ goes to 0 as $b$ goes to infinity.  Choose $B$
-such that
+Como $\int_a^b g$ converge a
+$\int_a^\infty g$ quando $b$ tende a infinito,
+$\int_b^\infty g$ tende a 0 quando $b$ tende a infinito. Escolha $B$
+tal que
 \begin{equation*}
 \int_B^\infty g < \epsilon .
 \end{equation*}
-As $g$ is nonnegative, if $B \leq b < c$, then
-$\int_b^c g < \epsilon$ as well.
-Let $\{ x_n \}_{n=1}^\infty$ be a sequence going to infinity.  Let $M$ be such that
-$x_n \geq B$ for all $n \geq M$.  Take $n, m \geq M$,
-with $x_n \leq x_m$,
+Como $g$ é não negativa, se $B \leq b < c$, então
+$\int_b^c g < \epsilon$ também.
+Seja $\{ x_n \}_{n=1}^\infty$ uma sequência que tende a infinito. Seja $M$ tal que
+$x_n \geq B$ para todo $n \geq M$. Tomemos $n,m \geq M$,
+com $x_n \leq x_m$.
 \begin{equation*}
 \abs{\int_a^{x_m} f - \int_a^{x_n} f} 
 =
 \abs{\int_{x_n}^{x_m} f} 
 \leq \int_{x_n}^{x_m} g < \epsilon .
 \end{equation*}
-Therefore, the sequence $\bigl\{ \int_a^{x_n} f \bigr\}_{n=1}^\infty$ is Cauchy and hence converges.
+Portanto, a sequência $\bigl\{ \int_a^{x_n} f \bigr\}_{n=1}^\infty$ é de Cauchy e, logo, converge.
 
-We need to show that the limit is unique.  Suppose $\{ x_n \}_{n=1}^\infty$ is a sequence
-converging to infinity such that
-$\bigl\{ \int_a^{x_n} f \bigr\}_{n=1}^\infty$ converges to $L_1$, and $\{
-y_n \}_{n=1}^\infty$ is a sequence
-converging to infinity such that
-$\bigl\{ \int_a^{y_n} f \bigr\}_{n=1}^\infty$ converges to $L_2$.  Then there must be some $n$ such
-that
-$\babs{\int_a^{x_n} f - L_1} < \epsilon$ and 
-$\babs{\int_a^{y_n} f - L_2} < \epsilon$.  We can also suppose $x_n \geq B$
-and $y_n \geq B$.  Then
+Precisamos mostrar que o limite é único. Suponha que $\{ x_n \}_{n=1}^\infty$ seja uma sequência
+que tende a infinito e tal que
+$\bigl\{ \int_a^{x_n} f \bigr\}_{n=1}^\infty$ converge a $L_1$, e que $\{y_n\}_{n=1}^\infty$ seja uma sequência
+que tende a infinito e tal que
+$\bigl\{ \int_a^{y_n} f \bigr\}_{n=1}^\infty$ converge a $L_2$. Então existe algum $n$ tal
+que
+$\babs{\int_a^{x_n} f - L_1} < \epsilon$ e
+$\babs{\int_a^{y_n} f - L_2} < \epsilon$. Também podemos supor que $x_n \geq B$
+e $y_n \geq B$. Então
 \begin{equation*}
 \sabs{L_1 - L_2} \leq
 \abs{L_1 - \int_a^{x_n} f}
@@ -2846,24 +2840,24 @@ and $y_n \geq B$.  Then
 <
 3 \epsilon.
 \end{equation*}
-As $\epsilon > 0$ was arbitrary, $L_1 = L_2$, and hence
-$\int_a^\infty f$ converges.
-Above we have shown that $\abs{\int_a^c f} \leq \int_a^c g$ for all $c > a$.
-By taking the limit $c \to \infty$, the first item is proved.
+Como $\epsilon > 0$ era arbitrário, $L_1 = L_2$ e, portanto,
+$\int_a^\infty f$ converge.
+Acima mostramos que $\abs{\int_a^c f} \leq \int_a^c g$ para todo $c > a$.
+Tomando o limite quando $c \to \infty$, provamos o primeiro item.
 
-The second item is simply a contrapositive of the first item.
+O segundo item é simplesmente a contrapositiva do primeiro.
 \end{proof}
 
 \begin{example}
-The improper integral
+A integral imprópria
 \begin{equation*}
 \int_0^\infty \frac{\sin(x^2)(x+2)}{x^3+1} \,dx
 \end{equation*}
-converges.
+converge.
 
-Proof:  Observe we simply need to show
-that the integral converges when going from 1 to infinity.
-For $x \geq 1$ we obtain
+Demonstração: observe que basta mostrar
+que a integral converge de 1 até infinito.
+Para $x \geq 1$, obtemos
 \begin{equation*}
 \abs{\frac{\sin(x^2)(x+2)}{x^3+1}}
 \leq
@@ -2871,7 +2865,7 @@ For $x \geq 1$ we obtain
 \leq \frac{x+2}{x^3} \leq
 \frac{x+2x}{x^3} \leq \frac{3}{x^2} .
 \end{equation*}
-Then
+Então
 \begin{equation*}
 \int_1^\infty \frac{3}{x^2}\,dx
 =
@@ -2881,28 +2875,28 @@ Then
 =
 3 .
 \end{equation*}
-So using the comparison test and the tail test, the original
-integral converges.
+Portanto, pelo teste da comparação e pelo teste das caudas, a integral
+original converge.
 \end{example}
 
 \begin{example}
-You should be careful when doing formal manipulations with improper
-integrals.
-The integral
+É preciso ter cuidado ao fazer manipulações formais com integrais
+impróprias.
+A integral
 \begin{equation*}
 \int_2^\infty \frac{2}{x^2-1}\,dx
 \end{equation*}
-converges via the comparison test using $\nicefrac{1}{x^2}$ again.  However, if you
-succumb to the temptation to write
+converge pelo teste da comparação, usando novamente $\nicefrac{1}{x^2}$.
+No entanto, se você ceder à tentação de escrever
 \begin{equation*}
 \frac{2}{x^2-1} = 
 \frac{1}{x-1}
 -
 \frac{1}{x+1} 
 \end{equation*}
-and try to integrate each part separately, you will not succeed.
-It is \emph{not} true that you can split the improper
-integral in two; you cannot split the limit.
+e tentar integrar cada parcela separadamente, não conseguirá.
+\emph{Não} é verdade que se possa separar a integral imprópria
+em duas; não se pode separar o limite.
 \begin{equation*}
 \begin{split}
 \int_2^\infty \frac{2}{x^2-1} \,dx &=
@@ -2922,40 +2916,38 @@ integral in two; you cannot split the limit.
 \int_2^\infty \frac{1}{x+1}\,dx .
 \end{split}
 \end{equation*}
-The last line in the computation does not even make sense.  Both of the
-integrals diverge to infinity, since we can
-apply the comparison test appropriately with
-$\nicefrac{1}{x}$.  We get $\infty - \infty$.
+A última linha do cálculo nem sequer faz sentido. Ambas as integrais
+divergem para infinito, pois podemos aplicar adequadamente o teste da
+comparação com $\nicefrac{1}{x}$. Obtemos $\infty - \infty$.
 \end{example}
 
-Now suppose we need to take limits at both endpoints.
+Agora suponha que precisamos tomar limites em ambos os extremos.
 
 \begin{defn}
-Suppose $f \colon (a,b) \to \R$ is a function
-that is Riemann integrable on $[c,d]$ for all $c$, $d$
-such that $a < c < d < b$, then we define
+Suponha que $f \colon (a,b) \to \R$ seja uma função
+integrável à Riemann em $[c,d]$ para todos $c,d$
+tais que $a < c < d < b$. Então definimos
 \begin{equation*}
 \int_a^b f \coloneqq \lim_{c \to a^+} \, \lim_{d \to b^-} \, \int_{c}^{d} f
 \end{equation*}
-if the limits exist.
+se os limites existirem.
 
-Suppose $f \colon \R \to \R$ is a function such that
-$f$ is Riemann integrable on all bounded intervals $[a,b]$.  Then
-we define
+Suponha que $f \colon \R \to \R$ seja uma função integrável à Riemann
+em todos os intervalos limitados $[a,b]$. Então definimos
 \begin{equation*}
 \int_{-\infty}^\infty f \coloneqq \lim_{c \to -\infty} \, \lim_{d \to \infty} \, \int_c^d f
 \end{equation*}
-if the limits exist.
+se os limites existirem.
 
-We similarly define improper integrals with one infinite and one finite
-improper endpoint.  We leave this definition to the reader.
+Definimos de modo semelhante integrais impróprias com um extremo impróprio
+infinito e outro finito. Deixamos essa definição a cargo do leitor.
 \end{defn}
 
-One ought to always be careful about double limits.  The definition
-given above says that we first take the limit as $d$ goes to $b$ or
-$\infty$ for a fixed $c$, and then we take the limit in $c$.
-We will have to prove that in this case it does not matter which limit
-we compute first.
+É preciso sempre ter cuidado com limites duplos. A definição acima
+estabelece que primeiro tomamos o limite quando $d$ tende a $b$ ou
+$\infty$, com $c$ fixo, e depois tomamos o limite em $c$.
+Precisaremos provar que, neste caso, não importa qual limite
+calculamos primeiro.
 
 \begin{example}
 \begin{equation*}
@@ -2971,27 +2963,26 @@ we compute first.
 \end{equation*}
 \end{example}
 
-In the definition, the order of the limits can always be switched if they
-exist.  Let us state and prove this fact only for the limits at infinity.
+Na definição, a ordem dos limites sempre pode ser trocada, desde que existam.
+Enunciemos e provemos esse fato apenas para limites no infinito.
 
 \begin{prop}
-Suppose $f \colon \R \to \R$ is integrable on every bounded interval
+Suponha que $f \colon \R \to \R$ seja integrável em todo intervalo limitado
 $[a,b]$.
-Then 
+Então
 \begin{equation*}
 \lim_{a \to -\infty} \, \lim_{b \to \infty} \, \int_a^b f
-\quad \text{converges} \qquad \text{if and only if} \qquad
+\quad \text{converge} \qquad \text{se, e somente se,} \qquad
 \lim_{b \to \infty}
 \,
 \lim_{a \to -\infty}
 \,
 \int_a^b f
 \quad
-\text{converges,}
+\text{converge,}
 \end{equation*}
-in which case the two
-expressions are equal.  If either of the
-expressions converges, then the improper integral converges and
+Nesse caso, as duas expressões são iguais. Se uma delas converge,
+então a integral imprópria converge e
 \begin{equation*}
 \lim_{a\to\infty}
 \int_{-a}^a f
@@ -3001,8 +2992,8 @@ expressions converges, then the improper integral converges and
 \end{prop}
 
 \begin{proof}
-Without loss of generality, assume $a < 0$ and $b > 0$.  Suppose
-the first expression converges.  Then
+Sem perda de generalidade, suponha que $a < 0$ e $b > 0$. Suponha
+que a primeira expressão convirja. Então
 \begin{equation*}
 \begin{split}
 \lim_{a \to -\infty} \, \lim_{b \to \infty} \, \int_a^b f
@@ -3043,9 +3034,9 @@ the first expression converges.  Then
 \right)  .
 \end{split}
 \end{equation*}
-Similar computation shows the other direction.  Therefore, if
-either expression converges, then the improper integral converges
-and
+Cálculo semelhante mostra a outra implicação. Portanto, se
+uma das expressões converge, então a integral imprópria converge
+e
 \begin{multline*}
 \int_{-\infty}^\infty f
 =
@@ -3085,10 +3076,10 @@ and
 \end{proof}
 
 \begin{example}
-On the other hand, you must be careful to
-take the limits independently before you know convergence.  Let
-$f(x) = \frac{x}{\sabs{x}}$ for $x \neq 0$ and $f(0) = 0$.
-If $a < 0$ and $b > 0$, then
+Por outro lado, é preciso tomar os limites independentemente antes de saber
+se há convergência. Seja
+$f(x) = \frac{x}{\sabs{x}}$ para $x \neq 0$ e $f(0) = 0$.
+Se $a < 0$ e $b > 0$, então
 \begin{equation*}
 \int_{a}^b f
 =
@@ -3098,16 +3089,16 @@ If $a < 0$ and $b > 0$, then
 =
 a+b .
 \end{equation*}
-For every fixed $a < 0$, the limit as $b \to \infty$ is infinite.
-So even the first limit does not exist,
-and the improper integral $\int_{-\infty}^\infty f$ does not converge.
-On the other hand, if $a > 0$, then
+Para cada $a < 0$ fixo, o limite quando $b \to \infty$ é infinito.
+Assim, nem sequer o primeiro limite existe,
+e a integral imprópria $\int_{-\infty}^\infty f$ não converge.
+Por outro lado, se $a > 0$, então
 \begin{equation*}
 \int_{-a}^{a} f
 =
 (-a)+a = 0 .
 \end{equation*}
-Therefore,
+Portanto,
 \begin{equation*}
 \lim_{a\to\infty}
 \int_{-a}^{a} f
@@ -3116,11 +3107,11 @@ Therefore,
 \end{example}
 
 \begin{example}
-An example to keep in mind for improper integrals
-is the \emph{\myindex{sinc function}}%
-\footnote{Shortened from Latin: \emph{sinus cardinalis}}.
-This function comes up quite often
-in both pure and applied mathematics.  Define
+Um exemplo importante de integral imprópria é a
+\emph{\myindex{função sinc}}%
+\footnote{Forma abreviada do latim: \emph{sinus cardinalis}}.
+Essa função aparece com frequência tanto na matemática pura
+quanto na aplicada. Defina
 \begin{equation*}
 \operatorname{sinc}(x) \coloneqq
 \begin{cases}
@@ -3130,40 +3121,38 @@ in both pure and applied mathematics.  Define
 \end{equation*}
 \begin{myfigureht}
 \myincludegraphics{sincfig}{%
-A graph of the sinc function on the interval from minus 4 pi to 4 pi.
-It oscillates sort of like the sine function to the right
-of the origin, and sort of like minus sine to the left of the
-origin.  The root at the origin disappears and the function is simply 1
-at the origin.  The oscillations quickly get smaller and smaller
-as we go away from the origin.  The function is clearly even.}
-\caption{The sinc function.\label{figsinc}}
+Gráfico da função sinc no intervalo de menos quatro pi a quatro pi.
+À direita da origem, ela oscila de modo semelhante à função seno; à esquerda,
+de modo semelhante ao seno negativo. O zero na origem desaparece, e a função
+vale simplesmente 1 nesse ponto. As oscilações diminuem rapidamente
+à medida que nos afastamos da origem. A função é claramente par.}
+\caption{A função sinc.\label{figsinc}}
 \end{myfigureht}
 
-It is not difficult to show that
-the sinc function is continuous at zero, but that is
-not important right now.  What is important is that
+Não é difícil mostrar que
+a função sinc é contínua em zero, mas isso não é importante agora.
+O que importa é que
 \begin{equation*}
 \int_{-\infty}^\infty \operatorname{sinc}(x) \,dx = \pi ,
 \qquad \text{while} \qquad
 \int_{-\infty}^\infty \babs{\operatorname{sinc}(x)} \,dx = \infty .
 \end{equation*}
-The integral of the sinc function is a continuous analogue of the
-alternating harmonic series $\sum_{n=1}^\infty \nicefrac{{(-1)}^n}{n}$, while the
-absolute value is like the regular harmonic series $\sum_{n=1}^\infty \nicefrac{1}{n}$.
-In particular, the fact that the integral converges must be done directly
-rather than using the comparison test.
+A integral da função sinc é um análogo contínuo da série harmônica alternada
+$\sum_{n=1}^\infty \nicefrac{{(-1)}^n}{n}$, enquanto o valor absoluto se
+assemelha à série harmônica usual $\sum_{n=1}^\infty \nicefrac{1}{n}$.
+Em particular, a convergência da integral deve ser provada diretamente,
+e não pelo teste da comparação.
 
-We will not prove the first statement exactly.  Let us simply prove
-that the integral of the sinc function converges, but we will not worry
-about the exact limit.  Because $\frac{\sin(-x)}{-x} = \frac{\sin(x)}{x}$, it is
-enough to show that
+Não provaremos exatamente a primeira afirmação. Vamos apenas mostrar
+que a integral da função sinc converge, sem nos preocupar com o limite
+exato. Como $\frac{\sin(-x)}{-x} = \frac{\sin(x)}{x}$, basta mostrar que
 \begin{equation*}
 \int_{2\pi}^\infty \frac{\sin(x)}{x}\,dx
 \end{equation*}
-converges.  We
-also avoid $x=0$ this way to make our life simpler.
+converge. Assim,
+também evitamos $x=0$ e simplificamos o argumento.
 
-For every $n \in \N$, we have that for $x \in [\pi 2n, \pi (2n+1)]$,
+Para todo $n \in \N$ e $x \in [\pi 2n, \pi (2n+1)]$,
 \begin{equation*}
 \frac{\sin(x)}{\pi (2n+1)}
 \leq
@@ -3171,7 +3160,7 @@ For every $n \in \N$, we have that for $x \in [\pi 2n, \pi (2n+1)]$,
 \leq
 \frac{\sin(x)}{\pi 2n} ,
 \end{equation*}
-as $\sin(x) \geq 0$.  For $x \in [\pi (2n+1), \pi (2n+2)]$,
+pois $\sin(x) \geq 0$. Para $x \in [\pi (2n+1), \pi (2n+2)]$,
 \begin{equation*}
 \frac{\sin(x)}{\pi (2n+1)}
 \leq
@@ -3179,9 +3168,9 @@ as $\sin(x) \geq 0$.  For $x \in [\pi (2n+1), \pi (2n+2)]$,
 \leq
 \frac{\sin(x)}{\pi (2n+2)} ,
 \end{equation*}
-as $\sin(x) \leq 0$.
+pois $\sin(x) \leq 0$.
 
-Via the fundamental theorem of calculus,
+Pelo teorema fundamental do cálculo,
 \begin{equation*}
 %mbxlatex \begin{aligned}
 \frac{2}{\pi (2n+1)}
@@ -3204,7 +3193,7 @@ Via the fundamental theorem of calculus,
 \frac{1}{\pi n} .
 %mbxlatex \end{aligned}
 \end{equation*}
-Similarly,
+De modo semelhante,
 \begin{equation*}
 \frac{-2}{\pi (2n+1)}
 \leq
@@ -3214,7 +3203,7 @@ Similarly,
 \leq
 \frac{-1}{\pi (n+1)} .
 \end{equation*}
-Adding the two together we find
+Somando as duas desigualdades, obtemos
 \begin{equation*}
 %mbxlatex \begin{aligned}
 0
@@ -3237,36 +3226,29 @@ Adding the two together we find
 \frac{1}{\pi n(n+1)} .
 %mbxlatex \end{aligned}
 \end{equation*}
-See \figureref{fig:sincbound}.
+Veja a \figureref{fig:sincbound}.
 \begin{myfigureht}
 \myincludegraphics{sincbound}{%
-A graph of several functions on the interval
-from pi times 2 n to pi times quantity 2 n plus 2
-is shown.  They all look like a sine wave that is losing amplitude.
-A dark bold line is the function sine of x all over x
-graphed over the entire interval.
-Like all the other functions it is zero at the left-hand endpoint,
-the right-hand endpoint and the middle point pi times quantity 2 n
-plus 1.  A dotted line on the first subinterval (the left half) 
-very close to and below the solid line denotes the
-function sine of x all over quantity pi times quantity 2 n plus 1.
-A dashed line over the first subinterval very close to and above
-the solid line denotes the function sine of x over quantity pi 2 n.
-The area between the dashed line and the x-axis over the first
-subinterval is shaded.
-On the right half of the interval, a dotted line denotes
-the same function as before, and again it is below the solid line.
-A dash-dotted line that is slightly above the solid line
-now denotes the function sine of x all over quantity pi times
-quantity 2 n plus 2.  The area above the dash-dotted line is shaded.}
-\caption{Bound of $\int_{2\pi n}^{2\pi (n+1)} \frac{\sin(x)}{x} \,dx$ using
-the shaded integral (signed area
-$\frac{1}{\pi n} 
-+
-\frac{-1}{\pi (n+1)}$).\label{fig:sincbound}}
+O gráfico mostra várias funções no intervalo de 2 pi n a 2 pi vezes (n+1);
+todas se parecem com ondas senoidais de amplitude decrescente.
+Uma linha escura e espessa representa a função seno de x dividido por x em
+todo o intervalo.
+Como as demais funções, ela vale zero nos extremos do intervalo e no ponto
+central pi vezes (2n+1). No primeiro subintervalo (a metade à esquerda), uma
+linha pontilhada, muito próxima e abaixo da linha contínua, representa o seno
+de x dividido por pi vezes (2n+1). Uma linha tracejada, muito próxima e acima
+da linha contínua, representa o seno de x dividido por 2 pi n. A área entre
+essa linha tracejada e o eixo x no primeiro subintervalo está sombreada. Na metade à direita, uma
+linha pontilhada representa a mesma função de antes e, novamente, fica abaixo
+da linha contínua. Uma linha traço-ponto, ligeiramente acima da linha
+contínua, representa o seno de x dividido por pi vezes (2n+2); a área acima
+dela está sombreada.}
+\caption{Estimativa de $\int_{2\pi n}^{2\pi (n+1)} \frac{\sin(x)}{x} \,dx$
+usando as áreas sombreadas (área com sinal
+$\frac{1}{\pi n} + \frac{-1}{\pi(n+1)}$).\label{fig:sincbound}}
 \end{myfigureht}
 
-For $k \in \N$, 
+Para $k \in \N$,
 \begin{equation*}
 \int_{2\pi}^{2k\pi} \frac{\sin(x)}{x} \,dx
 =
@@ -3276,11 +3258,9 @@ For $k \in \N$,
 \sum_{n=1}^{k-1}
 \frac{1}{\pi n(n+1)} .
 \end{equation*}
-We find the partial sums of a series with positive terms.
-The series
-converges as
-$\sum_{n=1}^\infty \frac{1}{\pi n (n+1)}$ is a convergent series.  Thus
-as a sequence,
+Consideramos as somas parciais de uma série com termos positivos.
+A série converge, pois
+$\sum_{n=1}^\infty \frac{1}{\pi n (n+1)}$ é convergente. Portanto, como sequência,
 \begin{equation*}
 \lim_{k\to \infty} \int_{2\pi}^{2k\pi} \frac{\sin(x)}{x} \,dx
 =L \leq
@@ -3288,18 +3268,18 @@ as a sequence,
 \frac{1}{\pi n(n+1)} < \infty .
 \end{equation*}
 
-Let $M > 2\pi$ be arbitrary, and let $k \in \N$
-be the largest integer such that $2k\pi \leq M$.
-For $x \in [2k\pi,M]$, we have 
-$\frac{-1}{2k\pi} \leq \frac{\sin(x)}{x} \leq \frac{1}{2k\pi}$, and so
+Seja $M > 2\pi$ arbitrário e seja $k \in \N$
+o maior inteiro tal que $2k\pi \leq M$.
+Para $x \in [2k\pi,M]$, temos
+$\frac{-1}{2k\pi} \leq \frac{\sin(x)}{x} \leq \frac{1}{2k\pi}$, portanto
 \begin{equation*}
 \abs{\int_{2k\pi}^{M} \frac{\sin(x)}{x} \,dx }  \leq
 \frac{M-2k\pi}{2k\pi} \leq \frac{1}{k} .
 \end{equation*}
-As $k$ is the largest $k$ such that $2k\pi \leq M$,
-then as $M\in \R$ goes to infinity, so does $k \in \N$.
+Como $k$ é o maior inteiro tal que $2k\pi \leq M$,
+quando $M\in \R$ tende a infinito, $k \in \N$ também tende a infinito.
 
-Then
+Então
 \begin{equation*}
 \int_{2\pi}^M \frac{\sin(x)}{x}\,dx
 =
@@ -3307,39 +3287,35 @@ Then
 +
 \int_{2k\pi}^{M} \frac{\sin(x)}{x} \,dx .
 \end{equation*}
-As $M$ goes to infinity,
-the first term on the
-right-hand side goes to $L$,
-and the second term on the
-right-hand side
-goes to zero.  Hence,
+Quando $M$ tende a infinito, o primeiro termo do lado direito tende a $L$
+e o segundo tende a zero. Portanto,
 \begin{equation*}
 \int_{2\pi}^\infty \frac{\sin(x)}{x} \,dx = L .
 %\leq \sum_{n=1}^{\infty}
 %\frac{1}{\pi n(n+1)} < \infty .
 \end{equation*}
 
-The double-sided integral of sinc also exists as noted above.
-We leave the other statement---that the integral
-of the absolute value of the sinc function diverges---as an exercise.
+Como observamos acima, a integral bilateral da função sinc também existe.
+Deixamos como exercício a outra afirmação: a integral
+do valor absoluto da função sinc diverge.
 \end{example}
 
-\subsection{Integral test for series}
+\subsection{Teste da integral para séries}
 
-The fundamental theorem 
-of calculus can be used in proving a series is summable and to estimate its sum.
+O teorema fundamental do cálculo pode ser usado para provar a convergência
+de uma série e estimar sua soma.
 
-\begin{prop}[Integral test]\index{integral test for series}
-Suppose $f \colon [k,\infty) \to \R$ is a decreasing nonnegative
-function where $k \in \Z$.  Then
+\begin{prop}[Teste da integral]\index{teste da integral para séries}
+Suponha que $f \colon [k,\infty) \to \R$ seja uma função não negativa e
+decrescente, com $k \in \Z$. Então
 \begin{equation*}
 \sum_{n=k}^\infty f(n)
-\quad \text{converges} \qquad \text{if and only if}
+\quad \text{converge} \qquad \text{se, e somente se,}
 \qquad
 \int_k^\infty f
-\quad \text{converges}.
+\quad \text{converge}.
 \end{equation*}
-In this case 
+Nesse caso,
 \begin{equation*}
 \int_k^\infty f
 \leq
@@ -3349,31 +3325,27 @@ f(k)+
 \int_k^\infty f .
 \end{equation*}
 \end{prop}
-See \figureref{fig:integraltest}, for an illustration with $k=1$.
-By \propref{prop:monotoneintegrable},
-$f$ is integrable
-on every interval $[k,b]$ for all $b > k$, so the statement of the theorem
-makes sense without additional hypotheses of integrability.
+Veja na \figureref{fig:integraltest} uma ilustração com $k=1$.
+Pela \propref{prop:monotoneintegrable}, $f$ é integrável em todo intervalo
+$[k,b]$, para qualquer $b>k$; portanto, o enunciado do teorema faz sentido
+sem hipóteses adicionais de integrabilidade.
 \begin{myfigureht}
 \myincludegraphics{integraltest}{%
-A diagram of the Darboux rectangles for a decreasing
-function starting at x equals 1 and going in intervals
-of 1 until x equals 10 on the right.  As the function
-is decreasing, we notice that the function graph goes through
-the top left corner of the entire rectangle and also the top
-right corner of the shaded rectangle.}
-\caption{The area under the curve, 
-$\int_1^\infty f$, is bounded below
-by the area of the shaded rectangles,
-$f(2)+f(3)+f(4)+\cdots$, and bounded above
-by the area of the entire rectangles, both the shaded and unshaded parts,
+Diagrama dos retângulos de Darboux para uma função decrescente: começa em
+começa em x igual a 1 e avança em intervalos de comprimento 1 até x igual a
+10, à direita. Como a
+função é decrescente, seu gráfico passa pelo canto superior esquerdo de cada
+retângulo completo e pelo canto superior direito de cada retângulo sombreado.}
+\caption{A área sob a curva, $\int_1^\infty f$, é limitada inferiormente
+pela área dos retângulos sombreados, $f(2)+f(3)+f(4)+\cdots$, e
+superiormente pela área de todos os retângulos, sombreados ou não,
 $f(1)+f(2)+f(3)+\cdots$.\label{fig:integraltest}}
 \end{myfigureht}
 
 \begin{proof}
-Let $\ell, m \in \Z$ be such that $m > \ell \geq k$.
-Because $f$ is decreasing, we have
-$\int_{n}^{n+1} f \leq f(n) \leq \int_{n-1}^{n} f$.  Therefore,
+Sejam $\ell,m \in \Z$ tais que $m>\ell\geq k$.
+Como $f$ é decrescente, temos
+$\int_{n}^{n+1} f \leq f(n) \leq \int_{n-1}^{n} f$. Portanto,
 \begin{equation} \label{impropriemann:eqseries}
 \int_\ell^m f
 =
@@ -3388,53 +3360,49 @@ f(\ell)+
 \int_\ell^{m-1} f .
 \end{equation}
 
-Suppose first that $\int_k^\infty f$ converges and
-let $\epsilon > 0$ be given.
-As before, since $f$ is positive, there exists
-an $L \in \N$ such that if $\ell \geq L$, then
-$\int_\ell^{m} f < \nicefrac{\epsilon}{2}$ for all $m \geq \ell$.
-The function 
-$f$ must decrease to zero (why?), so make $L$ large enough so that
-for $\ell \geq L$, we have $f(\ell) < \nicefrac{\epsilon}{2}$.
-Thus, for $m > \ell \geq L$, we have
-via \eqref{impropriemann:eqseries},
+Suponha primeiro que $\int_k^\infty f$ converge e seja dado $\epsilon>0$.
+Como antes, sendo $f$ não negativa, existe $L\in\N$ tal que, se $\ell\geq L$,
+então $\int_\ell^m f < \nicefrac{\epsilon}{2}$ para todo $m\geq\ell$.
+A função $f$ deve tender a zero (por quê?); assim, podemos escolher $L$
+suficientemente grande para que $f(\ell)<\nicefrac{\epsilon}{2}$ quando
+$\ell\geq L$. Logo, para $m>\ell\geq L$, por
+\eqref{impropriemann:eqseries},
 \begin{equation*}
 \sum_{n=\ell}^{m} f(n)
 \leq
 f(\ell)+
 \int_\ell^{m} f < \nicefrac{\epsilon}{2} + \nicefrac{\epsilon}{2} = \epsilon .
 \end{equation*}
-The series is therefore Cauchy and thus converges.  The estimate in the
-proposition is obtained by letting $m$ go to infinity in
-\eqref{impropriemann:eqseries} with $\ell = k$.
+Portanto, a série satisfaz o critério de Cauchy e converge. Obtemos as estimativas da
+proposição fazendo $m$ tender a infinito em \eqref{impropriemann:eqseries},
+com $\ell=k$.
 
-Conversely, suppose $\int_k^\infty f$ diverges.  
-As $f$ is positive, by \propref{impropriemann:possimp},
-the sequence $\{ \int_k^m f \}_{m=k}^\infty$ diverges to infinity.
-Using
-\eqref{impropriemann:eqseries} with $\ell = k$, we find
+Reciprocamente, suponha que $\int_k^\infty f$ diverge.
+Como $f$ é não negativa, pela \propref{impropriemann:possimp},
+a sequência $\{\int_k^m f\}_{m=k}^\infty$ diverge para infinito.
+Usando \eqref{impropriemann:eqseries} com $\ell=k$, obtemos
 \begin{equation*}
 \int_k^m f
 \leq
 \sum_{n=k}^{m-1} f(n) .
 \end{equation*}
-As the left-hand side goes to infinity as $m \to \infty$, so does the
-right-hand side.
+Como o lado esquerdo tende a infinito quando $m\to\infty$, o lado direito
+também tende a infinito.
 \end{proof}
 
 \begin{example}
-The integral test can be used not only to show that a series converges, but to
-estimate its sum to arbitrary precision.
-Let us show $\sum_{n=1}^\infty \frac{1}{n^2}$ exists and
-estimate its sum to within 0.01.  As this series is the $p$-series for
-$p=2$, we already proved it converges (let us pretend we do not know that),
-but we only roughly estimated its sum.
+O teste da integral pode ser usado não apenas para mostrar que uma série
+converge, mas também para estimar sua soma com precisão arbitrária.
+Vamos mostrar que $\sum_{n=1}^\infty \frac{1}{n^2}$ converge e estimar sua
+soma com erro de, no máximo, 0,01. Como essa é a série $p$ para $p=2$, já
+provamos sua convergência (vamos fingir que não sabemos disso), mas estimamos
+sua soma apenas de modo grosseiro.
 
-The fundamental theorem of calculus says that for all $k \in \N$,
+O teorema fundamental do cálculo garante que, para todo $k\in\N$,
 \begin{equation*}
 \int_{k}^\infty \frac{1}{x^2}\,dx = \frac{1}{k} .
 \end{equation*}
-In particular, the series must converge.  But we also have
+Em particular, a série converge. Além disso,
 \begin{equation*}
 \frac{1}{k} = \int_k^\infty \frac{1}{x^2}\,dx
 \leq
@@ -3448,7 +3416,7 @@ In particular, the series must converge.  But we also have
 +
 \frac{1}{k} .
 \end{equation*}
-Adding the partial sum up to $k-1$ we get
+Somando a soma parcial até $k-1$, obtemos
 \begin{equation*}
 \frac{1}{k} + \sum_{n=1}^{k-1} \frac{1}{n^2}
 \leq
@@ -3458,11 +3426,10 @@ Adding the partial sum up to $k-1$ we get
 +
 \frac{1}{k} + \sum_{n=1}^{k-1} \frac{1}{n^2} .
 \end{equation*}
-In other words,
-$\nicefrac{1}{k} + \sum_{n=1}^{k-1} \nicefrac{1}{n^2}$ is an estimate for
-the sum to within $\nicefrac{1}{k^2}$.  Therefore, if we wish to
-find the sum to within 0.01, we note $\nicefrac{1}{{10}^2} = 0.01$.  We
-obtain
+Em outras palavras, $\nicefrac{1}{k} + \sum_{n=1}^{k-1} \nicefrac{1}{n^2}$
+é uma estimativa da soma com erro de, no máximo, $\nicefrac{1}{k^2}$.
+Portanto, se quisermos determinar a soma com erro de, no máximo, 0,01,
+observamos que $\nicefrac{1}{{10}^2}=0{,}01$. Assim, obtemos
 \begin{equation*}
 1.6397\ldots
 \approx
@@ -3476,125 +3443,120 @@ obtain
 \approx
 1.6497\ldots .
 \end{equation*}
-The actual sum is $\nicefrac{\pi^2}{6} \approx 1.6449\ldots$. 
+O valor exato da soma é $\nicefrac{\pi^2}{6} \approx 1.6449\ldots$.
 \end{example}
 
 \subsection{Exercícios}
 
 \begin{exercise}
-Finish the proof of \propref{impropriemann:ptest}.
+Conclua a demonstração da \propref{impropriemann:ptest}.
 \end{exercise}
 
 \begin{exercise}
-Find out for which $a \in \R$ does $\sum_{n=1}^\infty e^{an}$ converge.
-When the series converges, find an upper bound for the sum.
+Determine para quais valores de $a\in\R$ a série $\sum_{n=1}^\infty e^{an}$
+converge. Quando a série convergir, encontre uma cota superior para sua soma.
 \end{exercise}
 
 \begin{exercise}
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Estimate $\sum_{n=1}^\infty \frac{1}{n(n+1)}$ correct to within 0.01
-using the integral test.
+Estime $\sum_{n=1}^\infty \frac{1}{n(n+1)}$ pelo teste da integral, com
+erro de, no máximo, 0,01.
 \item
-Compute the limit of the series exactly
-and compare.  Hint: The sum telescopes.
+Calcule exatamente o limite da série e compare. Dica: a soma é telescópica.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Prove 
+Prove que
 \begin{equation*}
 \int_{-\infty}^\infty \babs{\operatorname{sinc}(x)}\,dx = \infty .
 \end{equation*}
-Hint: Again, it is enough to show this on just one side.
+Dica: novamente, basta mostrar isso em apenas um dos lados.
 \end{exercise}
 
 \begin{exercise}
-Can you interpret
+É possível interpretar
 \begin{equation*}
 \int_{-1}^1 \frac{1}{\sqrt{\sabs{x}}}\,dx
 \end{equation*}
-as an improper integral?  If so, compute its value.
+como uma integral imprópria? Em caso afirmativo, calcule seu valor.
 \end{exercise}
 
 \begin{exercise}
-Take $f \colon [0,\infty) \to \R$, Riemann integrable on
-every interval $[0,b]$, and such that there exist $M$, $a$, and $T$,
-such that $\babs{f(t)} \leq M e^{at}$ for all $t \geq T$.  Show that the
-\emph{\myindex{Laplace transform}} of $f$ exists.  That is, for
-every $s > a$ the following integral converges:
+Seja $f \colon [0,\infty) \to \R$ integrável à Riemann em todo intervalo
+$[0,b]$ e suponha que existam $M$, $a$ e $T$ tais que
+$\babs{f(t)} \leq M e^{at}$ para todo $t\geq T$. Mostre que existe a
+\emph{\myindex{transformada de Laplace}} de $f$. Isto é, para todo $s>a$,
+a integral a seguir converge:
 \begin{equation*}
 F(s) \coloneqq \int_{0}^\infty f(t) e^{-st} \,dt .
 \end{equation*}
 \end{exercise}
 
 \begin{exercise}
-Let $f \colon \R \to \R$ be a Riemann integrable function
-on every interval $[a,b]$, and such
-that $\int_{-\infty}^\infty \babs{f(x)}\,dx < \infty$.  Show that the
-\emph{\myindex{Fourier sine and cosine transforms}}
-exist.  That is, for every $\omega \geq 0$ the
-following integrals converge
+Seja $f \colon \R \to \R$ uma função integrável à Riemann em todo intervalo
+$[a,b]$ e tal que $\int_{-\infty}^\infty \babs{f(x)}\,dx < \infty$.
+Mostre que existem as \emph{\myindex{transformadas seno e cosseno de Fourier}}.
+Isto é, para todo $\omega\geq0$, convergem as integrais
 \begin{equation*}
 F^s(\omega) \coloneqq \frac{1}{\pi} \int_{-\infty}^\infty f(t) \sin(\omega t) \,dt ,
 \qquad
 F^c(\omega) \coloneqq \frac{1}{\pi} \int_{-\infty}^\infty f(t) \cos(\omega t) \,dt .
 \end{equation*}
-Furthermore, show that $F^s$ and $F^c$ are bounded functions.
+Além disso, mostre que $F^s$ e $F^c$ são funções limitadas.
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon [0,\infty) \to \R$ is Riemann integrable on every interval
-$[0,b]$.  Show that  $\int_0^\infty f$ converges if and only if
-for every $\epsilon > 0$ there exists an $M$ such that if $M \leq a < b$,
-then $\babs{\int_a^b f} < \epsilon$.
+Suponha que $f \colon [0,\infty) \to \R$ seja integrável à Riemann em todo
+intervalo $[0,b]$. Mostre que $\int_0^\infty f$ converge se, e somente se,
+para todo $\epsilon>0$ existe $M$ tal que, se $M\leq a<b$, então
+$\babs{\int_a^b f}<\epsilon$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon [0,\infty) \to \R$ is nonnegative and
-\emph{decreasing}.  Prove:
+Suponha que $f \colon [0,\infty) \to \R$ seja não negativa e
+\emph{decrescente}. Prove que:
 \begin{enumerate}[a)]
 \item
-If $\int_0^\infty f < \infty$, then $\lim\limits_{x\to\infty} f(x) = 0$.
+Se $\int_0^\infty f < \infty$, então $\lim\limits_{x\to\infty} f(x)=0$.
 \item
-The converse does not hold.
+A recíproca não vale.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Find an example of an \emph{unbounded} continuous function $f \colon
-[0,\infty) \to \R$ that is nonnegative and such that $\int_0^\infty f < \infty$.
-Note that $\lim_{x\to\infty} f(x)$ will not exist; compare
-previous exercise.
-Hint: On each interval $[k,k+1]$, $k \in \N$, define a function whose
-integral over this interval is less than say $2^{-k}$.
+Encontre um exemplo de função contínua \emph{ilimitada}
+$f \colon [0,\infty) \to \R$, não negativa e tal que
+$\int_0^\infty f < \infty$. Observe que $\lim_{x\to\infty} f(x)$ não
+existirá; compare com o exercício anterior. Dica: em cada intervalo
+$[k,k+1]$, $k\in\N$, defina uma função cuja integral nesse intervalo seja,
+por exemplo, menor que $2^{-k}$.
 \end{exercise}
 
-\begin{exercise}[More challenging]
-Find an example of a function $f \colon [0,\infty) \to \R$ integrable on all
-intervals such that $\lim_{n\to\infty} \int_0^n f$ exists as a
-limit of a sequence (so $n \in \N$), but such that
-$\int_0^\infty f$ does not exist.
-Hint: For all $n\in \N$, divide $[n,n+1]$ into two halves.  On one half
-make the function negative, on the other make the function positive.
+\begin{exercise}[Mais desafiador]
+Encontre um exemplo de função $f \colon [0,\infty) \to \R$, integrável em
+todo intervalo, tal que $\lim_{n\to\infty} \int_0^n f$ exista como limite
+de uma sequência (com $n\in\N$), mas $\int_0^\infty f$ não exista.
+Dica: para todo $n\in\N$, divida $[n,n+1]$ em duas metades. Faça a função
+ser negativa em uma metade e positiva na outra.
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon [1,\infty) \to \R$ is such that
-$g(x) \coloneqq x^2 f(x)$ is a bounded function. Prove that
-$\int_1^\infty f$ converges.
+Suponha que $f \colon [1,\infty) \to \R$ seja tal que
+$g(x) \coloneqq x^2 f(x)$ seja uma função limitada. Prove que
+$\int_1^\infty f$ converge.
 \end{exercise}
 
 \begin{exnote}
-It is sometimes desirable to assign a value to integrals that normally
-cannot be interpreted even as improper integrals,
-e.g.\ $\int_{-1}^1 \nicefrac{1}{x}\,dx$.
-Suppose $f \colon [a,b] \to \R$ is a function and $a < c < b$,
-where $f$ is Riemann integrable on the intervals
-$[a,c-\epsilon]$ and $[c+\epsilon,b]$ for all $\epsilon > 0$.
-Define
-the \emph{\myindex{Cauchy principal value}} of $\int_a^b f$ as
+Às vezes é desejável atribuir um valor a integrais que normalmente não podem
+ser interpretadas nem mesmo como integrais impróprias, por exemplo,
+$\int_{-1}^1 \nicefrac{1}{x}\,dx$.
+Suponha que $f \colon [a,b] \to \R$ seja uma função e $a<c<b$, e que $f$ seja
+integrável à Riemann nos intervalos $[a,c-\epsilon]$ e $[c+\epsilon,b]$ para
+todo $\epsilon>0$. Definimos o \emph{\myindex{valor principal de Cauchy}} de
+$\int_a^b f$ por
 \begin{equation*}
 p.v.\!\int_a^b f \coloneqq \lim_{\epsilon\to 0^+}
 \left(
@@ -3602,7 +3564,7 @@ p.v.\!\int_a^b f \coloneqq \lim_{\epsilon\to 0^+}
 \int_{c+\epsilon}^b f
 \right) ,
 \end{equation*}
-if the limit exists.
+quando esse limite existe.
 \end{exnote}
 
 %\begin{samepage}
@@ -3610,45 +3572,41 @@ if the limit exists.
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Compute $p.v.\!\int_{-1}^1 \nicefrac{1}{x}\,dx$.
+Calcule $p.v.\!\int_{-1}^1 \nicefrac{1}{x}\,dx$.
 \item
-Compute
+Calcule
 $\lim_{\epsilon\to 0^+}
-( \int_{-1}^{-\epsilon} \nicefrac{1}{x}\,dx + 
-\int_{2\epsilon}^1 \nicefrac{1}{x}\,dx )$ and show it is not equal
-to the principal value.
+( \int_{-1}^{-\epsilon} \nicefrac{1}{x}\,dx +
+\int_{2\epsilon}^1 \nicefrac{1}{x}\,dx )$ e mostre que o resultado não é
+igual ao valor principal.
 \item
-Show that if $f$ is integrable on $[a,b]$, then
-$p.v.\!\int_a^b f = \int_a^b f$ (for an arbitrary $c \in (a,b)$).
+Mostre que, se $f$ é integrável em $[a,b]$, então
+$p.v.\!\int_a^b f = \int_a^b f$ (para qualquer $c\in(a,b)$).
 \item
-Suppose $f \colon [-1,1] \to \R$
-is an odd function ($f(-x)=-f(x)$) that is integrable on
-$[-1,-\epsilon]$ and $[\epsilon,1]$ for all $\epsilon >0$.
-Prove that 
-$p.v.\!\int_{-1}^1 f = 0$
+Suponha que $f \colon [-1,1] \to \R$ seja ímpar ($f(-x)=-f(x)$) e
+integrável em $[-1,-\epsilon]$ e $[\epsilon,1]$ para todo $\epsilon>0$.
+Prove que
+$p.v.\!\int_{-1}^1 f = 0$.
 \item
-Suppose 
-$f \colon [-1,1] \to \R$ is continuous and differentiable at 0.  Show that
-$p.v.\!\int_{-1}^1 \frac{f(x)}{x}\,dx$ exists.
+Suponha que $f \colon [-1,1] \to \R$ seja contínua e diferenciável em 0.
+Mostre que existe $p.v.\!\int_{-1}^1 \frac{f(x)}{x}\,dx$.
 \end{enumerate}
 \end{exercise}
 %\end{samepage}
 
 \begin{samepage}
 \begin{exercise}
-Let $f \colon \R \to \R$ and 
-$g \colon \R \to \R$ be continuous functions, where
-$g(x) = 0$ for all $x \notin [a,b]$ for some interval $[a,b]$.
+Sejam $f \colon \R \to \R$ e $g \colon \R \to \R$ funções contínuas, sendo
+$g(x)=0$ para todo $x\notin[a,b]$, para algum intervalo $[a,b]$.
 \begin{enumerate}[a)]
 \item
-Show that the
-\emph{\myindex{convolution}}
+Mostre que a \emph{\myindex{convolução}}
 \begin{equation*}
 (g * f)(x) \coloneqq \int_{-\infty}^\infty f(t)g(x-t)\,dt 
 \end{equation*}
-is well-defined for all $x \in \R$.
+está bem definida para todo $x\in\R$.
 \item
-Suppose $\int_{-\infty}^\infty \babs{f(x)}\,dx < \infty$.  Prove that
+Suponha que $\int_{-\infty}^\infty \babs{f(x)}\,dx < \infty$. Prove que
 \begin{equation*}
 \lim_{x \to -\infty} (g * f)(x) = 0, \qquad \text{e} \qquad
 \lim_{x \to \infty} (g * f)(x) = 0 .

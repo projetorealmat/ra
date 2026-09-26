@@ -1484,104 +1484,99 @@ $R(x,\delta) \subset U$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{Sequences and convergence}
+\section{Sequências e convergência}
 \label{sec:metseqs}
 
 %mbxINTROSUBSECTION
 
-\sectionnotes{1 lecture}
+\sectionnotes{1 aula}
 
-\subsection{Sequences}
+\subsection{Sequências}
 
-The notion of a sequence in a metric space is very similar to a sequence of
-real numbers.
-The related definitions are essentially the same as those for real numbers
-in the sense of \chapterref{seq:chapter}, where $\R$ with
-the standard metric $d(x,y)=\sabs{x-y}$ is replaced
-by an arbitrary metric space $(X,d)$.
-
+A noção de sequência em um espaço métrico é muito semelhante à de uma
+sequência de números reais.
+As definições relacionadas são essencialmente as mesmas que as dos números
+reais no sentido de \chapterref{seq:chapter}, substituindo-se $\R$ com
+a métrica usual $d(x,y)=\sabs{x-y}$
+por um espaço métrico arbitrário $(X,d)$.
 
 \begin{defn}
-A \emph{\myindex{sequence}} in a metric space $(X,d)$ is a function
-$x \colon \N \to X$.  As before we write $x_n$ for the $n$th element in
-the sequence, and for the whole sequence use the notation
+Uma \emph{\myindex{sequência}} em um espaço métrico $(X,d)$ é uma função
+$x \colon \N \to X$. Como antes, escrevemos $x_n$ para o $n$-ésimo elemento
+da sequência, e usamos a notação a seguir para indicar a sequência inteira:
 \glsadd{not:sequence}
 \begin{equation*}
 \{ x_n \}_{n=1}^\infty .
 \end{equation*}
 
-A sequence $\{ x_n \}_{n=1}^\infty$ is \emph{bounded}\index{bounded sequence} if
-there exists a point $p \in X$ and $B \in \R$ such that
+Uma sequência $\{ x_n \}_{n=1}^\infty$ é \emph{limitada}\index{sequência limitada}
+se existem um ponto $p \in X$ e $B \in \R$ tais que
 \begin{equation*}
-d(p,x_n) \leq B \qquad \text{for all } n \in \N.
+d(p,x_n) \leq B \qquad \text{para todo } n \in \N.
 \end{equation*}
-In other words, the sequence $\{x_n\}_{n=1}^\infty$ is bounded whenever
-the set $\{ x_n : n \in \N \}$
-is bounded.
+Em outras palavras, a sequência $\{x_n\}_{n=1}^\infty$ é limitada quando
+o conjunto $\{ x_n : n \in \N \}$
+é limitado.
 
-If $\{ n_k \}_{k=1}^\infty$ is a sequence of natural numbers
-such that $n_{k+1} > n_k$ for all $k$, then
-the sequence $\{ x_{n_k} \}_{k=1}^\infty$\glsadd{not:subsequence}
-is said to be
-a \emph{\myindex{subsequence}} of $\{x_n \}_{n=1}^\infty$.
+Se $\{ n_k \}_{k=1}^\infty$ é uma sequência de números naturais
+tal que $n_{k+1} > n_k$ para todo $k$, então
+a sequência $\{ x_{n_k} \}_{k=1}^\infty$\glsadd{not:subsequence}
+é chamada de
+\emph{\myindex{subsequência}} de $\{x_n \}_{n=1}^\infty$.
 \end{defn}
 
-Similarly, we define convergence.
-See \figureref{fig:sequence-convergence-metric}, for an idea of
-the definition.
+De modo semelhante, definimos convergência.
+Veja na \figureref{fig:sequence-convergence-metric} uma ilustração
+da definição.
 
 \begin{defn}
-A sequence $\{ x_n \}_{n=1}^\infty$ in a metric space $(X,d)$ is said
-to \emph{converge} to a point
-$p \in X$ if for every $\epsilon > 0$, there exists an $M \in \N$ such
-that $d(x_n,p) < \epsilon$ for all $n \geq M$.  The point $p$
-is said to be a \emph{limit}\index{limit!of a sequence in a metric space}
-of $\{ x_n \}_{n=1}^\infty$.
-We will prove the limit is unique, and so
-we write\glsadd{not:limseq}
+Dizemos que uma sequência $\{ x_n \}_{n=1}^\infty$ em um espaço métrico
+$(X,d)$ \emph{converge} a um ponto
+$p \in X$ se, para todo $\epsilon > 0$, existe $M \in \N$ tal que
+$d(x_n,p) < \epsilon$ para todo $n \geq M$. Dizemos que o ponto $p$
+é um \emph{limite}\index{limite!de uma sequência em um espaço métrico}
+de $\{ x_n \}_{n=1}^\infty$.
+Demonstraremos que o limite é único e, por isso, escrevemos
+\glsadd{not:limseq}
 \begin{equation*}
 \lim_{n\to \infty} x_n \coloneqq p .
 \end{equation*}
 
-A sequence
-that converges is \emph{convergent}\index{convergent!sequence in a metric
-space}.
-Otherwise, the sequence is 
-\emph{divergent}\index{divergent!sequence in a metric space}.
+Uma sequência que converge é \emph{convergente}\index{convergente!sequência em um espaço
+métrico}.
+Caso contrário, ela é \emph{divergente}\index{divergente!sequência em um espaço métrico}.
 \begin{myfigureht}
 \myincludegraphics{sequence-convergence-metric}{%
-A dotted circle of radius epsilon centered at p is drawn.
-A bunch of points from the beginning of the sequence
-are shown for x sub 1 through x sub 10.  The points
-x sub 1, x sub 3, x sub 4, x sub 5, and x sub 6 are
-outside the circle, but all the other points are inside.}
-\caption{Sequence converging to $p$.  The first 10 points 
-are shown and $M=7$ for this $\epsilon$.\label{fig:sequence-convergence-metric}}
+Um círculo pontilhado de raio epsilon está centrado em p.
+Vários pontos do início da sequência são mostrados, desde x sub 1 até
+x sub 10. Os pontos x sub 1, x sub 3, x sub 4, x sub 5 e x sub 6
+estão fora do círculo, mas todos os outros estão dentro.}
+\caption{Sequência convergente a $p$. São mostrados os primeiros 10 pontos,
+e $M=7$ para esse $\epsilon$.\label{fig:sequence-convergence-metric}}
 \end{myfigureht}
 \end{defn}
 
-We start by proving the limit is unique.  The proof is almost
-identical (word for word) to the proof of the same fact for sequences of
-real numbers,
-\propref{prop:limisunique}.
-Proofs of many results we know for sequences of real numbers can be
-adapted to
-the more general settings of metric spaces.  We must replace $\sabs{x-y}$
-with $d(x,y)$ in the proofs and apply the triangle inequality correctly.
+Comecemos provando que o limite é único. A demonstração é quase idêntica
+(palavra por palavra) à demonstração do mesmo fato para sequências de
+números reais, em \propref{prop:limisunique}.
+As demonstrações de muitos resultados conhecidos sobre sequências de números
+reais podem ser adaptadas para espaços métricos mais gerais.
+Nas demonstrações, devemos substituir $\sabs{x-y}$ por $d(x,y)$ e aplicar
+corretamente a desigualdade triangular.
 
 \begin{prop} \label{prop:mslimisunique}
-A convergent sequence in a metric space has a unique limit.
+Uma sequência convergente em um espaço métrico tem limite único.
 \end{prop}
 
 \begin{proof}
 %NOTE: should be word for word the same as 2.1.6
-Suppose $\{ x_n \}_{n=1}^\infty$ has limits $x$ and $y$.
-Take an arbitrary $\epsilon > 0$.
-From the definition find an $M_1$ such that for all $n \geq M_1$,
-$d(x_n,x) < \nicefrac{\epsilon}{2}$.  Similarly, find an $M_2$
-such that for all $n \geq M_2$, we have
-$d(x_n,y) < \nicefrac{\epsilon}{2}$.  Now take an $n$ such that
-$n \geq M_1$ and also $n \geq M_2$, and estimate
+Suponha que $\{ x_n \}_{n=1}^\infty$ tenha limites $x$ e $y$.
+Escolha $\epsilon > 0$ arbitrário.
+Pela definição, encontre $M_1$ tal que, para todo $n \geq M_1$,
+$d(x_n,x) < \nicefrac{\epsilon}{2}$. De modo semelhante, encontre $M_2$
+tal que, para todo $n \geq M_2$, tenhamos
+$d(x_n,y) < \nicefrac{\epsilon}{2}$. Agora escolha $n$ tal que
+$n \geq M_1$ e também $n \geq M_2$, e estime:
 \begin{equation*}
 \begin{split}
 d(y,x)
@@ -1591,55 +1586,55 @@ d(y,x_n) + d(x_n,x) \\
 \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon .
 \end{split}
 \end{equation*}
-As $d(y,x) < \epsilon$ for all $\epsilon > 0$, we have $d(x,y) = 0$
-and so $y=x$.  Hence, the limit (if it exists) is unique.
+Como $d(y,x) < \epsilon$ para todo $\epsilon > 0$, temos $d(x,y) = 0$
+e, portanto, $y=x$. Logo, o limite (se existir) é único.
 \end{proof}
 
-The proofs of the following propositions are left as exercises.
+As demonstrações das proposições a seguir ficam como exercício.
 
 \begin{prop} \label{prop:msconvbound}
-A convergent sequence in a metric space is bounded.
+Uma sequência convergente em um espaço métrico é limitada.
 \end{prop}
 
 \begin{prop} \label{prop:msconvifa}
-A sequence $\{ x_n \}_{n=1}^\infty$ in a metric space $(X,d)$ converges to $p \in X$
-if and only
-if there exists a sequence $\{ a_n \}_{n=1}^\infty$ of real numbers such that
+Uma sequência $\{ x_n \}_{n=1}^\infty$ em um espaço métrico $(X,d)$ converge
+a $p \in X$ se, e somente se, existe uma sequência $\{ a_n \}_{n=1}^\infty$
+de números reais tal que
 \begin{equation*}
-d(x_n,p) \leq a_n \quad \text{for all } n \in \N,
+d(x_n,p) \leq a_n \quad \text{para todo } n \in \N,
 \qquad
-\text{and}
+\text{e}
 \qquad
 \lim_{n\to\infty} a_n = 0.
 \end{equation*}
 \end{prop}
 
 \begin{prop} \label{prop:mssubseq}
-Let $\{ x_n \}_{n=1}^\infty$ be a sequence in a metric space $(X,d)$.
+Seja $\{ x_n \}_{n=1}^\infty$ uma sequência em um espaço métrico $(X,d)$.
 \begin{enumerate}[(i)]
-\item If $\{ x_n \}_{n=1}^\infty$ converges to $p \in X$, then every
-subsequence $\{ x_{n_k} \}_{k=1}^\infty$
-converges to $p$.
-\item If for some $K \in \N$ the $K$-tail $\{ x_n \}_{n=K+1}^\infty$
-converges to $p \in X$, then
- $\{ x_n \}_{n=1}^\infty$ converges to $p$.
+\item Se $\{ x_n \}_{n=1}^\infty$ converge a $p \in X$, então toda
+subsequência $\{ x_{n_k} \}_{k=1}^\infty$
+converge a $p$.
+\item Se, para algum $K \in \N$, a cauda de ordem $K$,
+$\{ x_n \}_{n=K+1}^\infty$
+converge a $p \in X$, então
+ $\{ x_n \}_{n=1}^\infty$ converge a $p$.
 \end{enumerate}
 \end{prop}
 
 \begin{example}
-Take $C\bigl([a,b],\R\bigr)$ to be the set of continuous functions with the metric being
-the uniform norm.  We saw that we obtain a metric space.
-If we look at the definition of convergence, we notice that it is identical
-to uniform convergence.  That is, $\{ f_n \}_{n=1}^\infty$ converges uniformly if and only
-if it converges in the metric space sense.
+Considere $C\bigl([a,b],\R\bigr)$ como o conjunto das funções contínuas,
+com a norma uniforme como métrica. Vimos que assim obtemos um espaço métrico.
+Pela definição de convergência, notamos que ela é idêntica à convergência
+uniforme. Isto é, $\{ f_n \}_{n=1}^\infty$ converge uniformemente se, e
+somente se, converge no sentido de espaço métrico.
 \end{example}
 
 \begin{remark}
-It is perhaps surprising that on the set of functions $f \colon [a,b] \to
-\R$ (continuous or not)
-there is no metric that gives pointwise convergence as the domain $[a,b]$
-is uncountable.  The proof of
-this fact is beyond the scope of this book.
+Talvez seja surpreendente que, no conjunto das funções
+$f \colon [a,b] \to \R$ (contínuas ou não), não exista uma métrica que
+induza a convergência pontual, pois o domínio $[a,b]$ é não enumerável.
+A demonstração desse fato está além do escopo deste livro.
 \end{remark}
 
 \subsection{Convergence in euclidean space}

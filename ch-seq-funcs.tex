@@ -1470,164 +1470,148 @@ todo $n$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{Picard's theorem}
+\section{Teorema de Picard}
 \label{sec:picard}
 
 %mbxINTROSUBSECTION
 
-\sectionnotes{1--2 lectures (can be safely skipped)}
+\sectionnotes{1--2 aulas (pode ser omitida sem prejuízo)}
 
-A first semester course in analysis should have
-a \emph{pi\`ece de r\'esistance} caliber
-theorem.  We pick a theorem whose proof combines everything we have
-learned.  It is more sophisticated than the fundamental theorem of calculus,
-the first highlight theorem of this course.  The
-theorem we are talking about is Picard's
-theorem%
-\footnote{Named for the French mathematician
+Um curso introdutório de análise deve incluir um teorema de grande destaque.
+Escolhemos um resultado cuja demonstração combina tudo o que aprendemos.
+Ele é mais sofisticado que o teorema fundamental do cálculo, o primeiro
+grande resultado marcante deste curso. Trata-se do teorema de Picard, que
+garante existência e unicidade de solução para uma equação diferencial
+ordinária. Tanto o enunciado quanto a demonstração são belos exemplos do
+que podemos fazer com o conteúdo estudado até aqui. O teorema também mostra
+uma aplicação da análise: equações diferenciais são indispensáveis nas
+mais diversas áreas da ciência.\footnote{Nomeado em homenagem ao
+matemático francês
 \href{https://en.wikipedia.org/wiki/\%C3\%89mile_Picard}{Charles \'Emile Picard}
 (1856--1941).}
-on existence and uniqueness of a solution to an ordinary differential equation.
-Both the statement and the proof are beautiful examples of what one can do
-with the material we have mastered so far.  It is also a good example of how analysis is
-applied, as differential equations are indispensable in science of every
-stripe.
 
-\subsection{First order ordinary differential equation}
+\subsection{Equação diferencial ordinária de primeira ordem}
 
-Modern science is described in the language of
-\emph{differential equations}\index{differential equation}.
-That is, equations involving not only the unknown, but also its
-derivatives.  The simplest nontrivial form of a differential equation is
-the \emph{\myindex{first order ordinary differential equation}}
-\index{ordinary differential equation}
+A ciência moderna é descrita na linguagem das
+\emph{equações diferenciais}\index{equação diferencial},
+isto é, equações que envolvem não só a incógnita, mas também suas
+derivadas. A forma não trivial mais simples de uma equação diferencial é a
+\emph{\myindex{equação diferencial ordinária de primeira ordem}}
+\index{equação diferencial ordinária}:
 \begin{equation*}
 y' = F(x,y) .
 \end{equation*}
-Generally, we also specify an \emph{\myindex{initial condition}}
-$y(x_0)=y_0$.  The solution of
-the equation is a function $y(x)$ such that 
-$y(x_0)=y_0$ and $y'(x) = F\bigl(x,y(x)\bigr)$.  See
-\figureref{fig:sampleslopes} for a graphical representation of
-this equation called a
-\emph{\myindex{slope field}}.
+Em geral, também especificamos uma \emph{\myindex{condição inicial}}
+$y(x_0)=y_0$. Uma solução da equação é uma função $y(x)$ tal que
+$y(x_0)=y_0$ e $y'(x) = F\bigl(x,y(x)\bigr)$. A
+\figureref{fig:sampleslopes} mostra uma representação gráfica da equação,
+chamada \emph{\myindex{campo de direções}}.
 \begin{myfigureht}
 \myincludegraphics{sampleslopes}{%
-A piece of the xy-plane near the origin with
-a rectangular grid of slopes.  On the left half of the plot
-the slopes go downward, but become flatter as we go up.
-On the right half of the plot they point upward, and
-again become flatter as we go up.
-A point (x sub 0, y sub 0) is given in the first quadrant.
-A graph of a solution is drawn that starts above
-the x-axis goes down and then goes back up and through the
-given point.}
-\caption{A \emph{slope field} giving the slope $F(x,y)$ at each point,
-in this case $F(x,y)=x(1-y)$.  A solution is drawn going through the point
-$(x_0,y_0)=(1,0.3)$, notice how it follows the slopes.\label{fig:sampleslopes}}
+Trecho do plano $xy$ próximo à origem com uma malha retangular de pequenos
+segmentos que indicam inclinações. Na metade esquerda do gráfico, os
+segmentos apontam para baixo, mas ficam mais horizontais à medida que
+subimos. Na metade direita, apontam para cima e também ficam mais
+horizontais à medida que subimos. Um ponto $(x_0,y_0)$ aparece no primeiro
+quadrante. Está desenhado o gráfico de uma solução, que começa acima do
+eixo $x$, desce, volta a subir e passa pelo ponto indicado.}
+\caption{Um \emph{campo de direções} que indica a inclinação $F(x,y)$ em
+cada ponto; neste caso, $F(x,y)=x(1-y)$. Uma solução passa pelo ponto
+$(x_0,y_0)=(1,0.3)$ e acompanha as inclinações.\label{fig:sampleslopes}}
 \end{myfigureht}
 
-When $F$ involves only the $x$ variable, the solution is given by the
-fundamental theorem of calculus.  On the other hand, when $F$ depends
-on both $x$ and $y$, we need far more firepower.  It is not always
-true that a solution exists, and if it does, that it is the unique solution.
-Picard's theorem gives us certain sufficient conditions for existence
-and uniqueness.
+Quando $F$ depende apenas da variável $x$, a solução é dada pelo teorema
+fundamental do cálculo. Por outro lado, quando $F$ depende de $x$ e de $y$,
+precisamos de ferramentas bem mais poderosas. Nem sempre existe uma
+solução e, quando existe, ela pode não ser única. O teorema de Picard
+fornece condições suficientes para a existência e a unicidade.
 
-\subsection{The theorem}
+\subsection{O teorema}
 
-We need a definition of continuity in two variables.  A point in the
-plane $\R^2 = \R \times \R$ is denoted by an ordered pair $(x,y)$.
-For simplicity,
-we give the following sequential definition of continuity.
+Precisamos de uma definição de continuidade para funções de duas variáveis.
+Um ponto do plano $\R^2 = \R \times \R$ é indicado por um par ordenado
+$(x,y)$. Por simplicidade, daremos a seguinte definição sequencial de
+continuidade.
 
 \begin{defn}
-Let $U \subset \R^2$ be a set, $F \colon U \to \R$ a function,
-and $(x,y) \in U$ a point.  The function $F$ is
-\emph{continuous at $(x,y)$}\index{continuous function of two variables}
-if for every sequence
-$\bigl\{ (x_n,y_n) \bigr\}_{n=1}^\infty$ of points in $U$ such that
-$\lim_{n\to\infty} x_n = x$ and 
-$\lim_{n\to\infty} y_n = y$, we have 
+Sejam $U \subset \R^2$ um conjunto, $F \colon U \to \R$ uma função e
+$(x,y) \in U$ um ponto. Dizemos que $F$ é
+\emph{contínua em $(x,y)$}\index{função contínua de duas variáveis}
+se, para toda sequência
+$\bigl\{ (x_n,y_n) \bigr\}_{n=1}^\infty$ de pontos de $U$ tal que
+$\lim_{n\to\infty} x_n = x$ e $\lim_{n\to\infty} y_n = y$, temos
 \begin{equation*}
 \lim_{n \to \infty} F(x_n,y_n) = 
 F(x,y) .
 \end{equation*}
-We say $F$ is \emph{continuous} if it is continuous at all points in $U$.
+Dizemos que $F$ é \emph{contínua} se for contínua em todos os pontos de $U$.
 \end{defn}
 
-\begin{thm}[Picard's theorem on existence and uniqueness]%
-\index{existence and uniqueness theorem}\index{Picard's theorem}%
+\begin{thm}[Teorema de Picard sobre existência e unicidade]%
+\index{teorema de existência e unicidade}\index{teorema de Picard}%
 \label{thm:fs:picard}
-Let $I, J \subset \R$ be closed bounded intervals, 
-let $I^\circ$ and $J^\circ$ be their interiors%
-\footnote{By interior of $[a,b]$, we mean $(a,b)$.},
-and
-let $(x_0,y_0) \in I^\circ \times J^\circ$.
-Suppose $F \colon I \times J \to \R$ is continuous
-and Lipschitz in the second variable, that is, there exists
-an $L \in \R$ such that
+Sejam $I, J \subset \R$ intervalos fechados e limitados,
+$I^\circ$ e $J^\circ$ seus interiores%
+\footnote{O interior de $[a,b]$ é $(a,b)$.},
+e seja $(x_0,y_0) \in I^\circ \times J^\circ$.
+Suponha que $F \colon I \times J \to \R$ seja contínua e Lipschitz na
+segunda variável, isto é, que exista $L \in \R$ tal que
 \begin{equation*}
 \babs{F(x,y) - F(x,z)} \leq L \sabs{y-z}
-\qquad \text{for all } y,z \in J, x \in I .
+\qquad \text{para todos } y,z \in J, x \in I .
 \end{equation*}
-Then there exists an $h > 0$ such that $[x_0-h,x_0+h] \subset I$ and a unique differentiable
-function $f \colon [x_0 - h, x_0 + h] \to J \subset \R$ such that
+Então existe $h > 0$ tal que $[x_0-h,x_0+h] \subset I$ e existe uma única
+função diferenciável $f \colon [x_0 - h, x_0 + h] \to J \subset \R$ que
+satisfaz
 \begin{equation} \label{picard:diffeq}
-f'(x) = F\bigl(x,f(x)\bigr) \qquad \text{and} \qquad f(x_0) = y_0.
+f'(x) = F\bigl(x,f(x)\bigr) \qquad \text{e} \qquad f(x_0) = y_0.
 \end{equation}
 \end{thm}
 
 \begin{proof}
 \pagebreak[2]
-Suppose we could find a solution $f$.  Using the fundamental
-theorem of calculus, we integrate the equation 
-$f'(x) = F\bigl(x,f(x)\bigr)$, $f(x_0) = y_0$, and write \eqref{picard:diffeq}
-as the integral equation
+Suponha que possamos encontrar uma solução $f$. Usando o teorema
+fundamental do cálculo, integramos a equação
+$f'(x) = F\bigl(x,f(x)\bigr)$, com $f(x_0) = y_0$, e reescrevemos
+\eqref{picard:diffeq} como a equação integral
 \begin{equation} \label{picard:inteq}
 f(x) = y_0 + \int_{x_0}^x F\bigl(t,f(t)\bigr)\,dt .
 \end{equation}
-The idea of our proof is that we try to plug in approximations to
-a solution to the right-hand side of \eqref{picard:inteq} to get better approximations on the
-left-hand side of  \eqref{picard:inteq}.  We hope that in the end the sequence 
-converges and solves
-\eqref{picard:inteq} and hence \eqref{picard:diffeq}.
-The technique below is called \emph{\myindex{Picard iteration}},
-and the individual functions $f_k$ are called the 
-\emph{Picard iterates}\index{Picard iterate}.
+Nossa ideia é inserir aproximações da solução no lado direito de
+\eqref{picard:inteq}, obtendo aproximações melhores no lado esquerdo de
+\eqref{picard:inteq}. Esperamos que, ao final, a sequência convirja e
+satisfaça \eqref{picard:inteq} e, portanto, \eqref{picard:diffeq}.
+A técnica a seguir é chamada de \emph{\myindex{iteração de Picard}},
+e cada função $f_k$ é chamada de \emph{iterado de Picard}\index{iterado de Picard}.
 
-Without loss of generality, suppose $x_0 = 0$ (exercise below).
-Another
-exercise tells us that $F$ is bounded as it is continuous.
-Therefore, pick some $M > 0$ so that 
-$\babs{F(x,y)} \leq M$ for all $(x,y) \in I\times J$.
-Pick $\alpha > 0$ such that
-$[-\alpha,\alpha] \subset I$ and $[y_0-\alpha, y_0 + \alpha] \subset J$.
-Define
+Sem perda de generalidade, suponha que $x_0 = 0$ (veja o exercício abaixo).
+Outro exercício mostra que $F$ é limitada, pois é contínua. Portanto,
+escolha $M > 0$ tal que
+$\babs{F(x,y)} \leq M$ para todo $(x,y) \in I\times J$.
+Escolha $\alpha > 0$ tal que
+$[-\alpha,\alpha] \subset I$ e $[y_0-\alpha, y_0 + \alpha] \subset J$.
+Defina
 \begin{equation*}
 h \coloneqq \min \left\{ \alpha, \frac{\alpha}{M+L\alpha} \right\} .
 \end{equation*}
-Observe
+Observe que
 $[-h,h] \subset I$.
 
-Set $f_0(x) \coloneqq y_0$.
-We define $f_k$ inductively.
-Assuming $f_{k-1}([-h,h]) \subset [y_0-\alpha,y_0+\alpha]$,
-we see 
-$F\bigl(t,f_{k-1}(t)\bigr)$ is
-a well-defined function of $t$ for $t \in [-h,h]$.
-If $f_{k-1}$ is continuous
-on $[-h,h]$, then
-$F\bigl(t,f_{k-1}(t)\bigr)$ is
-continuous as
-a function of $t$ on $[-h,h]$ (left as an exercise).
-Define
+Defina $f_0(x) \coloneqq y_0$.
+Definimos $f_k$ por indução.
+Supondo que $f_{k-1}([-h,h]) \subset [y_0-\alpha,y_0+\alpha]$,
+vemos que $F\bigl(t,f_{k-1}(t)\bigr)$ está bem definida para
+$t \in [-h,h]$.
+Se $f_{k-1}$ for contínua em $[-h,h]$, então
+$F\bigl(t,f_{k-1}(t)\bigr)$ também será contínua como função de $t$ em
+$[-h,h]$ (deixamos essa verificação como exercício).
+Defina
 \begin{equation*}
 f_k(x) \coloneqq y_0+ \int_{0}^x F\bigl(t,f_{k-1}(t)\bigr)\,dt ,
 \end{equation*}
-and $f_k$ is continuous on $[-h,h]$ by the fundamental theorem of calculus.
-To see that $f_k$ maps $[-h,h]$ to $[y_0-\alpha,y_0+\alpha]$, we compute for
-$x \in [-h,h]$
+e $f_k$ é contínua em $[-h,h]$ pelo teorema fundamental do cálculo.
+Para verificar que $f_k$ leva $[-h,h]$ em $[y_0-\alpha,y_0+\alpha]$,
+calculemos, para $x \in [-h,h]$,
 \begin{equation*}
 \sabs{f_k(x) - y_0} = 
 \abs{\int_{0}^x F\bigl(t,f_{k-1}(t)\bigr)\,dt }
@@ -1640,16 +1624,15 @@ M
 \frac{\alpha}{M+L\alpha}
 \leq \alpha .
 \end{equation*}
-We next define $f_{k+1}$ using $f_k$ and so on.
-Thus we have inductively defined a sequence $\{ f_k \}_{k=1}^\infty$
-of continuous functions.
-We need to show that it converges to a function $f$ that solves
-the equation~\eqref{picard:inteq} and therefore~\eqref{picard:diffeq}.
+Em seguida, definimos $f_{k+1}$ usando $f_k$ e assim por diante.
+Desse modo, definimos por indução uma sequência $\{ f_k \}_{k=1}^\infty$
+de funções contínuas.
+Precisamos mostrar que ela converge para uma função $f$ que satisfaça
+\eqref{picard:inteq} e, portanto, \eqref{picard:diffeq}.
 
-We wish to show that the sequence $\{ f_k \}_{k=1}^\infty$ converges uniformly
-to some function on $[-h,h]$.  First, for $t \in [-h,h]$,
-we have the following
-useful bound
+Queremos mostrar que a sequência $\{ f_k \}_{k=1}^\infty$ converge
+uniformemente para alguma função em $[-h,h]$. Primeiro, para
+$t \in [-h,h]$, temos a seguinte estimativa útil:
 \begin{equation*}
 \Babs{F\bigl(t,f_{n}(t)\bigr) - 
 F\bigl(t,f_{k}(t)\bigr)}
@@ -1658,10 +1641,10 @@ L \babs{f_n(t)-f_k(t)}
 \leq
 L \snorm{f_n-f_k}_{[-h,h]} ,
 \end{equation*}
-where $\snorm{f_n-f_k}_{[-h,h]}$ is the uniform norm,
-that is, the supremum of $\babs{f_n(t)-f_k(t)}$ for $t \in [-h,h]$.
-Now note that $\sabs{x} \leq h \leq \frac{\alpha}{M+L\alpha}$.
-Therefore,
+em que $\snorm{f_n-f_k}_{[-h,h]}$ é a norma uniforme, isto é, o supremo
+de $\babs{f_n(t)-f_k(t)}$ para $t \in [-h,h]$.
+Agora observe que $\sabs{x} \leq h \leq \frac{\alpha}{M+L\alpha}$.
+Logo,
 \begin{equation*}
 \begin{split}
 \babs{f_n(x) - f_k(x)}
@@ -1690,39 +1673,39 @@ L
 \snorm{f_{n-1}-f_{k-1}}_{[-h,h]} .
 \end{split}
 \end{equation*}
-Let $C \coloneqq \frac{L\alpha}{M+L\alpha}$ and note that $C < 1$.
-Taking supremum on the left-hand side we get
+Defina $C \coloneqq \frac{L\alpha}{M+L\alpha}$ e observe que $C < 1$.
+Tomando o supremo do lado esquerdo, obtemos
 \begin{equation*}
 \snorm{f_n-f_k}_{[-h,h]} \leq C \snorm{f_{n-1}-f_{k-1}}_{[-h,h]} .
 \end{equation*}
-Without loss of generality,
-suppose $n \geq k$.  Then by \hyperref[induction:thm]{induction} we can show 
+Sem perda de generalidade, suponha que $n \geq k$. Então, por
+\hyperref[induction:thm]{indução}, podemos mostrar que
 \begin{equation*}
 \snorm{f_n-f_k}_{[-h,h]} \leq C^{k} \snorm{f_{n-k}-f_{0}}_{[-h,h]} .
 \end{equation*}
-For $x \in [-h,h]$, we have
+Para $x \in [-h,h]$, temos
 \begin{equation*}
 \babs{f_{n-k}(x)-f_{0}(x)}
 =
 \babs{f_{n-k}(x)-y_0}
 \leq \alpha .
 \end{equation*}
-Therefore,
+Portanto,
 \begin{equation*}
 \snorm{f_n-f_k}_{[-h,h]} \leq C^{k} \snorm{f_{n-k}-f_{0}}_{[-h,h]} \leq C^{k} \alpha .
 \end{equation*}
-As $C < 1$, $\{f_n\}_{n=1}^\infty$ is uniformly Cauchy.
-By \propref{prop:uniformcauchy}, $\{ f_n \}_{n=1}^\infty$
-converges uniformly on $[-h,h]$ to some function $f \colon [-h,h] \to \R$.
-The function $f$ is the uniform limit of continuous functions and thus
-continuous.  Furthermore, since $f_n\bigl([-h,h]\bigr) \subset
-[y_0-\alpha,y_0+\alpha]$ for all $n$,
-then $f\bigl([-h,h]\bigr) \subset [y_0-\alpha,y_0+\alpha]$
-(why?).
+Como $C < 1$, $\{f_n\}_{n=1}^\infty$ é uniformemente de Cauchy.
+Pela \propref{prop:uniformcauchy}, $\{ f_n \}_{n=1}^\infty$
+converge uniformemente em $[-h,h]$ para alguma função
+$f \colon [-h,h] \to \R$.
+Como limite uniforme de funções contínuas, $f$ é contínua. Além disso,
+como $f_n\bigl([-h,h]\bigr) \subset [y_0-\alpha,y_0+\alpha]$ para todo
+$n$, temos $f\bigl([-h,h]\bigr) \subset [y_0-\alpha,y_0+\alpha]$
+(por quê?).
 
 
-We now need to show that $f$ solves \eqref{picard:inteq}.
-First, as before, we notice
+Agora precisamos mostrar que $f$ satisfaz \eqref{picard:inteq}.
+Primeiro, como antes, observamos que
 \begin{equation*}
 \Babs{F\bigl(t,f_{n}(t)\bigr) - 
 F\bigl(t,f(t)\bigr)}
@@ -1731,11 +1714,11 @@ L \babs{f_n(t)-f(t)}
 \leq
 L \snorm{f_n-f}_{[-h,h]} .
 \end{equation*}
-As $\snorm{f_n-f}_{[-h,h]}$ converges to zero,
-$F\bigl(t,f_n(t)\bigr)$ converges uniformly to $F\bigl(t,f(t)\bigr)$
-for $t \in [-h,h]$.  Hence, for $x \in [-h,h]$
-the convergence is uniform %(why?)
-for $t \in [0,x]$ (or $[x,0]$ if $x < 0$).  Therefore,
+Como $\snorm{f_n-f}_{[-h,h]}$ converge a zero,
+$F\bigl(t,f_n(t)\bigr)$ converge uniformemente para $F\bigl(t,f(t)\bigr)$
+quando $t \in [-h,h]$. Logo, para $x \in [-h,h]$, a convergência também
+é uniforme % (por quê?)
+para $t \in [0,x]$ (ou em $[x,0]$, se $x < 0$). Portanto,
 \begin{align*}
 y_0
 +
@@ -1753,7 +1736,7 @@ y_0
 +
 \int_0^{x}
 \lim_{n\to\infty} F\bigl(t,f_n(t)\bigr)\,dt
-& & \text{(by continuity of } F\text{)}
+& & \text{(pela continuidade de } F\text{)}
 \\
 & =
 \lim_{n\to\infty} 
@@ -1763,7 +1746,7 @@ y_0
 \int_0^{x}
 F\bigl(t,f_n(t)\bigr)\,dt
 \right)
-& & \text{(by uniform convergence)}
+& & \text{(pela convergência uniforme)}
 \\
 & =
 \lim_{n\to\infty} 
@@ -1772,15 +1755,15 @@ f_{n+1}(x)
 f(x) .
 & &
 \end{align*}
-We apply the fundamental theorem of calculus (\thmref{thm:FTCv2}) to show that
-$f$ is differentiable and its derivative is $F\bigl(x,f(x)\bigr)$.  It is obvious
-that $f(0) = y_0$.
+Aplicamos o teorema fundamental do cálculo (\thmref{thm:FTCv2}) para
+mostrar que $f$ é diferenciável e sua derivada é $F\bigl(x,f(x)\bigr)$.
+É imediato que $f(0) = y_0$.
 
-Finally, what is left to do is to show uniqueness.  Suppose $g \colon [-h,h]
-\to J \subset \R$ is another solution.
-As before we use the fact that
+Por fim, resta provar a unicidade. Suponha que
+$g \colon [-h,h] \to J \subset \R$ seja outra solução.
+Como antes, usamos o fato de que
 $\babs{F\bigl(t,f(t)\bigr) - F\bigl(t,g(t)\bigr)} \leq L \snorm{f-g}_{[-h,h]}$.
-Then
+Então
 \begin{equation*}
 \begin{split}
 \babs{f(x)-g(x)}
@@ -1818,73 +1801,65 @@ Lh\snorm{f-g}_{[-h,h]}
 \frac{L\alpha}{M+L\alpha}\snorm{f-g}_{[-h,h]} .
 \end{split}
 \end{equation*}
-As 
-before, $C = \frac{L\alpha}{M+L\alpha} < 1$.  By taking supremum over $x \in
-[-h,h]$ on the
-left-hand side we obtain
+Como antes, $C = \frac{L\alpha}{M+L\alpha} < 1$. Tomando o supremo do
+lado esquerdo em relação a $x \in [-h,h]$, obtemos
 \begin{equation*}
 \snorm{f-g}_{[-h,h]} \leq C \snorm{f-g}_{[-h,h]} .
 \end{equation*}
-This is only possible if $\snorm{f-g}_{[-h,h]} = 0$.  Therefore, $f=g$, and the
-solution is unique.
+Isso só é possível se $\snorm{f-g}_{[-h,h]} = 0$. Portanto, $f=g$, e a
+solução é única.
 \end{proof}
 
-\subsection{Examples}
+\subsection{Exemplos}
 
-Let us look at some examples.  The proof of the theorem 
-gives us an explicit way to find an $h$ that works.  It does not, however, give
-us the best $h$.  It is often possible to find a much larger $h$ for
-which the conclusion of the theorem holds.
+Vejamos alguns exemplos. A demonstração do teorema fornece um método
+explícito para encontrar um $h$ que funciona. No entanto, não fornece o
+melhor $h$. Muitas vezes é possível encontrar um $h$ bem maior para o qual
+a conclusão do teorema continua válida.
 
-The proof also gives us the Picard iterates as approximations to the
-solution.  So the proof actually tells us how to obtain
-the solution, not just that the solution exists.
+Além disso, a demonstração fornece os iterados de Picard como aproximações
+da solução. Assim, ela nos mostra como obter a solução, e não apenas que a
+solução existe.
 
 \begin{example} \label{example:picardexponential}
-Consider
+Considere
 \begin{equation*}
 f'(x) = f(x), \qquad f(0) = 1 .
 \end{equation*}
-That is, we suppose $F(x,y) = y$, and we are looking for a function 
-$f$ such that $f'(x) = f(x)$.
-Let us forget for the moment that we solved this equation in 
-\sectionref{sec:logandexp}.  See also \figureref{fig:exp} for a plot of
-both the equation, showing
-the slope $F(x,y)=y$ at each point, and the solution,
-the exponential, that satisfies $f(0)=1$.
+Isto é, suponha que $F(x,y) = y$ e procuremos uma função $f$ tal que
+$f'(x) = f(x)$.
+Por ora, esqueçamos que resolvemos essa equação na
+\sectionref{sec:logandexp}. Veja também a \figureref{fig:exp}, que mostra
+o campo de direções da equação, com inclinação $F(x,y)=y$ em cada ponto,
+e a solução exponencial que satisfaz $f(0)=1$.
 
-We pick any $I$ that contains 0
-in the interior.
-We pick an arbitrary $J$ that contains 1 in its interior.  We can
-use $L = 1$.
-The theorem guarantees an $h > 0$ such that
-there exists a unique solution $f \colon [-h,h] \to \R$.  This solution
-is usually denoted by
+Escolhemos qualquer $I$ que contenha 0 em seu interior.
+Escolhemos um $J$ qualquer que contenha 1 em seu interior. Podemos tomar
+$L = 1$.
+O teorema garante que existe $h > 0$ para o qual há uma única solução
+$f \colon [-h,h] \to \R$. Essa solução costuma ser denotada por
 \begin{equation*}
 e^x \coloneqq f(x) .
 \end{equation*}
-We leave it to the reader to verify that by picking $I$ and $J$
-large enough the proof of the theorem guarantees that
-we are able to pick $\alpha$ such that we get any
-$h$ we want as long as $h < \nicefrac{1}{2}$.  We omit the calculation.
-Of course, we know %(though we have not proved)
-this function exists
-as a function for all $x$, so an arbitrary $h$ ought to work, but the
-theorem's proof only provides $h < \nicefrac{1}{2}$.
+Deixamos ao leitor verificar que, escolhendo $I$ e $J$ suficientemente
+grandes, a demonstração do teorema permite escolher $\alpha$ de modo a
+obter qualquer $h < \nicefrac{1}{2}$. Omitimos os cálculos.
+É claro que sabemos %(embora ainda não tenhamos provado)
+que essa função existe para todo $x$; portanto, qualquer $h$ deveria
+servir. Ainda assim, a demonstração do teorema só fornece $h < \nicefrac{1}{2}$.
 
-By the same reasoning as above,
-no matter what $x_0$ and $y_0$ are,
-the proof guarantees an arbitrary $h$ as long as $h < \nicefrac{1}{2}$.
-Fix such an $h$.
-We get a unique function defined on $[x_0-h,x_0+h]$.  After defining the
-function on $[-h,h]$ we find a solution on the interval $[0,2h]$
-and notice that the two functions must coincide on $[0,h]$ by uniqueness.
-We thus iteratively construct the exponential for all $x \in \R$.
-Therefore, Picard's theorem could be used to prove the existence and uniqueness
-of the exponential.
+Pelo mesmo raciocínio, quaisquer que sejam $x_0$ e $y_0$, a demonstração
+garante qualquer $h < \nicefrac{1}{2}$.
+Fixe esse $h$.
+Obtemos uma única função definida em $[x_0-h,x_0+h]$. Depois de definir a
+função em $[-h,h]$, encontramos uma solução no intervalo $[0,2h]$ e
+observamos que, pela unicidade, as duas funções coincidem em $[0,h]$.
+Assim, construímos iterativamente a exponencial em todo $\R$.
+Portanto, o teorema de Picard poderia ser usado para provar a existência e
+a unicidade da função exponencial.
 
-Let us compute the Picard iterates.
-We start with the constant function $f_0(x) \coloneqq 1$.  Then
+Calculemos os iterados de Picard.
+Começamos com a função constante $f_0(x) \coloneqq 1$. Então
 \begin{align*}
 f_1(x) & = 1 + \int_0^x f_0(s)\,ds =
 1+x, \\
@@ -1894,171 +1869,158 @@ f_3(x) & = 1 + \int_0^x f_2(s)\,ds =
 1 + \int_0^x \left(1+ s + \frac{s^2}{2} \right)\,ds =
 1 + x + \frac{x^2}{2} + \frac{x^3}{6} .
 \end{align*}
-We recognize the beginning of the Taylor series for the exponential.
-See \figureref{fig:exppicard}.
+Reconhecemos o início da série de Taylor da função exponencial.
+Veja a \figureref{fig:exppicard}.
 \begin{myfigureht}
 \myincludegraphics{exppicardfig}{%
-A graph of the exponential function as
-a solid curve in the
-region for x between a bit less than minus 1 and
-a bit more than 1.
-Several dashed curves give approximations.
-They all go through the point (0,1).
-First a horizontal line.  Then a line
-with the same slope as the exponential at (0,1).
-Then two further curved approximations that get yet closer
-to the exponential, especially near x equals 0.}
-\caption{The exponential (solid line) together with $f_0$, $f_1$, $f_2$,
-$f_3$ (dashed).\label{fig:exppicard}}
+Gráfico da função exponencial como uma curva contínua na região em que $x$
+vai de um pouco menos que $-1$ a um pouco mais que $1$. Várias curvas
+tracejadas representam aproximações. Todas passam pelo ponto $(0,1)$.
+Primeiro há uma reta horizontal; depois, uma reta com a mesma inclinação
+da exponencial em $(0,1)$; por fim, duas aproximações curvas que ficam
+cada vez mais próximas da exponencial, sobretudo perto de $x=0$.}
+\caption{A função exponencial (curva contínua) e os iterados $f_0$, $f_1$,
+$f_2$ e $f_3$ (tracejados).\label{fig:exppicard}}
 \end{myfigureht}
 \end{example}
 
 \begin{example}
-Consider the equation
+Considere a equação
 \begin{equation*}
-f'(x) = {\bigl(f(x)\bigr)}^2 \qquad \text{and} \qquad f(0)=1.
+f'(x) = {\bigl(f(x)\bigr)}^2 \qquad \text{e} \qquad f(0)=1.
 \end{equation*}
-From elementary differential equations we know 
+Pela teoria elementar das equações diferenciais, sabemos que
 \begin{equation*}
 f(x) = \frac{1}{1-x}
 \end{equation*}
-is the solution.
-The solution is only defined on $(-\infty,1)$.  That is,
-we are able to use $h < 1$, but never a larger $h$.
-The function that takes $y$ to $y^2$ is
-not Lipschitz as a function on all of $\R$.
-As we approach $x=1$ from the left, the solution becomes larger
-and larger.  The derivative of the solution grows as $y^2$, and so
-the $L$ required has to be larger and larger as $y_0$ grows.
-If we apply the
-theorem with $x_0$ close to 1 and $y_0 = \frac{1}{1-x_0}$ we find
-that the $h$ that the proof guarantees is smaller and smaller as $x_0$
-approaches~1.
+é a solução.
+Essa solução só está definida em $(-\infty,1)$. Ou seja, podemos tomar
+$h < 1$, mas não um $h$ maior.
+A função que leva $y$ a $y^2$ não é Lipschitz em todo $\R$.
+Quando $x$ se aproxima de 1 pela esquerda, a solução cresce sem limite.
+A derivada da solução cresce como $y^2$ e, por isso, a constante $L$
+necessária também precisa crescer à medida que $y_0$ aumenta.
+Se aplicarmos o teorema com $x_0$ próximo de 1 e
+$y_0 = \frac{1}{1-x_0}$, veremos que o valor de $h$ garantido pela
+demonstração diminui à medida que $x_0$ se aproxima de 1.
 
-The $h$ from the proof is not the best $h$.
-By picking $\alpha$ correctly, the proof of the theorem guarantees
-$h=1-\nicefrac{\sqrt{3}}{2} \approx 0.134$ (we omit the
-calculation) for $x_0=0$ and $y_0=1$, even though
-we saw above that any $h < 1$ should work.
+O valor de $h$ fornecido pela demonstração não é o melhor possível.
+Escolhendo $\alpha$ corretamente, a demonstração garante
+$h=1-\nicefrac{\sqrt{3}}{2} \approx 0.134$ (omitimos os cálculos) para
+$x_0=0$ e $y_0=1$, embora tenhamos visto que qualquer $h < 1$ deveria
+servir.
 \end{example}
 
 \begin{example}
-Consider the equation
+Considere a equação
 \begin{equation*}
 f'(x) = 2 \sqrt{\babs{f(x)}}, \qquad f(0) = 0 .
 \end{equation*}
-The function $F(x,y) = 2 \sqrt{\sabs{y}}$ is continuous,
-but not Lipschitz in $y$ (why?). 
-The equation does not satisfy the hypotheses of the theorem.
-The function
+A função $F(x,y) = 2 \sqrt{\sabs{y}}$ é contínua, mas não é Lipschitz
+em relação a $y$ (por quê?). A equação não satisfaz as hipóteses do
+teorema. A função
 \begin{equation*}
 f(x) =
 \begin{cases}
-x^2 & \text{if } x \geq 0,\\
--x^2 & \text{if } x < 0,
+x^2 & \text{se } x \geq 0,\\
+-x^2 & \text{se } x < 0,
 \end{cases}
 \end{equation*}
-is a solution, but $f(x) = 0$ is also a solution.
-A solution exists, but is not unique.
+é uma solução, mas $f(x)=0$ também é solução.
+Existe uma solução, mas ela não é única.
 \end{example}
 
 \begin{example}
-Consider $y' = \varphi(x)$ where $\varphi(x) \coloneqq 0$ if $x \in \Q$ and
-$\varphi(x)\coloneqq 1$ if $x
-\notin \Q$.  In other words, the $F(x,y) = \varphi(x)$ is discontinuous.
-The equation has no solution regardless of the initial
-conditions.
-A solution would have
-derivative $\varphi$, but $\varphi$ does not have the intermediate value property
-at any point (why?).  No solution exists by
-\hyperref[thm:darboux]{Darboux's theorem}.
+Considere $y' = \varphi(x)$, em que $\varphi(x) \coloneqq 0$ se $x \in \Q$
+e $\varphi(x)\coloneqq 1$ se $x \notin \Q$. Em outras palavras,
+$F(x,y) = \varphi(x)$ é descontínua.
+A equação não tem solução, quaisquer que sejam as condições iniciais.
+Uma solução teria derivada igual a $\varphi$, mas $\varphi$ não tem a
+propriedade do valor intermediário em nenhum ponto (por quê?).
+Pelo \hyperref[thm:darboux]{teorema de Darboux}, não existe solução.
 \end{example}
 
-The examples show that without the Lipschitz condition, a solution might
-exist but not be unique, and without continuity of $F$, we may not
-have a solution at all.
-It is in fact a theorem, the Peano existence theorem, that if $F$ is
-continuous a solution exists (but may not be unique).
+Os exemplos mostram que, sem a condição de Lipschitz, uma solução pode
+existir sem ser única; e que, sem a continuidade de $F$, talvez nem exista
+solução.
+De fato, o teorema de existência de Peano garante que, se $F$ for contínua,
+existirá uma solução, embora ela possa não ser única.
 
 \begin{remark}
-It is possible to weaken what we mean by \myquote{solution to $y' = F(x,y)$}
-by focusing on the integral equation
-$f(x) = y_0 + \int_{x_0}^x F\bigl(t,f(t)\bigr) \, dt$.  For example,
-let $H$ be the
-Heaviside function%
-\footnote{Named
-for the English engineer, mathematician, and physicist
+É possível enfraquecer o significado de \myquote{solução de $y' = F(x,y)$}
+concentrando-nos na equação integral
+$f(x) = y_0 + \int_{x_0}^x F\bigl(t,f(t)\bigr) \, dt$. Por exemplo,
+seja $H$ a \myindex{função de Heaviside}%
+\footnote{Nomeada em homenagem ao engenheiro, matemático e físico inglês
 \href{https://en.wikipedia.org/wiki/Oliver_Heaviside}{Oliver Heaviside}
-(1850--1925).},
-that is $H(x) \coloneqq 0$ for $x < 0$ and $H(x) \coloneqq 1$ for $x \geq 0$.
-Then
+(1850--1925).}, isto é, $H(x) \coloneqq 0$ para $x < 0$ e
+$H(x) \coloneqq 1$ para $x \geq 0$.
+Então
 $y' = H(x)$, $y(0) = 0$,
-is a common equation.
-The \myquote{solution}
-is the ramp function $f(x) \coloneqq 0$ if $x < 0$ and $f(x) \coloneqq x$ if $x \geq 0$,
-since this function satisfies
-$f(x) = \int_0^x H(t)\, dt$.  Notice, however, that $f'(0)$ does not exist,
-so $f$ is only what is called a \emph{\myindex{weak solution}} to the
-differential equation.
+é uma equação comum.
+A \myquote{solução} é a função rampa
+$f(x) \coloneqq 0$ se $x < 0$ e $f(x) \coloneqq x$ se $x \geq 0$,
+pois essa função satisfaz
+$f(x) = \int_0^x H(t)\, dt$. Observe, porém, que $f'(0)$ não existe;
+assim, $f$ é apenas o que se chama de \emph{\myindex{solução fraca}} da
+equação diferencial.
 \end{remark}
 
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
 \begin{exercise}
-Let $I, J \subset \R$ be intervals.
-Let $F \colon I \times J \to \R$ be a continuous function
-of two variables
-and suppose $f \colon I \to J$ is a continuous function.
-Show that $F\bigl(x,f(x)\bigr)$ is a continuous function on $I$.
+Sejam $I, J \subset \R$ intervalos.
+Seja $F \colon I \times J \to \R$ uma função contínua de duas variáveis,
+e suponha que $f \colon I \to J$ seja contínua.
+Mostre que $F\bigl(x,f(x)\bigr)$ é uma função contínua em $I$.
 \end{exercise}
 
 \begin{exercise}
-Let $I, J \subset \R$ be closed bounded intervals.
-Show that if $F \colon I \times J \to \R$ is continuous,
-then $F$ is bounded.
+Sejam $I, J \subset \R$ intervalos fechados e limitados.
+Mostre que, se $F \colon I \times J \to \R$ for contínua, então $F$ é
+limitada.
 \end{exercise}
 
 \begin{exercise}
-We proved Picard's theorem under the assumption that $x_0 = 0$.
-Prove the full statement of Picard's theorem for an arbitrary $x_0$.
+Provamos o teorema de Picard supondo que $x_0 = 0$.
+Prove o enunciado completo do teorema de Picard para um $x_0$ qualquer.
 \end{exercise}
 
 \begin{exercise}
-Let $f'(x)=x f(x)$ be our equation.  Start with the initial condition
-$f(0)=2$ and find the Picard iterates $f_0,f_1,f_2,f_3,f_4$.
+Considere a equação $f'(x)=x f(x)$. Comece com a condição inicial
+$f(0)=2$ e determine os iterados de Picard $f_0,f_1,f_2,f_3,f_4$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $F \colon I \times J \to \R$
-is a function that is continuous in the first variable,
-that is, for every fixed $y$ the function that takes $x$ to $F(x,y)$ is
-continuous.  Further, suppose $F$ is Lipschitz in the second variable,
-that is, there exists a number $L$ such that
+Suponha que $F \colon I \times J \to \R$ seja contínua na primeira
+variável, isto é, que, para cada $y$ fixado, a função que leva $x$ a
+$F(x,y)$ seja contínua. Suponha também que $F$ seja Lipschitz na segunda
+variável, isto é, que exista um número $L$ tal que
 \begin{equation*}
 \babs{F(x,y) - F(x,z)} \leq L \sabs{y-z}
-\qquad \text{for all } y,z \in J, x \in I .
+\qquad \text{para todos } y,z \in J, x \in I .
 \end{equation*}
-Show that $F$ is continuous as a function of two variables.  Therefore, the
-hypotheses in the theorem could be made even weaker.
+Mostre que $F$ é contínua como função de duas variáveis. Portanto, as
+hipóteses do teorema poderiam ser ainda mais fracas.
 \end{exercise}
 
 \begin{exercise}
 \pagebreak[2]
-A common type of equation is a
-\emph{\myindex{linear first order differential equation}}, that is,
-an equation of the form
+Um tipo comum de equação é a
+\emph{\myindex{equação diferencial linear de primeira ordem}}, isto é,
+uma equação da forma
 \begin{equation*}
 y' + p(x) y = q(x) , \qquad y(x_0) = y_0 .
 \end{equation*}
-Prove Picard's theorem for linear equations.  Suppose $I$ is an
-interval, $x_0 \in I$, and $p \colon I \to \R$ and $q \colon I \to \R$ are
-continuous.
-Show that there exists a unique differentiable $f \colon I \to \R$,
-such that $y = f(x)$
-satisfies the equation and the initial condition.
-Hint: Assume existence of the exponential function and use the integrating
-factor formula for existence of $f$ (prove that it works and then that it is unique):
+Prove o teorema de Picard para equações lineares. Suponha que $I$ seja um
+intervalo, $x_0 \in I$ e que $p \colon I \to \R$ e $q \colon I \to \R$
+sejam contínuas.
+Mostre que existe uma única função diferenciável $f \colon I \to \R$ tal
+que $y = f(x)$ satisfaça a equação e a condição inicial.
+Dica: suponha que a função exponencial exista e use a fórmula do fator
+integrante para obter $f$ (prove que ela funciona e depois que a solução é
+única):
 \begin{equation*}
 f(x) \coloneqq e^{-\int_{x_0}^x p(s)\, ds} \left( \int_{x_0}^x e^{\int_{x_0}^t p(s)\, ds}
 q(t) \,dt + y_0 \right).
@@ -2066,38 +2028,37 @@ q(t) \,dt + y_0 \right).
 \end{exercise}
 
 \begin{exercise}
-Consider the equation $f'(x) = f(x)$,
-from \exampleref{example:picardexponential}.  Show that given any $x_0$,
-any $y_0$, and any positive $h < \nicefrac{1}{2}$, we can pick $\alpha >
-0$ large enough that the proof of Picard's theorem guarantees a solution
-for the initial condition $f(x_0) = y_0$ in the interval
+Considere a equação $f'(x) = f(x)$ do
+\exampleref{example:picardexponential}. Mostre que, dados quaisquer $x_0$
+e $y_0$ e qualquer $h > 0$ com $h < \nicefrac{1}{2}$, podemos escolher
+um $\alpha > 0$ suficientemente grande para que a demonstração do teorema
+de Picard garanta uma solução com condição inicial $f(x_0) = y_0$ no intervalo
 $[x_0-h,x_0+h]$.
 \end{exercise}
 
 \begin{exercise}
 \pagebreak[3]
-Consider the equation $y' = y^{1/3}x$.
+Considere a equação $y' = y^{1/3}x$.
 \begin{enumerate}[a)]
 \item
-Show that for the initial condition $y(1)=1$, Picard's theorem applies.
-Find an $\alpha > 0$, $M$, $L$, and $h$ that would work in the proof.
+Mostre que o teorema de Picard se aplica à condição inicial $y(1)=1$.
+Determine valores de $\alpha > 0$, $M$, $L$ e $h$ que sirvam na demonstração.
 \item
-Show that for the initial condition $y(1) = 0$, Picard's theorem
-does not apply.
+Mostre que o teorema de Picard não se aplica à condição inicial $y(1) = 0$.
 \item
-Find a solution for $y(1) = 0$ anyway.
+Mesmo assim, encontre uma solução para $y(1) = 0$.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Consider the equation $x y' = 2y$.
+Considere a equação $x y' = 2y$.
 \begin{enumerate}[a)]
 \item
-Show that $y = Cx^2$ is a solution for every constant $C$.
+Mostre que $y = Cx^2$ é solução para toda constante $C$.
 \item
-Show that for every $x_0 \neq 0$ and every $y_0$, Picard's
-theorem applies for the initial condition $y(x_0) = y_0$.
+Mostre que, para todo $x_0 \neq 0$ e todo $y_0$, o teorema de Picard se
+aplica à condição inicial $y(x_0) = y_0$.
 \item
-Show that $y(0) = y_0$ is solvable if and only if $y_0 = 0$.
+Mostre que é possível resolver $y(0) = y_0$ se, e somente se, $y_0 = 0$.
 \end{enumerate}
 \end{exercise}

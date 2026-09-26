@@ -986,49 +986,47 @@ Agora suponha que $U$ seja aberto em $X$. Então $U = U \cap V$. Logo,
 $U$ é aberto em $V$, novamente pela \propref{prop:topology:subspaceopen}.
 \end{proof}
 
-\subsection{Connected sets}
+\subsection{Conjuntos conexos}
 
-Let us generalize the idea of an interval to general metric spaces.  One of
-the main features of an interval in $\R$ is that it is
-connected---that we can continuously move from one point of it to
-another point without jumping.
-For example, in $\R$ we usually study functions on intervals,
-and in more general metric spaces we usually study functions on connected sets.
+Vamos generalizar a ideia de intervalo para espaços métricos em geral. Uma
+das principais características de um intervalo em $\R$ é ser conexo: podemos
+nos mover continuamente de um ponto a outro sem dar saltos.
+Por exemplo, em $\R$ geralmente estudamos funções em intervalos e, em espaços
+métricos mais gerais, estudamos funções em conjuntos conexos.
 
 \begin{defn}
-A nonempty%
-\footnote{Some authors do not exclude the empty set from the definition,
-and the empty set would then be connected.
-We avoid the empty set for essentially the same reason why
-1 is neither a prime nor a composite number:  Our connected sets have exactly
-two clopen subsets and disconnected sets have more than two.  The empty set
-has exactly one.}
-metric space $(X,d)$ is \emph{\myindex{connected}} if the
-only subsets of $X$ that are both open and closed (sometimes called
-\emph{\myindex{clopen}} subsets) are $\emptyset$ and $X$ itself.
-If a nonempty $(X,d)$ is not connected we say it is
-\emph{\myindex{disconnected}}.
+Um espaço métrico $(X,d)$ não vazio%
+\footnote{Alguns autores não excluem o conjunto vazio da definição; nesse
+caso, o conjunto vazio seria conexo.
+Nós o excluímos essencialmente pela mesma razão pela qual 1 não é primo nem
+composto: nossos conjuntos conexos têm exatamente dois subconjuntos clopen,
+enquanto os conjuntos desconexos têm mais de dois. O conjunto vazio tem
+exatamente um.}
+é \emph{\myindex{conexo}} se os únicos subconjuntos de $X$ que são
+simultaneamente abertos e fechados (às vezes chamados de subconjuntos
+\emph{\myindex{clopen}}) são $\emptyset$ e o próprio $X$.
+Se $(X,d)$ não vazio não é conexo, dizemos que ele é
+\emph{\myindex{desconexo}}.
 
-When we apply the term \emph{connected} to a nonempty subset $A \subset X$, we 
-mean that $A$ with the subspace topology is connected.
+Quando aplicamos o termo \emph{conexo} a um subconjunto não vazio $A \subset X$,
+queremos dizer que $A$, com a topologia de subespaço, é conexo.
 \end{defn}
 
-In other words, a nonempty $X$ is connected if whenever we write
-$X = X_1 \cup X_2$ where $X_1 \cap X_2 = \emptyset$ and $X_1$ and $X_2$ are
-open, then either $X_1 = \emptyset$ or $X_2 = \emptyset$.
-So to show $X$ is disconnected, we need to find nonempty
-disjoint open sets $X_1$ and
-$X_2$ whose union is $X$.
-For subsets, we state this idea as a proposition.
-The proposition is illustrated in \figureref{fig:disconsubset}.
+Em outras palavras, um conjunto $X$ não vazio é conexo se, sempre que
+escrevemos $X = X_1 \cup X_2$, com $X_1 \cap X_2 = \emptyset$ e $X_1$ e
+$X_2$ abertos, temos $X_1 = \emptyset$ ou $X_2 = \emptyset$.
+Assim, para mostrar que $X$ é desconexo, precisamos encontrar conjuntos
+abertos, disjuntos e não vazios $X_1$ e $X_2$ cuja união seja $X$.
+Para subconjuntos, enunciamos essa ideia na proposição a seguir.
+A proposição está ilustrada na \figureref{fig:disconsubset}.
 
 \begin{prop}
-Let $(X,d)$ be a metric space.
-A nonempty set $S \subset X$ is disconnected if and only if
-there exist open sets $U_1$ and
-$U_2$ in $X$ such that $U_1 \cap U_2 \cap S = \emptyset$,
+Seja $(X,d)$ um espaço métrico.
+Um conjunto $S \subset X$ não vazio é desconexo se, e somente se,
+existem conjuntos abertos $U_1$ e $U_2$ em $X$ tais que
+$U_1 \cap U_2 \cap S = \emptyset$,
 $U_1 \cap S \neq \emptyset$,
-$U_2 \cap S \neq \emptyset$, and
+$U_2 \cap S \neq \emptyset$, e
 \begin{equation*}
 S = 
 \bigl( U_1 \cap S \bigr)
@@ -1039,36 +1037,35 @@ S =
 
 \begin{myfigureht}
 \myincludepdft{disconsubset}{%
-Two shaded regions with a solid boundary are both
-labeled S.  A dotted line surrounds each shaded
-region.
-The inside of the first one is marked U sub 1
-and the inside of the second one is marked U sub 2.
-The insides of the two dotted lines do intersect, but
-each shaded region is inside only one of the dotted
-lines.}
-\caption{Disconnected subset.  Notice that $U_1 \cap U_2$ need
-not be empty, but $U_1 \cap U_2 \cap S = \emptyset$.\label{fig:disconsubset}}
+Duas regiões sombreadas, cada uma com fronteira contínua,
+estão identificadas por S. Uma linha pontilhada contorna cada
+região.
+O interior da primeira está identificado por U sub 1,
+e o da segunda, por U sub 2.
+Os interiores das duas linhas pontilhadas se intersectam, mas
+cada região sombreada está dentro de apenas uma das linhas
+pontilhadas.}
+\caption{Subconjunto desconexo. Note que $U_1 \cap U_2$ não precisa
+ser vazio, mas $U_1 \cap U_2 \cap S = \emptyset$.\label{fig:disconsubset}}
 \end{myfigureht}
 
 
 \begin{proof}
-First suppose $S$ is disconnected: There are
-nonempty disjoint $S_1$ and $S_2$ that are
-open in $S$ and $S = S_1 \cup S_2$.
-\propref{prop:topology:subspaceopen} says there exist $U_1$ and $U_2$
-that are open in $X$ such that $U_1 \cap S = S_1$ and
-$U_2 \cap S = S_2$.
+Primeiro, suponha que $S$ seja desconexo: existem conjuntos $S_1$ e $S_2$
+não vazios, disjuntos e abertos em $S$, tais que $S = S_1 \cup S_2$.
+Pela \propref{prop:topology:subspaceopen}, existem $U_1$ e $U_2$ abertos em
+$X$ tais que $U_1 \cap S = S_1$ e $U_2 \cap S = S_2$.
 
-For the other direction start with the $U_1$ and $U_2$.
-Then $U_1 \cap S$ and $U_2 \cap S$ are open in $S$ by
+Para a recíproca, comecemos pelos conjuntos $U_1$ e $U_2$.
+Então $U_1 \cap S$ e $U_2 \cap S$ são abertos em $S$ pela
 \propref{prop:topology:subspaceopen}.
-Via the discussion before the proposition, $S$ is disconnected.
+Pela discussão anterior à proposição, $S$ é desconexo.
 \end{proof}
 
 \begin{example}
-Suppose $S \subset \R$ and there are $x,y,z$ such that $x < z < y$ with $x,y \in S$
-and $z \notin S$.  Claim: \emph{$S$ is disconnected}.  Proof:  Notice
+Suponha que $S \subset \R$ e que existam $x,y,z$ tais que $x < z < y$, com
+$x,y \in S$ e $z \notin S$. Afirmação: \emph{$S$ é desconexo}. Demonstração:
+observe que
 \begin{equation*}
 \bigl( (-\infty,z) \cap S \bigr)
 \cup
@@ -1078,76 +1075,71 @@ and $z \notin S$.  Claim: \emph{$S$ is disconnected}.  Proof:  Notice
 \end{example}
 
 \begin{prop}
-A nonempty set $S \subset \R$ is connected if and only if $S$ is
-an interval or a single point.
+Um conjunto $S \subset \R$ não vazio é conexo se, e somente se, $S$ é um
+intervalo ou um conjunto unitário.
 \end{prop}
 
 \begin{proof}
-Suppose $S$ is connected.  If $S$ is a single point,
-then we are done.  So suppose $x < y$ and $x,y \in S$.  If $z \in \R$ is such
-that $x < z < y$, then $(-\infty,z) \cap S$ is nonempty and $(z,\infty) \cap
-S$ is nonempty.  The two sets are disjoint.  As
-$S$ is connected, we must have that their union is not $S$, so $z \in S$.
-By \propref{prop:intervaldef}, $S$ is an interval.
+Suponha que $S$ seja conexo. Se $S$ for um conjunto unitário, terminamos.
+Suponha, então, que $x < y$ e $x,y \in S$. Se $z \in \R$ é tal que
+$x < z < y$, então $(-\infty,z) \cap S$ e $(z,\infty) \cap S$ são não vazios
+e disjuntos. Como $S$ é conexo, a união desses conjuntos não pode ser $S$;
+portanto, $z \in S$.
+Pela \propref{prop:intervaldef}, $S$ é um intervalo.
 
-If $S$ is a single point, it is connected.
-Therefore, suppose $S$ is an interval.
-Consider open subsets $U_1$ and $U_2$ of $\R$ such that
-$U_1 \cap S$ and $U_2 \cap S$ are nonempty, and
+Se $S$ é um conjunto unitário, então é conexo.
+Suponhamos, portanto, que $S$ seja um intervalo.
+Consideremos subconjuntos abertos $U_1$ e $U_2$ de $\R$ tais que
+$U_1 \cap S$ e $U_2 \cap S$ sejam não vazios e
 $S = 
 \bigl( U_1 \cap S \bigr)
 \cup
-\bigl( U_2 \cap S \bigr)$.  We will show that $U_1 \cap S$
-and $U_2 \cap S$ contain a common point, so they are not disjoint,
-proving that $S$ is connected.
-Suppose $x \in U_1 \cap S$
-and $y \in U_2 \cap S$.  Without loss of generality, assume $x < y$.
-As $S$ is an interval, $[x,y] \subset S$.
-Note that $U_2 \cap [x,y] \neq \emptyset$, and
-let $z \coloneqq \inf (U_2 \cap [x,y])$.
-We wish to show that $z \in U_1$.
-If $z = x$, then $z \in U_1$.
-If $z > x$,
-then for every $\epsilon > 0$, the ball $B(z,\epsilon) =
-(z-\epsilon,z+\epsilon)$ contains points of $[x,y]$ not in $U_2$,
-as $z$ is the infimum of $U_2 \cap [x,y]$.
-So $z \notin U_2$ as $U_2$ is open.
-Therefore, $z \in U_1$ as every point of $[x,y]$ is in
-$U_1$ or $U_2$.
-As $U_1$ is open,
-$B(z,\delta) \subset U_1$ for a small enough $\delta > 0$.
-As $z$ is the infimum of the nonempty set $U_2 \cap [x,y]$, 
-there must exist some $w \in U_2 \cap [x,y]$
-such that $w \in [z,z+\delta) \subset B(z,\delta) \subset U_1$.
-Therefore, $w \in U_1 \cap U_2 \cap [x,y]$.
-So $U_1 \cap S$ and $U_2 \cap S$ are not disjoint, and
-$S$ is connected.
-See \figureref{fig:intervalcon}.
+\bigl( U_2 \cap S \bigr)$. Mostraremos que $U_1 \cap S$
+e $U_2 \cap S$ têm um ponto em comum e, portanto, não são disjuntos,
+o que prova que $S$ é conexo.
+Suponha que $x \in U_1 \cap S$ e $y \in U_2 \cap S$.
+Sem perda de generalidade, suponha que $x < y$.
+Como $S$ é um intervalo, $[x,y] \subset S$.
+Observe que $U_2 \cap [x,y] \neq \emptyset$ e defina
+$z \coloneqq \inf (U_2 \cap [x,y])$.
+Queremos mostrar que $z \in U_1$.
+Se $z = x$, então $z \in U_1$.
+Se $z > x$, para todo $\epsilon > 0$, a bola
+$B(z,\epsilon) = (z-\epsilon,z+\epsilon)$ contém pontos de $[x,y]$ que não
+pertencem a $U_2$, pois $z$ é o ínfimo de $U_2 \cap [x,y]$.
+Logo, $z \notin U_2$, já que $U_2$ é aberto.
+Portanto, $z \in U_1$, pois todo ponto de $[x,y]$ pertence a $U_1$ ou a
+$U_2$.
+Como $U_1$ é aberto, $B(z,\delta) \subset U_1$ para algum $\delta > 0$
+suficientemente pequeno.
+Como $z$ é o ínfimo do conjunto não vazio $U_2 \cap [x,y]$, existe
+$w \in U_2 \cap [x,y]$ tal que $w \in [z,z+\delta) \subset B(z,\delta)
+\subset U_1$.
+Assim, $w \in U_1 \cap U_2 \cap [x,y]$.
+Logo, $U_1 \cap S$ e $U_2 \cap S$ não são disjuntos, e $S$ é conexo.
+Veja a \figureref{fig:intervalcon}.
 \end{proof}
 
 \begin{myfigureht}
 \myincludepdft{intervalcon}{%
-A diagram of the number line with a point
-x marked on the left and point y marked
-on the right.  Between x and y
-there are points z and w.  An open interval
-going from somewhere on the left and past w (so
-it contains x, z and w) is marked U sub 1.
-An open interval from z going off the diagram
-to the right is marked as U sub 2.
-a small open interval from z minus delta
-to z plus delta that contains w is marked.}
-\caption{Proof that an interval is connected.\label{fig:intervalcon}}
+Diagrama da reta real com um ponto x indicado à esquerda e um ponto y à
+direita. Entre x e y estão os pontos z e w. Um intervalo aberto que começa
+em algum ponto à esquerda e se estende além de w (contendo x, z e w) está
+identificado como U sub 1.
+Um intervalo aberto que parte de z e segue até além do diagrama, à direita,
+está identificado como U sub 2.
+Um pequeno intervalo aberto entre z menos delta e z mais delta, contendo w,
+está indicado.}
+\caption{Demonstração de que um intervalo é conexo.\label{fig:intervalcon}}
 \end{myfigureht}
 
 \begin{example}
-Oftentimes a ball $B(x,\delta)$ is connected, but this is not
-necessarily true in every metric space.
-For the simplest example,
-take a two point space $\{ a, b\}$ with the discrete metric.
-Then $B(a,2) = \{ a , b \}$, which is not
-connected as $B(a,1) = \{ a \}$ and 
-$B(b,1) = \{ b \}$ are open and disjoint.
+Muitas vezes, uma bola $B(x,\delta)$ é conexa, mas isso não é necessariamente
+verdadeiro em todo espaço métrico.
+No exemplo mais simples, consideremos um espaço com dois pontos
+$\{ a, b\}$ e a métrica discreta.
+Então $B(a,2) = \{ a , b \}$ não é conexa, pois $B(a,1) = \{ a \}$ e
+$B(b,1) = \{ b \}$ são abertos e disjuntos.
 \end{example}
 
 \subsection{Closure and boundary}

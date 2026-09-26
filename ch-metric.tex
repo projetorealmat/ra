@@ -1707,198 +1707,205 @@ se, e somente se, $\{ x_n \}_{n=1}^\infty$ converge para $x$ e
 $\{ y_n \}_{n=1}^\infty$ converge para $y$.
 \end{example}
 
-\subsection{Convergence and topology}
+\subsection{Convergência e topologia}
 
-The topology---the set of open sets of a space---encodes which
-sequences converge.
+A topologia — a coleção dos conjuntos abertos de um espaço — codifica quais
+sequências convergem.
 
 \begin{prop} \label{prop:msconvtopo}
-Let $(X,d)$ be a metric space and $\{x_n\}_{n=1}^\infty$ a sequence in $X$.  Then
-$\{ x_n \}_{n=1}^\infty$ converges to $p \in X$ if and only if for every open neighborhood
-$U$ of $p$, there exists an $M \in \N$ such that for all $n \geq M$,
-we have $x_n \in U$.
+Seja $(X,d)$ um espaço métrico e $\{x_n\}_{n=1}^\infty$ uma sequência em $X$.
+Então
+$\{ x_n \}_{n=1}^\infty$ converge a $p \in X$ se, e somente se, para toda
+vizinhança aberta $U$ de $p$, existe $M \in \N$ tal que, para todo $n \geq M$,
+temos $x_n \in U$.
 \end{prop}
 
 \begin{proof}
-Suppose $\{ x_n \}_{n=1}^\infty$ converges to $p$.  Let $U$ be an open neighborhood
-of $p$.  There exists an $\epsilon > 0$ such that $B(p,\epsilon) \subset
-U$.  As the sequence converges, find an $M \in \N$ such that for all $n \geq
-M$, we have $d(p,x_n) < \epsilon$, or in other words $x_n \in B(p,\epsilon)
-\subset U$.
+Suponha que $\{ x_n \}_{n=1}^\infty$ convirja a $p$. Seja $U$ uma vizinhança
+aberta de $p$. Existe $\epsilon > 0$ tal que $B(p,\epsilon) \subset
+U$. Como a sequência converge, encontre $M \in \N$ tal que, para todo $n \geq
+M$, temos $d(p,x_n) < \epsilon$; em outras palavras,
+$x_n \in B(p,\epsilon) \subset U$.
 
-Let us prove the other direction.  Given $\epsilon > 0$, let $U \coloneqq
-B(p,\epsilon)$ be the neighborhood of $p$.  Then there is an $M \in \N$
-such that for $n \geq M$, we have $x_n \in U = B(p,\epsilon)$, or in other
-words, $d(p,x_n) < \epsilon$.
+Demonstremos a implicação contrária. Dado $\epsilon > 0$, seja
+$U \coloneqq B(p,\epsilon)$ a vizinhança de $p$. Então existe $M \in \N$
+tal que, para $n \geq M$, temos $x_n \in U = B(p,\epsilon)$; em outras
+palavras, $d(p,x_n) < \epsilon$.
 \end{proof}
 
-A closed set contains the limits of its convergent sequences.
+Um conjunto fechado contém os limites de suas sequências convergentes.
 
 \begin{prop} \label{prop:msclosedlim}
-Let $(X,d)$ be a metric space, $E \subset X$ a closed set,
-and $\{ x_n \}_{n=1}^\infty$ a sequence in $E$ that converges to some $p \in X$.
-Then $p \in E$.
+Seja $(X,d)$ um espaço métrico, seja $E \subset X$ um conjunto fechado
+e seja $\{ x_n \}_{n=1}^\infty$ uma sequência em $E$ que converge a algum
+$p \in X$. Então $p \in E$.
 \end{prop}
 
 \begin{proof}
-Let us prove the contrapositive.
-Suppose $\{ x_n \}_{n=1}^\infty$ is a sequence in $X$ that converges to $p \in E^c$.
-As $E^c$ is open, \propref{prop:msconvtopo} says that there is
-an $M$ such that for all $n \geq M$,
-$x_n \in E^c$.  So $\{ x_n \}_{n=1}^\infty$  is not a sequence in $E$.
+Demonstremos a contrapositiva.
+Suponha que $\{ x_n \}_{n=1}^\infty$ seja uma sequência em $X$ que converge
+a $p \in E^c$.
+Como $E^c$ é aberto, a \propref{prop:msconvtopo} afirma que existe
+$M$ tal que, para todo $n \geq M$,
+$x_n \in E^c$. Portanto, $\{ x_n \}_{n=1}^\infty$ não é uma sequência em $E$.
 \end{proof}
 
-To take a closure of a set $A$, we start with $A$, and we throw in 
-points that are limits of sequences in $A$.
+Para obter o fecho de um conjunto $A$, começamos com $A$ e acrescentamos
+os pontos que são limites de sequências em $A$.
 
 \begin{prop} \label{prop:msclosureapprseq}
-Let $(X,d)$ be a metric space and $A \subset X$.
-Then $p \in \widebar{A}$ if and only if there exists a sequence
-$\{ x_n \}_{n=1}^\infty$ of
-elements in $A$ such that $\lim\limits_{n\to\infty} x_n = p$.
+Seja $(X,d)$ um espaço métrico e $A \subset X$.
+Então $p \in \widebar{A}$ se, e somente se, existe uma sequência
+$\{ x_n \}_{n=1}^\infty$ de elementos de $A$ tal que
+$\lim\limits_{n\to\infty} x_n = p$.
 \end{prop}
 
 \begin{proof}
-Let $p \in \widebar{A}$.  For every $n \in \N$,
-\propref{prop:msclosureappr} guarantees
-a point $x_n \in B(p,\nicefrac{1}{n}) \cap A$.
-As $d(p,x_n) < \nicefrac{1}{n}$, we have $\lim_{n\to\infty} x_n = p$.
+Seja $p \in \widebar{A}$. Para todo $n \in \N$,
+a \propref{prop:msclosureappr} garante a existência
+de um ponto $x_n \in B(p,\nicefrac{1}{n}) \cap A$.
+Como $d(p,x_n) < \nicefrac{1}{n}$, temos $\lim_{n\to\infty} x_n = p$.
 
-For the other direction, see \exerciseref{exercise:reverseclosedseq}.
+Para a implicação contrária, veja \exerciseref{exercise:reverseclosedseq}.
 \end{proof}
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
 \begin{exercise} \label{exercise:reverseclosedseq}
-Finish the proof of 
+Complete a demonstração da 
 \propref{prop:msclosureapprseq}:
-Let $(X,d)$ be a metric space and
-$A \subset X$.  Let $p \in X$ be
-such that there exists a sequence $\{ x_n \}_{n=1}^\infty$ in $A$ that converges to $p$.
-Prove that $p \in \widebar{A}$.
+seja $(X,d)$ um espaço métrico e
+$A \subset X$. Seja $p \in X$ tal
+que existe uma sequência $\{ x_n \}_{n=1}^\infty$ em $A$ que converge a $p$.
+Demonstre que $p \in \widebar{A}$.
 \end{exercise}
 
 \begin{exercise}
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Show that $d(x,y) \coloneqq \min \bigl\{ 1, \sabs{x-y} \bigr\}$ defines a metric on $\R$.
+Mostre que $d(x,y) \coloneqq \min \bigl\{ 1, \sabs{x-y} \bigr\}$ define uma
+métrica em $\R$.
 \item
-Show that a sequence converges in $(\R,d)$ if and only if it converges
-in the standard metric.
+Mostre que uma sequência converge em $(\R,d)$ se, e somente se, converge
+na métrica usual.
 \item
-Find a bounded sequence in $(\R,d)$ that
-contains no convergent subsequence.
+Encontre uma sequência limitada em $(\R,d)$ que
+não contenha nenhuma subsequência convergente.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Prove \propref{prop:msconvbound}.
+Demonstre \propref{prop:msconvbound}.
 \end{exercise}
 
 \begin{exercise}
-Prove \propref{prop:msconvifa}.
+Demonstre \propref{prop:msconvifa}.
 \end{exercise}
 
 \begin{exercise}
-Suppose $\{x_n\}_{n=1}^\infty$ converges to $p$.  Suppose $f \colon \N
-\to \N$ is a one-to-one function.  Show that
-$\{ x_{f(n)} \}_{n=1}^\infty$ converges to $p$.
+Suponha que $\{x_n\}_{n=1}^\infty$ convirja a $p$. Suponha que
+$f \colon \N \to \N$ seja uma função injetiva. Mostre que
+$\{ x_{f(n)} \}_{n=1}^\infty$ converge a $p$.
 \end{exercise}
 
 \begin{exercise}
-Let $(X,d)$ be a metric space where $d$ is the discrete metric.  Suppose 
-$\{ x_n \}_{n=1}^\infty$ is a convergent sequence in $X$.  Show that there exists
-a $K \in \N$ such that for all $n \geq K$, we have $x_n = x_K$.
+Seja $(X,d)$ um espaço métrico em que $d$ é a métrica discreta. Suponha que
+$\{ x_n \}_{n=1}^\infty$ seja uma sequência convergente em $X$. Mostre que
+existe $K \in \N$ tal que, para todo $n \geq K$, temos $x_n = x_K$.
 \end{exercise}
 
 \begin{exercise}
-A set $S \subset X$ is said to be \emph{\myindex{dense}} in $X$ if
-$X \subset \widebar{S}$ or in other words if for every $p \in X$,
-there exists a sequence $\{ x_n \}_{n=1}^\infty$ in $S$ that converges to $p$.
-Prove that $\R^n$ contains a countable dense subset.
+Dizemos que um conjunto $S \subset X$ é \emph{\myindex{denso}} em $X$ se
+$X \subset \widebar{S}$; em outras palavras, se, para todo $p \in X$,
+existe uma sequência $\{ x_n \}_{n=1}^\infty$ em $S$ que converge a $p$.
+Demonstre que $\R^n$ contém um subconjunto enumerável e denso.
 \end{exercise}
 
-\begin{exercise}[Tricky]
-Suppose $\{ U_n \}_{n=1}^\infty$ is a decreasing ($U_{n+1} \subset U_n$ for
-all $n$) sequence of open sets in a metric space $(X,d)$ such that
-$\bigcap_{n=1}^\infty U_n = \{ p \}$ for some $p \in X$.  Suppose 
-$\{ x_n \}_{n=1}^\infty$ is a sequence of points in $X$ such that $x_n \in U_n$.  Does
-$\{ x_n \}_{n=1}^\infty$ necessarily converge to $p$?  Prove or construct a counterexample.
+\begin{exercise}[Desafio]
+Suponha que $\{ U_n \}_{n=1}^\infty$ seja uma sequência decrescente de
+conjuntos abertos (isto é, $U_{n+1} \subset U_n$ para
+todo $n$) em um espaço métrico $(X,d)$, e que
+$\bigcap_{n=1}^\infty U_n = \{ p \}$ para algum $p \in X$.
+Suponha que $\{ x_n \}_{n=1}^\infty$ seja uma sequência de pontos de $X$
+tal que $x_n \in U_n$. A sequência $\{ x_n \}_{n=1}^\infty$ necessariamente
+converge a $p$? Demonstre ou construa um contraexemplo.
 \end{exercise}
 
 \begin{exercise}
-Let $E \subset X$ be closed and
-let $\{ x_n \}_{n=1}^\infty$ be a sequence in $X$ converging to $p \in X$.  Suppose
-$x_n \in E$ for infinitely many $n \in \N$.  Show $p \in E$.
+Seja $E \subset X$ fechado e seja
+$\{ x_n \}_{n=1}^\infty$ uma sequência em $X$ que converge a $p \in X$.
+Suponha que $x_n \in E$ para infinitos $n \in \N$. Mostre que $p \in E$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:extendedrealsmetric}
-Take $\R^* = \{ -\infty \} \cup \R \cup \{ \infty \}$ be the extended reals.
-Define
+Seja $\R^* = \{ -\infty \} \cup \R \cup \{ \infty \}$ o conjunto dos reais
+estendidos.
+Defina
 $d(x,y) \coloneqq \babs{ \frac{x}{1+\sabs{x}} - \frac{y}{1+\sabs{y}} }$
-if $x, y \in \R$, define
+se $x,y \in \R$; defina
 $d(\infty,x) \coloneqq \babs{ 1 - \frac{x}{1+\sabs{x}} }$,
 $d(-\infty,x) \coloneqq \babs{ 1 + \frac{x}{1+\sabs{x}} }$
-for all $x \in \R$, and
-let $d(\infty,-\infty) \coloneqq 2$.
+para todo $x \in \R$; e
+seja $d(\infty,-\infty) \coloneqq 2$.
 \begin{enumerate}[a)]
 \item
-Show that $(\R^*,d)$ is a metric space.
+Mostre que $(\R^*,d)$ é um espaço métrico.
 \item
-Suppose $\{ x_n \}_{n=1}^\infty$ is a sequence of real numbers such that
-for every $M \in \R$, there exists an $N$ such that
-$x_n \geq M$ for all $n \geq N$.  Show that $\lim\limits_{n\to\infty} x_n = \infty$ in
+Suponha que $\{ x_n \}_{n=1}^\infty$ seja uma sequência de números reais tal
+que, para todo $M \in \R$, existe $N$ tal que
+$x_n \geq M$ para todo $n \geq N$. Mostre que
+$\lim\limits_{n\to\infty} x_n = \infty$ em
 $(\R^*,d)$.
 \item
-Show that a sequence of real numbers converges to a real number
-in $(\R^*,d)$ if and
-only if it converges in $\R$ with the standard metric.
+Mostre que uma sequência de números reais converge a um número real
+em $(\R^*,d)$ se, e somente se, converge em $\R$ com a métrica usual.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Suppose $\{ V_n \}_{n=1}^\infty$ is a sequence of open sets
-in $(X,d)$
-such that $V_{n+1} \supset V_n$ for all $n$.  Let $\{ x_n \}_{n=1}^\infty$ be a sequence
-such that $x_n \in V_{n+1} \setminus V_n$ and suppose 
-$\{ x_n \}_{n=1}^\infty$ converges to $p \in X$.  Show that $p \in \partial V$
-where $V = \bigcup_{n=1}^\infty V_n$.
+Suponha que $\{ V_n \}_{n=1}^\infty$ seja uma sequência de conjuntos abertos
+em $(X,d)$
+tal que $V_{n+1} \supset V_n$ para todo $n$. Seja $\{ x_n \}_{n=1}^\infty$
+uma sequência
+tal que $x_n \in V_{n+1} \setminus V_n$ e suponha que
+$\{ x_n \}_{n=1}^\infty$ convirja a $p \in X$. Mostre que $p \in \partial V$,
+em que $V = \bigcup_{n=1}^\infty V_n$.
 \end{exercise}
 
 \begin{exercise}
-Prove \propref{prop:mssubseq}.
+Demonstre \propref{prop:mssubseq}.
 \end{exercise}
 
 \begin{exercise}
-Let $(X,d)$ be a metric space and $\{ x_n \}_{n=1}^\infty$ a sequence in $X$.
-Prove that $\{ x_n \}_{n=1}^\infty$ converges to $p \in X$
-if and only if
-every subsequence of $\{ x_n \}_{n=1}^\infty$ has a subsequence that
-converges to $p$.
+Seja $(X,d)$ um espaço métrico e $\{ x_n \}_{n=1}^\infty$ uma sequência em $X$.
+Demonstre que $\{ x_n \}_{n=1}^\infty$ converge a $p \in X$
+se, e somente se, toda subsequência de $\{ x_n \}_{n=1}^\infty$ possui
+uma subsequência que converge a $p$.
 \end{exercise}
 
 \begin{exercise}
-Consider $\R^n$, and let $d$ be the standard euclidean metric.
-Let $d'(x,y) \coloneqq \sum_{\ell=1}^n \sabs{x_\ell-y_\ell}$ and
+Considere $\R^n$ e seja $d$ a métrica euclidiana usual.
+Sejam
+$d'(x,y) \coloneqq \sum_{\ell=1}^n \sabs{x_\ell-y_\ell}$ e
 $d''(x,y) \coloneqq \max \bigl\{
 \sabs{x_1-y_1},\sabs{x_2-y_2},\cdots,\sabs{x_n-y_n}
 \bigr\}$.
 \begin{enumerate}[a)]
 \item
-Use \exerciseref{exercise:mscross}, to show that
-$(\R^n,d')$ and
-$(\R^n,d'')$ are metric spaces.
+Use \exerciseref{exercise:mscross} para mostrar que
+$(\R^n,d')$ e
+$(\R^n,d'')$ são espaços métricos.
 \item
-Let $\{ x_k \}_{k=1}^\infty$ be a sequence in $\R^n$ and $p \in \R^n$.
-Prove that the following statements are equivalent:
+Seja $\{ x_k \}_{k=1}^\infty$ uma sequência em $\R^n$ e seja $p \in \R^n$.
+Demonstre que as afirmações a seguir são equivalentes:
 \begin{enumerate}[(1)]
 \item
-$\{ x_k \}_{k=1}^\infty$ converges to $p$ in $(\R^n,d)$.
+$\{ x_k \}_{k=1}^\infty$ converge a $p$ em $(\R^n,d)$.
 \item
-$\{ x_k \}_{k=1}^\infty$ converges to $p$ in $(\R^n,d')$.
+$\{ x_k \}_{k=1}^\infty$ converge a $p$ em $(\R^n,d')$.
 \item
-$\{ x_k \}_{k=1}^\infty$ converges to $p$ in $(\R^n,d'')$.
+$\{ x_k \}_{k=1}^\infty$ converge a $p$ em $(\R^n,d'')$.
 \end{enumerate}
 \end{enumerate}
 \end{exercise}

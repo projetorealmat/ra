@@ -1142,186 +1142,186 @@ Então $B(a,2) = \{ a , b \}$ não é conexa, pois $B(a,1) = \{ a \}$ e
 $B(b,1) = \{ b \}$ são abertos e disjuntos.
 \end{example}
 
-\subsection{Closure and boundary}
+\subsection{Fecho e fronteira}
 
-Sometimes we wish to take a set and throw in everything that we can approach
-from the set.  This concept is called the closure.
+Às vezes, queremos acrescentar a um conjunto todos os pontos dos quais
+podemos nos aproximar a partir dele. Esse conceito é chamado de fecho.
 
 \begin{defn}
-Let $(X,d)$ be a metric space and $A \subset X$.
-The \emph{\myindex{closure}} of $A$ is the set
+Seja $(X,d)$ um espaço métrico e $A \subset X$.
+O \emph{\myindex{fecho}} de $A$ é o conjunto
 \glsadd{not:closure}
 \begin{equation*}
-\widebar{A} \coloneqq \bigcap \{ E \subset X : E \text{ is closed and } A \subset
+\widebar{A} \coloneqq \bigcap \{ E \subset X : E \text{ é fechado e } A \subset
 E \} .
 \end{equation*}
 \end{defn}
 
-That is,
-$\widebar{A}$ is the intersection of all closed sets that contain $A$.
-
+Isto é,
+$\widebar{A}$ é a interseção de todos os conjuntos fechados que contêm $A$.
 
 \begin{prop}
-Let $(X,d)$ be a metric space and $A \subset X$.  The closure $\widebar{A}$
-is closed, and $A \subset \widebar{A}$.
-Furthermore, if $A$ is closed, then $\widebar{A} = A$.
+Seja $(X,d)$ um espaço métrico e $A \subset X$. O fecho $\widebar{A}$
+é fechado, e $A \subset \widebar{A}$.
+Além disso, se $A$ é fechado, então $\widebar{A} = A$.
 \end{prop}
 
 \begin{proof}
-The closure is an intersection of closed sets, so $\widebar{A}$ is closed.
-There is at least one closed set containing $A$, namely $X$ itself,
-so $A \subset \widebar{A}$.
-If $A$ is closed, then $A$ is a closed set that contains $A$.
-So $\widebar{A} \subset A$, and thus $A = \widebar{A}$.
+O fecho é uma interseção de conjuntos fechados; portanto, $\widebar{A}$ é
+fechado.
+Há pelo menos um conjunto fechado que contém $A$, a saber, o próprio $X$,
+de modo que $A \subset \widebar{A}$.
+Se $A$ é fechado, então $A$ é um conjunto fechado que contém $A$.
+Logo, $\widebar{A} \subset A$ e, portanto, $A = \widebar{A}$.
 \end{proof}
 
 \begin{example}
-The closure of $(0,1)$ in $\R$ is $[0,1]$.  Proof:  If
-$E$ is closed and contains $(0,1)$, then $E$ contains $0$ and $1$ (why?).
-Thus $[0,1] \subset E$.  But $[0,1]$ is also closed.
-Hence, the closure $\overline{(0,1)} = [0,1]$.
+O fecho de $(0,1)$ em $\R$ é $[0,1]$. De fato, se
+$E$ é fechado e contém $(0,1)$, então $E$ contém $0$ e $1$ (por quê?).
+Assim, $[0,1] \subset E$. Mas $[0,1]$ também é fechado.
+Logo, o fecho $\overline{(0,1)} = [0,1]$.
 \end{example}
 
 \begin{example}
-Be careful to notice what ambient metric space you are working with.
-If $X = (0,\infty)$, then
-the closure of $(0,1)$ in $(0,\infty)$ is $(0,1]$.  Proof:  Similarly as
-above, $(0,1]$ is closed in $(0,\infty)$ (why?).  Any closed set $E$
-that contains $(0,1)$ must contain 1 (why?).  Therefore, $(0,1] \subset E$,
-and hence $\overline{(0,1)} = (0,1]$ when working in $(0,\infty)$.
+Tenha cuidado para observar em qual espaço métrico ambiente você está
+trabalhando.
+Se $X = (0,\infty)$, então o fecho de $(0,1)$ em $(0,\infty)$ é $(0,1]$.
+De fato, assim como acima, $(0,1]$ é fechado em $(0,\infty)$ (por quê?).
+Todo conjunto fechado $E$ que contém $(0,1)$ também contém 1 (por quê?).
+Portanto, $(0,1] \subset E$ e, assim,
+$\overline{(0,1)} = (0,1]$ quando trabalhamos em $(0,\infty)$.
 \end{example}
 
-Let us justify the statement that the closure is everything that we can
-\myquote{approach} from within the set.
+Justifiquemos a afirmação de que o fecho contém todos os pontos dos quais
+podemos nos \myquote{aproximar} a partir do conjunto.
 
 \begin{prop} \label{prop:msclosureappr}
-Let $(X,d)$ be a metric space and $A \subset X$.  Then $x \in \widebar{A}$
-if and only if for every $\delta > 0$, $B(x,\delta) \cap A \neq \emptyset$.
+Seja $(X,d)$ um espaço métrico e $A \subset X$. Então $x \in \widebar{A}$
+se, e somente se, para todo $\delta > 0$, $B(x,\delta) \cap A \neq \emptyset$.
 \end{prop}
 
 \begin{proof}
-Let us prove the two contrapositives.
-Let us show that $x \notin \widebar{A}$ if and only if there exists
-a $\delta > 0$ such that $B(x,\delta) \cap A = \emptyset$.
+Demonstremos as duas contrapositivas.
+Mostremos que $x \notin \widebar{A}$ se, e somente se, existe
+$\delta > 0$ tal que $B(x,\delta) \cap A = \emptyset$.
 
-First suppose $x \notin \widebar{A}$.  We know $\widebar{A}$ is
-closed.  Thus there is a $\delta > 0$ such that
-$B(x,\delta) \subset \widebar{A}^c$.  As $A \subset \widebar{A}$ we
-see that $B(x,\delta) \subset \widebar{A}^c \subset A^c$ and hence
+Primeiro, suponha que $x \notin \widebar{A}$. Sabemos que $\widebar{A}$ é
+fechado. Portanto, existe $\delta > 0$ tal que
+$B(x,\delta) \subset \widebar{A}^c$. Como $A \subset \widebar{A}$,
+temos $B(x,\delta) \subset \widebar{A}^c \subset A^c$ e, consequentemente,
 $B(x,\delta) \cap A = \emptyset$.
 
-On the other hand, suppose there is a $\delta > 0$ such that
-$B(x,\delta) \cap A = \emptyset$. 
-In other words,
+Por outro lado, suponha que exista $\delta > 0$ tal que
+$B(x,\delta) \cap A = \emptyset$.
+Em outras palavras,
 $A \subset {B(x,\delta)}^c$.
-As 
-${B(x,\delta)}^c$ is a closed set, as $x \not \in {B(x,\delta)}^c$,
-and as $\widebar{A}$ is the intersection
-of closed sets containing $A$, we have $x \notin \widebar{A}$.
+Como ${B(x,\delta)}^c$ é fechado, como $x \not \in {B(x,\delta)}^c$
+e como $\widebar{A}$ é a interseção dos conjuntos fechados que contêm $A$,
+temos $x \notin \widebar{A}$.
 \end{proof}
 
-We can also talk about the interior of a set
-(points we cannot approach from the complement),
-and the boundary of a set (points we can
-approach both from the set and its complement).
+Também podemos falar do interior de um conjunto (os pontos dos quais não
+podemos nos aproximar a partir do complementar) e da fronteira de um
+conjunto (os pontos dos quais podemos nos aproximar tanto a partir do
+conjunto quanto do seu complementar).
 
 \begin{defn}
-Let $(X,d)$ be a metric space and $A \subset X$.
-The \emph{\myindex{interior}} of $A$ is the set
+Seja $(X,d)$ um espaço métrico e $A \subset X$.
+O \emph{\myindex{interior}} de $A$ é o conjunto
 \glsadd{not:interior}
 \begin{equation*}
-A^\circ \coloneqq \{ x \in A : \text{there exists a } \delta > 0
-\text{ such that } B(x,\delta) \subset A \} .
+A^\circ \coloneqq \{ x \in A : \text{existe } \delta > 0
+\text{ tal que } B(x,\delta) \subset A \} .
 \end{equation*}
-The \emph{\myindex{boundary}} of $A$ is the set
+A \emph{\myindex{fronteira}} de $A$ é o conjunto
 \glsadd{not:boundary}
 \begin{equation*}
 \partial A \coloneqq \widebar{A}\setminus A^\circ.
 \end{equation*}
 \end{defn}
 
-Alternatively, the interior is the union of open sets lying in $A$,
-see \exerciseref{exercise:interiortopologic}.  By
-definition, $A^\circ \subset A$;
-however, the points of the boundary may or may not be in $A$.
+De forma equivalente, o interior é a união dos conjuntos abertos contidos
+em $A$; veja \exerciseref{exercise:interiortopologic}. Por definição,
+$A^\circ \subset A$; contudo, os pontos da fronteira podem ou não pertencer
+a $A$.
 
 \begin{example}
-Suppose $A \coloneqq (0,1]$ and $X \coloneqq \R$.  Then $\widebar{A}=[0,1]$, $A^\circ = (0,1)$,
-and $\partial A = \{ 0, 1 \}$.
+Suponha que $A \coloneqq (0,1]$ e $X \coloneqq \R$. Então
+$\widebar{A}=[0,1]$, $A^\circ = (0,1)$ e $\partial A = \{ 0, 1 \}$.
 \end{example}
 
 \begin{example}
-Consider $X \coloneqq \{ a, b \}$ with the discrete metric,
-and let $A \coloneqq \{ a \}$.  Then $\widebar{A} = A^\circ = A$ and $\partial A =
-\emptyset$.
+Considere $X \coloneqq \{ a, b \}$ com a métrica discreta e seja
+$A \coloneqq \{ a \}$. Então $\widebar{A} = A^\circ = A$ e
+$\partial A = \emptyset$.
 \end{example}
-
 
 \begin{prop}
-Let $(X,d)$ be a metric space and $A \subset X$.  Then $A^\circ$ is open
-and $\partial A$ is closed.
+Seja $(X,d)$ um espaço métrico e $A \subset X$. Então $A^\circ$ é aberto
+e $\partial A$ é fechado.
 \end{prop}
 
 \begin{proof}
-Given $x \in A^\circ$, there is a $\delta > 0$ such that $B(x,\delta)
-\subset A$.  If $z \in B(x,\delta)$, then as open balls are open,
-there is an $\epsilon > 0$ such that $B(z,\epsilon) \subset B(x,\delta)
-\subset A$.  So $z \in A^\circ$.  Therefore, $B(x,\delta) \subset
-A^\circ$, and so $A^\circ$ is open.
+Dado $x \in A^\circ$, existe $\delta > 0$ tal que $B(x,\delta) \subset A$.
+Se $z \in B(x,\delta)$, como as bolas abertas são abertas, existe
+$\epsilon > 0$ tal que $B(z,\epsilon) \subset B(x,\delta) \subset A$.
+Logo, $z \in A^\circ$. Portanto, $B(x,\delta) \subset A^\circ$ e,
+assim, $A^\circ$ é aberto.
 
-As $A^\circ$ is open,
+Como $A^\circ$ é aberto,
 $\partial A = \widebar{A} \setminus A^\circ = \widebar{A} \cap
-{(A^\circ)}^c$ is closed.
+{(A^\circ)}^c$ é fechado.
 \end{proof}
 
-The boundary is the set of points that are close to both the set and its
-complement.  See \figureref{fig:msboundary} for a diagram
-of the next proposition.
+A fronteira é o conjunto dos pontos que estão próximos tanto do conjunto
+quanto do seu complementar. Veja na \figureref{fig:msboundary} o diagrama
+que ilustra a proposição a seguir.
 
 \begin{prop}
-Let $(X,d)$ be a metric space and $A \subset X$.  Then $x \in \partial A$
-if and only if for every $\delta > 0$,
-$B(x,\delta) \cap A$ and
-$B(x,\delta) \cap A^c$ are both nonempty.
+Seja $(X,d)$ um espaço métrico e $A \subset X$. Então $x \in \partial A$
+se, e somente se, para todo $\delta > 0$,
+$B(x,\delta) \cap A$ e
+$B(x,\delta) \cap A^c$ são ambos não vazios.
 \end{prop}
 
 \begin{myfigureht}
 \myincludepdft{msboundary}{%
-A picture near the boundary of a set A which is shaded.
-The boundary is given as a solid line with A below
-and the complement of A above.  A dotted
-circle of radius delta is centered at a point x on
-the boundary and is marked as B of x comma delta.}
-\caption{Boundary is the set where every ball contains points in the set and
-also its complement.\label{fig:msboundary}}
+Uma imagem próxima à fronteira de um conjunto A sombreado.
+A fronteira é representada por uma linha contínua, com A abaixo
+e o complementar de A acima. Um círculo pontilhado de
+raio delta está centrado em um ponto x da fronteira e
+está identificado como B de x vírgula delta.}
+\caption{A fronteira é o conjunto dos pontos cujas bolas contêm pontos do
+conjunto e também do seu complementar.\label{fig:msboundary}}
 \end{myfigureht}
 
 \begin{proof}
-Suppose $x \in \partial A =  \widebar{A} \setminus A^\circ$ and
-let $\delta > 0$ be arbitrary.
-By \propref{prop:msclosureappr}, $B(x,\delta)$ contains
-a point of $A$.  If $B(x,\delta)$ contained no points of $A^c$,
-then $x$ would be in $A^\circ$.  Hence, $B(x,\delta)$ contains a point of
-$A^c$ as well.
+Suponha que $x \in \partial A = \widebar{A} \setminus A^\circ$ e
+seja $\delta > 0$ arbitrário.
+Pela \propref{prop:msclosureappr}, $B(x,\delta)$ contém
+um ponto de $A$. Se $B(x,\delta)$ não contivesse pontos de $A^c$,
+então $x$ pertenceria a $A^\circ$. Portanto, $B(x,\delta)$ também contém
+um ponto de $A^c$.
 
-Let us prove the other direction by contrapositive.  
-Suppose $x \notin \partial A$, so $x \notin \widebar{A}$ or $x \in A^\circ$.
-If $x \notin \widebar{A}$, then
+Demonstremos a implicação contrária por contraposição.
+Suponha que $x \notin \partial A$, isto é, que $x \notin \widebar{A}$ ou
+$x \in A^\circ$.
+Se $x \notin \widebar{A}$, então
 $B(x,\delta) \subset \widebar{A}^c$
-for some $\delta > 0$ as $\widebar{A}$ is closed.
-So $B(x,\delta) \cap A$ is empty, because $\widebar{A}^c \subset
+para algum $\delta > 0$, pois $\widebar{A}$ é fechado.
+Logo, $B(x,\delta) \cap A$ é vazio, pois $\widebar{A}^c \subset
 A^c$.
-If $x \in A^\circ$, then
-$B(x,\delta) \subset A$ for some $\delta > 0$,
-so $B(x,\delta) \cap A^c$ is empty.
+Se $x \in A^\circ$, então
+$B(x,\delta) \subset A$ para algum $\delta > 0$,
+de modo que $B(x,\delta) \cap A^c$ é vazio.
 \end{proof}
 
-We obtain the following immediate corollary about closures of $A$ and $A^c$.  We
-simply apply \propref{prop:msclosureappr}.
+Obtemos o corolário imediato a seguir sobre os fechos de $A$ e $A^c$.
+Basta aplicar a \propref{prop:msclosureappr}.
 
 \begin{cor}
-Let $(X,d)$ be a metric space and $A \subset X$.
-Then $\partial A = \widebar{A} \cap \widebar{A^c}$.
+Seja $(X,d)$ um espaço métrico e $A \subset X$.
+Então $\partial A = \widebar{A} \cap \widebar{A^c}$.
 \end{cor}
 
 \subsection{Exercises}

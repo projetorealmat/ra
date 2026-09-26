@@ -1637,16 +1637,16 @@ induza a convergência pontual, pois o domínio $[a,b]$ é não enumerável.
 A demonstração desse fato está além do escopo deste livro.
 \end{remark}
 
-\subsection{Convergence in euclidean space}
+\subsection{Convergência no espaço euclidiano}
 
-In the euclidean space $\R^n$, a sequence converges if and only if every
-component converges:
+No espaço euclidiano $\R^n$, uma sequência converge se, e somente se,
+cada coordenada converge:
 
 \begin{prop} \label{prop:msconveuc}
-Let $\{ x_m \}_{m=1}^\infty$ be a sequence in $\R^n$,
-where $x_m = \bigl(x_{m,1},x_{m,2},\ldots,x_{m,n}\bigr) \in \R^n$.
-Then $\{ x_m \}_{m=1}^\infty$ converges if and only if
-$\{ x_{m,k} \}_{m=1}^\infty$ converges for every $k=1,2,\ldots,n$, in which case
+Seja $\{ x_m \}_{m=1}^\infty$ uma sequência em $\R^n$,
+em que $x_m = \bigl(x_{m,1},x_{m,2},\ldots,x_{m,n}\bigr) \in \R^n$.
+Então $\{ x_m \}_{m=1}^\infty$ converge se, e somente se,
+$\{ x_{m,k} \}_{m=1}^\infty$ converge para todo $k=1,2,\ldots,n$; nesse caso,
 \begin{equation*}
 \lim_{m\to\infty}
 x_m =
@@ -1660,15 +1660,15 @@ x_m =
 \end{prop}
 
 \begin{proof}
-Suppose
-$\{ x_m \}_{m=1}^\infty$ converges to
+Suponha que
+$\{ x_m \}_{m=1}^\infty$ convirja para
 $y = (y_1,y_2,\ldots,y_n) \in \R^n$.
-Given $\epsilon > 0$, there exists an $M$ such that for all
-$m \geq M$, we have
+Dado $\epsilon > 0$, existe $M$ tal que, para todo
+$m \geq M$, temos
 \begin{equation*}
 d(y,x_m) < \epsilon.
 \end{equation*}
-Fix some $k=1,2,\ldots,n$.  For all $m \geq M$,
+Fixe um $k=1,2,\ldots,n$. Para todo $m \geq M$,
 \begin{equation*}
 \bigl\lvert y_k - x_{m,k} \bigr\rvert
 =
@@ -1677,13 +1677,13 @@ Fix some $k=1,2,\ldots,n$.  For all $m \geq M$,
 \sqrt{\sum_{\ell=1}^n {\bigl(y_\ell-x_{m,\ell}\bigr)}^2}
 = d(y,x_m) < \epsilon .
 \end{equation*}
-Hence, the sequence $\{ x_{m,k} \}_{m=1}^\infty$ converges to $y_k$.
+Logo, a sequência $\{ x_{m,k} \}_{m=1}^\infty$ converge para $y_k$.
 
-For the other direction, suppose 
-$\{ x_{m,k} \}_{m=1}^\infty$ converges to $y_k$ for every $k=1,2,\ldots,n$.
-Given $\epsilon > 0$, pick an $M$ such that if $m \geq M$, then 
-$\bigl\lvert y_k-x_{m,k} \bigr\rvert < \nicefrac{\epsilon}{\sqrt{n}}$ for all
-$k=1,2,\ldots,n$.  Then
+Para a implicação contrária, suponha que 
+$\{ x_{m,k} \}_{m=1}^\infty$ convirja para $y_k$ para todo $k=1,2,\ldots,n$.
+Dado $\epsilon > 0$, escolha $M$ tal que, se $m \geq M$, então 
+$\bigl\lvert y_k-x_{m,k} \bigr\rvert < \nicefrac{\epsilon}{\sqrt{n}}$ para todo
+$k=1,2,\ldots,n$. Então
 \begin{equation*}
 d(y,x_m)
 =
@@ -1694,17 +1694,17 @@ d(y,x_m)
 \sqrt{\sum_{k=1}^n \frac{{\epsilon^2}}{n}}
 = \epsilon .
 \end{equation*}
-That is, the sequence $\{ x_m \}_{m=1}^\infty$ converges to
+Isto é, a sequência $\{ x_m \}_{m=1}^\infty$ converge para
 $y = (y_1,y_2,\ldots,y_n) \in \R^n$.
 \end{proof}
 
 \begin{example}
-As we said, the set $\C$ of complex numbers $z = x+iy$ is considered 
-as the metric space $\R^2$.  The proposition says that the
-sequence $\{ z_n \}_{n=1}^\infty = \{ x_n + iy_n \}_{n=1}^\infty$ converges
-to $z = x+iy$
-if and only if $\{ x_n \}_{n=1}^\infty$ converges to $x$ and 
-$\{ y_n \}_{n=1}^\infty$ converges to $y$.
+Como dissemos, o conjunto $\C$ dos números complexos $z = x+iy$ é considerado
+como o espaço métrico $\R^2$. A proposição afirma que a sequência
+$\{ z_n \}_{n=1}^\infty = \{ x_n + iy_n \}_{n=1}^\infty$ converge
+a $z = x+iy$
+se, e somente se, $\{ x_n \}_{n=1}^\infty$ converge para $x$ e
+$\{ y_n \}_{n=1}^\infty$ converge para $y$.
 \end{example}
 
 \subsection{Convergence and topology}

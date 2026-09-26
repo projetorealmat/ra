@@ -679,6 +679,17 @@ sub read_paragraph {
 	$para =~ s/\\'\{E\}/É/g;
 	$para =~ s/\\S([^a-zA-Z])/§$1/g;
 
+	# Portuguese accent commands used by the translated source.
+	$para =~ s/\\~\{a\}/ã/g;
+	$para =~ s/\\~a/ã/g;
+	$para =~ s/\\~\{o\}/õ/g;
+	$para =~ s/\\~o/õ/g;
+	$para =~ s/\\'\{u\}/ú/g;
+	$para =~ s/\\'u/ú/g;
+	$para =~ s/\\\^\{e\}/ê/g;
+	$para =~ s/\\\^e/ê/g;
+	$para =~ s/\\!/ /g;
+
 	$para =~ s/&/&amp;/g;
 	$para =~ s/>/&gt;/g;
 	$para =~ s/</&lt;/g;

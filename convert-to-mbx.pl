@@ -494,6 +494,64 @@ sub get_size_of_svg {
 	return $thesizestr;
 }
 
+sub take_braced_argument {
+	my $text_ref = shift;
+	my $text = $$text_ref;
+	$text =~ s/^[ \t\r\n]*//;
+	return undef if substr($text, 0, 1) ne "{";
+
+	my $depth = 0;
+	for (my $i = 0; $i < length($text); $i++) {
+		my $char = substr($text, $i, 1);
+		if ($char eq "{" || $char eq "}") {
+			my $backslashes = 0;
+			for (my $j = $i - 1; $j >= 0 && substr($text, $j, 1) eq "\\"; $j--) {
+				$backslashes++;
+			}
+			next if $backslashes % 2;
+		}
+
+		if ($char eq "{") {
+			$depth++;
+		} elsif ($char eq "}") {
+			$depth--;
+			if ($depth == 0) {
+				my $argument = substr($text, 1, $i - 1);
+				substr($text, 0, $i + 1) = "";
+				$$text_ref = $text;
+				return $argument;
+			}
+		}
+	}
+
+	return undef;
+}
+
+sub consume_figure_image {
+	my $figure_ref = shift;
+	my $figure = $$figure_ref;
+	$figure =~ s/^[ \t\r\n]*//;
+	$$figure_ref = $figure;
+
+	my ($kind, $options);
+	if ($figure =~ s/^\\myincludepdft\b//) {
+		$kind = "pdft";
+	} elsif ($figure =~ s/^\\myincludegraphics(?:\[([^\]]*)\])?//) {
+		$kind = "graphics";
+		$options = defined($1) ? $1 : "";
+	} else {
+		return;
+	}
+
+	my $filename = take_braced_argument(\$figure);
+	return unless defined $filename;
+	my $alt_text = take_braced_argument(\$figure);
+	return unless defined $alt_text;
+
+	$$figure_ref = $figure;
+	return ($kind, $filename, $alt_text, $options);
+}
+
 sub ensure_mbx_svg_version {
 	my $thefile = shift;
 
@@ -1343,16 +1401,29 @@ while(1)
 			print $out "  <caption>$caption</caption>\n";
 
 			do {
-				if ($figure =~ s/^[ \n]*\\myincludegraphics\[(width=[^]]*)\]\{([^}]*?)\}\{([^}]*?)\}[ \n]*//) {
-					my $thesizestr = "$1";
-					my $thefile = "figures/$2";
-					my $alttag = alttag_substs($3);
+				my ($image_kind, $filename, $alt_text, $image_options) =
+					consume_figure_image(\$figure);
+				if (defined $image_kind) {
+					my $thefile = "figures/$filename";
+					my $alttag = alttag_substs($alt_text);
+					my $thesizestr;
 
-					print "IMAGE $thefile\n";
+					if ($image_kind eq "pdft") {
+						$thesizestr = get_size_of_svg("$thefile-mbxpdft.svg");
+						print "IMAGE(PDFT) $thefile\n";
+						print $out "<raimage source=\"$thefile-mbxpdft\" $thesizestr ";
+					} else {
+						print "IMAGE $thefile\n";
+						ensure_mbx_svg_version ($thefile);
+						if ($image_options =~ /^width=/) {
+							$thesizestr = $image_options;
+						} else {
+							$thesizestr = get_size_of_svg("$thefile-mbx.svg");
+						}
+						print $out "  <raimage source=\"$thefile-mbx\" background-color=\"white\" $thesizestr ";
+					}
+
 					print "alttag: $alttag\n";
-
-					ensure_mbx_svg_version ($thefile);
-					print $out "  <raimage source=\"$thefile-mbx\" background-color=\"white\" $thesizestr ";
 					if ($alttag eq "") {
 						print $out "/>\n";
 						print "\n\n\nERROR: HUH?\n\n\nno alttag!\n\n";
@@ -1360,42 +1431,6 @@ while(1)
 					} else {
 						print $out "><shortdescription>$alttag</shortdescription></raimage>\n";
 					}
-					$alttag = "";
-				} elsif ($figure =~ s/^[ \n]*\\myincludegraphics(\[align=t\])?\{([^}]*?)\}\{([^}]*?)\}[ \n]*//) {
-					my $thefile = "figures/$2";
-					my $alttag = alttag_substs($3);
-
-					print "IMAGE $thefile\n";
-					print "alttag: $alttag\n";
-
-					ensure_mbx_svg_version ($thefile);
-					my $thesizestr = get_size_of_svg("$thefile-mbx.svg");
-					print $out "  <raimage source=\"$thefile-mbx\" background-color=\"white\" $thesizestr ";
-					if ($alttag eq "") {
-						print $out "/>\n";
-						print "\n\n\nERROR: HUH?\n\n\nno alttag!\n\n";
-						$num_errors++;
-					} else {
-						print $out "><shortdescription>$alttag</shortdescription></raimage>\n";
-					}
-					$alttag = "";
-				} elsif ($figure =~ s/^[ \n]*\\myincludepdft\{([^}]*?)\}\{([^}]*?)\}[ \n]*//) {
-					my $thefile = "figures/$1";
-					my $alttag = alttag_substs($2);
-					my $thesizestr = get_size_of_svg("$thefile-mbxpdft.svg");
-
-					print "IMAGE(PDFT) $thefile\n";
-					print "alttag: $alttag\n";
-
-					print $out "<raimage source=\"$thefile-mbxpdft\" $thesizestr ";
-					if ($alttag eq "") {
-						print $out "/>\n";
-						print "\n\n\nERROR: HUH?\n\n\nno alttag!\n\n";
-						$num_errors++;
-					} else {
-						print $out "><shortdescription>$alttag</shortdescription></raimage>\n";
-					}
-					$alttag = "";
 				} elsif (not $figure eq "") {
 					print "\n\n\nERROR: HUH?\n\n\nFigure too complicated!\n\nFIG(whatsleft)=>$figure<\n\n";
 					$figure = "";

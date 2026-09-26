@@ -28,9 +28,10 @@ if ! perl "$ROOT_DIR/convert-to-mbx.pl" realanal12.tex >"$BUILD_TMP/converter.lo
   exit 1
 fi
 tail -n 20 "$BUILD_TMP/converter.log"
-if grep -q "UNHANDLED escape" "$BUILD_TMP/converter.log"; then
-  echo "Comandos LaTeX não tratados pelo conversor (contagem):"
-  grep "UNHANDLED escape" "$BUILD_TMP/converter.log" | sort | uniq -c | head -n 40 || true
+if ! grep -q 'Done! (number of errors 0)' "$BUILD_TMP/converter.log"; then
+  echo "O conversor encontrou erros; veja os detalhes abaixo." >&2
+  grep -n -B 3 -A 5 -E 'ERROR:|UNHANDLED escape|Done!' "$BUILD_TMP/converter.log" | tail -n 100 >&2 || true
+  exit 1
 fi
 test -s "$ROOT_DIR/realanal-out.xml"
 grep -q '<pretext xml:lang="pt-BR">' "$ROOT_DIR/realanal-out.xml"

@@ -1324,163 +1324,161 @@ Seja $(X,d)$ um espaço métrico e $A \subset X$.
 Então $\partial A = \widebar{A} \cap \widebar{A^c}$.
 \end{cor}
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
 \begin{exercise}
-Prove \propref{prop:topology:closed}.  Hint:
-Apply \propref{prop:topology:open} to
-the complements of the sets.
+Demonstre \propref{prop:topology:closed}. Dica:
+aplique \propref{prop:topology:open} aos complementares dos conjuntos.
 \end{exercise}
 
 \begin{exercise}
-Finish the proof of \propref{prop:topology:ballsopenclosed} by
-proving that $C(x,\delta)$ is closed.
+Complete a demonstração da \propref{prop:topology:ballsopenclosed}
+provando que $C(x,\delta)$ é fechado.
 \end{exercise}
 
 \begin{exercise}
-Prove \propref{prop:topology:intervals:openclosed}.
+Demonstre \propref{prop:topology:intervals:openclosed}.
 \end{exercise}
 
 \begin{exercise}
-Suppose $(X,d)$ is a nonempty metric space with the discrete topology.  Show
-that $X$ is connected if and only if it contains exactly one element.
+Suponha que $(X,d)$ seja um espaço métrico não vazio com topologia discreta.
+Mostre que $X$ é conexo se, e somente se, contém exatamente um elemento.
 \end{exercise}
 
 \begin{exercise}
-Take $\Q$ with the standard metric, $d(x,y) = \sabs{x-y}$, as our metric space.
-Prove that $\Q$ is
-\emph{\myindex{totally separated}}, that is, show 
-that for every $x, y \in \Q$ with $x \neq y$, there exist
-two open sets $U$ and $V$ such that $x \in U$, $y \in V$,
-$U \cap V = \emptyset$, and $U \cup V = \Q$.
+Considere $\Q$ com a métrica usual, $d(x,y) = \sabs{x-y}$, como nosso espaço
+métrico.
+Demonstre que $\Q$ é
+\emph{\myindex{totalmente separado}}, isto é, mostre que, para quaisquer
+$x, y \in \Q$ com $x \neq y$, existem dois conjuntos abertos $U$ e $V$ tais
+que $x \in U$, $y \in V$, $U \cap V = \emptyset$ e $U \cup V = \Q$.
 \end{exercise}
 
 \begin{exercise}
-Show that in a metric space,
-every open set can be written as a union of closed sets.
+Mostre que, em um espaço métrico,
+todo conjunto aberto pode ser escrito como união de conjuntos fechados.
 \end{exercise}
 
 \begin{samepage}
 \begin{exercise}
-Prove that in a metric space,
+Demonstre que, em um espaço métrico,
 \begin{enumerate}[a)]
 \item
-$E$ is closed if and only if $\partial E \subset E$.
+$E$ é fechado se, e somente se, $\partial E \subset E$.
 \item
-$U$ is open if and only if $\partial U \cap U = \emptyset$.
+$U$ é aberto se, e somente se, $\partial U \cap U = \emptyset$.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
 
 \begin{exercise}
-Prove that in a metric space,
+Demonstre que, em um espaço métrico,
 \begin{enumerate}[a)]
 \item
-$A$ is open if and only if $A^\circ = A$.
+$A$ é aberto se, e somente se, $A^\circ = A$.
 \item
 $U \subset A^\circ$
-for every open set $U$ such that $U \subset A$.
+para todo conjunto aberto $U$ tal que $U \subset A$.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Let $X$ be a set and $d$, $d'$ be two metrics on $X$.
-Suppose there exists an $\alpha > 0$ and $\beta > 0$
-such that $\alpha d(x,y) \leq d'(x,y) \leq \beta d(x,y)$ for all $x,y \in X$.
-Show that $U$ is open in $(X,d)$ if and only if $U$ is open in $(X,d')$.
-That is, the topologies of $(X,d)$ and $(X,d')$ are the same.
+Seja $X$ um conjunto, e sejam $d$ e $d'$ duas métricas em $X$.
+Suponha que existam $\alpha > 0$ e $\beta > 0$
+tais que $\alpha d(x,y) \leq d'(x,y) \leq \beta d(x,y)$ para quaisquer
+$x,y \in X$.
+Mostre que $U$ é aberto em $(X,d)$ se, e somente se, $U$ é aberto em $(X,d')$.
+Isto é, as topologias de $(X,d)$ e $(X,d')$ são iguais.
 \end{exercise}
 
-
 \begin{exercise}
-Suppose $\{ S_i \}$, $i \in \N$,
-is a collection of connected subsets of a metric space $(X,d)$,
-and there exists an $x \in X$ such that $x \in S_i$ for all $i \in \N$.
-Show that $\bigcup_{i=1}^\infty S_i$ is connected.
+Suponha que $\{ S_i \}$, $i \in \N$,
+seja uma coleção de subconjuntos conexos de um espaço métrico $(X,d)$
+e que exista $x \in X$ tal que $x \in S_i$ para todo $i \in \N$.
+Mostre que $\bigcup_{i=1}^\infty S_i$ é conexo.
 \end{exercise}
 
 \begin{exercise}
 \pagebreak[2]
-Let $A$ be a connected set in a metric space.
+Seja $A$ um conjunto conexo em um espaço métrico.
 \begin{enumerate}[a)]
 \item
-Is $\widebar{A}$ connected?  Prove or find a counterexample.
+O fecho $\widebar{A}$ é conexo? Demonstre ou encontre um contraexemplo.
 \item
-Is $A^\circ$ connected?  Prove or find a counterexample.
+O interior $A^\circ$ é conexo? Demonstre ou encontre um contraexemplo.
 \end{enumerate}
-Hint: Think of sets in $\R^2$.
+Dica: pense em conjuntos de $\R^2$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:mssubspace}
-Finish the proof of \propref{prop:topology:subspaceopen}.
-Suppose $(X,d)$ is a metric space and $Y \subset X$.  Show that
-with the subspace metric on $Y$, if a set $U \subset Y$
-is open (in $Y$), then there exists an open set $V \subset X$ such
-that $U = V \cap Y$.
+Complete a demonstração da \propref{prop:topology:subspaceopen}.
+Suponha que $(X,d)$ seja um espaço métrico e $Y \subset X$. Mostre que,
+com a métrica de subespaço em $Y$, se um conjunto $U \subset Y$
+é aberto em $Y$, então existe um conjunto aberto $V \subset X$ tal que
+$U = V \cap Y$.
 \end{exercise}
 
 \begin{samepage}
 \begin{exercise}
-Let $(X,d)$ be a metric space.
+Seja $(X,d)$ um espaço métrico.
 \begin{enumerate}[a)]
 \item
-For every $x \in X$ and $\delta > 0$, show
+Para todo $x \in X$ e $\delta > 0$, mostre que
 $\overline{B(x,\delta)} \subset C(x,\delta)$.
 \item
-Is it always true that
-$\overline{B(x,\delta)} = C(x,\delta)$?  Prove or find a counterexample.
+É sempre verdade que
+$\overline{B(x,\delta)} = C(x,\delta)$? Demonstre ou encontre um
+contraexemplo.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
 
 \begin{exercise} \label{exercise:interiortopologic}
-Let $(X,d)$ be a metric space and $A \subset X$.  Show that
-$A^\circ = \bigcup \{ V : V \text{ is open and } V \subset A \}$.
+Seja $(X,d)$ um espaço métrico e $A \subset X$. Mostre que
+$A^\circ = \bigcup \{ V : V \text{ é aberto e } V \subset A \}$.
 \end{exercise}
 
 \begin{exercise}
-Finish the proof of \propref{prop:topology:subspacesame}.
+Complete a demonstração da \propref{prop:topology:subspacesame}.
 \end{exercise}
 
 \begin{exercise}
-Let $(X,d)$ be a metric space.  Show that there exists a bounded metric
-$d'$ such that $(X,d')$ has the same open sets, that is, the topology is
-the same.
+Seja $(X,d)$ um espaço métrico. Mostre que existe uma métrica limitada
+$d'$ tal que $(X,d')$ tenha os mesmos conjuntos abertos, isto é, que sua
+topologia seja a mesma.
 \end{exercise}
 
 \begin{samepage}
 \begin{exercise}
-Let $(X,d)$ be a metric space.
+Seja $(X,d)$ um espaço métrico.
 \begin{enumerate}[a)]
 \item
-Prove that for every $x \in X$, there either exists a $\delta > 0$ such that
-$B(x,\delta) = \{ x \}$, or $B(x,\delta)$ is infinite for every $\delta >  0$.
+Demonstre que, para todo $x \in X$, ou existe $\delta > 0$ tal que
+$B(x,\delta) = \{ x \}$, ou $B(x,\delta)$ é infinito para todo $\delta > 0$.
 \item
-Find an explicit example of $(X,d)$, $X$ infinite, where
-for every $\delta > 0$ and
-every $x \in X$, the
-ball $B(x,\delta)$ is finite.
+Encontre um exemplo explícito de $(X,d)$, com $X$ infinito, no qual
+para todo $\delta > 0$ e todo $x \in X$, a bola $B(x,\delta)$ seja finita.
 \item
-Find an explicit example of $(X,d)$ where for every $\delta > 0$ and
-every $x \in X$, the
-ball $B(x,\delta)$ is countably infinite.
+Encontre um exemplo explícito de $(X,d)$ no qual
+para todo $\delta > 0$ e todo $x \in X$, a bola $B(x,\delta)$ seja um
+conjunto infinito enumerável.
 \item
-Prove that if $X$ is uncountable, then there exists
-an $x \in X$ and a $\delta > 0$ such that $B(x,\delta)$ is uncountable.
+Demonstre que, se $X$ é não enumerável, então existem $x \in X$ e
+$\delta > 0$ tais que $B(x,\delta)$ é não enumerável.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
 
 \begin{exercise}
-For every $x \in \R^n$ and every $\delta > 0$ define the \myquote{rectangle}
+Para todo $x \in \R^n$ e todo $\delta > 0$, defina o \myquote{retângulo}
 $R(x,\delta) \coloneqq
 (x_1-\delta,x_1+\delta) \times
 (x_2-\delta,x_2+\delta) \times \cdots \times
-(x_n-\delta,x_n+\delta)$.  Show that these sets generate the same open
-sets as the balls in standard metric.  That is, show that a set $U \subset \R^n$
-is open in the sense of the standard metric if and only if for every
-point $x \in U$, there exists a $\delta > 0$ such that $R(x,\delta) \subset
-U$.
+(x_n-\delta,x_n+\delta)$. Mostre que esses conjuntos geram os mesmos
+conjuntos abertos que as bolas na métrica usual. Isto é, mostre que um
+conjunto $U \subset \R^n$ é aberto segundo a métrica usual se, e somente se,
+para todo ponto $x \in U$, existe $\delta > 0$ tal que
+$R(x,\delta) \subset U$.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,49 +1,49 @@
-\chapter{The Riemann Integral} \label{int:chapter}
+\chapter{A integral de Riemann} \label{int:chapter}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{The Riemann integral}
+\section{A integral de Riemann}
 \label{sec:rint}
 
 %mbxINTROSUBSECTION
 
-\sectionnotes{1.5 lectures}
+\sectionnotes{1,5 aulas}
 
-An integral is a way to \myquote{sum} the values of a function.
-There is sometimes confusion among students of
-calculus between the \emph{integral} and the \emph{antiderivative}.
-The integral is (informally) the area under the curve, nothing else.
-That we can compute an antiderivative using the integral is a nontrivial
-result we must prove.  
-We will define the \emph{Riemann integral}%
-\footnote{Named after the German mathematician
+Uma integral é uma maneira de \myquote{somar} os valores de uma função.
+Às vezes, estudantes de cálculo confundem a \emph{integral} com a
+\emph{primitiva}.
+Informalmente, a integral é a área sob a curva, e nada mais.
+O fato de podermos calcular uma primitiva usando a integral é um resultado
+nada trivial, que precisamos demonstrar.
+Vamos definir a \emph{integral de Riemann}%
+\footnote{Nomeada em homenagem ao matemático alemão
 \href{https://en.wikipedia.org/wiki/Riemann}{Georg Friedrich Bernhard Riemann}
 (1826--1866).}
-using the Darboux integral%
-\footnote{Named after the French mathematician
+usando a integral de Darboux%
+\footnote{Nomeada em homenagem ao matemático francês
 \href{https://en.wikipedia.org/wiki/Darboux}{Jean-Gaston Darboux} (1842--1917).},
-an equivalent but technically simpler definition.
+uma definição equivalente, mas tecnicamente mais simples.
 
-\subsection{Partitions and lower and upper integrals}
+\subsection{Partições e integrais inferior e superior}
 
-We want to integrate a bounded function defined on an interval $[a,b]$.
-We first define two auxiliary integrals that are defined for all
-bounded functions.  Only then can we talk about the Riemann integral and
-the functions which it can integrate, the Riemann integrable functions.
+Queremos integrar uma função limitada definida em um intervalo $[a,b]$.
+Primeiro definimos duas integrais auxiliares, que estão definidas para todas
+as funções limitadas. Só então podemos falar da integral de Riemann e das
+funções que ela pode integrar, isto é, das funções integráveis à Riemann.
 
 \begin{defn}
-A \emph{\myindex{partition}} $P$ of $[a,b]$ is
-a finite set of numbers $\{ x_0,x_1,x_2,\ldots,x_n \}$ such that
+Uma \emph{\myindex{partição}} $P$ de $[a,b]$ é
+um conjunto finito de números $\{ x_0,x_1,x_2,\ldots,x_n \}$ tal que
 \begin{equation*}
 a = x_0 < x_1 < x_2 < \cdots < x_{n-1} < x_n = b .
 \end{equation*}
-We write
+Escrevemos
 \begin{equation*}
 \Delta x_i \coloneqq x_i - x_{i-1} .
 \end{equation*}
-Suppose $f \colon [a,b] \to \R$ is bounded and $P$ is a partition of
-$[a,b]$.
-Define
+Suponha que $f \colon [a,b] \to \R$ seja limitada e que $P$ seja uma partição
+de $[a,b]$.
+Definimos
 \begin{align*}
 & m_i \coloneqq \inf \, \bigl\{ f(x) : x_{i-1} \leq x \leq x_i \bigr\} , &
 & M_i \coloneqq \sup \, \bigl\{ f(x) : x_{i-1} \leq x \leq x_i \bigr\} , \\
@@ -53,40 +53,40 @@ Define
 \sum_{i=1}^n M_i \Delta x_i .
 \avoidbreak
 \end{align*}
-We call $L(P,f)$ the \emph{\myindex{lower Darboux sum}} and
-$U(P,f)$ the \emph{\myindex{upper Darboux sum}}\index{Darboux sum}.
+Chamamos $L(P,f)$ de \emph{\myindex{soma inferior de Darboux}} e
+$U(P,f)$ de \emph{\myindex{soma superior de Darboux}}\index{soma de Darboux}.
 \glsadd{not:lowerdarbouxsum}
 \glsadd{not:upperdarbouxsum}
 \end{defn}
 
-The geometric idea of Darboux sums is indicated in
-\figureref{darbouxfig}.  The lower sum is the area of the shaded
-rectangles, and the upper sum is the area of the entire
-rectangles, shaded plus unshaded parts.  The width of the $i$th rectangle is $\Delta x_i$,
-the height of the shaded rectangle is $m_i$, and the height
-of the entire rectangle is $M_i$.
+A ideia geométrica das somas de Darboux está indicada na
+\figureref{darbouxfig}. A soma inferior é a área dos retângulos
+sombreados, e a soma superior é a área de todos os retângulos, incluindo
+as partes sombreadas e as não sombreadas. A largura do $i$-ésimo retângulo é
+$\Delta x_i$, a altura do retângulo sombreado é $m_i$ e a altura do retângulo
+inteiro é $M_i$.
 
 \begin{myfigureht}
 \myincludegraphics{darbouxfig}{%
-A diagram of a graph of a function in a bold black line, all above the x
-axis.
-The domain is divided into 8 intervals and
-the endpoints are marked, from left to right, x sub 0 through x sub 8.
-The interval between x sub 4 and x sub 5 is marked as being of width
-Delta x sub 5.
-Above each interval are two rectangles.  For example,
-there is a shaded rectangle of width Delta x sub 5
-with the bottom side being exactly the interval from
-x sub 4 to x sub 5 and of height m sub 5, which is the minimum value of the
-function on the interval.  The rectangle is extended upwards unshaded until
-M sub 5 which is the maximum value of the function on the interval.}
-\caption{Sample Darboux sums.\label{darbouxfig}}
+Diagrama do gráfico de uma função, representado por uma linha preta espessa
+inteiramente acima do eixo $x$.
+O domínio está dividido em 8 intervalos, cujas extremidades estão marcadas,
+da esquerda para a direita, de $x_0$ a $x_8$.
+O intervalo entre $x_4$ e $x_5$ está indicado como tendo largura
+$\Delta x_5$.
+Acima de cada intervalo há dois retângulos. Por exemplo,
+há um retângulo sombreado de largura $\Delta x_5$,
+cujo lado inferior coincide exatamente com o intervalo de
+$x_4$ a $x_5$ e cuja altura é $m_5$, o valor mínimo da função nesse
+intervalo. O retângulo se prolonga para cima, sem sombreamento, até
+$M_5$, o valor máximo da função no intervalo.}
+\caption{Exemplos de somas de Darboux.\label{darbouxfig}}
 \end{myfigureht}
 
 \begin{prop} \label{sumulbound:prop}
-Let $f \colon [a,b] \to \R$ be a bounded function.  Let $m, M \in \R$ be 
-such that for all $x \in [a,b]$, we have $m \leq f(x) \leq M$.  Then for every partition $P$
-of $[a,b]$,
+Seja $f \colon [a,b] \to \R$ uma função limitada. Sejam $m, M \in \R$
+tais que $m \leq f(x) \leq M$ para todo $x \in [a,b]$. Então, para toda
+partição $P$ de $[a,b]$,
 \begin{equation}
 \label{sumulbound:eq}
 m(b-a) \leq
@@ -96,9 +96,9 @@ L(P,f) \leq U(P,f)
 \end{prop}
 
 \begin{proof}
-Let $P$ be a partition of $[a,b]$.  Note that for all $i$, we
-have $m \leq m_i \leq M_i \leq M$.  We also have
-$\sum_{i=1}^n \Delta x_i = (b-a)$.  Therefore,
+Seja $P$ uma partição de $[a,b]$. Observe que, para todo $i$,
+temos $m \leq m_i \leq M_i \leq M$. Além disso,
+$\sum_{i=1}^n \Delta x_i = (b-a)$. Portanto,
 \begin{multline*}
 m(b-a) =
 m \left( \sum_{i=1}^n \Delta x_i \right)
@@ -116,107 +116,108 @@ M \left( \sum_{i=1}^n \Delta x_i \right)
 =
 M(b-a) .
 \end{multline*}
-Hence, we get \eqref{sumulbound:eq}.  In particular, the sets of lower and
-upper sums are bounded sets.
+Logo, obtemos \eqref{sumulbound:eq}. Em particular, os conjuntos das somas
+inferiores e superiores são limitados.
 \end{proof}
 
 \begin{defn}
-As the sets of lower and upper Darboux sums are bounded, we define
+Como os conjuntos das somas inferiores e superiores de Darboux são limitados,
+definimos
 \begin{align*}
 & \underline{\int_a^b} f(x)\,dx \coloneqq
-\sup \, \bigl\{ L(P,f) : P \text{ a partition of } [a,b] \bigr\} , \\
+\sup \, \bigl\{ L(P,f) : P \text{ é uma partição de } [a,b] \bigr\} , \\
 & \overline{\int_a^b} f(x)\,dx \coloneqq
-\inf \, \bigl\{ U(P,f) : P \text{ a partition of } [a,b] \bigr\} .
+\inf \, \bigl\{ U(P,f) : P \text{ é uma partição de } [a,b] \bigr\} .
 \end{align*}
-We call $\underline{\int}$\glsadd{not:lowerdarboux}
-the \emph{\myindex{lower Darboux integral}} and
-$\overline{\int}$\glsadd{not:upperdarboux} the
-\emph{\myindex{upper Darboux integral}}\index{Darboux integral}.
-To avoid worrying about the variable of integration, 
-we often simply write
+Chamamos $\underline{\int}$\glsadd{not:lowerdarboux}
+de \emph{\myindex{integral inferior de Darboux}} e
+$\overline{\int}$\glsadd{not:upperdarboux} de
+\emph{\myindex{integral superior de Darboux}}\index{integral de Darboux}.
+Para não nos preocuparmos com a variável de integração,
+frequentemente escrevemos apenas
 \begin{equation*}
 \underline{\int_a^b} f \coloneqq
 \underline{\int_a^b} f(x)\,dx 
-\qquad \text{and} \qquad
+\qquad \text{e} \qquad
 \overline{\int_a^b} f \coloneqq
 \overline{\int_a^b} f(x)\,dx  .
 \end{equation*}
 \end{defn}
 
-If integration is to make sense, then the lower and upper Darboux
-integrals should be the same number, as we want a single number to call
-\emph{the integral}.  However, these two integrals may differ for
-some functions.
+Para que a integração faça sentido, as integrais inferior e superior de
+Darboux deveriam ser o mesmo número, pois queremos ter um único número que
+possamos chamar de \emph{integral}. No entanto, essas duas integrais podem ser
+diferentes para algumas funções.
 
 \begin{example} \label{example:dirichletfunc}
-Take the \myindex{Dirichlet function}
-$f \colon [0,1] \to \R$, where $f(x) \coloneqq 1$ if
-$x \in \Q$ and $f(x) \coloneqq 0$ if $x \notin \Q$.  Then
+Considere a \myindex{função de Dirichlet}
+$f \colon [0,1] \to \R$, definida por $f(x) \coloneqq 1$ se
+$x \in \Q$ e $f(x) \coloneqq 0$ se $x \notin \Q$. Então,
 \begin{equation*}
-\underline{\int_0^1} f = 0 \qquad \text{and} \qquad
+\underline{\int_0^1} f = 0 \qquad \text{e} \qquad
 \overline{\int_0^1} f = 1 .
 \end{equation*}
-The reason is that for any partition $P$ and every $i$, we have 
-$m_i = \inf \bigl\{ f(x) : x \in [x_{i-1},x_i] \bigr\} = 0$  and
-$M_i = \sup \bigl\{ f(x) : x \in [x_{i-1},x_i] \bigr\} = 1$.  Thus
+Isso ocorre porque, para qualquer partição $P$ e todo $i$, temos
+$m_i = \inf \bigl\{ f(x) : x \in [x_{i-1},x_i] \bigr\} = 0$ e
+$M_i = \sup \bigl\{ f(x) : x \in [x_{i-1},x_i] \bigr\} = 1$. Logo,
 \begin{equation*}
-L(P,f) = \sum_{i=1}^n 0 \cdot \Delta x_i = 0 , \quad \text{and} \quad
+L(P,f) = \sum_{i=1}^n 0 \cdot \Delta x_i = 0 , \quad \text{e} \quad
 U(P,f) = \sum_{i=1}^n 1 \cdot \Delta x_i = \sum_{i=1}^n \Delta x_i = 1  .
 \end{equation*}
 \end{example}
 
 \begin{remark}
-The same definition of $\underline{\int_a^b} f$ and
+Usamos a mesma definição de $\underline{\int_a^b} f$ e
 $\overline{\int_a^b} f$
-is used when $f$ is defined on a larger set $S$ such that
-$[a,b] \subset S$.  In that case, we use the restriction of $f$ to $[a,b]$
-and we must ensure that the restriction is bounded on $[a,b]$.
+quando $f$ está definida em um conjunto maior $S$ tal que
+$[a,b] \subset S$. Nesse caso, usamos a restrição de $f$ a $[a,b]$
+e devemos garantir que essa restrição seja limitada em $[a,b]$.
 \end{remark}
 
-To compute the integral, we often take a partition $P$ and make it finer.
-That is, we cut intervals in the partition into yet smaller pieces.
+Para calcular a integral, frequentemente tomamos uma partição $P$ e a
+refinamos. Isto é, subdividimos os intervalos da partição em partes ainda
+menores.
 
 \begin{defn}
-Let $P = \{ x_0, x_1, \ldots, x_n \}$ and
+Sejam $P = \{ x_0, x_1, \ldots, x_n \}$ e
 $\widetilde{P} = \{ \widetilde{x}_0, \widetilde{x}_1, \ldots,
-\widetilde{x}_{\ell} \}$ be
-partitions of $[a,b]$.  We say $\widetilde{P}$ is a
-\emph{refinement}\index{refinement of a partition} of $P$
-if as sets $P \subset \widetilde{P}$.
+\widetilde{x}_{\ell} \}$ sejam
+partições de $[a,b]$. Dizemos que $\widetilde{P}$ é um
+\emph{refinamento}\index{refinamento de uma partição} de $P$
+se, como conjuntos, $P \subset \widetilde{P}$.
 \end{defn}
 
-That is, $\widetilde{P}$ is a refinement of a partition if it contains all the
-numbers in $P$ and perhaps some other numbers in between.  For example,
-$\{ 0, 0.5, 1, 2 \}$ is a partition of $[0,2]$ and
-$\{ 0, 0.2, 0.5, 1, 1.5, 1.75, 2 \}$ is a refinement.
-The main reason for introducing refinements is the following proposition.
+Isto é, $\widetilde{P}$ é um refinamento de uma partição quando contém todos
+os números de $P$ e, possivelmente, outros números entre eles. Por exemplo,
+$\{ 0, 0.5, 1, 2 \}$ é uma partição de $[0,2]$, e
+$\{ 0, 0.2, 0.5, 1, 1.5, 1.75, 2 \}$ é um refinamento.
+A principal razão para introduzir refinamentos é a seguinte proposição.
 
 \begin{prop} \label{prop:refinement}
-Let $f \colon [a,b] \to \R$ be a bounded function, and let $P$
-be a partition of $[a,b]$.  Let $\widetilde{P}$ be a refinement of $P$.
-Then
+Seja $f \colon [a,b] \to \R$ uma função limitada, e seja $P$
+uma partição de $[a,b]$. Seja $\widetilde{P}$ um refinamento de $P$.
+Então
 \begin{equation*}
 L(P,f) \leq L(\widetilde{P},f) 
-\qquad \text{and} \qquad
+\qquad \text{e} \qquad
 U(\widetilde{P},f) \leq U(P,f) .
 \end{equation*}
 \end{prop}
 
 \begin{proof}
-The tricky part of this proof is to get the notation correct.
-Let $\widetilde{P} = \{ \widetilde{x}_0, \widetilde{x}_1, \ldots,
-\widetilde{x}_{\ell} \}$ be
-a refinement of 
-$P = \{ x_0, x_1, \ldots, x_n \}$.  Then
-$x_0 = \widetilde{x}_0$ and 
-$x_n = \widetilde{x}_{\ell}$.  In fact, there are integers
-$k_0 < k_1 < \cdots < k_n$ such that $x_i = \widetilde{x}_{k_i}$ for
+O ponto delicado desta demonstração é estabelecer corretamente a notação.
+Seja $\widetilde{P} = \{ \widetilde{x}_0, \widetilde{x}_1, \ldots,
+\widetilde{x}_{\ell} \}$ um refinamento de
+$P = \{ x_0, x_1, \ldots, x_n \}$. Então
+$x_0 = \widetilde{x}_0$ e
+$x_n = \widetilde{x}_{\ell}$. De fato, existem inteiros
+$k_0 < k_1 < \cdots < k_n$ tais que $x_i = \widetilde{x}_{k_i}$ para
 $i=0,1,2,\ldots,n$.
 
-Let $\Delta \widetilde{x}_q \coloneqq \widetilde{x}_q - \widetilde{x}_{q-1}$ for
+Defina $\Delta \widetilde{x}_q \coloneqq \widetilde{x}_q - \widetilde{x}_{q-1}$ para
 $q=0,1,2,\ldots,\ell$.
-See \figureref{fig:refinement}.
-We get 
+Veja a \figureref{fig:refinement}.
+Obtemos
 \begin{equation*}
 \Delta x_i
 =
@@ -229,35 +230,35 @@ x_i - x_{i-1} =
 \end{equation*}
 \begin{myfigureht}
 \myincludepdft{figrefinement}{%
-A diagram of an interval between x sub quantity i minus 1 and x sub i of
-width Delta x sub i.
-It is divided into three smaller intervals.
-The left hand endpoint x sub quantity i minus 1
-is also marked as tilde x sub quantity q minus 3
-and tilde x sub quantity k sub quantity i minus 1.
-Similarly the right hand endpoint x sub i
-is also marked as tilde x sub q and tilde x sub k sub i.
-The two inside points are marked as
-tilde x sub quantity q minus 2 and
-tilde x sub quantity q minus 1.
-The three intervals are of length
-Delta tilde x sub quantity q minus 2,
-Delta tilde x sub quantity q minus 1,
-and
-Delta tilde x sub q.}
-\caption{Refinement of a subinterval.  Notice $\Delta x_i =
+A figura mostra um intervalo de extremidades $x_{i-1}$ e $x_i$ e largura
+$\Delta x_i$.
+Ele está dividido em três intervalos menores.
+A extremidade esquerda $x_{i-1}$
+também está indicada por $\widetilde{x}_{q-3}$
+e por $\widetilde{x}_{k_{i-1}}$.
+De modo semelhante, a extremidade direita $x_i$
+também está indicada por $\widetilde{x}_q$ e por $\widetilde{x}_{k_i}$.
+Os dois pontos interiores estão indicados por
+$\widetilde{x}_{q-2}$ e
+$\widetilde{x}_{q-1}$.
+Os três intervalos têm comprimentos
+$\Delta \widetilde{x}_{q-2}$,
+$\Delta \widetilde{x}_{q-1}$
+e
+$\Delta \widetilde{x}_q$.}
+\caption{Refinamento de um subintervalo. Observe que $\Delta x_i =
 \Delta \widetilde{x}_{q-2} +
 \Delta \widetilde{x}_{q-1} +
 \Delta \widetilde{x}_{q}$,
-and also
-$k_{i-1}+1 = q-2$ and
+e também que
+$k_{i-1}+1 = q-2$ e
 $k_{i} = q$.\label{fig:refinement}}
 \end{myfigureht}
 
-Let $m_i$ be as before and correspond to the partition $P$.
-Let $\widetilde{m}_q \coloneqq \inf \bigl\{ f(x) : \widetilde{x}_{q-1} \leq x \leq
+Seja $m_i$ como antes, correspondente à partição $P$.
+Defina $\widetilde{m}_q \coloneqq \inf \bigl\{ f(x) : \widetilde{x}_{q-1} \leq x \leq
 \widetilde{x}_q \bigr\}$.
-Now, $m_i \leq \widetilde{m}_q$ for $k_{i-1} < q \leq k_i$.  Therefore,
+Temos $m_i \leq \widetilde{m}_q$ para $k_{i-1} < q \leq k_i$. Portanto,
 \begin{equation*}
 m_i \Delta x_i
 =
@@ -267,7 +268,7 @@ m_i \sum_{q=k_{i-1}+1}^{k_i} \Delta \widetilde{x}_q
 \leq
 \sum_{q=k_{i-1}+1}^{k_i} \widetilde{m}_q \Delta \widetilde{x}_q .
 \end{equation*}
-So
+Assim,
 \begin{equation*}
 L(P,f) =
 \sum_{i=1}^n m_i \Delta x_i
@@ -279,17 +280,16 @@ L(P,f) =
 \widetilde{m}_q \Delta \widetilde{x}_q = L(\widetilde{P},f).
 \end{equation*}
 
-The proof of $U(\widetilde{P},f) \leq U(P,f)$ is left as an exercise.
+A demonstração de $U(\widetilde{P},f) \leq U(P,f)$ fica como exercício.
 \end{proof}
 
-Armed with refinements, we prove the following.
-The key point of this next proposition is that
-the lower Darboux integral is less than or equal to the upper Darboux
-integral.
+Com os refinamentos à disposição, provamos o seguinte.
+O ponto principal desta proposição é que a integral inferior de Darboux é
+menor ou igual à integral superior de Darboux.
 
 \begin{prop} \label{intulbound:prop}
-Let $f \colon [a,b] \to \R$ be a bounded function.  Let $m, M \in \R$ be 
-such that for all $x \in [a,b]$, we have $m \leq f(x) \leq M$.  Then
+Seja $f \colon [a,b] \to \R$ uma função limitada. Sejam $m, M \in \R$
+tais que $m \leq f(x) \leq M$ para todo $x \in [a,b]$. Então
 \begin{equation}
 \label{intulbound:eq}
 m(b-a) \leq
@@ -299,77 +299,77 @@ m(b-a) \leq
 \end{prop}
 
 \begin{proof}
-By \propref{sumulbound:prop}, for every partition $P$,
+Pela \propref{sumulbound:prop}, para toda partição $P$,
 \begin{equation*}
 m(b-a) \leq L(P,f) \leq U(P,f) \leq M(b-a).
 \end{equation*}
-The inequality
+Da desigualdade
 $m(b-a) \leq L(P,f)$ implies $m(b-a) \leq \underline{\int_a^b} f$.
-The inequality
+Da desigualdade
 $U(P,f) \leq M(b-a)$ implies $\overline{\int_a^b} f \leq M(b-a)$.
 
-The middle inequality in
-\eqref{intulbound:eq} is the main point of the proposition.
-Let $P_1, P_2$ be partitions of $[a,b]$.  Define 
+A desigualdade central em
+\eqref{intulbound:eq} é o ponto principal da proposição.
+Sejam $P_1, P_2$ partições de $[a,b]$. Defina
 $\widetilde{P} \coloneqq P_1 \cup P_2$.
-The set $\widetilde{P}$ is a partition of $[a,b]$, which
-is a refinement of $P_1$ and a refinement of $P_2$.
-By \propref{prop:refinement},
-$L(P_1,f) \leq L(\widetilde{P},f)$ and
-$U(\widetilde{P},f) \leq U(P_2,f)$.  So
+O conjunto $\widetilde{P}$ é uma partição de $[a,b]$ e um refinamento
+tanto de $P_1$ quanto de $P_2$.
+Pela \propref{prop:refinement},
+$L(P_1,f) \leq L(\widetilde{P},f)$ e
+$U(\widetilde{P},f) \leq U(P_2,f)$. Assim,
 \begin{equation*}
 L(P_1,f) \leq L(\widetilde{P},f) \leq U(\widetilde{P},f) \leq U(P_2,f) .
 \end{equation*}
-In other words, for two arbitrary partitions $P_1$ and $P_2$, we have
-$L(P_1,f) \leq U(P_2,f)$.  
-Recall \propref{infsupineq:prop}, and take the supremum and
-infimum over all partitions:
+Em outras palavras, para duas partições arbitrárias $P_1$ e $P_2$, temos
+$L(P_1,f) \leq U(P_2,f)$.
+Lembrando a \propref{infsupineq:prop}, tomamos o supremo e o ínfimo sobre
+todas as partições:
 \begin{multline*}
 \underline{\int_a^b} f = 
-\sup \, \bigl\{ L(P,f) : P \text{ a partition of } [a,b] \bigr\}
+\sup \, \bigl\{ L(P,f) : P \text{ é uma partição de } [a,b] \bigr\}
 \\
 \leq
-\inf \, \bigl\{ U(P,f) : P \text{ a partition of } [a,b] \bigr\}
+\inf \, \bigl\{ U(P,f) : P \text{ é uma partição de } [a,b] \bigr\}
 =
 \overline{\int_a^b} f . \qedhere
 \end{multline*}
 \end{proof}
 
-\subsection{Riemann integral}
+\subsection{Integral de Riemann}
 
-We can finally define the Riemann integral.  However, the Riemann
-integral is only defined on a certain class of functions, called the
-Riemann integrable functions.
+Finalmente podemos definir a integral de Riemann. No entanto, ela só está
+definida para certa classe de funções, chamadas funções integráveis à
+Riemann.
 
 \begin{defn}
-Let $f \colon [a,b] \to \R$ be a bounded function such that
+Seja $f \colon [a,b] \to \R$ uma função limitada tal que
 \begin{equation*}
 \underline{\int_a^b} f(x)\,dx = \overline{\int_a^b} f(x)\,dx .
 \end{equation*}
-Then $f$ is said to be \emph{\myindex{Riemann integrable}}.
-The set of Riemann integrable functions on $[a,b]$ is denoted
-by $\sR\bigl([a,b]\bigr)$.\glsadd{not:integrablefunc}
-When $f \in \sR\bigl([a,b]\bigr)$, we define\glsadd{not:riemannint}
+Então dizemos que $f$ é \emph{\myindex{integrável à Riemann}}.
+O conjunto das funções integráveis à Riemann em $[a,b]$ é denotado
+por $\sR\bigl([a,b]\bigr)$.\glsadd{not:integrablefunc}
+Quando $f \in \sR\bigl([a,b]\bigr)$, definimos\glsadd{not:riemannint}
 \begin{equation*}
 \int_a^b f(x)\,dx \coloneqq 
 \underline{\int_a^b} f(x)\,dx = \overline{\int_a^b} f(x)\,dx .
 \end{equation*}
-As before, we often write
+Como antes, frequentemente escrevemos
 \begin{equation*}
 \int_a^b f \coloneqq \int_a^b f(x)\,dx.
 \end{equation*}
-The number $\int_a^b f$ is called the \emph{\myindex{Riemann integral}}
-of $f$, or sometimes simply the \emph{integral} of $f$.
+O número $\int_a^b f$ é chamado de \emph{\myindex{integral de Riemann}}
+de $f$ ou, às vezes, simplesmente de \emph{integral} de $f$.
 \end{defn}
 
-By definition, a Riemann integrable function is bounded.
-Appealing to \propref{intulbound:prop}, we immediately obtain
-the following proposition.  See also \figureref{fig:integralminmax}.
+Por definição, uma função integrável à Riemann é limitada.
+Recorrendo à \propref{intulbound:prop}, obtemos imediatamente
+a proposição a seguir. Veja também a \figureref{fig:integralminmax}.
 
 \begin{prop} \label{intbound:prop}
-Let $f \colon [a,b] \to \R$ be a Riemann integrable function.
-Let $m, M \in \R$ be 
-such that $m \leq f(x) \leq M$ for all $x \in [a,b]$.  Then
+Seja $f \colon [a,b] \to \R$ uma função integrável à Riemann.
+Sejam $m, M \in \R$
+tais que $m \leq f(x) \leq M$ para todo $x \in [a,b]$. Então
 \begin{equation*}
 m(b-a) \leq
 \int_a^b f
@@ -378,47 +378,46 @@ m(b-a) \leq
 \end{prop}
 \begin{myfigureht}
 \myincludegraphics{integralminmax}{%
-A diagram of a rectangle in the plane
-that is horizontally between a and b, and vertically between the x axis
-and capital M.  The rectangle is divided into the upper part
-that is white and contains the graph of some function, and the lower
-part that is shaded.  The dividing horizontal line is labeled as
-lowercase m.}
-\caption{The area under the curve is bounded from above by
-the area of the entire rectangle, $M(b-a)$, and from below by
-the area of the shaded part, $m(b-a)$.\label{fig:integralminmax}}
+Diagrama de um retângulo no plano,
+com extensão horizontal entre $a$ e $b$ e extensão vertical entre o eixo $x$
+e o nível $M$. O retângulo está dividido em uma parte superior branca,
+que contém o gráfico de uma função, e uma parte inferior sombreada.
+A reta horizontal que as separa está marcada com $m$.}
+\caption{A área sob a curva é limitada superiormente pela área do retângulo
+inteiro, $M(b-a)$, e inferiormente pela área da parte sombreada,
+$m(b-a)$.\label{fig:integralminmax}}
 \end{myfigureht}
 
-A weaker form of this proposition is often useful:
-If $\babs{f(x)} \leq M$ for all $x \in [a,b]$, then
+Uma forma mais fraca desta proposição é frequentemente útil:
+Se $\babs{f(x)} \leq M$ para todo $x \in [a,b]$, então
 \begin{equation*}
 \abs{\int_a^b f} \leq M(b-a) .
 \end{equation*}
 
 \begin{example}
-We integrate constant functions using
+Integramos funções constantes usando a
 \propref{intulbound:prop}.
-If $f(x) \coloneqq c$ for some constant $c$, then we take $m = M = c$.
-In inequality \eqref{intulbound:eq}
-all the inequalities must be equalities.
-Thus $f$ is integrable on $[a,b]$ and $\int_a^b f = c(b-a)$.
+Se $f(x) \coloneqq c$ para alguma constante $c$, tomamos $m = M = c$.
+Na desigualdade \eqref{intulbound:eq},
+todas as desigualdades devem ser igualdades.
+Logo, $f$ é integrável em $[a,b]$ e $\int_a^b f = c(b-a)$.
 \end{example}
 
 \begin{example}
-Let $f \colon [0,2] \to \R$ be defined by
+Seja $f \colon [0,2] \to \R$ definida por
 \begin{equation*}
 f(x) \coloneqq
 \begin{cases}
-1               & \text{if } x < 1,\\
-\nicefrac{1}{2} & \text{if } x = 1,\\
-0               & \text{if } x > 1.
+1               & \text{se } x < 1,\\
+\nicefrac{1}{2} & \text{se } x = 1,\\
+0               & \text{se } x > 1.
 \end{cases}
 \end{equation*}
-We claim $f$ is Riemann integrable and $\int_0^2 f = 1$.
+Afirmamos que $f$ é integrável à Riemann e que $\int_0^2 f = 1$.
 
-Proof: Let $0 < \epsilon < 1$ be arbitrary.
-Let $P \coloneqq \{0, 1-\epsilon, 1+\epsilon, 2\}$ be a partition.  We use the notation from
-the definition of the Darboux sums.  Then
+Demonstração: Seja $0 < \epsilon < 1$ arbitrário.
+Seja $P \coloneqq \{0, 1-\epsilon, 1+\epsilon, 2\}$ uma partição. Usamos a
+notação da definição das somas de Darboux. Então
 \begin{align*}
 m_1 &= \inf  \bigl\{ f(x) : x \in [0,1-\epsilon] \bigr\} = 1 , & 
 M_1 &= \sup  \bigl\{ f(x) : x \in [0,1-\epsilon] \bigr\} = 1 , \\
@@ -427,32 +426,31 @@ M_2 &= \sup  \bigl\{ f(x) : x \in [1-\epsilon,1+\epsilon] \bigr\} = 1 , \\
 m_3 &= \inf  \bigl\{ f(x) : x \in [1+\epsilon,2] \bigr\} = 0 , & 
 M_3 &= \sup  \bigl\{ f(x) : x \in [1+\epsilon,2] \bigr\} = 0 .
 \end{align*}
-Furthermore, $\Delta x_1 = 1-\epsilon$, $\Delta x_2 = 2\epsilon$, and
+Além disso, $\Delta x_1 = 1-\epsilon$, $\Delta x_2 = 2\epsilon$ e
 $\Delta x_3 = 1-\epsilon$.
-See \figureref{darbouxfigstep}.
+Veja a \figureref{darbouxfigstep}.
 \begin{myfigureht}
 \myincludegraphics{darbouxfigstep}{%
-A diagram of a graph of a function that is 1 from 0 to 1
-at 1 it is one half, and from 1 to 2 the function is 0.
-The horizontal axis is divided into three intervals,
-from 0 to 1 minus epsilon, then to 1 plus epsilon, then to 2.
-Their lengths are Delta x sub 1 equals 1 minus epsilon,
-Delta x sub 2 equals 2 epsilon, and 
-Delta x sub 3 equals 1 minus epsilon, respectively.
-There is a shaded rectangle of height 1 for x between 0 and
-1 minus epsilon.  There is a white rectangle of height 1
-for x between 1 minus epsilon to 1 plus epsilon.
-On the vertical axis,
-the lower point is marked as M sub 3 equals m sub 2
-equals m sub 3 equals 0.
-The upper point is marked as M sub 1 equals M sub 2
-equals m sub 1 equals 1.}
-\caption{Darboux sums for the step function.  $L(P,f)$ is the area of the
-shaded rectangle, $U(P,f)$ is the area of both rectangles, and
-$U(P,f)-L(P,f)$ is the area of the unshaded rectangle.\label{darbouxfigstep}}
+Diagrama do gráfico de uma função que vale 1 de 0 a 1,
+vale um meio em 1 e vale 0 de 1 a 2.
+O eixo horizontal está dividido em três intervalos:
+de 0 a 1 menos épsilon, de 1 menos épsilon a 1 mais épsilon e de 1 mais
+épsilon a 2.
+Seus comprimentos são $\Delta x_1 = 1-\epsilon$,
+$\Delta x_2 = 2\epsilon$ e
+$\Delta x_3 = 1-\epsilon$, respectivamente.
+Há um retângulo sombreado de altura 1 para $x$ entre 0 e
+1 menos épsilon. Há um retângulo branco de altura 1
+para $x$ entre 1 menos épsilon e 1 mais épsilon.
+No eixo vertical,
+o ponto inferior está marcado como $M_3=m_2=m_3=0$.
+O ponto superior está marcado como $M_1=M_2=m_1=1$.}
+\caption{Somas de Darboux para a função em degraus. $L(P,f)$ é a área do
+retângulo sombreado, $U(P,f)$ é a área dos dois retângulos, e
+$U(P,f)-L(P,f)$ é a área do retângulo não sombreado.\label{darbouxfigstep}}
 \end{myfigureht}
 
-We compute
+Calculamos
 \begin{align*}
 & L(P,f) = \sum_{i=1}^3 m_i \Delta x_i =
 1 \cdot (1-\epsilon) + 0 \cdot 2\epsilon + 0 \cdot (1-\epsilon)
@@ -461,7 +459,7 @@ We compute
 1 \cdot (1-\epsilon) + 1 \cdot 2\epsilon + 0 \cdot (1-\epsilon)
 = 1+\epsilon .
 \end{align*}
-Thus,
+Logo,
 \begin{equation*}
 \overline{\int_0^2} f - 
 \underline{\int_0^2} f
@@ -471,33 +469,33 @@ U(P,f) - L(P,f)
 (1+\epsilon)
 - (1-\epsilon) = 2 \epsilon .
 \end{equation*}
-By \propref{intulbound:prop}, $\underline{\int_0^2} f \leq \overline{\int_0^2} f$.
-As $\epsilon$ was arbitrary,
-$\overline{\int_0^2} f = \underline{\int_0^2} f$.  So $f$ is Riemann
-integrable.  Finally,
+Pela \propref{intulbound:prop}, $\underline{\int_0^2} f \leq \overline{\int_0^2} f$.
+Como $\epsilon$ era arbitrário,
+$\overline{\int_0^2} f = \underline{\int_0^2} f$. Portanto, $f$ é integrável
+à Riemann. Por fim,
 \begin{equation*}
 1-\epsilon = L(P,f) \leq \int_0^2 f \leq U(P,f) =
 1+\epsilon.
 \end{equation*}
-Hence, $\bigl\lvert \int_0^2 f - 1 \bigr\rvert \leq \epsilon$.  As $\epsilon$ was arbitrary,
-we conclude $\int_0^2 f = 1$.
+Logo, $\bigl\lvert \int_0^2 f - 1 \bigr\rvert \leq \epsilon$. Como
+$\epsilon$ era arbitrário, concluímos que $\int_0^2 f = 1$.
 \end{example}
 
-It may be worthwhile to extract part of the technique of the example into a
-proposition.  Note that $U(P,f)-L(P,f)$ is exactly the total area of the
-unshaded part of the rectangles in \figureref{darbouxfig}.
+Pode ser útil destacar parte da técnica do exemplo em uma proposição.
+Observe que $U(P,f)-L(P,f)$ é exatamente a área total das partes não
+sombreadas dos retângulos da \figureref{darbouxfig}.
 
 \begin{prop}
-Let $f \colon [a,b] \to \R$ be a bounded function.  Then $f$ is Riemann
-integrable if for every $\epsilon > 0$, there exists a partition $P$ of
-$[a,b]$ such that
+Seja $f \colon [a,b] \to \R$ uma função limitada. Então $f$ é integrável à
+Riemann se, para todo $\epsilon > 0$, existe uma partição $P$ de
+$[a,b]$ tal que
 \begin{equation*}
 U(P,f) - L(P,f) < \epsilon .
 \end{equation*}
 \end{prop}
 
 \begin{proof}
-If for every $\epsilon > 0$ such a $P$ exists, then
+Se existe tal partição $P$ para todo $\epsilon > 0$, então
 \begin{equation*}
 0 \leq
 \overline{\int_a^b} f - 
@@ -505,20 +503,20 @@ If for every $\epsilon > 0$ such a $P$ exists, then
 \leq
 U(P,f) - L(P,f) < \epsilon .
 \end{equation*}
-Therefore, 
-$\overline{\int_a^b} f = \underline{\int_a^b} f$, and $f$ is integrable.
+Portanto,
+$\overline{\int_a^b} f = \underline{\int_a^b} f$, e $f$ é integrável.
 \end{proof}
 
 \begin{example}
-Let us show $\frac{1}{1+x}$ is integrable on $[0,b]$ for all $b > 0$.
-We will see later that continuous functions are integrable, but let us
-demonstrate how we do it directly.
+Vamos mostrar que $\frac{1}{1+x}$ é integrável em $[0,b]$ para todo $b > 0$.
+Mais adiante veremos que funções contínuas são integráveis, mas vamos
+demonstrar diretamente como fazer isso.
 
-Let $\epsilon > 0$ be given.  Take $n \in \N$ and
-let $x_i \coloneqq \nicefrac{ib}{n}$ form the 
-partition $P \coloneqq \{ x_0,x_1,\ldots,x_n \}$ of $[0,b]$.
-Then $\Delta x_i = \nicefrac{b}{n}$ for all $i$.  
-As $f$ is decreasing, for every subinterval $[x_{i-1},x_i]$,
+Seja $\epsilon > 0$. Tome $n \in \N$ e
+considere $x_i \coloneqq \nicefrac{ib}{n}$, de modo que os pontos formem a
+partição $P \coloneqq \{ x_0,x_1,\ldots,x_n \}$ de $[0,b]$.
+Então $\Delta x_i = \nicefrac{b}{n}$ para todo $i$.
+Como $f$ é decrescente, em todo subintervalo $[x_{i-1},x_i]$,
 \begin{equation*}
 %mbxlatex \begin{aligned}
 m_i
@@ -536,7 +534,7 @@ M_i
 \frac{1}{1+x_{i-1}} .
 %mbxlatex \end{aligned}
 \end{equation*}
-Then
+Então
 \begin{multline*}
 U(P,f)-L(P,f)
 =
@@ -555,76 +553,73 @@ U(P,f)-L(P,f)
 =
 \frac{b^2}{n(b+1)} .
 \end{multline*}
-The sum telescopes---the terms successively cancel each other, something
-we have seen before.
-Picking $n$ to be such that
-$\frac{b^2}{n(b+1)} < \epsilon$, the proposition is satisfied, and the
-function is integrable.
+A soma é telescópica: os termos se cancelam sucessivamente, como já vimos.
+Escolhendo $n$ de modo que
+$\frac{b^2}{n(b+1)} < \epsilon$, satisfazemos a proposição e, portanto, a
+função é integrável.
 \end{example}
 
 \begin{remark}
-A way of thinking of the integral is that it adds up (integrates) lots of
-local information---it sums $f(x)\,dx$ over all $x$.
-The integral sign was chosen by Leibniz to be the long S to mean summation.
-Unlike derivatives, which are \myquote{local,} 
-integrals show up in applications when
-one wants a \myquote{global} answer: total distance travelled, average
-temperature, total charge, etc.
+Uma maneira de pensar na integral é que ela soma (integra) muitas informações
+locais: soma $f(x)\,dx$ sobre todos os valores de $x$.
+Leibniz escolheu o sinal de integral como um $S$ alongado para representar
+uma soma.
+Ao contrário das derivadas, que são \myquote{locais},
+as integrais aparecem em aplicações quando se busca uma resposta
+\myquote{global}: distância total percorrida, temperatura média, carga total
+etc.
 \end{remark}
 
-\subsection{More notation}
+\subsection{Mais notação}
 
-When $f \colon S \to \R$ is defined on a larger set $S$ and
+Quando $f \colon S \to \R$ está definida em um conjunto maior $S$ e
 $[a,b] \subset S$,
-we say $f$ is Riemann integrable on $[a,b]$ if the restriction of $f$
-to $[a,b]$ is Riemann integrable. 
-In this case,
-we say $f \in \sR\bigl([a,b]\bigr)$,
-and
-we write $\int_a^b f$ to mean the Riemann integral
-of the restriction of $f$ to $[a,b]$.
+dizemos que $f$ é integrável à Riemann em $[a,b]$ se a restrição de $f$
+a $[a,b]$ for integrável à Riemann.
+Nesse caso, escrevemos $f \in \sR\bigl([a,b]\bigr)$
+e usamos $\int_a^b f$ para indicar a integral de Riemann
+da restrição de $f$ a $[a,b]$.
 
-It is useful to define the integral $\int_a^b f$ even if
-$a \nless b$.  Suppose $b < a$ and $f \in \sR\bigl([b,a]\bigr)$.
-Define
+É útil definir a integral $\int_a^b f$ mesmo quando
+$a \nless b$. Suponha que $b < a$ e $f \in \sR\bigl([b,a]\bigr)$.
+Defina
 \begin{equation*}
 \int_a^b f \coloneqq - \int_b^a f .
 \end{equation*}
-For any function $f$, define
+Para qualquer função $f$, definimos
 \begin{equation*}
 \int_a^a f \coloneqq 0 .
 \end{equation*}
 
-At times, the variable $x$ may already have some other meaning.  When
-we need to write down the variable of integration, we may simply
-use a different letter.  For example,
+Às vezes, a variável $x$ já pode ter outro significado. Quando
+precisamos indicar a variável de integração, podemos simplesmente
+usar outra letra. Por exemplo,
 \begin{equation*}
 \int_a^b f(s)\,ds \coloneqq \int_a^b f(x)\,dx .
 \end{equation*}
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
 \begin{exercise}
-Define $f \colon [0,1] \to \R$ by $f(x) \coloneqq x^3$
-and let $P \coloneqq \{ 0, 0.1, 0.4, 1 \}$.  Compute $L(P,f)$ and $U(P,f)$.
+Defina $f \colon [0,1] \to \R$ por $f(x) \coloneqq x^3$
+e seja $P \coloneqq \{ 0, 0.1, 0.4, 1 \}$. Calcule $L(P,f)$ e $U(P,f)$.
 \end{exercise}
 
 \begin{exercise}
-Let $f \colon [0,1] \to \R$ be defined by $f(x) \coloneqq x$.
-Show that $f \in \sR\bigl([0,1]\bigr)$ and
-compute $\int_0^1 f$ using the definition of the integral
-(but
-feel free to use the propositions of this section).%\propref{intulbound:prop}).
+Seja $f \colon [0,1] \to \R$ definida por $f(x) \coloneqq x$.
+Mostre que $f \in \sR\bigl([0,1]\bigr)$ e
+calcule $\int_0^1 f$ usando a definição de integral
+(mas sinta-se à vontade para usar as proposições desta seção).%\propref{intulbound:prop}).
 \end{exercise}
 
 \begin{exercise}
-Let $f \colon [a,b] \to \R$ be a bounded function.
-Suppose there exists a sequence of partitions $\{ P_k \}_{k=1}^\infty$ of $[a,b]$
-such that
+Seja $f \colon [a,b] \to \R$ uma função limitada.
+Suponha que exista uma sequência de partições $\{ P_k \}_{k=1}^\infty$ de $[a,b]$
+tal que
 \begin{equation*}
 \lim_{k \to \infty} \bigl( U(P_k,f) - L(P_k,f) \bigr) = 0 .
 \end{equation*}
-Show that $f$ is Riemann integrable and that
+Mostre que $f$ é integrável à Riemann e que
 \begin{equation*}
 \int_a^b f = 
 \lim_{k \to \infty} U(P_k,f)
@@ -634,160 +629,158 @@ Show that $f$ is Riemann integrable and that
 \end{exercise}
 
 \begin{exercise}
-Finish the proof of \propref{prop:refinement}.
+Complete a demonstração da \propref{prop:refinement}.
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon [-1,1] \to \R$ is defined as
+Suponha que $f \colon [-1,1] \to \R$ seja definida por
 \begin{equation*}
 f(x) \coloneqq
 \begin{cases}
-1 & \text{if } x > 0, \\
-0 & \text{if } x \leq 0.
+1 & \text{se } x > 0, \\
+0 & \text{se } x \leq 0.
 \end{cases}
 \end{equation*}
-Prove that $f \in \sR\bigl([-1,1]\bigr)$ and
-compute $\int_{-1}^1 f$ using the definition of the integral
-(but
-feel free to use the propositions of this section).
+Prove que $f \in \sR\bigl([-1,1]\bigr)$ e
+calcule $\int_{-1}^1 f$ usando a definição de integral
+(mas sinta-se à vontade para usar as proposições desta seção).
 %(feel free to use \propref{intulbound:prop}).
 \end{exercise}
 
 \begin{exercise}
-Let $c \in (a,b)$ and let $d \in \R$.
-Define $f \colon [a,b] \to \R$ as
+Sejam $c \in (a,b)$ e $d \in \R$.
+Defina $f \colon [a,b] \to \R$ por
 \begin{equation*}
 f(x) \coloneqq
 \begin{cases}
-d & \text{if } x = c, \\
-0 & \text{if } x \neq c.
+d & \text{se } x = c, \\
+0 & \text{se } x \neq c.
 \end{cases}
 \end{equation*}
-Prove that $f \in \sR\bigl([a,b]\bigr)$ and
-compute
-$\int_a^b f$ using the definition of the integral
+Prove que $f \in \sR\bigl([a,b]\bigr)$ e
+calcule
+$\int_a^b f$ usando a definição de integral
 %(feel free to use \propref{intulbound:prop}).
-(but
-feel free to use the propositions of this section).
+(mas sinta-se à vontade para usar as proposições desta seção).
 \end{exercise}
 
 \begin{exercise} \label{exercise:taggedpartition}
-Suppose $f \colon [a,b] \to \R$ is Riemann integrable.  Let $\epsilon
-> 0$ be given.  Then show that there exists a partition $P = \{ x_0, x_1,
+Suponha que $f \colon [a,b] \to \R$ seja integrável à Riemann. Seja
+$\epsilon > 0$. Mostre que existe uma partição $P = \{ x_0, x_1,
 \ldots, x_n \}$
-such that for every
-set of numbers $\{ c_1, c_2, \ldots, c_n \}$ with
-$c_k \in [x_{k-1},x_k]$ for all $k$, we have
+tal que, para todo
+conjunto de números $\{ c_1, c_2, \ldots, c_n \}$ com
+$c_k \in [x_{k-1},x_k]$ para todo $k$, temos
 \begin{equation*}
 \abs{\int_a^b f - \sum_{k=1}^n f(c_k) \Delta x_k} < \epsilon .
 \end{equation*}
 \end{exercise}
 
 \begin{exercise}
-Let $f \colon [a,b] \to \R$ be a Riemann integrable function.
-Let $\alpha > 0$ and $\beta \in \R$.
-Then define $g(x) \coloneqq f(\alpha x + \beta)$ on the interval
-$I = [\frac{a-\beta}{\alpha}, \frac{b-\beta}{\alpha}]$.  Show
-that $g$ is Riemann integrable on $I$.
+Seja $f \colon [a,b] \to \R$ uma função integrável à Riemann.
+Sejam $\alpha > 0$ e $\beta \in \R$.
+Defina $g(x) \coloneqq f(\alpha x + \beta)$ no intervalo
+$I = [\frac{a-\beta}{\alpha}, \frac{b-\beta}{\alpha}]$. Mostre
+que $g$ é integrável à Riemann em $I$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon [0,1] \to \R$ and $g \colon [0,1] \to \R$
-are such that for all $x \in (0,1]$,
-we have $f(x) = g(x)$.  Suppose $f$ is Riemann integrable. 
-Prove $g$ is Riemann integrable and $\int_{0}^1 f = \int_{0}^1 g$.
+Suponha que $f \colon [0,1] \to \R$ e $g \colon [0,1] \to \R$
+sejam tais que $f(x) = g(x)$ para todo $x \in (0,1]$.
+Suponha que $f$ seja integrável à Riemann.
+Prove que $g$ é integrável à Riemann e que $\int_{0}^1 f = \int_{0}^1 g$.
 \end{exercise}
 
 \begin{exercise}
-Let $f \colon [0,1] \to \R$ be a bounded function.
-Let $P_n = \{ x_0,x_1,\ldots,x_n \}$ be a uniform partition of $[0,1]$,
-that is, $x_i = \nicefrac{i}{n}$.  Is $\bigl\{ L(P_n,f) \bigr\}_{n=1}^\infty$
-always monotone?  Yes/No: Prove or find a counterexample.
+Seja $f \colon [0,1] \to \R$ uma função limitada.
+Seja $P_n = \{ x_0,x_1,\ldots,x_n \}$ uma partição uniforme de $[0,1]$,
+isto é, $x_i = \nicefrac{i}{n}$. A sequência $\bigl\{ L(P_n,f) \bigr\}_{n=1}^\infty$
+é sempre monótona? Sim ou não: prove ou encontre um contraexemplo.
 \end{exercise}
 
-\begin{exercise}[Challenging]
-For a bounded function $f \colon [0,1] \to \R$, let
-$R_n \coloneqq (\nicefrac{1}{n})\sum_{i=1}^n f(\nicefrac{i}{n})$ (the
-uniform right-hand rule).
+\begin{exercise}[Desafiador]
+Para uma função limitada $f \colon [0,1] \to \R$, defina
+$R_n \coloneqq (\nicefrac{1}{n})\sum_{i=1}^n f(\nicefrac{i}{n})$ (a
+soma uniforme pela regra à direita).
 \begin{enumerate}[a)]
 \item
-If $f$ is Riemann integrable show $\int_0^1 f = \lim\limits_{n\to\infty} R_n$.
+Se $f$ for integrável à Riemann, mostre que
+$\int_0^1 f = \lim\limits_{n\to\infty} R_n$.
 \item
-Find an $f$ that is not Riemann integrable, but $\lim\limits_{n\to\infty} R_n$ exists.
+Encontre uma função $f$ que não seja integrável à Riemann, mas para a qual
+$\lim\limits_{n\to\infty} R_n$ exista.
 \end{enumerate}
 \end{exercise}
 
-\begin{exercise}[Challenging] \label{exercise:riemannintdarboux}
-Generalize the previous exercise.
-Show that $f \in \sR\bigl([a,b]\bigr)$ if and only if there exists an $I \in \R$,
-such that for every $\epsilon > 0$ there exists
-a $\delta > 0$ such that if $P$ is a partition with $\Delta x_i < \delta$
-for all $i$, then
-$\babs{L(P,f) - I} < \epsilon$ and
-$\babs{U(P,f) - I} < \epsilon$.  If $f \in \sR\bigl([a,b]\bigr)$, then $I = \int_a^b f$.
+\begin{exercise}[Desafiador] \label{exercise:riemannintdarboux}
+Generalize o exercício anterior.
+Mostre que $f \in \sR\bigl([a,b]\bigr)$ se, e somente se, existe um $I \in \R$
+tal que, para todo $\epsilon > 0$, existe
+um $\delta > 0$ tal que, se $P$ é uma partição com $\Delta x_i < \delta$
+para todo $i$, então
+$\babs{L(P,f) - I} < \epsilon$ e
+$\babs{U(P,f) - I} < \epsilon$. Se $f \in \sR\bigl([a,b]\bigr)$, então $I = \int_a^b f$.
 \end{exercise}
 
 \begin{exercise}
-Using \exerciseref{exercise:riemannintdarboux} and the idea of
-the proof in \exerciseref{exercise:taggedpartition}, show that 
-Darboux integral is the same as the standard definition
-of Riemann integral, which you have most likely seen in calculus.  That is,
-show that
-$f \in \sR\bigl([a,b]\bigr)$ if and only if there exists an $I \in \R$,
-such that for every $\epsilon > 0$ there exists
-a $\delta > 0$ such that if $P = \{ x_0,x_1,\ldots,x_n \}$
-is a partition with $\Delta x_i < \delta$
-for all $i$, then
-$\abs{\sum_{i=1}^n f(c_i) \Delta x_i - I} < \epsilon$ for every set
-$\{ c_1,c_2,\ldots,c_n \}$ with $c_i \in [x_{i-1},x_i]$.
-If $f \in \sR\bigl([a,b]\bigr)$, then $I = \int_a^b f$.
+Usando o \exerciseref{exercise:riemannintdarboux} e a ideia da demonstração
+do \exerciseref{exercise:taggedpartition}, mostre que a integral de Darboux
+é equivalente à definição usual da integral de Riemann, provavelmente vista
+em cálculo. Isto é, mostre que
+$f \in \sR\bigl([a,b]\bigr)$ se, e somente se, existe um $I \in \R$
+tal que, para todo $\epsilon > 0$, existe
+um $\delta > 0$ tal que, se $P = \{ x_0,x_1,\ldots,x_n \}$
+é uma partição com $\Delta x_i < \delta$
+para todo $i$, então
+$\abs{\sum_{i=1}^n f(c_i) \Delta x_i - I} < \epsilon$ para todo conjunto
+$\{ c_1,c_2,\ldots,c_n \}$ com $c_i \in [x_{i-1},x_i]$.
+Se $f \in \sR\bigl([a,b]\bigr)$, então $I = \int_a^b f$.
 \end{exercise}
 
 
-\begin{exercise}[Challenging]
-Construct functions $f$ and $g$, 
-where
-$f \colon [0,1] \to \R$ is Riemann integrable,
-$g \colon [0,1] \to [0,1]$ is one-to-one and onto,
-and such that the composition $f \circ g$ is not Riemann integrable.
+\begin{exercise}[Desafiador]
+Construa funções $f$ e $g$ tais que
+$f \colon [0,1] \to \R$ seja integrável à Riemann,
+$g \colon [0,1] \to [0,1]$ seja injetiva e sobrejetiva,
+mas a composição $f \circ g$ não seja integrável à Riemann.
 \end{exercise}
 
 \begin{exercise}
-Suppose that $f \colon [a,b] \to \R$ is a bounded function, and $P$ is a
-partition of $[a,b]$ such that $L(P,f)=U(P,f)$.  Prove that $f$ is a
-constant function.
+Suponha que $f \colon [a,b] \to \R$ seja uma função limitada e que $P$ seja
+uma partição de $[a,b]$ tal que $L(P,f)=U(P,f)$. Prove que $f$ é constante.
 \end{exercise}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{Properties of the integral}
+\section{Propriedades da integral}
 \label{sec:rintprop}
 
 %mbxINTROSUBSECTION
 
-\sectionnotes{2 lectures, integrability of functions with 
-discontinuities can safely be skipped}
+\sectionnotes{2 aulas; pode-se omitir sem prejuízo a integrabilidade de funções
+com descontinuidades}
 
-\subsection{Additivity}
+\subsection{Aditividade}
 
-Adding a bunch of things in two parts and then adding those two parts
-should be the same as adding everything all at once.
-The corresponding property for integrals is called the
-\myindex{additive property of the integral}.  First, we prove the additivity
-property for the lower and upper Darboux integrals.
+Somar vários termos separadamente em duas partes e, em seguida, somar essas
+duas partes
+deveria dar o mesmo que somar tudo de uma só vez.
+A propriedade correspondente para integrais é chamada de
+\myindex{propriedade aditiva da integral}. Primeiro, provamos a propriedade
+aditiva para as integrais inferior e superior de Darboux.
 
 \begin{lemma} \label{lemma:darbouxadd}
-Suppose $a < b < c$ and $f \colon [a,c] \to \R$ is a bounded function.
-Then
+Suponha que $a < b < c$ e que $f \colon [a,c] \to \R$ seja uma função limitada.
+Então
 \begin{equation*}
 \underline{\int_a^c} f
 =
 \underline{\int_a^b} f
 +
 \underline{\int_b^c} f
-\quad \text{and} \quad
+\quad \text{e} \quad
 \overline{\int_a^c} f
 =
 \overline{\int_a^b} f
@@ -797,10 +790,11 @@ Then
 \end{lemma}
 
 \begin{proof}
-If we have partitions $P_1 = \{ x_0,x_1,\ldots,x_k \}$
-of $[a,b]$ and $P_2 = \{ x_k, x_{k+1}, \ldots, x_n \}$ of $[b,c]$,
-then the set $P \coloneqq P_1 \cup P_2 = \{ x_0, x_1, \ldots, x_n \}$ is
-a partition of $[a,c]$.  We find
+Sejam $P_1 = \{ x_0,x_1,\ldots,x_k \}$
+uma partição de $[a,b]$ e $P_2 = \{ x_k, x_{k+1}, \ldots, x_n \}$ uma partição
+de $[b,c]$.
+Então o conjunto $P \coloneqq P_1 \cup P_2 = \{ x_0, x_1, \ldots, x_n \}$ é
+uma partição de $[a,c]$. Obtemos
 \begin{equation*}
 L(P,f) =
 \sum_{i=1}^n m_i \Delta x_i
@@ -811,39 +805,39 @@ L(P,f) =
 =
 L(P_1,f) + L(P_2,f) .
 \end{equation*}
-When we take the supremum of the right-hand side over all $P_1$ and $P_2$,
-we are taking a supremum of the left-hand side
-over all partitions $P$ of $[a,c]$ that contain $b$.  If $Q$ is a partition
-of $[a,c]$ and $P = Q \cup \{ b \}$, then $P$ is a refinement of $Q$
-and so $L(Q,f) \leq L(P,f)$.  Therefore, taking a supremum only over the $P$
-that contain $b$ is sufficient to find the supremum of $L(P,f)$
-over all partitions $P$, see \exerciseref{exercise:dominatingb}.
-Finally, recall \exerciseref{exercise:supofsum}
-to compute
+Ao tomarmos o supremo do lado direito sobre todas as escolhas de $P_1$ e $P_2$,
+tomamos o supremo do lado esquerdo sobre todas as partições $P$ de $[a,c]$
+que contêm $b$. Se $Q$ é uma partição de $[a,c]$ e $P = Q \cup \{ b \}$,
+então $P$ é um refinamento de $Q$ e, portanto, $L(Q,f) \leq L(P,f)$.
+Assim, basta tomar o supremo apenas sobre as partições $P$ que contêm $b$
+para obter o supremo de $L(P,f)$ sobre todas as partições $P$; veja o
+\exerciseref{exercise:dominatingb}.
+Por fim, lembrando o \exerciseref{exercise:supofsum},
+calculamos
 \begin{equation*}
 \begin{split}
 \underline{\int_a^c} f
 & =
-\sup \, \bigl\{ L(P,f) : P \text{ a partition of } [a,c] \bigr\}
+\sup \, \bigl\{ L(P,f) : P \text{ é uma partição de } [a,c] \bigr\}
 \\
 & =
-\sup \, \bigl\{ L(P,f) : P \text{ a partition of } [a,c], b \in P \bigr\}
+\sup \, \bigl\{ L(P,f) : P \text{ é uma partição de } [a,c], b \in P \bigr\}
 \\
 & =
 \sup \, \bigl\{ L(P_1,f) + L(P_2,f) :
-P_1 \text{ a partition of } [a,b], P_2 \text{ a partition of } [b,c] \bigr\}
+P_1 \text{ é uma partição de } [a,b], P_2 \text{ é uma partição de } [b,c] \bigr\}
 \\
 & =
-\sup \, \bigl\{ L(P_1,f) : P_1 \text{ a partition of } [a,b] \bigr\}
+\sup \, \bigl\{ L(P_1,f) : P_1 \text{ é uma partição de } [a,b] \bigr\}
 +
-\sup \, \bigl\{ L(P_2,f) : P_2 \text{ a partition of } [b,c] \bigr\}
+\sup \, \bigl\{ L(P_2,f) : P_2 \text{ é uma partição de } [b,c] \bigr\}
 \\
 &=
 \underline{\int_a^b} f + \underline{\int_b^c} f .
 \end{split}
 \end{equation*}
 
-Similarly, for $P$, $P_1$, and $P_2$ as above, we obtain
+De modo semelhante, para $P$, $P_1$ e $P_2$ como acima, obtemos
 \begin{equation*}
 U(P,f) =
 \sum_{i=1}^n M_i \Delta x_i
@@ -854,14 +848,14 @@ U(P,f) =
 =
 U(P_1,f) + U(P_2,f) .
 \end{equation*}
-We wish to take the infimum on the right
-over all $P_1$ and $P_2$, and so we are taking the infimum
-over all partitions $P$ of $[a,c]$ that contain $b$.  If $Q$ is a partition
-of $[a,c]$ and $P = Q \cup \{ b \}$, then $P$ is a refinement of $Q$
-and so $U(Q,f) \geq U(P,f)$.  Therefore, taking an infimum only over the $P$
-that contain $b$ is sufficient to find the infimum of $U(P,f)$ for
-all $P$.
-We obtain
+Queremos tomar o ínfimo do lado direito
+sobre todas as escolhas de $P_1$ e $P_2$; assim, tomamos o ínfimo
+sobre todas as partições $P$ de $[a,c]$ que contêm $b$. Se $Q$ é uma partição
+de $[a,c]$ e $P = Q \cup \{ b \}$, então $P$ é um refinamento de $Q$
+e, portanto, $U(Q,f) \geq U(P,f)$. Assim, basta tomar o ínfimo apenas sobre
+as partições $P$ que contêm $b$ para obter o ínfimo de $U(P,f)$ sobre
+todas as partições $P$.
+Obtemos
 \begin{equation*}
 \overline{\int_a^c} f
 =
@@ -870,9 +864,9 @@ We obtain
 \end{proof}
 
 \begin{prop}
-Let $a < b < c$.  A function $f \colon [a,c] \to \R$ is Riemann integrable
-if and only if $f$ is Riemann integrable on $[a,b]$ and $[b,c]$.  If
-$f$ is Riemann integrable, then
+Seja $a < b < c$. Uma função $f \colon [a,c] \to \R$ é integrável à Riemann
+se, e somente se, $f$ é integrável à Riemann em $[a,b]$ e $[b,c]$. Se
+$f$ for integrável à Riemann, então
 \begin{equation*}
 \int_a^c f
 =
@@ -883,10 +877,10 @@ $f$ is Riemann integrable, then
 \end{prop}
 
 \begin{proof}
-Suppose $f \in \sR\bigl([a,c]\bigr)$.  Then it is bounded and
+Suponha que $f \in \sR\bigl([a,c]\bigr)$. Então $f$ é limitada e
 $\overline{\int_a^c} f = 
 \underline{\int_a^c} f = 
-\int_a^c f$.  The lemma gives
+\int_a^c f$. O lema fornece
 \begin{equation*}
 \int_a^c f
 =
@@ -900,31 +894,30 @@ $\overline{\int_a^c} f =
  =
 \int_a^c f .
 \end{equation*}
-Thus the inequality is an equality:
+Portanto, a desigualdade é uma igualdade:
 \begin{equation*}
 \underline{\int_a^b} f + \underline{\int_b^c} f
 =
 \overline{\int_a^b} f + \overline{\int_b^c} f .
 \end{equation*}
-As we also know 
+Como também sabemos que
 $\underline{\int_a^b} f \leq \overline{\int_a^b} f$
-and
-$\underline{\int_b^c} f \leq \overline{\int_b^c} f$, we 
-conclude 
+e
+$\underline{\int_b^c} f \leq \overline{\int_b^c} f$; concluímos que
 \begin{equation*}
 \underline{\int_a^b} f
 =
 \overline{\int_a^b} f
-\qquad \text{and} \qquad
+\qquad \text{e} \qquad
 \underline{\int_b^c} f
 =
 \overline{\int_b^c} f .
 \end{equation*}
-Thus $f$ is Riemann integrable on $[a,b]$ and $[b,c]$ and the desired formula
-holds.
+Assim, $f$ é integrável à Riemann em $[a,b]$ e $[b,c]$, e a fórmula desejada
+vale.
 
-Now assume $f$ is Riemann integrable on $[a,b]$ and on $[b,c]$.
-Again it is bounded, and the lemma gives
+Agora suponha que $f$ seja integrável à Riemann em $[a,b]$ e em $[b,c]$.
+Novamente, $f$ é limitada, e o lema fornece
 \begin{equation*}
 \underline{\int_a^c} f
 =
@@ -936,32 +929,32 @@ Again it is bounded, and the lemma gives
 =
 \overline{\int_a^c} f .
 \end{equation*}
-Therefore, $f$ is Riemann integrable on $[a,c]$, and the integral is computed
-as indicated.
+Portanto, $f$ é integrável à Riemann em $[a,c]$, e a integral é calculada
+como indicado.
 \end{proof}
 
-An easy consequence of the additivity is the following corollary.  We
-leave the details to the reader as an exercise.
+Uma consequência imediata da aditividade é o corolário a seguir. Deixamos
+os detalhes como exercício para o leitor.
 
 \begin{cor} \label{intsubcor}
-If $f \in \sR\bigl([a,b]\bigr)$ and
-$[c,d] \subset [a,b]$, then
-the restriction $f|_{[c,d]}$ is in $\sR\bigl([c,d]\bigr)$.
+Se $f \in \sR\bigl([a,b]\bigr)$ e
+$[c,d] \subset [a,b]$, então
+a restrição $f|_{[c,d]}$ pertence a $\sR\bigl([c,d]\bigr)$.
 \end{cor}
 
-\subsection{Linearity and monotonicity}
+\subsection{Linearidade e monotonicidade}
 
-A sum is a linear function of the summands.  So is the integral.
+Uma soma é uma função linear de suas parcelas. O mesmo vale para a integral.
 
-\begin{prop}[Linearity]
-\index{linearity of the integral}\label{prop:integrallinear}
-Let $f$ and $g$ be in $\sR\bigl([a,b]\bigr)$ and $\alpha \in \R$.
+\begin{prop}[Linearidade]
+\index{linearidade da integral}\label{prop:integrallinear}
+Sejam $f$ e $g$ pertencentes a $\sR\bigl([a,b]\bigr)$ e $\alpha \in \R$.
 \begin{enumerate}[(i)]
-\item $\alpha f$ is in $\sR\bigl([a,b]\bigr)$ and
+\item $\alpha f$ pertence a $\sR\bigl([a,b]\bigr)$ e
 \begin{equation*}
 \int_a^b \alpha f(x) \,dx = \alpha \int_a^b f(x) \,dx .
 \end{equation*}
-\item $f+g$ is in $\sR\bigl([a,b]\bigr)$ and
+\item $f+g$ pertence a $\sR\bigl([a,b]\bigr)$ e
 \begin{equation*}
 \int_a^b \bigl( f(x)+g(x) \bigr) \,dx = 
 \int_a^b f(x) \,dx 
@@ -973,84 +966,85 @@ Let $f$ and $g$ be in $\sR\bigl([a,b]\bigr)$ and $\alpha \in \R$.
 
 \begin{proof}
 \pagebreak[2]
-Let us prove the first item for $\alpha \geq 0$. 
-Let $P$ be a partition of $[a,b]$, and
-$m_i \coloneqq \inf \bigl\{ f(x) : x \in [x_{i-1},x_i] \bigr\}$ as usual.
-As $\alpha \geq 0$, the multiplication by $\alpha$ moves
-past the infimum,
+Vamos provar o primeiro item para $\alpha \geq 0$.
+Seja $P$ uma partição de $[a,b]$, e
+seja $m_i \coloneqq \inf \bigl\{ f(x) : x \in [x_{i-1},x_i] \bigr\}$, como de costume.
+Como $\alpha \geq 0$, a multiplicação por $\alpha$ pode ser colocada
+para fora do ínfimo:
 \begin{equation*}
 \inf \bigl\{ \alpha f(x) : x \in [x_{i-1},x_i] \bigr\}
 =
 \alpha \inf \bigl\{ f(x) : x \in [x_{i-1},x_i] \bigr\} = \alpha m_i .
 \end{equation*}
-Therefore,
+Portanto,
 \begin{equation*}
 L(P,\alpha f) =
 \sum_{i=1}^n \alpha m_i \Delta x_i = \alpha \sum_{i=1}^n m_i \Delta x_i = \alpha
 L(P,f).
 \end{equation*}
-Similarly,
+De modo semelhante,
 \begin{equation*}
 U(P,\alpha f) = \alpha U(P,f) .
 \end{equation*}
-Again, as $\alpha \geq 0$, we
-may move multiplication by $\alpha$ past the supremum.  Hence,
+Novamente, como $\alpha \geq 0$, podemos colocar a multiplicação por $\alpha$
+para fora do supremo. Portanto,
 \begin{equation*}
 \begin{split}
 \underline{\int_a^b} \alpha f(x)\,dx & =
-\sup \, \bigl\{ L(P,\alpha f) : P \text{ a partition of } [a,b] \bigr\}
+\sup \, \bigl\{ L(P,\alpha f) : P \text{ é uma partição de } [a,b] \bigr\}
 \\
 & =
-\sup \, \bigl\{ \alpha L(P,f) : P \text{ a partition of } [a,b] \bigr\}
+\sup \, \bigl\{ \alpha L(P,f) : P \text{ é uma partição de } [a,b] \bigr\}
 \\
 & =
 \alpha \,
-\sup \, \bigl\{ L(P,f) : P \text{ a partition of } [a,b] \bigr\}
+\sup \, \bigl\{ L(P,f) : P \text{ é uma partição de } [a,b] \bigr\}
 \\
 & =
 \alpha
 \underline{\int_a^b} f(x)\,dx .
 \end{split}
 \end{equation*}
-Similarly, we show 
+De modo semelhante, mostramos que
 \begin{equation*}
 \overline{\int_a^b} \alpha f(x)\,dx
 =
 \alpha
 \overline{\int_a^b} f(x)\,dx .
 \end{equation*}
-The conclusion now follows for $\alpha \geq 0$.
+Agora, a conclusão segue para $\alpha \geq 0$.
 
-To finish the proof of the first item (for $\alpha < 0$), we need to show 
-that $-f$ is Riemann integrable and
+Para concluir a demonstração do primeiro item (quando $\alpha < 0$), precisamos
+mostrar que $-f$ é integrável à Riemann e que
 $\int_a^b - f(x)\,dx =
 -
-\int_a^b f(x)\,dx$.  The proof of this fact is left as
+\int_a^b f(x)\,dx$. Deixamos a demonstração desse fato como
 \exerciseref{exercise:proofoflinpropparti}.
 
-The proof of the second item is left as
+A demonstração do segundo item fica como
 \exerciseref{exercise:proofoflinproppartii}.
-It is not difficult, but it is not as
-trivial as it may appear at first glance.
+O argumento não é difícil, mas tampouco é tão
+trivial quanto pode parecer à primeira vista.
 \end{proof}
 
-The second item in the proposition does not hold with
-equality for the Darboux integrals, but we do obtain inequalities.
-The proof of the following proposition is \exerciseref{exercise:upperlowerlinineq}.
-It follows for upper and lower sums on a fixed partition by \exerciseref{exercise:sumofsup},
-that is, supremum of a sum is less than or equal to the sum of
-suprema and similarly for infima.
+O segundo item da proposição não vale como igualdade para as integrais de
+Darboux, mas obtemos desigualdades.
+A demonstração da proposição a seguir é o
+\exerciseref{exercise:upperlowerlinineq}.
+Para somas superiores e inferiores em uma partição fixa, ela decorre do
+\exerciseref{exercise:sumofsup}, isto é, o supremo de uma soma é menor ou
+igual à soma dos supremos; vale uma afirmação análoga para ínfimos.
 
 \begin{prop} \label{prop:upperlowerlinineq}
-Let $f \colon [a,b] \to \R$ and $g \colon [a,b] \to \R$ be bounded
-functions.  Then
+Sejam $f \colon [a,b] \to \R$ e $g \colon [a,b] \to \R$ funções limitadas.
+Então
 \begin{equation*}
 %\overline{\int_a^b} \bigl(f(x)+g(x)\bigr)\,dx \leq
 %\overline{\int_a^b}f(x)\,dx+\overline{\int_a^b}g(x)\,dx
 \overline{\int_a^b} (f+g) \leq \overline{\int_a^b}f+\overline{\int_a^b}g
 ,
 \qquad
-\text{and}
+\text{e}
 \qquad
 \underline{\int_a^b} (f+g) \geq \underline{\int_a^b}f+\underline{\int_a^b}g
 %\underline{\int_a^b} \bigl(f(x)+g(x)\bigr)\,dx \geq
@@ -1059,24 +1053,24 @@ functions.  Then
 \end{equation*}
 \end{prop}
 
-Adding up smaller numbers should give us a smaller result.
-That is true for an integral as well.
+Somar números menores deve produzir um resultado menor.
+O mesmo vale para uma integral.
 
-\begin{prop}[Monotonicity]
-\index{monotonicity of the integral}
-Let $f \colon [a,b] \to \R$ and $g \colon [a,b] \to \R$ be
-bounded, and $f(x) \leq g(x)$
-for all $x \in [a,b]$.  Then
+\begin{prop}[Monotonicidade]
+\index{monotonicidade da integral}
+Sejam $f \colon [a,b] \to \R$ e $g \colon [a,b] \to \R$
+limitadas, com $f(x) \leq g(x)$
+para todo $x \in [a,b]$. Então
 \begin{equation*}
 \underline{\int_a^b} f 
 \leq
 \underline{\int_a^b} g 
-\qquad \text{and} \qquad
+\qquad \text{e} \qquad
 \overline{\int_a^b} f 
 \leq
 \overline{\int_a^b} g .
 \end{equation*}
-Moreover, if $f$ and $g$ are in $\sR\bigl([a,b]\bigr)$, then
+Além disso, se $f$ e $g$ pertencem a $\sR\bigl([a,b]\bigr)$, então
 \begin{equation*}
 \int_a^b f 
 \leq
@@ -1085,15 +1079,14 @@ Moreover, if $f$ and $g$ are in $\sR\bigl([a,b]\bigr)$, then
 \end{prop}
 
 \begin{proof}
-Let $P = \{ x_0, x_1, \ldots, x_n \}$ be a partition of $[a,b]$.  Then
-let
+Seja $P = \{ x_0, x_1, \ldots, x_n \}$ uma partição de $[a,b]$. Defina
 \begin{equation*}
 m_i \coloneqq \inf \, \bigl\{ f(x) : x \in [x_{i-1},x_i] \bigr\}
-\qquad \text{and} \qquad
+\qquad \text{e} \qquad
 \widetilde{m}_i \coloneqq \inf \, \bigl\{ g(x) : x \in [x_{i-1},x_i] \bigr\} .
 \end{equation*}
-As $f(x) \leq g(x)$, we have $m_i \leq \widetilde{m}_i$.
-Therefore,
+Como $f(x) \leq g(x)$, temos $m_i \leq \widetilde{m}_i$.
+Portanto,
 \begin{equation*}
 L(P,f)
 =
@@ -1103,57 +1096,57 @@ L(P,f)
 =
 L(P,g) .
 \end{equation*}
-We take the supremum over all $P$ (see \propref{prop:funcsupinf}) to obtain 
+Tomamos o supremo sobre todas as partições $P$ (veja a
+\propref{prop:funcsupinf}) e obtemos
 \begin{equation*}
 \underline{\int_a^b} f 
 \leq
 \underline{\int_a^b} g .
 \end{equation*}
-Similarly, we obtain the same conclusion for the upper integrals.
-Finally,
-if $f$ and $g$ are Riemann integrable all the integrals are equal,
-and the conclusion follows.
+De modo semelhante, obtemos a mesma conclusão para as integrais superiores.
+Por fim, se $f$ e $g$ são integráveis à Riemann, todas as integrais envolvidas
+são iguais, e a conclusão segue.
 \end{proof}
 
-\subsection{Continuous functions}
+\subsection{Funções contínuas}
 
-Let us show that continuous functions are Riemann integrable.
-We can even allow some discontinuities.  We start with a
-function continuous on the whole closed interval $[a,b]$.
+Vamos mostrar que funções contínuas são integráveis à Riemann.
+Podemos até permitir algumas descontinuidades. Começamos com uma
+função contínua em todo o intervalo fechado $[a,b]$.
 
 \begin{lemma} \label{lemma:contint}
-If $f \colon [a,b] \to \R$ is a continuous function,
-then $f \in \sR\bigl([a,b]\bigr)$.
+Se $f \colon [a,b] \to \R$ é contínua,
+então $f \in \sR\bigl([a,b]\bigr)$.
 \end{lemma}
 
 \begin{proof}
-As $f$ is continuous on a closed bounded interval, it is
-bounded and
-uniformly continuous.
-Given $\epsilon > 0$, find a $\delta > 0$ such that
-$\sabs{x-y} < \delta$ implies $\babs{f(x)-f(y)} < \frac{\epsilon}{b-a}$.
+Como $f$ é contínua em um intervalo fechado e limitado, ela é
+limitada e
+uniformemente contínua.
+Dado $\epsilon > 0$, escolha $\delta > 0$ de modo que
+$\sabs{x-y} < \delta$ implique $\babs{f(x)-f(y)} < \frac{\epsilon}{b-a}$.
 
-Let $P = \{ x_0, x_1, \ldots, x_n \}$
-be a partition of $[a,b]$ such that $\Delta x_i < \delta$ for all $i = 1,2,
-\ldots, n$.  For example,
-take $n$ such that $\frac{b-a}{n} < \delta$, and
-let $x_i \coloneqq \frac{i}{n}(b-a) + a$.
-Then for all $x, y \in [x_{i-1},x_i]$, we have 
-$\sabs{x-y} \leq \Delta x_i < \delta$, and so
+Seja $P = \{ x_0, x_1, \ldots, x_n \}$
+uma partição de $[a,b]$ tal que $\Delta x_i < \delta$ para todo $i = 1,2,
+\ldots, n$. Por exemplo,
+tome $n$ tal que $\frac{b-a}{n} < \delta$ e
+defina $x_i \coloneqq \frac{i}{n}(b-a) + a$.
+Então, para todos $x, y \in [x_{i-1},x_i]$, temos
+$\sabs{x-y} \leq \Delta x_i < \delta$; portanto,
 \begin{equation*}
 f(x)-f(y) \leq \babs{f(x)-f(y)} < \frac{\epsilon}{b-a} .
 \end{equation*}
-As $f$ is continuous on $[x_{i-1},x_i]$, it attains a maximum and a minimum
-on this interval.
-Let $x$ be a point where $f$ attains the maximum and $y$ be a point
-where $f$ attains the minimum.  Then $f(x) = M_i$
-and $f(y) = m_i$ in the notation from the definition of the integral.
-Therefore,
+Como $f$ é contínua em $[x_{i-1},x_i]$, ela atinge um máximo e um mínimo
+nesse intervalo.
+Seja $x$ um ponto em que $f$ atinge o máximo e seja $y$ um ponto
+em que $f$ atinge o mínimo. Então $f(x) = M_i$
+e $f(y) = m_i$, segundo a notação da definição da integral.
+Portanto,
 \begin{equation*}
 M_i-m_i = f(x)-f(y) < 
 \frac{\epsilon}{b-a} .
 \end{equation*}
-And so
+Assim,
 \begin{equation*}
 \begin{split}
 \overline{\int_a^b} f - 
@@ -1186,24 +1179,24 @@ m_i \Delta x_i
 = \epsilon .
 \end{split}
 \end{equation*}
-As $\epsilon > 0$ was arbitrary,
+Como $\epsilon > 0$ era arbitrário,
 \begin{equation*}
 \overline{\int_a^b} f = \underline{\int_a^b} f ,
 \end{equation*}
-and $f$ is Riemann integrable on $[a,b]$.
+e $f$ é integrável à Riemann em $[a,b]$.
 \end{proof}
 
-The second lemma says that we need the function to only be \myquote{Riemann integrable
-inside the interval,} as long as it is bounded.  It also tells us how to
-compute the integral.
+O segundo lema afirma que basta a função ser \myquote{integrável à Riemann no
+interior do intervalo}, desde que seja limitada. Ele também nos diz como
+calcular a integral.
 
 \begin{lemma} \label{lemma:boundedimpriemann}
-Let $f \colon [a,b] \to \R$ be a bounded function,
-$\{ a_n \}_{n=1}^\infty$ and $\{b_n \}_{n=1}^\infty$ be sequences such that
-$a < a_n < b_n < b$ for all $n$, with
-$\lim_{n\to\infty} a_n = a$ and $\lim_{n\to\infty} b_n = b$.
-Suppose $f \in \sR\bigl([a_n,b_n]\bigr)$ for all $n$.
-Then $f \in \sR\bigl([a,b]\bigr)$ and
+Seja $f \colon [a,b] \to \R$ uma função limitada, e sejam
+$\{ a_n \}_{n=1}^\infty$ e $\{b_n \}_{n=1}^\infty$ sequências tais que
+$a < a_n < b_n < b$ para todo $n$, com
+$\lim_{n\to\infty} a_n = a$ e $\lim_{n\to\infty} b_n = b$.
+Suponha que $f \in \sR\bigl([a_n,b_n]\bigr)$ para todo $n$.
+Então $f \in \sR\bigl([a,b]\bigr)$ e
 \begin{equation*}
 \int_a^b f = 
 \lim_{n \to \infty} \int_{a_n}^{b_n} f .
@@ -1211,8 +1204,8 @@ Then $f \in \sR\bigl([a,b]\bigr)$ and
 \end{lemma}
 
 \begin{proof}
-Let $M > 0$ be a real number such that $\babs{f(x)} \leq M$.
-As $(b-a) \geq (b_n-a_n)$,
+Seja $M > 0$ um número real tal que $\babs{f(x)} \leq M$.
+Como $(b-a) \geq (b_n-a_n)$,
 \begin{equation*}
 -M(b-a) \leq
 -M(b_n-a_n) \leq
@@ -1221,18 +1214,16 @@ As $(b-a) \geq (b_n-a_n)$,
 M(b_n-a_n) \leq
 M(b-a) .
 \end{equation*}
-Therefore, the sequence of numbers
-$\bigl\{ \int_{a_n}^{b_n} f \bigr\}_{n=1}^\infty$ is bounded and by
+Portanto, a sequência de números
+$\bigl\{ \int_{a_n}^{b_n} f \bigr\}_{n=1}^\infty$ é limitada e, pelo
 \hyperref[thm:bwseq]{Bolzano--Weierstrass}
-has a convergent subsequence indexed by $n_k$.  Let us call
-$L$ the limit of the subsequence
+possui uma subsequência convergente indexada por $n_k$. Denotemos por
+$L$ o limite da subsequência
 $\bigl\{ \int_{a_{n_k}}^{b_{n_k}} f \bigr\}_{k=1}^\infty$.
 
-\lemmaref{lemma:darbouxadd} says that
-the lower and upper integral are additive
-and the hypothesis says that
-$f$ is integrable on $[a_{n_k},b_{n_k}]$.
-Therefore,
+O \lemmaref{lemma:darbouxadd} afirma que as integrais inferior e superior
+são aditivas, e a hipótese diz que $f$ é integrável em
+$[a_{n_k},b_{n_k}]$. Portanto,
 \begin{equation*}
 \underline{\int_a^b} f
 =
@@ -1248,7 +1239,7 @@ Therefore,
 -
 M(b-b_{n_k}) .
 \end{equation*}
-We take the limit as $k$ goes to $\infty$ on the right-hand side,
+Tomamos o limite, quando $k \to \infty$, do lado direito:
 \begin{equation*}
 \underline{\int_a^b} f
 \geq
@@ -1260,7 +1251,7 @@ M\cdot 0
 = L .
 \end{equation*}
 
-Next we use additivity of the upper integral,
+Em seguida, usamos a aditividade da integral superior:
 \begin{equation*}
 \overline{\int_a^b} f
 =
@@ -1276,9 +1267,8 @@ M(a_{n_k}-a)
 +
 M(b-b_{n_k}) .
 \end{equation*}
-We take the same subsequence 
-$\{ \int_{a_{n_k}}^{b_{n_k}} f \}_{k=1}^\infty$ and take the limit 
-to obtain
+Tomamos o limite ao longo da mesma subsequência
+$\{ \int_{a_{n_k}}^{b_{n_k}} f \}_{k=1}^\infty$ e obtemos
 \begin{equation*}
 \overline{\int_a^b} f
 \leq
@@ -1289,402 +1279,386 @@ L
 M\cdot 0
 = L .
 \end{equation*}
-Thus $\overline{\int_a^b} f = \underline{\int_a^b} f = L$
-and hence $f$ is Riemann integrable and $\int_a^b f = L$.
-In particular, no matter what
-subsequence we choose,
-the $L$ is the same number.
+Assim, $\overline{\int_a^b} f = \underline{\int_a^b} f = L$;
+logo, $f$ é integrável à Riemann e $\int_a^b f = L$.
+Em particular, qualquer que seja a subsequência escolhida,
+o valor de $L$ é o mesmo.
 
-To prove the final statement of the lemma we use 
-\propref{seqconvsubseqconv:prop}.  We have shown that every convergent
-subsequence
-$\bigl\{ \int_{a_{n_k}}^{b_{n_k}} f \bigr\}_{k=1}^\infty$ converges to $L = \int_a^b f$.
-Therefore, the sequence
-$\bigl\{ \int_{a_n}^{b_n} f \bigr\}_{n=1}^\infty$ is convergent and converges to $\int_a^b f$.
+Para provar a afirmação final do lema, usamos a
+\propref{seqconvsubseqconv:prop}. Mostramos que toda subsequência convergente
+$\bigl\{ \int_{a_{n_k}}^{b_{n_k}} f \bigr\}_{k=1}^\infty$ converge a
+$L = \int_a^b f$. Portanto, a sequência
+$\bigl\{ \int_{a_n}^{b_n} f \bigr\}_{n=1}^\infty$ é convergente e converge a
+$\int_a^b f$.
 \end{proof}
 
-We say a function $f \colon [a,b] \to \R$ has \emph{\myindex{finitely many
-discontinuities}} if there exists a finite set $S = \{ x_1, x_2, \ldots, x_n \}
-\subset [a,b]$, and $f$ is continuous
-at all points of $[a,b] \setminus S$.
+Dizemos que uma função $f \colon [a,b] \to \R$ tem \emph{\myindex{um número
+finito de descontinuidades}} se existe um conjunto finito
+$S = \{ x_1, x_2, \ldots, x_n \} \subset [a,b]$ tal que $f$ é contínua
+em todos os pontos de $[a,b] \setminus S$.
 
 \begin{thm}
-Let $f \colon [a,b] \to \R$ be a bounded function with finitely
-many discontinuities.  Then $f \in \sR\bigl([a,b]\bigr)$.
+Seja $f \colon [a,b] \to \R$ uma função limitada com um número finito
+de descontinuidades. Então $f \in \sR\bigl([a,b]\bigr)$.
 \end{thm}
 
 \begin{proof}
-We divide the interval into finitely many intervals $[a_i,b_i]$
-so that $f$ is continuous
-on the interior $(a_i,b_i)$.  If $f$ is continuous on $(a_i,b_i)$,
-then it is continuous and hence integrable on $[c_i,d_i]$ whenever $a_i < c_i < d_i < b_i$.  By
-\lemmaref{lemma:boundedimpriemann},
-the restriction
-of $f$ to $[a_i,b_i]$ is integrable.
-By additivity of the integral (and \hyperref[induction:thm]{induction}),
-$f$ is integrable on the union of the intervals.
+Dividimos o intervalo em um número finito de intervalos $[a_i,b_i]$
+de modo que $f$ seja contínua no interior $(a_i,b_i)$. Se $f$ é contínua
+em $(a_i,b_i)$, então é contínua e, portanto, integrável em $[c_i,d_i]$
+sempre que $a_i < c_i < d_i < b_i$. Pelo \lemmaref{lemma:boundedimpriemann},
+a restrição de $f$ a $[a_i,b_i]$ é integrável.
+Pela aditividade da integral (e por \hyperref[induction:thm]{indução}),
+$f$ é integrável na união desses intervalos.
 \end{proof}
 
-\subsection{More on integrable functions}
+\subsection{Mais sobre funções integráveis}
 
-Sometimes it is convenient (or necessary)
-to change certain values of a function and
-then integrate.  The next result says
-that if we change the values at finitely
-many points, the integral does not change.
+Às vezes é conveniente (ou necessário)
+alterar alguns valores de uma função e, em seguida, integrá-la. O resultado
+a seguir afirma que, se alterarmos os valores em um número finito de pontos,
+a integral não muda.
 
 \begin{prop}
-Let $f \colon [a,b] \to \R$ be Riemann integrable.  Let $g \colon [a,b] \to
-\R$ be such that $f(x) = g(x)$ for all $x \in [a,b] \setminus S$,
-where $S$ is a finite set.
-Then $g$ is Riemann integrable and
+Seja $f \colon [a,b] \to \R$ integrável à Riemann. Seja
+$g \colon [a,b] \to \R$ tal que $f(x) = g(x)$ para todo
+$x \in [a,b] \setminus S$, onde $S$ é um conjunto finito.
+Então $g$ é integrável à Riemann e
 \begin{equation*}
 \int_a^b g = \int_a^b f.
 \end{equation*}
 \end{prop}
 
-\begin{proof}[Sketch of proof]
-Using additivity of the integral, split the interval $[a,b]$ into
-smaller intervals such that $f(x) = g(x)$ holds for all $x$ except at the
-endpoints (details are left to the reader).
+\begin{proof}[Esboço da demonstração]
+Usando a aditividade da integral, dividimos o intervalo $[a,b]$ em
+intervalos menores de modo que $f(x) = g(x)$ para todo $x$, exceto talvez
+nos extremos (os detalhes ficam a cargo do leitor).
 
-Therefore, without loss of generality suppose $f(x) = g(x)$ for
-all $x \in (a,b)$.  The proof follows by \lemmaref{lemma:boundedimpriemann},
-and is left as \exerciseref{exercise:changeendpointsintegral}.
+Portanto, sem perda de generalidade, suponhamos que $f(x) = g(x)$ para
+todo $x \in (a,b)$. A demonstração decorre do
+\lemmaref{lemma:boundedimpriemann} e fica como exercício em
+\exerciseref{exercise:changeendpointsintegral}.
 \end{proof}
 
-Finally, monotone (increasing or decreasing) functions are always
-Riemann integrable.  The proof is left to the reader as part of
+Por fim, funções monótonas (crescentes ou decrescentes) são sempre
+integráveis à Riemann. A demonstração fica a cargo do leitor como parte do
 \exerciseref{exercise:boundedvariationintegrable}.
 
 \begin{prop} \label{prop:monotoneintegrable}
-Let $f \colon [a,b] \to \R$ be a monotone function.  Then $f \in
+Seja $f \colon [a,b] \to \R$ uma função monótona. Então $f \in
 \sR\bigl([a,b]\bigr)$.
 \end{prop}
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
 \begin{exercise} \label{exercise:proofoflinpropparti}
-Finish the proof of the first part of \propref{prop:integrallinear}.
-Let $f$ be in $\sR\bigl([a,b]\bigr)$.  Prove that
-$-f$ is in $\sR\bigl([a,b]\bigr)$ and 
+Complete a demonstração do primeiro item da
+\propref{prop:integrallinear}. Seja $f \in \sR\bigl([a,b]\bigr)$.
+Prove que $-f \in \sR\bigl([a,b]\bigr)$ e
 \begin{equation*}
 \int_a^b - f(x) \,dx = - \int_a^b f(x) \,dx .
 \end{equation*}
 \end{exercise}
 
 \begin{exercise} \label{exercise:proofoflinproppartii}
-Prove the second part of \propref{prop:integrallinear}.
-Let $f$ and $g$ be in $\sR\bigl([a,b]\bigr)$.
-Prove, without using \propref{prop:upperlowerlinineq}, that $f+g$ is in
-$\sR\bigl([a,b]\bigr)$ and
+Prove o segundo item da \propref{prop:integrallinear}.
+Sejam $f,g \in \sR\bigl([a,b]\bigr)$.
+Prove, sem usar a \propref{prop:upperlowerlinineq}, que $f+g$ pertence a
+$\sR\bigl([a,b]\bigr)$ e que
 \begin{equation*}
 \int_a^b \bigl( f(x)+g(x) \bigr) \,dx = 
 \int_a^b f(x) \,dx 
 +
 \int_a^b g(x) \,dx .
 \end{equation*}
-Hint: One way to do it is to use \propref{prop:refinement} to find a single partition $P$
-such that $U(P,f)-L(P,f) < \nicefrac{\epsilon}{2}$ and
+Sugestão: uma maneira de fazer isso é usar a \propref{prop:refinement} para encontrar
+uma única partição $P$ tal que $U(P,f)-L(P,f) < \nicefrac{\epsilon}{2}$ e
 $U(P,g)-L(P,g) < \nicefrac{\epsilon}{2}$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:changeendpointsintegral}
-Let $f \colon [a,b] \to \R$ be Riemann integrable, and $g \colon [a,b] \to \R$
-be such that $f(x) = g(x)$ for all $x \in (a,b)$.
-Prove that $g$ is Riemann integrable and that
+Seja $f \colon [a,b] \to \R$ integrável à Riemann, e seja
+$g \colon [a,b] \to \R$ tal que $f(x) = g(x)$ para todo $x \in (a,b)$.
+Prove que $g$ é integrável à Riemann e que
 \begin{equation*}
 \int_a^b g = \int_a^b f.
 \end{equation*}
 \end{exercise}
 
 \begin{exercise}
-Prove the \emph{\myindex{mean value theorem for integrals}}:
-If $f \colon [a,b] \to \R$ is continuous, then there exists
-a $c \in [a,b]$ such that $\int_a^b f = f(c)(b-a)$.
+Prove o \emph{\myindex{teorema do valor médio para integrais}}:
+se $f \colon [a,b] \to \R$ é contínua, então existe
+$c \in [a,b]$ tal que $\int_a^b f = f(c)(b-a)$.
 \end{exercise}
 
 \begin{exercise}
-Let $f \colon [a,b] \to \R$ be a continuous function such that $f(x) \geq 0$
-for all $x \in [a,b]$ and $\int_a^b f = 0$.  Prove that $f(x) = 0$
-for all $x$.
+Seja $f \colon [a,b] \to \R$ uma função contínua tal que $f(x) \geq 0$
+para todo $x \in [a,b]$ e $\int_a^b f = 0$. Prove que $f(x) = 0$
+para todo $x$.
 \end{exercise}
 
 \begin{exercise}
-Let $f \colon [a,b] \to \R$ be a continuous function
-and $\int_a^b f = 0$.  Prove that
-there exists a $c \in [a,b]$ such that $f(c) = 0$. (Compare with the
-previous exercise.)
+Seja $f \colon [a,b] \to \R$ uma função contínua
+e suponha que $\int_a^b f = 0$. Prove que existe
+$c \in [a,b]$ tal que $f(c) = 0$. (Compare com o exercício anterior.)
 \end{exercise}
 
 \begin{exercise}
-Let $f \colon [a,b] \to \R$ and $g \colon [a,b] \to \R$
-be continuous functions such that $\int_a^b f = \int_a^b g$.
-Show that there exists a $c \in [a,b]$ such that $f(c) = g(c)$.
+Sejam $f \colon [a,b] \to \R$ e $g \colon [a,b] \to \R$
+funções contínuas tais que $\int_a^b f = \int_a^b g$.
+Mostre que existe $c \in [a,b]$ tal que $f(c) = g(c)$.
 \end{exercise}
 
 \begin{exercise}
-Let $f \in \sR\bigl([a,b]\bigr)$.  Let $\alpha, \beta, \gamma$ be arbitrary numbers in
-$[a,b]$ (not necessarily ordered in any way).  Prove 
+Seja $f \in \sR\bigl([a,b]\bigr)$. Sejam $\alpha, \beta, \gamma$ números
+arbitrários em $[a,b]$ (não necessariamente em alguma ordem específica). Prove
 \begin{equation*}
 \int_\alpha^\gamma f =
 \int_\alpha^\beta f +
 \int_\beta^\gamma f .
 \end{equation*}
-Recall what $\int_a^b f$ means if $b \leq a$.
+Lembre-se do significado de $\int_a^b f$ quando $b \leq a$.
 \end{exercise}
 
 \begin{exercise}
-Prove \corref{intsubcor}.
+Prove o \corref{intsubcor}.
 \end{exercise}
 
 \begin{exercise} \label{exercise:easyabsint}
-Suppose $f \colon [a,b] \to \R$ is bounded and
-has finitely many discontinuities.
-Show that as a function of $x$ the expression $\babs{f(x)}$ is bounded with finitely many
-discontinuities and is thus Riemann integrable.  Then show 
+Suponha que $f \colon [a,b] \to \R$ seja limitada e
+tenha um número finito de descontinuidades.
+Mostre que, como função de $x$, a expressão $\babs{f(x)}$ é limitada e tem um número finito de
+descontinuidades; portanto, é integrável à Riemann. Em seguida, mostre que
 \begin{equation*}
 \abs{\int_a^b f(x)\,dx} \leq \int_a^b \babs{f(x)}\,dx .
 \end{equation*}
 \end{exercise}
 
-\begin{exercise}[Hard]
-Show that the
-Thomae\index{Thomae function} or \myindex{popcorn function}
-(see \exampleref{popcornfunction:example})
-is Riemann integrable.  Therefore, there exists a
-function discontinuous at all rational numbers (a dense set)
-that is Riemann integrable.
+\begin{exercise}[Difícil]
+Mostre que a função de
+Thomae\index{função de Thomae}, ou \myindex{função pipoca}
+(veja o \exampleref{popcornfunction:example}),
+é integrável à Riemann. Portanto, existe uma função integrável à Riemann
+que é descontínua em todos os números racionais (um conjunto denso).
 
-That is,
-define $f \colon [0,1] \to \R$ by $f(0)=1$ and for $x > 0$ by
+Mais precisamente, defina $f \colon [0,1] \to \R$ por $f(0)=1$ e, para $x > 0$, por
 \begin{equation*}
 f(x) \coloneqq 
 \begin{cases}
-\nicefrac{1}{k} & \text{if } x=\nicefrac{m}{k} \text{ where }
-m,k \in \N \text{ and } m \text{ and } k \text{ have no common divisors,} \\
-0               & \text{if } x \text{ is irrational.}
+\nicefrac{1}{k} & \text{se } x=\nicefrac{m}{k}, \text{ com }
+m,k \in \N \text{ e } m \text{ e } k \text{ primos entre si,} \\
+0               & \text{se } x \text{ is irrational.}
 \end{cases}
 \end{equation*}
-Show $\int_0^1 f = 0$.
+Mostre que $\int_0^1 f = 0$.
 \end{exercise}
 
 
 \begin{exnote}
-If $I \subset \R$ is a bounded interval, then
-the function
+Se $I \subset \R$ é um intervalo limitado, então a função
 \begin{equation*}
 \varphi_I(x) \coloneqq
 \begin{cases}
-1 & \text{if } x \in I, \\
-0 & \text{otherwise,}
+1 & \text{se } x \in I, \\
+0 & \text{caso contrário,}
 \end{cases}
 \end{equation*}
-is called an \emph{\myindex{elementary step function}}.
+é chamada de \emph{\myindex{função escada elementar}}.
 \end{exnote}
 
 \begin{exercise} \label{exercise:stepfunctionintegrable}
-Let $I$ be an arbitrary bounded interval (you should consider all types
-of intervals: closed, open, half-open) and $a < b$, then
-using only the definition of the integral
-show that
-the elementary step function $\varphi_I$ is integrable
-on $[a,b]$, and find the integral in terms of $a$, $b$, and the
-endpoints of $I$.
+Seja $I$ um intervalo limitado qualquer (considere todos os tipos de
+intervalos: fechados, abertos e semiabertos) e sejam $a < b$. Usando apenas a
+definição de integral, mostre que a função escada elementar $\varphi_I$ é
+integrável em $[a,b]$ e determine a integral em termos de $a$, $b$ e dos
+extremos de $I$.
 \end{exercise}
 
 \begin{exnote}
-A function $f$ is called a
-\emph{\myindex{step function}} if it
-can be written as
+Uma função $f$ é chamada de
+\emph{\myindex{função escada}} se pode ser escrita como
 \begin{equation*}
 f(x) = \sum_{k=1}^n \alpha_k \varphi_{I_k} (x)
 \end{equation*}
-for some real numbers $\alpha_1,\alpha_2, \ldots, \alpha_n$
-and some bounded intervals $I_1,I_2,\ldots,I_n$.
+para certos números reais $\alpha_1,\alpha_2, \ldots, \alpha_n$
+e certos intervalos limitados $I_1,I_2,\ldots,I_n$.
 \end{exnote}
 
 \begin{exercise}
-Using \exerciseref{exercise:stepfunctionintegrable}, show that a step
-function (see above) is integrable
-on every interval $[a,b]$.  Furthermore, find the integral in terms of
-$a$, $b$, the endpoints of $I_k$ and the $\alpha_k$.
+Usando o \exerciseref{exercise:stepfunctionintegrable}, mostre que uma função
+escada (veja acima) é integrável em todo intervalo $[a,b]$. Além disso,
+determine a integral em termos de $a$, $b$, dos extremos de $I_k$ e dos
+$\alpha_k$.
 \end{exercise}
 
 \begin{exercise}
 \label{exercise:boundedvariationintegrable}
-Let $f \colon [a,b] \to \R$ be a function.
+Seja $f \colon [a,b] \to \R$ uma função.
 \begin{enumerate}[a)]
 \item
-Show that if $f$ is increasing, then it is Riemann
-integrable.  Hint: Use a uniform partition; each subinterval of same length.
+Mostre que, se $f$ é crescente, então é integrável à Riemann.
+Sugestão: use uma partição uniforme, cujos subintervalos têm todos o mesmo comprimento.
 \item
-Use part a) to show that if $f$ is decreasing, then it is Riemann
-integrable.
+Use o item a) para mostrar que, se $f$ é decrescente, então é integrável à Riemann.
 \item
-Suppose\footnote{Such an $h$ is said to be of \emph{\myindex{bounded variation}}.}
-$h = f-g$ where $f$ and $g$ are increasing
-functions on $[a,b]$.  Show that $h$ is Riemann integrable.
+Suponha\footnote{Dizemos que uma função $h$ assim é de
+\emph{\myindex{variação limitada}}.} que $h = f-g$, onde $f$ e $g$ são
+funções crescentes em $[a,b]$. Mostre que $h$ é integrável à Riemann.
 \end{enumerate}
 \end{exercise}
 
-\begin{exercise}[Challenging] \label{exercise:hardabsint}
-Suppose $f \in \sR\bigl([a,b]\bigr)$.  Prove that the function that takes $x$ to
-$\babs{f(x)}$ is also Riemann integrable on $[a,b]$.
-Then show the same inequality as \exerciseref{exercise:easyabsint}.
+\begin{exercise}[Desafiador] \label{exercise:hardabsint}
+Suponha que $f \in \sR\bigl([a,b]\bigr)$. Prove que a função que associa a $x$
+o valor $\babs{f(x)}$ também é integrável à Riemann em $[a,b]$.
+Em seguida, prove a mesma desigualdade do \exerciseref{exercise:easyabsint}.
 \end{exercise}
 
 \begin{exercise}  \label{exercise:upperlowerlinineq}
-Suppose $f \colon [a,b] \to \R$ and $g \colon [a,b] \to \R$
-are bounded.
+Suponha que $f \colon [a,b] \to \R$ e $g \colon [a,b] \to \R$
+sejam limitadas.
 \begin{enumerate}[a)]
 \item
-Show
-$\overline{\int_a^b} (f+g) \leq \overline{\int_a^b}f+\overline{\int_a^b}g$ and
+Mostre que
+$\overline{\int_a^b} (f+g) \leq \overline{\int_a^b}f+\overline{\int_a^b}g$ e
 $\underline{\int_a^b} (f+g) \geq
 \underline{\int_a^b}f+\underline{\int_a^b}g$.
 \item
-Find example $f$ and $g$ where
-the inequality is strict.  Hint: $f$ and $g$ should not be Riemann
-integrable.
+Encontre exemplos de $f$ e $g$ para os quais
+a desigualdade é estrita. Sugestão: $f$ e $g$ não devem ser integráveis à Riemann.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon [a,b] \to \R$ is continuous and $g \colon \R \to \R$ is
-Lipschitz continuous.  Define
+Suponha que $f \colon [a,b] \to \R$ seja contínua e que $g \colon \R \to \R$ seja
+Lipschitz contínua. Defina
 \begin{equation*}
 h(x) \coloneqq \int_a^b g(t-x) f(t) \, dt .
 \end{equation*}
-Prove that $h$ is Lipschitz continuous.
+Prove que $h$ é Lipschitz contínua.
 \end{exercise}
 
 \begin{exercise} \label{exercise:rieleblem}
-Prove a version of the \emph{\myindex{Riemann--Lebesgue Lemma}}
-(one of several so named):
-Suppose $f \colon [a,b] \to \R$ is continuous and define the sequence
-$\{ x_n \}_{n=1}^\infty$ by
+Prove uma versão do \emph{\myindex{lema de Riemann--Lebesgue}}
+(há vários resultados com esse nome):
+suponha que $f \colon [a,b] \to \R$ seja contínua e defina a sequência
+$\{ x_n \}_{n=1}^\infty$ por
 \begin{equation*}
 x_n \coloneqq \int_a^b f(t) \sin(nt) \, dt .
 \end{equation*}
-Prove that $\lim\limits_{n\to\infty} x_n = 0$.
+Prove que $\lim\limits_{n\to\infty} x_n = 0$.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{Fundamental theorem of calculus}
+\section{Teorema fundamental do cálculo}
 \label{sec:ftc}
 
 %mbxINTROSUBSECTION
 
-\sectionnotes{1.5 lectures}
+\sectionnotes{1,5 aulas}
 
-In this section we discuss and prove the
-\emph{\myindex{fundamental theorem of calculus}}.
-The entirety of integral calculus is built upon this theorem,
-ergo the name.
-The theorem relates the seemingly unrelated concepts of integral and
-derivative.  It tells us how to compute the antiderivative of a function
-using the integral and vice versa.
+Nesta seção, discutimos e demonstramos o
+\emph{\myindex{teorema fundamental do cálculo}}.
+Todo o cálculo integral se baseia nesse teorema, daí seu nome.
+O teorema relaciona os conceitos aparentemente desconexos de integral e
+derivada. Ele nos diz como calcular uma primitiva usando a integral e
+vice-versa.
 
-\subsection{First form of the theorem}
+\subsection{Primeira forma do teorema}
 
 \begin{thm} \label{thm:FTCv1}
-Let $F \colon [a,b] \to \R$ be a continuous function, differentiable
-on $(a,b)$.  Let $f \in \sR\bigl([a,b]\bigr)$ be such that $f(x) = F'(x)$ for $x \in
-(a,b)$.  Then
+Seja $F \colon [a,b] \to \R$ uma função contínua e diferenciável
+em $(a,b)$. Seja $f \in \sR\bigl([a,b]\bigr)$ tal que $f(x) = F'(x)$ para
+$x \in (a,b)$. Então
 \begin{equation*}
 \int_a^b f = F(b)-F(a) .
 \end{equation*}
 \end{thm}
 
-It is not hard to generalize the theorem to allow a finite number of points
-in $[a,b]$ where $F$ is not differentiable, as long as it is continuous.
-This generalization is left as an exercise.
+É fácil generalizar o teorema para permitir um número finito de pontos
+de $[a,b]$ nos quais $F$ não seja diferenciável, desde que continue sendo
+contínua. Essa generalização fica como exercício.
 
 \begin{proof}
-Let $P = \{ x_0, x_1, \ldots, x_n \}$ be a partition of $[a,b]$.
-For each interval $[x_{i-1},x_i]$, use the
-\hyperref[thm:mvt]{mean value theorem} to find a
-$c_i \in (x_{i-1},x_i)$ such that
+Seja $P = \{ x_0, x_1, \ldots, x_n \}$ uma partição de $[a,b]$.
+Para cada intervalo $[x_{i-1},x_i]$, aplicamos o
+\hyperref[thm:mvt]{teorema do valor médio} para encontrar um
+$c_i \in (x_{i-1},x_i)$ tal que
 \begin{equation*}
 f(c_i) \Delta x_i = F'(c_i) (x_i - x_{i-1}) = F(x_i) - F(x_{i-1}) .
 \end{equation*}
-See \figureref{fig:fundthmfig}, and
-note that the area of the
-$i$th rectangle is
+Veja a \figureref{fig:fundthmfig} e observe que a área do
+$i$-ésimo retângulo é
 $F(x_{i})-F(x_{i-1})$,
-and the total area of all three rectangles pictured is
+e que a área total dos três retângulos ilustrados é
 $F(x_{i+1})-F(x_{i-2})$.
-The idea is that taking smaller and smaller subintervals,
-the total area of all these rectangles converges to the integral of $f$.
+A ideia é que, ao tomarmos subintervalos cada vez menores,
+a área total desses retângulos converge para a integral de $f$.
 \begin{myfigureht}
 \myincludegraphics{fundthmfig}{%
-A diagram of a graph of a function in dark bold
-marked as y equals f of x equals F prime of x
-and three subintervals of the x coordinates.
-The middle subinterval is labeled as going from
-x sub quantity i minus 1 to x sub i and is of length Delta x sub i.
-A point c sub i is marked inside this subinterval and a
-dashed line goes up vertically until f of c sub i where it hits
-the graph of f.  A shaded rectangle of this height and the subinterval
-as the base is drawn and labeled with 'area equals f of c sub i times Delta
-x sub i equals F of x sub i minus F of x sub quantity i minus 1'.
-The other two subintervals are similar except on the left
-we replace i with i minus 1 and on the right we replace i with
-i plus 1.}
-\caption{Mean value theorem on subintervals of a partition
-approximating the area under the curve.\label{fig:fundthmfig}}
+Diagrama do gráfico de uma função, em traço escuro e espesso,
+identificado pela expressão “y igual a f de x, igual à derivada de F em x”,
+com três subintervalos no eixo das abscissas.
+O subintervalo central vai de $x_{i-1}$ a $x_i$ e tem comprimento $\Delta x_i$.
+Um ponto $c_i$ está marcado nesse subintervalo; uma linha tracejada sobe
+verticalmente até $f(c_i)$, onde encontra o gráfico de $f$. Há um retângulo
+sombreado com essa altura e o subintervalo como base. Ele está identificado
+por “área igual a f de c sub i vezes delta x sub i, igual a F de x com índice
+i menos F de x com índice i menos 1”. Os outros dois
+subintervalos são semelhantes: no da esquerda, substituímos i por i menos 1;
+no da direita, substituímos i por i mais 1.}
+\caption{Teorema do valor médio aplicado aos subintervalos de uma partição
+para aproximar a área sob a curva.\label{fig:fundthmfig}}
 \end{myfigureht}
 
-Using the notation from the definition of the integral,
-$m_i \leq f(c_i) \leq M_i$, and multiplying by $\Delta x_i$ gets
+Usando a notação da definição da integral,
+$m_i \leq f(c_i) \leq M_i$; ao multiplicarmos por $\Delta x_i$, obtemos
 \begin{equation*}
 m_i \Delta x_i \leq F(x_i) - F(x_{i-1}) \leq M_i \Delta x_i .
 \end{equation*}
-We sum over $i = 1,2, \ldots, n$ to get
+Somamos para $i = 1,2, \ldots, n$ e obtemos
 \begin{equation*}
 \sum_{i=1}^n m_i \Delta x_i
 \leq \sum_{i=1}^n \bigl(F(x_i) - F(x_{i-1}) \bigr)
 \leq \sum_{i=1}^n M_i \Delta x_i .
 \end{equation*}
-In the middle sum, all the terms except the first and last cancel 
-and we end up with $F(x_n)-F(x_0) = F(b)-F(a)$.  The sums on the left
-and on the right are the lower and the upper sums, respectively.  So
+Na soma do meio, todos os termos, exceto o primeiro e o último, se cancelam,
+e obtemos $F(x_n)-F(x_0) = F(b)-F(a)$. As somas à esquerda e à direita
+são, respectivamente, as somas inferior e superior. Portanto,
 \begin{equation*}
 L(P,f) \leq F(b)-F(a) \leq U(P,f) .
 \end{equation*}
-We take the supremum of $L(P,f)$ over all partitions $P$ and the left inequality
-yields 
+Tomamos o supremo de $L(P,f)$ sobre todas as partições $P$, e a desigualdade
+à esquerda fornece
 \begin{equation*}
 \underline{\int_a^b} f \leq F(b)-F(a) .
 \end{equation*}
-Similarly, taking
-the infimum of $U(P,f)$ over all partitions $P$ yields
+De modo semelhante, tomando o ínfimo de $U(P,f)$ sobre todas as partições
+$P$, obtemos
 \begin{equation*}
 F(b)-F(a) \leq \overline{\int_a^b} f .
 \end{equation*}
-As $f$ is Riemann integrable, we have
+Como $f$ é integrável à Riemann, temos
 \begin{equation*}
 \int_a^b f =
 \underline{\int_a^b} f \leq F(b)-F(a) \leq \overline{\int_a^b} f
 = \int_a^b f .
 \end{equation*}
-The inequalities must be equalities and we are done.
+As desigualdades devem ser igualdades, e a demonstração está concluída.
 \end{proof}
 
-The theorem is used to compute integrals.  Suppose we know that
-the function $f(x)$ is a derivative of some other function $F(x)$,
-then we can find an explicit expression for $\int_a^b f$. 
+Usamos o teorema para calcular integrais. Se sabemos que a função $f(x)$ é
+a derivada de outra função $F(x)$, podemos encontrar uma expressão explícita
+para $\int_a^b f$.
 
 \begin{example}
-To compute
+Para calcular
 \begin{equation*}
 \int_0^1 x^2 \,dx ,
 \end{equation*}
-we notice $x^2$ is the derivative of $\frac{x^3}{3}$.
-The fundamental theorem says
+observamos que $x^2$ é a derivada de $\frac{x^3}{3}$.
+O teorema fundamental afirma que
 \begin{equation*}
 \int_0^1 x^2 \,dx =
 \frac{1^3}{3}
@@ -1694,26 +1668,26 @@ The fundamental theorem says
 \end{equation*}
 \end{example}
 
-\subsection{Second form of the theorem}
+\subsection{Segunda forma do teorema}
 
-The second form of the fundamental theorem gives us a way to solve
-the differential equation $F'(x) = f(x)$, where $f$ is a known
-function and we are trying to find an $F$ that satisfies the equation.
+A segunda forma do teorema fundamental nos dá um modo de resolver
+a equação diferencial $F'(x) = f(x)$, na qual $f$ é conhecida e queremos
+encontrar uma função $F$ que satisfaça a equação.
 
 \begin{thm} \label{thm:FTCv2}
-Let $f \colon [a,b] \to \R$ be a Riemann integrable function.  Define
+Seja $f \colon [a,b] \to \R$ uma função integrável à Riemann. Defina
 \begin{equation*}
 F(x) \coloneqq \int_a^x f .
 \end{equation*}
-First, $F$ is continuous on $[a,b]$.  Second,
-if $f$ is continuous at $c \in [a,b]$, then $F$ is differentiable at $c$
-and $F'(c) = f(c)$.
+Primeiro, $F$ é contínua em $[a,b]$. Segundo,
+se $f$ é contínua em $c \in [a,b]$, então $F$ é diferenciável em $c$
+e $F'(c) = f(c)$.
 \end{thm}
 
 \begin{proof}
-As $f$ is bounded, there is an $M > 0$
-such that $\babs{f(x)} \leq M$ for all $x \in [a,b]$.  Suppose $x,y \in [a,b]$
-with $x > y$.  Then
+Como $f$ é limitada, existe $M > 0$
+tal que $\babs{f(x)} \leq M$ para todo $x \in [a,b]$. Sejam $x,y \in [a,b]$
+com $x > y$. Então
 \begin{equation*}
 \babs{F(x)-F(y)} =
 \abs{\int_a^x f - \int_a^y f}
@@ -1722,25 +1696,23 @@ with $x > y$.  Then
 \leq
 M\sabs{x-y} .
 \end{equation*}
-By symmetry, the same also holds if $x < y$.
-So $F$ is Lipschitz continuous and hence continuous.
+Por simetria, o mesmo vale se $x < y$.
+Logo, $F$ é Lipschitz contínua e, portanto, contínua.
 
-Now suppose $f$ is continuous at $c$.
-Let $\epsilon > 0$ be given.  Let $\delta > 0$ be such that
-for $x \in [a,b]$,
-$\sabs{x-c} < \delta$ implies $\babs{f(x)-f(c)} < \epsilon$.
-In particular,
-for such $x$, we have
+Agora suponha que $f$ seja contínua em $c$.
+Seja $\epsilon > 0$. Escolha $\delta > 0$ de modo que, para $x \in [a,b]$,
+$\sabs{x-c} < \delta$ implique $\babs{f(x)-f(c)} < \epsilon$.
+Em particular, para esses valores de $x$, temos
 \begin{equation*}
 f(c)-\epsilon < f(x) < f(c) + \epsilon.
 \end{equation*}
-Thus if $x > c$, then
+Assim, se $x > c$, então
 \begin{equation*}
 \bigl(f(c)-\epsilon\bigr) (x-c) \leq \int_c^x f \leq
 \bigl(f(c) + \epsilon\bigr)(x-c).
 \end{equation*}
-When $c > x$, then the inequalities are reversed.  Therefore,
-assuming $x \neq c$, we get
+Se $c > x$, as desigualdades se invertem. Portanto,
+supondo que $x \neq c$, obtemos
 \begin{equation*}
 f(c)-\epsilon
 \leq
@@ -1748,7 +1720,7 @@ f(c)-\epsilon
 \leq
 f(c)+\epsilon .
 \end{equation*}
-As 
+Como
 \begin{equation*}
 \frac{F(x)-F(c)}{x-c}
 =
@@ -1756,88 +1728,84 @@ As
 =
 \frac{\int_c^{x} f}{x-c} ,
 \end{equation*}
-we have 
+temos
 \begin{equation*}
 \abs{\frac{F(x)-F(c)}{x-c} - f(c)} \leq \epsilon .
 \end{equation*}
-The result follows.  It is left to the reader to see why is it OK that we
-just have a non-strict inequality.
+O resultado segue. Fica a cargo do leitor verificar por que é suficiente
+obter uma desigualdade não estrita.
 \end{proof}
 
-Of course, if $f$ is continuous on $[a,b]$, then it is automatically Riemann
-integrable, $F$ is differentiable on all of $[a,b]$ and $F'(x) = f(x)$ for
-all $x \in [a,b]$.
+É claro que, se $f$ é contínua em $[a,b]$, então é automaticamente integrável
+à Riemann, $F$ é diferenciável em todo $[a,b]$ e $F'(x) = f(x)$ para todo
+$x \in [a,b]$.
 
 \begin{remark} \label{remark:fundthmbase}
-The second form of the fundamental theorem of calculus still holds if
-we let $d \in [a,b]$ and define
+A segunda forma do teorema fundamental do cálculo continua válida se
+tomarmos $d \in [a,b]$ e definirmos
 \begin{equation*}
 F(x) \coloneqq \int_d^x f .
 \end{equation*}
-That is, we can use any point of $[a,b]$ as our base point.  The proof is
-left as an exercise.
+Isto é, podemos usar qualquer ponto de $[a,b]$ como ponto de partida. A
+demonstração fica como exercício.
 \end{remark}
 
-Let us look at what a simple discontinuity can do.  Take $f(x) \coloneqq -1$ if $x
-< 0$, and $f(x) \coloneqq 1$ if $x \geq 0$.  Let $F(x) \coloneqq \int_0^x f$.  It is not
-difficult to see that $F(x) = \sabs{x}$.  Notice that $f$ is discontinuous at
-$0$ and $F$ is not differentiable at $0$.  However, the converse in the
-theorem does not
-hold.
-Let $g(x) \coloneqq 0$ if $x \neq 0$, and $g(0) \coloneqq 1$.
-Letting $G(x) \coloneqq \int_0^x g$,
-we find that $G(x) = 0$ for all $x$.  So $g$ is discontinuous
-at $0$, but $G'(0)$ exists and is equal to 0.
+Vejamos o efeito de uma descontinuidade simples. Tome $f(x) \coloneqq -1$ se $x
+< 0$ e $f(x) \coloneqq 1$ se $x \geq 0$. Seja $F(x) \coloneqq \int_0^x f$. Não é
+difícil ver que $F(x) = \sabs{x}$. Observe que $f$ é descontínua em
+$0$ e $F$ não é diferenciável em $0$. No entanto, a recíproca do teorema
+não vale.
+Seja $g(x) \coloneqq 0$ se $x \neq 0$ e $g(0) \coloneqq 1$.
+Definindo $G(x) \coloneqq \int_0^x g$,
+obtemos $G(x) = 0$ para todo $x$. Assim, $g$ é descontínua
+em $0$, mas $G'(0)$ existe e é igual a $0$.
 
-A common misunderstanding of the integral for calculus students is to
-think of integrals whose solution cannot be given in closed-form as somehow
-deficient.  This is not the case.  Most integrals we write down are not
-computable in closed-form.  Even some integrals that we consider
-in closed-form are not really such.  We define
-the natural logarithm as the antiderivative of $\nicefrac{1}{x}$
-such that $\ln 1 = 0$:
+Um equívoco comum entre estudantes de cálculo é considerar de algum modo
+insuficientes as integrais cuja solução não pode ser expressa em forma
+fechada. Não é o caso. A maioria das integrais que escrevemos não pode ser
+calculada em forma fechada. Mesmo algumas integrais que consideramos
+expressas dessa forma não o são de fato. Definimos o logaritmo natural como
+a primitiva de $\nicefrac{1}{x}$ tal que $\ln 1 = 0$:
 \begin{equation*}
 \ln x \coloneqq \int_1^x \frac{1}{s}\,ds .
 \end{equation*}
-How does a computer find the value of $\ln x$?
-One way to do it is to numerically approximate this integral.
-Morally,
-we did not really \myquote{simplify} $\int_1^x \frac{1}{s}\,ds$ by
-writing down $\ln x$.  We simply gave the integral a name.
-If we require numerical answers,
-it is possible we end up doing
-the calculation by approximating an integral anyway.
-In the next section, we even define the exponential using
-the logarithm, which we define in terms of the integral.
+Como um computador calcula o valor de $\ln x$?
+Uma possibilidade é aproximar numericamente essa integral.
+Em certo sentido, não \myquote{simplificamos} de fato
+$\int_1^x \frac{1}{s}\,ds$ ao escrever $\ln x$; simplesmente demos um nome
+à integral. Se precisarmos de valores numéricos, talvez acabemos fazendo
+o cálculo por meio de uma aproximação da integral.
+Na próxima seção, definiremos a função exponencial usando o logaritmo,
+que, por sua vez, definimos em termos da integral.
 
-Another common function defined by an integral that cannot
-be evaluated symbolically in terms of elementary functions
-is the $\operatorname{erf}$ function, defined as
+Outra função comum definida por uma integral que não pode
+ser calculada simbolicamente em termos de funções elementares
+é a função $\operatorname{erf}$, definida por
 \begin{equation*}
 \operatorname{erf}(x) \coloneqq \frac{2}{\sqrt{\pi}} \int_0^x e^{-s^2} \,ds .
 \end{equation*}
-This function comes up often in applied mathematics.  It is simply 
-the antiderivative of $\left(\nicefrac{2}{\sqrt{\pi}}\right) e^{-x^2}$
-that is zero at zero.
-The second form of the fundamental theorem tells us that we can write the function
-as an integral.  If we wish to compute any particular value, we 
-numerically approximate the integral.
+Essa função aparece com frequência na matemática aplicada. Ela é simplesmente
+a primitiva de $\left(\nicefrac{2}{\sqrt{\pi}}\right) e^{-x^2}$ que se anula
+em zero.
+A segunda forma do teorema fundamental nos diz que podemos escrever a função
+como uma integral. Se quisermos calcular algum valor específico, aproximamos
+numericamente a integral.
 
-\subsection{Change of variables}
+\subsection{Mudança de variáveis}
 
-A theorem often used in calculus to solve integrals is the change of
-variables theorem, you may have called it
-\emph{$u$-substitution}\index{u-substitution@$u$-substitution}.
-To make it easy to connect to your calculus class, we will also
-call the new variable $u$, that is, we make the substitution $u=g(x)$.
-Recall a function is continuously differentiable if
-it is differentiable and the derivative is continuous.
+Um teorema frequentemente usado no cálculo para resolver integrais é o
+teorema da mudança de variáveis, também conhecido como
+\emph{substituição $u$}\index{substituição $u$@substituição $u$}.
+Para facilitar a conexão com o que você viu em cálculo, também chamaremos
+a nova variável de $u$; isto é, faremos a substituição $u=g(x)$.
+Lembre-se de que uma função é continuamente diferenciável quando
+é diferenciável e sua derivada é contínua.
 
-\begin{thm}[Change of variables]
-\index{change of variables theorem}
-Let $g \colon [a,b] \to \R$ be a continuously differentiable function,
-let $f \colon [c,d] \to \R$ be continuous, and suppose
-$g\bigl([a,b]\bigr) \subset [c,d]$.  Then
+\begin{thm}[Mudança de variáveis]
+\index{teorema da mudança de variáveis}
+Seja $g \colon [a,b] \to \R$ uma função continuamente diferenciável,
+seja $f \colon [c,d] \to \R$ contínua e suponha que
+$g\bigl([a,b]\bigr) \subset [c,d]$. Então
 \begin{equation*}
 \int_a^b f\bigl(g(x)\bigr)\, g'(x)\, dx =
 \int_{g(a)}^{g(b)} f(u)\, du .
@@ -1845,28 +1813,25 @@ $g\bigl([a,b]\bigr) \subset [c,d]$.  Then
 \end{thm}
 
 \begin{proof}
-As $g$, $g'$, and $f$ are continuous, $f\bigl(g(x)\bigr)\,g'(x)$
-is a continuous function of $[a,b]$, therefore it is Riemann integrable.
-Similarly, $f$ is integrable on every subinterval of $[c,d]$.
+Como $g$, $g'$ e $f$ são contínuas, $f\bigl(g(x)\bigr)\,g'(x)$
+é uma função contínua em $[a,b]$ e, portanto, integrável à Riemann.
+De modo semelhante, $f$ é integrável em todo subintervalo de $[c,d]$.
 
-Define $F \colon [c,d] \to \R$ by
+Defina $F \colon [c,d] \to \R$ por
 \begin{equation*}
 F(y) \coloneqq \int_{g(a)}^{y} f(u)\,du .
 \end{equation*}
-By the second form of the fundamental
-theorem of calculus
-(see \remarkref{remark:fundthmbase} and \exerciseref{secondftc:exercise}),
-$F$ is a differentiable function and $F'(y) = f(y)$.  Apply the chain
-rule,
+Pela segunda forma do teorema fundamental do cálculo
+(veja a \remarkref{remark:fundthmbase} e o \exerciseref{secondftc:exercise}),
+$F$ é diferenciável e $F'(y) = f(y)$. Aplicamos a regra da cadeia:
 \begin{equation*}
 \bigl( F \circ g \bigr)' (x) =
 F'\bigl(g(x)\bigr) g'(x)
 =
 f\bigl(g(x)\bigr) g'(x) .
 \end{equation*}
-Note that $F\bigl(g(a)\bigr) = 0$ and
-use the first form of the fundamental theorem
-to obtain
+Observe que $F\bigl(g(a)\bigr) = 0$ e use a primeira forma do teorema
+fundamental para obter
 \begin{multline*}
 %mbxSTARTIGNORE
 \qquad %to center things more
@@ -1887,13 +1852,13 @@ f\bigl(g(x)\bigr) g'(x)
 \end{multline*}
 \end{proof}
 
-The change of variables theorem is often used to solve integrals by changing them
-to integrals that we know or that we can solve using the fundamental theorem of
-calculus.
+O teorema da mudança de variáveis é frequentemente usado para resolver
+integrais, transformando-as em integrais que já conhecemos ou que podemos
+calcular pelo teorema fundamental do cálculo.
 
 \begin{example}
-The derivative of $\sin(x)$ is $\cos(x)$.
-Using $g(x) \coloneqq x^2$, we solve
+A derivada de $\sin(x)$ é $\cos(x)$.
+Usando $g(x) \coloneqq x^2$, calculamos
 \begin{equation*}
 \int_0^{\sqrt{\pi}} x \cos(x^2) \, dx = \int_0^\pi \frac{\cos(u)}{2} \, du
 =
@@ -1908,69 +1873,69 @@ Using $g(x) \coloneqq x^2$, we solve
 \end{equation*}
 \end{example}
 
-However, beware that we must satisfy the hypotheses of the theorem.  The
-following example demonstrates why we should not just 
-move symbols around mindlessly.
-We must be careful that those symbols really make sense.
+No entanto, devemos verificar se as hipóteses do teorema são satisfeitas.
+O exemplo a seguir mostra por que não devemos simplesmente
+manipular símbolos sem pensar.
+Precisamos nos certificar de que as expressões usadas fazem sentido.
 
 \begin{example}
-Consider
+Considere
 \begin{equation*}
 \int_{-1}^{1} \frac{\ln \sabs{x}}{x} \,dx .
 \end{equation*}
-It may be tempting to take $g(x) \coloneqq \ln \sabs{x}$.  Compute $g'(x) =
-\nicefrac{1}{x}$ and try to write
+Pode ser tentador tomar $g(x) \coloneqq \ln \sabs{x}$. Calcule
+$g'(x) = \nicefrac{1}{x}$ e tente escrever
 \begin{equation*}
 \int_{g(-1)}^{g(1)} u \,du = 
 \int_{0}^{0} u \,du = 0. 
 \end{equation*}
-This \myquote{solution} is incorrect, and it does not say
-that we can solve the given integral.  The first problem is that
-$\frac{\ln \sabs{x}}{x}$ is not continuous on $[-1,1]$.
-It is not defined at 0, and cannot be made continuous by defining a value at
-0.
-Second, $\frac{\ln \sabs{x}}{x}$ is not even Riemann integrable on $[-1,1]$
-(it is unbounded).
-The integral we wrote down simply does not make sense.
-Finally, $g$ is not continuous 
-on $[-1,1]$, let alone continuously differentiable.
+Essa \myquote{solução} está incorreta e não permite concluir
+que podemos calcular a integral dada. O primeiro problema é que
+$\frac{\ln \sabs{x}}{x}$ não é contínua em $[-1,1]$.
+Ela não está definida em $0$ e não pode se tornar contínua pela escolha de
+um valor nesse ponto.
+Além disso, $\frac{\ln \sabs{x}}{x}$ nem sequer é integrável à Riemann em
+$[-1,1]$ (é ilimitada).
+A integral que escrevemos simplesmente não faz sentido.
+Por fim, $g$ não é contínua em $[-1,1]$, muito menos continuamente
+diferenciável.
 \end{example}
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
 \begin{exercise}
-Compute
+Calcule
 $\displaystyle
 \frac{d}{dx} \biggl( \int_{-x}^x e^{s^2}\,ds \biggr)$.
 \end{exercise}
 
 \begin{exercise}
-Compute
+Calcule
 $\displaystyle
 \frac{d}{dx} \biggl( \int_{0}^{x^2} \sin(s^2)\,ds \biggr)$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $F \colon [a,b] \to \R$ is continuous and differentiable
-on $[a,b] \setminus S$, where $S$ is a finite set.  Suppose there
-exists an $f \in \sR\bigl([a,b]\bigr)$ such that $f(x) = F'(x)$ for $x \in [a,b]
-\setminus S$.  Show that
+Suponha que $F \colon [a,b] \to \R$ seja contínua e diferenciável
+em $[a,b] \setminus S$, onde $S$ é um conjunto finito. Suponha que
+exista $f \in \sR\bigl([a,b]\bigr)$ tal que $f(x) = F'(x)$ para
+$x \in [a,b] \setminus S$. Mostre que
 $\int_a^b f = F(b)-F(a)$.
 \end{exercise}
 
 \begin{exercise} \label{secondftc:exercise}
-Let $f \colon [a,b] \to \R$ be a continuous function.  Let $c \in [a,b]$
-be arbitrary.  Define
+Seja $f \colon [a,b] \to \R$ uma função contínua e seja $c \in [a,b]$
+arbitrário. Defina
 \begin{equation*}
 F(x) \coloneqq \int_c^x f .
 \end{equation*}
-Prove that $F$ is differentiable and that $F'(x) = f(x)$ for all $x \in
-[a,b]$.
+Prove que $F$ é diferenciável e que $F'(x) = f(x)$ para todo
+$x \in [a,b]$.
 \end{exercise}
 
 \begin{exercise}
-Prove \emph{\myindex{integration by parts}}.  That is, suppose $F$ and
-$G$ are continuously differentiable functions on $[a,b]$.  Then prove
+Prove a \emph{\myindex{integração por partes}}. Isto é, suponha que $F$ e
+$G$ sejam funções continuamente diferenciáveis em $[a,b]$. Prove que
 \begin{equation*}
 \int_a^b F(x)G'(x)\,dx
 =
@@ -1981,63 +1946,61 @@ F(b)G(b)-F(a)G(a)
 \end{exercise}
 
 \begin{exercise}
-Suppose $F$ and $G$ are
-continuously\footnote{
-Compare this hypothesis to \exerciseref{exercise:samediffconst}.}
-differentiable
-functions defined on $[a,b]$
-such that $F'(x) = G'(x)$ for all $x \in [a,b]$.
-Using the fundamental theorem of calculus,
-show that $F$ and $G$ differ by a constant.  That is, show that
-there exists a $C \in \R$ such that
+Suponha que $F$ e $G$ sejam funções continuamente\footnote{
+Compare esta hipótese com a do \exerciseref{exercise:samediffconst}.}
+diferenciáveis definidas em $[a,b]$
+tais que $F'(x) = G'(x)$ para todo $x \in [a,b]$.
+Usando o teorema fundamental do cálculo,
+mostre que $F$ e $G$ diferem por uma constante. Isto é, mostre que
+existe $C \in \R$ tal que
 $F(x)-G(x) = C$.
 \end{exercise}
 
 \begin{exnote}
-The next exercise shows how we can use the integral to \myquote{smooth out} a
-non-differentiable function.
+O próximo exercício mostra como podemos usar a integral para \myquote{suavizar} uma
+função que não é diferenciável.
 \end{exnote}
 
 \begin{exercise} \label{exercise:smoothingout}
-Let $f \colon [a,b] \to \R$ be a continuous function.  Let $\epsilon > 0$
-be a constant such that $a+\epsilon < b-\epsilon$.  For $x \in [a+\epsilon,b-\epsilon]$, define
+Seja $f \colon [a,b] \to \R$ uma função contínua. Seja $\epsilon > 0$
+uma constante tal que $a+\epsilon < b-\epsilon$. Para $x \in [a+\epsilon,b-\epsilon]$, defina
 \begin{equation*}
 g(x) \coloneqq \frac{1}{2\epsilon} \int_{x-\epsilon}^{x+\epsilon} f .
 \end{equation*}
 \begin{enumerate}[a)]
 \item
-Show that $g$ is differentiable and find the derivative.
+Mostre que $g$ é diferenciável e determine sua derivada.
 \item
-Let $f$ be differentiable and fix $x \in (a,b)$ (let $\epsilon$
-be small enough).  What happens to $g'(x)$ as $\epsilon$ gets smaller?
+Suponha que $f$ seja diferenciável e fixe $x \in (a,b)$ (tome $\epsilon$
+suficientemente pequeno). O que acontece com $g'(x)$ quando $\epsilon$ diminui?
 \item
-Find $g$ for $f(x) \coloneqq \sabs{x}$, $\epsilon = 1$ (you can assume 
-$[a,b]$ is large enough).
+Determine $g$ para $f(x) \coloneqq \sabs{x}$ e $\epsilon = 1$ (suponha que
+$[a,b]$ seja suficientemente grande).
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon [a,b] \to \R$ is continuous and
-$\int_a^x f = \int_x^b f$ for all $x \in [a,b]$.  Show that $f(x) = 0$
-for all $x \in [a,b]$.
+Suponha que $f \colon [a,b] \to \R$ seja contínua e que
+$\int_a^x f = \int_x^b f$ para todo $x \in [a,b]$. Mostre que $f(x) = 0$
+para todo $x \in [a,b]$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon [a,b] \to \R$ is continuous and
-$\int_a^x f = 0$ for all rational $x$ in $[a,b]$.  Show that $f(x) = 0$
-for all $x \in [a,b]$.
+Suponha que $f \colon [a,b] \to \R$ seja contínua e que
+$\int_a^x f = 0$ para todo $x$ racional em $[a,b]$. Mostre que $f(x) = 0$
+para todo $x \in [a,b]$.
 \end{exercise}
 
 \begin{samepage}
 \begin{exercise}
-A function $f$ is an \emph{\myindex{odd function}} if $f(x) = -f(-x)$,
-and $f$ is an \emph{\myindex{even function}} if $f(x) = f(-x)$.  Let $a >
-0$.  Assume $f$ is continuous.  Prove:
+Uma função $f$ é \emph{\myindex{função ímpar}} se $f(x) = -f(-x)$,
+e é \emph{\myindex{função par}} se $f(x) = f(-x)$. Seja $a >
+0$. Suponha que $f$ seja contínua. Prove:
 \begin{enumerate}[a)]
 \item
-If $f$ is odd, then $\int_{-a}^a f = 0$.
+Se $f$ é ímpar, então $\int_{-a}^a f = 0$.
 \item
-If $f$ is even, then $\int_{-a}^a f = 2 \int_0^a f$.
+Se $f$ é par, então $\int_{-a}^a f = 2 \int_0^a f$.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
@@ -2046,34 +2009,34 @@ If $f$ is even, then $\int_{-a}^a f = 2 \int_0^a f$.
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Show that $f(x) \coloneqq \sin(\nicefrac{1}{x})$
-is integrable on every interval (you can define $f(0)$ to be anything).
+Mostre que $f(x) \coloneqq \sin(\nicefrac{1}{x})$
+é integrável em todo intervalo (você pode definir $f(0)$ como quiser).
 \item
-Compute $\int_{-1}^1 \sin(\nicefrac{1}{x})\,dx$ (mind the
-discontinuity).
+Calcule $\int_{-1}^1 \sin(\nicefrac{1}{x})\,dx$ (atenção à
+descontinuidade).
 \end{enumerate}
 \end{exercise}
 
-\begin{exercise}[uses \sectionref{sec:monotonefunc}]
+\begin{exercise}[usa a \sectionref{sec:monotonefunc}]
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Suppose $f \colon [a,b] \to \R$ is increasing.
-By \propref{prop:monotoneintegrable},
+Suponha que $f \colon [a,b] \to \R$ seja crescente.
+Pela \propref{prop:monotoneintegrable},
 %\exerciseref{exercise:boundedvariationintegrable},
-$f$ is Riemann integrable.  Show that if $f$ has a discontinuity at $c \in
-(a,b)$, then $F(x) \coloneqq \int_a^x f$ is not differentiable at $c$.
+$f$ é integrável à Riemann. Mostre que, se $f$ tem uma descontinuidade em
+$c \in (a,b)$, então $F(x) \coloneqq \int_a^x f$ não é diferenciável em $c$.
 \item
-In \exerciseref{exercise:increasingfuncdiscatQ}, you constructed an increasing
-function $f \colon [0,1] \to \R$ that is discontinuous at every
-$x \in [0,1] \cap \Q$.  Use this $f$ to construct a function $F(x)$ that is
-continuous on $[0,1]$, but not differentiable at all $x \in [0,1] \cap \Q$.
+No \exerciseref{exercise:increasingfuncdiscatQ}, você construiu uma função
+crescente $f \colon [0,1] \to \R$ que é descontínua em todo
+$x \in [0,1] \cap \Q$. Use essa função $f$ para construir uma função $F(x)$
+contínua em $[0,1]$, mas não diferenciável em nenhum $x \in [0,1] \cap \Q$.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-For any $\ell \in \N$,
-show that the following limit exists and find what it is:
+Para todo $\ell \in \N$,
+mostre que o limite a seguir existe e determine seu valor:
 \begin{equation*}
 \lim_{n\to\infty} \sum_{k=1}^n \frac{k^\ell}{n^{\ell+1}}
 \end{equation*}
@@ -2082,87 +2045,83 @@ show that the following limit exists and find what it is:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{The logarithm and the exponential}
+\section{O logaritmo e a função exponencial}
 \label{sec:logandexp}
 
 %mbxINTROSUBSECTION
 
-\sectionnotes{1 lecture (optional, requires the optional sections 
+\sectionnotes{1 aula (opcional; requer as seções opcionais
 \sectionref{sec:limitatinf},
-\sectionref{sec:monotonefunc},
+\sectionref{sec:monotonefunc} e
 \sectionref{sec:ift})}
 
-We now have the tools required to properly define the exponential
-and the
-logarithm that you know from calculus so well.  We start with
-exponentiation.
-If $n$ is a positive integer, we define
+Agora temos as ferramentas necessárias para definir rigorosamente a função
+exponencial e o logaritmo que você conhece tão bem do cálculo. Começamos
+pela potenciação.
+Se $n$ é um inteiro positivo, definimos
 \begin{equation*}
-x^n \coloneqq \underbrace{x \cdot x \cdots x}_{n \text{ times}} .
+x^n \coloneqq \underbrace{x \cdot x \cdots x}_{n \text{ vezes}} .
 \end{equation*}
-It makes sense to define $x^0 \coloneqq 1$.
-For negative integers, let $x^{-n} \coloneqq \nicefrac{1}{x^n}$ as long as
+Faz sentido definir $x^0 \coloneqq 1$.
+Para inteiros negativos, definimos $x^{-n} \coloneqq \nicefrac{1}{x^n}$, desde que
 $x \neq 0$.
-Next suppose $x > 0$.
-Define
-$x^{1/n}$ as
-the unique positive $n$th root.  Finally, for a rational
-number $\nicefrac{n}{m}$ (in lowest terms), define
+Agora suponha que $x > 0$.
+Definimos $x^{1/n}$ como
+a única raiz $n$-ésima positiva. Por fim, para um número racional
+$\nicefrac{n}{m}$ (em sua forma irredutível), definimos
 \begin{equation*}
 x^{n/m} \coloneqq {\bigl(x^{1/m}\bigr)}^n .
 \end{equation*}
-It is not difficult to show 
-we get the same number no matter what
-representation of $\nicefrac{n}{m}$ we use, so we do not need to use
-lowest terms.
+Não é difícil mostrar que obtemos o mesmo número, qualquer que seja a
+representação de $\nicefrac{n}{m}$ usada; portanto, não precisamos escrevê-la
+na forma irredutível.
 
-However, what do we mean by $\sqrt{2}^{\sqrt{2}}$?  Or
-$x^y$ in general?  In particular, what is $e^x$ for all~$x$?
-And how do we solve $y=e^x$ for~$x$?
-This section answers these questions and more.
+Mas o que queremos dizer com $\sqrt{2}^{\sqrt{2}}$? E com
+$x^y$ em geral? Em particular, o que é $e^x$ para todo $x$?
+E como resolvemos $y=e^x$ em relação a $x$?
+Esta seção responde a essas perguntas e a outras.
 
-\subsection{The logarithm}
-\index{logarithm}
+\subsection{O logaritmo}
+\index{logaritmo}
 
-It is convenient to define the logarithm first.
-Let us show that
-a unique function with the right properties exists, and only then will
-we call it \emph{the} logarithm.
+É conveniente definir primeiro o logaritmo.
+Vamos mostrar que existe uma única função com as propriedades adequadas;
+somente então a chamaremos de \emph{o} logaritmo.
 
 \begin{prop}
-There exists a unique function $L \colon (0,\infty) \to \R$ such that
+Existe uma única função $L \colon (0,\infty) \to \R$ tal que
 \begin{enumerate}[(i)]
 \item \label{it:log:i}
 $L(1) = 0$.
 \item \label{it:log:ii}
-$L$ is differentiable and $L'(x) = \nicefrac{1}{x}$.
+$L$ é diferenciável e $L'(x) = \nicefrac{1}{x}$.
 \item \label{it:log:iii}
-$L$ is strictly increasing, bijective, and
+$L$ é estritamente crescente, bijetiva e
 \begin{equation*}
-\lim_{x\to 0} L(x) = -\infty , \qquad \text{and} \qquad
+\lim_{x\to 0} L(x) = -\infty , \qquad \text{e} \qquad
 \lim_{x\to \infty} L(x) = \infty .
 \end{equation*}
 \item \label{it:log:iv}
-$L(xy) = L(x)+L(y)$ for all $x,y \in (0,\infty)$.
+$L(xy) = L(x)+L(y)$ para todos $x,y \in (0,\infty)$.
 \item \label{it:log:v}
-If $q$ is a rational number and $x > 0$, then
+Se $q$ é racional e $x > 0$, então
 $L(x^q) = q L(x)$.
 \end{enumerate}
 \end{prop}
 
 \begin{proof}
-To prove existence, we define a candidate and show it satisfies
-all the properties.  Let
+Para provar a existência, definimos uma candidata e mostramos que ela satisfaz
+todas as propriedades. Seja
 \begin{equation*}
 L(x) \coloneqq \int_1^x \frac{1}{t}\,dt .
 \end{equation*}
 
-Obviously, \ref{it:log:i} holds.  Property \ref{it:log:ii} holds
-via the second form of the fundamental theorem of calculus
+É claro que vale \ref{it:log:i}. A propriedade \ref{it:log:ii} decorre
+da segunda forma do teorema fundamental do cálculo
 (\thmref{thm:FTCv2}).
 
-To prove property \ref{it:log:iv},
-we change variables $u=yt$ to obtain
+Para provar a propriedade \ref{it:log:iv},
+fazemos a mudança de variável $u=yt$ e obtemos
 \begin{equation*}
 L(x) =
 \int_1^{x} \frac{1}{t}\,dt
@@ -2176,34 +2135,34 @@ L(x) =
 L(xy)-L(y) .
 \end{equation*}
 
-Let us prove \ref{it:log:iii}.
-Property \ref{it:log:ii} together with the fact that $L'(x) = \nicefrac{1}{x} > 0$ 
-for $x > 0$, implies that $L$
-is strictly increasing and hence one-to-one.
-Let us show $L$ is onto.  
-As $\nicefrac{1}{t} \geq \nicefrac{1}{2}$ when $t \in [1,2]$,
+Vamos provar \ref{it:log:iii}.
+A propriedade \ref{it:log:ii}, juntamente com o fato de que
+$L'(x) = \nicefrac{1}{x} > 0$ para $x > 0$, implica que $L$
+é estritamente crescente e, portanto, injetiva.
+Vamos mostrar que $L$ é sobrejetiva.
+Como $\nicefrac{1}{t} \geq \nicefrac{1}{2}$ quando $t \in [1,2]$,
 \begin{equation*}
 L(2) = \int_1^2 \frac{1}{t} \,dt \geq \nicefrac{1}{2} .
 \end{equation*}
-By induction, \ref{it:log:iv} implies that for $n \in \N$,
+Por indução, \ref{it:log:iv} implica que, para $n \in \N$,
 \begin{equation*}
 L(2^n) = L(2) + L(2) + \cdots + L(2) = n L(2) .
 \end{equation*}
-Given $y > 0$, 
-by the \hyperref[thm:arch:i]{Archimedean property} of the real numbers
-(notice $L(2) > 0$), there is an $n \in \N$ such that
-$L(2^n) > y$.  The
-\hyperref[IVT:thm]{intermediate value theorem}
-gives an $x_1 \in (1,2^n)$ such that $L(x_1) = y$.  Thus
-$(0,\infty)$ is in the image of $L$.
-As $L$ is increasing, $L(x) > y$ for all $x > 2^n$, and so
+Seja $y > 0$.
+Pela \hyperref[thm:arch:i]{propriedade arquimediana} dos números reais
+(observe que $L(2) > 0$), existe $n \in \N$ tal que
+$L(2^n) > y$. O
+\hyperref[IVT:thm]{teorema do valor intermediário}
+fornece $x_1 \in (1,2^n)$ tal que $L(x_1) = y$. Assim,
+todos os números positivos pertencem à imagem de $L$.
+Como $L$ é crescente, $L(x) > y$ para todo $x > 2^n$ e, portanto,
 \begin{equation*}
 \lim_{x\to\infty} L(x) = \infty .
 \end{equation*}
-Next
-$0 = L(\nicefrac{x}{x}) = L(x) + L(\nicefrac{1}{x})$, and
-so $L(x) = - L(\nicefrac{1}{x})$.  Using $x=2^{-n}$, we obtain
-as above that $L$ achieves all negative numbers.  And
+Além disso,
+$0 = L(\nicefrac{x}{x}) = L(x) + L(\nicefrac{1}{x})$ e, portanto,
+$L(x) = - L(\nicefrac{1}{x})$. Tomando $x=2^{-n}$, obtemos,
+como antes, que $L$ assume todos os valores negativos. Além disso,
 \begin{equation*}
 \lim_{x \to 0} L(x) = 
 \lim_{x \to 0} -L(\nicefrac{1}{x})
@@ -2211,141 +2170,138 @@ as above that $L$ achieves all negative numbers.  And
 \lim_{x \to \infty} -L(x)
 =  - \infty .
 \end{equation*}
-In the limits, note that only $x > 0$ are in the domain of $L$.
+Nos limites, observe que apenas $x > 0$ pertence ao domínio de $L$.
 
-Let us prove \ref{it:log:v}.
-Fix $x > 0$.
-As above, \ref{it:log:iv} implies
+Vamos provar \ref{it:log:v}.
+Fixe $x > 0$.
+Como vimos, \ref{it:log:iv} implica
 $L(x^n) = n L(x)$
-for all $n \in \N$.
-We already found that
+para todo $n \in \N$.
+Já vimos que
 $L(x) = - L(\nicefrac{1}{x})$,
-so $L(x^{-n}) = - L(x^n) = -n L(x)$.  Then for $m \in \N$
+portanto $L(x^{-n}) = - L(x^n) = -n L(x)$. Então, para $m \in \N$,
 \begin{equation*}
 L(x) = L\Bigl({(x^{1/m})}^m\Bigr) = m L\bigl(x^{1/m}\bigr) .
 \end{equation*}
-Putting everything together for $n \in \Z$ and $m \in \N$, we have
+Reunindo esses resultados para $n \in \Z$ e $m \in \N$, obtemos
 $L(x^{n/m}) = n L(x^{1/m}) = (\nicefrac{n}{m}) L(x)$.
 
-Uniqueness follows using properties \ref{it:log:i} and
-\ref{it:log:ii}.  Via the first form of the
-fundamental theorem of calculus (\thmref{thm:FTCv1}),
+A unicidade decorre das propriedades \ref{it:log:i} e
+\ref{it:log:ii}. Pela primeira forma do teorema fundamental do cálculo
+(\thmref{thm:FTCv1}),
 \begin{equation*}
 L(x) = \int_1^x \frac{1}{t}\,dt
 \end{equation*}
-is the unique function such that $L(1) = 0$ and $L'(x) = \nicefrac{1}{x}$.
+é a única função tal que $L(1) = 0$ e $L'(x) = \nicefrac{1}{x}$.
 \end{proof}
 
-Having proved
-that there is a unique function with these properties,
-we simply define the \emph{\myindex{logarithm}}, sometimes called the
-\emph{\myindex{natural logarithm}}:
+Depois de provar que existe uma única função com essas propriedades,
+definimos o \emph{\myindex{logaritmo}}, também chamado de
+\emph{\myindex{logaritmo natural}}:
 \glsadd{not:ln}
 \begin{equation*}
 \ln(x) \coloneqq L(x) .
 \end{equation*}
-See \figureref{fig:log}.
-Mathematicians usually write $\log(x)$ instead of $\ln(x)$, which is
-more familiar to calculus students.  For all practical purposes, there is only one logarithm:
-the natural logarithm.  See \exerciseref{exercise:otherlogbases}.
+Veja a \figureref{fig:log}.
+Os matemáticos geralmente escrevem $\log(x)$ em vez de $\ln(x)$, notação
+mais familiar a estudantes de cálculo. Para todos os fins práticos, há um
+único logaritmo: o logaritmo natural. Veja o \exerciseref{exercise:otherlogbases}.
 \begin{myfigureht}
 \myincludegraphics{logfig}{%
-A graph y equals ln of x in a bold line starting steeply
-on the left in the 
-negative values and crossing the x-axis at 1, and getting less and less
-steep as we go further right.
-A plot of y equals 1 over x is in dashed line, it is a line
-that is always positive starting high on the left and getting
-less and less steep as we go to the right.
-The area between the dashed line and the x-axis
-for x between 1 and 4 is shaded and the height of the graph
-of ln at 4 is marked as 'shaded area equals ln of 4'.}
-\caption{Plot of $\ln(x)$ together with $\nicefrac{1}{x}$, showing the value
-$\ln(4)$.\label{fig:log}}
+Gráfico da função y igual ao logaritmo natural de x, em traço espesso,
+começando íngreme à esquerda, com valores negativos, cruzando o eixo x em 1
+e ficando cada vez menos íngreme à medida que avançamos para a direita.
+O gráfico de y igual a 1 sobre x aparece em linha tracejada; é sempre
+positivo, começa alto à esquerda e fica cada vez menos íngreme à medida que
+avançamos para a direita. A região entre a linha tracejada e o eixo x,
+para x entre 1 e 4, está sombreada; a altura do gráfico do logaritmo natural
+em 4 está indicada como “área sombreada igual ao logaritmo natural de 4”.}
+\caption{Gráfico de $\ln(x)$ junto com $\nicefrac{1}{x}$, mostrando o valor
+de $\ln(4)$.\label{fig:log}}
 \end{myfigureht}
 
-\subsection{The exponential}
-\index{exponential}
+\subsection{A função exponencial}
+\index{função exponencial}
 
-Just as with the logarithm we define the exponential via a list of
-properties.
+Assim como fizemos com o logaritmo, definimos a função exponencial por meio
+de uma lista de propriedades.
 
 \begin{prop}
-There exists a unique function $E \colon \R \to (0,\infty)$ such that
+Existe uma única função $E \colon \R \to (0,\infty)$ tal que
 \begin{enumerate}[(i)]
 \item \label{it:exp:i}
 $E(0) = 1$.
 \item \label{it:exp:ii}
-$E$ is differentiable and $E'(x) = E(x)$.
+$E$ é diferenciável e $E'(x) = E(x)$.
 \item \label{it:exp:iii}
-$E$ is strictly increasing, bijective, and
+$E$ é estritamente crescente, bijetiva e
 \begin{equation*}
-\lim_{x\to -\infty} E(x) = 0 \qquad \text{and} \qquad
+\lim_{x\to -\infty} E(x) = 0 \qquad \text{e} \qquad
 \lim_{x\to \infty} E(x) = \infty .
 \end{equation*}
 \item \label{it:exp:iv}
-$E(x+y) = E(x)E(y)$ for all $x,y \in \R$.
+$E(x+y) = E(x)E(y)$ para todos $x,y \in \R$.
 \item \label{it:exp:v}
-If $q \in \Q$, then
+Se $q \in \Q$, então
 $E(qx) = {E(x)}^q$.
 \end{enumerate}
 \end{prop}
 
 \begin{proof}
-Again, we prove existence of such a function by defining a candidate
-and proving that it satisfies all the properties.
-The $L = \ln$ defined above is invertible.  Let $E$ be the
-inverse function of $L$.  Property \ref{it:exp:i} is immediate.
+Novamente, provamos a existência dessa função definindo uma candidata
+e mostrando que ela satisfaz todas as propriedades.
+A função $L = \ln$ definida acima é invertível. Seja $E$ a função inversa
+de $L$. A propriedade \ref{it:exp:i} é imediata.
 
-Property \ref{it:exp:ii} follows
-via the inverse function theorem, in particular
-via \lemmaref{lemma:ift}:  $L$~satisfies
-all the hypotheses of the lemma, and hence
+A propriedade \ref{it:exp:ii} decorre do teorema da função inversa,
+em particular do \lemmaref{lemma:ift}: $L$ satisfaz todas as hipóteses
+do lema e, portanto,
 \begin{equation*}
 E'(x) = \frac{1}{L'\bigl(E(x)\bigr)} = E(x) .
 \end{equation*}
 
-Let us look at property \ref{it:exp:iii}.
-The function $E$ is strictly increasing since 
-$E'(x) = E(x) > 0$.  As $E$ is the inverse of $L$, it must also
-be bijective.  
-To find the limits, we use that 
-$E$ is strictly increasing and onto $(0,\infty)$.
-For every $M > 0$, there is an $x_0$ such that
-$E(x_0) = M$ and $E(x) \geq M$ for all $x \geq x_0$.
-Similarly, for every $\epsilon > 0$, there is
-an $x_0$ such that $E(x_0) = \epsilon$ and
-$E(x) < \epsilon$ for all $x < x_0$.
-Therefore,
+Vejamos a propriedade \ref{it:exp:iii}.
+A função $E$ é estritamente crescente, pois
+$E'(x) = E(x) > 0$. Como $E$ é a inversa de $L$, também é bijetiva.
+Para determinar os limites, usamos o fato de que $E$ é estritamente crescente
+e sobrejetiva em $(0,\infty)$.
+Para todo $M > 0$, existe $x_0$ tal que
+$E(x_0) = M$ e $E(x) \geq M$ para todo $x \geq x_0$.
+De modo semelhante, para todo $\epsilon > 0$, existe
+$x_0$ tal que $E(x_0) = \epsilon$ e
+$E(x) < \epsilon$ para todo $x < x_0$.
+Portanto,
 \begin{equation*}
-\lim_{x\to -\infty} E(x) = 0 \qquad \text{and} \qquad
+\lim_{x\to -\infty} E(x) = 0 \qquad \text{e} \qquad
 \lim_{x\to \infty} E(x) = \infty .
 \end{equation*}
 
-To prove property \ref{it:exp:iv}, we use the corresponding
-property for the logarithm.
-Take $x, y \in \R$.
-As $L$ is bijective, find $a$ and $b$ such that $x = L(a)$ and $y = L(b)$.  Then
+Para provar a propriedade \ref{it:exp:iv}, usamos a propriedade
+correspondente do logaritmo.
+Sejam $x, y \in \R$.
+Como $L$ é bijetiva, existem $a$ e $b$ tais que $x = L(a)$ e $y = L(b)$.
+Então
 \begin{equation*}
 E(x+y) =
 E\bigl(L(a)+L(b)\bigr) = 
 E\bigl(L(ab)\bigr) = ab = E(x)E(y)  .
 \end{equation*}
 
-Property \ref{it:exp:v} also follows from the corresponding property of $L$.
-Given $x \in \R$, let $a$ be such that $x = L(a)$ and
+A propriedade \ref{it:exp:v} também decorre da propriedade correspondente
+de $L$.
+Dado $x \in \R$, seja $a$ tal que $x = L(a)$ e
 \begin{equation*}
 E(qx) = E\bigl(qL(a)\bigr)
 =
 E\bigl(L(a^q)\bigr) = a^q = {E(x)}^q .
 \end{equation*}
 
-Uniqueness follows from
-\ref{it:exp:i} and
+A unicidade decorre de
+\ref{it:exp:i} e
 \ref{it:exp:ii}.
-Let $E$ and $F$
-be two functions satisfying
-\ref{it:exp:i} and \ref{it:exp:ii}.  
+Sejam $E$ e $F$
+duas funções que satisfazem
+\ref{it:exp:i} e \ref{it:exp:ii}.
 \begin{equation*}
 \frac{d}{dx} \Bigl( F(x)E(-x) \Bigr)
 =
@@ -2353,159 +2309,154 @@ F'(x)E(-x) - E'(-x)F(x)
 =
 F(x)E(-x) - E(-x)F(x) = 0 .
 \end{equation*}
-Therefore, by \propref{prop:derzeroconst},
-$F(x)E(-x) = F(0)E(-0) = 1$ for all $x \in \R$.
-Doing the computation with $F = E$,
-we obtain $E(x)E(-x) = 1$.
-Then
+Portanto, pela \propref{prop:derzeroconst},
+$F(x)E(-x) = F(0)E(-0) = 1$ para todo $x \in \R$.
+Fazendo o cálculo com $F = E$,
+obtemos $E(x)E(-x) = 1$.
+Logo,
 \begin{equation*}
 0 = 1-1 = F(x)E(-x) - E(x)E(-x) = \bigl(F(x)-E(x)\bigr) E(-x) .
 \end{equation*}
 %Since $E(x)E(-x) = 1$,
-Finally, $E(-x) \neq 0$\footnote{%
-$E$ is a function into $(0,\infty)$ after all.
-However, $E(-x) \neq 0$ also follows
-from $E(x)E(-x) = 1$.  Therefore, we can prove uniqueness of $E$ 
-given \ref{it:exp:i} and \ref{it:exp:ii}, even for functions $E \colon \R
-\to \R$.}
-for all $x \in \R$.
-So
-$F(x)-E(x) = 0$ for all $x$, and we are done.
+Por fim, $E(-x) \neq 0$\footnote{Afinal,
+$E$ assume valores em $(0,\infty)$. No entanto, $E(-x) \neq 0$ também decorre
+de $E(x)E(-x) = 1$. Portanto, podemos provar a unicidade de $E$
+usando \ref{it:exp:i} e \ref{it:exp:ii}, mesmo para funções
+$E \colon \R \to \R$.}
+para todo $x \in \R$.
+Assim,
+$F(x)-E(x) = 0$ para todo $x$, e a demonstração está concluída.
 \end{proof}
 
-Having proved $E$ is unique, we define the
-\emph{\myindex{exponential}} function (see \figureref{fig:exp}) as
+Depois de provar que $E$ é única, definimos a
+\emph{\myindex{função exponencial}} (veja a \figureref{fig:exp}) por
 \glsadd{not:exp}
 \begin{equation*}
 \exp(x) \coloneqq E(x) .
 \end{equation*}
 \begin{myfigureht}
 \myincludegraphics{expfig}{%
-A slope field graphed on the xy-plane for x between roughly minus 1 to 1
-and y between 0 and 4.  The slope field is a grid of short line segments of
-a given slope.  In this case the slopes are the same in every row.
-They are all upwards (positive) and
-get progressively steeper as we move up.  The graph of the exponential
-function is given.  It is an increasing function coming from the left
-and it follows the slopes given:
-Starting above the x-axis, it passes through the point (0,1), and then gets
-steeper and steeper as it exits the picture on the right.}
-\caption{Plot of $e^x$, together with a slope field giving slope $y$ at
-every point $(x,y)$.
-The equation $\frac{d}{dx} e^x = e^x$ means that $y=e^x$ follows these slopes.\label{fig:exp}}
+Campo de direções no plano $xy$, aproximadamente para $x$ entre $-1$ e $1$
+e $y$ entre 0 e 4. O campo é uma malha de pequenos segmentos com inclinações
+determinadas; neste caso, as inclinações são iguais em cada linha.
+Todas são positivas e ficam cada vez mais acentuadas à medida que subimos.
+Também aparece o gráfico da função exponencial, crescente, vindo da esquerda
+e seguindo as inclinações indicadas: acima do eixo $x$, passa pelo ponto
+$(0,1)$ e fica cada vez mais íngreme até sair da figura pela direita.}
+\caption{Gráfico de $e^x$ junto com um campo de direções que indica a
+inclinação $y$ em cada ponto $(x,y)$. A equação
+$\frac{d}{dx} e^x = e^x$ significa que $y=e^x$ segue essas inclinações.\label{fig:exp}}
 \end{myfigureht}
 
-If $y \in \Q$ and $x > 0$, then
+Se $y \in \Q$ e $x > 0$, então
 \begin{equation*}
 x^y = \exp\bigl(\ln(x^y)\bigr) = \exp\bigl(y\ln(x)\bigr) .
 \end{equation*}
-We can now make sense of exponentiation $x^y$ for arbitrary $y \in \R$;
-if $x > 0$ and $y$ is irrational, define
+Agora podemos dar sentido à potenciação $x^y$ para qualquer $y \in \R$;
+se $x > 0$ e $y$ é irracional, definimos
 \glsadd{not:pow}
 \begin{equation*}
 x^y \coloneqq \exp\bigl(y\ln(x)\bigr) .
 \end{equation*}
-As $\exp$ is continuous, $x^y$ is a continuous function of $y$.
-Therefore, we would
-obtain the same result had we taken a sequence of rational numbers
-$\{ y_n \}_{n=1}^\infty$
-approaching $y$ and defined $x^y = \lim_{n\to\infty} x^{y_n}$.
+Como $\exp$ é contínua, $x^y$ é uma função contínua de $y$.
+Portanto, obteríamos o mesmo resultado se tomássemos uma sequência de números
+racionais $\{ y_n \}_{n=1}^\infty$ que se aproxima de $y$ e definíssemos
+$x^y = \lim_{n\to\infty} x^{y_n}$.
 
-Define the number $e$,
-called \emph{\myindex{Euler's number}} or
-the \emph{\myindex{base of the natural logarithm}}, as
+Definimos o número $e$,
+chamado de \emph{\myindex{número de Euler}} ou
+de \emph{\myindex{base do logaritmo natural}}, por
 \glsadd{not:e}
 \begin{equation*}
 e \coloneqq \exp(1) .
 \end{equation*}
-Let us justify the notation $e^x$ for $\exp(x)$:
+Justifiquemos a notação $e^x$ para $\exp(x)$:
 \begin{equation*}
 e^x = \exp\bigl(x \ln(e) \bigr) = \exp(x) .
 \end{equation*}
 
-The properties of the logarithm and the exponential extend to
-irrational powers.  The proof is immediate.
+As propriedades do logaritmo e da função exponencial se estendem às
+potências irracionais. A demonstração é imediata.
 
 \begin{prop}
-Let $x, y \in \R$.
+Sejam $x, y \in \R$.
 \begin{enumerate}[(i)]
 \item
 $\exp(xy) = {\bigl(\exp(x)\bigr)}^y$.
 \item
-If $x > 0$, then $\ln(x^y) = y \ln (x)$.
+Se $x > 0$, então $\ln(x^y) = y \ln (x)$.
 \end{enumerate}
 \end{prop}
 
 \begin{remark}
-There are other equivalent ways to define the exponential and the logarithm.
-A common way is to define $E$ as the solution to the differential equation
-$E'(x) = E(x)$, $E(0) = 1$.  See \exampleref{example:picardexponential},
-for a sketch of that approach.  Yet another
-approach is to define the exponential function by
-power series, see \exampleref{example:exponentialbypowerseries}.
+Há outras maneiras equivalentes de definir a função exponencial e o logaritmo.
+Uma maneira comum é definir $E$ como solução da equação diferencial
+$E'(x) = E(x)$, $E(0) = 1$. Veja o \exampleref{example:picardexponential}
+para um esboço dessa abordagem. Outra possibilidade
+é definir a função exponencial por meio de séries de potências; veja o
+\exampleref{example:exponentialbypowerseries}.
 \end{remark}
 
 \begin{remark}
-We proved the uniqueness of the functions $L$ and $E$ from
-just the properties $L(1)=0$, $L'(x) = \nicefrac{1}{x}$
-and the equivalent condition for the exponential
-$E'(x) = E(x)$, $E(0) = 1$.  Existence also follows
-from just these properties.
-Alternatively, uniqueness also follows
-from the laws of exponents, see the exercises.
+Provamos a unicidade das funções $L$ e $E$ usando apenas as propriedades
+$L(1)=0$, $L'(x) = \nicefrac{1}{x}$
+e a condição equivalente para a função exponencial,
+$E'(x) = E(x)$, $E(0) = 1$. A existência também decorre
+apenas dessas propriedades.
+Como alternativa, a unicidade também decorre
+das leis das potências; veja os exercícios.
 \end{remark}
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
 \begin{exercise}
-Given a real number $y$ and $b > 0$, define $f \colon (0,\infty) \to \R$
-and $g \colon \R \to \R$ as $f(x) \coloneqq x^y$ and $g(x) \coloneqq b^x$.  Show that $f$
-and $g$ are differentiable and find their derivative.
+Dados um número real $y$ e $b > 0$, definam-se $f \colon (0,\infty) \to \R$
+e $g \colon \R \to \R$ por $f(x) \coloneqq x^y$ e $g(x) \coloneqq b^x$.
+Mostre que $f$ e $g$ são diferenciáveis e determine suas derivadas.
 \end{exercise}
 
 \begin{samepage}
 \begin{exercise} \label{exercise:otherlogbases}
-Let $b > 0$, $b\neq 1$ be given.
+Seja $b > 0$, $b\neq 1$.
 \begin{enumerate}[a)]
 \item
-Show that for every $y > 0$, there exists a unique number $x$
-such that $y = b^x$.  Define
-the \emph{\myindex{logarithm base $b$}},
+Mostre que, para todo $y > 0$, existe um único número $x$
+tal que $y = b^x$. Defina o \emph{\myindex{logaritmo na base $b$}},
 $\log_b \colon (0,\infty) \to \R$, by
 $\log_b(y) \coloneqq x$.
 \item
-Show that $\log_b(x) = \frac{\ln(x)}{\ln(b)}$.
+Mostre que $\log_b(x) = \frac{\ln(x)}{\ln(b)}$.
 \item
-Prove that if $c > 0$, $c \neq 1$, then
+Prove que, se $c > 0$ e $c \neq 1$, então
 $\log_b(x) = \frac{\log_c(x)}{\log_c(b)}$.
 \item
-Prove $\log_b(xy) =
-\log_b(x)+\log_b(y)$, and $\log_b(x^y) = y \log_b(x)$.
+Prove que $\log_b(xy) =
+\log_b(x)+\log_b(y)$ e $\log_b(x^y) = y \log_b(x)$.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
 
-\begin{exercise}[requires \sectionref{sec:taylor}]
-Use \hyperref[thm:taylor]{Taylor's theorem} to study the remainder term and show that for
-all $x \in \R$
+\begin{exercise}[requer a \sectionref{sec:taylor}]
+Use o \hyperref[thm:taylor]{teorema de Taylor} para estudar o termo de resto
+e mostrar que, para todo $x \in \R$,
 \begin{equation*}
 e^x = \sum_{n=0}^\infty \frac{x^n}{n!} .
 \end{equation*}
-Hint: Do not differentiate the series term by term (unless you prove that
-you can do that).
+Sugestão: não derive a série termo a termo, a menos que prove que isso é
+válido.
 \end{exercise}
 
 \begin{exercise}
-Use the geometric sum formula to show (for $t \neq -1$)
+Use a fórmula da soma geométrica para mostrar (para $t \neq -1$) que
 \begin{equation*}
 1-t+t^2-\cdots+{(-1)}^n t^n = \frac{1}{1+t} - \frac{{(-1)}^{n+1}t^{n+1}}{1+t}.
 \end{equation*}
-Using this fact, show
+Usando esse fato, mostre que
 \begin{equation*}
 \ln (1+x) = \sum_{n=1}^\infty \frac{{(-1)}^{n+1}x^n}{n} 
 \end{equation*}
-for all $x \in (-1,1]$ (note that $x=1$ is included).  Finally,
-find the limit of the alternating harmonic series
+para todo $x \in (-1,1]$ (observe que $x=1$ está incluído). Por fim,
+determine o limite da série harmônica alternada
 \begin{equation*}
 \sum_{n=1}^\infty \frac{{(-1)}^{n+1}}{n} = 1 - \frac{1}{2} +
 \frac{1}{3} - \frac{1}{4} + \cdots
@@ -2513,18 +2464,17 @@ find the limit of the alternating harmonic series
 \end{exercise}
 
 \begin{exercise}
-Show 
+Mostre que
 \begin{equation*}
 e^x = \lim_{n\to\infty} {\left( 1 + \frac{x}{n} \right)}^n .
 \end{equation*}
-Hint: Take the logarithm.\\
-Note: The expression 
-${\left( 1 + \frac{x}{n} \right)}^n$ arises in compound interest
-calculations.  It is the amount of money in a bank account after 1 year
-if 1 dollar was deposited initially at interest rate $x$ (e.g., $x=0.01$ for
-$1\%$) and the interest was compounded $n$
-times during the year.  The exponential $e^x$ is the result of continuous
-compounding.
+Sugestão: tome o logaritmo.\\
+Observação: a expressão
+${\left( 1 + \frac{x}{n} \right)}^n$ aparece em cálculos de juros compostos.
+Ela representa o montante em uma conta bancária após um ano, se inicialmente
+for depositado 1 dólar a uma taxa de juros $x$ (por exemplo, $x=0.01$ para
+$1\%$) e os juros forem capitalizados $n$ vezes durante o ano. A função
+exponencial $e^x$ corresponde à capitalização contínua.
 \end{exercise}
 
 \begin{samepage}
@@ -2532,7 +2482,7 @@ compounding.
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Prove that for all integers $n \geq 2$,
+Prove que, para todo inteiro $n \geq 2$,
 \begin{equation*}
 \sum_{k=2}^{n}
 \frac{1}{k}
@@ -2543,39 +2493,39 @@ Prove that for all integers $n \geq 2$,
 \frac{1}{k} .
 \end{equation*}
 \item
-Prove that the limit
+Prove que o limite
 \begin{equation*}
 \gamma \coloneqq \lim_{n\to\infty}
 \left( \left( \sum_{k=1}^{n} \frac{1}{k} \right) - \ln (n) \right)
 \end{equation*}
-exists.  This constant $\gamma$ is known as the
-\emph{\myindex{Euler--Mascheroni constant}}%
-\footnote{Named for the Swiss mathematician
+existe. Essa constante $\gamma$ é chamada de
+\emph{\myindex{constante de Euler--Mascheroni}}%
+\footnote{Nomeada em homenagem ao matemático suíço
 \href{https://en.wikipedia.org/wiki/Leonhard_Euler}{Leonhard Euler}
 (1707--1783)
-and the Italian mathematician
+e ao matemático italiano
 \href{https://en.wikipedia.org/wiki/Lorenzo_Mascheroni}{Lorenzo Mascheroni}
-(1750--1800).}.  It is not known if $\gamma$ is rational or not.
-Approximately, $\gamma \approx 0.5772$.
+(1750--1800).}. Não se sabe se $\gamma$ é racional.
+Seu valor aproximado é $\gamma \approx 0.5772$.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
 
 \begin{exercise}
-Show
+Mostre que
 \begin{equation*}
 \lim_{x\to\infty} \frac{\ln(x)}{x} = 0 .
 \end{equation*}
 \end{exercise}
 
 \begin{exercise}
-Show that $e^x$ is \emph{\myindex{convex}}, in other words, show that 
-if $a \leq x \leq b$, then
+Mostre que $e^x$ é \emph{\myindex{convexa}}; em outras palavras, mostre que,
+se $a \leq x \leq b$, então
 $e^x \leq e^a \frac{b-x}{b-a} + e^b \frac{x-a}{b-a}$.
 \end{exercise}
 
 \begin{exercise}
-Using the logarithm find
+Usando o logaritmo, determine
 \begin{equation*}
 %\lim_{n\to\infty} {\left( 1 + \nicefrac{1}{n} \right)}^n = e .
 \lim_{n\to\infty} n^{1/n} .
@@ -2583,121 +2533,116 @@ Using the logarithm find
 \end{exercise}
 
 \begin{exercise}
-Show that $E(x) = e^x$ is the unique continuous function such that
-$E(x+y) = E(x)E(y)$ and $E(1) = e$.   Similarly, prove that $L(x) = \ln(x)$
-is the unique continuous
-function defined on positive $x$ such that $L(xy) = L(x)+L(y)$
-and $L(e) = 1$.
+Mostre que $E(x) = e^x$ é a única função contínua tal que
+$E(x+y) = E(x)E(y)$ e $E(1) = e$. De modo semelhante, prove que
+$L(x) = \ln(x)$ é a única função contínua definida para $x$ positivo tal que
+$L(xy) = L(x)+L(y)$ e $L(e) = 1$.
 \end{exercise}
 
-\begin{exercise}[requires \sectionref{sec:taylor}]\label{exercise:nonanalytic}
-Since $(e^x)' = e^x$, it is easy to see that $e^x$ is
-\myindex{infinitely differentiable}\index{differentiable!infinitely}
-(has derivatives of all orders).  Define the function $f \colon \R \to \R$.
+\begin{exercise}[requer a \sectionref{sec:taylor}]\label{exercise:nonanalytic}
+Como $(e^x)' = e^x$, é fácil ver que $e^x$ é
+\myindex{infinitamente diferenciável}\index{diferenciável!infinitamente}
+(tem derivadas de todas as ordens). Defina a função $f \colon \R \to \R$.
 \begin{equation*}
 f(x) \coloneqq \begin{cases}
-e^{-1/x} & \text{if } x > 0, \\
-0 & \text{if } x \leq 0.
+e^{-1/x} & \text{se } x > 0, \\
+0 & \text{se } x \leq 0.
 \end{cases}
 \end{equation*}
 \begin{enumerate}[a)]
 \item
-Prove that for every $m \in \N$,
+Prove que, para todo $m \in \N$,
 \begin{equation*}
 \lim_{x \to 0^+} \frac{e^{-1/x}}{x^m} = 0 .
 \end{equation*}
 \item
-Prove that $f$ is infinitely differentiable.
+Prove que $f$ é infinitamente diferenciável.
 \item
-Compute the Taylor series for $f$ at the origin, that is,
+Calcule a série de Taylor de $f$ na origem, isto é,
 \begin{equation*}
 \sum_{k=0}^\infty
 \frac{f^{(k)}(0)}{k!}x^k .
 \end{equation*}
-Show that it converges, but show that it does not converge to $f(x)$
-for any given $x > 0$.
+Mostre que ela converge, mas que não converge para $f(x)$
+para nenhum $x > 0$.
 \end{enumerate}
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{Improper integrals}
+\section{Integrais impróprias}
 \label{sec:impropriemann}
 
 %mbxINTROSUBSECTION
 
-\sectionnotes{2--3 lectures (optional section, can safely be skipped, 
-requires the optional \sectionref{sec:limitatinf})}
+\sectionnotes{2--3 aulas (seção opcional, que pode ser omitida sem prejuízo;
+requer a seção opcional \sectionref{sec:limitatinf})}
 
-Often it is necessary to integrate over the
-entire real line, or an unbounded interval of the form $[a,\infty)$ or
-$(-\infty,b]$.  We may also wish to integrate unbounded functions
-defined on an open bounded interval $(a,b)$.
-For such intervals or functions, the Riemann integral is not defined,
-but we will write down
-the integral anyway in the spirit of \lemmaref{lemma:boundedimpriemann}.
-These integrals are called \emph{\myindex{improper integrals}}
-and are limits
-of integrals rather than integrals themselves.
+Às vezes é necessário integrar em toda a reta real ou em um intervalo
+ilimitado da forma $[a,\infty)$ ou $(-\infty,b]$.
+Também podemos querer integrar funções ilimitadas definidas em um intervalo
+aberto e limitado $(a,b)$.
+Para esses intervalos ou funções, a integral de Riemann não está definida,
+mas ainda assim escreveremos a integral, seguindo a ideia do
+\lemmaref{lemma:boundedimpriemann}.
+Essas integrais são chamadas de \emph{\myindex{integrais impróprias}}
+e são limites de integrais, e não integrais propriamente ditas.
 
 \begin{defn}
-Suppose $f \colon [a,b) \to \R$ is a function (not necessarily bounded)
-that is Riemann integrable on $[a,c]$ for all $c < b$.  We define
+Suponha que $f \colon [a,b) \to \R$ seja uma função (não necessariamente
+limitada) integrável à Riemann em $[a,c]$ para todo $c < b$. Definimos
 \begin{equation*}
 \int_a^b f \coloneqq \lim_{c \to b^-} \int_a^{c} f
 \end{equation*}
-if the limit exists.
+se o limite existir.
 
-Suppose $f \colon [a,\infty) \to \R$ is a function such that
-$f$ is Riemann integrable on $[a,c]$ for all $c < \infty$.  
-We define
+Suponha que $f \colon [a,\infty) \to \R$ seja uma função integrável à
+Riemann em $[a,c]$ para todo $c < \infty$.
+Definimos
 \begin{equation*}
 \int_a^\infty f \coloneqq \lim_{c \to \infty} \int_a^c f
 \end{equation*}
-if the limit exists.
+se o limite existir.
 
-If the limit exists, we say the improper integral
-\emph{converges}\index{convergent!improper integral}.
-If the limit does not exist, we say the improper integral
-\emph{diverges}\index{divergent!improper integral}.
+Se o limite existir, dizemos que a integral imprópria
+\emph{converge}\index{convergente!integral imprópria}.
+Se o limite não existir, dizemos que a integral imprópria
+\emph{diverge}\index{divergente!integral imprópria}.
 
-We similarly define improper integrals for the left-hand endpoint.
-We leave this definition to the reader.
+Definimos de modo semelhante as integrais impróprias para o extremo esquerdo.
+Deixamos essa definição a cargo do leitor.
 \end{defn}
 
-For a finite endpoint $b$, if $f$ is bounded,
-then
-\lemmaref{lemma:boundedimpriemann} says that we defined nothing new.  What is new is that
-we can apply this definition to unbounded functions.
-The following set of examples is
-so useful that we state it as a proposition.
+Se $b$ é um extremo finito e $f$ é limitada, então o
+\lemmaref{lemma:boundedimpriemann} mostra que não definimos nada de novo.
+A novidade é que podemos aplicar essa definição a funções ilimitadas.
+O conjunto de exemplos a seguir é tão útil que o enunciamos como proposição.
 
-\begin{prop}[$p$-test for integrals]%
-\index{p-test for integrals@$p$-test for integrals}
+\begin{prop}[Teste $p$ para integrais impróprias]%
+\index{teste p para integrais impróprias@$p$-teste para integrais impróprias}
 \label{impropriemann:ptest}
-The improper integral
+A integral imprópria
 \begin{equation*}
 \int_1^\infty \frac{1}{x^p} \,dx
 \end{equation*}
-converges to $\frac{1}{p-1}$ if $p > 1$ and diverges if $0 < p \leq 1$.
+converge para $\frac{1}{p-1}$ se $p > 1$ e diverge se $0 < p \leq 1$.
 
-The improper integral
+A integral imprópria
 \begin{equation*}
 \int_0^1 \frac{1}{x^p} \,dx
 \end{equation*}
-converges to $\frac{1}{1-p}$ if $0 < p < 1$ and diverges if $p \geq 1$.
+converge para $\frac{1}{1-p}$ se $0 < p < 1$ e diverge se $p \geq 1$.
 \end{prop}
 
 \begin{proof}
-The proof follows by application of the
-\hyperref[thm:FTCv1]{fundamental theorem of calculus}.
-Let us do the proof for $p > 1$ for the infinite right endpoint and
-leave the rest to the reader.  Hint: You should handle $p=1$
-separately.
+ A demonstração decorre da aplicação do
+\hyperref[thm:FTCv1]{teorema fundamental do cálculo}.
+Vamos provar o caso $p > 1$ com extremo direito infinito e deixar os demais
+casos a cargo do leitor. Sugestão: trate $p=1$
+separadamente.
 
-Suppose $p > 1$.  Then
-using the fundamental theorem,
+Suponha que $p > 1$. Então, usando o teorema fundamental,
 \begin{equation*}
 \int_1^b \frac{1}{x^p} \,dx
 =
@@ -2711,20 +2656,20 @@ using the fundamental theorem,
 +
 \frac{1}{p-1} .
 \end{equation*}
-As $p > 1$, we have $p-1 > 0$.  Take the limit as $b \to \infty$
-to obtain that $\frac{1}{b^{p-1}}$ goes to 0.  The result follows.
+Como $p > 1$, temos $p-1 > 0$. Tomamos o limite quando $b \to \infty$
+e obtemos $\frac{1}{b^{p-1}} \to 0$. O resultado segue.
 \end{proof}
 
-We state the following proposition on \myquote{tails} for just one type
-of improper integral, though the proof is straightforward
-and the same for other types of improper integrals.
+Enunciamos a proposição a seguir sobre \myquote{caudas} apenas para um tipo
+de integral imprópria, embora a demonstração seja direta e análoga para os
+outros tipos de integrais impróprias.
 
 \begin{prop} \label{impropriemann:tail}
-Let $f \colon [a,\infty) \to \R$ be a function
-that is Riemann integrable on $[a,b]$ for all $b > a$.
-For every $b > a$, the integral
-$\int_b^\infty f$ converges if and only if $\int_a^\infty f$
-converges, in which case
+Seja $f \colon [a,\infty) \to \R$ uma função integrável à Riemann
+em $[a,b]$ para todo $b > a$.
+Para todo $b > a$, a integral
+$\int_b^\infty f$ converge se, e somente se, $\int_a^\infty f$
+converge; nesse caso,
 \begin{equation*}
 \int_a^\infty f
 =
@@ -2734,153 +2679,151 @@ converges, in which case
 \end{prop}
 
 \begin{proof}
-Let $c > b$.  Then
+Seja $c > b$. Então
 \begin{equation*}
 \int_a^c f
 =
 \int_a^b f +
 \int_b^c f .
 \end{equation*}
-Taking the limit $c \to \infty$ finishes the proof.
+Tomar o limite quando $c \to \infty$ conclui a demonstração.
 \end{proof}
 
-Nonnegative functions are easier to work with
-as the following proposition demonstrates.
-The exercises will show that this proposition
-holds only for nonnegative functions.
-Analogues of this proposition
-exist for all the other types of improper integrals and are left to the
-student.
+Funções não negativas são mais fáceis de trabalhar,
+como mostra a proposição a seguir.
+Os exercícios mostrarão que esta proposição
+vale apenas para funções não negativas.
+Existem versões análogas para todos os outros tipos de integrais impróprias;
+elas ficam a cargo do estudante.
 
 \begin{prop} \label{impropriemann:possimp}
-Suppose $f \colon [a,\infty) \to \R$ is nonnegative ($f(x)
-\geq 0$ for all $x$) and
-$f$ is Riemann integrable on $[a,b]$ for all $b > a$.
+Suponha que $f \colon [a,\infty) \to \R$ seja não negativa
+($f(x) \geq 0$ para todo $x$) e integrável à Riemann em $[a,b]$ para todo
+$b > a$.
 \begin{enumerate}[(i)]
 \item 
 \begin{equation*}
 \int_a^\infty f = \sup \left\{ \int_a^x f : x \geq a \right\} .
 \end{equation*}
 \item
-Suppose $\{ x_n \}_{n=1}^\infty$
-is a sequence with $\lim_{n\to\infty} x_n = \infty$.  Then
-$\int_a^\infty f$ converges if and only if $\lim_{n\to\infty} \int_a^{x_n} f$ exists, in
-which case
+Suponha que $\{ x_n \}_{n=1}^\infty$
+seja uma sequência tal que $\lim_{n\to\infty} x_n = \infty$. Então
+$\int_a^\infty f$ converge se, e somente se, existe
+$\lim_{n\to\infty} \int_a^{x_n} f$; nesse caso,
 \begin{equation*}
 \int_a^\infty f = \lim_{n\to\infty} \int_a^{x_n} f .
 \end{equation*}
 \end{enumerate}
 \end{prop}
 
-In the first item we allow for the value of $\infty$ in the
-supremum indicating that the integral diverges to infinity.
+No primeiro item, admitimos que o supremo seja $\infty$,
+o que indica que a integral diverge para infinito.
 
 \begin{proof}
-We start with the first item.
-As $f$ is nonnegative,
-$\int_a^x f$ is increasing as a function of $x$.
-If the supremum is infinite, then for every $M \in \R$
-we find $N$ such that $\int_a^N f \geq M$.  As $\int_a^x f$
-is increasing, $\int_a^x f \geq M$ for all $x \geq N$.  So
-$\int_a^\infty f$ diverges to infinity.
+Começamos pelo primeiro item.
+Como $f$ é não negativa,
+$\int_a^x f$ é crescente em função de $x$.
+Se o supremo é infinito, então, para todo $M \in \R$,
+encontramos $N$ tal que $\int_a^N f \geq M$. Como $\int_a^x f$
+é crescente, $\int_a^x f \geq M$ para todo $x \geq N$. Portanto,
+$\int_a^\infty f$ diverge para infinito.
 
-Next suppose the supremum is finite, say
+Agora suponha que o supremo seja finito e denote
 $A \coloneqq \sup \left\{ \int_a^x f : x \geq a \right\}$.
-For every $\epsilon > 0$, we find an $N$ such that
-$A - \int_a^N f < \epsilon$.  As $\int_a^x f$ is increasing,
-then
-$A - \int_a^x f < \epsilon$ for all $x \geq N$ and hence
-$\int_a^\infty f$ converges to $A$.
+Para todo $\epsilon > 0$, encontramos $N$ tal que
+$A - \int_a^N f < \epsilon$. Como $\int_a^x f$ é crescente,
+temos
+$A - \int_a^x f < \epsilon$ para todo $x \geq N$ e, portanto,
+$\int_a^\infty f$ converge para $A$.
 
-Let us look at the second item.
-If $\int_a^\infty f$ converges, then every sequence $\{ x_n \}_{n=1}^\infty$ going to
-infinity works.  The trick is
-proving the other direction.  Suppose $\{ x_n \}_{n=1}^\infty$ is such that
-$\lim_{n\to\infty} x_n = \infty$ and
+Vejamos o segundo item.
+Se $\int_a^\infty f$ converge, qualquer sequência $\{ x_n \}_{n=1}^\infty$ que tenda a
+infinito serve. O ponto delicado é provar a recíproca.
+Suponha que $\{ x_n \}_{n=1}^\infty$ seja tal que
+$\lim_{n\to\infty} x_n = \infty$ e que
 \begin{equation*}
 \lim_{n\to\infty} \int_a^{x_n} f = A
 \end{equation*}
-converges.  Given $\epsilon > 0$, pick $N$ such that for
-all $n \geq N$, we have
+converge. Dado $\epsilon > 0$, escolha $N$ de modo que, para
+todo $n \geq N$, tenhamos
 $A - \epsilon < \int_a^{x_n} f < A + \epsilon$.
-Because $\int_a^x f$ is increasing as a function of $x$, we have that for all
-$x \geq x_N$
+Como $\int_a^x f$ é crescente em função de $x$, para todo
+$x \geq x_N$ temos
 \begin{equation*}
 A - \epsilon < \int_a^{x_N} f \leq \int_a^x f .
 \end{equation*}
-As $\{ x_n \}_{n=1}^\infty$ goes to $\infty$, we have that for any 
-$x$, there is an $x_m$ such that $m \geq N$ and $x \leq x_m$.  Then
+Como $\{ x_n \}_{n=1}^\infty$ tende a $\infty$, para todo $x$
+existe $x_m$ tal que $m \geq N$ e $x \leq x_m$. Então
 \begin{equation*}
 \int_a^{x} f \leq \int_a^{x_m} f < A + \epsilon .
 \end{equation*}
-In particular, for all $x \geq x_N$, we have
+Em particular, para todo $x \geq x_N$, temos
 $\abs{\int_a^{x} f - A} < \epsilon$.
 \end{proof}
 
-\begin{prop}[Comparison test for improper integrals]%
-\index{comparison test for improper integrals}
-Let
-$f \colon [a,\infty) \to \R$ and
-$g \colon [a,\infty) \to \R$ be functions
-that are Riemann integrable on $[a,b]$ for all $b > a$.   Suppose
-that for all $x \geq a$,
+\begin{prop}[Teste da comparação para integrais impróprias]%
+\index{teste da comparação para integrais impróprias}
+Sejam
+$f \colon [a,\infty) \to \R$ e
+$g \colon [a,\infty) \to \R$ funções
+integráveis à Riemann em $[a,b]$ para todo $b > a$. Suponha
+que, para todo $x \geq a$,
 \begin{equation*}
 \babs{f(x)} \leq g(x) .
 \end{equation*}
 \begin{enumerate}[(i)]
-\item If $\int_a^\infty g$ converges, then $\int_a^\infty f$ converges,
-and in this case 
+\item Se $\int_a^\infty g$ converge, então $\int_a^\infty f$ converge,
+e, nesse caso,
 $\abs{\int_a^\infty f} \leq \int_a^\infty g$.
-\item If $\int_a^\infty f$ diverges, then $\int_a^\infty g$ diverges.
+\item Se $\int_a^\infty f$ diverge, então $\int_a^\infty g$ diverge.
 \end{enumerate}
 \end{prop}
 
 \begin{proof}
-We start with the first item.
-For every $b$ and $c$, such that $a \leq b \leq c$, we have 
-$-g(x) \leq f(x) \leq g(x)$, and so
+Começamos pelo primeiro item.
+Para quaisquer $b$ e $c$ tais que $a \leq b \leq c$, temos
+$-g(x) \leq f(x) \leq g(x)$ e, portanto,
 \begin{equation*}
 \int_b^c -g \leq \int_b^c f \leq \int_b^c g  .
 \end{equation*}
-In other words, $\abs{\int_b^c f} \leq \int_b^c g$.
+Em outras palavras, $\abs{\int_b^c f} \leq \int_b^c g$.
 
-Let $\epsilon > 0$ be given.  Because
-of \propref{impropriemann:tail},
+Seja $\epsilon > 0$. Pela
+\propref{impropriemann:tail},
 \begin{equation*}
 \int_a^\infty g =
 \int_a^b g +
 \int_b^\infty g .
 \end{equation*}
-As $\int_a^b g$ goes to
-$\int_a^\infty g$ as $b$ goes to infinity,
-$\int_b^\infty g$ goes to 0 as $b$ goes to infinity.  Choose $B$
-such that
+Como $\int_a^b g$ converge a
+$\int_a^\infty g$ quando $b$ tende a infinito,
+$\int_b^\infty g$ tende a 0 quando $b$ tende a infinito. Escolha $B$
+tal que
 \begin{equation*}
 \int_B^\infty g < \epsilon .
 \end{equation*}
-As $g$ is nonnegative, if $B \leq b < c$, then
-$\int_b^c g < \epsilon$ as well.
-Let $\{ x_n \}_{n=1}^\infty$ be a sequence going to infinity.  Let $M$ be such that
-$x_n \geq B$ for all $n \geq M$.  Take $n, m \geq M$,
-with $x_n \leq x_m$,
+Como $g$ é não negativa, se $B \leq b < c$, então
+$\int_b^c g < \epsilon$ também.
+Seja $\{ x_n \}_{n=1}^\infty$ uma sequência que tende a infinito. Seja $M$ tal que
+$x_n \geq B$ para todo $n \geq M$. Tomemos $n,m \geq M$,
+com $x_n \leq x_m$.
 \begin{equation*}
 \abs{\int_a^{x_m} f - \int_a^{x_n} f} 
 =
 \abs{\int_{x_n}^{x_m} f} 
 \leq \int_{x_n}^{x_m} g < \epsilon .
 \end{equation*}
-Therefore, the sequence $\bigl\{ \int_a^{x_n} f \bigr\}_{n=1}^\infty$ is Cauchy and hence converges.
+Portanto, a sequência $\bigl\{ \int_a^{x_n} f \bigr\}_{n=1}^\infty$ é de Cauchy e, logo, converge.
 
-We need to show that the limit is unique.  Suppose $\{ x_n \}_{n=1}^\infty$ is a sequence
-converging to infinity such that
-$\bigl\{ \int_a^{x_n} f \bigr\}_{n=1}^\infty$ converges to $L_1$, and $\{
-y_n \}_{n=1}^\infty$ is a sequence
-converging to infinity such that
-$\bigl\{ \int_a^{y_n} f \bigr\}_{n=1}^\infty$ converges to $L_2$.  Then there must be some $n$ such
-that
-$\babs{\int_a^{x_n} f - L_1} < \epsilon$ and 
-$\babs{\int_a^{y_n} f - L_2} < \epsilon$.  We can also suppose $x_n \geq B$
-and $y_n \geq B$.  Then
+Precisamos mostrar que o limite é único. Suponha que $\{ x_n \}_{n=1}^\infty$ seja uma sequência
+que tende a infinito e tal que
+$\bigl\{ \int_a^{x_n} f \bigr\}_{n=1}^\infty$ converge a $L_1$, e que $\{y_n\}_{n=1}^\infty$ seja uma sequência
+que tende a infinito e tal que
+$\bigl\{ \int_a^{y_n} f \bigr\}_{n=1}^\infty$ converge a $L_2$. Então existe algum $n$ tal
+que
+$\babs{\int_a^{x_n} f - L_1} < \epsilon$ e
+$\babs{\int_a^{y_n} f - L_2} < \epsilon$. Também podemos supor que $x_n \geq B$
+e $y_n \geq B$. Então
 \begin{equation*}
 \sabs{L_1 - L_2} \leq
 \abs{L_1 - \int_a^{x_n} f}
@@ -2897,24 +2840,24 @@ and $y_n \geq B$.  Then
 <
 3 \epsilon.
 \end{equation*}
-As $\epsilon > 0$ was arbitrary, $L_1 = L_2$, and hence
-$\int_a^\infty f$ converges.
-Above we have shown that $\abs{\int_a^c f} \leq \int_a^c g$ for all $c > a$.
-By taking the limit $c \to \infty$, the first item is proved.
+Como $\epsilon > 0$ era arbitrário, $L_1 = L_2$ e, portanto,
+$\int_a^\infty f$ converge.
+Acima mostramos que $\abs{\int_a^c f} \leq \int_a^c g$ para todo $c > a$.
+Tomando o limite quando $c \to \infty$, provamos o primeiro item.
 
-The second item is simply a contrapositive of the first item.
+O segundo item é simplesmente a contrapositiva do primeiro.
 \end{proof}
 
 \begin{example}
-The improper integral
+A integral imprópria
 \begin{equation*}
 \int_0^\infty \frac{\sin(x^2)(x+2)}{x^3+1} \,dx
 \end{equation*}
-converges.
+converge.
 
-Proof:  Observe we simply need to show
-that the integral converges when going from 1 to infinity.
-For $x \geq 1$ we obtain
+Demonstração: observe que basta mostrar
+que a integral converge de 1 até infinito.
+Para $x \geq 1$, obtemos
 \begin{equation*}
 \abs{\frac{\sin(x^2)(x+2)}{x^3+1}}
 \leq
@@ -2922,7 +2865,7 @@ For $x \geq 1$ we obtain
 \leq \frac{x+2}{x^3} \leq
 \frac{x+2x}{x^3} \leq \frac{3}{x^2} .
 \end{equation*}
-Then
+Então
 \begin{equation*}
 \int_1^\infty \frac{3}{x^2}\,dx
 =
@@ -2932,28 +2875,28 @@ Then
 =
 3 .
 \end{equation*}
-So using the comparison test and the tail test, the original
-integral converges.
+Portanto, pelo teste da comparação e pelo teste das caudas, a integral
+original converge.
 \end{example}
 
 \begin{example}
-You should be careful when doing formal manipulations with improper
-integrals.
-The integral
+É preciso ter cuidado ao fazer manipulações formais com integrais
+impróprias.
+A integral
 \begin{equation*}
 \int_2^\infty \frac{2}{x^2-1}\,dx
 \end{equation*}
-converges via the comparison test using $\nicefrac{1}{x^2}$ again.  However, if you
-succumb to the temptation to write
+converge pelo teste da comparação, usando novamente $\nicefrac{1}{x^2}$.
+No entanto, se você ceder à tentação de escrever
 \begin{equation*}
 \frac{2}{x^2-1} = 
 \frac{1}{x-1}
 -
 \frac{1}{x+1} 
 \end{equation*}
-and try to integrate each part separately, you will not succeed.
-It is \emph{not} true that you can split the improper
-integral in two; you cannot split the limit.
+e tentar integrar cada parcela separadamente, não conseguirá.
+\emph{Não} é verdade que se possa separar a integral imprópria
+em duas; não se pode separar o limite.
 \begin{equation*}
 \begin{split}
 \int_2^\infty \frac{2}{x^2-1} \,dx &=
@@ -2973,40 +2916,38 @@ integral in two; you cannot split the limit.
 \int_2^\infty \frac{1}{x+1}\,dx .
 \end{split}
 \end{equation*}
-The last line in the computation does not even make sense.  Both of the
-integrals diverge to infinity, since we can
-apply the comparison test appropriately with
-$\nicefrac{1}{x}$.  We get $\infty - \infty$.
+A última linha do cálculo nem sequer faz sentido. Ambas as integrais
+divergem para infinito, pois podemos aplicar adequadamente o teste da
+comparação com $\nicefrac{1}{x}$. Obtemos $\infty - \infty$.
 \end{example}
 
-Now suppose we need to take limits at both endpoints.
+Agora suponha que precisamos tomar limites em ambos os extremos.
 
 \begin{defn}
-Suppose $f \colon (a,b) \to \R$ is a function
-that is Riemann integrable on $[c,d]$ for all $c$, $d$
-such that $a < c < d < b$, then we define
+Suponha que $f \colon (a,b) \to \R$ seja uma função
+integrável à Riemann em $[c,d]$ para todos $c,d$
+tais que $a < c < d < b$. Então definimos
 \begin{equation*}
 \int_a^b f \coloneqq \lim_{c \to a^+} \, \lim_{d \to b^-} \, \int_{c}^{d} f
 \end{equation*}
-if the limits exist.
+se os limites existirem.
 
-Suppose $f \colon \R \to \R$ is a function such that
-$f$ is Riemann integrable on all bounded intervals $[a,b]$.  Then
-we define
+Suponha que $f \colon \R \to \R$ seja uma função integrável à Riemann
+em todos os intervalos limitados $[a,b]$. Então definimos
 \begin{equation*}
 \int_{-\infty}^\infty f \coloneqq \lim_{c \to -\infty} \, \lim_{d \to \infty} \, \int_c^d f
 \end{equation*}
-if the limits exist.
+se os limites existirem.
 
-We similarly define improper integrals with one infinite and one finite
-improper endpoint.  We leave this definition to the reader.
+Definimos de modo semelhante integrais impróprias com um extremo impróprio
+infinito e outro finito. Deixamos essa definição a cargo do leitor.
 \end{defn}
 
-One ought to always be careful about double limits.  The definition
-given above says that we first take the limit as $d$ goes to $b$ or
-$\infty$ for a fixed $c$, and then we take the limit in $c$.
-We will have to prove that in this case it does not matter which limit
-we compute first.
+É preciso sempre ter cuidado com limites duplos. A definição acima
+estabelece que primeiro tomamos o limite quando $d$ tende a $b$ ou
+$\infty$, com $c$ fixo, e depois tomamos o limite em $c$.
+Precisaremos provar que, neste caso, não importa qual limite
+calculamos primeiro.
 
 \begin{example}
 \begin{equation*}
@@ -3022,27 +2963,26 @@ we compute first.
 \end{equation*}
 \end{example}
 
-In the definition, the order of the limits can always be switched if they
-exist.  Let us state and prove this fact only for the limits at infinity.
+Na definição, a ordem dos limites sempre pode ser trocada, desde que existam.
+Enunciemos e provemos esse fato apenas para limites no infinito.
 
 \begin{prop}
-Suppose $f \colon \R \to \R$ is integrable on every bounded interval
+Suponha que $f \colon \R \to \R$ seja integrável em todo intervalo limitado
 $[a,b]$.
-Then 
+Então
 \begin{equation*}
 \lim_{a \to -\infty} \, \lim_{b \to \infty} \, \int_a^b f
-\quad \text{converges} \qquad \text{if and only if} \qquad
+\quad \text{converge} \qquad \text{se, e somente se,} \qquad
 \lim_{b \to \infty}
 \,
 \lim_{a \to -\infty}
 \,
 \int_a^b f
 \quad
-\text{converges,}
+\text{converge,}
 \end{equation*}
-in which case the two
-expressions are equal.  If either of the
-expressions converges, then the improper integral converges and
+Nesse caso, as duas expressões são iguais. Se uma delas converge,
+então a integral imprópria converge e
 \begin{equation*}
 \lim_{a\to\infty}
 \int_{-a}^a f
@@ -3052,8 +2992,8 @@ expressions converges, then the improper integral converges and
 \end{prop}
 
 \begin{proof}
-Without loss of generality, assume $a < 0$ and $b > 0$.  Suppose
-the first expression converges.  Then
+Sem perda de generalidade, suponha que $a < 0$ e $b > 0$. Suponha
+que a primeira expressão convirja. Então
 \begin{equation*}
 \begin{split}
 \lim_{a \to -\infty} \, \lim_{b \to \infty} \, \int_a^b f
@@ -3094,9 +3034,9 @@ the first expression converges.  Then
 \right)  .
 \end{split}
 \end{equation*}
-Similar computation shows the other direction.  Therefore, if
-either expression converges, then the improper integral converges
-and
+Cálculo semelhante mostra a outra implicação. Portanto, se
+uma das expressões converge, então a integral imprópria converge
+e
 \begin{multline*}
 \int_{-\infty}^\infty f
 =
@@ -3136,10 +3076,10 @@ and
 \end{proof}
 
 \begin{example}
-On the other hand, you must be careful to
-take the limits independently before you know convergence.  Let
-$f(x) = \frac{x}{\sabs{x}}$ for $x \neq 0$ and $f(0) = 0$.
-If $a < 0$ and $b > 0$, then
+Por outro lado, é preciso tomar os limites independentemente antes de saber
+se há convergência. Seja
+$f(x) = \frac{x}{\sabs{x}}$ para $x \neq 0$ e $f(0) = 0$.
+Se $a < 0$ e $b > 0$, então
 \begin{equation*}
 \int_{a}^b f
 =
@@ -3149,16 +3089,16 @@ If $a < 0$ and $b > 0$, then
 =
 a+b .
 \end{equation*}
-For every fixed $a < 0$, the limit as $b \to \infty$ is infinite.
-So even the first limit does not exist,
-and the improper integral $\int_{-\infty}^\infty f$ does not converge.
-On the other hand, if $a > 0$, then
+Para cada $a < 0$ fixo, o limite quando $b \to \infty$ é infinito.
+Assim, nem sequer o primeiro limite existe,
+e a integral imprópria $\int_{-\infty}^\infty f$ não converge.
+Por outro lado, se $a > 0$, então
 \begin{equation*}
 \int_{-a}^{a} f
 =
 (-a)+a = 0 .
 \end{equation*}
-Therefore,
+Portanto,
 \begin{equation*}
 \lim_{a\to\infty}
 \int_{-a}^{a} f
@@ -3167,54 +3107,52 @@ Therefore,
 \end{example}
 
 \begin{example}
-An example to keep in mind for improper integrals
-is the \emph{\myindex{sinc function}}%
-\footnote{Shortened from Latin: \emph{sinus cardinalis}}.
-This function comes up quite often
-in both pure and applied mathematics.  Define
+Um exemplo importante de integral imprópria é a
+\emph{\myindex{função sinc}}%
+\footnote{Forma abreviada do latim: \emph{sinus cardinalis}}.
+Essa função aparece com frequência tanto na matemática pura
+quanto na aplicada. Defina
 \begin{equation*}
 \operatorname{sinc}(x) \coloneqq
 \begin{cases}
-\frac{\sin(x)}{x} & \text{if } x \neq 0 , \\
-1 & \text{if } x = 0 .
+\frac{\sin(x)}{x} & \text{se } x \neq 0 , \\
+1 & \text{se } x = 0 .
 \end{cases}
 \end{equation*}
 \begin{myfigureht}
 \myincludegraphics{sincfig}{%
-A graph of the sinc function on the interval from minus 4 pi to 4 pi.
-It oscillates sort of like the sine function to the right
-of the origin, and sort of like minus sine to the left of the
-origin.  The root at the origin disappears and the function is simply 1
-at the origin.  The oscillations quickly get smaller and smaller
-as we go away from the origin.  The function is clearly even.}
-\caption{The sinc function.\label{figsinc}}
+Gráfico da função sinc no intervalo de menos quatro pi a quatro pi.
+À direita da origem, ela oscila de modo semelhante à função seno; à esquerda,
+de modo semelhante ao seno negativo. O zero na origem desaparece, e a função
+vale simplesmente 1 nesse ponto. As oscilações diminuem rapidamente
+à medida que nos afastamos da origem. A função é claramente par.}
+\caption{A função sinc.\label{figsinc}}
 \end{myfigureht}
 
-It is not difficult to show that
-the sinc function is continuous at zero, but that is
-not important right now.  What is important is that
+Não é difícil mostrar que
+a função sinc é contínua em zero, mas isso não é importante agora.
+O que importa é que
 \begin{equation*}
 \int_{-\infty}^\infty \operatorname{sinc}(x) \,dx = \pi ,
 \qquad \text{while} \qquad
 \int_{-\infty}^\infty \babs{\operatorname{sinc}(x)} \,dx = \infty .
 \end{equation*}
-The integral of the sinc function is a continuous analogue of the
-alternating harmonic series $\sum_{n=1}^\infty \nicefrac{{(-1)}^n}{n}$, while the
-absolute value is like the regular harmonic series $\sum_{n=1}^\infty \nicefrac{1}{n}$.
-In particular, the fact that the integral converges must be done directly
-rather than using the comparison test.
+A integral da função sinc é um análogo contínuo da série harmônica alternada
+$\sum_{n=1}^\infty \nicefrac{{(-1)}^n}{n}$, enquanto o valor absoluto se
+assemelha à série harmônica usual $\sum_{n=1}^\infty \nicefrac{1}{n}$.
+Em particular, a convergência da integral deve ser provada diretamente,
+e não pelo teste da comparação.
 
-We will not prove the first statement exactly.  Let us simply prove
-that the integral of the sinc function converges, but we will not worry
-about the exact limit.  Because $\frac{\sin(-x)}{-x} = \frac{\sin(x)}{x}$, it is
-enough to show that
+Não provaremos exatamente a primeira afirmação. Vamos apenas mostrar
+que a integral da função sinc converge, sem nos preocupar com o limite
+exato. Como $\frac{\sin(-x)}{-x} = \frac{\sin(x)}{x}$, basta mostrar que
 \begin{equation*}
 \int_{2\pi}^\infty \frac{\sin(x)}{x}\,dx
 \end{equation*}
-converges.  We
-also avoid $x=0$ this way to make our life simpler.
+converge. Assim,
+também evitamos $x=0$ e simplificamos o argumento.
 
-For every $n \in \N$, we have that for $x \in [\pi 2n, \pi (2n+1)]$,
+Para todo $n \in \N$ e $x \in [\pi 2n, \pi (2n+1)]$,
 \begin{equation*}
 \frac{\sin(x)}{\pi (2n+1)}
 \leq
@@ -3222,7 +3160,7 @@ For every $n \in \N$, we have that for $x \in [\pi 2n, \pi (2n+1)]$,
 \leq
 \frac{\sin(x)}{\pi 2n} ,
 \end{equation*}
-as $\sin(x) \geq 0$.  For $x \in [\pi (2n+1), \pi (2n+2)]$,
+pois $\sin(x) \geq 0$. Para $x \in [\pi (2n+1), \pi (2n+2)]$,
 \begin{equation*}
 \frac{\sin(x)}{\pi (2n+1)}
 \leq
@@ -3230,9 +3168,9 @@ as $\sin(x) \geq 0$.  For $x \in [\pi (2n+1), \pi (2n+2)]$,
 \leq
 \frac{\sin(x)}{\pi (2n+2)} ,
 \end{equation*}
-as $\sin(x) \leq 0$.
+pois $\sin(x) \leq 0$.
 
-Via the fundamental theorem of calculus,
+Pelo teorema fundamental do cálculo,
 \begin{equation*}
 %mbxlatex \begin{aligned}
 \frac{2}{\pi (2n+1)}
@@ -3255,7 +3193,7 @@ Via the fundamental theorem of calculus,
 \frac{1}{\pi n} .
 %mbxlatex \end{aligned}
 \end{equation*}
-Similarly,
+De modo semelhante,
 \begin{equation*}
 \frac{-2}{\pi (2n+1)}
 \leq
@@ -3265,7 +3203,7 @@ Similarly,
 \leq
 \frac{-1}{\pi (n+1)} .
 \end{equation*}
-Adding the two together we find
+Somando as duas desigualdades, obtemos
 \begin{equation*}
 %mbxlatex \begin{aligned}
 0
@@ -3288,36 +3226,29 @@ Adding the two together we find
 \frac{1}{\pi n(n+1)} .
 %mbxlatex \end{aligned}
 \end{equation*}
-See \figureref{fig:sincbound}.
+Veja a \figureref{fig:sincbound}.
 \begin{myfigureht}
 \myincludegraphics{sincbound}{%
-A graph of several functions on the interval
-from pi times 2 n to pi times quantity 2 n plus 2
-is shown.  They all look like a sine wave that is losing amplitude.
-A dark bold line is the function sine of x all over x
-graphed over the entire interval.
-Like all the other functions it is zero at the left-hand endpoint,
-the right-hand endpoint and the middle point pi times quantity 2 n
-plus 1.  A dotted line on the first subinterval (the left half) 
-very close to and below the solid line denotes the
-function sine of x all over quantity pi times quantity 2 n plus 1.
-A dashed line over the first subinterval very close to and above
-the solid line denotes the function sine of x over quantity pi 2 n.
-The area between the dashed line and the x-axis over the first
-subinterval is shaded.
-On the right half of the interval, a dotted line denotes
-the same function as before, and again it is below the solid line.
-A dash-dotted line that is slightly above the solid line
-now denotes the function sine of x all over quantity pi times
-quantity 2 n plus 2.  The area above the dash-dotted line is shaded.}
-\caption{Bound of $\int_{2\pi n}^{2\pi (n+1)} \frac{\sin(x)}{x} \,dx$ using
-the shaded integral (signed area
-$\frac{1}{\pi n} 
-+
-\frac{-1}{\pi (n+1)}$).\label{fig:sincbound}}
+O gráfico mostra várias funções no intervalo de 2 pi n a 2 pi vezes (n+1);
+todas se parecem com ondas senoidais de amplitude decrescente.
+Uma linha escura e espessa representa a função seno de x dividido por x em
+todo o intervalo.
+Como as demais funções, ela vale zero nos extremos do intervalo e no ponto
+central pi vezes (2n+1). No primeiro subintervalo (a metade à esquerda), uma
+linha pontilhada, muito próxima e abaixo da linha contínua, representa o seno
+de x dividido por pi vezes (2n+1). Uma linha tracejada, muito próxima e acima
+da linha contínua, representa o seno de x dividido por 2 pi n. A área entre
+essa linha tracejada e o eixo x no primeiro subintervalo está sombreada. Na metade à direita, uma
+linha pontilhada representa a mesma função de antes e, novamente, fica abaixo
+da linha contínua. Uma linha traço-ponto, ligeiramente acima da linha
+contínua, representa o seno de x dividido por pi vezes (2n+2); a área acima
+dela está sombreada.}
+\caption{Estimativa de $\int_{2\pi n}^{2\pi (n+1)} \frac{\sin(x)}{x} \,dx$
+usando as áreas sombreadas (área com sinal
+$\frac{1}{\pi n} + \frac{-1}{\pi(n+1)}$).\label{fig:sincbound}}
 \end{myfigureht}
 
-For $k \in \N$, 
+Para $k \in \N$,
 \begin{equation*}
 \int_{2\pi}^{2k\pi} \frac{\sin(x)}{x} \,dx
 =
@@ -3327,11 +3258,9 @@ For $k \in \N$,
 \sum_{n=1}^{k-1}
 \frac{1}{\pi n(n+1)} .
 \end{equation*}
-We find the partial sums of a series with positive terms.
-The series
-converges as
-$\sum_{n=1}^\infty \frac{1}{\pi n (n+1)}$ is a convergent series.  Thus
-as a sequence,
+Consideramos as somas parciais de uma série com termos positivos.
+A série converge, pois
+$\sum_{n=1}^\infty \frac{1}{\pi n (n+1)}$ é convergente. Portanto, como sequência,
 \begin{equation*}
 \lim_{k\to \infty} \int_{2\pi}^{2k\pi} \frac{\sin(x)}{x} \,dx
 =L \leq
@@ -3339,18 +3268,18 @@ as a sequence,
 \frac{1}{\pi n(n+1)} < \infty .
 \end{equation*}
 
-Let $M > 2\pi$ be arbitrary, and let $k \in \N$
-be the largest integer such that $2k\pi \leq M$.
-For $x \in [2k\pi,M]$, we have 
-$\frac{-1}{2k\pi} \leq \frac{\sin(x)}{x} \leq \frac{1}{2k\pi}$, and so
+Seja $M > 2\pi$ arbitrário e seja $k \in \N$
+o maior inteiro tal que $2k\pi \leq M$.
+Para $x \in [2k\pi,M]$, temos
+$\frac{-1}{2k\pi} \leq \frac{\sin(x)}{x} \leq \frac{1}{2k\pi}$, portanto
 \begin{equation*}
 \abs{\int_{2k\pi}^{M} \frac{\sin(x)}{x} \,dx }  \leq
 \frac{M-2k\pi}{2k\pi} \leq \frac{1}{k} .
 \end{equation*}
-As $k$ is the largest $k$ such that $2k\pi \leq M$,
-then as $M\in \R$ goes to infinity, so does $k \in \N$.
+Como $k$ é o maior inteiro tal que $2k\pi \leq M$,
+quando $M\in \R$ tende a infinito, $k \in \N$ também tende a infinito.
 
-Then
+Então
 \begin{equation*}
 \int_{2\pi}^M \frac{\sin(x)}{x}\,dx
 =
@@ -3358,39 +3287,35 @@ Then
 +
 \int_{2k\pi}^{M} \frac{\sin(x)}{x} \,dx .
 \end{equation*}
-As $M$ goes to infinity,
-the first term on the
-right-hand side goes to $L$,
-and the second term on the
-right-hand side
-goes to zero.  Hence,
+Quando $M$ tende a infinito, o primeiro termo do lado direito tende a $L$
+e o segundo tende a zero. Portanto,
 \begin{equation*}
 \int_{2\pi}^\infty \frac{\sin(x)}{x} \,dx = L .
 %\leq \sum_{n=1}^{\infty}
 %\frac{1}{\pi n(n+1)} < \infty .
 \end{equation*}
 
-The double-sided integral of sinc also exists as noted above.
-We leave the other statement---that the integral
-of the absolute value of the sinc function diverges---as an exercise.
+Como observamos acima, a integral bilateral da função sinc também existe.
+Deixamos como exercício a outra afirmação: a integral
+do valor absoluto da função sinc diverge.
 \end{example}
 
-\subsection{Integral test for series}
+\subsection{Teste da integral para séries}
 
-The fundamental theorem 
-of calculus can be used in proving a series is summable and to estimate its sum.
+O teorema fundamental do cálculo pode ser usado para provar a convergência
+de uma série e estimar sua soma.
 
-\begin{prop}[Integral test]\index{integral test for series}
-Suppose $f \colon [k,\infty) \to \R$ is a decreasing nonnegative
-function where $k \in \Z$.  Then
+\begin{prop}[Teste da integral]\index{teste da integral para séries}
+Suponha que $f \colon [k,\infty) \to \R$ seja uma função não negativa e
+decrescente, com $k \in \Z$. Então
 \begin{equation*}
 \sum_{n=k}^\infty f(n)
-\quad \text{converges} \qquad \text{if and only if}
+\quad \text{converge} \qquad \text{se, e somente se,}
 \qquad
 \int_k^\infty f
-\quad \text{converges}.
+\quad \text{converge}.
 \end{equation*}
-In this case 
+Nesse caso,
 \begin{equation*}
 \int_k^\infty f
 \leq
@@ -3400,31 +3325,27 @@ f(k)+
 \int_k^\infty f .
 \end{equation*}
 \end{prop}
-See \figureref{fig:integraltest}, for an illustration with $k=1$.
-By \propref{prop:monotoneintegrable},
-$f$ is integrable
-on every interval $[k,b]$ for all $b > k$, so the statement of the theorem
-makes sense without additional hypotheses of integrability.
+Veja na \figureref{fig:integraltest} uma ilustração com $k=1$.
+Pela \propref{prop:monotoneintegrable}, $f$ é integrável em todo intervalo
+$[k,b]$, para qualquer $b>k$; portanto, o enunciado do teorema faz sentido
+sem hipóteses adicionais de integrabilidade.
 \begin{myfigureht}
 \myincludegraphics{integraltest}{%
-A diagram of the Darboux rectangles for a decreasing
-function starting at x equals 1 and going in intervals
-of 1 until x equals 10 on the right.  As the function
-is decreasing, we notice that the function graph goes through
-the top left corner of the entire rectangle and also the top
-right corner of the shaded rectangle.}
-\caption{The area under the curve, 
-$\int_1^\infty f$, is bounded below
-by the area of the shaded rectangles,
-$f(2)+f(3)+f(4)+\cdots$, and bounded above
-by the area of the entire rectangles, both the shaded and unshaded parts,
+Diagrama dos retângulos de Darboux para uma função decrescente: começa em
+começa em x igual a 1 e avança em intervalos de comprimento 1 até x igual a
+10, à direita. Como a
+função é decrescente, seu gráfico passa pelo canto superior esquerdo de cada
+retângulo completo e pelo canto superior direito de cada retângulo sombreado.}
+\caption{A área sob a curva, $\int_1^\infty f$, é limitada inferiormente
+pela área dos retângulos sombreados, $f(2)+f(3)+f(4)+\cdots$, e
+superiormente pela área de todos os retângulos, sombreados ou não,
 $f(1)+f(2)+f(3)+\cdots$.\label{fig:integraltest}}
 \end{myfigureht}
 
 \begin{proof}
-Let $\ell, m \in \Z$ be such that $m > \ell \geq k$.
-Because $f$ is decreasing, we have
-$\int_{n}^{n+1} f \leq f(n) \leq \int_{n-1}^{n} f$.  Therefore,
+Sejam $\ell,m \in \Z$ tais que $m>\ell\geq k$.
+Como $f$ é decrescente, temos
+$\int_{n}^{n+1} f \leq f(n) \leq \int_{n-1}^{n} f$. Portanto,
 \begin{equation} \label{impropriemann:eqseries}
 \int_\ell^m f
 =
@@ -3439,53 +3360,49 @@ f(\ell)+
 \int_\ell^{m-1} f .
 \end{equation}
 
-Suppose first that $\int_k^\infty f$ converges and
-let $\epsilon > 0$ be given.
-As before, since $f$ is positive, there exists
-an $L \in \N$ such that if $\ell \geq L$, then
-$\int_\ell^{m} f < \nicefrac{\epsilon}{2}$ for all $m \geq \ell$.
-The function 
-$f$ must decrease to zero (why?), so make $L$ large enough so that
-for $\ell \geq L$, we have $f(\ell) < \nicefrac{\epsilon}{2}$.
-Thus, for $m > \ell \geq L$, we have
-via \eqref{impropriemann:eqseries},
+Suponha primeiro que $\int_k^\infty f$ converge e seja dado $\epsilon>0$.
+Como antes, sendo $f$ não negativa, existe $L\in\N$ tal que, se $\ell\geq L$,
+então $\int_\ell^m f < \nicefrac{\epsilon}{2}$ para todo $m\geq\ell$.
+A função $f$ deve tender a zero (por quê?); assim, podemos escolher $L$
+suficientemente grande para que $f(\ell)<\nicefrac{\epsilon}{2}$ quando
+$\ell\geq L$. Logo, para $m>\ell\geq L$, por
+\eqref{impropriemann:eqseries},
 \begin{equation*}
 \sum_{n=\ell}^{m} f(n)
 \leq
 f(\ell)+
 \int_\ell^{m} f < \nicefrac{\epsilon}{2} + \nicefrac{\epsilon}{2} = \epsilon .
 \end{equation*}
-The series is therefore Cauchy and thus converges.  The estimate in the
-proposition is obtained by letting $m$ go to infinity in
-\eqref{impropriemann:eqseries} with $\ell = k$.
+Portanto, a série satisfaz o critério de Cauchy e converge. Obtemos as estimativas da
+proposição fazendo $m$ tender a infinito em \eqref{impropriemann:eqseries},
+com $\ell=k$.
 
-Conversely, suppose $\int_k^\infty f$ diverges.  
-As $f$ is positive, by \propref{impropriemann:possimp},
-the sequence $\{ \int_k^m f \}_{m=k}^\infty$ diverges to infinity.
-Using
-\eqref{impropriemann:eqseries} with $\ell = k$, we find
+Reciprocamente, suponha que $\int_k^\infty f$ diverge.
+Como $f$ é não negativa, pela \propref{impropriemann:possimp},
+a sequência $\{\int_k^m f\}_{m=k}^\infty$ diverge para infinito.
+Usando \eqref{impropriemann:eqseries} com $\ell=k$, obtemos
 \begin{equation*}
 \int_k^m f
 \leq
 \sum_{n=k}^{m-1} f(n) .
 \end{equation*}
-As the left-hand side goes to infinity as $m \to \infty$, so does the
-right-hand side.
+Como o lado esquerdo tende a infinito quando $m\to\infty$, o lado direito
+também tende a infinito.
 \end{proof}
 
 \begin{example}
-The integral test can be used not only to show that a series converges, but to
-estimate its sum to arbitrary precision.
-Let us show $\sum_{n=1}^\infty \frac{1}{n^2}$ exists and
-estimate its sum to within 0.01.  As this series is the $p$-series for
-$p=2$, we already proved it converges (let us pretend we do not know that),
-but we only roughly estimated its sum.
+O teste da integral pode ser usado não apenas para mostrar que uma série
+converge, mas também para estimar sua soma com precisão arbitrária.
+Vamos mostrar que $\sum_{n=1}^\infty \frac{1}{n^2}$ converge e estimar sua
+soma com erro de, no máximo, 0,01. Como essa é a série $p$ para $p=2$, já
+provamos sua convergência (vamos fingir que não sabemos disso), mas estimamos
+sua soma apenas de modo grosseiro.
 
-The fundamental theorem of calculus says that for all $k \in \N$,
+O teorema fundamental do cálculo garante que, para todo $k\in\N$,
 \begin{equation*}
 \int_{k}^\infty \frac{1}{x^2}\,dx = \frac{1}{k} .
 \end{equation*}
-In particular, the series must converge.  But we also have
+Em particular, a série converge. Além disso,
 \begin{equation*}
 \frac{1}{k} = \int_k^\infty \frac{1}{x^2}\,dx
 \leq
@@ -3499,7 +3416,7 @@ In particular, the series must converge.  But we also have
 +
 \frac{1}{k} .
 \end{equation*}
-Adding the partial sum up to $k-1$ we get
+Somando a soma parcial até $k-1$, obtemos
 \begin{equation*}
 \frac{1}{k} + \sum_{n=1}^{k-1} \frac{1}{n^2}
 \leq
@@ -3509,11 +3426,10 @@ Adding the partial sum up to $k-1$ we get
 +
 \frac{1}{k} + \sum_{n=1}^{k-1} \frac{1}{n^2} .
 \end{equation*}
-In other words,
-$\nicefrac{1}{k} + \sum_{n=1}^{k-1} \nicefrac{1}{n^2}$ is an estimate for
-the sum to within $\nicefrac{1}{k^2}$.  Therefore, if we wish to
-find the sum to within 0.01, we note $\nicefrac{1}{{10}^2} = 0.01$.  We
-obtain
+Em outras palavras, $\nicefrac{1}{k} + \sum_{n=1}^{k-1} \nicefrac{1}{n^2}$
+é uma estimativa da soma com erro de, no máximo, $\nicefrac{1}{k^2}$.
+Portanto, se quisermos determinar a soma com erro de, no máximo, 0,01,
+observamos que $\nicefrac{1}{{10}^2}=0{,}01$. Assim, obtemos
 \begin{equation*}
 1.6397\ldots
 \approx
@@ -3527,125 +3443,120 @@ obtain
 \approx
 1.6497\ldots .
 \end{equation*}
-The actual sum is $\nicefrac{\pi^2}{6} \approx 1.6449\ldots$. 
+O valor exato da soma é $\nicefrac{\pi^2}{6} \approx 1.6449\ldots$.
 \end{example}
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
 \begin{exercise}
-Finish the proof of \propref{impropriemann:ptest}.
+Conclua a demonstração da \propref{impropriemann:ptest}.
 \end{exercise}
 
 \begin{exercise}
-Find out for which $a \in \R$ does $\sum_{n=1}^\infty e^{an}$ converge.
-When the series converges, find an upper bound for the sum.
+Determine para quais valores de $a\in\R$ a série $\sum_{n=1}^\infty e^{an}$
+converge. Quando a série convergir, encontre uma cota superior para sua soma.
 \end{exercise}
 
 \begin{exercise}
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Estimate $\sum_{n=1}^\infty \frac{1}{n(n+1)}$ correct to within 0.01
-using the integral test.
+Estime $\sum_{n=1}^\infty \frac{1}{n(n+1)}$ pelo teste da integral, com
+erro de, no máximo, 0,01.
 \item
-Compute the limit of the series exactly
-and compare.  Hint: The sum telescopes.
+Calcule exatamente o limite da série e compare. Dica: a soma é telescópica.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Prove 
+Prove que
 \begin{equation*}
 \int_{-\infty}^\infty \babs{\operatorname{sinc}(x)}\,dx = \infty .
 \end{equation*}
-Hint: Again, it is enough to show this on just one side.
+Dica: novamente, basta mostrar isso em apenas um dos lados.
 \end{exercise}
 
 \begin{exercise}
-Can you interpret
+É possível interpretar
 \begin{equation*}
 \int_{-1}^1 \frac{1}{\sqrt{\sabs{x}}}\,dx
 \end{equation*}
-as an improper integral?  If so, compute its value.
+como uma integral imprópria? Em caso afirmativo, calcule seu valor.
 \end{exercise}
 
 \begin{exercise}
-Take $f \colon [0,\infty) \to \R$, Riemann integrable on
-every interval $[0,b]$, and such that there exist $M$, $a$, and $T$,
-such that $\babs{f(t)} \leq M e^{at}$ for all $t \geq T$.  Show that the
-\emph{\myindex{Laplace transform}} of $f$ exists.  That is, for
-every $s > a$ the following integral converges:
+Seja $f \colon [0,\infty) \to \R$ integrável à Riemann em todo intervalo
+$[0,b]$ e suponha que existam $M$, $a$ e $T$ tais que
+$\babs{f(t)} \leq M e^{at}$ para todo $t\geq T$. Mostre que existe a
+\emph{\myindex{transformada de Laplace}} de $f$. Isto é, para todo $s>a$,
+a integral a seguir converge:
 \begin{equation*}
 F(s) \coloneqq \int_{0}^\infty f(t) e^{-st} \,dt .
 \end{equation*}
 \end{exercise}
 
 \begin{exercise}
-Let $f \colon \R \to \R$ be a Riemann integrable function
-on every interval $[a,b]$, and such
-that $\int_{-\infty}^\infty \babs{f(x)}\,dx < \infty$.  Show that the
-\emph{\myindex{Fourier sine and cosine transforms}}
-exist.  That is, for every $\omega \geq 0$ the
-following integrals converge
+Seja $f \colon \R \to \R$ uma função integrável à Riemann em todo intervalo
+$[a,b]$ e tal que $\int_{-\infty}^\infty \babs{f(x)}\,dx < \infty$.
+Mostre que existem as \emph{\myindex{transformadas seno e cosseno de Fourier}}.
+Isto é, para todo $\omega\geq0$, convergem as integrais
 \begin{equation*}
 F^s(\omega) \coloneqq \frac{1}{\pi} \int_{-\infty}^\infty f(t) \sin(\omega t) \,dt ,
 \qquad
 F^c(\omega) \coloneqq \frac{1}{\pi} \int_{-\infty}^\infty f(t) \cos(\omega t) \,dt .
 \end{equation*}
-Furthermore, show that $F^s$ and $F^c$ are bounded functions.
+Além disso, mostre que $F^s$ e $F^c$ são funções limitadas.
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon [0,\infty) \to \R$ is Riemann integrable on every interval
-$[0,b]$.  Show that  $\int_0^\infty f$ converges if and only if
-for every $\epsilon > 0$ there exists an $M$ such that if $M \leq a < b$,
-then $\babs{\int_a^b f} < \epsilon$.
+Suponha que $f \colon [0,\infty) \to \R$ seja integrável à Riemann em todo
+intervalo $[0,b]$. Mostre que $\int_0^\infty f$ converge se, e somente se,
+para todo $\epsilon>0$ existe $M$ tal que, se $M\leq a<b$, então
+$\babs{\int_a^b f}<\epsilon$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon [0,\infty) \to \R$ is nonnegative and
-\emph{decreasing}.  Prove:
+Suponha que $f \colon [0,\infty) \to \R$ seja não negativa e
+\emph{decrescente}. Prove que:
 \begin{enumerate}[a)]
 \item
-If $\int_0^\infty f < \infty$, then $\lim\limits_{x\to\infty} f(x) = 0$.
+Se $\int_0^\infty f < \infty$, então $\lim\limits_{x\to\infty} f(x)=0$.
 \item
-The converse does not hold.
+A recíproca não vale.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Find an example of an \emph{unbounded} continuous function $f \colon
-[0,\infty) \to \R$ that is nonnegative and such that $\int_0^\infty f < \infty$.
-Note that $\lim_{x\to\infty} f(x)$ will not exist; compare
-previous exercise.
-Hint: On each interval $[k,k+1]$, $k \in \N$, define a function whose
-integral over this interval is less than say $2^{-k}$.
+Encontre um exemplo de função contínua \emph{ilimitada}
+$f \colon [0,\infty) \to \R$, não negativa e tal que
+$\int_0^\infty f < \infty$. Observe que $\lim_{x\to\infty} f(x)$ não
+existirá; compare com o exercício anterior. Dica: em cada intervalo
+$[k,k+1]$, $k\in\N$, defina uma função cuja integral nesse intervalo seja,
+por exemplo, menor que $2^{-k}$.
 \end{exercise}
 
-\begin{exercise}[More challenging]
-Find an example of a function $f \colon [0,\infty) \to \R$ integrable on all
-intervals such that $\lim_{n\to\infty} \int_0^n f$ exists as a
-limit of a sequence (so $n \in \N$), but such that
-$\int_0^\infty f$ does not exist.
-Hint: For all $n\in \N$, divide $[n,n+1]$ into two halves.  On one half
-make the function negative, on the other make the function positive.
+\begin{exercise}[Mais desafiador]
+Encontre um exemplo de função $f \colon [0,\infty) \to \R$, integrável em
+todo intervalo, tal que $\lim_{n\to\infty} \int_0^n f$ exista como limite
+de uma sequência (com $n\in\N$), mas $\int_0^\infty f$ não exista.
+Dica: para todo $n\in\N$, divida $[n,n+1]$ em duas metades. Faça a função
+ser negativa em uma metade e positiva na outra.
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon [1,\infty) \to \R$ is such that
-$g(x) \coloneqq x^2 f(x)$ is a bounded function. Prove that
-$\int_1^\infty f$ converges.
+Suponha que $f \colon [1,\infty) \to \R$ seja tal que
+$g(x) \coloneqq x^2 f(x)$ seja uma função limitada. Prove que
+$\int_1^\infty f$ converge.
 \end{exercise}
 
 \begin{exnote}
-It is sometimes desirable to assign a value to integrals that normally
-cannot be interpreted even as improper integrals,
-e.g.\ $\int_{-1}^1 \nicefrac{1}{x}\,dx$.
-Suppose $f \colon [a,b] \to \R$ is a function and $a < c < b$,
-where $f$ is Riemann integrable on the intervals
-$[a,c-\epsilon]$ and $[c+\epsilon,b]$ for all $\epsilon > 0$.
-Define
-the \emph{\myindex{Cauchy principal value}} of $\int_a^b f$ as
+Às vezes é desejável atribuir um valor a integrais que normalmente não podem
+ser interpretadas nem mesmo como integrais impróprias, por exemplo,
+$\int_{-1}^1 \nicefrac{1}{x}\,dx$.
+Suponha que $f \colon [a,b] \to \R$ seja uma função e $a<c<b$, e que $f$ seja
+integrável à Riemann nos intervalos $[a,c-\epsilon]$ e $[c+\epsilon,b]$ para
+todo $\epsilon>0$. Definimos o \emph{\myindex{valor principal de Cauchy}} de
+$\int_a^b f$ por
 \begin{equation*}
 p.v.\!\int_a^b f \coloneqq \lim_{\epsilon\to 0^+}
 \left(
@@ -3653,7 +3564,7 @@ p.v.\!\int_a^b f \coloneqq \lim_{\epsilon\to 0^+}
 \int_{c+\epsilon}^b f
 \right) ,
 \end{equation*}
-if the limit exists.
+quando esse limite existe.
 \end{exnote}
 
 %\begin{samepage}
@@ -3661,47 +3572,43 @@ if the limit exists.
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Compute $p.v.\!\int_{-1}^1 \nicefrac{1}{x}\,dx$.
+Calcule $p.v.\!\int_{-1}^1 \nicefrac{1}{x}\,dx$.
 \item
-Compute
+Calcule
 $\lim_{\epsilon\to 0^+}
-( \int_{-1}^{-\epsilon} \nicefrac{1}{x}\,dx + 
-\int_{2\epsilon}^1 \nicefrac{1}{x}\,dx )$ and show it is not equal
-to the principal value.
+( \int_{-1}^{-\epsilon} \nicefrac{1}{x}\,dx +
+\int_{2\epsilon}^1 \nicefrac{1}{x}\,dx )$ e mostre que o resultado não é
+igual ao valor principal.
 \item
-Show that if $f$ is integrable on $[a,b]$, then
-$p.v.\!\int_a^b f = \int_a^b f$ (for an arbitrary $c \in (a,b)$).
+Mostre que, se $f$ é integrável em $[a,b]$, então
+$p.v.\!\int_a^b f = \int_a^b f$ (para qualquer $c\in(a,b)$).
 \item
-Suppose $f \colon [-1,1] \to \R$
-is an odd function ($f(-x)=-f(x)$) that is integrable on
-$[-1,-\epsilon]$ and $[\epsilon,1]$ for all $\epsilon >0$.
-Prove that 
-$p.v.\!\int_{-1}^1 f = 0$
+Suponha que $f \colon [-1,1] \to \R$ seja ímpar ($f(-x)=-f(x)$) e
+integrável em $[-1,-\epsilon]$ e $[\epsilon,1]$ para todo $\epsilon>0$.
+Prove que
+$p.v.\!\int_{-1}^1 f = 0$.
 \item
-Suppose 
-$f \colon [-1,1] \to \R$ is continuous and differentiable at 0.  Show that
-$p.v.\!\int_{-1}^1 \frac{f(x)}{x}\,dx$ exists.
+Suponha que $f \colon [-1,1] \to \R$ seja contínua e diferenciável em 0.
+Mostre que existe $p.v.\!\int_{-1}^1 \frac{f(x)}{x}\,dx$.
 \end{enumerate}
 \end{exercise}
 %\end{samepage}
 
 \begin{samepage}
 \begin{exercise}
-Let $f \colon \R \to \R$ and 
-$g \colon \R \to \R$ be continuous functions, where
-$g(x) = 0$ for all $x \notin [a,b]$ for some interval $[a,b]$.
+Sejam $f \colon \R \to \R$ e $g \colon \R \to \R$ funções contínuas, sendo
+$g(x)=0$ para todo $x\notin[a,b]$, para algum intervalo $[a,b]$.
 \begin{enumerate}[a)]
 \item
-Show that the
-\emph{\myindex{convolution}}
+Mostre que a \emph{\myindex{convolução}}
 \begin{equation*}
 (g * f)(x) \coloneqq \int_{-\infty}^\infty f(t)g(x-t)\,dt 
 \end{equation*}
-is well-defined for all $x \in \R$.
+está bem definida para todo $x\in\R$.
 \item
-Suppose $\int_{-\infty}^\infty \babs{f(x)}\,dx < \infty$.  Prove that
+Suponha que $\int_{-\infty}^\infty \babs{f(x)}\,dx < \infty$. Prove que
 \begin{equation*}
-\lim_{x \to -\infty} (g * f)(x) = 0, \qquad \text{and} \qquad
+\lim_{x \to -\infty} (g * f)(x) = 0, \qquad \text{e} \qquad
 \lim_{x \to \infty} (g * f)(x) = 0 .
 \end{equation*}
 \end{enumerate}

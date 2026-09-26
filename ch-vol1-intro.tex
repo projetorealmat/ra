@@ -1,131 +1,124 @@
-\chapter*{Introduction}
-\addcontentsline{toc}{chapter}{Introduction}
-\markboth{INTRODUCTION}{INTRODUCTION}
+\chapter*{Introdução}
+\addcontentsline{toc}{chapter}{Introdução}
+\markboth{INTRODUÇÃO}{INTRODUÇÃO}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{About this book}
+\section{Sobre este livro}
 
 %mbxSTARTIGNORE
 \VolOneIntroExtrahead
 %mbxENDIGNORE
 % pretext (mbx) is always the two volume set
 %mbxlatex
-%mbxlatex \subsection{About Volume I}
+%mbxlatex \subsection{Sobre o Volume I}
 %mbxlatex 
 
-This first volume is a one-semester course in basic analysis.
-With the second volume, it is a year-long course.
-The book started its life
-as my lecture notes for teaching Math 444 at the
-University of Illinois at Urbana-Champaign (UIUC) in the fall semester of 2009.
-I added the metric space chapter for Math 521 at the University of
-Wisconsin--Madison (UW)\@.
-Volume II was added to teach Math 4143/4153 at Oklahoma State University
-(OSU)\@.
-A prerequisite for these courses is usually a basic proof course,
-using, for example, \cite{Hammack}, \cite{GIAM}, or~\cite{DW}.
+Este primeiro volume destina-se a um curso semestral de análise básica.
+Com o segundo volume, o curso passa a ter duração de um ano.
+O livro teve origem nas minhas notas de aula para a disciplina Math 444,
+ministrada na University of Illinois at Urbana-Champaign (UIUC), no semestre
+de outono de 2009. Acrescentei o capítulo sobre espaços métricos para a
+disciplina Math 521, na University of Wisconsin--Madison (UW)\@.
+O Volume II foi incluído para a disciplina Math 4143/4153, na Oklahoma State
+University (OSU)\@.
+Em geral, essas disciplinas têm como pré-requisito um curso básico de
+demonstrações, que pode usar, por exemplo, \cite{Hammack}, \cite{GIAM} ou
+\cite{DW}.
 
-It should be possible to use the book for
-both a basic course for students who do not necessarily wish to
-go to graduate school (such as UIUC 444), and also as a more advanced one-semester
-course that also covers topics such as metric spaces (such as UW 521).
-Here are suggestions for a semester course.
-A slower course such as UIUC 444:
+O livro pode ser usado tanto em um curso básico, destinado a estudantes que
+talvez não pretendam fazer pós-graduação (como a disciplina UIUC 444), quanto
+em um curso semestral mais avançado, que também aborde tópicos como espaços
+métricos (como a disciplina UW 521).
+Seguem algumas sugestões de organização para um curso semestral.
+Um curso mais lento, como UIUC 444:
 \begin{center}
 \S0.3, \S1.1--\S1.4, \S2.1--\S2.5, \S3.1--\S3.4, \S4.1--\S4.2,
 \S5.1--\S5.3, \S6.1--\S6.3
 \end{center}
-A more rigorous course covering metric spaces that runs quite a bit faster
-(e.g., UW 521):
+Um curso mais rigoroso, que aborde espaços métricos e avance
+consideravelmente mais rápido (por exemplo, UW 521):
 \begin{center}
 \S0.3, \S1.1--\S1.4, \S2.1--\S2.5, \S3.1--\S3.4, \S4.1--\S4.2,
 \S5.1--\S5.3, \S6.1--\S6.2, \S7.1--\S7.6
 \end{center}
-It should also be possible to run a faster course without metric spaces
-covering all sections of chapters 0 through 6.  The approximate number of
-lectures given in the section notes through Chapter 6 is a very rough
-estimate and was designed for the slower course.
-The first few chapters of the book can be used in an introductory proofs
-course, as is done, for example, at Iowa State University Math 201, where
-this book is used in conjunction with Hammack's \emph{Book of Proof}~\cite{Hammack}.
+Também é possível oferecer um curso mais rápido, sem espaços métricos, que
+abranja todas as seções dos capítulos 0 a 6. O número aproximado de aulas
+indicado nas notas das seções até o Capítulo 6 é uma estimativa bastante
+grosseira, elaborada para o curso mais lento.
+Os primeiros capítulos do livro também podem ser usados em um curso
+introdutório de demonstrações, como ocorre, por exemplo, na disciplina Math
+201 da Iowa State University, em que este livro é usado junto com
+\emph{Book of Proof}, de Hammack~\cite{Hammack}.
 
-With volume II\@, one can run a year-long course that covers multivariable
-topics.  In this scenario, it may make sense to cover most of the first volume
-in the first semester while leaving metric spaces for the beginning of the
-second semester.
+Com o Volume II\@, é possível oferecer um curso anual que aborde tópicos de
+várias variáveis. Nesse caso, pode fazer sentido cobrir a maior parte do
+primeiro volume no primeiro semestre e deixar os espaços métricos para o
+início do segundo semestre.
 
-The structure of the beginning of volume I somewhat follows the
-standard syllabus of UIUC Math 444 and, therefore, has some similarities with
-Bartle and Sherbert,
-\emph{Introduction to Real Analysis} \cite{BS}, which was the standard book
-at UIUC\@.
-A major difference is that we define the Riemann integral using
-Darboux sums and not tagged partitions.  The Darboux approach is far more
-appropriate for a course of this level.
+O início do Volume I segue, em certa medida, o programa tradicional da
+disciplina Math 444 da UIUC e, por isso, tem algumas semelhanças com
+\emph{Introduction to Real Analysis}, de Bartle e Sherbert \cite{BS}, que era
+o livro adotado na UIUC\@.
+Uma diferença importante é que definimos a integral de Riemann por meio de
+somas de Darboux, e não de partições etiquetadas. A abordagem de Darboux é muito
+mais adequada a um curso deste nível.
 
-Our approach allows us to fit a course such as UIUC 444 within a semester
-and still spend some time on the interchange of limits and end with
-Picard's theorem on the existence and uniqueness of solutions of ordinary
-differential equations.
-This theorem is a wonderful example
-that uses many results proved in the book.  For more advanced students,
-material may be covered faster so that we arrive at metric spaces and
-prove Picard's theorem using the fixed point theorem as is usual.
+Nossa abordagem permite concluir, em um semestre, um curso como UIUC 444 e,
+ainda assim, dedicar algum tempo à troca de limites e terminar com o teorema
+de Picard sobre existência e unicidade de soluções de equações diferenciais
+ordinárias.
+Esse teorema é um excelente exemplo de aplicação de muitos resultados
+demonstrados no livro. Para estudantes mais avançados, o conteúdo pode ser
+abordado mais rapidamente, de modo que se chegue aos espaços métricos e se
+demonstre o teorema de Picard usando o teorema do ponto fixo, como é usual.
 
-Other excellent books exist.  My favorite is 
-Rudin's excellent
-\emph{Principles of Mathematical Analysis}~\cite{Rudin:baby}
-or, as it is commonly and lovingly called, \emph{baby Rudin}
-(to distinguish it from his other great analysis textbook,
-\emph{big Rudin}).  I took a
-lot of inspiration and ideas from Rudin.  However, Rudin is a bit more
-advanced and ambitious than this present course.
-For those who wish to continue
-mathematics, Rudin is a fine investment.
-An inexpensive and somewhat simpler alternative to Rudin is
-Rosenlicht's \emph{Introduction to Analysis}~\cite{Rosenlicht}.
-There is also the freely downloadable \emph{Introduction to Real
-Analysis} by William Trench~\cite{Trench}.
+Há outros livros excelentes. Meu favorito é
+\emph{Principles of Mathematical Analysis}, de Rudin~\cite{Rudin:baby},
+conhecido com carinho como \emph{baby Rudin} (para distingui-lo de seu outro
+excelente livro de análise, chamado \emph{big Rudin}). Inspirei-me bastante
+nas ideias de Rudin. No entanto, esse livro é um pouco mais avançado e
+ambicioso do que o curso apresentado aqui.
+Para quem pretende continuar estudando matemática, o livro de Rudin é um
+ótimo investimento. Uma alternativa mais barata e um pouco mais simples é
+\emph{Introduction to Analysis}, de Rosenlicht~\cite{Rosenlicht}.
+Há também \emph{Introduction to Real Analysis}, de William Trench, disponível
+gratuitamente para download~\cite{Trench}.
 
 \medskip
 
-A note about the style of some of the proofs:  Many proofs
-traditionally done by contradiction, I prefer to do by
-a direct proof or by contrapositive.  While the book does include
-proofs by contradiction, I only
-do so when the contrapositive statement seemed too awkward or when 
-contradiction follows rather quickly.
-Contradiction is more likely to get beginning students into trouble,
-as we are talking about objects that do not exist.
+Uma observação sobre o estilo de algumas demonstrações: prefiro apresentar
+diretamente ou pela contrapositiva muitas demonstrações que tradicionalmente
+são feitas por contradição. Embora o livro inclua demonstrações por
+contradição, recorro a esse método apenas quando a contrapositiva parece
+muito pouco natural ou quando a contradição decorre rapidamente.
+A contradição tem maior probabilidade de confundir estudantes iniciantes,
+pois nela falamos de objetos que não existem.
 
-I try to avoid unnecessary formalism where it is unhelpful.
-Furthermore, the proofs and the language get slightly less formal as we
-progress through the book, as more and more details are left out to avoid
-clutter.
+Procuro evitar formalismos desnecessários quando não são úteis.
+Além disso, à medida que avançamos no livro, as demonstrações e a linguagem
+tornam-se um pouco menos formais, pois omitimos cada vez mais detalhes para
+evitar sobrecarregar o texto.
 
-As a general rule, I use $\coloneqq$ instead of $=$ to define an
-object rather than to simply show equality.  I use this symbol rather more
-liberally than is usual for emphasis.
-I use it even when the context is \myquote{local,}
-that is, I may simply define a function $f(x) \coloneqq x^2$
-for a single exercise or example.
+Como regra geral, uso $\coloneqq$ em vez de $=$ para definir um objeto, e não
+simplesmente para indicar uma igualdade. Uso esse símbolo com mais frequência
+do que é usual, para dar ênfase.
+Uso-o até mesmo quando o contexto é \myquote{local,} isto é, posso definir
+uma função $f(x) \coloneqq x^2$ apenas para um exercício ou exemplo.
 
 \medskip
 
-Finally, I would like to acknowledge Jana Ma\v{r}\'ikov\'a,
+Por fim, gostaria de agradecer a Jana Ma\v{r}\'ikov\'a,
 Glen Pugh, Paul Vojta, Frank Beatrous, S\"{o}nmez \c{S}ahuto\u{g}lu,
 Jim Brandt, Kenji Kozai, Arthur Busch,  Anton Petrunin,
 Mark Meilstrup, Harold P.\ Boas, Atilla Y{\i}lmaz,
-Thomas Mahoney, Scott Armstrong, and Paul Sacks,
+Thomas Mahoney, Scott Armstrong e Paul Sacks,
 Matthias Weber, Manuele Santoprete,
-Robert Niemeyer,
-and
-Amanullah Nabavi,
-for teaching with the book and giving me lots of useful feedback.
-Frank Beatrous wrote the University of Pittsburgh version extensions, which
-served as inspiration for many additions.
-I would also like to thank
+Robert Niemeyer e Amanullah Nabavi,
+por adotarem o livro em suas disciplinas e me darem muitas sugestões úteis.
+Frank Beatrous escreveu as extensões da versão da University of Pittsburgh,
+que inspiraram muitas das adições ao livro.
+Também gostaria de agradecer a
 Dan Stoneham, Jeremy Sutter, Eliya Gwetta, Daniel Pimentel-Alarc\'on,
 Steve Hoerning, Yi Zhang, Nicole Caviris,
 Kristopher Lee, Baoyue Bi, Hannah Lund,
@@ -140,13 +133,13 @@ Salven V.\ DeMartino,
 Xuechi Wang,
 Hugo Santarem de Araujo,
 Geoffrey Sired,
-Karabo Mathope (0x03B4 on github),
+Karabo Mathope (0x03B4 no GitHub),
 Samyak Jain,
-an anonymous reader or two, and in general all the students in my classes
-for suggestions and finding errors and typos.
-%mbxlatex       During the writing of this book, 
-%mbxlatex       the author was in part supported by NSF grants DMS-0900885 and
-%mbxlatex       DMS-1362337.
+um ou dois leitores anônimos e, de modo geral, todos os estudantes de minhas
+turmas
+pelas sugestões e por identificarem erros e falhas de digitação.
+%mbxlatex       Durante a elaboração deste livro, o autor recebeu apoio parcial
+%mbxlatex       dos auxílios NSF DMS-0900885 e DMS-1362337.
 
 % if in the two volume set then this will expand to the intro for vol II
 %mbxSTARTIGNORE
@@ -154,7 +147,7 @@ for suggestions and finding errors and typos.
 %mbxENDIGNORE
 % pretext (mbx) is always the two volume set
 %mbxlatex
-%mbxlatex \subsection{About Volume II}
+%mbxlatex \subsection{Sobre o Volume II}
 %mbxlatex 
 %mbxlatex \input{frag-vol2-intro.tex}
 %mbxlatex 
@@ -162,182 +155,172 @@ for suggestions and finding errors and typos.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{About analysis} \label{sec:aboutra}
+\section{Sobre análise} \label{sec:aboutra}
 
-Analysis is the branch of mathematics that deals with inequalities and
-limits.  The present course deals with the most basic 
-concepts in analysis.  The goal of the course is to acquaint the reader
-with rigorous proofs in analysis and also to
-set a firm foundation for calculus of one variable (and several variables if
-volume II is also considered).
+Análise é o ramo da matemática que trata de desigualdades e limites. Este
+curso aborda os conceitos mais básicos da análise. Seu objetivo é familiarizar
+o leitor com demonstrações rigorosas em análise e também estabelecer uma base
+sólida para o cálculo de uma variável (e de várias variáveis, caso o Volume II
+também seja considerado).
 
-Calculus has prepared you, the student, for using mathematics without telling
-you why what you learned is true.  To use, or teach, mathematics
-effectively, you cannot simply know \emph{what} is true, you must know
-\emph{why} it is true.  This course shows you \emph{why} calculus
-is true.  It is here to give you a good understanding of the concept of a
-limit, the derivative, and the integral.
+O cálculo ensinou você, estudante, a usar a matemática sem explicar por que
+aquilo que aprendeu é verdadeiro. Para usar ou ensinar matemática com
+eficácia, não basta saber \emph{o que} é verdadeiro; é preciso saber
+\emph{por que} é verdadeiro. Este curso mostra \emph{por que} o cálculo é
+válido. Seu propósito é proporcionar uma boa compreensão dos conceitos de
+limite, derivada e integral.
 
-Let us use an analogy.
-An auto mechanic who has learned to change the oil, fix broken headlights,
-and charge the battery, but who does not understand how the engine
-works, will only be able to do those simple tasks.
-He will be unable to work independently to diagnose and fix problems.
-A high school teacher who does not understand the definition of the Riemann
-integral or the derivative may not be able to properly answer all the
-students' questions.
-To this day I remember several nonsensical statements I heard
-from my calculus teacher in high school, who simply did not understand
-the concept of the limit, although he could \myquote{do} the problems in the
-textbook.
+Vamos recorrer a uma analogia.
+Um mecânico que aprendeu a trocar o óleo, consertar faróis quebrados e carregar
+a bateria, mas não entende como o motor funciona, só será capaz de realizar
+essas tarefas simples. Não conseguirá diagnosticar e resolver problemas por
+conta própria.
+Um professor do ensino médio que não compreende a definição da integral de
+Riemann ou da derivada talvez não consiga responder adequadamente a todas as
+perguntas dos estudantes.
+Até hoje me lembro de várias afirmações sem sentido que ouvi do meu professor
+de cálculo no ensino médio: ele simplesmente não entendia o conceito de
+limite, embora soubesse \myquote{fazer} os exercícios do livro.
 
 \medskip
 
-We start with a discussion of the real number system, most importantly
-its completeness property, which is the basis for all that follows.
-We then discuss the simplest form of a limit,
-the limit of a sequence.  Afterwards, we study
-functions of one variable, continuity, and the derivative.
-Next, we define the Riemann integral and prove the fundamental theorem of
-calculus.  We discuss sequences of functions and the
-interchange of limits.  Finally, we give an introduction to metric
-spaces.
+Começamos discutindo o sistema dos números reais e, sobretudo, sua propriedade
+de completude, que serve de base para tudo o que vem a seguir.
+Depois, tratamos da forma mais simples de limite: o limite de uma sequência.
+Em seguida, estudamos funções de uma variável, continuidade e derivada.
+Definimos então a integral de Riemann e demonstramos o teorema fundamental
+do cálculo. Também discutimos sequências de funções e a troca de limites.
+Por fim, apresentamos uma introdução aos espaços métricos.
 
 \medskip
 
-Let us give the most important difference between analysis and algebra.
-In algebra, we prove equalities directly;
-we prove that an object, perhaps a number, is equal to another object.
-In analysis, we usually prove inequalities,
-and we prove those inequalities by estimating.
-To illustrate the point, consider the following statement.
+Vejamos a diferença mais importante entre análise e álgebra.
+Em álgebra, demonstramos igualdades diretamente: provamos que um objeto,
+talvez um número, é igual a outro.
+Em análise, geralmente demonstramos desigualdades e, para isso, fazemos
+estimativas.
+Para ilustrar essa ideia, considere a seguinte afirmação.
 
 \medskip
 
-\emph{Let $x$ be a real number.  If $x < \epsilon$ is true for all
-real numbers
-$\epsilon > 0$, then $x \leq 0$.}
+\emph{Seja $x$ um número real. Se $x < \epsilon$ vale para todo número real
+$\epsilon > 0$, então $x \leq 0$.}
 
 \medskip
 
-This statement is the general idea of what we do in analysis.
-Suppose we really wish to prove the equality
-$x = 0$.  In analysis, we prove two inequalities:
-$x \leq 0$ and $x \geq 0$.
-To
-prove the inequality
-$x \leq 0$, we prove 
-$x < \epsilon$ for all positive $\epsilon$.
-To
-prove the inequality
-$x \geq 0$, we prove 
-$x > -\epsilon$ for all positive $\epsilon$.
+Essa afirmação resume, em linhas gerais, o que fazemos em análise.
+Suponha que queiramos demonstrar a igualdade $x = 0$. Em análise,
+demonstramos duas desigualdades: $x \leq 0$ e $x \geq 0$.
+Para demonstrar $x \leq 0$, mostramos que $x < \epsilon$ para todo
+$\epsilon > 0$.
+Para demonstrar $x \geq 0$, mostramos que $x > -\epsilon$ para todo
+$\epsilon > 0$.
 
 \medskip
 
-The term \emph{real analysis} is a little bit of a misnomer.  I prefer to
-use simply \emph{analysis}.  The other type of analysis, 
-\emph{complex analysis}, really builds upon the present material, rather than
-being distinct.  Furthermore, a more advanced course on real
-analysis would talk about complex numbers often.
-I suspect the nomenclature is
-historical baggage.
+O termo \emph{análise real} é um nome um tanto inadequado. Prefiro usar
+simplesmente \emph{análise}. A outra área, a \emph{análise complexa}, na
+verdade se apoia neste material, em vez de constituir algo completamente
+distinto. Além disso, um curso mais avançado de análise real trataria com
+frequência dos números complexos.
+Acredito que essa nomenclatura seja um resquício histórico.
 
 \medskip
 
-Let us get on with the show\ldots
+Vamos ao que interessa\ldots
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{Basic set theory} \label{sec:basicset}
-\index{set theory}
+\section{Teoria básica dos conjuntos} \label{sec:basicset}
+\index{teoria dos conjuntos}
 
 %mbxINTROSUBSECTION
 
-\sectionnotes{1--3 lectures (some material can be skipped, covered lightly,
-or left as reading)}
+\sectionnotes{1--3 aulas (parte do material pode ser omitida, abordada
+brevemente ou deixada como leitura)}
 
-Before we start talking about analysis, we need to fix some language.
-Modern\footnote{The term \myquote{modern} refers to the late 19th century up to
-the present.}
-analysis uses the language of sets and, therefore, that is where we start.
-We talk about sets in a rather informal way, using what is usually called
-\myquote{\myindex{na\"ive set theory}.}  Do not worry, that is what the majority of
-mathematicians use, and it is hard to get into trouble.
-The reader has hopefully seen the very basics of set theory
-and proof writing before, and this section should be a quick refresher.
+Antes de começar a falar de análise, precisamos fixar alguns termos.
+A análise moderna\footnote{O termo \myquote{moderna} refere-se ao período
+que vai do fim do século XIX até o presente.} usa a linguagem dos conjuntos;
+por isso, é por aí que começamos.
+Falamos de conjuntos de maneira relativamente informal, usando o que costuma
+ser chamado de \myquote{\myindex{teoria ingênua dos conjuntos}.} Não se
+preocupe: essa é a abordagem adotada pela maioria dos matemáticos, e é difícil
+ter problemas com ela.
+Espera-se que o leitor já tenha visto os fundamentos da teoria dos conjuntos
+e da escrita de demonstrações; esta seção deve servir como uma breve
+recapitulação.
 
-\subsection{Sets}
+\subsection{Conjuntos}
 
 \begin{defn}
-A \emph{\myindex{set}} is a collection of objects called
-\emph{elements}\index{element} or \emph{members}\index{member}.  A set with
-no objects is called the \emph{\myindex{empty set}} and is denoted by
-$\emptyset$\glsadd{not:emptyset} (or sometimes by $\{ \}$).
+Um \emph{\myindex{conjunto}} é uma coleção de objetos chamados
+\emph{elementos}\index{elemento} ou \emph{membros}\index{membro}. Um conjunto
+sem elementos é chamado de \emph{\myindex{conjunto vazio}} e é denotado por
+$\emptyset$\glsadd{not:emptyset} (ou, às vezes, por $\{ \}$).
 \end{defn}
 
-Think of a set as a club with a certain membership.  For
-example, the students who play chess are members of the chess club.
-The same student can be a member of many different clubs.
-However,
-do not take the analogy too far.  A set is only defined by the members
-that form the set; two sets that have the same members are the same set.
+Imagine um conjunto como um clube com determinados associados. Por exemplo,
+os estudantes que jogam xadrez são membros do clube de xadrez.
+O mesmo estudante pode pertencer a vários clubes diferentes.
+No entanto, não leve a analogia longe demais. Um conjunto é definido apenas
+pelos membros que o formam; dois conjuntos com os mesmos membros são o mesmo
+conjunto.
 
-Most of the time, we will consider sets
-of numbers.  For example, the set
+Na maior parte do tempo, consideraremos conjuntos de números. Por exemplo, o
+conjunto
 \glsadd{not:set}
 \begin{equation*}
 S \coloneqq \{ 0, 1, 2 \}
 \end{equation*}
-is the set containing
-the three elements 0, 1, and 2.
-By \myquote{$\coloneqq$},\glsadd{not:def} we mean we are defining what $S$ is, rather than
-just showing equality.
-We write\glsadd{not:eltof}
+contém os três elementos 0, 1 e 2.
+Com o símbolo \myquote{$\coloneqq$},\glsadd{not:def} indicamos que estamos
+definindo o que é $S$, em vez de apenas mostrar uma igualdade.
+Escrevemos\glsadd{not:eltof}
 \begin{equation*}
 1 \in S
 \end{equation*}
-to denote that the number 1 belongs to the set $S$.  That is, 1 is a member
-of $S$.
-At times we want to say that two elements are in a set $S$, so we 
-write \myquote{$1,2 \in S$} as a shorthand for
-\myquote{$1 \in S$ and $2 \in S$.}
+para indicar que o número 1 pertence ao conjunto $S$. Em outras palavras, 1
+é um elemento de $S$.
+Às vezes, queremos dizer que dois elementos pertencem a um conjunto $S$; por
+isso, usamos \myquote{$1,2 \in S$} como abreviação de
+\myquote{$1 \in S$ e $2 \in S$.}
 
-Similarly, we write\glsadd{not:noteltof}
+De modo semelhante, escrevemos\glsadd{not:noteltof}
 \begin{equation*}
 7 \notin S
 \end{equation*}
-to denote that the number 7 is not in $S$.  That is, 7 is not a member of
-$S$.
+para indicar que o número 7 não pertence a $S$, isto é, que 7 não é membro
+de $S$.
 
-The elements of all sets under consideration come from some set we call the
-\emph{\myindex{universe}}.  For simplicity,
-we often consider the universe to be the set that contains only the elements
-we are interested in.
-The universe is generally understood from context
-and is not explicitly mentioned.  In this course, our universe will
-often be the set of real numbers.
+Os elementos de todos os conjuntos considerados pertencem a algum conjunto
+que chamamos de \emph{\myindex{universo}}. Para simplificar, muitas vezes
+tomamos como universo o conjunto que contém apenas os elementos de nosso
+interesse.
+Em geral, o universo fica subentendido pelo contexto e não é mencionado
+explicitamente. Neste curso, muitas vezes o universo será o conjunto dos
+números reais.
 
-Although the elements of a set are often numbers,
-other objects, such as other sets, can be elements of a set.
-A set may also contain some of the same elements as another set.  For example,
+Embora os elementos de um conjunto sejam frequentemente números, outros
+objetos, como conjuntos, também podem ser elementos de um conjunto.
+Além disso, dois conjuntos podem ter alguns elementos em comum. Por exemplo,
 \begin{equation*}
 T \coloneqq \{ 0, 2 \}
 \end{equation*}
-contains the numbers 0 and 2.  In this case, all elements of $T$ also
-belong to $S$.  We write $T \subset S$.\glsadd{not:subset}
-See \figureref{fig:sets} for a diagram.
+contém os números 0 e 2. Nesse caso, todos os elementos de $T$ também
+pertencem a $S$. Escrevemos $T \subset S$.\glsadd{not:subset}
+Veja o diagrama da \figureref{fig:sets}.
 %More formally we make the
 %following definition.
 
 \begin{myfigureht}
 \myincludepdft{sets}{%
-A diagram of example sets S and T.  The set S includes 0, 1, and 2,
-and the set T includes 0 and 2.  There is an element 7 not
-included in either set.}
-\caption{A diagram of the example sets $S$ and its subset $T$.\label{fig:sets}}
+Diagrama dos conjuntos de exemplo S e T. O conjunto S contém 0, 1 e 2,
+e o conjunto T contém 0 e 2. O elemento 7 não pertence a nenhum dos
+conjuntos.}
+\caption{Diagrama dos conjuntos de exemplo $S$ e de seu subconjunto $T$.\label{fig:sets}}
 \end{myfigureht}
 
 \begin{defn}
@@ -346,131 +329,129 @@ included in either set.}
 \leavevmode
 \begin{enumerate}[(i)]
 \item
-A set $A$ is a \emph{\myindex{subset}}
-of a set $B$ if $x \in A$ implies $x \in B$, and we write $A \subset B$.
-That is, all members of $A$ are also members of $B$.  At times we
-write $B \supset A$ to mean the same thing.
+Um conjunto $A$ é um \emph{\myindex{subconjunto}} de um conjunto $B$ se
+$x \in A$ implica $x \in B$, e escrevemos $A \subset B$.
+Isto é, todos os elementos de $A$ também são elementos de $B$. Às vezes,
+escrevemos $B \supset A$ com o mesmo significado.
 \item
-Two sets $A$ and $B$ are \emph{\myindex{equal}}\glsadd{not:equal} if $A \subset B$ and $B
-\subset A$.  We write $A = B$.
-That is, $A$ and $B$ contain exactly the same elements.
-If it is not true that $A$ and $B$ are equal, then 
-we write $A \neq B$.
+Dois conjuntos $A$ e $B$ são \emph{\myindex{iguais}}\glsadd{not:equal} se
+$A \subset B$ e $B \subset A$. Escrevemos $A = B$.
+Isto é, $A$ e $B$ contêm exatamente os mesmos elementos.
+Se $A$ e $B$ não são iguais, escrevemos $A \neq B$.
 \item
-A set $A$ is a \emph{\myindex{proper subset}} of $B$ if $A \subset B$
-and $A \neq B$.  We write $A \subsetneq B$.\glsadd{not:subsetneq}
+Um conjunto $A$ é um \emph{\myindex{subconjunto pr\'oprio}} de $B$ se
+$A \subset B$ e $A \neq B$. Escrevemos $A \subsetneq B$.\glsadd{not:subsetneq}
 \end{enumerate}
 \end{defn}
 
-For the example $S$ and $T$ defined above, $T \subset S$, but
-$T \neq S$.  So $T$ is a proper subset of $S$.
-If $A = B$, then $A$ and $B$ are simply two names for the
-same exact set.
+No exemplo dos conjuntos $S$ e $T$ definidos acima, $T \subset S$, mas
+$T \neq S$. Portanto, $T$ é um
+subconjunto próprio de $S$.
+Se $A = B$, então $A$ e $B$ são apenas dois nomes para exatamente o mesmo
+conjunto.
 
-To define new sets, one often uses
-the
-\emph{\myindex{set building notation}},\glsadd{not:setbuilder}
+Para definir novos conjuntos, costuma-se usar a
+\emph{\myindex{notação de constru\c{c}\~ao de conjuntos}},\glsadd{not:setbuilder}
 \begin{equation*}
 \bigl\{ x \in A : P(x) \bigr\} .
 \end{equation*}
-This notation refers to a subset of the set $A$ containing all elements
-of $A$ that satisfy the property $P(x)$.
-Using $S = \{ 0, 1, 2 \}$ as above, $\{ x \in S : x \neq 2 \}$
-is the set $\{ 0, 1 \}$.
-The notation is sometimes
-abbreviated as $\bigl\{ x : P(x) \bigr\}$, that is, $A$ is not mentioned when understood from context.
-Furthermore, $x \in A$ is sometimes replaced with a formula to make the notation
-easier to read.  
+Essa notação representa um subconjunto de $A$ formado por todos os elementos
+de $A$ que satisfazem a propriedade $P(x)$.
+Usando $S = \{ 0, 1, 2 \}$ como acima, $\{ x \in S : x \neq 2 \}$
+é o conjunto $\{ 0, 1 \}$.
+Às vezes, a notação é abreviada como $\bigl\{ x : P(x) \bigr\}$; nesse caso,
+o conjunto $A$ não é mencionado quando fica subentendido pelo contexto.
+Além disso, a condição $x \in A$ pode ser substituída por uma fórmula para
+tornar a notação mais fácil de ler.
 
 \begin{example}
-The following are sets including the standard notations.
+Os conjuntos a seguir usam as notações usuais.
 \begin{enumerate}[(i)]
-\item The set of \emph{\myindex{natural numbers}},
+\item O conjunto dos \emph{\myindex{n\'umeros naturais}},
 \glsadd{not:natnums}
 $\N \coloneqq \{ 1, 2, 3, \ldots
 \}$.
-\item The set of \emph{\myindex{integers}},
+\item O conjunto dos \emph{\myindex{n\'umeros inteiros}},
 \glsadd{not:ints} 
 $\Z \coloneqq \{ 0, -1, 1, -2, 2, \ldots
 \}$.
-\item The set of \emph{\myindex{rational numbers}},
+\item O conjunto dos \emph{\myindex{n\'umeros racionais}},
 \glsadd{not:rationals} 
-$\Q \coloneqq \bigl\{ \frac{m}{n} :  m, n \in \Z \text{ and } n \neq 0 \bigr\}$.
-\item The set of even natural numbers, $\{  2m : m \in \N \}$.
-\item The set of real numbers,
+$\Q \coloneqq \bigl\{ \frac{m}{n} :  m, n \in \Z \text{ e } n \neq 0 \bigr\}$.
+\item O conjunto dos números naturais pares, $\{  2m : m \in \N \}$.
+\item O conjunto dos números reais,
 \glsadd{not:reals} 
 $\R$.
 \end{enumerate}
 
-Note that $\N \subset \Z \subset \Q \subset \R$.
+Observe que $\N \subset \Z \subset \Q \subset \R$.
 \end{example}
 
-We create new sets out of old ones by applying some natural operations.
+Formamos novos conjuntos a partir de conjuntos já existentes por meio de
+algumas operações naturais.
 
 \begin{defn}
 \pagebreak[2]
 \leavevmode
 \begin{enumerate}[(i)]
 \item
-A \emph{\myindex{union}} of two sets $A$ and $B$ is defined as
+A \emph{\myindex{uni\~ao}} de dois conjuntos $A$ e $B$ é definida por
 \glsadd{not:union}
 \begin{equation*}
-A \cup B \coloneqq \{ x : x \in A \text{ or } x \in B \} .
+A \cup B \coloneqq \{ x : x \in A \text{ ou } x \in B \} .
 \end{equation*}
 \item
-An \emph{\myindex{intersection}} of two sets $A$ and $B$ is defined as
+A \emph{\myindex{interse\c{c}\~ao}} de dois conjuntos $A$ e $B$ é definida por
 \glsadd{not:intersection}
 \begin{equation*}
-A \cap B \coloneqq \{ x : x \in A \text{ and } x \in B \} .
+A \cap B \coloneqq \{ x : x \in A \text{ e } x \in B \} .
 \end{equation*}
 \item
-A \emph{complement of $B$ relative to $A$\index{complement relative to}}
-(or \emph{\myindex{set-theoretic difference}} of $A$ and $B$) is defined as
+O \emph{complemento de $B$ em relação a $A$\index{complemento em rela\c{c}\~ao a}}
+(ou a \emph{\myindex{diferen\c{c}a de conjuntos}} de $A$ e $B$) é definido por
 \glsadd{not:setminus}
 \begin{equation*}
-A \setminus B \coloneqq \{ x : x \in A \text{ and } x \notin B \} .
+A \setminus B \coloneqq \{ x : x \in A \text{ e } x \notin B \} .
 \end{equation*}
 \item
-We say
-\emph{\myindex{complement}} of $B$ and write $B^c$ \glsadd{not:complement}
-instead of $A \setminus B$ if
-the set $A$ is either the entire universe or if it is the obvious
-set containing $B$, and is understood from context.
+Chamamos de \emph{\myindex{complemento}} de $B$ e escrevemos $B^c$
+\glsadd{not:complement} em vez de $A \setminus B$ quando o conjunto $A$ é
+todo o universo ou o conjunto que obviamente contém $B$, conforme fique
+subentendido pelo contexto.
 \item
-We say sets $A$ and $B$ are \emph{\myindex{disjoint}} if $A \cap B =
+Dois conjuntos $A$ e $B$ são \emph{\myindex{disjuntos}} se $A \cap B =
 \emptyset$.
 \end{enumerate}
 \end{defn}
 
-The notation $B^c$ may be a little vague at this point.  If
-the set $B$ is a subset of the real numbers $\R$, then $B^c$ means
-$\R \setminus B$.  If $B$ is naturally a subset of the natural numbers,
-then $B^c$
-is $\N \setminus B$.  If ambiguity can arise, we 
-use the set difference notation $A \setminus B$.
+A notação $B^c$ talvez pareça um pouco vaga neste momento. Se $B$ é um
+subconjunto dos números reais $\R$, então $B^c$ significa
+$\R \setminus B$. Se $B$ é naturalmente um subconjunto dos números naturais,
+então $B^c$ é $\N \setminus B$. Se houver risco de ambiguidade, usamos a
+notação de diferença de conjuntos $A \setminus B$.
 
 \begin{myfigureht}
 \myincludepdft{figsetop}{%
-Venn diagrams of set operations: First a diagram of A union B,
-with the inside of A or B shaded.
-Then a diagram of A intersect B where only the intersection
-A and B is shaded.  Then a diagram of A set minus B, where
-everything in A but not in B is shaded.  Finally a diagram
-of B complement, where everything not in B is shaded.}
-\caption{Venn diagrams of set operations, the result of the operation is
-shaded.\label{figsetop}}
+Diagramas de Venn das operações com conjuntos: primeiro, um diagrama da união
+de A e B, com a região interna de A ou de B sombreada.
+Depois, um diagrama da interseção de A e B, em que somente a interseção está
+sombreada. Em seguida, um diagrama da diferença de A e B, em que tudo o que
+está em A, mas não em B, está sombreado. Por fim, um diagrama do complemento
+de B, em que tudo o que não está em B está sombreado.}
+\caption{Diagramas de Venn das operações com conjuntos; a região sombreada
+representa o resultado da operação.\label{figsetop}}
 \end{myfigureht}
-We illustrate the operations on the
-\emph{Venn diagrams}\index{Venn diagram} in \figureref{figsetop}.
-Let us now establish one of the most basic theorems about sets and logic.
+Ilustramos essas operações com os
+\emph{diagramas de Venn}\index{diagrama de Venn} na \figureref{figsetop}.
+Vamos agora demonstrar um dos teoremas mais básicos sobre conjuntos e lógica.
 
-\begin{thm}[DeMorgan]\index{DeMorgan's theorem}
-Let $A, B, C$ be sets.  Then
+\begin{thm}[De Morgan]\index{teorema de De Morgan}
+Sejam $A, B, C$ conjuntos. Então
 \begin{equation*}
 {(B \cup C)}^c = B^c \cap C^c , \qquad
 {(B \cap C)}^c = B^c \cup C^c ,
 \end{equation*}
-or, more generally,
+ou, mais geralmente,
 \begin{equation*}
 A \setminus (B \cup C) = (A \setminus B) \cap (A \setminus C) , 
 \qquad
@@ -479,67 +460,70 @@ A \setminus (B \cap C) = (A \setminus B) \cup (A \setminus C) .
 \end{thm}
 
 \begin{proof}
-The first statement is proved by the second statement if we
-assume the set $A$ is our \myquote{universe.}
+A primeira igualdade decorre da segunda se considerarmos o conjunto $A$ como
+nosso \myquote{universo.}
 
-Let us prove $A \setminus (B \cup C) = (A \setminus B) \cap (A \setminus C)$.
-Remember the definition of equality of sets.  First, we must show that
-if $x \in A \setminus (B \cup C)$, then
-$x \in (A \setminus B) \cap (A \setminus C)$.  Second, we must also show that
-if $x \in (A \setminus B) \cap (A \setminus C)$, then
+Vamos demonstrar que
+$A \setminus (B \cup C) = (A \setminus B) \cap (A \setminus C)$.
+Para isso, lembre-se da definição de igualdade entre conjuntos. Primeiro,
+precisamos mostrar que, se $x \in A \setminus (B \cup C)$, então
+$x \in (A \setminus B) \cap (A \setminus C)$. Também precisamos mostrar que,
+se $x \in (A \setminus B) \cap (A \setminus C)$, então
 $x \in A \setminus (B \cup C)$.
-So let us assume $x \in A \setminus (B \cup C)$.  Then $x$ is in 
-$A$, but not in $B$ nor $C$.  Hence, $x$ is in $A$ and not in $B$, that is,
-$x \in A \setminus B$.  Similarly, $x \in A \setminus C$.  Thus
+Suponhamos, então, que $x \in A \setminus (B \cup C)$. Nesse caso, $x$
+pertence a $A$, mas não pertence a $B$ nem a $C$. Portanto, $x$ pertence a
+$A$ e não pertence a $B$, isto é, $x \in A \setminus B$. De modo semelhante,
+$x \in A \setminus C$. Logo,
 $x \in (A \setminus B) \cap (A \setminus C)$.
-On the other hand, suppose 
-$x \in (A \setminus B) \cap (A \setminus C)$.  In particular,
-$x \in (A \setminus B)$, so 
-$x \in A$ and $x \notin B$.  Also, as $x \in (A \setminus C)$, then $x \notin C$.
-Hence, $x \in A \setminus (B \cup C)$.
+Por outro lado, suponha que
+$x \in (A \setminus B) \cap (A \setminus C)$. Em particular,
+$x \in (A \setminus B)$, de modo que $x \in A$ e $x \notin B$. Além disso, como
+$x \in (A \setminus C)$, temos $x \notin C$.
+Portanto, $x \in A \setminus (B \cup C)$.
 
-The proof of the other equality is left as an exercise.
+A demonstração da outra igualdade fica como exercício.
 \end{proof}
 
-We called the result above a \emph{Theorem}, while most results we call
-a \emph{Proposition}, and a few we call a \emph{Lemma} (a result leading to another result) or
-\emph{Corollary} (a quick consequence of the preceding result).
-Do not read too much into
-the naming.  Some of it is traditional, some of it is stylistic choice.
-It is not necessarily true that a \emph{Theorem} is always
-\myquote{more important} than a
-\emph{Proposition} or a \emph{Lemma}.
+Chamamos o resultado acima de \emph{Teorema}; a maioria dos resultados recebe
+o nome de \emph{Proposição}, e alguns são chamados de \emph{Lema} (um
+resultado que conduz a outro) ou \emph{Corolário} (uma consequência rápida do
+resultado anterior).
+Não atribua importância excessiva a essa nomenclatura. Parte dela é
+tradicional, e parte decorre de escolhas de estilo.
+Não é necessariamente verdade que um \emph{Teorema} seja sempre
+\myquote{mais importante} do que uma \emph{Proposição} ou um \emph{Lema}.
 
 \medskip
 
-We will also need to intersect or union several sets at once.  If there are
-only finitely many, then we simply apply the union or intersection operation
-several times.  However, suppose we have an infinite collection
-of sets (a set of sets)
-$\{ A_1, A_2, A_3, \ldots \}$.  We define
+Também precisaremos intersectar ou unir vários conjuntos ao mesmo tempo. Se
+houver apenas um número finito deles, basta aplicar repetidamente a operação
+de união ou de interseção. Suponha, porém, que tenhamos uma coleção infinita
+de conjuntos (um conjunto de conjuntos)
+$\{ A_1, A_2, A_3, \ldots \}$. Definimos
 \glsadd{not:infunion}
 \glsadd{not:infintersection}
 \begin{align*}
-& \bigcup_{n=1}^\infty A_n \coloneqq \{ x : x \in A_n \text{ for some } n \in \N
+& \bigcup_{n=1}^\infty A_n \coloneqq \{ x : x \in A_n \text{ para algum } n \in \N
 \} , \\
-& \bigcap_{n=1}^\infty A_n \coloneqq \{ x : x \in A_n \text{ for all } n \in \N
+& \bigcap_{n=1}^\infty A_n \coloneqq \{ x : x \in A_n \text{ para todo } n \in \N
 \} .
 \end{align*}
 
-We can also have sets indexed by two natural numbers.  For example, we can have
-the set of sets
-$\{ A_{1,1}, A_{1,2}, A_{2,1}, A_{1,3}, A_{2,2}, A_{3,1}, \ldots \}$.  Then
-we write 
+Também podemos ter conjuntos indexados por dois números naturais. Por
+exemplo, podemos ter o conjunto de conjuntos
+$\{ A_{1,1}, A_{1,2}, A_{2,1}, A_{1,3}, A_{2,2}, A_{3,1}, \ldots \}$. Então
+escrevemos
 \begin{equation*}
 \bigcup_{n=1}^\infty \bigcup_{m=1}^\infty A_{n,m}
 =
 \bigcup_{n=1}^\infty \left( \bigcup_{m=1}^\infty A_{n,m} \right) .
 \end{equation*}
-And similarly with intersections.
+De modo análogo, procedemos com as interseções.
 
-It is not hard to see that we can take the unions in any order.  However,
-switching the order of unions and intersections is not generally permitted without proof.
-For instance,
+Não é difícil ver que podemos tomar as uniões em qualquer ordem. No entanto,
+em geral, não podemos trocar a ordem de uniões e interseções sem uma
+demonstração.
+Por exemplo,
 \begin{equation*}
 \bigcup_{n=1}^\infty
 \bigcap_{m=1}^\infty
@@ -547,7 +531,7 @@ For instance,
 =
 \bigcup_{n=1}^\infty \emptyset = \emptyset .
 \end{equation*}
-However,
+No entanto,
 \begin{equation*}
 \bigcap_{m=1}^\infty
 \bigcup_{n=1}^\infty
@@ -559,131 +543,132 @@ However,
 \N.
 \end{equation*}
 
-Sometimes, the index set is not the set of natural numbers.  In such a case, we
-require a more general notation.  Suppose $I$ is some set and for each $\lambda \in
-I$, there is a set $A_\lambda$.  Then we define
+Às vezes, o conjunto de índices não é o conjunto dos números naturais. Nesse
+caso, precisamos de uma notação mais geral. Suponha que $I$ seja um conjunto
+e que, para cada $\lambda \in I$, exista um conjunto $A_\lambda$. Então
+definimos
 \glsadd{not:arbitunion}
 \glsadd{not:arbitintersection}
 \begin{equation*}
-\bigcup_{\lambda \in I} A_\lambda \coloneqq \{ x : x \in A_\lambda \text{ for some }
+\bigcup_{\lambda \in I} A_\lambda \coloneqq \{ x : x \in A_\lambda \text{ para algum }
 \lambda \in I
 \} ,
 \qquad
-\bigcap_{\lambda \in I} A_\lambda \coloneqq \{ x : x \in A_\lambda \text{ for all }
+\bigcap_{\lambda \in I} A_\lambda \coloneqq \{ x : x \in A_\lambda \text{ para todo }
 \lambda \in I
 \} .
 \end{equation*}
 
-\subsection{Induction}
+\subsection{Indu\c{c}\~ao}
 
-When a statement includes an arbitrary natural number,
-a common proof method is the principle of induction.  
-We start with the set of natural numbers $\N = \{ 1,2,3,\ldots \}$, and we
-give them their natural ordering, 
-that is, $1 < 2 < 3 < 4 < \cdots$.
-By $S \subset \N$ having a \emph{\myindex{least element}}, we mean that
-there exists an $x \in S$,
-such that for every
-$y \in S$, we have $x \leq y$.
+Quando uma afirmação envolve um número natural arbitrário,
+um método de demonstração comum é o princípio da indução.
+Começamos com o conjunto dos números naturais $\N = \{ 1,2,3,\ldots \}$ e
+consideramos sua ordem usual,
+isto é, $1 < 2 < 3 < 4 < \cdots$.
+Dizer que $S \subset \N$ possui um \emph{\myindex{menor elemento}} significa
+que existe $x \in S$ tal que, para todo
+$y \in S$, temos $x \leq y$.
 
-The natural numbers $\N$ ordered in the natural way
-possess the \emph{\myindex{well ordering property}}.
-We take this property
-as an \myindex{axiom}; we simply assume it is true.
+Os números naturais $\N$, ordenados da maneira usual,
+satisfazem a \emph{\myindex{propriedade da boa ordena\c{c}\~ao}}.
+Adotamos essa propriedade como um \myindex{axioma}; simplesmente a supomos
+verdadeira.
 
 %mbxSTARTIGNORE
 \theoremstyle{plain}
-\newtheorem*{wellordprop}{Well ordering property of $\N$}
+\newtheorem*{wellordprop}{Propriedade da boa ordena\c{c}\~ao de $\N$}
 \hypertarget{wop:link}{}%
 \begin{wellordprop}
-Every nonempty subset of $\N$ has a least (smallest) element.
+Todo subconjunto não vazio de $\N$ possui um elemento mínimo (ou seja, um
+menor elemento).
 \end{wellordprop}
 %mbxENDIGNORE
 %mbx <axiom xml:id="wop_link" number="">
-%mbx   <title>Well ordering property of <m>\N</m></title>
+%mbx   <title>Propriedade da boa ordenação de <m>\N</m></title>
 %mbx   <statement><p>
-%mbx   Every nonempty subset of <m>\N</m> has a least (smallest) element
+%mbx   Todo subconjunto não vazio de <m>\N</m> possui um elemento mínimo (ou seja, um menor elemento)
 %mbx   </p></statement>
 %mbx </axiom>
 
-The \emph{principle of \myindex{induction}}\index{principle of induction} is
-the following theorem, which is in a sense\footnote{To be completely
-rigorous, this equivalence is only true if we
-also assume as an axiom that $n-1$ exists for all natural numbers bigger than $1$, which we
-do.  In this book, we are assuming all the usual arithmetic holds.}
-equivalent to the well ordering property of the natural numbers.
+O \emph{princ\'ipio da \myindex{indu\c{c}\~ao}}\index{princ\'ipio da indu\c{c}\~ao}
+\'e o teorema a seguir, que em certo sentido\footnote{Para sermos
+completamente rigorosos, essa equival\^encia s\'o vale se tamb\'em
+admitirmos como axioma que $n-1$ existe para todo n\'umero natural maior que
+$1$, o que fazemos. Neste livro, supomos v\'alidas todas as regras usuais
+da aritm\'etica.}
+\'e equivalente \`a propriedade da boa ordena\c{c}\~ao dos n\'umeros naturais.
 
-\begin{thm}[Principle of induction] \label{induction:thm}
-Let $P(n)$ be a statement depending on a natural number~$n$.  Suppose that
+\begin{thm}[Princ\'ipio da indu\c{c}\~ao] \label{induction:thm}
+Seja $P(n)$ uma afirma\c{c}\~ao que depende de um n\'umero natural~$n$.
+Suponha que
 \begin{enumerate}[(i)]
-\item \emph{(\myindex{basis statement})} $P(1)$ is true.
-\item \emph{(\myindex{induction step})} If $P(n)$ is true, then $P(n+1)$ is true.
+\item \emph{(\myindex{base da indu\c{c}\~ao})} $P(1)$ é verdadeira.
+\item \emph{(\myindex{passo indutivo})} Se $P(n)$ é verdadeira, então
+$P(n+1)$ também é verdadeira.
 \end{enumerate}
-Then $P(n)$ is true for all $n \in \N$.
+Então $P(n)$ é verdadeira para todo $n \in \N$.
 \end{thm}
 
 \begin{proof}
-Let $S$ be the set of natural numbers $n$ for which $P(n)$ is
-not true.  Suppose for contradiction that
-$S$ is nonempty.  Then $S$ has a least element by the well ordering
-property.  Call $m \in S$ the least element of $S$.  We know $1 \notin
-S$ by hypothesis.  So $m > 1$, and $m-1$ is a natural number as well.
-Since $m$ is the least element of $S$, we know that $P(m-1)$ is true.
-But the induction step says that $P(m-1+1) = P(m)$ is true, 
-contradicting the statement that $m \in S$.  Therefore, $S$ is empty and 
-$P(n)$ is true for all $n \in \N$.
+Seja $S$ o conjunto dos números naturais $n$ para os quais $P(n)$ não é
+verdadeira. Suponha, por contradição, que $S$ não seja vazio.
+Pela propriedade da boa ordenação, $S$ possui um menor elemento.
+Seja $m \in S$ o menor elemento de $S$. Pela hipótese, $1 \notin S$. Logo,
+$m > 1$, e $m-1$ também é um número natural.
+Como $m$ é o menor elemento de $S$, sabemos que $P(m-1)$ é verdadeira.
+Porém, o passo indutivo afirma que $P(m-1+1) = P(m)$ é verdadeira, o
+que contradiz a afirmação de que $m \in S$. Portanto, o conjunto $S$ é vazio, e
+$P(n)$ é verdadeira para todo $n \in \N$.
 \end{proof}
 
-The assumption that
-$P(n)$ is true in \myquote{if $P(n)$ is true,
-then $P(n+1)$ is true}
-is usually called the \emph{\myindex{induction hypothesis}}.
-Sometimes it is convenient to start induction
-at a different number than 1,
-all that changes is the labeling.
-For example,
-if starting say at $n=0$, then $P(0)$ is the basis statement,
-and the induction step must be proved for all
+A suposição de que
+$P(n)$ é verdadeira na afirmação \myquote{se $P(n)$ \'e verdadeira,
+então $P(n+1)$ \'e verdadeira}
+costuma ser chamada de \emph{\myindex{hip\'otese de indu\c{c}\~ao}}.
+Às vezes, é conveniente iniciar a indução em um número diferente
+de 1; nesse caso, isso altera apenas a numeração.
+Por exemplo, se começarmos em $n=0$, então $P(0)$ é a base da
+indução, e o passo indutivo deve ser demonstrado para todo
 $n \in \N \cup \{ 0 \}$.
-The conclusion is then that $P(n)$ is true for all
+Concluímos, então, que $P(n)$ é verdadeira para todo
 $n \in \N \cup \{ 0 \}$.
 
 \begin{example}
-Let us prove that for all $n \in \N$,
+Vamos provar que, para todo $n \in \N$,
 \begin{equation*}
-2^{n-1} \leq n! \qquad \text{(recall } n! = 1 \cdot 2 \cdot 3 \cdots n\text{)}.
+2^{n-1} \leq n! \qquad \text{(lembre-se de que } n! = 1 \cdot 2 \cdot 3 \cdots n\text{)}.
 \end{equation*}
-Let $P(n)$ be the statement that
-$2^{n-1} \leq n!$ is true.
-Plug in $n=1$ to see that $P(1)$ is true.
+Seja $P(n)$ a afirmação de que
+$2^{n-1} \leq n!$ é verdadeira.
+Tomando $n=1$, vemos que $P(1)$ é verdadeira.
 
-Suppose $P(n)$ is true.  That is, suppose 
-$2^{n-1} \leq n!$ holds.  Multiply both sides by 2 to obtain
+Suponha que $P(n)$ seja verdadeira, isto é, que
+$2^{n-1} \leq n!$ valha. Multiplicando ambos os lados por 2, obtemos
 \begin{equation*}
 2^n \leq 2(n!) .
 \end{equation*}
-As $2 \leq (n+1)$ when $n \in \N$, we have
-$2(n!) \leq (n+1)(n!) = (n+1)!$.  That is,
+Como $2 \leq (n+1)$ para $n \in \N$, temos
+$2(n!) \leq (n+1)(n!) = (n+1)!$. Isto é,
 \begin{equation*}
 2^n \leq 2(n!) \leq  (n+1)!,
 \end{equation*}
-and hence $P(n+1)$ is true.  By the principle of induction,
-$P(n)$
-is true for all $n \in \N$.  In other words,
-$2^{n-1} \leq n!$ is true for all $n \in \N$.
+e, assim, $P(n+1)$ é verdadeira. Pelo princípio da indução,
+$P(n)$ é verdadeira para todo $n \in \N$. Em outras palavras,
+$2^{n-1} \leq n!$ é verdadeira para todo $n \in \N$.
 \end{example}
 
 \begin{example} \label{example:geometricsum}
-We claim that for all $c \neq 1$
-and all $n \in \N \cup \{ 0 \}$,
+Afirmamos que, para todo $c \neq 1$
+e todo $n \in \N \cup \{ 0 \}$,
 \begin{equation*}
 1 + c + c^2 + \cdots + c^n = \frac{1-c^{n+1}}{1-c} .
 \end{equation*}
 
-Proof: Fix some $c \neq 1$.
-It is easy to check that the equation holds with $n=0$.
-Suppose it holds for some $n$ (including possibly $n=0$).
-Then
+Demonstração: Fixemos $c \neq 1$.
+É fácil verificar que a igualdade vale para $n=0$.
+Suponha que ela valha para algum $n$ (possivelmente $n=0$).
+Então
 \begin{equation*}
 \begin{split}
 1 + c + c^2 + \cdots + c^n + c^{n+1} & =
@@ -693,60 +678,56 @@ Then
 & = \frac{1-c^{n+2}}{1-c} .
 \end{split}
 \end{equation*}
-By the principle of induction, the equation holds for all
+Pelo princípio da indução, a igualdade vale para todo
 $n \in \N \cup \{ 0 \}$.
 \end{example}
 
-Sometimes, it is easier to use in the inductive step
-that $P(k)$ is true for all $k = 1,2,\ldots,n$, not just for $k=n$.
-This principle is called \emph{\myindex{strong induction}} and is equivalent
-to the normal induction above.  The proof of that
-equivalence is left as an exercise.
+Às vezes, é mais fácil usar no passo indutivo o fato de que
+$P(k)$ é verdadeira para todo $k = 1,2,\ldots,n$, e não apenas para $k=n$.
+Esse princípio é chamado de \emph{\myindex{indu\c{c}\~ao forte}} e é
+equivalente ao princípio de indução usual apresentado acima. A demonstração
+dessa equivalência fica como exercício.
 
-\begin{thm}[Principle of strong induction]
-\index{principle of strong induction}\index{strong induction}
-Let $P(n)$ be a statement depending on a natural number $n$.  Suppose that
+\begin{thm}[Princ\'ipio da indu\c{c}\~ao forte]
+\index{princ\'ipio da indu\c{c}\~ao forte}\index{indu\c{c}\~ao forte}
+Seja $P(n)$ uma afirmação que depende de um número natural $n$. Suponha que
 \begin{enumerate}[(i)]
-\item \emph{(\myindex{basis statement})} $P(1)$ is true.
-\item \emph{(\myindex{induction step})} If $P(k)$ is true for all $k = 1,2,\ldots,n$, then $P(n+1)$ is true.
+\item \emph{(\myindex{base da indu\c{c}\~ao})} $P(1)$ é verdadeira.
+\item \emph{(\myindex{passo indutivo})} Se $P(k)$ é verdadeira para todo
+$k = 1,2,\ldots,n$, então $P(n+1)$ é verdadeira.
 \end{enumerate}
-Then $P(n)$ is true for all $n \in \N$.
+Então $P(n)$ é verdadeira para todo $n \in \N$.
 \end{thm}
 
-\subsection{Functions}
+\subsection{Fun\c{c}\~oes}
 
-Informally,
-a \emph{\myindex{set-theoretic function}}\index{function}
-$f$ taking a set $A$ to a set $B$
-is a mapping that to each $x \in A$ assigns a unique $y \in B$.  We write
-$f \colon A \to B$.\glsadd{not:func}
-A function $f
-\colon A \to B$ is
-a black box into which we stick an element of $A$,
-and the function
-spits out an element of $B$.
-Sometimes $f$ is called a \emph{\myindex{mapping}} or a
-\emph{\myindex{map}},
-and we say $f$ \emph{maps $A$ to $B$}.
+Informalmente,
+uma \emph{\myindex{fun\c{c}\~ao no sentido da teoria dos conjuntos}}\index{fun\c{c}\~ao}
+$f$, que leva um conjunto $A$ a um conjunto $B$,
+\'e uma aplica\c{c}\~ao que associa a cada $x \in A$ um \'unico $y \in B$.
+Escrevemos $f \colon A \to B$.\glsadd{not:func}
+Uma fun\c{c}\~ao $f \colon A \to B$ é como uma caixa-preta na qual
+inserimos um elemento de $A$; a fun\c{c}\~ao nos devolve um elemento de $B$.
+Às vezes, $f$ tamb\'em é chamada de \emph{\myindex{aplica\c{c}\~ao}} ou de
+\emph{\myindex{mapa}}, e dizemos que $f$ \emph{leva $A$ em $B$}.
 
-An example function 
-$f \colon S \to T$ from $S \coloneqq \{ 0, 1, 2 \}$ to $T \coloneqq \{ 0, 2 \}$
-can be defined
-by assigning $f(0) \coloneqq 2$, $f(1) \coloneqq 2$, and $f(2) \coloneqq 0$.
+Uma fun\c{c}\~ao de exemplo
+$f \colon S \to T$, de $S \coloneqq \{ 0, 1, 2 \}$ em $T \coloneqq \{ 0, 2 \}$,
+pode ser definida atribuindo-se $f(0) \coloneqq 2$, $f(1) \coloneqq 2$ e
+$f(2) \coloneqq 0$.
 %
-Often, functions are defined by some sort of
-formula; however, you should really think of a function as just a very large
-table of values.
-The subtle issue here is that a single function can have several 
-formulas, all giving the same function.
-For many functions, there is
-no formula that expresses its values.
-To define the notion of a function rigorously,
-we must first define the Cartesian product.
+Muitas vezes, as fun\c{c}\~oes s\~ao definidas por algum tipo de
+f\'ormula; no entanto, conv\'em pensar em uma fun\c{c}\~ao simplesmente como
+uma tabela muito grande de valores.
+A sutileza é que uma mesma fun\c{c}\~ao pode ter v\'arias f\'ormulas,
+todas definindo a mesma fun\c{c}\~ao.
+Para muitas fun\c{c}\~oes, n\~ao existe uma f\'ormula que exprima seus valores.
+Para definir rigorosamente a no\c{c}\~ao de fun\c{c}\~ao, precisamos primeiro
+definir o produto cartesiano.
 
 \begin{defn}
-Let $A$ and $B$ be sets.  The \emph{\myindex{Cartesian product}}
-is the set of tuples defined as
+Sejam $A$ e $B$ conjuntos. O \emph{\myindex{produto cartesiano}}
+é o conjunto de tuplas definido por
 \glsadd{not:cartprod}
 \begin{equation*}
 A \times B \coloneqq
@@ -754,81 +735,86 @@ A \times B \coloneqq
 \end{equation*}
 \end{defn}
 
-For instance, $\{ a,b \} \times \{ c , d\} =
+Por exemplo, $\{ a,b \} \times \{ c , d\} =
 \bigl\{
 (a,c), (a,d), (b,c), (b,d)
 \bigr\}$.
-A more complicated example is the set $[0,1] \times [0,1]$: a subset of the
-plane bounded by a square with vertices $(0,0)$, $(0,1)$, $(1,0)$, and $(1,1)$.
-When $A$ and $B$ are the same set, we often use a superscript 2 to denote
-such a product.  For example, $[0,1]^2 = 
-[0,1] \times [0,1]$ or $\R^2 = \R \times \R$ (the Cartesian plane).
+Um exemplo mais elaborado é o conjunto $[0,1] \times [0,1]$: um
+subconjunto do plano delimitado por um quadrado com v\'ertices $(0,0)$,
+$(0,1)$, $(1,0)$ e $(1,1)$.
+Quando $A$ e $B$ s\~ao o mesmo conjunto, costuma-se usar o expoente 2 para
+denotar esse produto. Por exemplo, $[0,1]^2 =
+[0,1] \times [0,1]$ ou $\R^2 = \R \times \R$ (o plano cartesiano).
 
 \begin{defn}
-A \emph{function} $f \colon A \to B$ is a subset $f$ of $A \times B$
-such that for each $x \in A$, there exists a unique $y \in B$ for which $(x,y) \in f$.
-We write $f(x) = y$.
-If we consider $f$ simply as a subset in $A \times B$,
-then we call this set the
-\emph{\myindex{graph}} of the function.
+Uma \emph{fun\c{c}\~ao} $f \colon A \to B$ é um subconjunto $f$ de $A \times B$
+tal que, para cada $x \in A$, existe um \'unico $y \in B$ para o qual
+$(x,y) \in f$.
+Escrevemos $f(x) = y$.
+Se considerarmos $f$ simplesmente como um subconjunto de $A \times B$,
+chamamos esse conjunto de
+\emph{\myindex{gr\'afico}} da fun\c{c}\~ao.
 
-The set $A$ is called the \emph{\myindex{domain}} of $f$ (and
-sometimes confusingly denoted $D(f)$).  The set
+O conjunto $A$ é chamado de \emph{\myindex{dom\'inio}} de $f$ (e,
+às vezes, é denotado de modo confuso por $D(f)$). O conjunto
 \begin{equation*}
-R(f) \coloneqq \{ y \in B : \text{there exists an } x \in A \text{ such that }
+R(f) \coloneqq \{ y \in B : \text{existe um } x \in A \text{ tal que }
 f(x)=y \}
 \end{equation*}
-is called the \emph{\myindex{range}} of $f$.
-The set $B$ is called the \emph{\myindex{codomain}} of $f$.
+Esse conjunto é chamado de \emph{\myindex{imagem}} de $f$.
+O conjunto $B$ é chamado de \emph{\myindex{contradom\'inio}} de $f$.
 \end{defn}
 
-It is possible that the range $R(f)$ is a proper subset of the codomain $B$,
-while the domain of $f$ is always equal to $A$.  We generally 
-assume that the domain of $f$ is nonempty.
+É poss\'ivel que a imagem $R(f)$ seja um subconjunto pr\'oprio do
+contradom\'inio $B$, ao passo que o dom\'inio de $f$ é sempre igual a $A$.
+Em geral, supomos que o dom\'inio de $f$ n\~ao seja vazio.
 
 \begin{example}
-From calculus, you are most familiar with functions taking real numbers to real
-numbers.  However, you saw some other types of functions as well.
-The derivative is a function that maps the set of
-differentiable functions to the set of all functions.
-Another example is the Laplace transform, which also
-takes functions to functions.  Yet another example is the function that takes
-a continuous function $g$ defined on the interval $[0,1]$ and returns the
-number $\int_0^1 g(x) \,dx$.
+Em Cálculo, você está mais familiarizado com funções de números reais em
+números reais. No entanto, você também já viu outros tipos de funções.
+A derivada é uma função que leva o conjunto das funções diferenciáveis ao
+conjunto de todas as funções.
+Outro exemplo é a transformada de Laplace, que também leva funções a funções.
+Ainda outro exemplo é a função que recebe uma função contínua $g$ definida
+no intervalo $[0,1]$ e retorna o número $\int_0^1 g(x) \,dx$.
 \end{example}
 
 \begin{defn}
-Consider a function $f \colon A \to B$.  Define
-the \emph{\myindex{image}} (or \emph{\myindex{direct image}}) of a subset
-$C \subset A$ as
+Considere uma função $f \colon A \to B$. Definimos
+a \emph{\myindex{imagem}} (ou \emph{\myindex{imagem direta}}) de um
+subconjunto $C \subset A$ por
 \glsadd{not:dirimage}
 \begin{equation*}
 f(C) \coloneqq \bigl\{ f(x) \in B : x \in C \bigr\} .
 \end{equation*}
-Define the \emph{\myindex{inverse image}} of a subset $D
-\subset B$ as
+Definimos a \emph{\myindex{imagem inversa}} de um subconjunto
+$D \subset B$ por
 \glsadd{not:invimage}
 \begin{equation*}
 f^{-1}(D) \coloneqq \bigl\{ x \in A : f(x) \in D \bigr\} .
 \end{equation*}
 \end{defn}
 
-In particular, $R(f) = f(A)$, the range is the direct image of
-the domain $A$.
+Em particular, $R(f) = f(A)$: a imagem é a imagem direta do domínio $A$.
 
 \begin{myfigureht}
 \myincludepdft{funcimags_full}{%
-Two sets of dots are labeled 1, 2, 3, 4 and a, b, c, d.
-There is an arrow from 1 to b, from 2 to d, from 3 to c,
-and from 4 to b.  A list of example images is on the right:
-f applied to the set containing 1,2,3,4 equals the set containing b, c, d.
-f applied to the set containing 1,2,4 equals the set containing b, d.
-f applied to the set containing 1 equals the set containing b.
-f inverse applied to the set containing a,b,c equals the set containing 1,3,4.
-f inverse applied to the set containing a equals the empty set.
-f inverse applied to the set containing b equals the set containing 1,4.}
-\caption{Example of direct and inverse images for the function
-$f \colon \{ 1,2,3,4 \} \to \{ a,b,c,d \}$ defined by
+Dois conjuntos de pontos estão identificados pelos números 1, 2, 3, 4 e
+pelas letras a, b, c, d.
+Há uma seta de 1 para b, de 2 para d, de 3 para c e de 4 para b. À direita,
+uma lista apresenta exemplos de imagens:
+A imagem, por f, do conjunto que contém 1, 2, 3 e 4 é o conjunto que contém
+b, c e d.
+A imagem, por f, do conjunto que contém 1, 2 e 4 é o conjunto que contém b
+e d.
+A imagem, por f, do conjunto que contém 1 é o conjunto que contém b.
+A imagem inversa, por f, do conjunto que contém a, b e c é o conjunto que
+contém 1, 3 e 4.
+A imagem inversa, por f, do conjunto que contém a é o conjunto vazio.
+A imagem inversa, por f, do conjunto que contém b é o conjunto que contém 1
+e 4.}
+\caption{Exemplo de imagens diretas e inversas para a fun\c{c}\~ao
+$f \colon \{ 1,2,3,4 \} \to \{ a,b,c,d \}$ definida por
 $f(1) \coloneqq b$,
 $f(2) \coloneqq d$,
 $f(3) \coloneqq c$,
@@ -836,13 +822,13 @@ $f(4) \coloneqq b$.\label{figfuncimags}}
 \end{myfigureht}
 
 \begin{example}
-Define the function $f \colon \R \to \R$ by
-$f(x) \coloneqq \sin(\pi x)$.  Then $f\bigl([0,\nicefrac{1}{2}]\bigr) = [0,1]$, 
+Defina a função $f \colon \R \to \R$ por
+$f(x) \coloneqq \sin(\pi x)$. Então $f\bigl([0,\nicefrac{1}{2}]\bigr) = [0,1]$,
 $f^{-1}\bigl(\{0\}\bigr) = \Z$, etc.
 \end{example}
 
 \begin{prop} \label{st:propinv}
-Consider $f \colon A \to B$.  Let $C, D$ be subsets of $B$.  Then
+Considere $f \colon A \to B$. Sejam $C, D$ subconjuntos de $B$. Então
 \begin{align*}
 & f^{-1}( C \cup D) = f^{-1} (C) \cup f^{-1} (D) , \\
 & f^{-1}( C \cap D) = f^{-1} (C) \cap f^{-1} (D) , \\
@@ -850,444 +836,450 @@ Consider $f \colon A \to B$.  Let $C, D$ be subsets of $B$.  Then
 \end{align*}
 \end{prop}
 
-Read the last line of the proposition as
+Interprete a última linha da proposição como
 $f^{-1}( B \setminus C) = A \setminus f^{-1} (C)$.
 
 \begin{proof}
-We start with the union.  If $x \in 
-f^{-1}( C \cup D)$, then 
-$x$ is taken to $C$ or $D$, that is, $f(x) \in C$ or $f(x) \in D$.  Thus
-$f^{-1}( C \cup D) \subset f^{-1} (C) \cup f^{-1} (D)$.  Conversely,
-if $x \in f^{-1}(C)$, then $x \in f^{-1}(C \cup D)$.  Similarly for
-$x \in f^{-1}(D)$.  Hence,
-$f^{-1}( C \cup D) \supset f^{-1} (C) \cup f^{-1} (D)$, and we have
-equality.
+Começamos pela união. Se $x \in f^{-1}( C \cup D)$, então a função leva
+$x$ a um elemento de $C$ ou de $D$, isto é, $f(x) \in C$ ou $f(x) \in D$.
+Logo, $f^{-1}( C \cup D) \subset f^{-1} (C) \cup f^{-1} (D)$.
+Reciprocamente, se $x \in f^{-1}(C)$, então $x \in f^{-1}(C \cup D)$.
+O mesmo vale para $x \in f^{-1}(D)$. Portanto,
+$f^{-1}( C \cup D) \supset f^{-1} (C) \cup f^{-1} (D)$, e obtemos a
+igualdade.
 
-The rest of the proof is left as an exercise.
+O restante da demonstração fica como exercício.
 \end{proof}
 
-For direct images, the best we can do is the
-following weaker result.
+Para imagens diretas, o melhor que podemos afirmar é o resultado mais fraco
+a seguir.
 
 \begin{prop} \label{st:propfor}
-Consider $f \colon A \to B$.  Let $C, D$ be subsets of $A$.  Then
+Considere $f \colon A \to B$. Sejam $C, D$ subconjuntos de $A$. Então
 \begin{align*}
 & f( C \cup D) = f (C) \cup f (D) , \\
 & f( C \cap D) \subset f (C) \cap f (D) .
 \end{align*}
 \end{prop}
 
-The proof is left as an exercise.
+Deixamos a demonstração como exercício.
 
 \begin{defn}
-Let $f \colon A \to B$ be a function.
-The function $f$ is said to be
-\emph{\myindex{injective}} or
-\emph{\myindex{one-to-one}} if $f(x_1) = f(x_2)$ implies $x_1 = x_2$.  In
-other words,
-$f$ is injective if
-for all $y \in B$, the set
-$f^{-1}(\{y\})$ is empty or consists of a single element.
-We call such an $f$ an \emph{\myindex{injection}}.
+Seja $f \colon A \to B$ uma função.
+Dizemos que $f$ é
+\emph{\myindex{injetiva}} ou
+\emph{\myindex{um a um}} se $f(x_1) = f(x_2)$ implica $x_1 = x_2$. Em
+outras palavras, $f$ é injetiva se, para todo $y \in B$, o conjunto
+$f^{-1}(\{y\})$ é vazio ou contém um único elemento.
+Chamamos tal $f$ de uma \emph{\myindex{inje\c{c}\~ao}}.
 
-If $f(A) = B$, then we say $f$ is
-\emph{\myindex{surjective}} or
-\emph{\myindex{onto}}.
-In other words, $f$ is surjective if the range and the codomain of $f$ are equal.
-We call such an $f$ a \emph{\myindex{surjection}}.
+Se $f(A) = B$, dizemos que $f$ é
+\emph{\myindex{sobrejetiva}} ou
+\emph{\myindex{sobrejetora}}.
+Em outras palavras, $f$ é sobrejetiva se a imagem e o contradomínio de $f$
+são iguais.
+Chamamos tal $f$ de uma \emph{\myindex{sobreje\c{c}\~ao}}.
 
-If $f$ is both surjective and injective, then
-we say $f$ is \emph{\myindex{bijective}} or that $f$ is a
-\emph{\myindex{bijection}}.
+Se $f$ é ao mesmo tempo sobrejetiva e injetiva, dizemos que $f$ é
+\emph{\myindex{bijetiva}} ou que $f$ é uma
+\emph{\myindex{bije\c{c}\~ao}}.
 \end{defn}
 
-When $f \colon A \to B$ is a bijection, then the inverse image of a single
-element, $f^{-1}(\{y\})$, is always
-a unique element of $A$.  We then consider $f^{-1}$ as a function
+Quando $f \colon A \to B$ é uma bijeção, a imagem inversa de um elemento,
+$f^{-1}(\{y\})$, é sempre um único elemento de $A$. Passamos então a
+considerar $f^{-1}$ como uma função
 \glsadd{not:invfunction}
-$f^{-1} \colon B \to A$ and we write simply $f^{-1}(y)$.
-In this case, we call $f^{-1}$ the \emph{\myindex{inverse function}} of $f$.
-For instance, for the bijection $f \colon \R \to \R$ defined by
-$f(x) \coloneqq x^3$, we have
+$f^{-1} \colon B \to A$ e escrevemos simplesmente $f^{-1}(y)$.
+Nesse caso, chamamos $f^{-1}$ de \emph{\myindex{fun\c{c}\~ao inversa}} de $f$.
+Por exemplo, para a bijeção $f \colon \R \to \R$ definida por
+$f(x) \coloneqq x^3$, temos
 $f^{-1}(x) = \sqrt[3]{x}$.
 
 %A final piece of notation for functions that
 %we need is the \emph{\myindex{composition of functions}}.
 
 \begin{defn}
-Consider $f \colon A \to B$ and $g \colon B \to C$.  The
-\emph{composition}\index{composition of functions}
-of the functions $f$ and $g$ is the function
-$g \circ f \colon A \to C$ defined as
+Considere $f \colon A \to B$ e $g \colon B \to C$. A
+\emph{composi\c{c}\~ao}\index{composi\c{c}\~ao de fun\c{c}\~oes}
+das funções $f$ e $g$ é a função
+$g \circ f \colon A \to C$ definida por
 \glsadd{not:composition}
 \begin{equation*}
 (g \circ f)(x) \coloneqq g\bigl(f(x)\bigr) .
 \end{equation*}
 \end{defn}
 
-For example, if $f \colon \R \to \R$ is $f(x)\coloneqq x^3$ and $g \colon \R \to \R$
-is $g(y) = \sin(y)$, then $(g \circ f)(x) = \sin(x^3)$.
-It is left to the reader as an easy exercise
-to show that composition of one-to-one maps is
-one-to-one and composition of onto maps is onto.
-Therefore, the composition of bijections is a bijection.
+Por exemplo, se $f \colon \R \to \R$ é dada por $f(x)\coloneqq x^3$ e
+$g \colon \R \to \R$ é dada por $g(y) = \sin(y)$, então
+$(g \circ f)(x) = \sin(x^3)$.
+Deixamos como exercício simples para o leitor mostrar que a composição de
+aplicações injetivas é injetiva e a composição de aplicações sobrejetivas é
+sobrejetiva. Portanto, a composição de bijeções é uma bijeção.
 
-\subsection{Relations and equivalence classes}
+\subsection{Rela\c{c}\~oes e classes de equival\^encia}
 
-We often compare two objects in some way.  For instance, we say $1 < 2$
-for natural numbers, $\nicefrac{1}{2} = \nicefrac{2}{4}$ for rational
-numbers, or $\{ a,c \} \subset \{ a,b,c \}$ for sets.  The `$<$', `$=$', and
-`$\subset$' are examples of
-relations.
+Muitas vezes, comparamos dois objetos de alguma maneira. Por exemplo,
+dizemos $1 < 2$ para números naturais, $\nicefrac{1}{2} = \nicefrac{2}{4}$
+para números racionais ou $\{ a,c \} \subset \{ a,b,c \}$ para conjuntos.
+Os símbolos `$<$', `$=$' e `$\subset$' são exemplos de relações.
 
 \begin{defn}
-Given a set $A$, a \emph{\myindex{binary relation}}\index{relation} on $A$
-is a subset $\sR \subset A \times A$,
-which consists of those pairs where the relation is said to hold.
-Instead of $(a,b) \in \sR$, we write
+Seja $A$ um conjunto. Uma \emph{\myindex{rela\c{c}\~ao bin\'aria}}\index{rela\c{c}\~ao}
+em $A$ é um subconjunto $\sR \subset A \times A$,
+formado pelos pares para os quais dizemos que a relação vale.
+Em vez de escrever $(a,b) \in \sR$, escrevemos
 $a \, \sR \, b$.
 \end{defn}
 
 \begin{example}
-Take $A \coloneqq \{ 1,2,3 \}$.
+Considere $A \coloneqq \{ 1,2,3 \}$.
 
-Consider the relation `$<$'.  The corresponding set 
-of pairs is $\bigl\{ (1,2), (1,3), (2,3) \bigr\}$.  So $1 < 2$ holds as $(1,2)$
-is in the corresponding set of pairs, but $3 < 1$ does not hold as $(3,1)$ is
-not in the set.
+Considere a relação `$<$'. O conjunto correspondente de pares é
+$\bigl\{ (1,2), (1,3), (2,3) \bigr\}$. Assim, $1 < 2$ vale, pois $(1,2)$
+pertence ao conjunto de pares correspondente, mas $3 < 1$ não vale, pois
+$(3,1)$ não pertence ao conjunto.
 
-Similarly, the relation `$=$'
-is defined by the set of pairs $\bigl\{ (1,1), (2,2), (3,3) \big\}$.
+De modo semelhante, a relação `$=$' é definida pelo conjunto de pares
+$\bigl\{ (1,1), (2,2), (3,3) \big\}$.
 
-Any subset of $A \times A$ is a relation.  If we define the relation
-$\dagger$ via $\bigl\{ (1,2), (2,1), (2,3), (3,1) \bigr\}$, then $1 \dagger 2$ and
-$3 \dagger 1$ are
-true, but $1 \dagger 3$ is not.
+Qualquer subconjunto de $A \times A$ é uma relação. Se definirmos a relação
+$\dagger$ pelo conjunto $\bigl\{ (1,2), (2,1), (2,3), (3,1) \bigr\}$, então
+As afirmações $1 \dagger 2$ e $3 \dagger 1$ são verdadeiras, mas
+$1 \dagger 3$ não é.
 \end{example}
 
 \begin{defn}
 %FIXMEevillayouthack
 \pagebreak[2]
-A relation
-$\sR$ on a set $A$ is said to be
+A relação
+$\sR$ em um conjunto $A$ é dita
 \begin{enumerate}[(i)]
 \item
-\emph{Reflexive}\index{reflexive relation} if $a\, \sR \, a$ for
-all $a \in A$.
+\emph{Reflexiva}\index{rela\c{c}\~ao reflexiva} se $a\, \sR \, a$ para
+todo $a \in A$.
 \item
-\emph{Symmetric}\index{symmetric relation} if $a\, \sR \, b$ implies
+\emph{Simétrica}\index{rela\c{c}\~ao sim\'etrica} se $a\, \sR \, b$ implica
 $b \, \sR \, a$.
 \item
-\emph{Transitive}\index{transitive relation} if $a\, \sR \, b$ and
-$b \, \sR \, c$ implies $a\, \sR \, c$.
+\emph{Transitiva}\index{rela\c{c}\~ao transitiva} se $a\, \sR \, b$ e
+$b \, \sR \, c$ implicam $a\, \sR \, c$.
 \end{enumerate}
-If $\sR$ is reflexive, symmetric, and transitive, then it is said to be
-an \emph{\myindex{equivalence relation}}.
+Se $\sR$ é reflexiva, simétrica e transitiva, dizemos que é uma
+\emph{\myindex{rela\c{c}\~ao de equival\^encia}}.
 \end{defn}
 
 \begin{example}
-Let $A \coloneqq \{ 1,2,3 \}$.
-The relation `$<$' is transitive but neither reflexive nor symmetric.  The
-relation `$\leq$' defined by
+Seja $A \coloneqq \{ 1,2,3 \}$.
+A relação `$<$' é transitiva, mas não é reflexiva nem simétrica. A
+relação `$\leq$', definida por
 $\bigl\{ (1,1), (1,2), (1,3), (2,2), (2,3), (3,3) \bigr\}$
-is reflexive and transitive, but not symmetric.
-Finally, a relation `$\star$' defined by
-$\bigl\{ (1,1), (1,2), \allowbreak (2,1), \allowbreak (2,2), \allowbreak (3,3) \bigr\}$ is
-an equivalence relation.
+é reflexiva e transitiva, mas não é simétrica.
+Por fim, a relação `$\star$', definida por
+$\bigl\{ (1,1), (1,2), \allowbreak (2,1), \allowbreak (2,2), \allowbreak (3,3) \bigr\}$
+é uma relação de equivalência.
 \end{example}
 
-Equivalence relations are useful as they divide a set into sets of
-\myquote{equivalent} elements.
+As relações de equivalência são úteis porque dividem um conjunto em
+subconjuntos de elementos \myquote{equivalentes}.
 
 \begin{defn}
-Let $A$ be a set and $\sR$ an equivalence relation.
-An \emph{\myindex{equivalence class}} of $a \in A$, often denoted
-by $[a]$,\glsadd{not:equivclass} is the set $\{ x \in A : a\, \sR \, x \}$.
+Seja $A$ um conjunto e $\sR$ uma relação de equivalência.
+Uma \emph{\myindex{classe de equival\^encia}} de $a \in A$, geralmente
+denotada por $[a]$,\glsadd{not:equivclass} é o conjunto
+$\{ x \in A : a\, \sR \, x \}$.
 \end{defn}
 
-For example, given the relation `$\star$' above, there are two equivalence classes,
-$[1] = [2] = \{ 1,2 \}$ and $[3] = \{ 3 \}$.
+Por exemplo, para a relação `$\star$' acima, há duas classes de equivalência:
+$[1] = [2] = \{ 1,2 \}$ e $[3] = \{ 3 \}$.
 
-Reflexivity guarantees that $a \in [a]$.  Symmetry guarantees
-that if $b \in [a]$, then $a \in [b]$.  Finally, transitivity guarantees that
-if $b \in [a]$ and $c \in [b]$, then $c \in [a]$.
-In particular, we have the following proposition, whose proof is an
-exercise.
+A reflexividade garante que $a \in [a]$. A simetria garante que, se
+$b \in [a]$, então $a \in [b]$. Por fim, a transitividade garante que,
+se $b \in [a]$ e $c \in [b]$, então $c \in [a]$.
+Em particular, temos a seguinte proposição, cuja demonstração fica como
+exercício.
 
 \begin{prop} \label{prop:equivclasses}
-If $\sR$ is an equivalence relation on a set $A$,
-then every $a \in A$ is in exactly one
-equivalence class.  Moreover, $a\, \sR \, b$ if and only if $[a] = [b]$.
+Se $\sR$ é uma relação de equivalência em um conjunto $A$,
+então cada $a \in A$ pertence a exatamente uma classe de equivalência.
+Além disso, $a\, \sR \, b$ se, e somente se, $[a] = [b]$.
 \end{prop}
 
 \begin{example} \label{example:ratnums}
-The set of rational numbers can be defined as equivalence classes of
-a pair of an integer and a natural number,
-that is, elements of $\Z \times \N$.  The relation
-is defined by $(a,b) \sim (c,d)$ whenever $ad = bc$.
-It is left as an exercise to prove that `$\sim$' is an equivalence relation.
-Usually, the equivalence class $\bigl[(a,b)\bigr]$ is written as $\nicefrac{a}{b}$.
+O conjunto dos números racionais pode ser definido como o conjunto das
+classes de equivalência de pares ordenados formados por um número inteiro e
+um número natural, isto é, de elementos de $\Z \times \N$. A relação é definida por
+$(a,b) \sim (c,d)$ sempre que $ad = bc$.
+Deixamos como exercício provar que `$\sim$' é uma relação de equivalência.
+Em geral, a classe de equivalência $\bigl[(a,b)\bigr]$ é denotada por
+$\nicefrac{a}{b}$.
 \end{example}
 
-\subsection{Cardinality}
+\subsection{Cardinalidade}
 
-A subtle but fundamental issue in set theory
-and one that generates a considerable amount of
-confusion among beginning students is that of cardinality,
-or \myquote{size} of sets.
+Uma questão sutil, mas fundamental, na teoria dos conjuntos, e que causa
+muita confusão entre estudantes iniciantes, é a cardinalidade, ou o
+\myquote{tamanho} dos conjuntos.
 %The concept of cardinality is fundamental in modern mathematics in general and
 %in analysis in particular.
-Indeed, in this section, we will see the first really
-unexpected theorem.
+De fato, nesta seção, veremos o primeiro teorema realmente inesperado.
 
 \begin{defn}
-Let $A$ and $B$ be sets.  We say $A$ and $B$ have the same
-\emph{\myindex{cardinality}}
-when there exists a bijection $f \colon A \to B$.  We denote
-by $\sabs{A}$ \glsadd{not:cardinality} the equivalence class of all sets with the same cardinality as
-$A$, and we simply call $\sabs{A}$ the cardinality of $A$.
+Sejam $A$ e $B$ conjuntos. Dizemos que $A$ e $B$ têm a mesma
+\emph{\myindex{cardinalidade}}
+quando existe uma bijeção $f \colon A \to B$. Denotamos
+por $\sabs{A}$ \glsadd{not:cardinality} a classe de equivalência de todos os
+conjuntos com a mesma cardinalidade que $A$ e chamamos $\sabs{A}$ simplesmente
+de cardinalidade de $A$.
 \end{defn}
 
-For example, $\{ 1,2,3 \}$ has the same cardinality as $\{ a,b,c \}$ by
-defining a bijection $f(1) \coloneqq a$, $f(2) \coloneqq b$, $f(3) \coloneqq c$.
-Clearly, the bijection is not unique.
+Por exemplo, $\{ 1,2,3 \}$ tem a mesma cardinalidade que $\{ a,b,c \}$ se
+definirmos a bijeção $f(1) \coloneqq a$, $f(2) \coloneqq b$,
+$f(3) \coloneqq c$.
+Evidentemente, essa bijeção não é única.
 
-The existence of a bijection really is an equivalence relation.
-The identity function, $f(x) \coloneqq x$, is a bijection showing reflexivity.
-If $f$ is a bijection, then so is $f^{-1}$, showing symmetry.
-If $f \colon A \to B$ and $g \colon B \to C$ are bijections, then
-$g \circ f$ is a bijection of $A$ and $C$, showing transitivity.
-A set $A$ has the same cardinality as the empty set if and only
-if $A$ itself is the empty set:  If $B$ is nonempty, then
-no function $f \colon B \to \emptyset$ can exist.
-In particular, there is no bijection of $B$ and $\emptyset$.
+A relação \myquote{ter a mesma cardinalidade} é, de fato, uma relação de
+equivalência.
+A função identidade, $f(x) \coloneqq x$, é uma bijeção que mostra a
+reflexividade.
+Se $f$ é uma bijeção, então $f^{-1}$ também é, o que mostra a simetria.
+Se $f \colon A \to B$ e $g \colon B \to C$ são bijeções, então
+$g \circ f$ é uma bijeção entre $A$ e $C$, o que mostra a transitividade.
+Um conjunto $A$ tem a mesma cardinalidade que o conjunto vazio se, e somente
+se $A$ é o próprio conjunto vazio: se $B$ não é vazio, não existe função
+$f \colon B \to \emptyset$.
+Em particular, não existe bijeção entre $B$ e $\emptyset$.
 
 \begin{defn}
-If $A$ has the same cardinality as $\{ 1,2,3,\ldots,n \}$
-for some $n \in \N$,
-we write $\sabs{A} \coloneqq n$.  If $A$ is empty, we write
+Se $A$ tem a mesma cardinalidade que $\{ 1,2,3,\ldots,n \}$
+para algum $n \in \N$,
+escrevemos $\sabs{A} \coloneqq n$. Se $A$ é vazio, escrevemos
 $\sabs{A} \coloneqq 0$.
-In either case, we say that $A$ is
-\emph{\myindex{finite}}.
-We say $A$ is \emph{\myindex{infinite}} or \myquote{of infinite cardinality}
-if $A$ is not finite.
+Em ambos os casos, dizemos que $A$ é
+\emph{\myindex{finito}}.
+Dizemos que $A$ é \emph{\myindex{infinito}} ou tem
+\myquote{cardinalidade infinita} se $A$ não for finito.
 \end{defn}
 
-That the notation $\sabs{A} = n$ is justified, we leave as an exercise.  That
-is, for each nonempty finite set $A$, there exists a unique natural number
-$n$ such that there exists a bijection from $A$ to $\{ 1,2,3,\ldots,n \}$.
+Deixamos como exercício verificar que a notação $\sabs{A} = n$ é justificada.
+Isto é, para cada conjunto finito não vazio $A$, existe um único número
+natural $n$ tal que há uma bijeção de $A$ em $\{ 1,2,3,\ldots,n \}$.
 
-We can order sets by size (cardinality).
+Podemos ordenar conjuntos pelo tamanho (cardinalidade).
 
 \begin{defn} \label{def:comparecards}
-We write
+Escrevemos
 \begin{equation*}
 \sabs{A} \leq \sabs{B}
 \end{equation*}
-if there exists an injection from $A$ to $B$.  We write $\sabs{A} = \sabs{B}$
-if $A$ and $B$ have the same cardinality.  We write $\sabs{A} < \sabs{B}$
-if $\sabs{A} \leq \sabs{B}$, but $A$ and $B$ do not have the same cardinality.
+se existe uma injeção de $A$ em $B$. Escrevemos $\sabs{A} = \sabs{B}$
+se $A$ e $B$ têm a mesma cardinalidade. Escrevemos $\sabs{A} < \sabs{B}$
+se $\sabs{A} \leq \sabs{B}$, mas $A$ e $B$ não têm a mesma cardinalidade.
 \end{defn}
 
-We state without proof that
-$A$ and $B$ have the same cardinality if and only if
-$\sabs{A} \leq \sabs{B}$ and
-$\sabs{B} \leq \sabs{A}$.  This result is the
-\myindex{Cantor--Bernstein--Schr\"oder} theorem.
-Furthermore, if $A$ and $B$ are any two sets,
-we can always write $\sabs{A} \leq \sabs{B}$ or
-$\sabs{B} \leq \sabs{A}$.  The issues surrounding this
-last statement are very subtle.  As we do not require either
-of these two statements, we omit proofs.
+Enunciamos, sem demonstração, que
+$A$ e $B$ têm a mesma cardinalidade se, e somente se,
+$\sabs{A} \leq \sabs{B}$ e
+$\sabs{B} \leq \sabs{A}$. Esse resultado é o teorema de
+\myindex{Cantor--Bernstein--Schr\"oder}.
+Além disso, para quaisquer dois conjuntos $A$ e $B$,
+sempre podemos escrever $\sabs{A} \leq \sabs{B}$ ou
+$\sabs{B} \leq \sabs{A}$. As questões relacionadas a essa
+última afirmação são muito sutis. Como não precisamos de nenhum
+desses dois resultados, omitimos as demonstrações.
 
-The truly interesting cases of cardinality are infinite sets.
-We will distinguish two types of infinite cardinality.
+Os casos realmente interessantes de cardinalidade são os de conjuntos
+infinitos.
+Vamos distinguir dois tipos de cardinalidade infinita.
 
 \begin{defn}
-If $\sabs{A} = \sabs{\N}$, then we say $A$ is
-\emph{\myindex{countably infinite}}.
-If $A$ is finite or countably infinite, then we say $A$
-is \emph{\myindex{countable}}.
-If $A$ is not countable, then
-$A$ is said to be \emph{\myindex{uncountable}}.
+Se $\sabs{A} = \sabs{\N}$, dizemos que $A$ é
+\emph{\myindex{infinito enumer\'avel}}.
+Se $A$ é finito ou infinito enumerável, dizemos que $A$
+é \emph{\myindex{enumer\'avel}}.
+Se $A$ não é enumerável,
+dizemos que $A$ é \emph{\myindex{n\~ao enumer\'avel}}.
 \end{defn}
 
-The cardinality of $\N$ is usually denoted as
-$\aleph_0$ (read as aleph-naught)\footnote{For the fans of the TV show
-\emph{Futurama}, there is a movie theater in one episode
-called an $\aleph_0$-plex.}.
+A cardinalidade de $\N$ costuma ser denotada por
+$\aleph_0$ (lê-se alef zero)\footnote{Para os fãs do programa de TV
+\emph{Futurama}, há uma sala de cinema em um episódio
+chamada de $\aleph_0$-plex.}.
 
 \begin{example}
-The set of even natural numbers has the same cardinality as $\N$.  Proof:
-Let $E \subset \N$ be the set of even natural numbers.
-Given $k \in E$, write $k=2n$ for some $n \in \N$.
-Then $f(n) \coloneqq 2n$ defines a bijection $f \colon \N \to E$.
+O conjunto dos números naturais pares tem a mesma cardinalidade que $\N$.
+Demonstração: Seja $E \subset \N$ o conjunto dos números naturais pares.
+Dado $k \in E$, escrevemos $k=2n$ para algum $n \in \N$.
+Então $f(n) \coloneqq 2n$ define uma bijeção $f \colon \N \to E$.
 \end{example}
 
-In fact, we mention without proof the following characterization
-of infinite sets: \emph{A set is infinite if and only if it is in one-to-one
-correspondence with a proper subset of itself}.
+Mencionamos, sem demonstração, a seguinte caracterização dos conjuntos
+infinitos: \emph{Um conjunto é infinito se, e somente se, está em
+correspondência biunívoca com algum subconjunto próprio de si mesmo}.
 
 \begin{example}
-$\N \times \N$ is a countably infinite set.  Proof: Arrange the
-elements of $\N \times \N$ as follows
-$(1,1)$, $(1,2)$, $(2,1)$, $(1,3)$, $(2,2)$, $(3,1)$, \ldots.  That is,
-first write down all the elements whose two entries sum to $k$,
-then write down all the elements whose entries sum to $k+1$, and so on.
-Define a bijection with $\N$ by letting 1 go to $(1,1)$,
-2 go to $(1,2)$, and so on.  See \figureref{fig:NcrossNcard}.
+$\N \times \N$ é um conjunto infinito enumerável. Demonstração: Organizemos
+os elementos de $\N \times \N$ da seguinte maneira:
+$(1,1)$, $(1,2)$, $(2,1)$, $(1,3)$, $(2,2)$, $(3,1)$, \ldots. Isto é,
+primeiro listamos todos os elementos cujas duas entradas somam $k$,
+depois listamos todos aqueles cujas entradas somam $k+1$, e assim por diante.
+Definimos uma bijeção com $\N$ fazendo 1 corresponder a $(1,1)$,
+2 corresponder a $(1,2)$, e assim por diante. Veja \figureref{fig:NcrossNcard}.
 \begin{myfigureht}
 \myincludepdft{NcrossNcard}{%
-A grid of pairs (row,column) is given with an arrow
-going from (1,1) to (1,2), then to
-(2,1) diagonally down and left, then to (1,3), then diagonally
-down and left to (2,2) and then to (3,1), then
-an arrow to (1,4), then diagonally down and left to (2,3),
-then (3,2), then (4,1).  Dots indicate the diagram is infinite.}
-\caption{Showing $\N \times \N$ is countable.\label{fig:NcrossNcard}}
+Uma grade de pares (linha, coluna) é percorrida por uma seta que vai
+de (1,1) a (1,2), depois a
+(2,1), diagonalmente para baixo e para a esquerda, e então a (1,3); em seguida,
+diagonalmente para baixo e para a esquerda até (2,2) e depois até (3,1). Uma
+seta segue até (1,4) e continua diagonalmente para baixo e para a esquerda por
+(2,3), (3,2) e (4,1). Reticências indicam que o diagrama é infinito.}
+\caption{Mostrando que $\N \times \N$ é enumerável.\label{fig:NcrossNcard}}
 \end{myfigureht}
 \end{example}
 
 \begin{example}
-The set of rational numbers is countable.  Proof: (informal)
-For positive rational numbers, follow the same procedure
-as in the previous example, writing
-$\nicefrac{1}{1}$, $\nicefrac{1}{2}$, $\nicefrac{2}{1}$, etc.  However,
-leave out fractions (such as $\nicefrac{2}{2}$)
-that have already appeared.  The list would continue:
+O conjunto dos números racionais é enumerável. Demonstração (informal):
+Para os racionais positivos, seguimos o mesmo procedimento do exemplo
+anterior, escrevendo
+$\nicefrac{1}{1}$, $\nicefrac{1}{2}$, $\nicefrac{2}{1}$ etc. No entanto,
+omitimos as frações (como $\nicefrac{2}{2}$)
+que já apareceram. A lista continua assim:
 $\nicefrac{1}{3}$, $\nicefrac{3}{1}$, $\nicefrac{1}{4}$,
-$\nicefrac{2}{3}$, etc.
-For all rational numbers, include $0$ and the negative numbers:
+$\nicefrac{2}{3}$ etc.
+Para listar todos os racionais, incluímos o $0$ e os números negativos:
 $0$,
 $\nicefrac{1}{1}$,
 $\nicefrac{-1}{1}$,
 $\nicefrac{1}{2}$,
-$\nicefrac{-1}{2}$, etc.
+$\nicefrac{-1}{2}$ etc.
 \end{example}
 
-For completeness, we mention the following statements
-from the exercises.
-\emph{If $A \subset
-B$ and $B$ is countable, then $A$ is countable.}  The contrapositive of the
-statement is that if $A$ is
-uncountable, then $B$ is uncountable.
-As a consequence, if $\sabs{A} < \sabs{\N}$, then $A$ is
-finite.
-Similarly, if $B$ is finite and $A \subset B$, then $A$ is finite.
+Para completar, mencionamos as seguintes afirmações que aparecem nos
+exercícios.
+\emph{Se $A \subset
+B$ e $B$ é enumerável, então $A$ é enumerável.} A contrapositiva dessa
+afirmação diz que, se $A$ não é enumerável, então $B$ também não é
+enumerável.
+Como consequência, se $\sabs{A} < \sabs{\N}$, então $A$ é
+finito.
+De modo semelhante, se $B$ é finito e $A \subset B$, então $A$ é finito.
 
 %FIXMEevillayouthack
 \pagebreak[2]
-We give the first truly striking result about cardinality.
-To do so, we need a notation for
-the set of all subsets of a set.
+Apresentamos agora o primeiro resultado realmente surpreendente sobre
+cardinalidade.
+Para isso, precisamos de uma notação para
+o conjunto de todos os subconjuntos de um conjunto.
 
 \begin{defn}
-The \emph{\myindex{power set}} of a set $A$, denoted by $\sP(A)$,
-\glsadd{not:powerset} is the set of all subsets of $A$.
+O \emph{\myindex{conjunto das partes}} de um conjunto $A$, denotado por
+$\sP(A)$,\glsadd{not:powerset} é o conjunto de todos os subconjuntos de $A$.
 \end{defn}
 
-For example, if $A \coloneqq \{ 1,2\}$,
-then $\sP(A) = \bigl\{ \emptyset, \{ 1 \}, \{ 2 \}, \{ 1, 2 \} \bigr\}$.
-In particular, $\sabs{A} = 2$ and $\babs{\sP(A)} = 4 = 2^2$.
-In general,
-for a finite set $A$ of cardinality $n$, the
-cardinality of $\sP(A)$ is $2^n$.
-This fact is left as an exercise.  
-Hence, for a finite set $A$,
-the cardinality of $\sP(A)$ is strictly
-larger than the
-cardinality of $A$.  What is an unexpected and
-striking fact is that this statement is also true for infinite sets.
+Por exemplo, se $A \coloneqq \{ 1,2\}$,
+então $\sP(A) = \bigl\{ \emptyset, \{ 1 \}, \{ 2 \}, \{ 1, 2 \} \bigr\}$.
+Em particular, $\sabs{A} = 2$ e $\babs{\sP(A)} = 4 = 2^2$.
+Em geral,
+para um conjunto finito $A$ de cardinalidade $n$,
+a cardinalidade de $\sP(A)$ é $2^n$.
+Deixamos esse fato como exercício.
+Portanto, para um conjunto finito $A$,
+a cardinalidade de $\sP(A)$ é estritamente
+maior que a
+cardinalidade de $A$. O fato inesperado e
+surpreendente é que essa afirmação também vale para conjuntos infinitos.
 
 \begin{thm}[Cantor%
-\footnote{Named after the German mathematician
+\footnote{Em homenagem ao matemático alemão
 \href{https://en.wikipedia.org/wiki/Georg_Cantor}{Georg Ferdinand Ludwig
 Philipp Cantor} (1845--1918).}]
-\index{Cantor's theorem}
+\index{teorema de Cantor}
 \label{cantorspowersetthm}
-Let $A$ be a set.  Then
+Seja $A$ um conjunto. Então
 $\sabs{A} < \babs{\sP(A)}$.
-In particular, there exists no surjection from
-$A$ onto $\sP(A)$.
+Em particular, não existe função sobrejetora de
+$A$ em $\sP(A)$.
 \end{thm}
 
 \begin{proof}
-An injection $f \colon A \to \sP(A)$ exists:
-For $x \in A$, let $f(x) \coloneqq \{ x \}$.  Thus,
+Existe uma injeção $f \colon A \to \sP(A)$:
+para $x \in A$, seja $f(x) \coloneqq \{ x \}$. Assim,
 $\sabs{A} \leq \babs{\sP(A)}$.
 
-To finish the proof, we must show that
-no function $g \colon A \to \sP(A)$ is a surjection.
-Suppose 
-$g \colon A \to \sP(A)$ is a function.  So for $x \in A$,
-$g(x)$ is a subset of $A$.  Define the set
+Para concluir a demonstração, devemos mostrar que
+nenhuma função $g \colon A \to \sP(A)$ é sobrejetora.
+Suponha que
+$g \colon A \to \sP(A)$ seja uma função. Então, para $x \in A$,
+$g(x)$ é um subconjunto de $A$. Definimos o conjunto
 \begin{equation*}
 B \coloneqq \bigl\{ x \in A : x \notin g(x) \bigr\} .
 \end{equation*}
-We claim that $B$ is not in the range of $g$ and hence $g$ is not a
-surjection.  Suppose for contradiction that there exists an $x_0$ such that $g(x_0) = B$.
-Either $x_0 \in B$ or $x_0 \notin B$.  If $x_0 \in B$, then $x_0 \notin
-g(x_0) = B$, which is a contradiction.  If $x_0 \notin B$, then $x_0 \in
-g(x_0) = B$, which is again a contradiction.  Thus such an $x_0$ does not
-exist.  Therefore, $B$ is not in the range of $g$, and $g$ is not a
-surjection.  As $g$ was an arbitrary function, no surjection exists.
+Afirmamos que $B$ não pertence à imagem de $g$ e, portanto, $g$ não é
+sobrejetora. Suponha, por contradição, que exista um $x_0$ tal que
+$g(x_0) = B$.
+Ou $x_0 \in B$ ou $x_0 \notin B$. Se $x_0 \in B$, então $x_0 \notin
+g(x_0) = B$, o que é uma contradição. Se $x_0 \notin B$, então $x_0 \in
+g(x_0) = B$, o que também é uma contradição. Logo, tal $x_0$ não
+existe. Portanto, $B$ não pertence à imagem de $g$, e $g$ não é
+sobrejetora. Como $g$ era uma função arbitrária, não existe nenhuma função
+sobrejetora.
 \end{proof}
 
-One particular consequence of this 
-theorem is that there do exist uncountable sets,
-as $\sP(\N)$ must be uncountable.
-A related fact is that
-the set of real numbers (which we study in the next chapter) is uncountable.
-The existence of uncountable sets may seem unintuitive, and the theorem
-caused quite a controversy at the time
-it was announced.  The theorem not only says that uncountable sets exist,
-but that there, in fact, exist progressively larger
-and larger infinite sets $\N$, $\sP(\N)$,
-$\sP(\sP(\N))$, $\sP(\sP(\sP(\N)))$, etc.
+Uma consequência particular deste teorema é a existência de conjuntos não
+enumeráveis, pois $\sP(\N)$ necessariamente não é enumerável.
+Um fato relacionado é que
+o conjunto dos números reais (que estudaremos no próximo capítulo) não é
+enumerável.
+A existência de conjuntos não enumeráveis pode parecer contraintuitiva, e o
+teorema causou bastante controvérsia na época
+em que foi anunciado. O teorema não afirma apenas que existem conjuntos não
+enumeráveis: afirma também que, de fato, existem conjuntos infinitos cada vez
+maiores,
+$\N$, $\sP(\N)$,
+$\sP(\sP(\N))$, $\sP(\sP(\sP(\N)))$ etc.
 
-\subsection{Exercises}
+
+\subsection{Exercícios}
 
 \begin{exercise}
-Show
+Mostre
 $A \setminus (B \cap C) = (A \setminus B) \cup (A \setminus C)$.
 \end{exercise}
 
 \begin{exercise}
-Prove that the principle of strong induction is equivalent to the standard
-induction.
+Demonstre que o princípio da indução forte é equivalente ao princípio da
+indução usual.
 \end{exercise}
 
 \begin{exercise}
-Finish the proof of \propref{st:propinv}.
+Complete a demonstração de \propref{st:propinv}.
 \end{exercise}
 
 \begin{exercise}
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Prove \propref{st:propfor}.
+Demonstre \propref{st:propfor}.
 \item
-Find an example for which the equality of sets
-in 
-$f( C \cap D) \subset f (C) \cap f (D)$
-fails.  That is, find an $f$, $A$, $B$, $C$, and $D$ such that
-$f( C \cap D)$ is a proper subset of $f(C) \cap f(D)$.
+Encontre um exemplo em que falha a igualdade de conjuntos
+em
+$f( C \cap D) \subset f (C) \cap f (D)$.
+Isto é, encontre $f$, $A$, $B$, $C$ e $D$ tais que
+$f( C \cap D)$ seja um subconjunto próprio de $f(C) \cap f(D)$.
 \end{enumerate}
 \end{exercise}
 
-\begin{exercise}[Tricky]
-Prove that if $A$ is nonempty and finite, then there exists a unique
-$n \in \N$ such
-that there exists a bijection between $A$ and $\{ 1, 2, 3, \ldots, n \}$.
-In other words, the notation $\sabs{A} \coloneqq n$ is justified.
-Hint: Show that if $n > m$, then there is no injection from
-$\{ 1, 2, 3, \ldots, n \}$ to
+\begin{exercise}[Difícil]
+Demonstre que, se $A$ é finito e não vazio, então existe um único
+$n \in \N$ tal que há uma bijeção entre $A$ e $\{ 1, 2, 3, \ldots, n \}$.
+Em outras palavras, a notação $\sabs{A} \coloneqq n$ é justificada.
+Dica: mostre que, se $n > m$, então não existe injeção de
+$\{ 1, 2, 3, \ldots, n \}$ em
 $\{ 1, 2, 3, \ldots, m \}$.
 \end{exercise}
 
 
 \begin{exercise}
-Prove:
+Demonstre:
 \begin{enumerate}[a)]
 \item $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$.
 \item $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$.
@@ -1296,33 +1288,33 @@ Prove:
 
 \begin{samepage}
 \begin{exercise}
-Let $A \Delta B$ denote the
-\emph{\myindex{symmetric difference}}, that is, the set of all elements that
-belong to either $A$ or $B$, but not to both $A$ and $B$.
+Denotemos por $A \Delta B$ a
+\emph{\myindex{diferen\c{c}a sim\'etrica}}, isto é, o conjunto de todos os elementos que
+pertencem a $A$ ou a $B$, mas não a ambos os conjuntos, $A$ e $B$.
 \begin{enumerate}[a)]
 \item
-Draw a Venn diagram for
+Desenhe um diagrama de Venn para
 $A \Delta B$.
 \item
-Show $A \Delta B = (A \setminus B) \cup (B \setminus A)$.
+Mostre que $A \Delta B = (A \setminus B) \cup (B \setminus A)$.
 \item
-Show $A \Delta B = (A \cup B) \setminus ( A \cap B)$.
+Mostre que $A \Delta B = (A \cup B) \setminus ( A \cap B)$.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
 
 \begin{exercise}
-For each $n \in \N$, let $A_n \coloneqq \{ (n+1)k : k \in \N \}$.
+Para cada $n \in \N$, seja $A_n \coloneqq \{ (n+1)k : k \in \N \}$.
 \begin{enumerate}[a)]
-\item Find $A_1 \cap A_2$.
-\item Find $\bigcup_{n=1}^\infty A_n$.
-\item Find $\bigcap_{n=1}^\infty A_n$.
+\item Determine $A_1 \cap A_2$.
+\item Determine $\bigcup_{n=1}^\infty A_n$.
+\item Determine $\bigcap_{n=1}^\infty A_n$.
 \end{enumerate}
 \end{exercise}
 
 \begin{samepage}
 \begin{exercise}
-Determine $\sP(S)$ (the power set) for each of the following:
+Determine $\sP(S)$ (o conjunto das partes) para cada um dos conjuntos a seguir:
 \begin{enumerate}[a)]
 \item $S = \emptyset$,
 \item $S = \{1\}$,
@@ -1334,113 +1326,113 @@ Determine $\sP(S)$ (the power set) for each of the following:
 
 
 \begin{exercise}
-Let $f \colon A \to B$ and $g \colon B \to C$ be functions.
+Sejam $f \colon A \to B$ e $g \colon B \to C$ funções.
 \begin{enumerate}[a)]
 \item
-Prove that if $g \circ f$ is injective, then $f$ is injective.
+Demonstre que, se $g \circ f$ é injetiva, então $f$ é injetiva.
 \item
-Prove that if $g \circ f$ is surjective, then $g$ is surjective.
+Demonstre que, se $g \circ f$ é sobrejetiva, então $g$ é sobrejetiva.
 \item
-Find an explicit example where $g \circ f$ is bijective, but neither $f$
-nor $g$ is bijective.
+Encontre um exemplo explícito em que $g \circ f$ é bijetiva, mas nem $f$
+nem $g$ é bijetiva.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
 \pagebreak[2]
-Prove by induction that $n < 2^n$ for all $n \in \N$.
+Demonstre por indução que $n < 2^n$ para todo $n \in \N$.
 \end{exercise}
 
 \begin{exercise}
-Show that for a finite set $A$ of cardinality $n$, the cardinality
-of $\sP(A)$ is $2^n$.
+Mostre que, para um conjunto finito $A$ de cardinalidade $n$, a cardinalidade
+de $\sP(A)$ é $2^n$.
 \end{exercise}
 
 \begin{exercise}
-Prove $\frac{1}{1\cdot 2} + 
+Demonstre que $\frac{1}{1\cdot 2} +
 \frac{1}{2\cdot 3} + \cdots + \frac{1}{n(n+1)} = \frac{n}{n+1}$
-for all $n \in \N$.
+para todo $n \in \N$.
 \end{exercise}
 
 \begin{exercise}
-Prove $1^3 + 2^3 + \cdots + n^3 = {\left( \frac{n(n+1)}{2} \right)}^2$
-for all $n \in \N$.
+Demonstre que $1^3 + 2^3 + \cdots + n^3 = {\left( \frac{n(n+1)}{2} \right)}^2$
+para todo $n \in \N$.
 \end{exercise}
 
 \begin{exercise}
-Prove that $n^3 + 5n$ is divisible by $6$ for all $n \in \N$.
+Demonstre que $n^3 + 5n$ é divisível por $6$ para todo $n \in \N$.
 \end{exercise}
 
 \begin{exercise}
-Find the smallest $n \in \N$ such that $2{(n+5)}^2 < n^3$ and call it $n_0$.
-Show that $2{(n+5)}^2 < n^3$ for all $n \geq n_0$.
+Encontre o menor $n \in \N$ tal que $2{(n+5)}^2 < n^3$ e chame-o de $n_0$.
+Mostre que $2{(n+5)}^2 < n^3$ para todo $n \geq n_0$.
 \end{exercise}
 
 \begin{exercise}
-Find all $n \in \N$ such that $n^2 < 2^n$.
+Encontre todos os $n \in \N$ tais que $n^2 < 2^n$.
 \end{exercise}
 
 \begin{exercise}
-Prove the 
-\hyperlink{wop:link}{well ordering property} of $\N$ using the
-\hyperref[induction:thm]{principle of induction}.
+Demonstre a
+\hyperlink{wop:link}{propriedade da boa ordenação} de $\N$ usando o
+\hyperref[induction:thm]{princípio da indução}.
 \end{exercise}
 
 
 \begin{exercise}
-Give an example of a countably infinite collection of finite sets $A_1, A_2, \ldots$,
-whose union is not a finite set.
+Dê um exemplo de uma coleção infinita enumerável de conjuntos finitos
+$A_1, A_2, \ldots$ cuja união não seja um conjunto finito.
 \end{exercise}
 
 \begin{exercise}
-Give an example of a countably infinite collection of infinite sets $A_1, A_2, \ldots$,
-with $A_j \cap A_k$ being infinite for all $j$ and $k$, such that
+Dê um exemplo de uma coleção infinita enumerável de conjuntos infinitos
+$A_1, A_2, \ldots$ em que $A_j \cap A_k$ seja infinito para quaisquer $j$ e $k$,
+mas
 $\bigcap_{j=1}^\infty A_j$
-is nonempty and finite.
+seja não vazio e finito.
 \end{exercise}
 
 \begin{exercise}
-Suppose $A \subset B$ and $B$ is finite. Prove that $A$ is finite.
-That is, if $A$ is nonempty, construct a bijection of $A$ to $\{ 1,2,\ldots,n \}$.
+Suponha que $A \subset B$ e que $B$ seja finito. Demonstre que $A$ é finito.
+Isto é, se $A$ não é vazio, construa uma bijeção de $A$ em $\{ 1,2,\ldots,n \}$.
 \end{exercise}
 
 \begin{exercise}
-Prove \propref{prop:equivclasses}.  That is, prove that if $\sR$ is an
-equivalence relation on a set $A$, then every $a \in A$ is in exactly one
-equivalence class.  Then prove that $a \, \sR \, b$ if and only if $[a] =
+Demonstre \propref{prop:equivclasses}. Isto é, demonstre que, se $\sR$ é uma
+relação de equivalência em um conjunto $A$, então cada $a \in A$ pertence a
+exatamente uma classe de equivalência. Em seguida, demonstre que
+$a \, \sR \, b$ se, e somente se, $[a] =
 [b]$.
 \end{exercise}
 
 \begin{exercise}
-Prove that the relation `$\sim$'
-in \exampleref{example:ratnums} is an equivalence
-relation.
+Demonstre que a relação $\sim$ em \exampleref{example:ratnums} é uma relação
+de equivalência.
 \end{exercise}
 
 \begin{exercise}
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Suppose $A \subset B$ and $B$ is countably infinite.  By constructing a
-bijection, show that $A$ is
-countable (that is, $A$ is empty, finite, or countably infinite).
-\item 
-Use part a) to show that if $\sabs{A} < \sabs{\N}$, then $A$ is finite.
+Suponha que $A \subset B$ e que $B$ seja infinito enumerável. Construindo
+uma bijeção, mostre que $A$ é
+enumerável (isto é, $A$ é vazio, finito ou infinito enumerável).
+\item
+Use o item (a) para mostrar que, se $\sabs{A} < \sabs{\N}$, então $A$ é finito.
 \end{enumerate}
 \end{exercise}
 
-\begin{exercise}[Challenging] \label{exercise:countsubsetbij}
-Suppose $\sabs{\N} \leq \sabs{S}$, or in other words, $S$
-contains a countably infinite subset.
-Show that there exists a countably infinite subset $A \subset S$
-such that there is 
-a bijection between $S \setminus A$ and $S$.
+\begin{exercise}[Desafiador] \label{exercise:countsubsetbij}
+Suponha que $\sabs{\N} \leq \sabs{S}$, ou, em outras palavras, que $S$
+contenha um subconjunto infinito enumerável.
+Mostre que existe um subconjunto infinito enumerável $A \subset S$
+tal que há uma bijeção entre $S \setminus A$ e $S$.
 \end{exercise}
 
 \begin{exercise}
-Prove the infinite versions of DeMorgan's laws.
-Suppose $A$ is a set and $B_\lambda$ is a collection of sets for $\lambda
-\in I$.  Prove
+Demonstre as versões infinitas das leis de De Morgan.
+Suponha que $A$ seja um conjunto e que $B_\lambda$ seja uma coleção de
+conjuntos para $\lambda \in I$. Demonstre que
 \begin{equation*}
 A \setminus \biggl(
 \bigcup_{\lambda \in I} B_\lambda
@@ -1465,9 +1457,9 @@ B_\lambda
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon A \to B$ is a function and for $\lambda \in I$, we have
-a collection of subsets $C_\lambda \subset A$ and
-$D_\lambda \subset B$.  Prove
+Suponha que $f \colon A \to B$ seja uma função e que, para $\lambda \in I$,
+tenhamos uma coleção de subconjuntos $C_\lambda \subset A$ e
+$D_\lambda \subset B$. Demonstre que
 \begin{equation*}
 f^{-1} \biggl(
 \bigcup_{\lambda \in I} D_\lambda
@@ -1483,7 +1475,7 @@ f^{-1} \biggl(
 \bigcap_{\lambda \in I}
 f^{-1}(D_\lambda) ,
 \end{equation*}
-and
+e
 \begin{equation*}
 f \biggl(
 \bigcup_{\lambda \in I} C_\lambda
@@ -1500,3 +1492,4 @@ f \biggl(
 f(C_\lambda) .
 \end{equation*}
 \end{exercise}
+

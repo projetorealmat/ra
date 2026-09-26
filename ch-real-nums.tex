@@ -1,34 +1,34 @@
-\chapter{Real Numbers} \label{rn:chapter}
+\chapter{Números reais} \label{rn:chapter}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Basic properties} \label{sec:basicpropsrn}
+\section{Propriedades básicas} \label{sec:basicpropsrn}
 
-\sectionnotes{1.5 lectures}
+\sectionnotes{1,5 aulas}
 
-In analysis, the main object we work with is the set of
-\myindex{real numbers}.  As this set is so fundamental, much time is often
-spent formally constructing the set of real numbers.  However, we
-take an easier approach, and we will assume that a set with the correct
-properties exists.
-The three key properties of the real numbers are that it is
-an ordered set, it is complete with respect to this order,
-and it is a field compatible with this order.
-We start with order.
+Em análise, o objeto principal com que trabalhamos é o conjunto dos
+\myindex{números reais}. Como esse conjunto é tão fundamental, muitas vezes
+dedica-se bastante tempo à sua construção formal. No entanto, adotaremos uma
+abordagem mais simples e suporemos que existe um conjunto com as propriedades
+adequadas.
+As três propriedades fundamentais dos números reais são: ser um conjunto
+ordenado, ser completo em relação a essa ordem e ser um corpo compatível com
+essa ordem.
+Começamos pela ordem.
 
 \begin{defn}
-An \emph{\myindex{ordered set}} is a set $S$ together with
-a relation $<$ such that
+Um \emph{\myindex{conjunto ordenado}} é um conjunto $S$ munido de
+uma relação $<$ tal que
 %\begin{enumerate}[(i),itemsep=0.5\itemsep,parsep=0.5\parsep,topsep=0.5\topsep,partopsep=0.5\partopsep]
 %\begin{enumerate}[(i),nolistsep]
 \begin{enumerate}[(i)]
-\item \emph{(\myindex{trichotomy})} For all $x, y \in S$, exactly one of
-$x < y$, $x=y$, or $y < x$ holds.
-\item \emph{(transitivity)} If $x,y,z \in S$ are such that $x < y$ and $y
-< z$, then $x < z$.
+\item \emph{(\myindex{tricotomia})} Para todos $x, y \in S$, exatamente uma
+das afirmações $x < y$, $x=y$ ou $y < x$ é verdadeira.
+\item \emph{(transitividade)} Se $x,y,z \in S$ são tais que $x < y$ e $y
+< z$, então $x < z$.
 \end{enumerate}
-We write $x \leq y$ if $x < y$ or $x=y$.  We define
-$>$ and $\geq$ in the obvious way.
+Escrevemos $x \leq y$ se $x < y$ ou $x=y$. Definimos
+$>$ e $\geq$ da maneira usual.
 \glsadd{not:ordereq}
 \glsadd{not:orderlt}
 \glsadd{not:orderleq}
@@ -37,135 +37,129 @@ $>$ and $\geq$ in the obvious way.
 \end{defn}
 
 
-The set of rational numbers $\Q$ is an ordered set: We say
-$x < y$ if and only if $y-x$ is a positive rational number, that is,
-if $y-x = \nicefrac{p}{q}$ where $p,q \in \N$.  Similarly,
-$\N$ and $\Z$ are also ordered sets.
+O conjunto dos números racionais $\Q$ é ordenado: dizemos
+$x < y$ se, e somente se, $y-x$ é um número racional positivo, isto é,
+$y-x = \nicefrac{p}{q}$, onde $p,q \in \N$. Da mesma forma,
+$\N$ e $\Z$ também são conjuntos ordenados.
 
-There are ordered sets other than sets of numbers.  For example, the
-set of countries can be ordered by landmass, so India $>$
-Liechtenstein.
-A typical ordered set that you have used since primary school is the
-dictionary.  It is the ordered set of words where the order is
-called the lexicographic ordering.  Such ordered sets often appear, for
-example, in
-computer science.  In this book, we will mostly be interested in ordered
-sets of numbers.
+Há conjuntos ordenados que não são conjuntos de números. Por exemplo, o
+conjunto dos países pode ser ordenado por área territorial, de modo que a Índia $>$ Liechtenstein.
+Um conjunto ordenado típico que você conhece desde o ensino fundamental é o
+dicionário. Ele é o conjunto ordenado das palavras, cuja ordem é chamada de
+ordem lexicográfica. Conjuntos ordenados desse tipo aparecem com frequência,
+por exemplo, na ciência da computação. Neste livro, nosso interesse estará
+principalmente nos conjuntos ordenados de números.
 
 \begin{defn}
-Let $E \subset S$, where $S$ is an ordered set.
+Seja $E \subset S$, onde $S$ é um conjunto ordenado.
 %\begin{enumerate}[(i),itemsep=0.5\itemsep,parsep=0.5\parsep,topsep=0.5\topsep,partopsep=0.5\partopsep]
 %\begin{enumerate}[(i),nolistsep]
 \begin{enumerate}[(i)]
-\item If there exists a $b \in S$ such that $x \leq b$ for all $x \in E$,
-then we say $E$ is \emph{\myindex{bounded above}} and $b$
-is an \emph{\myindex{upper bound}} of $E$.
-\item If there exists a $b \in S$ such that $x \geq b$ for all $x \in E$,
-then we say $E$ is \emph{\myindex{bounded below}} and $b$
-is a \emph{\myindex{lower bound}} of $E$.
-\item If there exists an upper bound $b_0$ of $E$ such that
-$b_0 \leq b$ for all upper bounds $b$ of $E$, then
-$b_0$ is called the \emph{\myindex{least upper bound}} or
-the \emph{\myindex{supremum}}
-of $E$.  See \figureref{fig:lub}.  We write\glsadd{not:sup}
+\item Se existe $b \in S$ tal que $x \leq b$ para todo $x \in E$,
+dizemos que $E$ é \emph{\myindex{limitado superiormente}} e que $b$
+é uma \emph{\myindex{cota superior}} de $E$.
+\item Se existe $b \in S$ tal que $x \geq b$ para todo $x \in E$,
+dizemos que $E$ é \emph{\myindex{limitado inferiormente}} e que $b$
+é uma \emph{\myindex{cota inferior}} de $E$.
+\item Se existe uma cota superior $b_0$ de $E$ tal que
+$b_0 \leq b$ para toda cota superior $b$ de $E$, então
+$b_0$ é chamada de \emph{\myindex{menor cota superior}} ou
+\emph{\myindex{supremo}}
+de $E$. Veja a \figureref{fig:lub}. Escrevemos\glsadd{not:sup}
 \begin{equation*}
 \sup\, E \coloneqq b_0 .
 \end{equation*}
-\item Similarly, if there exists a lower bound $b_0$ of $E$ such that
-$b_0 \geq b$ for all lower bounds $b$ of $E$, then
-$b_0$ is called the \emph{\myindex{greatest lower bound}} or
-the \emph{\myindex{infimum}}
-of $E$.  We write\glsadd{not:inf}
+\item De maneira semelhante, se existe uma cota inferior $b_0$ de $E$ tal que
+$b_0 \geq b$ para toda cota inferior $b$ de $E$, então
+$b_0$ é chamada de \emph{\myindex{maior cota inferior}} ou
+\emph{\myindex{ínfimo}}
+de $E$. Escrevemos\glsadd{not:inf}
 \begin{equation*}
 \inf\, E \coloneqq b_0 .
 \end{equation*}
 \end{enumerate}
-When a set $E$ is both bounded above and bounded below, we say simply that
-$E$ is \emph{bounded}\index{bounded set}.
+Quando um conjunto $E$ é limitado tanto superior quanto inferiormente,
+dizemos simplesmente que $E$ é \emph{limitado}\index{conjunto limitado}.
 \end{defn}
 
-The notation $\sup E$ and $\inf E$ is justified as
-the
-supremum (or infimum) is unique (if it exists): If $b$ and
-$b'$ are suprema of $E$, then $b \leq b'$ and $b' \leq b$, because both
-$b$ and $b'$ are the least upper bounds, so $b=b'$.
+A notação $\sup E$ e $\inf E$ é justificada porque o
+supremo (ou ínfimo) é único (quando existe): Se $b$ e
+$b'$ são supremos de $E$, então $b \leq b'$ e $b' \leq b$, pois $b$ e $b'$ são ambos menores cotas superiores; portanto, $b=b'$.
 
 
 \begin{myfigureht}
 \myincludepdft{lub}{%
-A diagram of the set E on the real line as a horizontal line.
-An arrow on the left shows that numbers get smaller as we move to the
-left and another arrow on the right shows the numbers grow bigger
-as we move to the right.  The set E is given as highlighted sections of
-the real line.  Several vertical ticks that are all to the right of the
-set E are marked as upper bounds of E, while the smallest one of these
-which sits right at the edge of E is marked as the least upper bound of E.}
-\caption{A set $E$ bounded above and the least upper bound of $E$.\label{fig:lub}}
+Um diagrama do conjunto E na reta real, representado por uma linha horizontal.
+Uma seta à esquerda indica que os números diminuem quando nos deslocamos para
+a esquerda, e outra seta à direita indica que os números aumentam quando nos
+deslocamos para a direita. O conjunto E aparece em trechos destacados da reta
+real. Vários traços verticais, todos à direita do conjunto E, estão marcados
+como cotas superiores de E; o menor deles, situado exatamente na extremidade
+de E, está marcado como a menor cota superior de E.}
+\caption{Um conjunto $E$ limitado superiormente e a menor cota superior de $E$.\label{fig:lub}}
 \end{myfigureht}
 
-A simple example:
-Let $S \coloneqq \{ a, b, c, d, e \}$ be ordered as $a < b < c < d < e$, and
-let $E \coloneqq \{ a, c \}$.  Then $c$, $d$, and $e$ are upper bounds of $E$, and
-$c$ is the least upper bound or supremum of $E$.
+Um exemplo simples:
+Seja $S \coloneqq \{ a, b, c, d, e \}$ ordenado por $a < b < c < d < e$, e
+seja $E \coloneqq \{ a, c \}$. Então $c$, $d$ e $e$ são cotas superiores de $E$, e
+$c$ é a menor cota superior, ou supremo, de $E$.
 
-A supremum or infimum for $E$ (even if it exists) need not be
-in $E$.  The set $E \coloneqq \{ x \in \Q : x < 1 \}$ has a least upper
-bound of 1, but 1 is not in the set $E$ itself.
-The set
-$G \coloneqq \{ x \in \Q : x \leq 1 \}$ also has an upper bound of 1,
-and in this case $1 \in G$.
-The set $P \coloneqq \{ x \in \Q : x \geq 0 \}$ has no upper bound (why?) and therefore
-cannot have a least upper bound.  The set $P$ does have a greatest lower
-bound:~0.
+O supremo ou o ínfimo de $E$ (mesmo quando existe) não precisa pertencer a
+$E$. O conjunto $E \coloneqq \{ x \in \Q : x < 1 \}$ tem 1 como menor cota
+superior, mas 1 não pertence ao próprio conjunto $E$.
+O conjunto
+$G \coloneqq \{ x \in \Q : x \leq 1 \}$ também tem 1 como cota superior,
+e, neste caso, $1 \in G$.
+O conjunto $P \coloneqq \{ x \in \Q : x \geq 0 \}$ não tem cota superior (por quê?) e, portanto,
+não pode ter menor cota superior. O conjunto $P$ tem uma maior cota
+inferior:~0.
 
 \begin{defn} \label{defn:lub}
-An ordered set $S$ has the \emph{\myindex{least-upper-bound property}} if
-every nonempty
-subset $E \subset S$ that is bounded above has a least upper bound,
-that is, $\sup\, E$ exists in $S$.
+Um conjunto ordenado $S$ tem a \emph{\myindex{propriedade da menor cota superior}} se
+todo subconjunto não vazio
+$E \subset S$ limitado superiormente tem uma menor cota superior, isto é,
+$\sup\, E$ existe em $S$.
 \end{defn}
 
-The \emph{least-upper-bound property}
-is sometimes called the \emph{\myindex{completeness property}} or the
-\emph{\myindex{Dedekind completeness property}}%
+A \emph{propriedade da menor cota superior}
+também é chamada, às vezes, de \emph{\myindex{propriedade da completude}} ou
+\emph{\myindex{propriedade da completude de Dedekind}}%
 \footnote{%
-Named after the German mathematician
+Em homenagem ao matemático alemão
 \href{https://en.wikipedia.org/wiki/Richard_Dedekind}{Julius Wilhelm Richard Dedekind}
 (1831--1916).}.
-The real numbers have this property.
+Os números reais têm essa propriedade.
 
 \begin{example}
-The set $\Q$ of rational numbers does not have the least-upper-bound property.  The subset
-$\{ x \in \Q : x^2 < 2 \}$ does not have a supremum in $\Q$.  We will
-see later (\exampleref{example:sqrt2}) that the supremum is
-$\sqrt{2}$, which is not rational%
-\footnote{This is true for all other roots of 2, and interestingly,
-that $\sqrt[k]{2}$ is never rational for $k > 1$ is related to
-the impossibility of tuning a piano
-perfectly in all keys.  See, for example:
+O conjunto $\Q$ dos números racionais não tem a propriedade da menor cota superior. O subconjunto
+$\{ x \in \Q : x^2 < 2 \}$ não tem supremo em $\Q$. Veremos mais adiante (\exampleref{example:sqrt2}) que o supremo é
+$\sqrt{2}$, que não é racional%
+\footnote{O mesmo vale para todas as outras raízes de 2; além disso, o fato de
+$\sqrt[k]{2}$ nunca ser racional para $k > 1$ está relacionado à
+impossibilidade de afinar perfeitamente um piano em todas as tonalidades. Veja, por exemplo:
 \url{https://youtu.be/1Hqm0dYKUx4}.}.
-Suppose $x \in \Q$ such that $x^2 = 2$.
-Write $x=\nicefrac{m}{n}$ in lowest terms.  So ${(\nicefrac{m}{n})}^2 = 2$
-or
-$m^2 = 2n^2$.  Hence, $m^2$ is divisible by 2, and so $m$ is divisible by
-2.  Write $m = 2k$ and so ${(2k)}^2 = 2n^2$.  Divide by 2
-and note that $2k^2 = n^2$, and hence $n$ is divisible by 2.  But that is a
-contradiction as $\nicefrac{m}{n}$ is in lowest terms.
+Suponha que $x \in \Q$ seja tal que $x^2 = 2$.
+Escreva $x=\nicefrac{m}{n}$ em forma irredutível. Então ${(\nicefrac{m}{n})}^2 = 2$
+ou
+$m^2 = 2n^2$. Portanto, $m^2$ é divisível por 2, e assim $m$ é divisível por
+2. Escreva $m = 2k$; então ${(2k)}^2 = 2n^2$. Divida por 2
+e observe que $2k^2 = n^2$; logo, $n$ é divisível por 2. Mas isso é uma
+contradição, pois $\nicefrac{m}{n}$ está em forma irredutível.
 \end{example}
 
-That $\Q$ does not have the least-upper-bound property is one of the most
-important reasons we work with $\R$ in analysis.  The set $\Q$
-is just fine for algebraists.  But we analysts require the least-upper-bound
-property to do any work.
-We also require our real numbers to have many algebraic properties.
-In particular, we require that they be a field.
+O fato de $\Q$ não ter a propriedade da menor cota superior é uma das
+principais razões pelas quais trabalhamos com $\R$ em análise. O conjunto $\Q$
+é perfeitamente adequado para os algebristas. Mas nós, analistas, precisamos
+da propriedade da menor cota superior para fazer qualquer coisa.
+Também exigimos que os números reais tenham muitas propriedades algébricas.
+Em particular, exigimos que formem um corpo.
 
 
 %\enlargethispage{\baselineskip}
 \begin{defn}
-A set $F$ is called a \emph{\myindex{field}} if it has two operations
-defined on it, addition $x+y$ and multiplication $xy$, and if it satisfies
-the following axioms\index{axiom}:
+Um conjunto $F$ é chamado de \emph{\myindex{corpo}} se nele estiverem
+definidas duas operações, a adição $x+y$ e a multiplicação $xy$, e se forem
+satisfeitos os seguintes axiomas\index{axioma}:
 %mbxSTARTIGNORE
 \begin{enumerate}[({A}1)]
 %mbxENDIGNORE
@@ -173,23 +167,23 @@ the following axioms\index{axiom}:
 %mbx <dl>
 \item
 %mbx <title>(A1)</title>
-If $x \in F$ and $y \in F$, then $x+y \in F$.
+Se $x \in F$ e $y \in F$, então $x+y \in F$.
 \item
 %mbx <title>(A2)</title>
-\emph{(commutativity of addition)}
-$x+y = y+x$ for all $x,y \in F$.
+\emph{(comutatividade da adição)}
+$x+y = y+x$ para todos $x,y \in F$.
 \item
 %mbx <title>(A3)</title>
-\emph{(associativity of addition)}
-$(x+y)+z = x+(y+z)$ for all $x,y,z \in F$.
+\emph{(associatividade da adição)}
+$(x+y)+z = x+(y+z)$ para todos $x,y,z \in F$.
 \item
 %mbx <title>(A4)</title>
-There exists an element $0 \in F$ such that
-$0+x = x$ for all $x \in F$.
+Existe um elemento $0 \in F$ tal que
+$0+x = x$ para todo $x \in F$.
 \item
 %mbx <title>(A5)</title>
-For every element $x\in F$, there exists an element $-x \in F$
-such that $x + (-x) = 0$.
+Para cada elemento $x\in F$, existe um elemento $-x \in F$
+tal que $x + (-x) = 0$.
 %mbxCLOSEITEM
 %mbx </dl>
 %mbxSTARTIGNORE
@@ -199,24 +193,24 @@ such that $x + (-x) = 0$.
 %mbx <dl>
 \item
 %mbx <title>(M1)</title>
-If $x \in F$ and $y \in F$, then $xy \in F$.
+Se $x \in F$ e $y \in F$, então $xy \in F$.
 \item
 %mbx <title>(M2)</title>
-\emph{(commutativity of multiplication)}
-$xy = yx$ for all $x,y \in F$.
+\emph{(comutatividade da multiplicação)}
+$xy = yx$ para todos $x,y \in F$.
 \item
 %mbx <title>(M3)</title>
-\emph{(associativity of multiplication)}
-$(xy)z = x(yz)$ for all $x,y,z \in F$.
+\emph{(associatividade da multiplicação)}
+$(xy)z = x(yz)$ para todos $x,y,z \in F$.
 \item
 %mbx <title>(M4)</title>
-There exists an element $1 \in F$ (and $1 \neq 0$) such that
-$1x = x$ for all $x \in F$.
+Existe um elemento $1 \in F$ (com $1 \neq 0$) tal que
+$1x = x$ para todo $x \in F$.
 \item
 %mbx <title>(M5)</title>
-For every $x\in F$ such that $x \neq 0$ there exists an element
+Para cada $x\in F$ tal que $x \neq 0$, existe um elemento
 $\nicefrac{1}{x} \in F$
-such that $x(\nicefrac{1}{x}) = 1$.
+tal que $x(\nicefrac{1}{x}) = 1$.
 %\end{enumerate}
 %\begin{enumerate}
 %mbxSTARTIGNORE
@@ -224,8 +218,8 @@ such that $x(\nicefrac{1}{x}) = 1$.
 %mbxENDIGNORE
 %mbxlatex \item
 %mbx <title>(D)</title>
-\emph{(distributive law)} $x(y+z) = xy+xz$
-for all $x,y,z \in F$.
+\emph{(lei distributiva)} $x(y+z) = xy+xz$
+para todos $x,y,z \in F$.
 %mbxSTARTIGNORE
 \end{enumerate}
 %mbxENDIGNORE
@@ -234,460 +228,459 @@ for all $x,y,z \in F$.
 \end{defn}
 
 \begin{example}
-The set $\Q$ of rational numbers is a field.  On the other hand, $\Z$ is not a
-field, as it does not contain multiplicative inverses.  For instance,
-there is no $x \in \Z$ such that $2x = 1$, so (M5) is not satisfied.  You
-can check that (M5) is the only property that fails\footnote{An algebraist would say that $\Z$ is an ordered
-ring, or perhaps a commutative ordered ring.}.
+O conjunto $\Q$ dos números racionais é um corpo. Por outro lado, $\Z$ não é um
+corpo, pois não contém os inversos multiplicativos. Por exemplo, não existe
+$x \in \Z$ tal que $2x = 1$, portanto o axioma (M5) não é satisfeito. Você
+pode verificar que (M5) é a única propriedade que falha\footnote{Um algebrista diria que $\Z$ é um anel ordenado ou, talvez, um anel comutativo ordenado.}.
 \end{example}
 
-We will assume the basic facts about fields that are easily
-proved from the axioms.  For example, $0x = 0$ is easily proved
-by noting that $xx = (0+x)x = 0x+xx$, using (A4), (D)\@, and (M2).  Then
-using (A5) on $xx$, along with (A2), (A3), and (A4), we obtain $0 = 0x$.
+Vamos supor conhecidos os fatos básicos sobre corpos que se demonstram
+facilmente a partir dos axiomas. Por exemplo, é fácil demonstrar que $0x = 0$,
+observando que $xx = (0+x)x = 0x+xx$, usando (A4), (D)\@ e (M2). Então,
+usando (A5) em $xx$, junto com (A2), (A3) e (A4), obtemos $0 = 0x$.
 
 \begin{defn}
-A field $F$ is said to be an \emph{\myindex{ordered field}} if
-$F$ is also an ordered set such that
+Dizemos que um corpo $F$ é um \emph{\myindex{corpo ordenado}} se
+$F$ também é um conjunto ordenado tal que
 \begin{enumerate}[(i)]
-\item \label{defn:ordfield:i} For $x,y,z \in F$, $x < y$ implies $x+z <
+\item \label{defn:ordfield:i} Para $x,y,z \in F$, $x < y$ implica $x+z <
 y+z$.
-\item \label{defn:ordfield:ii} For $x,y \in F$, $x > 0$ and $y > 0$
-implies $xy > 0$.
+\item \label{defn:ordfield:ii} Para $x,y \in F$, $x > 0$ e $y > 0$
+implicam $xy > 0$.
 \end{enumerate}
-If $x > 0$, we say $x$ is \emph{\myindex{positive}}.
-If $x < 0$, we say $x$ is \emph{\myindex{negative}}.
-We also say $x$ is \emph{\myindex{nonnegative}} if $x \geq 0$,
-and $x$ is \emph{\myindex{nonpositive}} if $x \leq 0$.
+Se $x > 0$, dizemos que $x$ é \emph{\myindex{positivo}}.
+Se $x < 0$, dizemos que $x$ é \emph{\myindex{negativo}}.
+Também dizemos que $x$ é \emph{\myindex{não negativo}} se $x \geq 0$
+e que $x$ é \emph{\myindex{não positivo}} se $x \leq 0$.
 \end{defn}
 
-The rational numbers $\Q$ with the standard ordering is an ordered field.
-We leave the details to the interested reader.
+Os números racionais $\Q$ com a ordem usual formam um corpo ordenado.
+Deixamos os detalhes para o leitor interessado.
 
 \begin{prop} \label{prop:bordfield}
-Let $F$ be an ordered field and $x,y,z,w \in F$.  Then
+Seja $F$ um corpo ordenado e sejam $x,y,z,w \in F$. Então
 \begin{enumerate}[(i)]
-\item \label{prop:bordfield:i} If $x > 0$, then $-x < 0$ (and vice versa).
-\item \label{prop:bordfield:ii} If $x > 0$ and $y < z$, then $xy < xz$.
-\item \label{prop:bordfield:iii} If $x < 0$ and $y < z$, then $xy > xz$.
-\item \label{prop:bordfield:iv} If $x \neq 0$, then $x^2 > 0$.
-\item \label{prop:bordfield:v} If $0 < x < y$, then $0 < \nicefrac{1}{y} < \nicefrac{1}{x}$.
-\item \label{prop:bordfield:vi} If $0 < x < y$, then $x^2 < y^2$.
-\item \label{prop:bordfield:vii} If $x \leq y$ and $z \leq w$, then $x + z \leq y + w$.
+\item \label{prop:bordfield:i} Se $x > 0$, então $-x < 0$ (e vice-versa).
+\item \label{prop:bordfield:ii} Se $x > 0$ e $y < z$, então $xy < xz$.
+\item \label{prop:bordfield:iii} Se $x < 0$ e $y < z$, então $xy > xz$.
+\item \label{prop:bordfield:iv} Se $x \neq 0$, então $x^2 > 0$.
+\item \label{prop:bordfield:v} Se $0 < x < y$, então $0 < \nicefrac{1}{y} < \nicefrac{1}{x}$.
+\item \label{prop:bordfield:vi} Se $0 < x < y$, então $x^2 < y^2$.
+\item \label{prop:bordfield:vii} Se $x \leq y$ e $z \leq w$, então $x + z \leq y + w$.
 \end{enumerate}
 \end{prop}
 
-Note that \ref{prop:bordfield:iv} implies, in particular, that $1 > 0$.
+Observe que \ref{prop:bordfield:iv} implica, em particular, que $1 > 0$.
 
 \begin{proof}
-Let us prove \ref{prop:bordfield:i}.  The inequality $x > 0$ implies by item
-\ref{defn:ordfield:i} of the definition of ordered fields that
-$x + (-x) > 0 + (-x)$.  Apply the algebraic properties of fields to
-obtain $0 > -x$.  The \myquote{vice versa} follows by a similar calculation.
+Vamos provar \ref{prop:bordfield:i}. A desigualdade $x > 0$ implica, pelo item
+\ref{defn:ordfield:i} da definição de corpo ordenado, que
+$x + (-x) > 0 + (-x)$. Usando as propriedades algébricas dos corpos,
+obtemos $0 > -x$. A afirmação \myquote{e vice-versa} segue por um cálculo
+semelhante.
 
-For \ref{prop:bordfield:ii}, note that $y < z$ implies
-$0 < z - y$ by
-item \ref{defn:ordfield:i} of the definition of ordered fields.
-Apply item
-\ref{defn:ordfield:ii} of the definition of ordered fields to obtain
-$0 < x(z-y)$.  By algebraic properties, $0 < xz - xy$.
-Again by item
-\ref{defn:ordfield:i} of the definition, $xy < xz$.
+Para provar \ref{prop:bordfield:ii}, observe que $y < z$ implica
+$0 < z - y$ pelo
+item \ref{defn:ordfield:i} da definição de corpo ordenado.
+Aplique o item
+\ref{defn:ordfield:ii} da definição de corpo ordenado para obter
+$0 < x(z-y)$. Pelas propriedades algébricas, $0 < xz - xy$.
+Novamente pelo item \ref{defn:ordfield:i} da definição, $xy < xz$.
 
-Part \ref{prop:bordfield:iii} is left as an exercise.
+A parte \ref{prop:bordfield:iii} fica como exercício.
 
-To prove part \ref{prop:bordfield:iv}, first suppose $x > 0$.
-By item \ref{defn:ordfield:ii} of the definition of ordered fields,
-$x^2 > 0$ (use $y=x$).  If $x < 0$, we use
-part \ref{prop:bordfield:iii} of this proposition, where we plug in $y=x$ and
+Para provar a parte \ref{prop:bordfield:iv}, suponha primeiro que $x > 0$.
+Pelo item \ref{defn:ordfield:ii} da definição de corpo ordenado,
+$x^2 > 0$ (basta tomar $y=x$). Se $x < 0$, usamos
+a parte \ref{prop:bordfield:iii} desta proposição, tomando $y=x$ e
 $z=0$.
 
-To prove part \ref{prop:bordfield:v}, notice that
-$\nicefrac{1}{x}$ cannot be equal to zero (why?).
-Suppose $\nicefrac{1}{x} < 0$,
-then $\nicefrac{-1}{x} > 0$ by \ref{prop:bordfield:i}.
-Apply part \ref{defn:ordfield:ii} of the definition (as $x > 0$) to obtain
-$x(\nicefrac{-1}{x}) > 0$ or $-1 > 0$, which contradicts $1 > 0$ by using part
-\ref{prop:bordfield:i} again.  Hence $\nicefrac{1}{x} > 0$.
-Similarly, $\nicefrac{1}{y} > 0$.  Thus $(\nicefrac{1}{x})(\nicefrac{1}{y}) > 0$
-by definition of ordered field, and by part \ref{prop:bordfield:ii},
+Para provar a parte \ref{prop:bordfield:v}, observe que
+$\nicefrac{1}{x}$ não pode ser igual a zero (por quê?).
+Suponha que $\nicefrac{1}{x} < 0$;
+então $\nicefrac{-1}{x} > 0$ pela parte \ref{prop:bordfield:i}.
+Aplique a parte \ref{defn:ordfield:ii} da definição (pois $x > 0$) para obter
+$x(\nicefrac{-1}{x}) > 0$ ou $-1 > 0$, o que contradiz $1 > 0$ usando novamente a parte
+\ref{prop:bordfield:i}. Portanto, $\nicefrac{1}{x} > 0$.
+De maneira semelhante, $\nicefrac{1}{y} > 0$. Logo $(\nicefrac{1}{x})(\nicefrac{1}{y}) > 0$
+pela definição de corpo ordenado e, pela parte \ref{prop:bordfield:ii},
 \begin{equation*}
 (\nicefrac{1}{x})(\nicefrac{1}{y})x < (\nicefrac{1}{x})(\nicefrac{1}{y})y .
 \end{equation*}
-By algebraic properties, $\nicefrac{1}{y} < \nicefrac{1}{x}$.
+Pelas propriedades algébricas, $\nicefrac{1}{y} < \nicefrac{1}{x}$.
 
-Parts \ref{prop:bordfield:vi} and \ref{prop:bordfield:vii} are left as
-exercises.
+As partes \ref{prop:bordfield:vi} e \ref{prop:bordfield:vii} ficam como
+exercícios.
 \end{proof}
 
-The product of two positive numbers (elements of an ordered field) is positive
-by the definition of an ordered field.
-However, it is not true that if the product is positive, then each of the two
-factors must be positive.  For instance, $(-1)(-1) = 1 > 0$.
+O produto de dois números positivos (elementos de um corpo ordenado) é positivo
+pela definição de corpo ordenado.
+No entanto, não é verdade que, se o produto é positivo, cada um dos fatores
+precisa ser positivo. Por exemplo, $(-1)(-1) = 1 > 0$.
 
 \begin{prop}
-Let $x,y \in F$, where $F$ is an ordered field.  If
-$xy > 0$, then either both $x$ and $y$ are positive, or both are negative.
+Sejam $x,y \in F$, onde $F$ é um corpo ordenado. Se
+$xy > 0$, então ou ambos $x$ e $y$ são positivos, ou ambos são negativos.
 \end{prop}
 
 \begin{proof}
-We show the contrapositive: \emph{If either $x$ or $y$ is zero, or
-if $x$ and $y$ have opposite signs, then $xy$ is not positive.}
-If $x$ or $y$ is zero, then $xy$ is zero and hence not positive.
-Hence assume that $x$ and $y$ are nonzero and have
-opposite signs.
-Without loss of generality,
-suppose $x > 0$ and $y < 0$.
-Multiply $y < 0$ by $x$ to get $xy < 0x = 0$.
+Vamos demonstrar a contrapositiva: \emph{Se $x$ ou $y$ é zero, ou
+se $x$ e $y$ têm sinais opostos, então $xy$ não é positivo.}
+Se $x$ ou $y$ é zero, então $xy$ é zero e, portanto, não é positivo.
+Assim, suponha que $x$ e $y$ sejam não nulos e tenham
+sinais opostos.
+Sem perda de generalidade,
+suponha que $x > 0$ e $y < 0$.
+Multiplique $y < 0$ por $x$ para obter $xy < 0x = 0$.
 \end{proof}
 
 \begin{example} \label{example:complexfield}
-The reader may have heard about the \emph{\myindex{complex numbers}},
-usually denoted by $\C$.\glsadd{not:complex}
-That is, $\C$ is the set of numbers of
-the form $x + iy$, where $x$ and $y$ are real numbers, and $i$ is the
-imaginary number, a number such that $i^2 = -1$.  The reader may
-remember from algebra that $\C$ is also a field; however, it is not an
-ordered field.  While one can make $\C$ into an ordered set in some way,
-it is not possible to put an
-order on $\C$ that would make it an ordered field: In every ordered field,
-$-1 < 0$ and $x^2 > 0$ for all nonzero $x$, but in $\C$, $i^2 = -1$.
+Talvez o leitor já tenha ouvido falar dos \emph{\myindex{números complexos}},
+geralmente denotados por $\C$.\glsadd{not:complex}
+Isto é, $\C$ é o conjunto dos números da forma
+$x + iy$, onde $x$ e $y$ são números reais e $i$ é a
+unidade imaginária, um número tal que $i^2 = -1$. Talvez o leitor
+se lembre, das aulas de álgebra, de que $\C$ também é um corpo; no entanto, não é um
+corpo ordenado. Embora seja possível tornar $\C$ um conjunto ordenado de
+alguma maneira, não é possível definir em $\C$ uma ordem que o torne um
+corpo ordenado: Em todo corpo ordenado,
+$-1 < 0$ e $x^2 > 0$ para todo $x$ não nulo, mas em $\C$ temos
+$i^2 = -1$.
 \end{example}
 
-Finally, an ordered field that has the least-upper-bound property has the
-corresponding property for greatest lower bounds.
+Por fim, um corpo ordenado que tem a propriedade da menor cota superior também
+tem a propriedade correspondente para as maiores cotas inferiores.
 
 \begin{prop}
-Let $F$ be an ordered field with the least-upper-bound property.
-Let $A \subset F$ be a nonempty set that is bounded below.
-Then $\inf\, A$ exists.
+Seja $F$ um corpo ordenado com a propriedade da menor cota superior.
+Seja $A \subset F$ um conjunto não vazio e limitado inferiormente.
+Então $\inf\, A$ existe.
 \end{prop}
 
 \begin{proof}
-Let $B \coloneqq \{ -x : x \in A \}$. Let $b \in F$ be a lower bound for $A$:
-If $x \in A$, then $x \geq b$
-and hence $-x \leq -b$.  So $-b$
-is an upper bound for $B$.
-Since $F$ has the least-upper-bound property, $c\coloneqq\sup\, B$ exists, and $c \leq -b$.
-As $y \leq c$
-for all $y \in B$, we have $-c \leq x$ for all $x \in A$.
-So
-$-c$ is a lower bound for $A$.  As $-c \geq b$
-and $b$ is an arbitrary lower bound for $A$,
-the greatest lower bound of $A$ exists and equals $-c$.
+Seja $B \coloneqq \{ -x : x \in A \}$. Seja $b \in F$ uma cota inferior de $A$:
+Se $x \in A$, então $x \geq b$
+e, portanto, $-x \leq -b$. Assim, $-b$
+é uma cota superior de $B$.
+Como $F$ tem a propriedade da menor cota superior, existe $c\coloneqq\sup\, B$, e $c \leq -b$.
+Como $y \leq c$
+para todo $y \in B$, temos $-c \leq x$ para todo $x \in A$.
+Logo,
+$-c$ é uma cota inferior de $A$. Como $-c \geq b$
+e $b$ é uma cota inferior arbitrária de $A$,
+a maior cota inferior de $A$ existe e é igual a $-c$.
 \end{proof}
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
 \begin{exercise}
-Prove part \ref{prop:bordfield:iii} of \propref{prop:bordfield}.
-That is, let $F$ be an ordered field and $x,y,z \in F$.  Prove
-that
-if $x < 0$ and $y < z$, then $xy > xz$.
+Seja $F$ um corpo ordenado e sejam $x,y,z \in F$. Demonstre a parte
+\ref{prop:bordfield:iii} de \propref{prop:bordfield}.
+Isto é, demonstre que, se $x < 0$ e $y < z$, então $xy > xz$.
 \end{exercise}
 
 
 \begin{exercise} \label{exercise:finitesethasminmax}
-Let $S$ be an ordered set.  Let $A \subset S$ be a nonempty finite subset.
-Show that $A$ is bounded.  Furthermore,
-show that
-$\inf\, A$ exists and is in $A$ and
-$\sup\, A$ exists and is in $A$.
-Hint: Use \hyperref[induction:thm]{induction}.
+Seja $S$ um conjunto ordenado. Seja $A \subset S$ um subconjunto finito e não vazio.
+Mostre que $A$ é limitado. Além disso,
+mostre que
+$\inf\, A$ existe e pertence a $A$ e que
+$\sup\, A$ existe e pertence a $A$.
+Dica: use a \hyperref[induction:thm]{indução}.
 \end{exercise}
 
 \begin{exercise} \label{exercise:squareineq}
-Prove part \ref{prop:bordfield:vi} of \propref{prop:bordfield}.
-That is, let $x, y \in F$, where $F$ is an ordered field, such that
-$0 < x < y$.  Show that $x^2 < y^2$.
+Demonstre a parte \ref{prop:bordfield:vi} de \propref{prop:bordfield}.
+Isto é, sejam $x, y \in F$, onde $F$ é um corpo ordenado, tais que
+$0 < x < y$. Mostre que $x^2 < y^2$.
 \end{exercise}
 
 \begin{exercise}
-Let $S$ be an ordered set.  Let $B \subset S$ be bounded (above and
-below).  Let $A \subset B$ be a nonempty subset.
-Suppose all the $\inf$s and
-$\sup$s exist. Show that
+Seja $S$ um conjunto ordenado. Seja $B \subset S$ um conjunto limitado (superior
+e inferiormente). Seja $A \subset B$ um subconjunto não vazio.
+Suponha que existam todos os $\inf$s e
+$\sup$s. Mostre que
 \begin{equation*}
 \inf\, B \leq \inf\, A \leq \sup\, A \leq \sup\, B .
 \end{equation*}
 \end{exercise}
 
 \begin{exercise}
-Let $S$ be an ordered set.  Let $A \subset S$ and suppose
-$b$ is an upper bound for $A$.  Suppose $b \in A$.  Show
-that $b = \sup\, A$.
+Seja $S$ um conjunto ordenado. Seja $A \subset S$ e suponha que
+$b$ seja uma cota superior de $A$. Suponha que $b \in A$. Mostre
+que $b = \sup\, A$.
 \end{exercise}
 
 \begin{exercise}
-Let $S$ be an ordered set.  Let $A \subset S$ be nonempty and
-bounded above.
-Suppose $\sup\, A$ exists and
+Seja $S$ um conjunto ordenado. Seja $A \subset S$ não vazio e
+limitado superiormente.
+Suponha que $\sup\, A$ exista e
 $\sup\, A \notin A$.
-Show that $A$ contains a countably infinite
-subset.
+Mostre que $A$ contém um subconjunto infinito enumerável.
 %In particular, $A$ is infinite.
 \end{exercise}
 
 \begin{exercise}
-Find a nonstandard ordering of the set of natural numbers $\N$
-such that there exists a nonempty proper subset $A \subsetneq \N$
-and such that $\sup\, A$ exists in $\N$, but $\sup\, A \notin A$.
-To keep things straight, it might be a good idea to use a different
-notation for the nonstandard ordering such as $n \prec m$.
+Encontre uma ordenação não usual do conjunto dos números naturais $\N$
+tal que exista um subconjunto próprio não vazio $A \subsetneq \N$
+e tal que $\sup\, A$ exista em $\N$, mas $\sup\, A \notin A$.
+Para manter a notação clara, pode ser uma boa ideia usar uma notação diferente
+para a ordenação não usual, como $n \prec m$.
 \end{exercise}
 
 \begin{exercise}
 \pagebreak[2]
-Let $F \coloneqq \{ 0, 1, 2 \}$.
+Seja $F \coloneqq \{ 0, 1, 2 \}$.
 \begin{enumerate}[a)]
 \item
-Prove that there is
-exactly one way to define addition and multiplication so that $F$ is
-a field if $0$ and $1$ have their usual meaning of (A4) and (M4).
+Demonstre que existe uma única maneira de definir adição e multiplicação
+para que $F$ seja um corpo, se $0$ e $1$ tiverem o significado usual dos
+axiomas (A4) e (M4).
 \item
-Show that $F$ cannot be an ordered field.
+Mostre que $F$ não pode ser um corpo ordenado.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise} \label{exercise:dominatingb}
 \pagebreak[2]
-Let $S$ be an ordered set and
-let $A$ be a nonempty subset such that $\sup \, A$ exists.  Suppose there
-is a $B \subset A$ such that whenever $x \in A$ there is a $y \in B$
-such that $x \leq y$.  Show that $\sup \, B$ exists and $\sup \, B = \sup \, A$.
+Seja $S$ um conjunto ordenado e
+seja $A$ um subconjunto não vazio tal que $\sup \, A$ exista. Suponha que exista
+$B \subset A$ tal que, sempre que $x \in A$, existe $y \in B$
+com $x \leq y$. Mostre que $\sup \, B$ existe e $\sup \, B = \sup \, A$.
 \end{exercise}
 
 \begin{exercise}
-Let $D$ be the ordered set of all possible words (not just English words,
-all strings of letters of arbitrary length)
-using the Latin alphabet with only lowercase letters.  The order is the
-lexicographic order as in a dictionary (e.g.\ \emph{aa} $<$ \emph{aaa} $<$ \emph{dog} $<$ \emph{door}).
-Let $A$ be the subset of $D$ containing the words whose
-first letter is `a' (e.g.\ \emph{a} $\in A$, \emph{abcd} $\in A$).
-Show that $A$ has a supremum and find what it is.
+Seja $D$ o conjunto ordenado de todas as palavras possíveis (não apenas palavras em inglês,
+mas todas as sequências de letras de comprimento arbitrário)
+formadas com o alfabeto latino, usando somente letras minúsculas. A ordem é a
+ordem lexicográfica, como em um dicionário (por exemplo, \emph{aa} $<$ \emph{aaa} $<$ \emph{dog} $<$ \emph{door}).
+Seja $A$ o subconjunto de $D$ que contém as palavras cuja
+primeira letra é `a' (por exemplo, \emph{a} $\in A$, \emph{abcd} $\in A$).
+Mostre que $A$ tem supremo e determine qual é.
 \end{exercise}
 
 \begin{exercise}
-Let $F$ be an ordered field and $x,y,z,w \in F$.
+Sejam $F$ um corpo ordenado e $x,y,z,w \in F$.
 \begin{enumerate}[a)]
 \item
-Prove part \ref{prop:bordfield:vii} of \propref{prop:bordfield}.
-That is,
-if $x \leq y$ and $z \leq w$, then $x+z \leq y+w$.
+Demonstre a parte \ref{prop:bordfield:vii} de \propref{prop:bordfield}.
+Isto é,
+se $x \leq y$ e $z \leq w$, então $x+z \leq y+w$.
 \item
-Prove that
-if $x < y$ and $z \leq w$, then $x+z < y+w$.
+Demonstre que,
+se $x < y$ e $z \leq w$, então $x+z < y+w$.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Prove that any ordered field must contain a countably infinite set.
+Demonstre que todo corpo ordenado contém um subconjunto infinito enumerável.
 \end{exercise}
 
 \begin{exercise}
-Let $\N_{\infty} \coloneqq \N \cup \{ \infty \}$, where the elements of $\N$ are
-ordered in the usual way amongst themselves,
-and $k < \infty$ for every $k \in \N$.  Show $\N_{\infty}$ is an ordered set
-and that every subset $E \subset \N_{\infty}$ has a supremum in
-$\N_{\infty}$ (make sure to also handle the case of an empty set).
-Remark: Note that the case of the empty set will be different
-if our ordered set is the real numbers or the extended
-real numbers from the next section.  It is important that
-our ordered set here is $\N_{\infty}$.
+Seja $\N_{\infty} \coloneqq \N \cup \{ \infty \}$, onde os elementos de $\N$ são
+ordenados entre si da maneira usual,
+e $k < \infty$ para todo $k \in \N$. Mostre que $\N_{\infty}$ é um conjunto ordenado
+e que todo subconjunto $E \subset \N_{\infty}$ tem supremo em
+$\N_{\infty}$ (inclua também o caso do conjunto vazio).
+Observação: o caso do conjunto vazio será diferente
+se o conjunto ordenado for o dos números reais ou o dos números reais
+estendidos, que aparecerão na próxima seção. É importante que, neste exercício,
+o conjunto ordenado seja $\N_{\infty}$.
 \end{exercise}
 
 \begin{exercise}
-Let $S \coloneqq \{ a_k : k \in \N \} \cup \{ b_k : k \in \N \}$, ordered such that
-$a_k < b_j$ for every $k$ and $j$,
-$a_k < a_m$ whenever $k < m$,
-and $b_k > b_m$ whenever $k < m$.
+Seja $S \coloneqq \{ a_k : k \in \N \} \cup \{ b_k : k \in \N \}$, ordenado de modo que
+$a_k < b_j$ para todo $k$ e $j$,
+$a_k < a_m$ sempre que $k < m$,
+e $b_k > b_m$ sempre que $k < m$.
 \begin{enumerate}[a)]
 \item
-Show that $S$ is an ordered set.
+Mostre que $S$ é um conjunto ordenado.
 \item
-Show that every subset of $S$ is bounded (both above and below).
+Mostre que todo subconjunto de $S$ é limitado (superiormente e inferiormente).
 \item
-Find a bounded subset of $S$ that has no least upper bound.
+Encontre um subconjunto limitado de $S$ que não tenha menor cota superior.
 \end{enumerate}
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{The set of real numbers} \label{sec:setofreals}
+
+\section{O conjunto dos números reais} \label{sec:setofreals}
 
 %mbxINTROSUBSECTION
 
-\sectionnotes{2 lectures, the extended real numbers are optional}
+\sectionnotes{2 aulas; os números reais estendidos são opcionais}
 
-\subsection{The set of real numbers}
+\subsection{O conjunto dos números reais}
 
-We finally get to the real number system.  To simplify matters, instead of constructing the
-real number set from the rational numbers, we simply state their existence
-as a theorem without proof.  Notice that $\Q$ is an ordered
-field.
+Finalmente chegamos ao sistema dos números reais. Para simplificar, em vez de
+construir o conjunto dos números reais a partir dos racionais, simplesmente
+enunciamos sua existência como um teorema, sem demonstração. Observe que $\Q$ é um corpo
+ordenado.
 
 \begin{thm}
-There exists a unique\footnote{Uniqueness is up to isomorphism, but we wish
-to avoid excessive use of algebra.  For us, it is simply enough to assume
-that a set of real numbers exists.  See Rudin~\cite{Rudin:baby} for the
-construction and more details.}
-ordered field $\R$ with the \hyperref[defn:lub]{least-upper-bound property}
-such that $\Q \subset \R$.
+Existe um único\footnote{A unicidade é a menos de isomorfismo, mas queremos
+evitar o uso excessivo de álgebra. Para nós, basta supor
+que existe um conjunto dos números reais. Veja Rudin~\cite{Rudin:baby} para a
+construção e mais detalhes.}
+corpo ordenado $\R$ com a propriedade da
+\hyperref[defn:lub]{menor cota superior}
+tal que $\Q \subset \R$.
 \end{thm}
 
-Note also that $\N \subset \Q$.  We saw that $1 > 0$.
-By \hyperref[induction:thm]{induction} (exercise),
-we can prove that $n > 0$ for all $n \in \N$.
-Similarly, we verify simple statements about rational numbers.
-For example, we proved that if $n > 0$, then $\nicefrac{1}{n} > 0$.
-Then $m < k$ implies $\nicefrac{m}{n} < \nicefrac{k}{n}$.
+Observe também que $\N \subset \Q$. Vimos que $1 > 0$.
+Pela \hyperref[induction:thm]{indução} (exercício),
+podemos provar que $n > 0$ para todo $n \in \N$.
+Da mesma forma, verificamos afirmações simples sobre os números racionais.
+Por exemplo, provamos que, se $n > 0$, então $\nicefrac{1}{n} > 0$.
+Então $m < k$ implica $\nicefrac{m}{n} < \nicefrac{k}{n}$.
 
-Analysis consists of proving inequalities, and
-the following proposition, or one of its many variations,
-is how an analyst proves a nonstrict inequality.
+A análise consiste em demonstrar desigualdades, e
+a proposição a seguir, ou alguma de suas muitas variações,
+é a maneira como um analista demonstra uma desigualdade não estrita.
 
 \begin{prop}
-If $x \in \R$ is such that $x \leq \epsilon$ for all
-$\epsilon \in \R$ where
-$\epsilon > 0$, then $x \leq 0$.
+Se $x \in \R$ é tal que $x \leq \epsilon$ para todo
+$\epsilon \in \R$ tal que
+$\epsilon > 0$, então $x \leq 0$.
 \end{prop}
 
 \begin{proof}
-If $x > 0$, then $0 < \nicefrac{x}{2} < x$ (why?).  Take
-$\epsilon = \nicefrac{x}{2}$ to get a contradiction.  Thus $x \leq 0$.
+Se $x > 0$, então $0 < \nicefrac{x}{2} < x$ (por quê?). Tome
+$\epsilon = \nicefrac{x}{2}$ para obter uma contradição. Portanto, $x \leq 0$.
 \end{proof}
 
-For nonnegative $x$, equality results:
-\emph{If $x \geq 0$ is such that $x \leq \epsilon$ for all
-$\epsilon > 0$, then $x = 0$.}
-A common version uses the absolute value (see \sectionref{sec:absval}):
-\emph{If $\sabs{x} \leq \epsilon$ for all
-$\epsilon > 0$, then $x = 0$.}
-To prove $x \geq 0$, an analyst might prove
-that $x \geq -\epsilon$ for all $\epsilon > 0$.
-From now on, when we say $x \geq 0$ or
-$\epsilon > 0$, we automatically mean that $x \in \R$ and $\epsilon \in \R$.
+Para $x$ não negativo, obtemos uma igualdade:
+\emph{Se $x \geq 0$ é tal que $x \leq \epsilon$ para todo
+$\epsilon > 0$, então $x = 0$.}
+Uma versão comum usa o valor absoluto (veja \sectionref{sec:absval}):
+\emph{Se $\sabs{x} \leq \epsilon$ para todo
+$\epsilon > 0$, então $x = 0$.}
+Para provar que $x \geq 0$, um analista pode demonstrar
+que $x \geq -\epsilon$ para todo $\epsilon > 0$.
+De agora em diante, quando dissermos $x \geq 0$ ou
+$\epsilon > 0$, estaremos supondo automaticamente que $x \in \R$ e $\epsilon \in \R$.
 
-The idea behind the proposition above is that
-any time we have two real numbers $a < b$, there is another
-real number $c$ such that
-$a < c < b$.  Infinitely many such $c$ exist.  One of them is, for example,
-$c = \frac{a+b}{2}$ (why?).
-We will use this fact in the next example.
+A ideia por trás da proposição acima é que, sempre que tivermos dois números
+reais $a < b$, existe outro
+número real $c$ tal que
+$a < c < b$. Existem infinitos valores de $c$ assim. Por exemplo, um deles é
+$c = \frac{a+b}{2}$ (por quê?).
+Usaremos esse fato no próximo exemplo.
 
-The most useful property of $\R$ for analysts
-is not just that it is an ordered field, but that it has the
-\hyperref[defn:lub]{least-upper-bound property}.
-Essentially, we want $\Q$, but we also
-want to take suprema (and infima) willy-nilly.
-So what we do is take $\Q$ and throw in enough numbers to obtain $\R$.
+A propriedade mais útil de $\R$ para os analistas
+não é apenas ser um corpo ordenado, mas também ter a
+\hyperref[defn:lub]{propriedade da menor cota superior}.
+Essencialmente, queremos $\Q$, mas também queremos
+tomar supremos (e ínfimos) à vontade.
+Então partimos de $\Q$ e acrescentamos números suficientes para obter $\R$.
 
-We mentioned already that $\R$ contains elements that are not in $\Q$
-because of the \hyperref[defn:lub]{least-upper-bound property}.  Let us
-prove it.
-We saw there is no
-rational square root of two.  The set
-$\{ x \in \Q : x^2 < 2 \}$ implies the existence of the real number
-$\sqrt{2}$, although this fact requires a bit of work.  See also
+Já mencionamos que $\R$ contém elementos que não pertencem a $\Q$
+por causa da \hyperref[defn:lub]{propriedade da menor cota superior}. Vamos
+demonstrar isso.
+Vimos que não existe raiz quadrada racional de dois. O conjunto
+$\{ x \in \Q : x^2 < 2 \}$ implica a existência do número real
+$\sqrt{2}$, embora esse fato exija algum trabalho. Veja também
 \exerciseref{exercise:sqrt2QorR}.
 
 \begin{example} \label{example:sqrt2}
-Claim: \emph{There exists a unique positive
-$r \in \R$ such that $r^2 = 2$.  We denote $r$ by $\sqrt{2}$.}
+Afirmação: \emph{Existe um único
+$r \in \R$ positivo tal que $r^2 = 2$. Denotamos $r$ por $\sqrt{2}$.}
 
 \begin{proof}
-Take the set
-$A \coloneqq \{ x \in \R : x^2 < 2 \}$.  We first show that $A$ is bounded above and
-nonempty.  The inequality $x \geq 2$ implies $x^2 \geq 4$
-(see \exerciseref{exercise:squareineq}).
-So if $x^2 < 2$, then $x < 2$.  So $A$ is bounded above.
-As $1 \in A$, the set $A$ is nonempty.  The supremum, therefore, exists.
+Considere o conjunto
+$A \coloneqq \{ x \in \R : x^2 < 2 \}$. Primeiro mostraremos que $A$ é limitado superiormente e
+não vazio. A desigualdade $x \geq 2$ implica $x^2 \geq 4$
+(veja \exerciseref{exercise:squareineq}).
+Portanto, se $x^2 < 2$, então $x < 2$. Logo, $A$ é limitado superiormente.
+Como $1 \in A$, o conjunto $A$ não é vazio. Portanto, existe o supremo.
 
-Let $r \coloneqq \sup\, A$.  We will show that $r^2 = 2$ by showing
-that $r^2 \geq 2$ and $r^2 \leq 2$.  This is the way analysts show
-equality, by showing two inequalities.
-We already know that $r \geq 1 > 0$.
+Seja $r \coloneqq \sup\, A$. Mostraremos que $r^2 = 2$ provando
+que $r^2 \geq 2$ e $r^2 \leq 2$. É assim que os analistas demonstram
+uma igualdade: provando duas desigualdades.
+Já sabemos que $r \geq 1 > 0$.
 
 %\medskip
-In the following, it may seem we are pulling certain expressions out of
-a hat.  When writing a proof such as this, we would, of course, come up with
-the expressions only after playing around with what we wish to prove.  The
-order in which we write the proof is not necessarily the order in which we
-come up with the proof.
+A seguir, pode parecer que estamos tirando certas expressões
+da cartola. Ao escrever uma demonstração como esta, naturalmente só
+encontraríamos as expressões depois de explorar o que queremos provar. A
+ordem em que escrevemos a demonstração não é necessariamente a ordem em que
+a encontramos.
 
-Let us first show that $r^2 \geq 2$.
-Take a positive number $s$ such that $s^2 < 2$.  We wish to find an $h > 0$
-such that ${(s+h)}^2 < 2$.
-As $2-s^2 > 0$, we have $\frac{2-s^2}{2s+1} > 0$.
-Choose an $h \in \R$ such that
+Vamos primeiro mostrar que $r^2 \geq 2$.
+Tome um número positivo $s$ tal que $s^2 < 2$. Queremos encontrar um $h > 0$
+tal que ${(s+h)}^2 < 2$.
+Como $2-s^2 > 0$, temos $\frac{2-s^2}{2s+1} > 0$.
+Escolha $h \in \R$ tal que
 $0 < h < \frac{2-s^2}{2s+1}$.
-Furthermore, assume $h < 1$.  Estimate,
+Além disso, suponha que $h < 1$. Estimamos:
 \begin{equation*}
 \begin{aligned}
 {(s+h)}^2 - s^2 & = h(2s + h) \\
- & < h(2s+1) & & \quad \bigl(\text{since } h < 1\bigr) \\
- & < 2-s^2 & & \quad \bigl(\text{since } h < \tfrac{2-s^2}{2s+1} \bigr) .
+ & < h(2s+1) & & \quad \bigl(\text{pois } h < 1\bigr) \\
+ & < 2-s^2 & & \quad \bigl(\text{pois } h < \tfrac{2-s^2}{2s+1} \bigr) .
 \end{aligned}
 \end{equation*}
-Therefore, ${(s+h)}^2 < 2$.  Hence $s+h \in A$, but as $h > 0$,
-we have $s+h > s$.  So $s < r = \sup\, A$.  As $s$ was an arbitrary
-positive number such that $s^2 < 2$, it follows that $r^2 \geq 2$.
+Portanto, ${(s+h)}^2 < 2$. Assim, $s+h \in A$, mas, como $h > 0$,
+temos $s+h > s$. Logo, $s < r = \sup\, A$. Como $s$ era um número
+positivo arbitrário tal que $s^2 < 2$, segue que $r^2 \geq 2$.
 
 %\medskip
 
-Now take a positive number $s$ such that
-$s^2 > 2$.  We wish to find an $h > 0$ such that
-${(s-h)}^2 > 2$ and $s-h$ is still positive.
-As $s^2-2 > 0$, we have $\frac{s^2-2}{2s} > 0$.
-Let $h \coloneqq \frac{s^2-2}{2s}$,
-and check $s-h=s-\frac{s^2-2}{2s} = \frac{s}{2}+\frac{1}{s} > 0$.
-Estimate,
+Agora tome um número positivo $s$ tal que
+$s^2 > 2$. Queremos encontrar um $h > 0$ tal que
+${(s-h)}^2 > 2$ e $s-h$ ainda seja positivo.
+Como $s^2-2 > 0$, temos $\frac{s^2-2}{2s} > 0$.
+Defina $h \coloneqq \frac{s^2-2}{2s}$,
+e verifique que $s-h=s-\frac{s^2-2}{2s} = \frac{s}{2}+\frac{1}{s} > 0$.
+Estimamos:
 \begin{equation*}
 \begin{aligned}
 s^2 - {(s-h)}^2 & = 2sh - h^2 \\
- & < 2sh & & \quad \bigl( \text{since } h^2 > 0 \text{ as } h \neq 0 \bigr) \\
- & = s^2-2 & & \quad \bigl( \text{since } h = \tfrac{s^2-2}{2s} \bigr) .
+ & < 2sh & & \quad \bigl( \text{pois } h^2 > 0 \text{ as } h \neq 0 \bigr) \\
+ & = s^2-2 & & \quad \bigl( \text{pois } h = \tfrac{s^2-2}{2s} \bigr) .
 \end{aligned}
 \end{equation*}
-By subtracting $s^2$ from both sides and multiplying by $-1$, we find
-${(s-h)}^2 > 2$.  Therefore, $s-h \notin A$.
+Subtraindo $s^2$ de ambos os lados e multiplicando por $-1$, obtemos
+${(s-h)}^2 > 2$. Portanto, $s-h \notin A$.
 
-Moreover, if $x \geq s-h$,
-then $x^2 \geq {(s-h)}^2 > 2$ (as $x > 0$ and $s-h > 0$) and so $x \notin A$.
-Thus,
-$s-h$ is an upper bound for $A$.  However, $s-h < s$, or in other
-words, $s > r = \sup\, A$.  Hence, $r^2 \leq 2$.
+Além disso, se $x \geq s-h$,
+então $x^2 \geq {(s-h)}^2 > 2$ (pois $x > 0$ e $s-h > 0$), e assim $x \notin A$.
+Logo,
+$s-h$ é uma cota superior de $A$. No entanto, $s-h < s$, ou, em outras
+palavras, $s > r = \sup\, A$. Portanto, $r^2 \leq 2$.
 
 \medskip
 
-Together, $r^2 \geq 2$ and $r^2 \leq 2$ imply
-$r^2 = 2$.  The existence part is finished.  We still need to
-handle uniqueness.  Suppose $s \in \R$ is such that $s^2 = 2$ and $s > 0$.
-Thus, $s^2 = r^2$.  However, if $0 < s < r$, then $s^2 < r^2$.  Similarly,
-$0 < r < s$ implies $r^2 < s^2$.  Hence, $s = r$.
+Juntas, $r^2 \geq 2$ e $r^2 \leq 2$ implicam
+$r^2 = 2$. A parte da existência está concluída. Ainda precisamos
+provar a unicidade. Suponha que $s \in \R$ seja tal que $s^2 = 2$ e $s > 0$.
+Assim, $s^2 = r^2$. No entanto, se $0 < s < r$, então $s^2 < r^2$. Da mesma forma,
+$0 < r < s$ implica $r^2 < s^2$. Portanto, $s = r$.
 \end{proof}
 \end{example}
 
-The number $\sqrt{2} \notin \Q$.  The set
-$\R \setminus \Q$ is called the set of
-\emph{\myindex{irrational}} numbers.  We just proved that $\R \setminus \Q$
-is nonempty.  Not only is it nonempty, as we will see, it is very
-large indeed.
+O número $\sqrt{2} \notin \Q$. O conjunto
+$\R \setminus \Q$ é chamado de conjunto dos números
+\emph{\myindex{irracionais}}. Acabamos de provar que $\R \setminus \Q$
+não é vazio. E, como veremos, ele não é apenas não vazio: é muito
+grande mesmo.
 
-Using the same technique as above, we can show that a positive real
-number $x^{1/n}$ exists for all $n\in \N$ and all $x > 0$.
-That is, for each $x > 0$,
-there exists a unique positive real number $r$ such that $r^n = x$.
-The proof is left as an exercise.
+Usando a mesma técnica acima, podemos mostrar que existe um número real positivo
+$x^{1/n}$ para todo $n\in \N$ e todo $x > 0$.
+Isto é, para cada $x > 0$,
+existe um único número real positivo $r$ tal que $r^n = x$.
+A demonstração fica como exercício.
 
-\subsection{Archimedean property}
+\subsection{Propriedade arquimediana}
 
-As we have seen, there are plenty of real numbers in any interval.  But
-there are also infinitely many rational numbers in any interval.  The
-following is one of the fundamental facts about the real numbers.
-The two parts of the next theorem are actually equivalent, even though it may
-not seem like that at first sight.
+Como vimos, há muitos números reais em qualquer intervalo. Mas também
+há infinitos números racionais em qualquer intervalo. O resultado a seguir é
+um dos fatos fundamentais sobre os números reais.
+As duas partes do próximo teorema são, na verdade, equivalentes, embora isso
+talvez não pareça evidente à primeira vista.
 
 
 \begin{thm} \label{thm:arch}
@@ -695,422 +688,420 @@ not seem like that at first sight.
 \pagebreak[3]
 \leavevmode
 \begin{enumerate}[(i)]
-\item \label{thm:arch:i} \emph{(\myindex{Archimedean property})}%
-\footnote{Named after the Ancient Greek mathematician
-\href{https://en.wikipedia.org/wiki/Archimedes}{Archimedes of Syracuse}
-(c.\ 287 BC -- c.\ 212 BC)\@.
-This property is Axiom V from Archimedes' \myquote{On the Sphere and
-Cylinder} (225 BC)\@.}
-If $x, y \in \R$ and
-$x > 0$, then there exists an $n \in \N$ such that
+\item \label{thm:arch:i} \emph{(\myindex{propriedade arquimediana})}%
+\footnote{Em homenagem ao matemático da Grécia Antiga
+\href{https://en.wikipedia.org/wiki/Archimedes}{Arquimedes de Siracusa}
+(c.\ 287 a.C. -- c.\ 212 a.C.)\@.
+Esta propriedade é o Axioma V da obra de Arquimedes
+\myquote{Sobre a esfera e o cilindro} (225 a.C.)\@.}
+Se $x, y \in \R$ e
+$x > 0$, então existe $n \in \N$ tal que
 \begin{equation*}
 nx > y .
 \end{equation*}
-\item \label{thm:arch:ii} \emph{($\Q$ is dense in $\R$\index{density of
-rational numbers})} If $x, y \in \R$ and
-$x < y$, then there exists an $r \in \Q$ such that
+\item \label{thm:arch:ii} \emph{($\Q$ é denso em $\R$\index{densidade dos números racionais})} Se $x, y \in \R$ e
+$x < y$, então existe $r \in \Q$ tal que
 $x < r < y$.
 \end{enumerate}
 \end{thm}
 
 \begin{proof}
-Let us prove \ref{thm:arch:i}.  Divide through by $x$.
-Then \ref{thm:arch:i} says that for every real number $t\coloneqq \nicefrac{y}{x}$,
-we can find $n \in \N$ such that $n > t$.  In other words,
-\ref{thm:arch:i} says that $\N \subset \R$ is not bounded above.
-Suppose for contradiction that $\N$ is bounded above.  Let $b \coloneqq \sup \N$.
-The number $b-1$ cannot possibly be an upper bound for $\N$ as it is strictly
-less than $b$ (the least upper bound).  Thus there exists an $m \in \N$ such that $m > b-1$.
-Add one to obtain $m+1 > b$, contradicting $b$ being an
-upper bound.
+Vamos provar \ref{thm:arch:i}. Divida tudo por $x$.
+Então \ref{thm:arch:i} afirma que, para todo número real $t\coloneqq \nicefrac{y}{x}$,
+podemos encontrar $n \in \N$ tal que $n > t$. Em outras palavras,
+\ref{thm:arch:i} afirma que $\N \subset \R$ não é limitado superiormente.
+Suponha, por absurdo, que $\N$ seja limitado superiormente. Seja $b \coloneqq \sup \N$.
+O número $b-1$ não pode ser uma cota superior de $\N$, pois é estritamente
+menor que $b$ (a menor cota superior). Portanto, existe $m \in \N$ tal que $m > b-1$.
+Some 1 aos dois lados para obter $m+1 > b$, uma contradição, pois $b$ é uma
+cota superior.
 
 \begin{myfigureht}
 \myincludepdft{figdensofQ}{%
-A diagram of the horizontal real line with several tall vertical
-ticks marked that are equally spaced with the distance
-between them being 1 over n.  The second tick
-from the left is marked as m minus 1 all over n.
-After this tick there is the number x marked with a short tick.
-The next tall tick is marked with m over n.
-Then comes the number y and then a tall tick marked
-m plus 1 all over n.  Then two more tall ticks are shown.}
-\caption{Idea of the proof of the density of $\Q$: Find $n$ such that $y-x >
-\nicefrac{1}{n}$, then take the least $m$ such that $\nicefrac{m}{n} > x$.\label{figdensofQ}}
+Um diagrama da reta real horizontal com vários traços verticais altos
+igualmente espaçados, cuja distância entre eles é 1 sobre n. O segundo traço
+a partir da esquerda está marcado como m menos 1, tudo sobre n.
+Depois desse traço, aparece o número x, marcado com um traço curto.
+O próximo traço alto está marcado como m sobre n.
+Em seguida aparece o número y e depois um traço alto marcado como
+m mais 1, tudo sobre n. Mais dois traços altos aparecem depois.}
+\caption{Ideia da demonstração da densidade de $\Q$: encontre $n$ tal que $y-x >
+\nicefrac{1}{n}$ e, em seguida, tome o menor $m$ tal que $\nicefrac{m}{n} > x$.\label{figdensofQ}}
 \end{myfigureht}
-Let us tackle \ref{thm:arch:ii}.
-See \figureref{figdensofQ}
-for a picture of the idea behind the proof.
-First assume $x \geq 0$.
-Note that $y-x > 0$.
-By \ref{thm:arch:i}, there exists an $n \in \N$ such that
+Vamos demonstrar \ref{thm:arch:ii}.
+Veja a \figureref{figdensofQ}
+para visualizar a ideia da demonstração.
+Suponha primeiro que $x \geq 0$.
+Observe que $y-x > 0$.
+Por \ref{thm:arch:i}, existe $n \in \N$ tal que
 \begin{equation*}
 n(y-x) > 1
-\qquad \text{or} \qquad
+\qquad \text{ou} \qquad
 y-x > \nicefrac{1}{n}.
 \end{equation*}
-Again by \ref{thm:arch:i}, the set
-$A \coloneqq \{ k \in \N : k > nx \}$ is nonempty.  By the
-\hyperlink{wop:link}{well ordering property}
-of $\N$, $A$ has a least element $m$.
-As $m \in A$, we have $m > nx$.
-Divide through by $n$ to get $x < \nicefrac{m}{n}$.
-As $m$ is the least
-element of $A$, $m-1 \notin A$.
-If $m > 1$, then $m-1 \in \N$, but $m-1 \notin A$ and so $m-1 \leq nx$.
-If $m=1$,
-then $m-1 = 0$, and $m-1 \leq nx$ still holds as $x \geq 0$.
-In other words,
+Novamente por \ref{thm:arch:i}, o conjunto
+$A \coloneqq \{ k \in \N : k > nx \}$ não é vazio. Pela
+\hyperlink{wop:link}{propriedade da boa ordenação}
+de $\N$, $A$ tem um menor elemento $m$.
+Como $m \in A$, temos $m > nx$.
+Divida tudo por $n$ para obter $x < \nicefrac{m}{n}$.
+Como $m$ é o menor
+elemento de $A$, $m-1 \notin A$.
+Se $m > 1$, então $m-1 \in \N$, mas $m-1 \notin A$ e, portanto, $m-1 \leq nx$.
+Se $m=1$,
+então $m-1 = 0$, e ainda temos $m-1 \leq nx$, pois $x \geq 0$.
+Em outras palavras,
 \begin{equation*}
-m-1 \leq nx \qquad \text{or} \qquad m \leq nx+1 .
+m-1 \leq nx \qquad \text{ou} \qquad m \leq nx+1 .
 \end{equation*}
-On the other hand,
-from $n(y-x) > 1$ we obtain $ny > 1+nx$.
-Hence $ny > 1+nx \geq m$, and therefore $y > \nicefrac{m}{n}$.
-Putting everything together, we obtain $x < \nicefrac{m}{n} < y$.
-So take $r = \nicefrac{m}{n}$.
+Por outro lado,
+de $n(y-x) > 1$ obtemos $ny > 1+nx$.
+Logo, $ny > 1+nx \geq m$, e, portanto, $y > \nicefrac{m}{n}$.
+Juntando tudo, obtemos $x < \nicefrac{m}{n} < y$.
+Assim, tome $r = \nicefrac{m}{n}$.
 
-Now assume $x < 0$.  If $y > 0$, then just take $r=0$.  If
-$y \leq 0$, then $0 \leq -y < -x$, and we
-find a rational $q$ such that $-y < q < -x$.  Then take $r = -q$.
+Agora suponha que $x < 0$. Se $y > 0$, basta tomar $r=0$. Se
+$y \leq 0$, então $0 \leq -y < -x$, e encontramos
+um número racional $q$ tal que $-y < q < -x$. Então, tome $r = -q$.
 \end{proof}
 
-Let us state and prove a simple but useful corollary of the
-\hyperref[thm:arch:i]{Archimedean property}.
+Enunciemos e provemos um corolário simples, mas útil, da
+\hyperref[thm:arch:i]{propriedade arquimediana}.
 
 \begin{cor}
 $\inf \{ \nicefrac{1}{n} : n \in \N \} = 0$.
-See \figureref{fig:oneovernset}.
+Veja a \figureref{fig:oneovernset}.
 \end{cor}
 
 \begin{proof}
-Let $A \coloneqq \{ \nicefrac{1}{n} : n \in \N \}$.  Obviously, $A$ is not empty.
-Furthermore,
-$\nicefrac{1}{n} > 0$ for all $n \in \N$, so $0$ is a lower bound
-and $b \coloneqq \inf\, A$ exists.
-As $0$ is a lower bound, $b \geq 0$.
-Take an arbitrary $a > 0$.  By the
-\hyperref[thm:arch:i]{Archimedean property}, there exists an $n$ such that
-$na > 1$, that is, $a > \nicefrac{1}{n} \in A$.  Therefore,
-$a$ cannot be a lower bound for $A$.  Hence $b=0$.
+Seja $A \coloneqq \{ \nicefrac{1}{n} : n \in \N \}$. É evidente que $A$ não é vazio.
+Além disso,
+$\nicefrac{1}{n} > 0$ para todo $n \in \N$, então $0$ é uma cota inferior
+e $b \coloneqq \inf\, A$ existe.
+Como $0$ é uma cota inferior, $b \geq 0$.
+Tome um $a > 0$ arbitrário. Pela
+\hyperref[thm:arch:i]{propriedade arquimediana}, existe $n$ tal que
+$na > 1$, isto é, $a > \nicefrac{1}{n} \in A$. Portanto,
+$a$ não pode ser uma cota inferior de $A$. Logo, $b=0$.
 \end{proof}
 
 \begin{myfigureht}
 \myincludegraphics{oneovernset}{%
-A diagram of the horizontal real line with vertical ticks marking
-the numbers 1, 1 over 2, 1 over 3, 1 over 4, etc.  These ticks get
-closer and closer to 0, which is also marked, and they are so thick
-by the time we get to 0 that we only see a black rectangle there.}
-\caption{The set $\{ \nicefrac{1}{n} : n \in \N \}$ and its infimum $0$.\label{fig:oneovernset}}
+Um diagrama da reta real horizontal com traços verticais indicando
+os números 1, 1 sobre 2, 1 sobre 3, 1 sobre 4 etc. Os traços ficam
+cada vez mais próximos de 0, que também está marcado. Ao chegar a 0,
+eles são tão espessos que só vemos ali um retângulo preto.}
+\caption{O conjunto $\{ \nicefrac{1}{n} : n \in \N \}$ e seu ínfimo $0$.\label{fig:oneovernset}}
 \end{myfigureht}
 
 
 
-\subsection{Using supremum and infimum}
+\subsection{Usando supremo e ínfimo}
 
-Suprema and infima are
-compatible with algebraic operations.  For a set $A \subset \R$ and
-$x \in \R$ define
+Supremos e ínfimos são
+compatíveis com as operações algébricas. Para um conjunto $A \subset \R$ e
+$x \in \R$, definimos
 \begin{align*}
 x + A & \coloneqq \{ x+y \in \R : y \in A \} , \\
 xA & \coloneqq \{ xy \in \R : y \in A \} .
 \end{align*}
-For example, if $A = \{ 1,2,3 \}$, then $5+A = \{ 6,7,8 \}$ and $3A = \{ 3,6,9
+Por exemplo, se $A = \{ 1,2,3 \}$, então $5+A = \{ 6,7,8 \}$ e $3A = \{ 3,6,9
 \}$.
 
 \begin{prop} \label{prop:supinfalg}
-Let $A \subset \R$ be nonempty.
+Seja $A \subset \R$ não vazio.
 \begin{enumerate}[(i)]
-\item If $x \in \R$ and $A$ is bounded above, then $\sup (x+A) = x + \sup\, A$.
-\item If $x \in \R$ and $A$ is bounded below, then $\inf (x+A) = x + \inf\, A$.
-\item If $x > 0$ and $A$ is bounded above, then $\sup (xA) = x ( \sup\, A )$.
-\item If $x > 0$ and $A$ is bounded below, then $\inf (xA) = x ( \inf\, A )$.
-\item If $x < 0$ and $A$ is bounded below, then $\sup (xA) = x ( \inf\, A )$.
-\item If $x < 0$ and $A$ is bounded above, then $\inf (xA) = x ( \sup\, A )$.
+\item Se $x \in \R$ e $A$ é limitado superiormente, então $\sup (x+A) = x + \sup\, A$.
+\item Se $x \in \R$ e $A$ é limitado inferiormente, então $\inf (x+A) = x + \inf\, A$.
+\item Se $x > 0$ e $A$ é limitado superiormente, então $\sup (xA) = x ( \sup\, A )$.
+\item Se $x > 0$ e $A$ é limitado inferiormente, então $\inf (xA) = x ( \inf\, A )$.
+\item Se $x < 0$ e $A$ é limitado inferiormente, então $\sup (xA) = x ( \inf\, A )$.
+\item Se $x < 0$ e $A$ é limitado superiormente, então $\inf (xA) = x ( \sup\, A )$.
 \end{enumerate}
 \end{prop}
 
-Note how multiplying a set by a negative number swaps suprema and infima.
-Also, as the proposition implies that
-the supremum (resp.\ infimum) of $x+A$ or $xA$ exists,
-it also implies that $x+A$ or $xA$
-is nonempty and bounded above (resp.\ below).
+Observe que a multiplicação de um conjunto por um número negativo troca supremos e ínfimos.
+Além disso, como a proposição implica que
+o supremo (respectivamente, o ínfimo) de $x+A$ ou $xA$ existe,
+ela também implica que $x+A$ ou $xA$
+é não vazio e limitado superiormente (respectivamente, inferiormente).
 
 \begin{proof}
-Let us only prove the first statement.  The rest are left as exercises.
+Vamos provar apenas a primeira afirmação. As demais ficam como exercícios.
 
-Suppose $b$ is an upper bound for $A$.  That is, $y \leq b$ for all $y \in A$.
-Then $x+y \leq x+b$ for all $y \in A$, and so $x+b$ is an upper
-bound for $x+A$.  In particular, if $b = \sup\, A$, then
+Suponha que $b$ seja uma cota superior de $A$. Isto é, $y \leq b$ para todo $y \in A$.
+Então $x+y \leq x+b$ para todo $y \in A$, de modo que $x+b$ é uma cota
+superior de $x+A$. Em particular, se $b = \sup\, A$, então
 \begin{equation*}
 \sup (x+A) \leq x+b = x+ \sup\, A .
 \end{equation*}
 
-The opposite inequality is similar. If $c$ is an upper bound for $x+A$,
-then $x+y \leq c$
-for all $y \in A$ and so $y \leq c-x$ for all $y \in A$.
-So $c-x$ is an upper bound for $A$.
-If $c = \sup (x+A)$, then
+A desigualdade oposta se prova de maneira semelhante. Se $c$ é uma cota superior de $x+A$,
+então $x+y \leq c$
+para todo $y \in A$ e, portanto, $y \leq c-x$ para todo $y \in A$.
+Logo, $c-x$ é uma cota superior de $A$.
+Se $c = \sup (x+A)$, então
 \begin{equation*}
 \sup\, A \leq c-x = \sup (x+A) -x .
 \end{equation*}
-The result follows.
+A conclusão segue.
 \end{proof}
 
-Sometimes we need to apply supremum or infimum twice.  Here is an example.
+Às vezes precisamos aplicar supremo ou ínfimo duas vezes. Veja este exemplo.
 
 \begin{prop} \label{infsupineq:prop}
-Let $A, B \subset \R$ be nonempty sets such that $x \leq y$ whenever $x \in A$ and
-$y \in B$.  Then $A$ is bounded above, $B$ is bounded below, and $\sup\, A \leq \inf\, B$.
+Sejam $A, B \subset \R$ conjuntos não vazios tais que $x \leq y$ sempre que $x \in A$ e
+$y \in B$. Então $A$ é limitado superiormente, $B$ é limitado inferiormente e $\sup\, A \leq \inf\, B$.
 \end{prop}
 
 \begin{proof}
-Any $x \in A$ is a lower bound for $B$.
-Therefore, $x \leq \inf\, B$ for all $x \in A$,
-so $\inf\, B$ is an upper bound for $A$.
-Hence, $\sup\, A \leq \inf\, B$.
+Todo $x \in A$ é uma cota inferior de $B$.
+Portanto, $x \leq \inf\, B$ para todo $x \in A$,
+de modo que $\inf\, B$ é uma cota superior de $A$.
+Logo, $\sup\, A \leq \inf\, B$.
 \end{proof}
 
-We must be careful about strict inequalities and taking suprema and infima.
-Note that $x < y$ whenever $x \in A$ and
-$y \in B$ still only implies $\sup\, A \leq \inf\, B$, and not a strict
-inequality.
-For example, take $A \coloneqq \{ 0 \}$ and $B \coloneqq \{ \nicefrac{1}{n}
+É preciso ter cuidado com desigualdades estritas e com a aplicação de supremos e ínfimos.
+Observe que $x < y$ sempre que $x \in A$ e
+$y \in B$ ainda implica apenas $\sup\, A \leq \inf\, B$, e não uma desigualdade
+estrita.
+Por exemplo, tome $A \coloneqq \{ 0 \}$ e $B \coloneqq \{ \nicefrac{1}{n}
 : n \in \N \}$.
-Then $0 < \nicefrac{1}{n}$
-for all $n \in \N$.  However, $\sup\, A = 0$ and $\inf\, B = 0$.
-This important subtle point comes up often.
+Então $0 < \nicefrac{1}{n}$
+para todo $n \in \N$. No entanto, $\sup\, A = 0$ e $\inf\, B = 0$.
+Esse importante detalhe sutil aparece com frequência.
 
 \medskip
 \pagebreak[1]
 
-The proof of the following
-often-used fact is left to the reader.
-A similar result holds for infima.
+Deixamos ao leitor a demonstração do seguinte
+resultado, que usamos com frequência.
+Um resultado semelhante vale para ínfimos.
 
 \begin{prop} \label{prop:existsxepsfromsup}
-If $S \subset \R$ is nonempty and bounded above,
-then for every $\epsilon > 0$ there exists an $x \in S$ such
-that $(\sup\, S) - \epsilon < x \leq \sup\, S$.
+Se $S \subset \R$ é não vazio e limitado superiormente,
+então, para todo $\epsilon > 0$, existe $x \in S$ tal
+que $(\sup\, S) - \epsilon < x \leq \sup\, S$.
 \end{prop}
 
 
-To make using suprema and infima even easier, we may want to
-write $\sup\, A$ and $\inf\, A$ without worrying about $A$ being
-bounded and nonempty.  We make the following natural definitions.
+Para facilitar ainda mais o uso de supremos e ínfimos, talvez queiramos
+escrever $\sup\, A$ e $\inf\, A$ sem nos preocupar se $A$ é
+limitado e não vazio. Vamos fazer as seguintes definições naturais.
 
 \begin{defn}
-Let $A \subset \R$ be a set.
+Seja $A \subset \R$ um conjunto.
 \begin{enumerate}[(i)]
-\item If $A$ is empty, then $\sup\, A \coloneqq -\infty$.
-\item If $A$ is not bounded above, then $\sup\, A \coloneqq \infty$.
-\item If $A$ is empty, then $\inf\, A \coloneqq \infty$.
-\item If $A$ is not bounded below, then $\inf\, A \coloneqq -\infty$.
+\item Se $A$ é vazio, então $\sup\, A \coloneqq -\infty$.
+\item Se $A$ não é limitado superiormente, então $\sup\, A \coloneqq \infty$.
+\item Se $A$ é vazio, então $\inf\, A \coloneqq \infty$.
+\item Se $A$ não é limitado inferiormente, então $\inf\, A \coloneqq -\infty$.
 \end{enumerate}
 \end{defn}
 
-The statements in the definition above
-follow naturally if, instead of working in 
-the ordered set $\R$, we take suprema and infima
-in the ordered set
+As afirmações da definição acima
+decorrem naturalmente se, em vez de trabalhar no
+conjunto ordenado $\R$, tomarmos supremos e ínfimos
+no conjunto ordenado
 $\R^* \coloneqq \R \cup \{ -\infty , \infty\}$
-\glsadd{not:extreal},\glsadd{not:infinity}
-where we let
+\glsadd{not:extreal},\glsadd{not:infinity},
+onde definimos
 \begin{equation*}
--\infty < \infty \quad \text{and} \quad
--\infty < x \quad \text{and} \quad
-x < \infty \quad \text{for all $x \in \R$}.
+-\infty < \infty \quad \text{e} \quad
+-\infty < x \quad \text{e} \quad
+x < \infty \quad \text{para todo $x \in \R$}.
 \end{equation*}
-The set $\R^*$ is called the set of \emph{\myindex{extended real numbers}}.
-For convenience, $\infty$ and $-\infty$ are sometimes treated as if they were
-numbers, except we do not allow arbitrary arithmetic with them.
-It is possible to define some arithmetic on $\R^*$.  Most operations
-are extended in an obvious way, but we must leave
-$\infty-\infty$, $0 \cdot (\pm\infty)$, and $\frac{\pm\infty}{\pm\infty}$
-undefined.
-We refrain from
-using this arithmetic;
-it leads to easy mistakes as $\R^*$ is not a field.
-Now we can take suprema and infima without fear of emptiness or
-unboundedness.  In this book, we mostly avoid
-using $\R^*$ outside of exercises and leave such generalizations to the interested reader.
+O conjunto $\R^*$ é chamado de conjunto dos \emph{\myindex{números reais estendidos}}.
+Por conveniência, às vezes tratamos $\infty$ e $-\infty$ como se fossem
+números, mas não permitimos operações aritméticas arbitrárias com eles.
+É possível definir algumas operações aritméticas em $\R^*$. A maioria delas
+se estende de maneira evidente, mas precisamos deixar
+$\infty-\infty$, $0 \cdot (\pm\infty)$ e $\frac{\pm\infty}{\pm\infty}$
+sem definição.
+Evitamos
+usar essas operações;
+elas levam a erros fáceis, pois $\R^*$ não é um corpo.
+Agora podemos tomar supremos e ínfimos sem nos preocupar com conjuntos vazios ou
+não limitados. Neste livro, evitamos em grande parte
+usar $\R^*$ fora dos exercícios e deixamos tais generalizações para o leitor interessado.
 
-\subsection{Maxima and minima}
+\subsection{Máximos e mínimos}
 
-By \exerciseref{exercise:finitesethasminmax},
-a finite set of numbers always has a supremum and an infimum
-and they are both contained in the set itself.
-In this case, we usually do not use the words supremum or infimum.
-When a set $A$ of real numbers is bounded above and
-$\sup\, A \in A$, we can use the word
-\emph{\myindex{maximum}} and the notation $\max\, A$\glsadd{not:max} to denote the supremum.
-Similarly for infimum: When $A$ is bounded below
-and $\inf\, A \in A$, we can use the
-word \emph{\myindex{minimum}} and the notation $\min\, A$.\glsadd{not:min}
-For example,
+Pelo \exerciseref{exercise:finitesethasminmax},
+todo conjunto finito de números tem supremo e ínfimo,
+e ambos pertencem ao próprio conjunto.
+Neste caso, em geral, não usamos as palavras supremo ou ínfimo.
+Quando um conjunto $A$ de números reais é limitado superiormente e
+$\sup\, A \in A$, podemos usar a palavra
+\emph{\myindex{máximo}} e a notação $\max\, A$\glsadd{not:max} para indicar o supremo.
+De maneira semelhante, para o ínfimo: quando $A$ é limitado inferiormente
+e $\inf\, A \in A$, podemos usar a
+palavra \emph{\myindex{mínimo}} e a notação $\min\, A$.\glsadd{not:min}
+Por exemplo,
 \begin{align*}
 & \max \{ 1,2.4,\pi,100 \} = 100 , \\
 & \min \{ 1,2.4,\pi,100 \} = 1 .
 \end{align*}
-While writing $\sup$ and $\inf$ may be technically
-correct in this situation, $\max$ and
-$\min$ are generally used to emphasize that the supremum or infimum
-is in the set itself, especially when the set is finite.
+Embora escrever $\sup$ e $\inf$ seja tecnicamente
+correto nesta situação, em geral se usam $\max$ e
+$\min$ para enfatizar que o supremo ou o ínfimo
+pertence ao próprio conjunto, especialmente quando o conjunto é finito.
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
 \begin{exercise}
-Prove that
-if $t > 0$ ($t \in \R$), then there exists an $n \in \N$ such that
+Demonstre que,
+se $t > 0$ ($t \in \R$), então existe $n \in \N$ tal que
 $\dfrac{1}{n^2} < t$.
 \end{exercise}
 
 \begin{exercise}
-Prove that
-if $t \geq 0$ ($t \in \R$), then there exists an $n \in \N$ such that $n-1 \leq t < n$.
+Demonstre que,
+se $t \geq 0$ ($t \in \R$), então existe $n \in \N$ tal que $n-1 \leq t < n$.
 \end{exercise}
 
 \begin{exercise}
-Finish the proof of \propref{prop:supinfalg}.
+Complete a demonstração de \propref{prop:supinfalg}.
 \end{exercise}
 
 \begin{exercise}
-Let $x, y \in \R$.  Suppose $x^2 + y^2 = 0$.  Prove that $x = 0$ and $y = 0$.
+Sejam $x, y \in \R$. Suponha que $x^2 + y^2 = 0$. Demonstre que $x = 0$ e $y = 0$.
 \end{exercise}
 
 \begin{exercise}
-Show that $\sqrt{3}$ is irrational.
+Mostre que $\sqrt{3}$ é irracional.
 \end{exercise}
 
 \begin{exercise}
-Let $n \in \N$.
-Show that $\sqrt{n}$ is either an integer or it is
-irrational.
+Seja $n \in \N$.
+Mostre que $\sqrt{n}$ ou é um inteiro ou é
+irracional.
 \end{exercise}
 
 \begin{exercise}
-Prove the \emph{\myindex{arithmetic-geometric mean inequality}}.
-For two positive real numbers $x,y$,
+Demonstre a \emph{\myindex{desigualdade entre as médias aritmética e geométrica}}.
+Para dois números reais positivos $x,y$,
 \begin{equation*}
 \sqrt{xy} \leq \frac{x+y}{2} .
 \end{equation*}
-Furthermore, equality occurs if and only if $x=y$.
+Além disso, há igualdade se, e somente se, $x=y$.
 \end{exercise}
 
 \begin{exercise}
-Show that for every pair of real numbers $x$ and $y$ such that $x < y$, there
-exists an irrational number $s$ such that $x < s < y$.  Hint:
-Apply the density of $\Q$ to $\dfrac{x}{\sqrt{2}}$ and
-$\dfrac{y}{\sqrt{2}}$, but avoid zero.
+Mostre que, para todo par de números reais $x$ e $y$ tais que $x < y$, existe
+um número irracional $s$ tal que $x < s < y$. Dica:
+aplique a densidade de $\Q$ a $\dfrac{x}{\sqrt{2}}$ e
+$\dfrac{y}{\sqrt{2}}$, mas evite o zero.
 \end{exercise}
 
 \begin{exercise} \label{exercise:supofsum}
-Let $A$ and $B$ be two nonempty bounded sets of real numbers.  Let
+Sejam $A$ e $B$ dois conjuntos não vazios e limitados de números reais. Seja
 $C \coloneqq \{ a+b : a \in A, b \in B \}$.
-Show that $C$ is a bounded set and that
+Mostre que $C$ é limitado e que
 \begin{equation*}
 \sup\,C = \sup\,A + \sup\,B
-\qquad \text{and} \qquad
+\qquad \text{e} \qquad
 \inf\,C = \inf\,A + \inf\,B .
 \end{equation*}
 \end{exercise}
 
 \begin{exercise}
-Let $A$ and $B$ be two nonempty bounded sets of nonnegative real numbers.
-Define the set
+Sejam $A$ e $B$ dois conjuntos não vazios e limitados de números reais não negativos.
+Defina o conjunto
 $C \coloneqq \{ ab : a \in A, b \in B \}$.
-Show that $C$ is a bounded set and that
+Mostre que $C$ é limitado e que
 \begin{equation*}
 \sup\,C = (\sup\,A )( \sup\,B)
-\qquad \text{and} \qquad
+\qquad \text{e} \qquad
 \inf\,C = (\inf\,A )( \inf\,B).
 \end{equation*}
 \end{exercise}
 
-\begin{exercise}[Hard] \label{exercise:rootexistshard}
-Given $x > 0$ and $n \in \N$, show that there exists a unique positive
-real number $r$ such that $x = r^n$.  Usually, $r$ is denoted by $x^{1/n}$.
+\begin{exercise}[Difícil] \label{exercise:rootexistshard}
+Dados $x > 0$ e $n \in \N$, mostre que existe um único número real positivo
+$r$ tal que $x = r^n$. Em geral, denotamos $r$ por $x^{1/n}$.
 \end{exercise}
 
-\begin{exercise}[Easy]
-Prove \propref{prop:existsxepsfromsup}.
+\begin{exercise}[Fácil]
+Demonstre \propref{prop:existsxepsfromsup}.
 \end{exercise}
 
 \begin{exercise} \label{exercise:bernoulliineq}
-Prove \emph{\myindex{Bernoulli's inequality}}%
+Demonstre a \emph{\myindex{desigualdade de Bernoulli}}%
 \footnote{%
-Named after the Swiss mathematician
+Em homenagem ao matemático suíço
 \href{https://en.wikipedia.org/wiki/Jacob_Bernoulli}{Jacob Bernoulli}
 (1655--1705).}%
-: If $1+x > 0$, then
-for all $n \in \N$, we have $(1+x)^n \geq 1+nx$.
+: se $1+x > 0$, então,
+para todo $n \in \N$, temos $(1+x)^n \geq 1+nx$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:sqrt2QorR}
-Prove $\sup \{ x \in \Q : x^2 < 2 \} = \sup \{ x \in \R : x^2 < 2 \}$.
+Demonstre que $\sup \{ x \in \Q : x^2 < 2 \} = \sup \{ x \in \R : x^2 < 2 \}$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:Dedekind}
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Prove that given $y \in \R$, we have $\sup \{ x \in \Q : x < y \} = y$.
+Demonstre que, dado $y \in \R$, temos $\sup \{ x \in \Q : x < y \} = y$.
 \item
-Let $A \subset \Q$ be a nonempty set that is bounded above such that whenever $x
-\in A$ and $t \in \Q$ with $t < x$, then $t \in A$.  Further suppose
-$\sup\, A \notin A$.  Show that there exists a $y \in \R$ such that
-$A = \{ x \in \Q : x < y \}$.  A set such as $A$ is called a
-\emph{\myindex{Dedekind cut}}.
+Seja $A \subset \Q$ um conjunto não vazio e limitado superiormente tal que, sempre que $x
+\in A$ e $t \in \Q$ com $t < x$, então $t \in A$. Suponha também
+que $\sup\, A \notin A$. Mostre que existe $y \in \R$ tal que
+$A = \{ x \in \Q : x < y \}$. Um conjunto como $A$ é chamado de
+\emph{\myindex{corte de Dedekind}}.
 \item
-Show that there is a bijection between $\R$ and Dedekind cuts.
+Mostre que existe uma bijeção entre $\R$ e os cortes de Dedekind.
 \end{enumerate}
-Note: Dedekind used sets as in part b) in his construction of the
-real numbers.
+Observação: Dedekind usou conjuntos como os da parte b) em sua construção dos
+números reais.
 \end{exercise}
 
 \begin{exercise}
-Prove that if $A \subset \Z$ is a nonempty subset bounded below, then
-there exists a least element in $A$.
-Now describe why this statement would simplify the proof of
-\thmref{thm:arch} part \ref{thm:arch:ii} so that you do not have to assume
+Demonstre que, se $A \subset \Z$ é um subconjunto não vazio e limitado inferiormente, então
+$A$ tem um menor elemento.
+Agora descreva por que essa afirmação simplificaria a demonstração do
+\thmref{thm:arch}, parte \ref{thm:arch:ii}, de modo que não seria preciso supor
 $x \geq 0$.
 \end{exercise}
 
 \begin{samepage}
 \begin{exercise} \label{exercise:realpower}
-Let us suppose we know $x^{1/n}$ exists for every $x > 0$ and every $n \in
-\N$ (see \exerciseref{exercise:rootexistshard} above).
-For integers $p$ and $q > 0$ where $\nicefrac{p}{q}$ is in lowest terms,
-define $x^{p/q} \coloneqq
+Suponha que saibamos que $x^{1/n}$ existe para todo $x > 0$ e todo $n \in
+\N$ (veja acima \exerciseref{exercise:rootexistshard}).
+Para inteiros $p$ e $q > 0$ tais que $\nicefrac{p}{q}$ esteja em forma irredutível,
+defina $x^{p/q} \coloneqq
 {(x^{1/q})}^p$.
 \begin{enumerate}[a)]
 \item
-Show that the power is well-defined even
-if the fraction is not in lowest terms: If $\nicefrac{p}{q} =
-\nicefrac{m}{k}$ where $m$ and $k > 0$ are integers, then
+Mostre que a potência está bem definida mesmo
+se a fração não estiver em forma irredutível: se $\nicefrac{p}{q} =
+\nicefrac{m}{k}$, onde $m$ e $k > 0$ são inteiros, então
 ${(x^{1/q})}^p = {(x^{1/k})}^m$.
 \item
-Let $x$ and $y$ be two positive numbers and $r$ a rational number.
-Assuming $r > 0$, show
-$x < y$ if and only if $x^r < y^r$.  Then suppose $r < 0$ and show:
-$x < y$ if and only if $x^r > y^r$.
+Sejam $x$ e $y$ dois números positivos e $r$ um número racional.
+Supondo que $r > 0$, mostre que
+$x < y$ se, e somente se, $x^r < y^r$. Em seguida, suponha que $r < 0$ e mostre:
+$x < y$ se, e somente se, $x^r > y^r$.
 \item
-Suppose $x > 1$ and $r,s$ are rational numbers where $r < s$.
-Show $x^r < x^s$.  If $0 < x < 1$ and $r < s$, show that $x^r > x^s$.
-Hint: Write $r$ and $s$ with the same denominator.
+Suponha que $x > 1$ e que $r,s$ sejam números racionais tais que $r < s$.
+Mostre que $x^r < x^s$. Se $0 < x < 1$ e $r < s$, mostre que $x^r > x^s$.
+Dica: escreva $r$ e $s$ com o mesmo denominador.
 \item
-(Challenging)%
-\footnote{In
+(Desafio)%
+\footnote{Em
 \sectionref{sec:logandexp}
-we will define the exponential and the logarithm and
-define $x^z \coloneqq \exp(z \ln x)$.  We will then have
-sufficient machinery to make proofs of these assertions far easier.  At this
-point, however, we do not yet have these tools.}
-For an irrational $z \in \R \setminus \Q$ and $x > 1$ define
-$x^z \coloneqq \sup \{ x^r : r \leq z, r \in \Q \}$,
-for $x=1$ define $1^z = 1$,
-and for $0 < x < 1$ define
+definiremos a exponencial e o logaritmo, e
+definiremos $x^z \coloneqq \exp(z \ln x)$. Assim, teremos
+ferramentas suficientes para demonstrar essas afirmações com muito mais facilidade. Neste
+ponto, porém, ainda não dispomos dessas ferramentas.}
+Para um número irracional $z \in \R \setminus \Q$ e $x > 1$, defina
+$x^z \coloneqq \sup \{ x^r : r \leq z, r \in \Q \}$;
+para $x=1$, defina $1^z = 1$;
+e, para $0 < x < 1$, defina
 $x^z \coloneqq \inf \{ x^r : r \leq z, r \in \Q \}$.
-Prove the two assertions of part b) for all real $z$.
+Demonstre as duas afirmações da parte b) para todo número real $z$.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
@@ -1120,119 +1111,120 @@ Prove the two assertions of part b) for all real $z$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{Absolute value and bounded functions} \label{sec:absval}
 
-\sectionnotes{0.5--1 lecture}
+\section{Valor absoluto e funções limitadas} \label{sec:absval}
 
-A concept we will encounter over and over is the
-\emph{\myindex{absolute value}}.
-You want to think of the absolute value as the \myquote{size} of a real number.
-Here is the formal definition:
+\sectionnotes{0,5--1 aula}
+
+Um conceito que encontraremos repetidamente é o
+\emph{\myindex{valor absoluto}}.
+Pense no valor absoluto como o \myquote{tamanho} de um número real.
+Eis a definição formal:
 \glsadd{not:abs}
 \begin{equation*}
 \sabs{x} \coloneqq
 \begin{cases}
-x & \text{if } x \geq 0, \\
--x & \text{if } x < 0 .
+x & \text{se } x \geq 0, \\
+-x & \text{se } x < 0 .
 \end{cases}
 \end{equation*}
-The following proposition gives
-the main features of the absolute
-value.
+A proposição a seguir apresenta
+as principais propriedades do valor
+absoluto.
 
 \begin{prop} \label{prop:absbas}
 \leavevmode
 \begin{enumerate}[(i)]
-\item \label{prop:absbas:i} $\sabs{x} \geq 0$, moreover, $\sabs{x}=0$ if and only if $x = 0$.
-\item \label{prop:absbas:ii} $\sabs{-x} = \sabs{x}$ for all $x \in \R$.
-\item \label{prop:absbas:iii} $\sabs{xy} = \sabs{x}\sabs{y}$ for all $x,y \in \R$.
-\item \label{prop:absbas:iv} $\sabs{x}^2 = x^2$ for all $x \in \R$.
-\item \label{prop:absbas:v} $\sabs{x} \leq y$ if and only if $-y \leq x \leq y$.
-\item \label{prop:absbas:vi} $-\sabs{x} \leq x \leq \sabs{x}$ for all $x \in \R$.
+\item \label{prop:absbas:i} $\sabs{x} \geq 0$, e $\sabs{x}=0$ se, e somente se, $x = 0$.
+\item \label{prop:absbas:ii} $\sabs{-x} = \sabs{x}$ para todo $x \in \R$.
+\item \label{prop:absbas:iii} $\sabs{xy} = \sabs{x}\sabs{y}$ para todos $x,y \in \R$.
+\item \label{prop:absbas:iv} $\sabs{x}^2 = x^2$ para todo $x \in \R$.
+\item \label{prop:absbas:v} $\sabs{x} \leq y$ se, e somente se, $-y \leq x \leq y$.
+\item \label{prop:absbas:vi} $-\sabs{x} \leq x \leq \sabs{x}$ para todo $x \in \R$.
 \end{enumerate}
 \end{prop}
 
 \begin{proof}
 \ref{prop:absbas:i}:
-First suppose $x \geq 0$.
-Then $\sabs{x} = x \geq 0$.  Also, $\sabs{x} = x = 0$ if and only
-if $x=0$.
-On the other hand, if $x < 0$, then $\sabs{x} = -x > 0$, and $\sabs{x}$ is never zero.
+Suponha primeiro que $x \geq 0$.
+Então $\sabs{x} = x \geq 0$. Além disso, $\sabs{x} = x = 0$ se, e somente
+se, $x=0$.
+Por outro lado, se $x < 0$, então $\sabs{x} = -x > 0$, e $\sabs{x}$ nunca é zero.
 
 \medskip
 
-\ref{prop:absbas:ii}: If $x > 0$, then $-x < 0$ and so $\sabs{-x} = -(-x) = x =
-\sabs{x}$.  Similarly when $x < 0$, or $x = 0$.
+\ref{prop:absbas:ii}: Se $x > 0$, então $-x < 0$ e, portanto, $\sabs{-x} = -(-x) = x =
+\sabs{x}$. O mesmo vale quando $x < 0$ ou $x = 0$.
 
 \medskip
 
 \ref{prop:absbas:iii}:
-If $x$ or $y$ is zero, then the result is immediate.  When $x$ and
-$y$ are both positive, then $\sabs{x}\sabs{y} = xy$.  The product of positive
-numbers is positive, so $xy$ is 
-positive and $xy = \sabs{xy}$.
-If $x$ and $y$ are both negative,
-then $xy=(-x)(-y)$ is positive for the same reason and again $\sabs{xy}=xy$.  Also,
+Se $x$ ou $y$ é zero, o resultado é imediato. Se $x$ e
+$y$ são ambos positivos, então $\sabs{x}\sabs{y} = xy$. O produto de números
+positivos é positivo, logo $xy$ é
+positivo e $xy = \sabs{xy}$.
+Se $x$ e $y$ são ambos negativos,
+então $xy=(-x)(-y)$ é positivo pelo mesmo motivo e, novamente, $\sabs{xy}=xy$. Além disso,
 $\sabs{x}\sabs{y} = (-x)(-y) = xy$.
-So the result holds if $x$ and $y$ have the same sign.
-If $x > 0$ and $y < 0$, then $\sabs{x}\sabs{y} = x(-y) = -(xy)$.  Now
-$xy$ is negative and $\sabs{xy} = -(xy)$, and the result holds.  Similarly when
-$x < 0$ and $y > 0$.
+Logo, o resultado vale quando $x$ e $y$ têm o mesmo sinal.
+Se $x > 0$ e $y < 0$, então $\sabs{x}\sabs{y} = x(-y) = -(xy)$. Agora
+$xy$ é negativo e $\sabs{xy} = -(xy)$, e o resultado vale. O mesmo ocorre quando
+$x < 0$ e $y > 0$.
 
 \medskip
 
 \ref{prop:absbas:iv}:
-Immediate if $x \geq 0$.  If $x < 0$, then $\sabs{x}^2 = {(-x)}^2 =
+É imediato se $x \geq 0$. Se $x < 0$, então $\sabs{x}^2 = {(-x)}^2 =
 x^2$.
 
 \medskip
 
 \ref{prop:absbas:v}:
-Suppose $\sabs{x} \leq y$.
-If $x \geq 0$, then $x \leq y$.
-It follows that $y \geq 0$, leading to $-y \leq 0 \leq x$.
-So $-y \leq x \leq y$ holds.
-If $x < 0$, then $\sabs{x} \leq y$ means $-x \leq y$.
-Multiplying both sides by $-1$, we get $x \geq -y$.
-Again $y \geq 0$ and so $y \geq 0 > x$.
-Hence, $-y \leq x \leq y$.
+Suponha que $\sabs{x} \leq y$.
+Se $x \geq 0$, então $x \leq y$.
+Segue que $y \geq 0$, e portanto $-y \leq 0 \leq x$.
+Assim, vale $-y \leq x \leq y$.
+Se $x < 0$, então $\sabs{x} \leq y$ significa que $-x \leq y$.
+Multiplicando ambos os lados por $-1$, obtemos $x \geq -y$.
+Novamente, $y \geq 0$ e, portanto, $y \geq 0 > x$.
+Logo, $-y \leq x \leq y$.
 
-On the other hand, suppose $-y \leq x \leq y$ is true.
-If $x \geq 0$, then $x \leq y$ is equivalent to $\sabs{x} \leq y$.
-If $x < 0$, then $-y \leq x$ implies $(-x) \leq y$,
-which is equivalent to $\sabs{x} \leq y$.
+Por outro lado, suponha que $-y \leq x \leq y$.
+Se $x \geq 0$, então $x \leq y$ equivale a $\sabs{x} \leq y$.
+Se $x < 0$, então $-y \leq x$ implica $(-x) \leq y$,
+o que equivale a $\sabs{x} \leq y$.
 
 \medskip
 
 \ref{prop:absbas:vi}:
-Apply \ref{prop:absbas:v} with $y = \sabs{x}$.
+Aplique \ref{prop:absbas:v} com $y = \sabs{x}$.
 \end{proof}
 
-A property used frequently enough to give it a name is the
-\emph{\myindex{triangle inequality}}.
+Uma propriedade usada com frequência suficiente para merecer um nome é a
+\emph{\myindex{desigualdade triangular}}.
 
-\begin{prop}[Triangle Inequality]
+\begin{prop}[Desigualdade Triangular]
 $\sabs{x+y} \leq \sabs{x}+\sabs{y}$
-for all $x, y \in \R$.
+para todos $x, y \in \R$.
 \end{prop}
 
 \begin{proof}
-\propref{prop:absbas} gives
-$- \sabs{x} \leq x \leq \sabs{x}$ and
-$- \sabs{y} \leq y \leq \sabs{y}$.  Add these two inequalities to obtain
+A \propref{prop:absbas} dá
+$- \sabs{x} \leq x \leq \sabs{x}$ e
+$- \sabs{y} \leq y \leq \sabs{y}$. Somando essas duas desigualdades, obtemos
 \begin{equation*}
 - \bigl(\sabs{x}+\sabs{y}\bigr) \leq x+y \leq \sabs{x}+ \sabs{y} .
 \end{equation*}
-Apply \propref{prop:absbas} again to find
+Aplique \propref{prop:absbas} novamente para concluir que
 $\sabs{x+y} \leq \sabs{x}+\sabs{y}$.
 \end{proof}
 
-There are other often applied versions of the triangle inequality.
+Há outras versões da desigualdade triangular usadas com frequência.
 
 \begin{cor}
-Let $x,y \in \R$.
+Sejam $x,y \in \R$.
 \begin{enumerate}[(i)]
-\item \emph{(\myindex{reverse triangle inequality})}
+\item \emph{(\myindex{desigualdade triangular reversa})}
 ~
 $\babs{ \, \sabs{x}-\sabs{y} \, } \leq \sabs{x-y}$.
 \item $\sabs{x-y} \leq \sabs{x}+\sabs{y}$.
@@ -1240,24 +1232,22 @@ $\babs{ \, \sabs{x}-\sabs{y} \, } \leq \sabs{x-y}$.
 \end{cor}
 
 \begin{proof}
-Let us plug in $x=a-b$ and $y=b$ into the standard
-triangle inequality to obtain
+Substituamos $x=a-b$ e $y=b$ na desigualdade triangular usual para obter
 \begin{equation*}
 \sabs{a} = \sabs{a-b+b} \leq \sabs{a-b} + \sabs{b} ,
 \end{equation*}
-or $\sabs{a}-\sabs{b} \leq \sabs{a-b}$.  Switching the roles of $a$ and $b$
-we find
-$\sabs{b}-\sabs{a} \leq \sabs{b-a} = \sabs{a-b}$.  Applying
-\propref{prop:absbas}, we obtain the reverse triangle
-inequality.
+ou $\sabs{a}-\sabs{b} \leq \sabs{a-b}$. Trocando os papéis de $a$ e $b$,
+obtemos
+$\sabs{b}-\sabs{a} \leq \sabs{b-a} = \sabs{a-b}$. Aplicando
+\propref{prop:absbas}, obtemos a desigualdade triangular reversa.
 
-The second item in the corollary is obtained from the standard
-triangle inequality by just replacing $y$ with $-y$, and noting $\sabs{-y} =
+A segunda afirmação do corolário decorre da desigualdade triangular
+usual, substituindo $y$ por $-y$ e observando que $\sabs{-y} =
 \sabs{y}$.
 \end{proof}
 
 \begin{cor}
-Let $x_1, x_2, \ldots, x_n \in \R$.  Then
+Sejam $x_1, x_2, \ldots, x_n \in \R$. Então
 \begin{equation*}
 \sabs{x_1 + x_2 + \cdots + x_n} \leq
 \sabs{x_1} + \sabs{x_2} + \cdots + \sabs{x_n} .
@@ -1265,12 +1255,12 @@ Let $x_1, x_2, \ldots, x_n \in \R$.  Then
 \end{cor}
 
 \begin{proof}
-We proceed by \hyperref[induction:thm]{induction}.
-The conclusion holds trivially for $n=1$, and
-for $n=2$ it is the standard triangle inequality.  Suppose the corollary
-holds for $n$.  Consider $n+1$ numbers $x_1,x_2,\ldots,x_{n+1}$,
-First use the standard triangle inequality, then the induction
-hypothesis
+Procedemos por \hyperref[induction:thm]{indução}.
+A conclusão vale trivialmente para $n=1$ e,
+para $n=2$, é a desigualdade triangular usual. Suponha que o corolário
+valha para $n$. Considere $n+1$ números $x_1,x_2,\ldots,x_{n+1}$.
+Primeiro aplique a desigualdade triangular usual e, em seguida, a hipótese
+de indução:
 \begin{equation*}
 \begin{split}
 \sabs{x_1 + x_2 + \cdots + x_n + x_{n+1}} & \leq
@@ -1281,68 +1271,68 @@ hypothesis
 \end{equation*}
 \end{proof}
 
-Let us see an example of the use of the triangle inequality.
+Vejamos um exemplo do uso da desigualdade triangular.
 
 \begin{example}
-Find a number $M$ such that $\sabs{x^2-9x+1} \leq M$ for all $-1 \leq x \leq
+Encontre um número $M$ tal que $\sabs{x^2-9x+1} \leq M$ para todo $-1 \leq x \leq
 5$.
 
-Using the triangle inequality, write
+Usando a desigualdade triangular, escrevemos
 \begin{equation*}
 \sabs{x^2-9x+1} \leq \sabs{x^2}+\sabs{-9x}+\sabs{1}
 =
 \sabs{x}^2+9\sabs{x}+1 .
 \end{equation*}
-The expression
-$\sabs{x}^2+9\sabs{x}+1$ is largest when $\sabs{x}$ is largest (why?).  In the interval
-provided, $\sabs{x}$ is largest when $x=5$ and so $\sabs{x}=5$.  One
-possibility for $M$ is
+A expressão
+$\sabs{x}^2+9\sabs{x}+1$ é máxima quando $\sabs{x}$ é máximo (por quê?). No intervalo
+dado, $\sabs{x}$ é máximo quando $x=5$, e então $\sabs{x}=5$. Uma
+possibilidade para $M$ é
 \begin{equation*}
 M = 5^2+9(5)+1 = 71 .
 \end{equation*}
-There are, of course, other values of $M$ that work.  The bound of 71
-is much higher than it
-need be, but we didn't ask for the best possible $M$, just one that works.
+Há, naturalmente, outros valores de $M$ que servem. A cota 71
+é muito maior do que
+precisa ser, mas não pedimos o melhor valor possível de $M$, apenas um que funcione.
 \end{example}
 
-The last example leads us to the concept of bounded functions.
+O último exemplo nos leva ao conceito de funções limitadas.
 
 \begin{defn}
-Suppose $f \colon D \to \R$ is a function.  We say $f$ is
-\emph{bounded}\index{bounded function}
-if there exists a number $M$
-such that $\babs{f(x)} \leq M$ for all $x \in D$.
+Suponha que $f \colon D \to \R$ seja uma função. Dizemos que $f$ é
+\emph{limitada}\index{função limitada}
+se existe um número $M$
+tal que $\babs{f(x)} \leq M$ para todo $x \in D$.
 \end{defn}
 
-In the example, we proved $x^2-9x+1$ is bounded when considered as a
-function on $D = \{ x : -1 \leq x \leq 5 \}$.  On the other hand,
-if we consider the same polynomial as a function on the whole real line $\R$,
-then it is not bounded.
+No exemplo, provamos que $x^2-9x+1$ é limitada quando considerada como uma
+função em $D = \{ x : -1 \leq x \leq 5 \}$. Por outro lado,
+se considerarmos o mesmo polinômio como uma função em toda a reta real $\R$,
+ele não é limitado.
 
 \begin{myfigureht}
 \myincludegraphics{boundedfunc}{%
-A diagram of the graph of a function.
-A domain D is marked on the horizontal axis, and a sinusoidal line
-representing a graph of a function on this domain is drawn.  The maximal
-value of the function is drawn as a horizontal dashed line that is touching
-the graph of the function and is marked as sup f of D.  Similarly, the
-minimum is marked inf f of D.  Two other dash-dotted lines are marked with
-M and minus M.  The line marked M is above the graph and the line marked
-minus M is below the graph.  On the vertical axis, the set of values
-that function attains is marked f of D.}
-\caption{Example of a bounded function, a bound $M$, and its supremum and infimum.\label{boundedfuncfig}}
+Um diagrama do gráfico de uma função.
+O domínio D está marcado no eixo horizontal, e uma curva senoidal
+representando o gráfico de uma função nesse domínio é desenhada. O valor
+máximo da função está indicado por uma linha horizontal tracejada que toca
+o gráfico e está marcada como supremo de f em D. Da mesma forma, o
+mínimo está marcado como ínfimo de f em D. Duas outras linhas tracejadas
+pontilhadas estão marcadas com M e menos M. A linha marcada M está acima do
+gráfico e a linha marcada menos M está abaixo. No eixo vertical, está marcado
+o conjunto dos valores que a função assume, f de D.}
+\caption{Exemplo de uma função limitada, uma cota $M$ e seu supremo e ínfimo.\label{boundedfuncfig}}
 \end{myfigureht}
-For a function $f \colon D \to \R$, we write
-(see \figureref{boundedfuncfig} for
-an example)
+Para uma função $f \colon D \to \R$, escrevemos
+(veja a \figureref{boundedfuncfig} para
+um exemplo)
 \glsadd{not:supf}\glsadd{not:inff}
 \begin{equation*}
-\sup_{x \in D} f(x) \coloneqq \sup\, f(D) \qquad \text{and} \qquad
+\sup_{x \in D} f(x) \coloneqq \sup\, f(D) \qquad \text{e} \qquad
 \inf_{x \in D} f(x) \coloneqq \inf\, f(D) .
 \end{equation*}
-We also sometimes replace the \myquote{$x \in D$} with an expression.
-For example if, as before, $f(x) = x^2-9x+1$, for $-1 \leq x \leq 5$,
-a little bit of calculus shows
+Às vezes, também substituímos o \myquote{$x \in D$} por uma expressão.
+Por exemplo, como antes, se $f(x) = x^2-9x+1$, para $-1 \leq x \leq 5$,
+um pouco de cálculo mostra que
 \begin{equation*}
 \sup_{x \in D} f(x) =
 \sup_{-1 \leq x \leq 5} ( x^2 -9x+1 ) = 11,
@@ -1354,69 +1344,69 @@ a little bit of calculus shows
 
 
 \begin{prop} \label{prop:funcsupinf}
-If $f \colon D \to \R$ and $g \colon D \to \R$ ($D$ nonempty) are
-bounded\footnote{The boundedness hypothesis is for simplicity;
-it can be dropped if we use the extended real numbers.}
-functions and
+Se $f \colon D \to \R$ e $g \colon D \to \R$ ($D$ não vazio) são
+funções limitadas\footnote{A hipótese de limitação é adotada por simplicidade;
+ela pode ser removida se usarmos os números reais estendidos.}
+e
 \begin{equation*}
-f(x) \leq g(x) \qquad \text{for all } x \in D,
+f(x) \leq g(x) \qquad \text{para todo } x \in D,
 \end{equation*}
-then
+então
 \begin{equation} \label{prop:funcsupinf:eq}
 \sup_{x \in D} f(x) \leq \sup_{x \in D} g(x)
-\qquad \text{and} \qquad
+\qquad \text{e} \qquad
 \inf_{x \in D} f(x) \leq \inf_{x \in D} g(x) .
 \end{equation}
 \end{prop}
 
-Be careful with the variables.  The $x$ on the left side of
-the inequality in \eqref{prop:funcsupinf:eq}
-is different from the $x$ on the right.  You
-should really think of, say, the first inequality as
+Tenha cuidado com as variáveis. O $x$ no lado esquerdo da
+desigualdade em \eqref{prop:funcsupinf:eq}
+é diferente do $x$ no lado direito. Na verdade,
+deveríamos pensar, por exemplo, na primeira desigualdade como
 \begin{equation*}
 \sup_{x \in D} f(x) \leq \sup_{y \in D} g(y) .
 \end{equation*}
-Let us prove this inequality.  If $b$ is an upper bound for $g(D)$, then
-$f(x) \leq g(x) \leq b$ for all $x \in D$, and hence $b$ is also an upper
-bound for $f(D)$,
-or $f(x) \leq b$ for all $x \in D$.
-Take the least upper bound of $g(D)$ to get that for all $x \in D$
+Vamos provar essa desigualdade. Se $b$ é uma cota superior de $g(D)$, então
+$f(x) \leq g(x) \leq b$ para todo $x \in D$; logo, $b$ também é uma cota superior
+de $f(D)$,
+ou seja, $f(x) \leq b$ para todo $x \in D$.
+Tome a menor cota superior de $g(D)$ para concluir que, para todo $x \in D$,
 \begin{equation*}
 f(x) \leq \sup_{y \in D} g(y) .
 \end{equation*}
-Therefore,
-$\sup_{y \in D} g(y)$ is an upper bound for $f(D)$ and thus greater than or
-equal to the least upper bound of $f(D)$.
+Portanto,
+$\sup_{y \in D} g(y)$ é uma cota superior de $f(D)$ e, assim, maior ou
+igual à menor cota superior de $f(D)$.
 \begin{equation*}
 \sup_{x \in D} f(x) \leq \sup_{y \in D} g(y) .
 \end{equation*}
-The second inequality (the statement about the inf) is left as an exercise
+A segunda desigualdade (a afirmação sobre o ínfimo) fica como exercício
 (\exerciseref{exercise:finishfuncsupinf}).
 
 \medskip
 
-A common mistake is to conclude
+Um erro comum é concluir que
 \begin{equation} \label{rn:av:ltnottrue}
 \sup_{x \in D} f(x) \leq \inf_{y \in D} g(y) .
 \end{equation}
-The inequality \eqref{rn:av:ltnottrue} is not true given the hypothesis of
-the proposition above.  For this stronger
-inequality we need the stronger hypothesis
+A desigualdade \eqref{rn:av:ltnottrue} não decorre da hipótese
+da proposição acima. Para obter essa desigualdade mais forte,
+precisamos da hipótese mais forte
 \begin{equation*}
-f(x) \leq g(y) \qquad \text{for all } x \in D \text{ and } y \in D.
+f(x) \leq g(y) \qquad \text{para todo } x \in D \text{ e } y \in D.
 \end{equation*}
-The proof, as well as a counterexample, is left as an exercise
+A demonstração, assim como um contraexemplo, fica como exercício
 (\exerciseref{exercise:supinffuncineq}).
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
 \begin{exercise}
-Show that
-$\sabs{x-y} < \epsilon$ if and only if $x-\epsilon < y < x+\epsilon$.
+Mostre que
+$\sabs{x-y} < \epsilon$ se, e somente se, $x-\epsilon < y < x+\epsilon$.
 \end{exercise}
 
 \begin{exercise}
-Show: \qquad
+Mostre: \qquad
 %\begin{enumerate}[a)]
 %\item
 a)
@@ -1429,37 +1419,37 @@ $\min \{x,y\} = \dfrac{x+y-\sabs{x-y}}{2}$
 \end{exercise}
 
 \begin{exercise}
-Find a number $M$ such that $\sabs{x^3-x^2+8x} \leq M$ for all $-2 \leq x \leq
+Encontre um número $M$ tal que $\sabs{x^3-x^2+8x} \leq M$ para todo $-2 \leq x \leq
 10$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:finishfuncsupinf}
-Finish the proof of \propref{prop:funcsupinf}.
-That is,
-given a set $D$,
-and two bounded functions
-$f \colon D \to \R$ and $g \colon D \to \R$
-such that $f(x) \leq g(x)$ for all $x \in D$, prove that
+Complete a demonstração de \propref{prop:funcsupinf}.
+Isto é,
+dado um conjunto $D$,
+e duas funções limitadas
+$f \colon D \to \R$ e $g \colon D \to \R$
+tais que $f(x) \leq g(x)$ para todo $x \in D$, demonstre que
 \begin{equation*}
 \inf_{x\in D} f(x) \leq \inf_{x\in D} g(x) .
 \end{equation*}
 \end{exercise}
 
 \begin{exercise} \label{exercise:supinffuncineq}
-Let
-$f \colon D \to \R$ and $g \colon D \to \R$ be functions ($D$ nonempty).
+Sejam
+$f \colon D \to \R$ e $g \colon D \to \R$ funções ($D$ não vazio).
 \begin{enumerate}[a)]
 %
 \item
-Suppose
-$f(x) \leq g(y)$ for all $x \in D$ and $y \in D$.  Show that
+Suponha que
+$f(x) \leq g(y)$ para todo $x \in D$ e todo $y \in D$. Mostre que
 \begin{equation*}
 \sup_{x\in D} f(x) \leq \inf_{x\in D} g(x) .
 \end{equation*}
 %
 \item
-Find a specific $D$, $f$, and $g$, such that
-$f(x) \leq g(x)$ for all $x \in D$, but
+Encontre conjuntos específicos $D$, $f$ e $g$ tais que
+$f(x) \leq g(x)$ para todo $x \in D$, mas
 \begin{equation*}
 \sup_{x\in D} f(x) > \inf_{x\in D} g(x) .
 \end{equation*}
@@ -1467,18 +1457,18 @@ $f(x) \leq g(x)$ for all $x \in D$, but
 \end{exercise}
 
 \begin{exercise}
-Prove \propref{prop:funcsupinf} without the assumption that
-the functions are bounded.  Hint: You need to use the extended real
-numbers.
+Demonstre \propref{prop:funcsupinf} sem a hipótese de que
+as funções são limitadas. Dica: é preciso usar os números reais
+estendidos.
 \end{exercise}
 
 \begin{exercise} \label{exercise:sumofsup}
 \pagebreak[2]
-Let $D$ be a nonempty set.
-Suppose $f \colon D \to \R$ and $g \colon D \to \R$ are bounded functions.
+Seja $D$ um conjunto não vazio.
+Suponha que $f \colon D \to \R$ e $g \colon D \to \R$ sejam funções limitadas.
 \begin{enumerate}[a)]
 \item
-Show
+Mostre que
 \begin{equation*}
 %mbxlatex \begin{aligned}
 %mbxlatex &
@@ -1486,7 +1476,7 @@ Show
 \sup_{x\in D} f(x)
 +
 \sup_{x\in D} g(x)
-\qquad \text{and}
+\qquad \text{e}
 %mbxSTARTIGNORE
 \qquad
 %mbxENDIGNORE
@@ -1499,54 +1489,55 @@ Show
 %mbxlatex \end{aligned}
 \end{equation*}
 \item
-Find an example (or examples) where we obtain strict inequalities.
+Encontre um ou mais exemplos em que ocorram desigualdades estritas.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
 \pagebreak[2]
-Suppose $D$ is nonempty, $f \colon D \to \R$ and $g \colon D \to \R$ are
-bounded functions, and
+Suponha que $D$ seja não vazio, que $f \colon D \to \R$ e $g \colon D \to \R$ sejam
+funções limitadas e que
 $\alpha \in \R$.
 \begin{enumerate}[a)]
 \item
-Show that $\alpha f \colon D \to \R$ defined by $(\alpha f) (x) \coloneqq \alpha
-f(x)$ is a bounded function.
+Mostre que $\alpha f \colon D \to \R$, definida por $(\alpha f) (x) \coloneqq \alpha
+f(x)$, é uma função limitada.
 \item
-Show that $f+g \colon D \to \R$ defined by $(f+g) (x) \coloneqq f(x) + g(x)$
-is a bounded function.
+Mostre que $f+g \colon D \to \R$, definida por $(f+g) (x) \coloneqq f(x) + g(x)$,
+é uma função limitada.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Let $f \colon D \to \R$ and $g \colon D \to \R$ be functions with $D$
-nonempty, $\alpha \in \R$, and
-recall what $f+g$ and $\alpha f$ means from the previous exercise.
+Sejam $f \colon D \to \R$ e $g \colon D \to \R$ funções, com $D$
+não vazio e $\alpha \in \R$. Lembre-se do significado de $f+g$ e $\alpha f$ dado
+no exercício anterior.
 \begin{enumerate}[a)]
 \item
-Prove that if $f+g$ and $g$ are bounded, then $f$ is bounded.
+Demonstre que, se $f+g$ e $g$ são limitadas, então $f$ é limitada.
 \item
-Find an example where $f$ and $g$ are both unbounded, but $f+g$ is
-bounded.
+Encontre um exemplo em que $f$ e $g$ sejam ambas ilimitadas, mas $f+g$ seja
+limitada.
 \item
-Prove that if $f$ is bounded but $g$ is unbounded, then $f+g$ is
-unbounded.
+Demonstre que, se $f$ é limitada, mas $g$ é ilimitada, então $f+g$ é
+ilimitada.
 \item
-Find an example where $f$ is unbounded but $\alpha f$ is bounded.
+Encontre um exemplo em que $f$ seja ilimitada, mas $\alpha f$ seja limitada.
 \end{enumerate}
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{Intervals and the size of \texorpdfstring{$\R$}{R}}
+
+\section{Intervalos e o tamanho de \texorpdfstring{$\R$}{R}}
 \label{sec:intandsizeR}
 
-\sectionnotes{0.5--1 lecture (proof of uncountability of $\R$ can be optional)}
+\sectionnotes{0,5--1 aula (a demonstração de que $\R$ não é enumerável pode ser opcional)}
 
-You have surely seen the notation for intervals\index{interval}
-before, but let us give a formal
-definition here.  For $a, b \in \R$ such that $a < b$, we define
+Você certamente já viu a notação de intervalos\index{intervalo},
+mas vamos dar aqui uma
+definição formal. Para $a, b \in \R$ tais que $a < b$, definimos
 \glsadd{not:openbdinterval}%
 \glsadd{not:closedbdinterval}%
 \glsadd{not:halfopenbdinterval}%
@@ -1558,274 +1549,272 @@ definition here.  For $a, b \in \R$ such that $a < b$, we define
 & (a,b] \coloneqq \{ x \in \R : a < x \leq b \}, \\
 & [a,b) \coloneqq \{ x \in \R : a \leq x < b \} .
 \end{align*}
-The interval $[a,b]$ is called a \emph{\myindex{closed interval}}
-and $(a,b)$ is called an \emph{\myindex{open interval}}.  The intervals
-of the form $(a,b]$ and $[a,b)$ are called
-\emph{half-open intervals}\index{half-open interval}.
+O intervalo $[a,b]$ é chamado de \emph{\myindex{intervalo fechado}}
+e $(a,b)$ é chamado de \emph{\myindex{intervalo aberto}}. Os intervalos
+da forma $(a,b]$ e $[a,b)$ são chamados de
+\emph{intervalos semiabertos}\index{intervalo semiaberto}.
 
-The intervals above are \emph{bounded intervals}\index{bounded
-interval}, since both $a$ and $b$ are real numbers.\footnote{When we write
-$(a,b)$, $[a,b]$, etc., we will always mean a bounded interval unless we explicitly say
-that $a$ or $b$ could be $-\infty$ or $\infty$.}
-We define \emph{unbounded intervals}\index{unbounded interval},
+Os intervalos acima são \emph{intervalos limitados}\index{intervalo
+limitado}, pois $a$ e $b$ são números reais.\footnote{Quando escrevemos
+$(a,b)$, $[a,b]$ etc., sempre queremos dizer um intervalo limitado, a menos que digamos explicitamente
+que $a$ ou $b$ pode ser $-\infty$ ou $\infty$.}
+Definimos os \emph{intervalos não limitados}\index{intervalo não limitado},
 \begin{align*}
 & [a,\infty) \coloneqq \{ x \in \R : a \leq x \}, \\
 & (a,\infty) \coloneqq \{ x \in \R : a < x \}, \\
 & (-\infty,b] \coloneqq \{ x \in \R : x \leq b \}, \\
 & (-\infty,b) \coloneqq \{ x \in \R : x < b \} .
 \end{align*}
-For completeness, we define $(-\infty,\infty) \coloneqq \R$.
-The intervals $[a,\infty)$, $(-\infty,b]$, and $\R$ are sometimes called
-\emph{\myindex{unbounded closed intervals}},
-and $(a,\infty)$, $(-\infty,b)$, and $\R$ are sometimes called
-\emph{\myindex{unbounded open intervals}}.
+Para completar, definimos $(-\infty,\infty) \coloneqq \R$.
+Às vezes, os intervalos $[a,\infty)$, $(-\infty,b]$ e $\R$ são chamados de
+\emph{\myindex{intervalos fechados não limitados}},
+e $(a,\infty)$, $(-\infty,b)$ e $\R$ são chamados de
+\emph{\myindex{intervalos abertos não limitados}}.
 
-The proof of the following proposition is left as an exercise.
-In short, an interval is a set with at least two points
-that contains all points between any two
-points.\footnote{Sometimes single point sets and the empty set are
-also called intervals, but in this book, intervals have at least two points.
-That is, we only defined the bounded intervals if $a < b$.}
+Deixamos a demonstração da proposição a seguir como exercício.
+Em resumo, um intervalo é um conjunto com pelo menos dois pontos
+que contém todos os pontos entre quaisquer dois
+de seus pontos.\footnote{Às vezes, conjuntos unitários e o conjunto vazio
+também são chamados de intervalos, mas neste livro os intervalos têm pelo menos dois pontos.
+Isto é, só definimos intervalos limitados quando $a < b$.}
 
 \begin{prop} \label{prop:intervaldef}
-A set $I \subset \R$ is an interval if and only if
-$I$ contains at least two points and
-for all $a,c \in I$ and $b \in \R$ such that $a < b < c$, we have $b \in I$.
+Um conjunto $I \subset \R$ é um intervalo se, e somente se,
+$I$ contém pelo menos dois pontos e
+para todos $a,c \in I$ e $b \in \R$ tais que $a < b < c$, temos $b \in I$.
 \end{prop}
 
-We have already seen that every open interval $(a,b)$ (where $a < b$ of course)
-is nonempty.  For example, it contains the number $\frac{a+b}{2}$.
-An unexpected fact is that from a set-theoretic perspective,
-all intervals have the same \myquote{size,} that is, they all have
-the same cardinality.  For instance, the map $f(x) \coloneqq 2x$
-takes the interval $[0,1]$ bijectively to the interval $[0,2]$.
+Já vimos que todo intervalo aberto $(a,b)$ (com $a < b$, é claro)
+é não vazio. Por exemplo, ele contém o número $\frac{a+b}{2}$.
+Um fato surpreendente é que, do ponto de vista da teoria dos conjuntos,
+todos os intervalos têm o mesmo \myquote{tamanho,} isto é, todos têm
+a mesma cardinalidade. Por exemplo, a função $f(x) \coloneqq 2x$
+leva o intervalo $[0,1]$ bijetivamente ao intervalo $[0,2]$.
 
-Perhaps more interestingly,
-the function $f(x) \coloneqq \tan(x)$
-is a bijective map from $(-\nicefrac{\pi}{2},\nicefrac{\pi}{2})$ to $\R$.  Hence the bounded
-interval $(-\nicefrac{\pi}{2},\nicefrac{\pi}{2})$ has the same cardinality as $\R$.  It is not
-straightforward to construct a bijective map from $[0,1]$ to
-$(0,1)$, but it is possible.
+Talvez ainda mais interessante seja a função $f(x) \coloneqq \tan(x)$,
+que é uma função bijetiva de $(-\nicefrac{\pi}{2},\nicefrac{\pi}{2})$ em $\R$. Portanto, o intervalo
+limitado $(-\nicefrac{\pi}{2},\nicefrac{\pi}{2})$ tem a mesma cardinalidade que $\R$. Não é
+simples construir uma função bijetiva de $[0,1]$ para
+$(0,1)$, mas isso é possível.
 
-And do not worry, there does exist a way to measure the \myquote{size} of subsets
-of real numbers that
-\myquote{sees}
-the difference between $[0,1]$ and $[0,2]$.  However, its proper definition
-requires much more machinery than we have right now.
+E não se preocupe: existe uma maneira de medir o \myquote{tamanho} dos subconjuntos
+dos números reais que
+\myquote{percebe}
+a diferença entre $[0,1]$ e $[0,2]$. No entanto, sua definição adequada
+requer muito mais ferramentas do que temos neste momento.
 
-Let us say more about the cardinality of intervals and hence about the
-cardinality of $\R$.  We have seen that there exist irrational numbers;
-that is,
-$\R \setminus \Q$ is nonempty.  The question is: How many irrational numbers
-are there?  It turns out there are a lot more irrational numbers than rational
-numbers.  We have seen that $\Q$ is countable, and we will show
-that $\R$ is uncountable.
-In fact, the cardinality of $\R$ is the
-same as the cardinality of $\sP(\N)$, although we will not prove this
-claim here.
+Digamos mais sobre a cardinalidade dos intervalos e, portanto, sobre a
+cardinalidade de $\R$. Já vimos que existem números irracionais;
+isto é,
+$\R \setminus \Q$ não é vazio. A pergunta é: quantos números irracionais
+existem? Acontece que há muito mais números irracionais do que racionais.
+Vimos que $\Q$ é enumerável, e mostraremos
+que $\R$ não é enumerável.
+Na verdade, a cardinalidade de $\R$ é
+igual à cardinalidade de $\sP(\N)$, embora não demonstremos
+essa afirmação aqui.
 
-\begin{thm}[Cantor]\index{Cantor's theorem}
-$\R$ is uncountable.
+\begin{thm}[Cantor]\index{teorema de Cantor}
+$\R$ não é enumerável.
 \end{thm}
 
-We give a version of
-Cantor's original proof from
-1874 as this proof requires the least setup.  Normally this proof is stated
-as a contradiction.  It is, however, easier
-to understand it as a direct constructive proof that any countably infinite subset
-must miss some element.
+Damos uma versão da demonstração original de Cantor,
+de 1874, pois ela requer o mínimo de preparação. Normalmente, essa demonstração é apresentada
+por contradição. No entanto, é mais fácil
+entendê-la como uma demonstração construtiva direta de que qualquer subconjunto infinito enumerável
+deve deixar de fora algum elemento.
 
 \begin{proof}
-Let $X \subset \R$ be a countably infinite
-subset such that for every pair of real numbers
-$a < b$, there is an $x \in X$ such that $a < x < b$.  Were $\R$ countable,
-we could take $X = \R$.  We will show that $X$ is necessarily
-a proper subset, and so $X$ cannot equal $\R$, and $\R$ must be
-uncountable.
+Seja $X \subset \R$ um subconjunto infinito enumerável
+tal que, para todo par de números reais
+$a < b$, existe $x \in X$ tal que $a < x < b$. Se $\R$ fosse enumerável,
+poderíamos tomar $X = \R$. Mostraremos que $X$ é necessariamente
+um subconjunto próprio e, portanto, $X$ não pode ser igual a $\R$; logo, $\R$ não é
+enumerável.
 
-As $X$ is countably infinite,
-there is a bijection from $\N$ to $X$.  We write $X$ as
-a sequence of real numbers $x_1, x_2, x_3,\ldots$, such that
-each number in $X$
-is given by $x_n$ for some $n \in \N$.
+Como $X$ é infinito enumerável,
+existe uma bijeção de $\N$ em $X$. Escrevemos $X$ como
+uma sequência de números reais $x_1, x_2, x_3,\ldots$, tal que
+cada número de $X$
+é $x_n$ para algum $n \in \N$.
 
-We inductively
-construct two sequences of real numbers $a_1,a_2,a_3,\ldots$ and
-$b_1,b_2,b_3,\ldots$.  Let
-$a_1 \coloneqq x_1$ and $b_1 \coloneqq x_1+1$.
-Note that $a_1 < b_1$ and
+Construiremos indutivamente
+duas sequências de números reais $a_1,a_2,a_3,\ldots$ e
+$b_1,b_2,b_3,\ldots$. Defina
+$a_1 \coloneqq x_1$ e $b_1 \coloneqq x_1+1$.
+Observe que $a_1 < b_1$ e
 $x_1 \notin (a_1,b_1)$.
-For some $k > 1$,
-suppose $a_1,a_2,\ldots,a_{k-1}$ and $b_1,b_2,\ldots,b_{k-1}$ have been
-defined,
-suppose
+Para algum $k > 1$,
+suponha que $a_1,a_2,\ldots,a_{k-1}$ e $b_1,b_2,\ldots,b_{k-1}$ já tenham sido
+definidos,
+que valha
 $a_1 < a_2 < \cdots < a_{k-1} < b_{k-1} < \cdots < b_2 < b_1$,
-and suppose
-for each $j=1,2,\ldots,k-1$,
-we have $x_\ell \notin (a_{j},b_{j})$
-for $\ell=1,2,\ldots,j$.
+e que, para
+cada $j=1,2,\ldots,k-1$,
+tenhamos $x_\ell \notin (a_{j},b_{j})$
+para $\ell=1,2,\ldots,j$.
 \begin{enumerate}[(i)]
-\item Define $a_k \coloneqq x_n$, where $n$ is the smallest $n \in \N$
-such that $x_n \in (a_{k-1},b_{k-1})$.  Such an $x_n$ exists by our
-assumption on $X$, and $n \geq k$ by the assumption on $(a_{k-1},b_{k-1})$.
-\item Next, define $b_k$ to be some real number in $(a_{k},b_{k-1})$,
-for example $b_k \coloneqq \frac{a_k+b_{k-1}}{2}$.
+\item Defina $a_k \coloneqq x_n$, onde $n$ é o menor $n \in \N$
+tal que $x_n \in (a_{k-1},b_{k-1})$. Tal $x_n$ existe pela nossa
+hipótese sobre $X$, e $n \geq k$ pela hipótese sobre $(a_{k-1},b_{k-1})$.
+\item Em seguida, defina $b_k$ como um número real em $(a_{k},b_{k-1})$,
+por exemplo, $b_k \coloneqq \frac{a_k+b_{k-1}}{2}$.
 \end{enumerate}
-Notice that %$a_k < b_k$ and
+Observe que %$a_k < b_k$ e
 $a_{k-1} < a_k < b_k < b_{k-1}$.
-Also notice that $(a_{k},b_{k})$ does not contain $x_k$ and hence
-does not contain $x_{\ell}$ for $\ell=1,2,\ldots,k$.
-The two sequences are now defined.
+Observe também que $(a_{k},b_{k})$ não contém $x_k$ e, portanto,
+não contém $x_{\ell}$ para $\ell=1,2,\ldots,k$.
+Agora as duas sequências estão definidas.
 
-Claim: \emph{$a_n < b_m$ for all $n$ and $m$ in $\N$.} Proof: Let us first
-assume $n < m$.  Then $a_n < a_{n+1} < \cdots < a_{m-1} < a_m < b_m$.
-Similarly for $n > m$.  The claim follows.
+Afirmação: \emph{$a_n < b_m$ para todos $n$ e $m$ em $\N$.} Demonstração: suponha primeiro
+$n < m$. Então $a_n < a_{n+1} < \cdots < a_{m-1} < a_m < b_m$.
+O mesmo vale para $n > m$. A afirmação está demonstrada.
 
-Let $A \coloneqq \{ a_n : n \in \N \}$ and $B \coloneqq \{ b_n : n \in \N \}$.
-By \propref{infsupineq:prop} and the claim above,
+Sejam $A \coloneqq \{ a_n : n \in \N \}$ e $B \coloneqq \{ b_n : n \in \N \}$.
+Pela \propref{infsupineq:prop} e pela afirmação acima,
 \begin{equation*}
 \sup\, A \leq \inf\, B .
 \end{equation*}
-Define $y \coloneqq \sup\, A$.  The number $y$ cannot be a member of $A$: If $y = a_n$
-for some $n$, then $y < a_{n+1}$, which is impossible.
-Similarly, $y$ cannot be a member of $B$.  Therefore,
-$a_n < y$ for all $n\in \N$
-and $y < b_n$ for all $n\in \N$.
-In other words, for every $n \in \N$, we have $y \in (a_n,b_n)$.
-By the construction of the sequence, $x_n \notin (a_n,b_n)$,
-and so $y \neq x_n$.  As $y \neq x_n$ for all $n \in \N$, we have that $y
+Defina $y \coloneqq \sup\, A$. O número $y$ não pode pertencer a $A$: se $y = a_n$
+para algum $n$, então $y < a_{n+1}$, o que é impossível.
+Da mesma forma, $y$ não pode pertencer a $B$. Portanto,
+$a_n < y$ para todo $n\in \N$
+e $y < b_n$ para todo $n\in \N$.
+Em outras palavras, para todo $n \in \N$, temos $y \in (a_n,b_n)$.
+Pela construção da sequência, $x_n \notin (a_n,b_n)$,
+e, portanto, $y \neq x_n$. Como $y \neq x_n$ para todo $n \in \N$, temos $y
 \notin X$.
 
-We have constructed a real number $y$ that is not in $X$, and thus $X$
-is a proper subset of $\R$.
-The sequence $x_1,x_2,\ldots$ cannot contain all elements of $\R$,
-and thus $\R$ is uncountable.
+Construímos um número real $y$ que não pertence a $X$, portanto $X$
+é um subconjunto próprio de $\R$.
+A sequência $x_1,x_2,\ldots$ não pode conter todos os elementos de $\R$,
+e, portanto, $\R$ não é enumerável.
 \end{proof}
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
 \begin{exercise}
-For $a < b$, construct an explicit bijection from $(a,b]$ to $(0,1]$.
+Para $a < b$, construa uma função bijetiva explícita de $(a,b]$ para $(0,1]$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $f \colon [0,1] \to (0,1)$ is a bijection.
-Using $f$, construct a
-bijection from $[-1,1]$ to $\R$.
+Suponha que $f \colon [0,1] \to (0,1)$ seja uma função bijetiva.
+Usando $f$, construa uma
+função bijetiva de $[-1,1]$ para $\R$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:intervaldef}
-Prove \propref{prop:intervaldef}.
-That is,
-suppose $I \subset \R$ is a subset with at least two elements
-such that if $a < b < c$ and $a, c \in I$, then $b \in I$.
-Prove that $I$ is one of the nine types of intervals explicitly
-given in this section.
-Furthermore, prove that the intervals given in this section
-all satisfy this property.
+Demonstre \propref{prop:intervaldef}.
+Isto é,
+suponha que $I \subset \R$ seja um subconjunto com pelo menos dois elementos
+tal que, se $a < b < c$ e $a, c \in I$, então $b \in I$.
+Demonstre que $I$ é um dos nove tipos de intervalos explicitamente
+definidos nesta seção.
+Além disso, demonstre que todos os intervalos definidos nesta seção
+satisfazem essa propriedade.
 \end{exercise}
 
-\begin{exercise}[Hard]
-Construct an explicit bijection from $(0,1]$ to $(0,1)$.
-Hint: One approach is as follows: First map $(\nicefrac{1}{2},1]$
-to $(0,\nicefrac{1}{2}]$, then map
+\begin{exercise}[Difícil]
+Construa uma função bijetiva explícita de $(0,1]$ para $(0,1)$.
+Dica: uma abordagem possível é a seguinte: primeiro leve $(\nicefrac{1}{2},1]$
+a $(0,\nicefrac{1}{2}]$, depois leve
 $(\nicefrac{1}{4},\nicefrac{1}{2}]$
-to $(\nicefrac{1}{2},\nicefrac{3}{4}]$, etc.
-Write down the map explicitly, that
-is, write down an algorithm that tells you exactly what number goes where.
-Then prove that the map is a bijection.
+a $(\nicefrac{1}{2},\nicefrac{3}{4}]$, e assim por diante.
+Escreva a função explicitamente, isto é,
+escreva um algoritmo que indique exatamente para onde cada número vai.
+Em seguida, demonstre que a função é bijetiva.
 \end{exercise}
 
-\begin{exercise}[Hard]
-Construct an explicit bijection from $[0,1]$ to $(0,1)$.
+\begin{exercise}[Difícil]
+Construa uma função bijetiva explícita de $[0,1]$ para $(0,1)$.
 \end{exercise}
 
 \begin{exercise}
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Show that every closed interval $[a,b]$ is the intersection
-of countably many open intervals.
+Mostre que todo intervalo fechado $[a,b]$ é a interseção
+de uma quantidade enumerável de intervalos abertos.
 \item
-Show that every open interval $(a,b)$
-is a countable union of closed intervals.
+Mostre que todo intervalo aberto $(a,b)$
+é uma união enumerável de intervalos fechados.
 \item
-Show that an intersection
-of a nonempty and possibly infinite family of bounded closed intervals,
+Mostre que a interseção
+de uma família não vazia e possivelmente infinita de intervalos fechados limitados,
 $\bigcap\limits_{\lambda \in I} [a_\lambda,b_\lambda]$,
-is either empty, a single point,
-or a bounded closed interval.
+é vazia, um único ponto
+ou um intervalo fechado limitado.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Suppose $S$ is a set of disjoint open intervals in $\R$.  That is,
-if $(a,b) \in S$ and $(c,d) \in S$, then either $(a,b) = (c,d)$
-or $(a,b) \cap (c,d) = \emptyset$.  Prove $S$ is a countable set.
+Suponha que $S$ seja um conjunto de intervalos abertos disjuntos em $\R$. Isto é,
+se $(a,b) \in S$ e $(c,d) \in S$, então ou $(a,b) = (c,d)$
+ou $(a,b) \cap (c,d) = \emptyset$. Demonstre que $S$ é enumerável.
 \end{exercise}
 
 \begin{exercise}
-Prove that the cardinality of $[0,1]$ is the same as the cardinality of
-$(0,1)$ by showing that
-$\babs{[0,1]} \leq \babs{(0,1)}$ and
+Demonstre que a cardinalidade de $[0,1]$ é igual à cardinalidade de
+$(0,1)$ mostrando que
+$\babs{[0,1]} \leq \babs{(0,1)}$ e
 $\babs{(0,1)} \leq \babs{[0,1]}$.
-See \defnref{def:comparecards}.
-This proof requires the Cantor--Bernstein--Schr\"oder theorem, which we
-stated without proof.  Note that this proof does not give you an
-explicit bijection.
+Veja \defnref{def:comparecards}.
+Esta demonstração requer o teorema de Cantor--Bernstein--Schr\"oder, que
+enunciamos sem demonstração. Observe que esta demonstração não fornece
+uma função bijetiva explícita.
 \end{exercise}
 
-\begin{exercise}[Challenging]
-A number $x$ is \emph{algebraic}\index{algebraic number} if $x$ is a root of
-a nonzero polynomial with
-integer coefficients, in other words, $a_n x^n + a_{n-1} x^{n-1} + \cdots
-+ a_1 x + a_0 = 0$ where $a_0,a_1,\ldots,a_n \in \Z$, but not all zero.
+\begin{exercise}[Desafiador]
+Um número $x$ é \emph{algébrico}\index{número algébrico} se $x$ for raiz de
+um polinômio não nulo com
+coeficientes inteiros, ou seja, se $a_n x^n + a_{n-1} x^{n-1} + \cdots
++ a_1 x + a_0 = 0$, onde $a_0,a_1,\ldots,a_n \in \Z$, mas nem todos são zero.
 \begin{enumerate}[a)]
 \item
-Show that there are only
-countably many algebraic numbers.
+Mostre que há apenas
+uma quantidade enumerável de números algébricos.
 \item
-Show that there exist non-algebraic (transcendental)
-numbers (follow in the footsteps of Cantor, use the uncountability of $\R$).
+Mostre que existem números não algébricos (transcendentes)
+(siga os passos de Cantor e use a não enumerabilidade de $\R$).
 \end{enumerate}
-Hint: Feel free to use the fact that a nonzero polynomial of degree $n$ has at most $n$ real
-roots.
+Dica: você pode usar o fato de que um polinômio não nulo de grau $n$ tem no máximo $n$ raízes
+reais.
 \end{exercise}
 
-\begin{exercise}[Challenging]
-Let $F$ be the set of all functions $f \colon \R \to \R$.
-Prove $\sabs{\R} < \sabs{F}$
-using Cantor's \thmref{cantorspowersetthm}.\footnote{Interestingly,
-if $C$ is the set of continuous functions, then $\sabs{\R} = \sabs{C}$.}
+\begin{exercise}[Desafiador]
+Seja $F$ o conjunto de todas as funções $f \colon \R \to \R$.
+Demonstre que $\sabs{\R} < \sabs{F}$
+usando o \thmref{cantorspowersetthm} de Cantor.\footnote{Curiosamente,
+se $C$ é o conjunto das funções contínuas, então $\sabs{\R} = \sabs{C}$.}
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{Decimal representation of the reals}
+
+\section{Representação decimal dos reais}
 \label{sec:decimals}
 
-\sectionnotes{1 lecture (optional)}
+\sectionnotes{1 aula (opcional)}
 
-We often think of real numbers as their
-\emph{decimal representations}\index{decimal representation}.
-By a (decimal)
-\emph{\myindex{digit}}\index{decimal digit}, we mean an integer
-between $0$ and $9$.
-For a positive integer $n$, we find the digits $d_K,d_{K-1},\ldots,d_2,d_1,d_0$ for some
-$K$ (each $d_j$ an integer between $0$ and $9$) such that
+Costumamos pensar nos números reais por meio de suas
+\emph{representações decimais}\index{representação decimal}.
+Chamamos de (decimal)
+\emph{\myindex{algarismo}}\index{algarismo decimal} um inteiro
+entre $0$ e $9$.
+Dado um inteiro positivo $n$, encontramos algarismos $d_K,d_{K-1},\ldots,d_2,d_1,d_0$ para algum
+$K$ (cada $d_j$ é um inteiro entre $0$ e $9$) tais que
 \begin{equation*}
 n = d_K {10}^K + d_{K-1} {10}^{K-1} + \cdots + d_2 {10}^2 + d_1 10 + d_0 .
 \end{equation*}
-We often assume $d_K \neq 0$ (avoiding leading zeros).
-To represent $n$, we write the sequence of
-digits: $n = d_K d_{K-1} \cdots d_2 d_1 d_0$.
+Frequentemente supomos que $d_K \neq 0$ (para evitar zeros à esquerda).
+Para representar $n$, escrevemos a sequência de
+algarismos: $n = d_K d_{K-1} \cdots d_2 d_1 d_0$.
 
-Similarly, we
-represent some rational numbers.  For certain
-numbers $x$, we can find
-nonnegative integers $K$ and $M$ and digits
-$d_K,d_{K-1},\ldots,d_1,d_0,d_{-1},\ldots,d_{-M}$, such that
+De modo semelhante, representamos alguns números racionais. Para certos
+números $x$, podemos encontrar
+inteiros não negativos $K$ e $M$ e algarismos
+$d_K,d_{K-1},\ldots,d_1,d_0,d_{-1},\ldots,d_{-M}$ tais que
 \begin{equation*}
 %mbxlatex \begin{aligned}
 x
@@ -1836,24 +1825,24 @@ x
 + d_{-1} {10}^{-1} + d_{-2} {10}^{-2} + \cdots + d_{-M} {10}^{-M} .
 %mbxlatex \end{aligned}
 \end{equation*}
-We write $x = d_K d_{K-1} \cdots d_1 d_0 \, . \, d_{-1} d_{-2} \cdots d_{-M}$.
+Escrevemos $x = d_K d_{K-1} \cdots d_1 d_0 \, . \, d_{-1} d_{-2} \cdots d_{-M}$.
 
-Not every real number has such a representation.
-Even the simple
-rational number $\nicefrac{1}{3}$ does not.  The irrational number $\sqrt{2}$
-does not have such a representation either.  To get a representation for
-all real numbers, we must allow infinitely many digits.
+Nem todo número real admite tal representação.
+Nem mesmo o simples
+número racional $\nicefrac{1}{3}$ a admite. O número irracional $\sqrt{2}$
+também não admite tal representação. Para obter uma representação para
+todos os números reais, precisamos permitir infinitos algarismos.
 
-Consider only real numbers in the interval $[0,1]$.  If
-we find a representation for these, adding
-integers to them obtains a representation for all real numbers.
-Take an infinite sequence of decimal digits:
+Consideremos apenas os números reais do intervalo $[0,1]$. Se
+encontrarmos representações para eles, somando
+números inteiros obtemos representações para todos os números reais.
+Tomemos uma sequência infinita de algarismos decimais:
 \begin{equation*}
 0.d_1d_2d_3\ldots.
 \end{equation*}
-We have a digit $d_j$ for every $j \in \N$.
-We renumbered the digits to avoid the negative signs.
-We write
+Temos um algarismo $d_j$ para cada $j \in \N$.
+Renumeramos os algarismos para evitar os sinais negativos.
+Escrevemos
 \begin{equation*}
 D_n \coloneqq
 \frac{d_1}{10} +
@@ -1862,8 +1851,8 @@ D_n \coloneqq
 \cdots +
 \frac{d_n}{{10}^n} .
 \end{equation*}
-We say the
-sequence of digits represents a real number $x$ if
+Dizemos que a
+sequência de algarismos representa um número real $x$ se
 \begin{equation*}
 x =
 \sup_{n \in \N} \left(
@@ -1875,31 +1864,31 @@ x =
 \right) =
 \sup_{n \in \N} \, D_n .
 \end{equation*}
-The number $D_n=0.d_1 d_2 d_3 \ldots d_n$ is the truncation of $x$
-to $n$ decimal digits.
+O número $D_n=0.d_1 d_2 d_3 \ldots d_n$ é o truncamento de $x$
+a $n$ algarismos decimais.
 
 \begin{prop} \label{prop:decimalprop}
 \leavevmode
 \begin{enumerate}[(i)]
 \item
-Every infinite sequence of digits
-$0.d_1d_2d_3\ldots$ represents a unique real number $x \in [0,1]$, and
+Toda sequência infinita de algarismos
+$0.d_1d_2d_3\ldots$ representa um único número real $x \in [0,1]$, e
 \begin{equation*}
-D_n \leq x \leq D_n+\frac{1}{{10}^n} \qquad \text{for all } n \in \N.
+D_n \leq x \leq D_n+\frac{1}{{10}^n} \qquad \text{para todo } n \in \N.
 \end{equation*}
 \item
-For every $x \in (0,1]$ there exists an infinite sequence of digits
-$0.d_1d_2d_3\ldots$ that represents $x$.
-There exists a unique representation such that
+Para todo $x \in (0,1]$ existe uma sequência infinita de algarismos
+$0.d_1d_2d_3\ldots$ que representa $x$.
+Existe uma única representação tal que
 \begin{equation*}
-D_n < x \leq D_n+\frac{1}{{10}^n} \qquad \text{for all } n \in \N.
+D_n < x \leq D_n+\frac{1}{{10}^n} \qquad \text{para todo } n \in \N.
 \end{equation*}
 \end{enumerate}
 \end{prop}
 
 \begin{proof}
-We start with the first item.  Take an arbitrary infinite sequence of
-digits $0.d_1d_2d_3\ldots$.  Use the geometric sum formula to write
+Comecemos pelo primeiro item. Tomemos uma sequência infinita arbitrária de
+algarismos $0.d_1d_2d_3\ldots$. Usando a fórmula da soma geométrica, escrevemos
 \begin{equation*}
 \begin{split}
 D_n =
@@ -1930,16 +1919,16 @@ D_n =
 < 1 .
 \end{split}
 \end{equation*}
-In particular, $D_n < 1$ for all $n$.  A sum of nonnegative numbers is
-nonnegative, so $D_n \geq 0$, and hence
+Em particular, $D_n < 1$ para todo $n$. Uma soma de números não negativos é
+não negativa, logo $D_n \geq 0$, e portanto
 \begin{equation*}
 0 \leq \sup_{n\in \N} \, D_n \leq 1 .
 \end{equation*}
-Therefore, $0.d_1d_2d_3\ldots$ represents a unique number $x \coloneqq \sup_{n\in
-\N} D_n \in [0,1]$.
-As $x$ is a supremum, $D_n \leq x$.
-Take $m \in \N$.  If $m < n$, then $D_m - D_n \leq 0$.  If $m > n$, then
-computing as above
+Assim, $0.d_1d_2d_3\ldots$ representa um único número
+$x \coloneqq \sup_{n\in \N} D_n \in [0,1]$.
+Como $x$ é um supremo, $D_n \leq x$.
+Tomemos $m \in \N$. Se $m < n$, então $D_m - D_n \leq 0$. Se $m > n$, então,
+calculando como acima,
 \begin{equation*}
 D_m - D_n
 =
@@ -1956,40 +1945,39 @@ D_m - D_n
 <
 \frac{1}{{10}^{n}} .
 \end{equation*}
-Take the supremum over $m$ to find
+Tomando o supremo em relação a $m$, obtemos
 \begin{equation*}
 x - D_n
 \leq
 \frac{1}{{10}^{n}} .
 \end{equation*}
 
-We move on to the
-second item.  Take any $x \in (0,1]$.
-First, we tackle the existence.
-For convenience, let $D_0 \coloneqq 0$.
-Then,
+Passemos ao
+segundo item. Tomemos qualquer $x \in (0,1]$.
+Primeiro, provaremos a existência.
+Por conveniência, seja $D_0 \coloneqq 0$.
+Então,
 $D_0 < x \leq D_0 + {10}^{-0}$.
-Suppose we have defined the digits $d_1,d_2,\ldots,d_n$,
-and that
-$D_k < x \leq D_k + {10}^{-k}$, for $k=0,1,2,\ldots,n$.  We need to define $d_{n+1}$.
+Suponhamos que tenhamos definido os algarismos $d_1,d_2,\ldots,d_n$
+e que
+$D_k < x \leq D_k + {10}^{-k}$, para $k=0,1,2,\ldots,n$. Precisamos definir $d_{n+1}$.
 
-By the
-\hyperref[thm:arch:i]{Archimedean property} of the real numbers,
-find an integer $j$ such that
-$x-D_n \leq j {10}^{-(n+1)}$.  Take the least such $j$ and obtain
+Pela
+\hyperref[thm:arch:i]{propriedade arquimediana} dos números reais,
+encontramos um inteiro $j$ tal que
+$x-D_n \leq j {10}^{-(n+1)}$. Tomemos o menor desses $j$ e obtemos
 \begin{equation} \label{eq:theDnjineq}
 (j-1){10}^{-(n+1)} < x-D_n \leq j {10}^{-(n+1)} .
 \end{equation}
-Let $d_{n+1} \coloneqq j-1$.
-As $D_n < x$,
-we have $d_{n+1} = j-1 \geq 0$.  On the other hand, since
-$x-D_n \leq {10}^{-n}$, we have that
-$j$ is at most 10, and therefore $d_{n+1} \leq 9$.
-So $d_{n+1}$ is a
-decimal digit.
-Since $D_{n+1} = D_n + d_{n+1} {10}^{-(n+1)}$,
-add $D_n$ to the inequality
-\eqref{eq:theDnjineq} above:
+Seja $d_{n+1} \coloneqq j-1$.
+Como $D_n < x$,
+temos $d_{n+1} = j-1 \geq 0$. Por outro lado, como
+$x-D_n \leq {10}^{-n}$, temos que
+$j$ é no máximo 10 e, portanto, $d_{n+1} \leq 9$.
+Logo, $d_{n+1}$ é um algarismo decimal.
+Como $D_{n+1} = D_n + d_{n+1} {10}^{-(n+1)}$,
+somemos $D_n$ à desigualdade
+\eqref{eq:theDnjineq} acima:
 \begin{multline*}
 D_{n+1} = D_n + (j-1){10}^{-(n+1)} < x
 \leq
@@ -1998,284 +1986,281 @@ D_n + j {10}^{-(n+1)} \\
 D_n + (j-1) {10}^{-(n+1)} +
 {10}^{-(n+1)} = D_{n+1} + {10}^{-(n+1)} .
 \end{multline*}
-And so
-$D_{n+1} < x \leq D_{n+1} + {10}^{-(n+1)}$ holds.
-We inductively
-defined an infinite sequence of digits $0.d_1d_2d_3\ldots$.
+Portanto, vale
+$D_{n+1} < x \leq D_{n+1} + {10}^{-(n+1)}$.
+Definimos indutivamente
+uma sequência infinita de algarismos $0.d_1d_2d_3\ldots$.
 
-Consider $D_{n} < x \leq D_{n} + {10}^{-n}$.
-As $D_n < x$ for all $n$, we have
+Consideremos $D_{n} < x \leq D_{n} + {10}^{-n}$.
+Como $D_n < x$ para todo $n$, temos
 $\sup \{ D_n : n \in \N \} \leq x$.
-The second inequality for $D_n$ implies
+A segunda desigualdade para $D_n$ implica
 \begin{equation*}
 x - \sup \{ D_m : m \in \N \}
 \leq
 x - D_n \leq 10^{-n} .
 \end{equation*}
-As the inequality holds for all $n$ and
-${10}^{-n}$ can be made arbitrarily small
-(see \exerciseref{exercise:bnlimit}),
-we have $x \leq \sup \{ D_m : m \in \N \}$.
-Therefore, $\sup \{ D_m : m \in \N \} = x$.
+Como a desigualdade vale para todo $n$ e
+${10}^{-n}$ pode ser arbitrariamente pequeno
+(veja \exerciseref{exercise:bnlimit}),
+temos $x \leq \sup \{ D_m : m \in \N \}$.
+Portanto, $\sup \{ D_m : m \in \N \} = x$.
 
-What is left to show is the uniqueness.
-Suppose $0.e_1e_2e_3\ldots$ is another representation of $x$.
-Let $E_n$ be the $n$-digit truncation of $0.e_1e_2e_3\ldots$, and suppose
-$E_n < x \leq E_n + {10}^{-n}$ for all $n \in \N$.
-Suppose for some $K \in \N$, $e_n = d_n$ for all $n < K$, so
-$D_{K-1} = E_{K-1}$.  Then
+Resta provar a unicidade.
+Suponhamos que $0.e_1e_2e_3\ldots$ seja outra representação de $x$.
+Seja $E_n$ o truncamento com $n$ algarismos de $0.e_1e_2e_3\ldots$, e suponhamos
+que $E_n < x \leq E_n + {10}^{-n}$ para todo $n \in \N$.
+Suponhamos que, para algum $K \in \N$, $e_n = d_n$ para todo $n < K$; assim,
+$D_{K-1} = E_{K-1}$. Então,
 \begin{equation*}
 E_K = D_{K-1} + e_K{10}^{-K} < x \leq E_K + {10}^{-K} = D_{K-1} +
 e_K{10}^{-K} + {10}^{-K} .
 \end{equation*}
-Subtracting $D_{K-1}$ and multiplying by ${10}^{K}$ we get
+Subtraindo $D_{K-1}$ e multiplicando por ${10}^{K}$, obtemos
 \begin{equation*}
 e_K < (x - D_{K-1}){10}^K \leq e_K + 1 .
 \end{equation*}
-Similarly,
+De modo semelhante,
 \begin{equation*}
 d_K < (x - D_{K-1}){10}^K \leq d_K + 1 .
 \end{equation*}
-Hence, both $e_K$ and $d_K$ are the largest integer $j$
-such that $j < (x - D_{K-1}){10}^K$, and therefore $e_K = d_K$.
-In other words, the representation is unique.
+Portanto, tanto $e_K$ quanto $d_K$ são o maior inteiro $j$
+tal que $j < (x - D_{K-1}){10}^K$, e, consequentemente, $e_K = d_K$.
+Em outras palavras, a representação é única.
 \end{proof}
 
-The representation is not unique if we do not require
-$D_n < x$ for all $n$.
-For example, for the
-number $\nicefrac{1}{2}$, the method in the proof obtains the representation
+A representação não é única se não exigirmos
+$D_n < x$ para todo $n$.
+Por exemplo, para o
+número $\nicefrac{1}{2}$, o método usado na demonstração fornece a representação
 \begin{equation*}
 0.49999\ldots .
 \end{equation*}
-However, $\nicefrac{1}{2}$ also has the representation $0.50000\ldots$.
+No entanto, $\nicefrac{1}{2}$ também tem a representação $0.50000\ldots$.
 
-The only numbers that have nonunique
-representations are ones that end in an infinite sequence of $0$s
-or an infinite sequence of $9$s, because the only representation for which
-$D_n = x$ is one where all digits past the $n$th digit are zero.
-In this case,
-there are exactly two representations of $x$ (see the exercises).
+Os únicos números que têm representações não únicas são aqueles que terminam
+em uma sequência infinita de algarismos $0$
+ou em uma sequência infinita de algarismos $9$, pois a única representação para a qual
+$D_n = x$ é aquela em que todos os algarismos após o $n$-ésimo são zeros.
+Nesse caso,
+há exatamente duas representações de $x$ (veja os exercícios).
 
-Let us give another proof of the uncountability of the reals using decimal
-representations.
-This is Cantor's second proof, which is probably better known.
-This proof may seem shorter, but it is because we already did
-the hard part above and we are left with a slick trick to prove that $\R$ is
-uncountable.  This trick is called
-\emph{\myindex{Cantor diagonalization}}\index{diagonalization} and
-finds use in other proofs as well.
+Daremos outra demonstração de que os reais não são enumeráveis, usando
+representações decimais.
+Esta é a segunda demonstração de Cantor, provavelmente a mais conhecida.
+Ela pode parecer mais curta, mas isso ocorre porque já fizemos
+a parte mais difícil e nos resta um truque engenhoso para provar que $\R$ é
+não enumerável. Esse truque é chamado de
+\emph{\myindex{diagonalização de Cantor}}\index{diagonalização} e
+também é usado em outras demonstrações.
 
 \begin{thm}[Cantor]
-The set $(0,1]$ is uncountable.
+O conjunto $(0,1]$ não é enumerável.
 \end{thm}
 
 \begin{proof}
-Let $X \coloneqq \{ x_1,x_2,x_3,\ldots \}$ be any countable subset of real numbers in $(0,1]$.
-We will construct a real number not in $X$.  Let
+Seja $X \coloneqq \{ x_1,x_2,x_3,\ldots \}$ um subconjunto enumerável qualquer dos números reais em $(0,1]$.
+Construiremos um número real que não pertence a $X$. Seja
 \begin{equation*}
 x_n = 0.d_1^nd_2^nd_3^n\ldots
 \end{equation*}
-be the unique representation from the proposition, that is, $d_j^n$ is the
-$j$th digit of the $n$th number.  Let
+a representação única da proposição, isto é, $d_j^n$ é o
+$j$-ésimo algarismo do $n$-ésimo número. Definamos
 \begin{equation*}
 e_n \coloneqq
 \begin{cases}
-1 & \text{if } d_n^n \neq 1, \\
-2 & \text{if } d_n^n = 1.
+1 & \text{se } d_n^n \neq 1, \\
+2 & \text{se } d_n^n = 1.
 \end{cases}
 \end{equation*}
-Let $E_n$ be the $n$-digit truncation of $y = 0.e_1e_2e_3\ldots$.  Because
-all the digits are nonzero, $E_n < E_{n+1} \leq y$.  Therefore,
+Seja $E_n$ o truncamento com $n$ algarismos de $y = 0.e_1e_2e_3\ldots$. Como
+todos os algarismos são não nulos, $E_n < E_{n+1} \leq y$. Portanto,
 \begin{equation*}
 E_n < y \leq E_n + {10}^{-n}
 \end{equation*}
-for all $n$, and the representation is the unique one for $y$ from
-the proposition.  For every $n$, the $n$th digit
-of $y$ is different from the $n$th digit of $x_n$, so $y \neq x_n$.
-So $y \notin X$, and as $X$ was an arbitrary countable subset,
-$(0,1]$ must be uncountable.  See \figureref{cantorexamplefig} for an
-example.
+para todo $n$, e, pela proposição,
+essa é a representação única de $y$. Para todo $n$, o $n$-ésimo algarismo
+de $y$ é diferente do $n$-ésimo algarismo de $x_n$, logo $y \neq x_n$.
+Assim, $y \notin X$. Como $X$ era um subconjunto enumerável arbitrário,
+$(0,1]$ não é enumerável. Veja um
+exemplo na \figureref{cantorexamplefig}.
 \begin{myfigureht}
 \myincludepdft{cantorexamplefig}{%
-Five numbers marked x sub 1 through x sub 5 are shown aligned one above the
-other in decimal notation.
-The first five decimal digits for each number are shown.
-In particular, x sub 1 is 0 dot 1 3 2 1 0 and ellipses implying
-the digits continue.
-The first digit, the 1, is marked with a box.
-x sub 2 is 0 dot 7 9 4 1 3 and ellipses.
-The second digit, the 9, is marked with a box.
-x sub 3 is 0 dot 3 0 1 3 4 and ellipses.
-The third digit, the 1, is marked with a box.
-x sub 4 is 0 dot 8 9 2 5 6 and ellipses.
-The fourth digit, the 5, is marked with a box.
-x sub 5 is 0 dot 1 6 0 2 4 and ellipses.
-The fifth digit, the 4, is marked with a box.
-Further ellipses indicate the sequence of numbers keeps going.
-On the right is the text: Number not in the list:
-y equals 0 dot 2 1 2 1 1 ellipses.}
-\caption{Example of Cantor diagonalization, the diagonal digits $d_n^n$
-marked.\label{cantorexamplefig}}
+Cinco números, indicados por x sub 1 até x sub 5, aparecem alinhados um
+abaixo do outro na notação decimal.
+Os cinco primeiros algarismos decimais de cada número estão visíveis.
+Em particular, x sub 1 é 0 vírgula 1 3 2 1 0, seguido de reticências que
+indicam a continuação dos algarismos.
+O primeiro algarismo, 1, está contornado por uma caixa.
+x sub 2 é 0 vírgula 7 9 4 1 3, seguido de reticências.
+O segundo algarismo, 9, está contornado por uma caixa.
+x sub 3 é 0 vírgula 3 0 1 3 4, seguido de reticências.
+O terceiro algarismo, 1, está contornado por uma caixa.
+x sub 4 é 0 vírgula 8 9 2 5 6, seguido de reticências.
+O quarto algarismo, 5, está contornado por uma caixa.
+x sub 5 é 0 vírgula 1 6 0 2 4, seguido de reticências.
+O quinto algarismo, 4, está contornado por uma caixa.
+Reticências adicionais indicam que a sequência de números continua.
+À direita, aparece o texto: Número que não está na lista:
+y igual a 0 vírgula 2 1 2 1 1, seguido de reticências.}
+\caption{Exemplo da diagonalização de Cantor, com os algarismos diagonais $d_n^n$ marcados.\label{cantorexamplefig}}
 \end{myfigureht}
 \end{proof}
 
-Using decimal digits we can also find lots of numbers that are not rational.
-The following proposition is true for every
-rational number, but we give it only for $x \in (0,1]$ for simplicity.
+Usando algarismos decimais, também podemos encontrar muitos números que não são racionais.
+A proposição a seguir vale para todo
+número racional, mas, por simplicidade, enunciaremos o resultado apenas para $x \in (0,1]$.
 
 \begin{prop} \label{prop:rationaldecimal}
-If $x \in (0,1]$ is a rational number and $x = 0.d_1d_2d_3\ldots$,
-then the decimal digits eventually start repeating.  That is, there are
-positive integers $N$ and $P$, such that for all $n \geq N$, $d_n = d_{n+P}$.
+Se $x \in (0,1]$ é racional e $x = 0.d_1d_2d_3\ldots$,
+então os algarismos decimais tornam-se periódicos a partir de algum ponto. Isto é, existem
+inteiros positivos $N$ e $P$ tais que, para todo $n \geq N$, $d_n = d_{n+P}$.
 \end{prop}
 
 \begin{proof}
-Suppose $x = \nicefrac{p}{q}$ for positive integers $p$ and $q$.
-If $x$ has a nonunique decimal representation, then both its representations
-eventually have repeating digits,
-either all $0$s or all $9$s,
-see \exerciseref{exercise:nonuniquedecimals}.
-Therefore suppose that $x$ has a unique representation.
-We also suppose that $x \neq 1$ so $p < q$.
+Suponhamos que $x = \nicefrac{p}{q}$, em que $p$ e $q$ são inteiros positivos.
+Se $x$ tiver uma representação decimal não única, então ambas as representações
+terão algarismos periódicos a partir de algum ponto:
+ou serão todos $0$, ou todos $9$;
+veja \exerciseref{exercise:nonuniquedecimals}.
+Portanto, suponhamos que $x$ tenha uma representação única.
+Também suporemos que $x \neq 1$, de modo que $p < q$.
 
-To compute the first digit, take $10 p$ and divide by
-$q$.  Let $d_1$ be the quotient.
-The remainder $r_1$ is some integer
-between $0$ and $q-1$.  That is, $d_1$ is the largest integer
-such that $d_1 q \leq 10p$ and then $r_1 = 10p - d_1q$.
-As $p < q$, we have $d_1 < 10$, so $d_1$ is a digit.
-Furthermore,
+Para calcular o primeiro algarismo, dividimos $10p$ por
+$q$. Seja $d_1$ o quociente.
+O resto $r_1$ é um inteiro
+entre $0$ e $q-1$. Isto é, $d_1$ é o maior inteiro
+tal que $d_1 q \leq 10p$ e, em seguida, $r_1 = 10p - d_1q$.
+Como $p < q$, temos $d_1 < 10$, logo $d_1$ é um algarismo.
+Além disso,
 \begin{equation*}
 \frac{d_1}{10} \leq \frac{p}{q} =
 \frac{d_1}{10} + \frac{r_1}{10q} \leq \frac{d_1}{10} +
 \frac{1}{10} .
 \end{equation*}
-The first inequality is strict since $x$ has a
-unique representation.  So $d_1$ really is the first digit.
-What is left is $\frac{r_1}{10q}$.
-To compute $d_2$, divide $10 r_1$ by $q$ obtaining $d_2$
-and $r_2$, where $r_2 = 10 r_1 - d_2 q$.
-Solve for $r_1$ and plug into
-$\frac{p}{q} = \frac{d_1}{10} + \frac{r_1}{10 q}$
-to arrive at
+A primeira desigualdade é estrita, pois $x$ tem uma
+representação única. Portanto, $d_1$ é de fato o primeiro algarismo.
+Resta $\frac{r_1}{10q}$.
+Para calcular $d_2$, dividimos $10r_1$ por $q$, obtendo $d_2$
+e $r_2$, em que $r_2 = 10r_1 - d_2 q$.
+Isolando $r_1$ e substituindo em
+$\frac{p}{q} = \frac{d_1}{10} + \frac{r_1}{10 q}$,
+obtemos
 $\frac{p}{q} = \frac{d_1}{10} + \frac{d_2}{{10}^2} +
 \frac{r_2}{{10}^2 q} = D_2 +
 \frac{r_2}{{10}^2 q}$.
-As $r_2 < q$, we again get $d_2 < 10$.
-To compute $d_3$, divide $10 r_2$ by $q$
-getting $d_3$ and $r_3$.  And so on and so forth.
-After computing $n-1$ digits, we have
+Como $r_2 < q$, novamente temos $d_2 < 10$.
+Para calcular $d_3$, dividimos $10r_2$ por $q$,
+obtendo $d_3$ e $r_3$. E assim por diante.
+Depois de calcular $n-1$ algarismos, temos
 $\frac{p}{q} = D_{n-1} + \frac{r_{n-1}}{10^{n-1} q}$.
-To get the $n$th digit,
-divide $10 r_{n-1}$ by $q$
-to get the quotient $d_n$, the remainder $r_n$, and the inequalities
+Para obter o $n$-ésimo algarismo,
+dividimos $10r_{n-1}$ por $q$
+para obter o quociente $d_n$, o resto $r_n$ e as desigualdades
 \begin{equation*}
 \frac{d_n}{10} \leq \frac{r_{n-1}}{q} =
 \frac{d_n}{10} + \frac{r_n}{10q} \leq \frac{d_n}{10} +
 \frac{1}{10} .
 \end{equation*}
-Dividing by $10^{n-1}$ and adding $D_{n-1}$, we find
+Dividindo por $10^{n-1}$ e somando $D_{n-1}$, obtemos
 \begin{equation*}
 D_n \leq D_{n-1} + \frac{r_{n-1}}{10^{n-1} q} = \frac{p}{q} \leq D_n +
 \frac{1}{10^n} .
 \end{equation*}
-By uniqueness, we really have
-the $n$th digit $d_n$ from the construction.
+Pela unicidade, o $n$-ésimo algarismo $d_n$ é o algarismo obtido pela construção.
 
-The new digit depends only on the remainder from the previous
-step.
-There are at most $q$ possible remainders.
-Hence, the process must start repeating itself after at most $q$ steps,
-and so $P$ is at most $q$.
+O novo algarismo depende apenas do resto do passo anterior.
+Há no máximo $q$ restos possíveis.
+Portanto, o processo deve começar a se repetir após no máximo $q$ passos,
+e, assim, $P$ é no máximo $q$.
 \end{proof}
 
-The converse of the proposition is also true and is left as an exercise.
+A recíproca da proposição também vale e fica como exercício.
 
 \begin{example}
-The number
+O número
 \begin{equation*}
 x = 0.101001000100001000001\ldots
 \end{equation*}
-is irrational.
-Specifically, the digits are a one,
-then a zero, then a one, then two zeros, then a one,
-then three zeros,
-and so on and so forth.
-That $x$ is irrational follows from the
-proposition; the digits never start repeating.
-For every $P$,
-if we go far enough, we find a 1 followed by at least $P$ zeros,
-and there are infinitely many such 1s.
-That is, there are infinitely many $n$ (so arbitrarily large $n$)
-such that $d_n=1$ and $d_{n+P}=0$, in other words,
+é irracional.
+Mais precisamente, a sequência de algarismos é 1,
+depois 0, depois 1, depois dois zeros, depois 1,
+depois três zeros,
+e assim por diante.
+A irracionalidade de $x$ segue da
+proposição: os algarismos nunca se tornam periódicos.
+Para todo $P$,
+se avançarmos suficientemente, encontraremos um 1 seguido de pelo menos
+$P$ zeros, e há infinitos algarismos 1 desse tipo.
+Isto é, existem infinitos $n$ (logo, valores de $n$ arbitrariamente grandes)
+tais que $d_n=1$ e $d_{n+P}=0$; em outras palavras,
 $d_n \neq d_{n+P}$.
 \end{example}
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
-\begin{exercise}[Easy]
-What is the decimal representation of $1$ guaranteed by
-\propref{prop:decimalprop}?  Make sure to show that it does satisfy
-the condition.
+\begin{exercise}[Fácil]
+Qual é a representação decimal de $1$ garantida por
+\propref{prop:decimalprop}? Mostre que ela de fato satisfaz
+a condição.
 \end{exercise}
 
 \begin{exercise}
-Prove the converse of \propref{prop:rationaldecimal}, that is,
-if the digits in the decimal representation of $x$ are eventually repeating, then
-$x$ must be rational.
+Demonstre a recíproca de \propref{prop:rationaldecimal}, isto é,
+se os algarismos da representação decimal de $x$ forem periódicos a partir de algum ponto, então
+$x$ será racional.
 \end{exercise}
 
 \begin{exercise} \label{exercise:nonuniquedecimals}
-Show that real numbers $x \in (0,1)$ with nonunique decimal representation
-are exactly the rational numbers that can be written
-as $\frac{m}{10^n}$ for some integers $m$ and $n$.  In this case show that
-there exist exactly two representations of $x$.
+Mostre que os números reais $x \in (0,1)$ com representação decimal não única
+são exatamente os números racionais que podem ser escritos
+como $\frac{m}{10^n}$ para alguns inteiros $m$ e $n$. Neste caso, mostre que
+existem exatamente duas representações de $x$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:decimalpropbaseb}
-Let $b \geq 2$ be an integer.  Define a representation of a real number in
-$[0,1]$ in terms of base $b$ rather than base 10 and prove
-\propref{prop:decimalprop} for base $b$.
+Seja $b \geq 2$ um inteiro. Defina uma representação de um número real em
+$[0,1]$ na base $b$, em vez da base 10, e demonstre
+\propref{prop:decimalprop} para a base $b$.
 \end{exercise}
 
 \begin{exercise}
-Using the previous exercise with $b=2$ (binary),
-show that the cardinality of $\R$ is the same as the cardinality of $\sP(\N)$,
-obtaining yet another (though related) proof that $\R$ is uncountable.
-Hint: Construct two injections, one from $[0,1]$ to $\sP(\N)$
-and one from $\sP(\N)$ to $[0,1]$.  Hint 2: Given a
-set $A \subset \N$, the map that makes the $n$th binary digit of $x$ be 1 if
-$n\in A$ almost works, but is not one-to-one.  Modify it.
+Usando o exercício anterior com $b=2$ (sistema binário),
+mostre que a cardinalidade de $\R$ é igual à cardinalidade de $\sP(\N)$,
+obtendo assim mais uma demonstração (embora relacionada) de que $\R$ não é enumerável.
+Dica: Construa duas injeções, uma de $[0,1]$ em $\sP(\N)$
+e outra de $\sP(\N)$ em $[0,1]$. Dica 2: Dado um
+conjunto $A \subset \N$, a função que faz o $n$-ésimo algarismo binário de $x$ ser 1 se
+$n\in A$ funciona quase, mas não é injetiva. Modifique-a.
 \end{exercise}
 
-\begin{exercise}[Challenging]
-Explicitly construct an injection from $[0,1] \times [0,1]$ to $[0,1]$ (think about why
-this is so surprising\footnote{%
-With quite a bit more work (or by applying the
-Cantor--Bernstein--Schr\"oder theorem)
-one can prove that there is a bijection.
-When he proved this result, Cantor apparently wrote
-\myquote{I see it but I don't believe it.}}).
-Then describe the set of numbers in $[0,1]$ not in the image of your
-injection (unless, of course, you managed to construct a bijection).
-Hint: Consider even and odd digits of the decimal expansion.
+\begin{exercise}[Desafiador]
+Construa explicitamente uma injeção de $[0,1] \times [0,1]$ em $[0,1]$ (pense por que
+isso é tão surpreendente\footnote{%
+Com um pouco mais de trabalho (ou aplicando o
+teorema de Cantor--Bernstein--Schr\"oder),
+é possível demonstrar que existe uma bijeção.
+Ao provar esse resultado, Cantor aparentemente escreveu:
+\myquote{Vejo isso, mas não acredito.}}).
+Em seguida, descreva o conjunto dos números de $[0,1]$ que não pertencem à imagem da sua
+injeção (a menos, é claro, que você tenha conseguido construir uma bijeção).
+Dica: Considere os algarismos pares e ímpares da expansão decimal.
 \end{exercise}
 
 \begin{exercise}
-Prove that if $x = \nicefrac{p}{q} \in (0,1]$ is a rational number, $q > 1$,
-then the period $P$ of repeating digits in the decimal representation
-of $x$ is in fact less than or equal to $q-1$.
+Demonstre que, se $x = \nicefrac{p}{q} \in (0,1]$ é racional, $q > 1$,
+então o período $P$ dos algarismos periódicos da representação decimal
+de $x$ é, na verdade, menor ou igual a $q-1$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:bnlimit}
-Prove that if $b \in \N$ and $b \geq 2$, then for every $\epsilon > 0$,
-there is an $n \in \N$ such that
-$b^{-n} < \epsilon$.  Hint:
-One possibility is to first prove that $b^n > n$ for all $n \in \N$ by induction.
+Demonstre que, se $b \in \N$ e $b \geq 2$, então, para todo $\epsilon > 0$,
+existe um $n \in \N$ tal que
+$b^{-n} < \epsilon$. Dica:
+Uma possibilidade é primeiro demonstrar por indução que $b^n > n$ para todo $n \in \N$.
 \end{exercise}
 
 \begin{exercise}
-Explicitly construct an injection $f \colon \R \to \R \setminus \Q$ using
+Construa explicitamente uma injeção $f \colon \R \to \R \setminus \Q$ usando
 \propref{prop:rationaldecimal}.
 \end{exercise}

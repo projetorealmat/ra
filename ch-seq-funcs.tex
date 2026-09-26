@@ -1,310 +1,287 @@
-\chapter{Sequences of Functions} \label{fs:chapter}
+\chapter{Sequências de funções} \label{fs:chapter}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Pointwise and uniform convergence}
+\section{Convergência pontual e uniforme}
 \label{sec:puconv}
 
 %mbxINTROSUBSECTION
 
-\sectionnotes{1--1.5 lecture}
+\sectionnotes{1--1,5 aulas}
 
-Up till now, when we talked about limits of sequences we talked about
-sequences of numbers.
-A very useful concept in analysis is a sequence of functions.
-For example, a solution to some differential equation
-might be found by finding only approximate solutions.
-Then the actual solution is some sort of limit of those approximate solutions.
+Até agora, quando falamos de limites de sequências, tratamos de sequências
+de números. Um conceito muito útil em análise é o de sequência de funções.
+Por exemplo, uma solução de certa equação diferencial pode ser encontrada
+determinando-se apenas soluções aproximadas. A solução propriamente dita é,
+então, algum tipo de limite dessas soluções aproximadas.
 
-When talking about sequences of functions, the 
-tricky part is that there are multiple notions of a limit.
-Let us describe two common
-notions of a limit of a sequence of functions.
+Ao tratar de sequências de funções, a dificuldade está no fato de haver
+várias noções de limite. Vamos descrever duas noções comuns de limite para
+uma sequência de funções.
 
-\subsection{Pointwise convergence}
+\subsection{Convergência pontual}
 
 \begin{defn}
-\index{pointwise convergence}
-For every $n \in \N$,
-let $f_n \colon S \to \R$ be a function.  The sequence
+\index{convergência pontual}
+Para todo $n\in\N$, seja $f_n \colon S \to \R$ uma função. Dizemos que a sequência
 $\{ f_n \}_{n=1}^\infty$
-\emph{\myindex{converges pointwise}}\footnote{Unless otherwise specified,
-\emph{converges} generally means \emph{converges pointwise}.}
-to $f \colon S \to \R$ if for every $x
-\in S$,
-we have
+\emph{\myindex{converge pontualmente}}\footnote{Salvo indicação em
+contrário, \emph{convergir} geralmente significa \emph{convergir
+pontualmente}.} para $f \colon S \to \R$ se, para
+todo $x\in S$,
 \begin{equation*}
 f(x) =
 \lim_{n\to\infty} f_n(x) .
 \end{equation*}
 \end{defn}
 
-Limits of sequences of numbers are unique, and so if a sequence
-$\{ f_n \}_{n=1}^\infty$
-converges pointwise, the limit function $f$ is unique.
-It is common to say that $f_n \colon S \to \R$
-\emph{converges pointwise to $f$ on $T \subset S$}
-for some $f \colon T \to \R$.  In that case we mean 
-$f(x) = \lim_{n\to\infty} f_n(x)$ for every $x \in T$.  In other words, the
-restrictions of $f_n$ to $T$ converge pointwise to $f$.
+Os limites de sequências de números são únicos; portanto, se uma sequência
+$\{f_n\}_{n=1}^\infty$ converge pontualmente, a função limite $f$ é única.
+É comum dizer que $f_n \colon S \to \R$ \emph{converge pontualmente para
+$f$ em $T\subset S$}, para alguma função $f \colon T \to \R$. Nesse caso,
+queremos dizer que $f(x)=\lim_{n\to\infty}f_n(x)$ para todo $x\in T$. Em
+outras palavras, as restrições de $f_n$ a $T$ convergem pontualmente para $f$.
 
 
 \begin{example}
-On $[-1,1]$, the sequence of functions defined by $f_n(x) \coloneqq x^{2n}$
-converges pointwise to $f \colon [-1,1] \to \R$, where
+Em $[-1,1]$, a sequência de funções definida por $f_n(x) \coloneqq x^{2n}$
+converge pontualmente para $f \colon [-1,1] \to \R$, dada por
 \begin{equation*}
 f(x) =
 \begin{cases}
-1 & \text{if } x=-1 \text{ or } x=1, \\
-0 & \text{otherwise.}
+1 & \text{se } x=-1 \text{ ou } x=1, \\
+0 & \text{caso contrário.}
 \end{cases}
 \avoidbreak
 \end{equation*}
-See \figureref{x2nfig}.
+Veja a \figureref{x2nfig}.
 
 \begin{myfigureht}
 \myincludegraphics{x2nfig}{%
-Graphs of the functions x squared, x to the fourth, x to the sixth, and
-x to the sixteenth.  The graphs are over the region from minus 1 to 1,
-and all start at the same point on the left-hand side and all end
-at the same point on the right-hand side (as the functions are all 1
-at the endpoints).  Inside the interval the higher powers make the graph
-flatter and closer to the x-axis in the middle, but they have to then rise more
-steeply back to 1 when we get to the ends of the interval.}
-\caption{Graphs of $f_1$, $f_2$, $f_3$, and $f_8$ for $f_n(x) \coloneqq
-x^{2n}$.\label{x2nfig}}
+Gráficos das funções x ao quadrado, x à quarta potência, x à sexta potência
+e x à décima sexta potência, no intervalo de menos 1 a 1. Todos começam no
+mesmo ponto à esquerda e terminam no mesmo ponto à direita, pois as funções
+valem 1 nas extremidades. No interior do intervalo, as potências maiores
+deixam o gráfico mais plano e mais próximo do eixo x no centro; perto das
+extremidades, porém, ele precisa subir mais rapidamente até 1.}
+\caption{Gráficos de $f_1$, $f_2$, $f_3$ e $f_8$, para
+$f_n(x) \coloneqq x^{2n}$.\label{x2nfig}}
 \end{myfigureht}
 
-To see this is so, first take $x \in (-1,1)$.  Then 
-$0 \leq x^2 < 1$.
-We have seen before that
+Para verificar isso, primeiro suponha que $x\in(-1,1)$. Então
+$0\leq x^2<1$. Já vimos que
 \begin{equation*}
 \sabs{x^{2n} - 0} = {(x^2)}^n \to 0 \quad \text{as} \quad n \to \infty .
 \end{equation*}
-Therefore, $\lim_{n\to\infty}f_n(x) = 0$.
-When $x = 1$ or $x=-1$, we have $x^{2n} = 1$ for all $n$ and hence
-$\lim_{n\to\infty}f_n(x) = 1$.
+Portanto, $\lim_{n\to\infty}f_n(x)=0$. Quando $x=1$ ou $x=-1$, temos
+$x^{2n}=1$ para todo $n$ e, consequentemente,
+$\lim_{n\to\infty}f_n(x)=1$.
 
-Note that for $x$ not in $[-1,1]$, the sequence
-$\{ x^{2n} \}_{n=1}^\infty$ does not converge.
-So if we defined $f_n$ on a set larger than $[-1,1]$,
-then $\{ f_n \}_{n=1}^\infty$
-would converge pointwise only on $[-1,1]$.
+Observe que, para $x\notin[-1,1]$, a sequência $\{x^{2n}\}_{n=1}^\infty$
+não converge. Assim, se definíssemos $f_n$ em um conjunto maior que
+$[-1,1]$, a sequência $\{f_n\}_{n=1}^\infty$ convergiria pontualmente
+apenas em $[-1,1]$.
 \end{example}
 
-Often, functions are given as a series.  In this case, we use
-the notion of pointwise convergence to find the values of the function.
+Frequentemente, as funções são dadas por uma série. Nesse caso, usamos a
+noção de convergência pontual para determinar os valores da função.
 
 \begin{example} \label{example:geomsumptconv}
-We write
+Escrevemos
 \begin{equation*}
 \sum_{k=0}^\infty x^k
 \end{equation*}
-to denote the limit of the functions
+para denotar o limite das funções
 \begin{equation*}
 f_n(x) \coloneqq \sum_{k=0}^n x^k .
 \end{equation*}
-When studying series, 
-we saw that for $(-1,1)$ the $f_n$ converge pointwise to
+Ao estudar séries, vimos que, em $(-1,1)$, as funções $f_n$ convergem
+pontualmente para
 \begin{equation*}
 \frac{1}{1-x} .
 \end{equation*}
 
-The subtle point here is that while
-$\frac{1}{1-x}$ is defined for all $x \neq 1$, and $f_n$ are 
-defined for all $x$ (even at $x=1$), convergence only happens on $(-1,1)$.
-Therefore, when we write
+O ponto sutil é que, embora $\frac{1}{1-x}$ esteja definida para todo
+$x\neq 1$ e $f_n$ estejam definidas para todo $x$ (inclusive $x=1$), a
+convergência só ocorre em $(-1,1)$. Portanto, quando escrevemos
 \begin{equation*}
 f(x) \coloneqq \sum_{k=0}^\infty x^k ,
 \end{equation*}
-we mean that $f$ is defined on $(-1,1)$ and is the pointwise limit
-of the partial sums.
+queremos dizer que $f$ está definida em $(-1,1)$ e é o limite pontual das
+somas parciais.
 \end{example}
 
 \begin{example}
-Let $f_n(x) \coloneqq \sin(nx)$.  Then $f_n$ does not converge pointwise
-to any function on any interval.  It may converge at certain points, such
-as when $x=0$ or $x=\pi$.  It is left as an exercise that in any interval
-$[a,b]$, there exists an $x$ such that $\sin(xn)$ does not have a limit
-as $n$ goes to infinity.  See \figureref{fig:nonconvsinxn}.
+Seja $f_n(x) \coloneqq \sin(nx)$. Então $f_n$ não converge pontualmente
+para nenhuma função em qualquer intervalo. A sequência pode convergir em
+certos pontos, como $x=0$ ou $x=\pi$. Deixamos como exercício mostrar que,
+em qualquer intervalo $[a,b]$, existe um $x$ tal que $\sin(xn)$ não tem
+limite quando $n$ tende a infinito. Veja a \figureref{fig:nonconvsinxn}.
 \begin{myfigureht}
 \myincludegraphics{nonconvsinxn}{%
-Graphs of a number of sine waves, with higher frequencies in lighter
-gray.  It is almost like we are trying to fill out
-a horizontal strip by drawing wavy lines.
-All the curves start at the same point on the
-x-axis on the left-hand side
-going upwards, and all go through same point on the x-axis on
-the right hand side going up.
-All the curves go through the center on the x-axis, but some upwards 
-and some downwards.
-Similar patterns repeat at other points, but only some
-of the higher frequency lines go through those points.}
-\caption{Graphs of $\sin(nx)$ for
-$n=1,2,\ldots,10$, with higher $n$ in fainter gray.%
+Gráficos de várias ondas senoidais, com as frequências maiores em cinza mais
+claro. É quase como se tentássemos preencher uma faixa horizontal desenhando
+linhas onduladas. Todas as curvas começam no mesmo ponto do eixo x, à
+esquerda, subindo, e passam pelo mesmo ponto do eixo x à direita, também
+subindo. Todas passam pelo centro do eixo x, algumas subindo e outras
+descendo. Padrões semelhantes se repetem em outros pontos, mas apenas algumas
+das curvas de maior frequência passam por esses pontos.}
+\caption{Gráficos de $\sin(nx)$ para $n=1,2,\ldots,10$, com os valores
+maiores de $n$ em cinza mais claro.%
 \label{fig:nonconvsinxn}}
 \end{myfigureht}
 \end{example}
 
-Before we move to uniform convergence, let us reformulate pointwise
-convergence in a different way.
-We leave the proof to the reader---it is a simple application of the
-definition of convergence of a sequence of real numbers.
+Antes de passar à convergência uniforme, vamos reformular a convergência
+pontual de outra maneira. Deixamos a demonstração para o leitor: trata-se de
+uma aplicação simples da definição de convergência de uma sequência de
+números reais.
 
 \begin{prop} \label{ptwsconv:prop}
-Let $f_n \colon S \to \R$ and $f \colon S \to \R$ be functions.
-Then $\{ f_n \}_{n=1}^\infty$ converges pointwise to $f$ if and only if
-for every $x \in S$ and every $\epsilon > 0$, there exists
-an $N \in \N$ such that
+Sejam $f_n \colon S \to \R$ e $f \colon S \to \R$ funções. Então
+$\{f_n\}_{n=1}^\infty$ converge pontualmente para $f$ se, e somente se,
+para todo $x\in S$ e todo $\epsilon>0$, existe $N\in\N$ tal que
 \begin{equation*}
-\babs{f_n(x)-f(x)} < \epsilon \quad \text{for all } n \geq N .
+\babs{f_n(x)-f(x)} < \epsilon \quad \text{para todo } n \geq N .
 \end{equation*}
 \end{prop}
 
-The key point is that $N$ can depend on $x$, not just on
-$\epsilon$.  For each $x$, we can pick a different $N$.
-If we could pick one $N$ for all $x$, we would have what is called
-uniform convergence.
+O ponto essencial é que $N$ pode depender de $x$, e não apenas de
+$\epsilon$. Para cada $x$, podemos escolher um $N$ diferente.
+Se pudéssemos escolher um único $N$ para todos os valores de $x$, teríamos
+o que se chama convergência uniforme.
 
-\subsection{Uniform convergence}
+\subsection{Convergência uniforme}
 
 \begin{defn}
-\index{uniform convergence}
-Let $f_n \colon S \to \R$
-and $f \colon S \to \R$
-be functions.  The sequence $\{ f_n \}_{n=1}^\infty$
-\emph{\myindex{converges uniformly}} to $f$ if for
-every $\epsilon > 0$, there exists an $N \in \N$ such that 
-for all $n \geq N$,
+\index{convergência uniforme}
+Sejam $f_n \colon S \to \R$ e $f \colon S \to \R$ funções. Dizemos que a
+sequência $\{f_n\}_{n=1}^\infty$ \emph{\myindex{converge uniformemente}}
+para $f$ se, para todo $\epsilon>0$, existe $N\in\N$ tal que, para todo
+$n\geq N$,
 \begin{equation*}
-\babs{f_n(x) - f(x)} < \epsilon \qquad \text{for all } x \in S.
+\babs{f_n(x) - f(x)} < \epsilon \qquad \text{para todo } x \in S.
 \end{equation*}
 \end{defn}
 \begin{myfigureht}
 \myincludegraphics{uniformconv}{%
-A graph of a function marked f with a strip marked around the function
-with its boundary marked f minus epsilon and f plus epsilon.  A function
-marked f sub n is shown as a wiggly line that fits entirely within
-this strip.}
-\caption{In uniform convergence,
-for $n \geq N$,
-the functions $f_n$ are within a strip of $\pm\epsilon$ from $f$.%
+Gráfico de uma função indicada por f, cercada por uma faixa cujos limites
+são indicados por f menos épsilon e f mais épsilon. Uma função indicada por
+f índice n aparece como uma linha ondulada inteiramente contida nessa faixa.}
+\caption{Na convergência uniforme, para $n\geq N$, as funções $f_n$ ficam
+entre os gráficos de $f-\epsilon$ e $f+\epsilon$.%
 \label{fig:uniformconv}}
 \end{myfigureht}
 
-In uniform convergence, $N$ cannot depend on $x$.  Given $\epsilon > 0$,
-we must find an $N$ that works for all $x \in S$.  See
-\figureref{fig:uniformconv} for an illustration.
-Uniform convergence
-implies pointwise convergence, and the proof follows by
+Na convergência uniforme, $N$ não pode depender de $x$. Dado $\epsilon>0$,
+precisamos encontrar um $N$ que sirva para todo $x\in S$. Veja na
+\figureref{fig:uniformconv} uma ilustração. A convergência uniforme implica
+a convergência pontual, como mostra a demonstração a seguir, que decorre da
 \propref{ptwsconv:prop}:
 
 \begin{prop}
-Let $\{ f_n \}_{n=1}^\infty$ be a sequence of functions $f_n \colon S \to \R$.
-If $\{ f_n \}_{n=1}^\infty$ converges
-uniformly to $f \colon S \to \R$, then $\{ f_n \}_{n=1}^\infty$ converges pointwise to $f$.
+Seja $\{f_n\}_{n=1}^\infty$ uma sequência de funções
+$f_n \colon S \to \R$. Se $\{f_n\}_{n=1}^\infty$ converge uniformemente
+para $f \colon S \to \R$, então $\{f_n\}_{n=1}^\infty$ converge
+pontualmente para $f$.
 \end{prop}
 
-The converse does not hold.
+A recíproca não vale.
 
 \begin{example}
-The functions $f_n(x) \coloneqq x^{2n}$ do not converge uniformly on $[-1,1]$,
-even though they converge pointwise.  To see this, suppose for contradiction
-that the convergence is uniform.  For $\epsilon \coloneqq \nicefrac{1}{2}$, there would have
-to exist an $N$ such that $x^{2N} = \sabs{x^{2N} - 0} < \nicefrac{1}{2}$ for all $x \in
-(-1,1)$ (as $f_n(x)$ converges to 0 on $(-1,1)$).  But that means that
-for every sequence $\{ x_k \}_{k=1}^\infty$ in $(-1,1)$ such that $\lim_{k\to\infty} x_k = 1$,
-we have $x_k^{2N} < \nicefrac{1}{2}$ for all $k$.  On the other hand,
-$x^{2N}$ is a continuous function of $x$ (it is a polynomial).  Therefore,
-we obtain a contradiction
+As funções $f_n(x) \coloneqq x^{2n}$ não convergem uniformemente em $[-1,1]$,
+embora convirjam pontualmente. Para ver isso, suponha, por contradição, que
+a convergência seja uniforme. Para $\epsilon \coloneqq \nicefrac{1}{2}$,
+existiria um $N$ tal que $x^{2N}=\sabs{x^{2N}-0}<\nicefrac{1}{2}$ para todo
+$x\in(-1,1)$ (pois $f_n(x)$ converge para 0 em $(-1,1)$). Mas isso implica
+que, para toda sequência $\{x_k\}_{k=1}^\infty$ em $(-1,1)$ tal que
+$\lim_{k\to\infty}x_k=1$, temos $x_k^{2N}<\nicefrac{1}{2}$ para todo $k$.
+Por outro lado, $x^{2N}$ é uma função contínua de $x$ (é um polinômio).
+Assim, obtemos a contradição
 \begin{equation*}
 1 = 1^{2N}  = \lim_{k\to\infty} x_k^{2N} \leq \nicefrac{1}{2} .
 \end{equation*}
 
-However, if we restrict our domain to $[-a,a]$ where $0 < a < 1$, then
-$\{ f_n \}_{n=1}^\infty$ converges uniformly to 0 on $[-a,a]$.  Note that
-$a^{2n} \to 0$ as $n \to \infty$.  Given $\epsilon > 0$,
-pick $N \in \N$ such that
-$a^{2n} < \epsilon$ for all $n \geq N$.
-If $x \in [-a,a]$, then
-$\sabs{x} \leq a$.  So
-for all $n \geq N$ and all $x \in [-a,a]$,
+No entanto, se restringirmos o domínio a $[-a,a]$, com $0<a<1$, então
+$\{f_n\}_{n=1}^\infty$ converge uniformemente para 0 em $[-a,a]$. Observe
+que $a^{2n}\to0$ quando $n\to\infty$. Dado $\epsilon>0$, escolha
+$N\in\N$ tal que $a^{2n}<\epsilon$ para todo $n\geq N$.
+Se $x\in[-a,a]$, então $\sabs{x}\leq a$. Logo, para todo $n\geq N$ e
+todo $x\in[-a,a]$,
 \begin{equation*}
 \sabs{x^{2n}} = \sabs{x}^{2n} \leq a^{2n} < \epsilon .
 \end{equation*}
 \end{example}
 
-\subsection{Convergence in uniform norm}
+\subsection{Convergência na norma uniforme}
 
-For bounded functions, there is another more abstract way to 
-think of uniform convergence.  To every bounded function we assign
-a certain nonnegative number that
-measures the \myquote{distance} of the function from the constant
-function $0$.
-This number allows us to
-\myquote{measure}
-how far two functions are from each other.  We then translate
-a statement about uniform convergence into a statement about a certain
-sequence of real numbers converging to zero.
+Para funções limitadas, há outra maneira, mais abstrata, de pensar na
+convergência uniforme. A cada função limitada associamos um certo número
+não negativo que mede a \myquote{distância} da função à função constante
+$0$. Esse número nos permite \myquote{medir} a distância entre duas
+funções. Então traduzimos uma afirmação sobre convergência uniforme em uma
+afirmação sobre uma certa sequência de números reais que converge a zero.
 
 \begin{defn} \label{def:unifnorm}
-Let $f \colon S \to \R$ be a bounded function.  Define
+Seja $f \colon S \to \R$ uma função limitada. Definimos
 \glsadd{not:uniformnorm}
 \begin{equation*}
 \snorm{f}_S \coloneqq
 \sup \Bigl\{ \babs{f(x)} : x \in S \Bigr\} .
 \avoidbreak
 \end{equation*}
-We call $\snorm{\cdot}_S$ the \emph{\myindex{uniform norm}}.
-Sometimes other notation\footnote{The notation and terminology
-are not completely standardized.  The norm is also called the
-\emph{\myindex{sup norm}} or
-\emph{\myindex{infinity norm}}, and in addition
-to $\snorm{f}_u$ and $\snorm{f}_S$ it is sometimes written
-as $\snorm{f}_{\infty}$ or $\snorm{f}_{\infty,S}$.}
-is used, such as $\snorm{f}_u$.
+Chamamos $\snorm{\cdot}_S$ de \emph{\myindex{norma uniforme}}.
+Às vezes, usa-se outra notação\footnote{A notação e a terminologia não
+são totalmente padronizadas. Essa norma também é chamada de
+\emph{\myindex{norma do supremo}} ou
+\emph{\myindex{norma infinito}}; além de $\snorm{f}_u$ e $\snorm{f}_S$,
+às vezes ela é escrita como $\snorm{f}_{\infty}$ ou
+$\snorm{f}_{\infty,S}$.}, como $\snorm{f}_u$.
 \end{defn}
 
-The subscript is the set over which the supremum is taken.
-So if $K \subset S$, then
+O subscrito indica o conjunto sobre o qual se toma o supremo.
+Assim, se $K \subset S$, então
 \begin{equation*}
 \snorm{f}_K =
 \sup \Bigl\{ \babs{f(x)} : x \in K \Bigr\} .
 \end{equation*}
 
 \begin{prop}
-A sequence of bounded functions $f_n \colon S \to \R$ converges
-uniformly to $f \colon S \to \R$ if and only if
+Uma sequência de funções limitadas $f_n \colon S \to \R$ converge
+uniformemente para $f \colon S \to \R$ se, e somente se,
 \begin{equation*}
 \lim_{n\to\infty} \snorm{f_n - f}_S = 0 .
 \end{equation*}
 \end{prop}
 
 \begin{proof}
-First suppose 
-$\lim_{n\to\infty} \snorm{f_n - f}_S = 0$.  Let $\epsilon > 0$ be
-given.  There exists an $N$ such that
-for $n \geq N$, we have $\snorm{f_n - f}_S < \epsilon$.  As $\snorm{f_n-f}_S$
-is the supremum of $\babs{f_n(x)-f(x)}$, we see that for all $x \in S$,
-we have $\babs{f_n(x)-f(x)} \leq \snorm{f_n - f}_S < \epsilon$.
+Suponha primeiro que
+$\lim_{n\to\infty} \snorm{f_n - f}_S = 0$. Seja $\epsilon > 0$ dado.
+Existe um $N$ tal que, para $n \geq N$, temos
+$\snorm{f_n - f}_S < \epsilon$. Como $\snorm{f_n-f}_S$ é o supremo de
+$\babs{f_n(x)-f(x)}$, concluímos que, para todo $x \in S$,
+$\babs{f_n(x)-f(x)} \leq \snorm{f_n - f}_S < \epsilon$.
 
-On the other hand, suppose $\{ f_n \}_{n=1}^\infty$ converges uniformly to $f$.
-Let $\epsilon > 0$ be given.  Then find $N$ such that 
-for all $n \geq N$, we have
-$\babs{f_n(x)-f(x)} < \epsilon$ for all $x \in S$.
-Taking the supremum over $x \in S$, we see that
-$\snorm{f_n - f}_S \leq \epsilon$.  Hence, $\lim_{n\to\infty} \snorm{f_n-f}_S = 0$.
+Por outro lado, suponha que $\{ f_n \}_{n=1}^\infty$ converge
+uniformemente para $f$. Seja $\epsilon > 0$ dado. Então existe $N$ tal
+que, para todo $n \geq N$, temos $\babs{f_n(x)-f(x)} < \epsilon$ para
+todo $x \in S$. Tomando o supremo em relação a $x \in S$, obtemos
+$\snorm{f_n - f}_S \leq \epsilon$. Portanto,
+$\lim_{n\to\infty} \snorm{f_n-f}_S = 0$.
 \end{proof}
 
-Sometimes it is said that
-\emph{$\{ f_n \}_{n=1}^\infty$ converges to $f$ in uniform norm}%
-\index{converges in uniform norm}\index{uniform norm convergence}
-instead of \emph{converges uniformly} if $\snorm{f_n-f}_S \to 0$.  The proposition
-says that the two notions are the same thing for bounded functions.
+Às vezes, dizemos que
+\emph{$\{ f_n \}_{n=1}^\infty$ converge para $f$ na norma uniforme}%
+\index{converge na norma uniforme}\index{convergência na norma uniforme}
+em vez de dizer que \emph{converge uniformemente}, quando
+$\snorm{f_n-f}_S \to 0$. A proposição afirma que, para funções limitadas,
+as duas noções são equivalentes.
 
 \begin{example}
-Let $f_n \colon [0,1] \to \R$ be defined by $f_n(x) \coloneqq \frac{nx+ \sin(nx^2)}{n}$.
-We claim $\{ f_n \}_{n=1}^\infty$ converges uniformly to $f(x) \coloneqq x$.  Let us compute:
+Seja $f_n \colon [0,1] \to \R$ dada por
+$f_n(x) \coloneqq \frac{nx+ \sin(nx^2)}{n}$.
+Vamos mostrar que $\{ f_n \}_{n=1}^\infty$ converge uniformemente para
+$f(x) \coloneqq x$. Calculemos:
 \begin{equation*}
 \begin{split}
 \snorm{f_n-f}_{[0,1]}
@@ -322,61 +299,59 @@ We claim $\{ f_n \}_{n=1}^\infty$ converges uniformly to $f(x) \coloneqq x$.  Le
 \end{equation*}
 \end{example}
 
-Using the uniform norm, we define Cauchy sequences similarly to
-how we define Cauchy sequences of real numbers.
+Usando a norma uniforme, definimos sequências de Cauchy de modo semelhante
+à definição para sequências de números reais.
 
 \begin{defn}
-Let $f_n \colon S \to \R$ be bounded functions.
-The sequence is \emph{\myindex{Cauchy in the uniform norm}}
-or \emph{\myindex{uniformly Cauchy}}
-if for every $\epsilon > 0$, there exists an $N \in \N$ such
-that for all $m,k \geq N$,
+Sejam $f_n \colon S \to \R$ funções limitadas.
+Dizemos que a sequência é \emph{\myindex{de Cauchy na norma uniforme}}
+ou \emph{\myindex{uniformemente de Cauchy}}
+se, para todo $\epsilon > 0$, existe $N \in \N$ tal que, para todos
+$m,k \geq N$,
 \begin{equation*}
 \snorm{f_m-f_k}_S < \epsilon .
 \end{equation*}
 \end{defn}
 
 \begin{prop} \label{prop:uniformcauchy}
-Let $f_n \colon S \to \R$ be bounded functions.
-Then $\{ f_n \}_{n=1}^\infty$ is Cauchy in the uniform norm if and only if
-there exists an $f \colon S \to \R$ and $\{ f_n \}_{n=1}^\infty$ converges
-uniformly to $f$.
+Sejam $f_n \colon S \to \R$ funções limitadas.
+Então $\{ f_n \}_{n=1}^\infty$ é de Cauchy na norma uniforme se, e somente
+se existe uma função $f \colon S \to \R$ para a qual
+$\{ f_n \}_{n=1}^\infty$ converge uniformemente.
 \end{prop}
 
 \begin{proof}
-First suppose $\{ f_n \}_{n=1}^\infty$ is Cauchy in the uniform norm.
-Let us define $f$.  Fix $x$.
-The sequence $\bigl\{ f_n(x) \bigr\}_{n=1}^\infty$ is Cauchy because
+Suponha primeiro que $\{ f_n \}_{n=1}^\infty$ seja de Cauchy na norma
+uniforme. Vamos definir $f$. Fixe $x$.
+A sequência $\bigl\{ f_n(x) \bigr\}_{n=1}^\infty$ é de Cauchy, pois
 \begin{equation*}
 \babs{f_m(x)-f_k(x)}
 \leq
 \snorm{f_m-f_k}_S .
 \end{equation*}
-Thus $\bigl\{ f_n(x) \bigr\}_{n=1}^\infty$ converges to some real number.  Define $f \colon S
-\to \R$ by
+Assim, $\bigl\{ f_n(x) \bigr\}_{n=1}^\infty$ converge para algum número real. Defina $f \colon S
+\to \R$ por
 \begin{equation*}
 f(x) \coloneqq \lim_{n \to \infty} f_n(x) .
 \end{equation*}
-The sequence
-$\{ f_n \}_{n=1}^\infty$ converges pointwise to $f$.  To show that the convergence
-is uniform, let $\epsilon > 0$ be given.  Find an $N$ such that
-for all $m, k \geq N$, we have
-$\snorm{f_m-f_k}_S < \nicefrac{\epsilon}{2}$.  In other words, for
-all $x$, we have
-$\babs{f_m(x)-f_k(x)} < \nicefrac{\epsilon}{2}$.  For any fixed $x$, take the limit
-as $k$ goes to infinity.  Then $\babs{f_m(x)-f_k(x)}$
-goes to $\babs{f_m(x)-f(x)}$.
-Consequently for all $x$,
+Logo, $\{ f_n \}_{n=1}^\infty$ converge pontualmente para $f$. Para
+mostrar que a convergência é uniforme, seja $\epsilon > 0$ dado. Escolha
+um $N$ tal que, para todos $m,k \geq N$,
+$\snorm{f_m-f_k}_S < \nicefrac{\epsilon}{2}$. Em outras palavras, para
+todo $x$, temos $\babs{f_m(x)-f_k(x)} < \nicefrac{\epsilon}{2}$.
+Fixado $x$, façamos $k$ tender ao infinito. Então
+$\babs{f_m(x)-f_k(x)}$ tende a $\babs{f_m(x)-f(x)}$.
+Consequentemente, para todo $x$,
 \begin{equation*}
 \babs{f_m(x)-f(x)} \leq \nicefrac{\epsilon}{2} < \epsilon .
 \end{equation*}
-Hence, $\{ f_n \}_{n=1}^\infty$ converges uniformly.
+Portanto, $\{ f_n \}_{n=1}^\infty$ converge uniformemente.
 
-Next, we prove the other direction.
-Suppose $\{ f_n \}_{n=1}^\infty$ converges uniformly to
-$f$.  Given $\epsilon > 0$, find $N$ such that for all $n \geq N$,
-we have $\babs{f_n(x)-f(x)} < \nicefrac{\epsilon}{4}$ for all $x \in S$.
-Therefore, for all $m, k \geq N$ and all $x$,
+Agora, provemos a outra implicação.
+Suponha que $\{ f_n \}_{n=1}^\infty$ converge uniformemente para $f$.
+Dado $\epsilon > 0$, escolha $N$ tal que, para todo $n \geq N$,
+$\babs{f_n(x)-f(x)} < \nicefrac{\epsilon}{4}$ para todo $x \in S$.
+Portanto, para todos $m,k \geq N$ e todo $x$,
 \begin{multline*}
 \babs{f_m(x)-f_k(x)} = 
 \babs{f_m(x)-f(x)+f(x)-f_k(x)}
@@ -385,16 +360,16 @@ Therefore, for all $m, k \geq N$ and all $x$,
 \babs{f_m(x)-f(x)}+\babs{f(x)-f_k(x)} < \nicefrac{\epsilon}{4} +
 \nicefrac{\epsilon}{4} = \nicefrac{\epsilon}{2} .
 \end{multline*}
-Take the supremum over all $x$ to obtain
+Tomando o supremo em relação a todo $x$, obtemos
 \begin{equation*}
 \snorm{f_m-f_k}_S \leq \nicefrac{\epsilon}{2} < \epsilon .  \qedhere
 \end{equation*}
 \end{proof}
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
 \begin{exercise}
-Let $f$ and $g$ be bounded functions on $[a,b]$.  Prove 
+Sejam $f$ e $g$ funções limitadas em $[a,b]$. Prove que
 \begin{equation*}
 \snorm{f+g}_{[a,b]} \leq \snorm{f}_{[a,b]} + \snorm{g}_{[a,b]} .
 \end{equation*}
@@ -404,149 +379,145 @@ Let $f$ and $g$ be bounded functions on $[a,b]$.  Prove
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Find the pointwise limit of
-$\left\{ \dfrac{e^{x/n}}{n} \right\}_{n=1}^\infty$ for $x \in \R$.
+Determine o limite pontual de
+$\left\{ \dfrac{e^{x/n}}{n} \right\}_{n=1}^\infty$ para $x \in \R$.
 \item
-Is the limit uniform on $\R$?
+O limite é uniforme em $\R$?
 \item
-Is the limit uniform on $[0,1]$?
+O limite é uniforme em $[0,1]$?
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Suppose $f_n \colon S \to \R$ are functions that converge uniformly
-to $f \colon S \to \R$.  Suppose $A \subset S$.  Show that
-the sequence of restrictions $\{ f_n|_A \}_{n=1}^\infty$ converges uniformly to $f|_A$.
+Suponha que as funções $f_n \colon S \to \R$ convirjam uniformemente
+para $f \colon S \to \R$ e que $A \subset S$. Mostre que a sequência das
+restrições $\{ f_n|_A \}_{n=1}^\infty$ converge uniformemente para $f|_A$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $\{ f_n \}_{n=1}^\infty$ and $\{ g_n \}_{n=1}^\infty$ defined on some set $A$ converge to
-$f$ and $g$ respectively pointwise.  Show that $\{ f_n+g_n \}_{n=1}^\infty$ converges
-pointwise to $f+g$.
+Suponha que $\{ f_n \}_{n=1}^\infty$ e $\{ g_n \}_{n=1}^\infty$, definidas
+em um conjunto $A$, convirjam pontualmente para $f$ e $g$, respectivamente.
+Mostre que $\{ f_n+g_n \}_{n=1}^\infty$ converge pontualmente para $f+g$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $\{ f_n \}_{n=1}^\infty$ and $\{ g_n \}_{n=1}^\infty$ defined on some set $A$ converge to
-$f$ and $g$ respectively uniformly on $A$.
-Show that $\{ f_n+g_n \}_{n=1}^\infty$
-converges uniformly to $f+g$ on $A$.
+Suponha que $\{ f_n \}_{n=1}^\infty$ e $\{ g_n \}_{n=1}^\infty$, definidas
+em um conjunto $A$, convirjam uniformemente em $A$ para $f$ e $g$,
+respectivamente. Mostre que $\{ f_n+g_n \}_{n=1}^\infty$ converge
+uniformemente em $A$ para $f+g$.
 \end{exercise}
 
 \begin{exercise}
-Find an example of a pair of sequences of functions $\{ f_n \}_{n=1}^\infty$ and
+Encontre um exemplo de um par de sequências de funções $\{ f_n \}_{n=1}^\infty$ e
 $\{ g_n \}_{n=1}^\infty$
-that converge uniformly to some $f$ and $g$ on some set $A$, but such that
-$\{ f_ng_n \}_{n=1}^\infty$ (the multiple) does not converge uniformly to $fg$ on $A$.
-Hint: Let $A \coloneqq \R$, let $f(x)\coloneqq g(x) \coloneqq x$.  You can even pick $f_n = g_n$.
+que convirjam uniformemente em algum conjunto $A$ para certas funções $f$
+e $g$, mas para as quais $\{ f_ng_n \}_{n=1}^\infty$ (o produto) não
+convirja uniformemente para $fg$ em $A$. Dica: tome $A \coloneqq \R$ e
+$f(x)\coloneqq g(x) \coloneqq x$. Você pode até escolher $f_n = g_n$.
 \end{exercise}
 
 \begin{exercise}
-Suppose there exists a sequence of functions $\{ g_n \}_{n=1}^\infty$ uniformly
-converging to $0$ on $A$.  Now suppose we have a sequence of functions
-$\{ f_n \}_{n=1}^\infty$ and a function $f$ on $A$ such that
+Suponha que exista uma sequência de funções $\{ g_n \}_{n=1}^\infty$ que
+convirja uniformemente para $0$ em $A$. Suponha também que tenhamos uma
+sequência de funções $\{ f_n \}_{n=1}^\infty$ e uma função $f$ em $A$ tais que
 \begin{equation*}
 \babs{f_n(x) - f(x)} \leq g_n(x) 
 \end{equation*}
-for all $x \in A$.  Show that $\{ f_n \}_{n=1}^\infty$ converges uniformly to $f$ on $A$.
+para todo $x \in A$. Mostre que $\{ f_n \}_{n=1}^\infty$ converge
+uniformemente para $f$ em $A$.
 \end{exercise}
 
 \begin{exercise}
-Let $\{ f_n \}_{n=1}^\infty$, $\{ g_n \}_{n=1}^\infty$ and
-$\{ h_n \}_{n=1}^\infty$ be sequences of functions on
-$[a,b]$.  Suppose $\{ f_n \}_{n=1}^\infty$ and $\{ h_n \}_{n=1}^\infty$ converge uniformly to some function
-$f \colon [a,b] \to \R$ and suppose $f_n(x) \leq g_n(x) \leq h_n(x)$
-for all $x \in [a,b]$.  Show that $\{ g_n \}_{n=1}^\infty$ converges uniformly to $f$.
+Sejam $\{ f_n \}_{n=1}^\infty$, $\{ g_n \}_{n=1}^\infty$ e
+$\{ h_n \}_{n=1}^\infty$ sequências de funções em $[a,b]$. Suponha que
+$\{ f_n \}_{n=1}^\infty$ e $\{ h_n \}_{n=1}^\infty$ convirjam
+uniformemente para uma função $f \colon [a,b] \to \R$ e que
+$f_n(x) \leq g_n(x) \leq h_n(x)$ para todo $x \in [a,b]$. Mostre que
+$\{ g_n \}_{n=1}^\infty$ converge uniformemente para $f$.
 \end{exercise}
 
 \begin{exercise}
-Let $f_n \colon [0,1] \to \R$ be a sequence of increasing functions (that
-is, $f_n(x) \geq f_n(y)$ whenever $x \geq y$).  Suppose $f_n(0) = 0$
-and $\lim\limits_{n \to \infty} f_n(1) = 0$.  Show that
-$\{ f_n \}_{n=1}^\infty$
-converges uniformly to $0$.
+Seja $f_n \colon [0,1] \to \R$ uma sequência de funções crescentes (isto
+é, $f_n(x) \geq f_n(y)$ sempre que $x \geq y$). Suponha que $f_n(0) = 0$
+e que $\lim\limits_{n \to \infty} f_n(1) = 0$. Mostre que
+$\{ f_n \}_{n=1}^\infty$ converge uniformemente para $0$.
 \end{exercise}
 
 \begin{exercise}
-Consider a sequence of functions $f_n \colon [0,1] \to \R$ so that there
-is a sequence of distinct numbers $x_n \in [0,1]$ such that
-for all $n$,
+Considere uma sequência de funções $f_n \colon [0,1] \to \R$ para a qual
+existe uma sequência de números distintos $x_n \in [0,1]$ tal que, para
+todo $n$,
 \begin{equation*}
 f_n(x_n) = 1.
 \end{equation*}
-Prove or disprove the following statements:
+Prove ou refute as afirmações seguintes:
 \begin{enumerate}[a)]
 \item
-True or false: There exists $\{ f_n \}_{n=1}^\infty$ as above that
-converges pointwise to $0$.
+Verdadeiro ou falso: existe uma sequência $\{ f_n \}_{n=1}^\infty$ como
+acima que converge pontualmente para $0$.
 \item
-True or false: There exists $\{ f_n \}_{n=1}^\infty$ as above that
-converges uniformly to $0$.
+Verdadeiro ou falso: existe uma sequência $\{ f_n \}_{n=1}^\infty$ como
+acima que converge uniformemente para $0$.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Fix a continuous $h \colon [a,b] \to \R$.
-Let $f(x) \coloneqq h(x)$ for $x \in [a,b]$,
-$f(x) \coloneqq h(a)$ for $x < a$ and $f(x) \coloneqq h(b)$ for all $x > b$.  First show
-that $f \colon \R \to \R$ is continuous.
-Now let $f_n$ be
-the function $g$ from \exerciseref{exercise:smoothingout} with
-$\epsilon = \nicefrac{1}{n}$, defined on the interval $[a,b]$.  That is,
+Fixe uma função contínua $h \colon [a,b] \to \R$.
+Defina $f(x) \coloneqq h(x)$ para $x \in [a,b]$,
+$f(x) \coloneqq h(a)$ para $x < a$ e $f(x) \coloneqq h(b)$ para todo
+$x > b$. Primeiro, mostre que $f \colon \R \to \R$ é contínua.
+Agora, seja $f_n$ a função $g$ do
+\exerciseref{exercise:smoothingout}, com $\epsilon = \nicefrac{1}{n}$,
+definida no intervalo $[a,b]$. Isto é,
 \begin{equation*}
 f_n(x) \coloneqq \frac{n}{2} \int_{x-1/n}^{x+1/n} f .
 \end{equation*}
-Show that $\{ f_n \}_{n=1}^\infty$ converges uniformly to $h$ on $[a,b]$.
+Mostre que $\{ f_n \}_{n=1}^\infty$ converge uniformemente para $h$ em $[a,b]$.
 \end{exercise}
 
 
 \begin{exercise}
-Prove that
-if a sequence of functions $f_n \colon S \to \R$
-converge uniformly to a bounded function $f \colon S \to \R$,
-then there exists an $N$ such that for all $n \geq N$, the $f_n$
-are bounded.
+Prove que, se uma sequência de funções $f_n \colon S \to \R$ converge
+uniformemente para uma função limitada $f \colon S \to \R$, então existe
+um $N$ tal que $f_n$ é limitada para todo $n \geq N$.
 \end{exercise}
 
 \begin{exercise}
-Suppose there is a single constant $B$ and
-a sequence of functions
-$f_n \colon S \to \R$ that are bounded by $B$,
-that is $\babs{f_n(x)} \leq B$ for all $x \in S$.
-Suppose that $\{ f_n \}_{n=1}^\infty$ converges pointwise
-to $f \colon S \to \R$.
-Prove that $f$ is bounded.
+Suponha que exista uma constante $B$ tal que uma sequência de funções
+$f_n \colon S \to \R$ seja limitada por $B$, isto é,
+$\babs{f_n(x)} \leq B$ para todo $x \in S$.
+Suponha que $\{ f_n \}_{n=1}^\infty$ convirja pontualmente para
+$f \colon S \to \R$. Prove que $f$ é limitada.
 \end{exercise}
 
-\begin{exercise}[requires \sectionref{sec:moreonseries}]
-In \exampleref{example:geomsumptconv} we saw
-$\sum_{k=0}^\infty x^k$ converges pointwise to $\frac{1}{1-x}$ on
+\begin{exercise}[requer \sectionref{sec:moreonseries}]
+No \exampleref{example:geomsumptconv}, vimos que
+$\sum_{k=0}^\infty x^k$ converge pontualmente para $\frac{1}{1-x}$ em
 $(-1,1)$.
 \begin{enumerate}[a)]
 \item
-Show that whenever $0 \leq c < 1$, the series
-$\sum_{k=0}^\infty x^k$ converges uniformly on $[-c,c]$.
+Mostre que, sempre que $0 \leq c < 1$, a série
+$\sum_{k=0}^\infty x^k$ converge uniformemente em $[-c,c]$.
 \item
-Show that the series $\sum_{k=0}^\infty x^k$ does not converge uniformly
-on $(-1,1)$.
+Mostre que a série $\sum_{k=0}^\infty x^k$ não converge uniformemente
+em $(-1,1)$.
 \end{enumerate}
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{Interchange of limits}
+\section{Troca da ordem dos limites}
 \label{sec:liminter}
 
 %mbxINTROSUBSECTION
 
-\sectionnotes{1--2.5 lectures,
-subsections on derivatives and power series (which
-requires \sectionref{sec:moreonseries}) optional.}
+\sectionnotes{1--2,5 aulas; as subseções sobre derivadas e séries de
+potências (que requerem a \sectionref{sec:moreonseries}) são opcionais.}
 
-Large parts of modern analysis deal mainly with the question of the
-interchange of two limiting operations.  When
-we have a chain of two limits, we cannot always just swap the limits.
-For instance,
+Boa parte da análise moderna trata principalmente da questão de trocar a
+ordem de duas operações de limite. Quando temos uma cadeia de dois limites,
+nem sempre podemos simplesmente trocar sua ordem. Por exemplo,
 \begin{equation*}
 0 = 
 \lim_{n\to\infty}
@@ -563,21 +534,19 @@ For instance,
 = 1 .
 \end{equation*}
 
-When talking about sequences of functions, interchange of limits comes up
-quite often.  We look at several instances: continuity of the limit, the
-integral of the limit, the derivative of the limit, and the convergence of
-power series.
+Ao tratar de sequências de funções, a troca da ordem dos limites aparece
+com frequência. Vamos examinar vários casos: a continuidade, a integral e
+a derivada do limite, e a convergência de séries de potências.
 
-\subsection{Continuity of the limit}
+\subsection{Continuidade do limite}
 
-If we have a sequence $\{ f_n \}_{n=1}^\infty$ of continuous functions, is the limit continuous?
-Suppose $f$ is the (pointwise) limit of $\{ f_n \}_{n=1}^\infty$.
-If $\lim_{k\to\infty} x_k = x$,
-we are interested in the following
-interchange of limits, where the equality to prove
-is marked with a question mark.  Equality is not always true.
-In fact, the limits to the left
-of the question mark might not even exist.
+Se temos uma sequência $\{ f_n \}_{n=1}^\infty$ de funções contínuas,
+o limite também é contínuo? Suponha que $f$ seja o limite (pontual) de
+$\{ f_n \}_{n=1}^\infty$. Se $\lim_{k\to\infty} x_k = x$, queremos
+examinar a seguinte troca da ordem dos limites, em que a igualdade a provar
+está marcada com um ponto de interrogação. Essa igualdade nem sempre vale.
+Na verdade, talvez nem existam os limites à esquerda do ponto de
+interrogação.
 \begin{equation*}
 \lim_{k \to \infty} 
 f(x_k)
@@ -598,83 +567,81 @@ f_n(x)
 =
 f(x) .
 \end{equation*}
-We wish to find conditions on the sequence $\{ f_n \}_{n=1}^\infty$
-so that the equation above holds.
-If we only require pointwise convergence, then the limit
-of a sequence of functions need not be continuous, and the equation above
-need not hold.
+Queremos encontrar condições para a sequência $\{ f_n \}_{n=1}^\infty$
+que garantam a igualdade acima. Se exigirmos apenas convergência pontual,
+o limite de uma sequência de funções não precisa ser contínuo, e a igualdade
+acima pode não valer.
 
 \begin{example}
-Define $f_n \colon [0,1] \to \R$ as
+Defina $f_n \colon [0,1] \to \R$ por
 \begin{equation*}
 f_n(x) \coloneqq
 \begin{cases}
-1-nx &  \text{if } x < \nicefrac{1}{n},\\
-0 &  \text{if } x \geq \nicefrac{1}{n}.
+1-nx &  \text{se } x < \nicefrac{1}{n},\\
+0 &  \text{se } x \geq \nicefrac{1}{n}.
 \end{cases}
 \end{equation*}
-See \figureref{contconvcntr:fig}.
+Veja a \figureref{contconvcntr:fig}.
 
 \begin{myfigureht}
 \myincludegraphics{contconvcntr}{%
-A graph of a function on the interval
-from 0 to 1, where the function is 1 at the left-hand endpoint, then
-its graph is a straight line down to 0 on the x-axis where x is 1 over n.
-Then the function is zero until the right-hand endpoint.}
-\caption{Graph of $f_n(x)$.%
+Gráfico de uma função no intervalo de 0 a 1: ela vale 1 no extremo
+esquerdo e, em seguida, seu gráfico é um segmento de reta que desce até 0
+no eixo $x$, quando $x$ vale $1/n$. Depois, a função permanece nula até o
+extremo direito.}
+\caption{Gráfico de $f_n(x)$.%
 \label{contconvcntr:fig}}
 \end{myfigureht}
 
-Each function $f_n$ is continuous.
-Fix an $x \in (0,1]$.  If $n \geq \nicefrac{1}{x}$,
-then $x \geq \nicefrac{1}{n}$.  Therefore, for $n \geq \nicefrac{1}{x}$,
-we have $f_n(x) = 0$, and so
+Cada função $f_n$ é contínua.
+Fixe $x \in (0,1]$. Se $n \geq \nicefrac{1}{x}$, então
+$x \geq \nicefrac{1}{n}$. Portanto, para $n \geq \nicefrac{1}{x}$,
+temos $f_n(x) = 0$ e, assim,
 \begin{equation*}
 \lim_{n \to \infty} f_n(x) = 0.
 \end{equation*}
-On the other hand, if $x=0$, then
+Por outro lado, se $x=0$, então
 \begin{equation*}
 \lim_{n \to \infty} f_n(0) = 
 \lim_{n \to \infty} 1 = 1.
 \end{equation*}
-Thus the pointwise limit of $f_n$ is the function
-$f \colon [0,1] \to \R$ defined by
+Logo, o limite pontual de $f_n$ é a função
+$f \colon [0,1] \to \R$ definida por
 \begin{equation*}
 f(x) \coloneqq
 \begin{cases}
-1 &  \text{if } x = 0,\\
-0 &  \text{if } x > 0.
+1 &  \text{se } x = 0,\\
+0 &  \text{se } x > 0.
 \end{cases}
 \end{equation*}
-The function $f$ is not continuous at 0.
+A função $f$ não é contínua em 0.
 \end{example}
 
-If we, however, require the convergence to be uniform, the limits can
-be interchanged.
+Se, porém, exigirmos que a convergência seja uniforme, poderemos trocar a
+ordem dos limites.
 
 \begin{thm}
-Suppose $S \subset \R$.
-Let $\{ f_n \}_{n=1}^\infty$ be 
-a sequence of continuous functions $f_n \colon S \to \R$ converging
-uniformly to  $f \colon S \to \R$.  Then $f$ is continuous.
+Suponha que $S \subset \R$ e que $\{ f_n \}_{n=1}^\infty$ seja uma
+sequência de funções contínuas $f_n \colon S \to \R$ que converge
+uniformemente para $f \colon S \to \R$. Então $f$ é contínua.
 \end{thm}
 
 \begin{proof}
-Let $x \in S$ be fixed.  Let $\{ x_n \}_{n=1}^\infty$ be a sequence in $S$
-converging to $x$.
+Fixe $x \in S$. Seja $\{ x_n \}_{n=1}^\infty$ uma sequência em $S$ que
+converge para $x$.
 
-Let $\epsilon > 0$ be given.
-As $\{ f_k \}_{k=1}^\infty$ converges uniformly to $f$, we find a $k \in \N$ such that
+Seja $\epsilon > 0$ dado.
+Como $\{ f_k \}_{k=1}^\infty$ converge uniformemente para $f$, existe
+$k \in \N$ tal que
 \begin{equation*}
 \babs{f_k(y)-f(y)} < \nicefrac{\epsilon}{3}
 \end{equation*}
-for all $y \in S$.  As $f_k$ is continuous at $x$,
-we find an $N \in \N$ such that for all $m \geq N$,
+para todo $y \in S$. Como $f_k$ é contínua em $x$, existe $N \in \N$ tal
+que, para todo $m \geq N$,
 \begin{equation*}
 \babs{f_k(x_m)-f_k(x)} < \nicefrac{\epsilon}{3} .
 \end{equation*}
-Thus for all
-$m \geq N$,
+Assim, para todo $m \geq N$,
 \begin{equation*}
 \begin{split}
 \babs{f(x_m)-f(x)}
@@ -692,55 +659,53 @@ $m \geq N$,
 \nicefrac{\epsilon}{3} = \epsilon .
 \end{split}
 \end{equation*}
-Therefore, $\bigl\{ f(x_m) \bigr\}_{m=1}^\infty$ converges to $f(x)$,
-and consequently $f$ is continuous at $x$.
-As $x$ was arbitrary, $f$ is continuous everywhere.
+Portanto, $\bigl\{ f(x_m) \bigr\}_{m=1}^\infty$ converge para $f(x)$ e,
+consequentemente, $f$ é contínua em $x$.
+Como $x$ foi escolhido arbitrariamente, $f$ é contínua em todo ponto.
 \end{proof}
 
-\subsection{Integral of the limit}
+\subsection{Integral do limite}
 
-Again, if we simply require pointwise convergence, then the integral
-of a limit of a sequence of functions need not be equal to the limit
-of the integrals.
+Novamente, se exigirmos apenas convergência pontual, a integral do limite
+de uma sequência de funções pode não ser igual ao limite das integrais.
 
 \begin{example}
-Define $f_n \colon [0,1] \to \R$ as
+Defina $f_n \colon [0,1] \to \R$ por
 \begin{equation*}
 f_n(x) \coloneqq
 \begin{cases}
-0 &  \text{if } x = 0,\\
-n-n^2x &  \text{if } 0 < x < \nicefrac{1}{n},\\
-0 &  \text{if } x \geq \nicefrac{1}{n}.
+0 &  \text{se } x = 0,\\
+n-n^2x &  \text{se } 0 < x < \nicefrac{1}{n},\\
+0 &  \text{se } x \geq \nicefrac{1}{n}.
 \end{cases}
 \avoidbreak
 \end{equation*}
-See \figureref{intconvcntr:fig}.
+Veja a \figureref{intconvcntr:fig}.
 
 \begin{myfigureht}
 \myincludegraphics{intconvcntr}{%
-A graph of a function on the interval 0 to 1 that is 0 on the left-hand side,
-but then there is a jump discontinuity and it is given by a
-descending line from the point (0,n) to the x-axis
-where x is 1 over n.  It is then 0 for the rest of the interval.}
-\caption{Graph of $f_n(x)$.%
+Gráfico de uma função no intervalo de 0 a 1: ela vale 0 no extremo
+esquerdo, mas então apresenta uma descontinuidade de salto e segue uma reta
+descendente do ponto $(0,n)$ até o eixo $x$, onde $x=1/n$. Depois, vale 0
+no restante do intervalo.}
+\caption{Gráfico de $f_n(x)$.%
 \label{intconvcntr:fig}}
 \end{myfigureht}
 
-Each $f_n$ is Riemann integrable (it is continuous on $(0,1]$ and bounded),
-and the fundamental theorem of calculus says that
+Cada $f_n$ é integrável à Riemann (é contínua em $(0,1]$ e limitada), e o
+teorema fundamental do cálculo nos dá
 \begin{equation*}
 \int_0^1 f_n =
 \int_0^{\nicefrac{1}{n}} (n-n^2x)\,dx = \nicefrac{1}{2} .
 \end{equation*}
-Let us compute the pointwise limit of $\{ f_n \}_{n=1}^\infty$.
-Fix an $x \in (0,1]$.  For $n \geq \nicefrac{1}{x}$,
-we have $x \geq \nicefrac{1}{n}$ and so $f_n(x) = 0$.  Hence,
+Calculemos o limite pontual de $\{ f_n \}_{n=1}^\infty$.
+Fixe $x \in (0,1]$. Para $n \geq \nicefrac{1}{x}$,
+temos $x \geq \nicefrac{1}{n}$ e, portanto, $f_n(x) = 0$. Logo,
 \begin{equation*}
 \lim_{n \to \infty} f_n(x) = 0.
 \end{equation*}
-We also have $f_n(0) = 0$ for all $n$.  So the pointwise
-limit of $\{ f_n \}_{n=1}^\infty$ is the zero function.
-In summary,
+Além disso, $f_n(0) = 0$ para todo $n$. Assim, o limite pontual de
+$\{ f_n \}_{n=1}^\infty$ é a função nula. Em resumo,
 \begin{equation*}
 \nicefrac{1}{2} =
 \lim_{n\to\infty}
@@ -755,35 +720,32 @@ f_n(x)\right)\,dx
 \end{equation*}
 \end{example}
 
-But if we require the convergence to be uniform, the limits can
-be interchanged.\footnote{Weaker conditions
-are sufficient for this kind of theorem, but to prove such a generalization requires
-more sophisticated machinery than we cover here: the Lebesgue integral.
-In particular, the theorem holds with pointwise
-convergence as long as $f$ is integrable and there is an $M$ such that
-$\snorm{f_n}_{[a,b]} \leq M$ for all $n$.}
+Mas, se exigirmos convergência uniforme, poderemos trocar a ordem dos
+limites.\footnote{Condições mais fracas são suficientes para esse tipo de
+teorema, mas provar tal generalização exige ferramentas mais sofisticadas
+do que as que abordamos aqui: a integral de Lebesgue. Em particular, o
+teorema vale para convergência pontual desde que $f$ seja integrável e
+exista $M$ tal que $\snorm{f_n}_{[a,b]} \leq M$ para todo $n$.}
 
 \begin{thm} \label{integralinterchange:thm}
-Let $\{ f_n \}_{n=1}^\infty$ be a sequence of Riemann integrable
-functions
-$f_n \colon [a,b] \to \R$
-converging uniformly to $f \colon [a,b]
-\to \R$.  Then $f$ is Riemann integrable, and
+Seja $\{ f_n \}_{n=1}^\infty$ uma sequência de funções
+$f_n \colon [a,b] \to \R$ integráveis à Riemann que converge
+uniformemente para $f \colon [a,b] \to \R$. Então $f$ é integrável à
+Riemann e
 \begin{equation*}
 \int_a^b f = \lim_{n\to\infty} \int_a^b f_n .
 \end{equation*}
 \end{thm}
 
 \begin{proof}
-Let $\epsilon > 0$ be given.
-As $f_n$ goes to $f$ uniformly, we find an $M \in \N$ such that
-for all $n \geq M$, we have 
-$\babs{f_n(x)-f(x)} < \frac{\epsilon}{2(b-a)}$ for all $x \in [a,b]$.
-In particular, by reverse triangle inequality,
-$\babs{f(x)} < \frac{\epsilon}{2(b-a)} + \babs{f_n(x)}$ for all $x$.
-Hence, $f$ is bounded,
-as $f_n$ is bounded.
-Note that $f_n$ is integrable and compute
+Seja $\epsilon > 0$ dado.
+Como $f_n$ converge uniformemente para $f$, existe $M \in \N$ tal que,
+para todo $n \geq M$, temos
+$\babs{f_n(x)-f(x)} < \frac{\epsilon}{2(b-a)}$ para todo $x \in [a,b]$.
+Em particular, pela desigualdade triangular reversa,
+$\babs{f(x)} < \frac{\epsilon}{2(b-a)} + \babs{f_n(x)}$ para todo $x$.
+Logo, $f$ é limitada, pois $f_n$ é limitada.
+Como $f_n$ é integrável, calculemos
 \begin{equation*}
 \begin{split}
 \overline{\int_a^b} f
@@ -814,14 +776,14 @@ Note that $f_n$ is integrable and compute
 \frac{\epsilon}{2(b-a)} (b-a) = \epsilon .
 \end{split}
 \end{equation*}
-The first inequality is \propref{prop:upperlowerlinineq}.
-The second inequality follows by \propref{intulbound:prop} and 
-the fact that for all $x \in [a,b]$, we have
+Na primeira desigualdade, usamos a \propref{prop:upperlowerlinineq}.
+A segunda decorre da \propref{intulbound:prop} e do fato de que, para
+todo $x \in [a,b]$,
 $\frac{-\epsilon}{2(b-a)} < f(x)-f_n(x) < \frac{\epsilon}{2(b-a)}$.
-As $\epsilon > 0$ was arbitrary, $f$ is Riemann integrable.
+Como $\epsilon > 0$ foi arbitrário, $f$ é integrável à Riemann.
 
-Finally, we compute $\int_a^b f$.  We apply \propref{intbound:prop}
-in the calculation.  Again, for all $n \geq M$ (where $M$ is the same as above),
+Por fim, calculemos $\int_a^b f$. Aplicamos a \propref{intbound:prop}
+na conta. Novamente, para todo $n \geq M$ (com o mesmo $M$ de antes),
 \begin{equation*}
 \begin{split}
 \abs{\int_a^b f - \int_a^b f_n} & = 
@@ -831,20 +793,21 @@ in the calculation.  Again, for all $n \geq M$ (where $M$ is the same as above),
 \frac{\epsilon}{2(b-a)} (b-a) = \frac{\epsilon}{2} < \epsilon .
 \end{split}
 \end{equation*}
-Therefore, $\bigl\{ \int_a^b f_n \bigr\}_{n=1}^\infty$ converges to $\int_a^b f$.
+Portanto, $\bigl\{ \int_a^b f_n \bigr\}_{n=1}^\infty$ converge para
+$\int_a^b f$.
 \end{proof}
 
 \begin{example}
-Suppose we wish to compute
+Suponha que queiramos calcular
 \begin{equation*}
 \lim_{n\to\infty} \int_0^1 \frac{nx+ \sin(nx^2)}{n} \,dx .
 \end{equation*}
-It is impossible to compute the integrals for any particular $n$ using 
-calculus as $\sin(nx^2)$ has no closed-form antiderivative.  However,
-we can compute the limit.
-We have shown before that $\frac{nx+ \sin(nx^2)}{n}$ converges uniformly
-on $[0,1]$ to $x$.
-By \thmref{integralinterchange:thm}, the limit exists and
+É impossível calcular as integrais para um $n$ específico usando o
+cálculo, pois $\sin(nx^2)$ não tem uma primitiva expressável por funções
+elementares. No entanto, podemos calcular o limite.
+Já mostramos que $\frac{nx+ \sin(nx^2)}{n}$ converge uniformemente em
+$[0,1]$ para $x$.
+Pelo \thmref{integralinterchange:thm}, o limite existe e
 \begin{equation*}
 \lim_{n\to\infty} \int_0^1 \frac{nx+ \sin(nx^2)}{n} \,dx
 =
@@ -854,156 +817,154 @@ x \,dx = \nicefrac{1}{2} .
 \end{example}
 
 \begin{example}
-If convergence is only pointwise, the limit need not even be Riemann
-integrable.  On $[0,1]$ define
+Se a convergência for apenas pontual, o limite pode nem sequer ser
+integrável à Riemann. Em $[0,1]$, defina
 \begin{equation*}
 f_n(x) \coloneqq
 \begin{cases}
-1 & \text{if } x = \nicefrac{p}{q} \text{ in lowest terms and } q \leq n, \\
-0 & \text{otherwise.}
+1 & \text{se } x = \nicefrac{p}{q} \text{ na forma irredutível e } q \leq n, \\
+0 & \text{caso contrário.}
 \end{cases}
 \end{equation*}
-Each function $f_n$ differs from the zero function at finitely many points;
-there are only finitely many fractions in $[0,1]$ with denominator less than
-or equal to $n$.   So $f_n$ is integrable and $\int_0^1 f_n = \int_0^1 0 =
-0$.  It is an easy exercise to show that $\{ f_n \}_{n=1}^\infty$ converges pointwise to the
-\myindex{Dirichlet function}
+Cada função $f_n$ difere da função nula em apenas um número finito de
+pontos, pois há somente um número finito de frações em $[0,1]$ cujo
+denominador é menor ou igual a $n$. Portanto, $f_n$ é integrável e
+$\int_0^1 f_n = \int_0^1 0 = 0$. É fácil mostrar que
+$\{ f_n \}_{n=1}^\infty$ converge pontualmente para a
+\myindex{função de Dirichlet}
 \begin{equation*}
 f(x) \coloneqq
 \begin{cases}
-1 & \text{if } x \in \Q, \\
-0 & \text{otherwise,}
+1 & \text{se } x \in \Q, \\
+0 & \text{caso contrário,}
 \end{cases}
 \end{equation*}
-which is not Riemann integrable.
+que não é integrável à Riemann.
 \end{example}
 
 \begin{example}
-In fact, if the convergence is only pointwise, the limit of bounded
-functions is not even necessarily bounded.
-Define $f_n \colon [0,1] \to \R$ by
+Na verdade, se a convergência for apenas pontual, o limite de funções
+limitadas pode nem sequer ser limitado.
+Defina $f_n \colon [0,1] \to \R$ por
 \begin{equation*}
 f_n(x) \coloneqq
 \begin{cases}
-0 & \text{if } x < \nicefrac{1}{n},\\
-\nicefrac{1}{x} & \text{else.}
+0 & \text{se } x < \nicefrac{1}{n},\\
+\nicefrac{1}{x} & \text{caso contrário.}
 \end{cases}
 \end{equation*}
-For every $n$ we get that $\babs{f_n(x)} \leq n$ for all $x \in [0,1]$ so the
-functions are bounded.  However, $\{ f_n \}_{n=1}^\infty$ converges pointwise to
-the unbounded function
+Para todo $n$, temos $\babs{f_n(x)} \leq n$ para todo $x \in [0,1]$,
+portanto as funções são limitadas. No entanto,
+$\{ f_n \}_{n=1}^\infty$ converge pontualmente para a função ilimitada
 \begin{equation*}
 f(x) \coloneqq
 \begin{cases}
-0 & \text{if } x = 0,\\
-\nicefrac{1}{x} & \text{else.}
+0 & \text{se } x = 0,\\
+\nicefrac{1}{x} & \text{caso contrário.}
 \end{cases}
 \end{equation*}
 \end{example}
 
-\subsection{Derivative of the limit}
+\subsection{Derivada do limite}
 
-While uniform convergence is enough to swap limits with integrals, it is not
-enough to swap limits with derivatives, unless you also have
-uniform convergence of the derivatives themselves.
+Embora a convergência uniforme seja suficiente para trocar a ordem dos
+limites com integrais, ela não basta para fazer o mesmo com derivadas, a
+menos que as próprias derivadas também convirjam uniformemente.
 
 \begin{example}
-Let $f_n(x) \coloneqq \frac{\sin(nx)}{n}$.  Then $f_n$ converges uniformly to
-0.  See \figureref{fig:conv1nsinxn}.
-The derivative of the limit is 0.  However, $f_n'(x) = \cos(nx)$, which
-does not converge even pointwise.
-For example, $f_n'(\pi) = {(-1)}^n$.
-Moreover, $f_n'(0) = 1$ for all $n$, which does converge, but not to $0$.
+Seja $f_n(x) \coloneqq \frac{\sin(nx)}{n}$. Então $f_n$ converge
+uniformemente para 0. Veja a \figureref{fig:conv1nsinxn}.
+A derivada do limite é 0. No entanto, $f_n'(x) = \cos(nx)$ não converge
+nem sequer pontualmente.
+Por exemplo, $f_n'(\pi) = {(-1)}^n$.
+Além disso, $f_n'(0) = 1$ para todo $n$; essa sequência converge, mas não
+para 0.
 \begin{myfigureht}
 \myincludegraphics{conv1nsinxn}{%
-Sine waves for 10 different frequencies, but now they are also scaled
-down for higher frequencies.  The higher frequency functions are 
-closer to the x-axis, and so all the graphs together no longer fill a full strip.}
-\caption{Graphs of $\frac{\sin(nx)}{n}$ for
-$n=1,2,\ldots,10$, with higher $n$ in fainter gray.%
+Ondas senoidais com 10 frequências diferentes, agora também reescaladas
+para baixo nas frequências mais altas. As funções de frequência maior ficam
+mais próximas do eixo $x$; por isso, os gráficos já não preenchem uma faixa
+inteira.}
+\caption{Gráficos de $\frac{\sin(nx)}{n}$ para
+$n=1,2,\ldots,10$, com os valores maiores de $n$ em tons mais claros de cinza.%
 \label{fig:conv1nsinxn}}
 \end{myfigureht}
 \end{example}
 
 \begin{example} \label{exercise:badconvergenceder}
-Let $f_n(x) \coloneqq \frac{1}{1+nx^2}$.
-If $x \neq 0$, then $\lim_{n \to \infty} f_n(x) = 0$,
-but $\lim_{n \to \infty} f_n(0) = 1$.
-Hence, $\{ f_n \}_{n=1}^\infty$ converges pointwise to a function that is not continuous
-at $0$.
-We compute
+Seja $f_n(x) \coloneqq \frac{1}{1+nx^2}$.
+Se $x \neq 0$, então $\lim_{n \to \infty} f_n(x) = 0$,
+mas $\lim_{n \to \infty} f_n(0) = 1$.
+Logo, $\{ f_n \}_{n=1}^\infty$ converge pontualmente para uma função que
+não é contínua em 0.
+Calculamos
 \begin{equation*}
 f_n'(x) %= \frac{d}{dx} \frac{1}{1+n x^2}
 = \frac{-2 n x}{(1+ n x^2)^2} .
 \end{equation*}
-For every $x$, $\lim_{n\to\infty} f_n'(x) = 0$, so the derivatives
-converge pointwise to 0,
-but the reader can check that the convergence is not uniform on any
-interval containing $0$.
-The limit of $f_n$ is not differentiable at $0$---it is not even
-continuous at $0$.  See \figureref{fig:convder1over1pnxsq}.
+Para todo $x$, $\lim_{n\to\infty} f_n'(x) = 0$, portanto as derivadas
+convergem pontualmente para 0, mas o leitor pode verificar que a
+convergência não é uniforme em nenhum intervalo que contenha 0.
+O limite de $f_n$ não é diferenciável em 0 — nem sequer é contínuo em 0.
+Veja a \figureref{fig:convder1over1pnxsq}.
 \begin{myfigureht}
 \myincludegraphics{convder1over1pnxsq}{%
-Two plots with each giving several functions
-in different shades of gray.
-On the left is a plot of a bell-shaped curve, with the peak being narrower
-(but of the same height) for the lighter shades of gray.
-On the right is the derivative, so it is positive with a peak before
-the origin, then it goes through the origin and has a minimum past the
-origin before going back up towards the x-axis.  As the 
-color becomes lighter the peaks and minima are thinner and go further
-away from the x-axis.}
-\caption{Graphs of $\frac{1}{1+nx^2}$ and its derivative
-for $n=1,2,\ldots,10$, with higher $n$ in fainter gray.%
+Dois gráficos, cada um com várias funções em diferentes tons de cinza.
+À esquerda, uma curva em forma de sino, cujo pico fica mais estreito, mas
+mantém a mesma altura, nos tons mais claros. À direita, a derivada: ela é
+positiva e tem um pico antes da origem; depois passa pela origem, atinge um
+mínimo após a origem e volta a se aproximar do eixo $x$. À medida que o tom
+fica mais claro, os picos e mínimos ficam mais estreitos e se afastam do
+eixo $x$.}
+\caption{Gráficos de $\frac{1}{1+nx^2}$ e de sua derivada para
+$n=1,2,\ldots,10$, com os valores maiores de $n$ em tons mais claros de cinza.%
 \label{fig:convder1over1pnxsq}}
 \end{myfigureht}
 \end{example}
 
-See the exercises for more examples.  Using 
-the fundamental theorem of calculus, we find an answer for continuously
-differentiable functions.  The following theorem is true even if 
-we do not assume continuity of the derivatives, but the proof is more
-difficult.
+Veja mais exemplos nos exercícios. Usando o teorema fundamental do cálculo,
+obtemos um resultado para funções continuamente diferenciáveis. O teorema
+seguinte também vale sem supor que as derivadas sejam contínuas, mas sua
+demonstração é mais difícil.
 
 \begin{thm} \label{thm:dersconverge}
-Let $I$ be a bounded interval and let
-$f_n \colon I \to \R$ be continuously differentiable functions.
-Suppose $\{ f_n' \}_{n=1}^\infty$ converges uniformly to $g \colon I \to \R$,
-and suppose $\bigl\{ f_n(c) \bigr\}_{n=1}^\infty$ is a
-convergent sequence for some $c \in I$.  Then $\{ f_n \}_{n=1}^\infty$ converges uniformly to 
-a continuously differentiable function $f \colon I \to \R$, and $f' = g$.
+Seja $I$ um intervalo limitado e sejam $f_n \colon I \to \R$ funções
+continuamente diferenciáveis.
+Suponha que $\{ f_n' \}_{n=1}^\infty$ convirja uniformemente para
+$g \colon I \to \R$ e que $\bigl\{ f_n(c) \bigr\}_{n=1}^\infty$ seja
+uma sequência convergente para algum $c \in I$. Então
+$\{ f_n \}_{n=1}^\infty$ converge uniformemente para uma função
+continuamente diferenciável $f \colon I \to \R$, e $f' = g$.
 \end{thm}
 
 \begin{proof}
-Define $f(c) \coloneqq \lim_{n\to \infty} f_n(c)$.
-As $f_n'$ are continuous and hence Riemann integrable,
-via the fundamental theorem of calculus, we find that for $x \in I$,
+Defina $f(c) \coloneqq \lim_{n\to \infty} f_n(c)$.
+Como $f_n'$ é contínua e, portanto, integrável à Riemann, o teorema
+fundamental do cálculo nos dá, para $x \in I$,
 \begin{equation*}
 f_n(x) = f_n(c) + \int_c^x f_n' .
 \end{equation*}
-As $\{ f_n' \}_{n=1}^\infty$ converges uniformly on $I$, it converges uniformly
-on $[c,x]$ (or $[x,c]$ if $x < c$).
-Thus, the limit as $n \to \infty$ on the right-hand side exists.
-Define $f$ at the remaining points (where $x\neq c$) by this limit:
+Como $\{ f_n' \}_{n=1}^\infty$ converge uniformemente em $I$, também
+converge uniformemente em $[c,x]$ (ou em $[x,c]$, se $x < c$).
+Assim, o limite do lado direito quando $n \to \infty$ existe.
+Defina $f$ nos demais pontos (isto é, quando $x\neq c$) por esse limite:
 \begin{equation*}
 f(x) \coloneqq
 \lim_{n\to\infty} f_n(c) + \lim_{n\to\infty} \int_c^x f_n'
 =
 f(c) + \int_c^x g .
 \end{equation*}
-The function $g$ is continuous, being the uniform limit of continuous
-functions.  Hence, $f$ is differentiable and $f'(x) = g(x)$ for all $x \in I$
-by the second form of the fundamental theorem.
+Como limite uniforme de funções contínuas, $g$ é contínua. Logo, pela
+segunda forma do teorema fundamental, $f$ é diferenciável e
+$f'(x) = g(x)$ para todo $x \in I$.
 
-It remains to prove
-uniform convergence.
-Suppose $I$ has a lower bound $a$ and upper bound $b$.
-Let $\epsilon > 0$ be given.  Take $M$
-such that for all $n \geq M$, we have
+Resta provar a convergência uniforme.
+Suponha que $I$ tenha extremo inferior $a$ e extremo superior $b$.
+Seja $\epsilon > 0$ dado. Escolha $M$ tal que, para todo $n \geq M$,
 $\babs{f(c)-f_n(c)} < \nicefrac{\epsilon}{2}$
-and
+e
 $\babs{g(x)-f_n'(x)} < \frac{\epsilon}{2(b-a)}$
-for all $x \in I$.  Then
+para todo $x \in I$. Então
 \begin{equation*}
 \begin{split}
 \babs{f(x) - f_n(x)} & =
@@ -1025,43 +986,42 @@ for all $x \in I$.  Then
 \end{equation*}
 \end{proof}
 
-The proof goes through without boundedness of $I$, except for the
-uniform convergence of $f_n$ to $f$.  As an example suppose $I = \R$ and let
-$f_n(x) \coloneqq \nicefrac{x}{n}$.  Then $f_n'(x)=\nicefrac{1}{n}$, which
-converges uniformly to $0$.  However, $\{f_n\}_{n=1}^\infty$ converges to 0 only pointwise.
+O restante da demonstração vale mesmo quando $I$ não é limitado; a
+limitação só é necessária para a convergência uniforme de $f_n$ para $f$.
+Por exemplo, suponha que $I = \R$ e tome $f_n(x) \coloneqq \nicefrac{x}{n}$.
+Então $f_n'(x)=\nicefrac{1}{n}$ converge uniformemente para 0. No entanto,
+$\{f_n\}_{n=1}^\infty$ converge para 0 apenas pontualmente.
 
-\subsection{Convergence of power series}
+\subsection{Convergência de séries de potências}
 
-In \sectionref{sec:moreonseries} we saw that a power series converges
-absolutely inside its radius of convergence, so it converges pointwise.
-Let us show that it (and all its derivatives) also converges uniformly.
-This fact allows us to
-swap several types of limits.  Not only is the limit continuous,
-but we can also
-integrate and even differentiate convergent power series term by term.
+Na \sectionref{sec:moreonseries}, vimos que uma série de potências converge
+absolutamente no interior de seu raio de convergência e, portanto, converge
+pontualmente. Vamos mostrar que ela — e também todas as suas derivadas —
+converge uniformemente. Isso nos permite trocar a ordem de vários tipos de
+limite. Além de ser contínua, a função limite também pode ser integrada e
+até diferenciada termo a termo.
 
 \begin{prop}
-Let $\sum_{n=0}^\infty c_n {(x-a)}^n$ be a convergent power series with a radius
-of convergence $\rho$, where $0 < \rho \leq \infty$.
-Then the series converges uniformly
-in $[a-r,a+r]$ whenever $0 < r < \rho$.
+Seja $\sum_{n=0}^\infty c_n {(x-a)}^n$ uma série de potências convergente
+com raio de convergência $\rho$, em que $0 < \rho \leq \infty$.
+Então a série converge uniformemente em $[a-r,a+r]$ sempre que
+$0 < r < \rho$.
 
-In particular, the series converges (pointwise) to a continuous function
-on $(a-\rho,a+\rho)$ if $\rho < \infty$, or on $\R$ if $\rho = \infty$.
+Em particular, a série converge pontualmente para uma função contínua em
+$(a-\rho,a+\rho)$ se $\rho < \infty$, ou em $\R$ se $\rho = \infty$.
 \end{prop}
 
 \begin{proof}
-Let $I \coloneqq (a-\rho,a+\rho)$ if $\rho < \infty$,
-or let $I \coloneqq \R$ if $\rho= \infty$.
-Take $0 < r < \rho$.
-The series converges absolutely for every $x \in I$,
-in particular if $x = a+r$.
-So $\sum_{n=0}^\infty \sabs{c_n} r^n$ converges.
-Given $\epsilon >0$, find $M$ such that for all $k \geq M$,
+Defina $I \coloneqq (a-\rho,a+\rho)$ se $\rho < \infty$,
+ou $I \coloneqq \R$ se $\rho= \infty$.
+Tome $0 < r < \rho$.
+A série converge absolutamente para todo $x \in I$, em particular para
+$x = a+r$. Logo, $\sum_{n=0}^\infty \sabs{c_n} r^n$ converge.
+Dado $\epsilon >0$, escolha $M$ tal que, para todo $k \geq M$,
 \begin{equation*}
 \sum_{n=k+1}^\infty \sabs{c_n} {r}^n < \epsilon .
 \end{equation*}
-For all $x \in [a-r,a+r]$ and all $m > k$,
+Para todo $x \in [a-r,a+r]$ e todo $m > k$,
 \begin{multline*}
 \abs{\sum_{n=0}^m c_n {(x-a)}^n - 
 \sum_{n=0}^k c_n {(x-a)}^n}
@@ -1076,45 +1036,42 @@ For all $x \in [a-r,a+r]$ and all $m > k$,
 \sum_{n=k+1}^\infty \sabs{c_n} {r}^n
 <\epsilon.
 \end{multline*}
-The partial sums are therefore uniformly Cauchy on $[a-r,a+r]$ and
-hence converge uniformly on that set.
+Portanto, as somas parciais formam uma sequência uniformemente de Cauchy
+em $[a-r,a+r]$ e, assim, convergem uniformemente nesse conjunto.
 
-Moreover, the partial sums are polynomials, which are
-continuous, and so their uniform limit on $[a-r,a+r]$
-is a continuous function.
-As $r < \rho$ was arbitrary, the limit function
-is continuous on all of $I$.
+Além disso, as somas parciais são polinômios e, portanto, contínuas. Assim,
+seu limite uniforme em $[a-r,a+r]$ é uma função contínua.
+Como $r < \rho$ foi arbitrário, a função limite é contínua em todo $I$.
 \end{proof}
 
-As we said, we will show that
-power series can be differentiated and integrated
-term by term.  The 
-differentiated or integrated series is again a power series,
-and we will show it has the same radius of convergence.
-Therefore, 
-any power series defines an infinitely differentiable function.
+Como dissemos, mostraremos que séries de potências podem ser diferenciadas
+e integradas termo a termo. A série obtida por diferenciação ou integração
+também é uma série de potências, e mostraremos que ela tem o mesmo raio de
+convergência. Portanto, toda série de potências define uma função
+infinitamente diferenciável.
 
-We first prove that we can antidifferentiate, as integration only needs
-uniform limits.
+Primeiro provaremos que podemos integrar termo a termo, pois a integração
+exige apenas convergência uniforme.
 
 \begin{cor}
-Let $\sum_{n=0}^\infty c_n {(x-a)}^n$ be a convergent power series with a radius
-of convergence $0 < \rho \leq \infty$.
-Let $I \coloneqq (a-\rho,a+\rho)$ if $\rho < \infty$
-or $I \coloneqq \R$ if $\rho= \infty$.  Let $f \colon I \to \R$ be the limit.
-Then
+Seja $\sum_{n=0}^\infty c_n {(x-a)}^n$ uma série de potências convergente
+com raio de convergência $0 < \rho \leq \infty$.
+Defina $I \coloneqq (a-\rho,a+\rho)$ se $\rho < \infty$,
+ou $I \coloneqq \R$ se $\rho= \infty$, e seja $f \colon I \to \R$ o
+limite da série. Então
 \begin{equation*}
 \int_a^x f = \sum_{n=1}^\infty \frac{c_{n-1}}{n} {(x-a)}^{n} ,
 \end{equation*}
-where the radius of convergence of this series is at least $\rho$.
+e o raio de convergência dessa série é pelo menos $\rho$.
 \end{cor}
 
 \begin{proof}
-Take $0 < r < \rho$.
-The partial sums $\sum_{n=0}^k c_n {(x-a)}^n$ converge uniformly on $[a-r,a+r]$.
-For every fixed $x \in [a-r,a+r]$, the convergence is also uniform
-on $[a,x]$ (or $[x,a]$ if $x < a$).
-Hence,
+Tome $0 < r < \rho$.
+As somas parciais $\sum_{n=0}^k c_n {(x-a)}^n$ convergem uniformemente em
+$[a-r,a+r]$.
+Para cada $x \in [a-r,a+r]$ fixado, a convergência também é uniforme em
+$[a,x]$ (ou em $[x,a]$, se $x < a$).
+Logo,
 \begin{equation*}
 \int_a^x f =
 \int_a^x \lim_{k\to\infty} \sum_{n=0}^k c_n {(s-a)}^n \, ds
@@ -1129,34 +1086,34 @@ Hence,
 
 
 \begin{cor} \label{cor:differentiatepowerser}
-Let $\sum_{n=0}^\infty c_n {(x-a)}^n$ be a convergent power series with a radius
-of convergence $0 < \rho \leq \infty$.
-Let $I \coloneqq (a-\rho,a+\rho)$ if $\rho < \infty$
-or $I \coloneqq \R$ if $\rho= \infty$.  Let $f \colon I \to \R$ be the limit.
-Then $f$ is a differentiable function, and
+Seja $\sum_{n=0}^\infty c_n {(x-a)}^n$ uma série de potências convergente
+com raio de convergência $0 < \rho \leq \infty$.
+Defina $I \coloneqq (a-\rho,a+\rho)$ se $\rho < \infty$,
+ou $I \coloneqq \R$ se $\rho= \infty$, e seja $f \colon I \to \R$ o
+limite da série. Então $f$ é diferenciável e
 \begin{equation*}
 f'(x) = \sum_{n=0}^\infty (n+1) c_{n+1} {(x-a)}^{n} ,
 \end{equation*}
-where the radius of convergence of this series is $\rho$.
+e o raio de convergência dessa série é $\rho$.
 \end{cor}
 
 \begin{proof}
-Take $0 < r < \rho$.
-The series converges uniformly on
-$[a-r,a+r]$,
-but we need uniform convergence of the derivative.
-Let
+Tome $0 < r < \rho$.
+A série converge uniformemente em $[a-r,a+r]$, mas precisamos da
+convergência uniforme da derivada.
+Defina
 \begin{equation*}
 R \coloneqq \limsup_{n \to \infty} \sabs{c_n}^{1/n} .
 \end{equation*}
-As the series is convergent, $R < \infty$.
-The radius of convergence $\rho$ is $\nicefrac{1}{R}$ (or $\rho = \infty$ if $R=0$).
+Como a série converge, $R < \infty$.
+O raio de convergência $\rho$ é $\nicefrac{1}{R}$ (ou $\rho = \infty$ se
+$R=0$).
 
-Let $\epsilon > 0$ be given.  In \exampleref{example:nto1overn},
-we saw $\lim_{n\to\infty} n^{1/n} = 1$.
-Hence, there exists an $N$ such that for all $n \geq N$, we have
+Seja $\epsilon > 0$ dado. No \exampleref{example:nto1overn}, vimos que
+$\lim_{n\to\infty} n^{1/n} = 1$.
+Portanto, existe $N$ tal que, para todo $n \geq N$,
 $n^{1/n} < 1+\epsilon$.
-So
+Assim,
 \begin{equation*}
 R = 
 \limsup_{n \to \infty}
@@ -1171,515 +1128,490 @@ R =
 =
 (1+\epsilon)R .
 \end{equation*}
-As $\epsilon$ was arbitrary, $\limsup_{n \to \infty} \sabs{n c_n}^{1/n} = R$.
-Therefore, $\sum_{n=1}^\infty n c_{n} {(x-a)}^{n}$ has radius of
-convergence $\rho$.  Dividing by $(x-a)$, we find
-$\sum_{n=0}^\infty (n+1) c_{n+1} {(x-a)}^{n}$ has radius of convergence
-$\rho$ as well.
+Como $\epsilon$ foi arbitrário,
+$\limsup_{n \to \infty} \sabs{n c_n}^{1/n} = R$.
+Portanto, $\sum_{n=1}^\infty n c_{n} {(x-a)}^{n}$ tem raio de
+convergência $\rho$. Dividindo por $(x-a)$, concluímos que
+$\sum_{n=0}^\infty (n+1) c_{n+1} {(x-a)}^{n}$ também tem raio de
+convergência $\rho$.
 
-Consequently, the partial sums 
+Consequentemente, as somas parciais
 $\sum_{n=0}^k (n+1) c_{n+1} {(x-a)}^{n}$,
-which are derivatives of the partial sums
+que são as derivadas das somas parciais
 $\sum_{n=0}^{k+1} c_{n} {(x-a)}^{n}$,
-converge uniformly on $[a-r,a+r]$.  Furthermore,
-the series clearly converges at $x=a$.
-We may thus apply \thmref{thm:dersconverge}, and
-we are done as $r < \rho$ was arbitrary.
+convergem uniformemente em $[a-r,a+r]$. Além disso, a série claramente
+converge em $x=a$.
+Podemos, então, aplicar o \thmref{thm:dersconverge}. Isso conclui a prova,
+pois $r < \rho$ foi arbitrário.
 \end{proof}
 
 \begin{example} \label{example:exponentialbypowerseries}
-We could have used this result to define the exponential function.  That is,
-the power series
+Poderíamos ter usado esse resultado para definir a função exponencial. Isto
+é, a série de potências
 \begin{equation*}
 f(x) \coloneqq \sum_{n=0}^\infty \frac{x^n}{n!}
 \end{equation*}
-has radius of convergence $\rho=\infty$.  Furthermore,
-$f(0) = 1$.
-Differentiating
-term by term, we find that $f'(x) = f(x)$.
+tem raio de convergência $\rho=\infty$. Além disso, $f(0) = 1$.
+Derivando termo a termo, obtemos $f'(x) = f(x)$.
 \end{example}
 
 \begin{example}
-The series
+A série
 \begin{equation*}
 \sum_{n=1}^\infty n x^n
 \end{equation*}
-converges to $\frac{x}{{(1-x)}^2}$ on $(-1,1)$.
+converge para $\frac{x}{{(1-x)}^2}$ em $(-1,1)$.
 
-Proof:
-On $(-1,1)$, $\sum_{n=0}^\infty x^n$ converges to
-$\frac{1}{1-x}$.  The derivative $\sum_{n=1}^\infty n x^{n-1}$ then converges
-on the same interval to $\frac{1}{{(1-x)}^2}$.  Multiplying by $x$
-obtains the result.
+Demonstração:
+Em $(-1,1)$, $\sum_{n=0}^\infty x^n$ converge para
+$\frac{1}{1-x}$. A série derivada $\sum_{n=1}^\infty n x^{n-1}$ converge,
+então, no mesmo intervalo para $\frac{1}{{(1-x)}^2}$. Multiplicando o
+resultado por $x$, obtemos o que queríamos.
 \end{example}
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
 \begin{exercise}
-%While uniform convergence preserves continuity, it does not preserve
-%differentiability.
-Find an explicit example of a sequence of
-differentiable functions on $[-1,1]$ that converge uniformly to
-a function $f$ such that $f$ is not differentiable.
-Hint:
-There are many possibilities.
-The simplest is perhaps to combine $\sabs{x}$ and $\frac{n}{2}x^2 +
-\frac{1}{2n}$.
-Another is to
-consider $\sqrt{x^2+{(\nicefrac{1}{n})}^2}$.  Show that these functions are differentiable,
-converge uniformly, and then show that the limit is not differentiable.
+%Embora a convergência uniforme preserve a continuidade, ela não preserva
+%a diferenciabilidade.
+Encontre um exemplo explícito de uma sequência de funções diferenciáveis
+em $[-1,1]$ que convirja uniformemente para uma função $f$ que não seja
+diferenciável.
+Dica: há muitas possibilidades. Uma das mais simples talvez seja combinar
+$\sabs{x}$ com $\frac{n}{2}x^2 + \frac{1}{2n}$.
+Outra possibilidade é considerar $\sqrt{x^2+{(\nicefrac{1}{n})}^2}$.
+Mostre que essas funções são diferenciáveis, que convergem uniformemente e,
+em seguida, que o limite não é diferenciável.
 \end{exercise}
 
 \begin{exercise}
-Let $f_n(x) \coloneqq \frac{x^n}{n}$.  Show that $\{ f_n \}_{n=1}^\infty$ converges uniformly to
-a differentiable function $f$ on $[0,1]$ (find $f$).  However, show that
+Seja $f_n(x) \coloneqq \frac{x^n}{n}$. Mostre que
+$\{ f_n \}_{n=1}^\infty$ converge uniformemente para uma função
+diferenciável $f$ em $[0,1]$ (determine $f$). Mostre, porém, que
 $f'(1) \neq \lim\limits_{n\to\infty} f_n'(1)$.
 \end{exercise}
 
 %\begin{exnote}
-%Note: The previous two exercises show that
-%we cannot simply swap limits with derivatives, even if the convergence is
-%uniform.  See also \exerciseref{c1uniflim:exercise} below.
+%Nota: os dois exercícios anteriores mostram que não podemos simplesmente
+%trocar a ordem dos limites com derivadas, mesmo quando a convergência é
+%uniforme. Veja também o exercício \exerciseref{c1uniflim:exercise} abaixo.
 %\end{exnote}
 %
 \begin{exercise}
-Let $f \colon [0,1] \to \R$ be Riemann integrable (hence bounded).
-Find $\displaystyle \lim_{n\to\infty} \int_0^1 \frac{f(x)}{n} \,dx$.
+Seja $f \colon [0,1] \to \R$ integrável à Riemann (portanto, limitada).
+Determine $\displaystyle \lim_{n\to\infty} \int_0^1 \frac{f(x)}{n} \,dx$.
 \end{exercise}
 
 \begin{exercise}
-Show
-$\displaystyle \lim_{n\to\infty} \int_1^2 e^{-nx^2} \,dx = 0$.  Feel free to
-use calculus facts about the exponential.
-%what you know about the exponential function from calculus.
+Mostre que
+$\displaystyle \lim_{n\to\infty} \int_1^2 e^{-nx^2} \,dx = 0$. Você pode
+usar fatos sobre a função exponencial conhecidos do cálculo.
+%o que você sabe sobre a função exponencial do cálculo.
 \end{exercise}
 
 \begin{exercise}
-Find an example of a sequence of continuous functions on $(0,1)$ that converges 
-pointwise to a continuous function on $(0,1)$, but the convergence is not
-uniform.
+Encontre um exemplo de uma sequência de funções contínuas em $(0,1)$ que
+converge pontualmente para uma função contínua em $(0,1)$, mas não converge
+uniformemente.
 \end{exercise}
 
 \begin{exnote}
-Note: In the previous exercise, $(0,1)$ was picked for simplicity.  For a
-more challenging exercise, replace $(0,1)$ with $[0,1]$.
+Nota: no exercício anterior, escolhemos $(0,1)$ por simplicidade. Para um
+exercício mais desafiador, substitua $(0,1)$ por $[0,1]$.
 \end{exnote}
 
 \begin{exercise}
-True/False; prove or find a counterexample to the following statement:
-If $\{ f_n \}_{n=1}^\infty$ is a sequence of everywhere discontinuous functions on $[0,1]$
-that converge uniformly to a function $f$, then $f$ is everywhere
-discontinuous.
+Decida se a afirmação seguinte é verdadeira ou falsa; prove-a ou encontre
+um contraexemplo: se $\{ f_n \}_{n=1}^\infty$ é uma sequência de funções
+descontínuas em todos os pontos de $[0,1]$ que converge uniformemente para
+uma função $f$, então $f$ é descontínua em todos os pontos.
 \end{exercise}
 
 \begin{exercise} \label{c1uniflim:exercise}
-For a continuously differentiable function $f \colon [a,b] \to \R$, define
+Para uma função continuamente diferenciável $f \colon [a,b] \to \R$,
+defina
 \begin{equation*}
 \snorm{f}_{C^1} \coloneqq \snorm{f}_{[a,b]} + \snorm{f'}_{[a,b]} .
 \end{equation*}
-Suppose $\{ f_n \}_{n=1}^\infty$ is a sequence of continuously differentiable
-functions such that for every $\epsilon >0$, there exists an $M$
-such that for all $n,k \geq M$, we have
+Suponha que $\{ f_n \}_{n=1}^\infty$ seja uma sequência de funções
+continuamente diferenciáveis tal que, para todo $\epsilon >0$, exista $M$
+com a propriedade de que, para todos $n,k \geq M$,
 \begin{equation*}
 \snorm{f_n-f_k}_{C^1} < \epsilon .
 \end{equation*}
-Show that $\{ f_n \}_{n=1}^\infty$ converges uniformly to some continuously differentiable
-function $f \colon [a,b] \to \R$.
+Mostre que $\{ f_n \}_{n=1}^\infty$ converge uniformemente para alguma
+função continuamente diferenciável $f \colon [a,b] \to \R$.
 \end{exercise}
 
 \begin{exnote}
-Suppose 
-$f \colon [0,1] \to \R$ is Riemann integrable.
-For the following two exercises define 
-the number
+Suponha que $f \colon [0,1] \to \R$ seja integrável à Riemann.
+Para os dois exercícios seguintes, defina o número
 \begin{equation*}
 \snorm{f}_{L^1} \coloneqq 
 \int_0^1 \babs{f(x)}\,dx .
 \end{equation*}
-It is true that $\sabs{f}$ is integrable whenever $f$ is, see
+De fato, $\sabs{f}$ é integrável sempre que $f$ é; veja o exercício
 \exerciseref{exercise:hardabsint}.
-The number is called the \emph{$L^1$-norm}\index{L1-norm@$L^1$-norm} and
-defines another very common type of
-convergence called the
-\emph{$L^1$-convergence}\index{L1-convergence@$L^1$-convergence}.
-It is, however, a bit more subtle.
+Esse número é chamado de \emph{norma $L^1$}\index{L1-norma@$L^1$-norma} e
+define outro tipo muito comum de convergência, chamado
+\emph{convergência em $L^1$}\index{convergência em L1@$L^1$-convergência}.
+Esse conceito, porém, é um pouco mais sutil.
 \end{exnote}
 
 \begin{exercise}
-Suppose $\{ f_n \}_{n=1}^\infty$ is a sequence of Riemann integrable functions on $[0,1]$
-that converges uniformly
-to $0$.  Show that
+Suponha que $\{ f_n \}_{n=1}^\infty$ seja uma sequência de funções
+integráveis à Riemann em $[0,1]$ que converge uniformemente para $0$.
+Mostre que
 \begin{equation*}
 \lim_{n\to\infty} \snorm{f_n}_{L^1} = 0 .
 \end{equation*}
 \end{exercise}
 
 \begin{exercise}
-Find a sequence $\{ f_n \}_{n=1}^\infty$ of Riemann integrable functions 
-on $[0,1]$ converging pointwise to~$0$, but such that
+Encontre uma sequência $\{ f_n \}_{n=1}^\infty$ de funções integráveis à
+Riemann em $[0,1]$ que convirja pontualmente para $0$, mas para a qual
 \begin{equation*}
-\lim_{n\to\infty} \snorm{f_n}_{L^1} \text{ does not exist (is } \infty\text{)}.
+\lim_{n\to\infty} \snorm{f_n}_{L^1} \text{não existe (é } \infty\text{)}.
 \end{equation*}
 \end{exercise}
 
-\begin{exercise}[Hard] \label{exercise:dinisthm}
-Prove \emph{\myindex{Dini's theorem}}:
-Let $f_n \colon [a,b] \to \R$ be a sequence of continuous functions such that
+\begin{exercise}[Difícil] \label{exercise:dinisthm}
+Prove o \emph{\myindex{teorema de Dini}}:
+Seja $f_n \colon [a,b] \to \R$ uma sequência de funções contínuas tal que
 \begin{equation*}
 0 \leq f_{n+1}(x) \leq f_n(x) \leq \cdots \leq f_1(x) 
-\qquad \text{for all } n \in \N.
+\qquad \text{para todo } n \in \N.
 \end{equation*}
-Suppose $\{ f_n \}_{n=1}^\infty$ converges pointwise to $0$.
-Show that $\{ f_n \}_{n=1}^\infty$ converges to zero uniformly.
+Suponha que $\{ f_n \}_{n=1}^\infty$ convirja pontualmente para $0$.
+Mostre que $\{ f_n \}_{n=1}^\infty$ converge uniformemente para zero.
 \end{exercise}
 
 \begin{exercise}
-Suppose $f_n \colon [a,b] \to \R$ is a sequence of continuous
-functions that
-converges pointwise
-to a continuous $f \colon [a,b] \to \R$.  Suppose that
-for every $x \in [a,b]$,
-the sequence $\bigl\{ \babs{f_n(x)-f(x)} \bigr\}_{n=1}^\infty$ is monotone.
-Show that the sequence $\{f_n\}_{n=1}^\infty$ converges uniformly.
+Suponha que $f_n \colon [a,b] \to \R$ seja uma sequência de funções
+contínuas que converge pontualmente para uma função contínua
+$f \colon [a,b] \to \R$. Suponha que, para todo $x \in [a,b]$, a
+sequência $\bigl\{ \babs{f_n(x)-f(x)} \bigr\}_{n=1}^\infty$ seja
+monótona. Mostre que $\{f_n\}_{n=1}^\infty$ converge uniformemente.
 \end{exercise}
 
 \begin{exercise}
 \pagebreak[3]
-Find sequences of Riemann integrable functions $f_n \colon [0,1] \to \R$ such
-that $\{ f_n \}_{n=1}^\infty$ converges to zero pointwise, and such that
+Encontre sequências de funções integráveis à Riemann
+$f_n \colon [0,1] \to \R$ tais que $\{ f_n \}_{n=1}^\infty$ convirja
+pontualmente para zero e
 \begin{enumerate}[a)]
 \item
-$\bigl\{ \int_0^1 f_n \bigr\}_{n=1}^\infty$ increases without bound,
+$\bigl\{ \int_0^1 f_n \bigr\}_{n=1}^\infty$ cresça sem limite,
 \item
-$\bigl\{ \int_0^1 f_n \bigr\}_{n=1}^\infty$ is the sequence $-1,1,-1,1,-1,1, \ldots$.
+$\bigl\{ \int_0^1 f_n \bigr\}_{n=1}^\infty$ seja a sequência $-1,1,-1,1,-1,1, \ldots$.
 \end{enumerate}
 \end{exercise}
 
 \begin{exnote}
-It is possible to define a 
-\emph{\myindex{joint limit}} of a double sequence
-$\{ x_{n,m} \}_{n,m=1}^\infty$ of real
-numbers (that is a function from $\N \times \N$ to $\R$).
-We say $L$ is the joint limit of $\{ x_{n,m} \}_{n,m=1}^\infty$ and write
+É possível definir um
+\emph{\myindex{limite conjunto}} de uma sequência dupla
+$\{ x_{n,m} \}_{n,m=1}^\infty$ de números reais (isto é, de uma função
+de $\N \times \N$ em $\R$).
+Dizemos que $L$ é o limite conjunto de $\{ x_{n,m} \}_{n,m=1}^\infty$ e escrevemos
 \begin{equation*}
 \lim_{\substack{n\to\infty\\m\to\infty}}
 x_{n,m} = L ,
 \qquad
-\text{or}
+\text{ou}
 \qquad
 \lim_{(n,m) \to \infty}
 x_{n,m} = L ,
 \end{equation*}
-if for every $\epsilon > 0$, there
-exists an $M$ such that if $n \geq M$ and $m \geq M$, then
+se, para todo $\epsilon > 0$, existe $M$ tal que, se $n \geq M$ e
+$m \geq M$, então
 $\sabs{x_{n,m} - L} < \epsilon$.
 \end{exnote}
 
 \begin{exercise}
-Suppose the joint limit (see above) of $\{ x_{n,m} \}_{n,m=1}^\infty$ is $L$, and suppose
-that for all $n$, $\lim\limits_{m \to \infty} x_{n,m}$ exists,
-and for all $m$, $\lim\limits_{n \to \infty} x_{n,m}$ exists.  Then show
+Suponha que o limite conjunto (definido acima) de
+$\{ x_{n,m} \}_{n,m=1}^\infty$ seja $L$, e que, para todo $n$,
+$\lim\limits_{m \to \infty} x_{n,m}$ exista e, para todo $m$,
+$\lim\limits_{n \to \infty} x_{n,m}$ exista. Mostre então que
 $\lim\limits_{n\to\infty}\lim\limits_{m \to \infty} x_{n,m}
 =
 \lim\limits_{m\to\infty}\lim\limits_{n \to \infty} x_{n,m} = L$.
 \end{exercise}
 
 \begin{exercise}
-A joint limit (see above) does not mean the iterated limits exist.
-Consider $x_{n,m} \coloneqq \frac{{(-1)}^{n+m}}{\min \{n,m \}}$.
+Ter um limite conjunto (definido acima) não significa que os limites iterados existam.
+Considere $x_{n,m} \coloneqq \frac{{(-1)}^{n+m}}{\min \{n,m \}}$.
 \begin{enumerate}[a)]
 \item
-Show that for no $n$ does
-$\lim\limits_{m \to \infty} x_{n,m}$ exist, and for no $m$
-does 
-$\lim\limits_{n \to \infty} x_{n,m}$ exist.  So neither
-$\lim\limits_{n\to\infty}\lim\limits_{m \to \infty} x_{n,m}$ nor
-$\lim\limits_{m\to\infty}\lim\limits_{n \to \infty} x_{n,m}$ makes any sense
-at all.
+Mostre que os limites $\lim\limits_{m \to \infty} x_{n,m}$ não existem
+para nenhum $n$ e que os limites $\lim\limits_{n \to \infty} x_{n,m}$
+não existem para nenhum $m$. Portanto, nenhum dos limites iterados
+$\lim\limits_{n\to\infty}\lim\limits_{m \to \infty} x_{n,m}$ e
+$\lim\limits_{m\to\infty}\lim\limits_{n \to \infty} x_{n,m}$ está definido.
 \item
-Show that the joint limit of $\{ x_{n,m} \}_{n,m=1}^\infty$ exists and equals 0.
+Mostre que o limite conjunto de $\{ x_{n,m} \}_{n,m=1}^\infty$ existe e é igual a 0.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-We say that a sequence of functions $f_n \colon \R \to \R$
-\emph{\myindex{converges uniformly on compact subsets}}
-\index{uniform convergence on compact subsets}
-if for every $k \in \N$,
-the sequence $\{ f_n \}_{n=1}^\infty$ converges uniformly on $[-k,k]$.
+Dizemos que uma sequência de funções $f_n \colon \R \to \R$
+\emph{\myindex{converge uniformemente nos subconjuntos compactos}}
+\index{convergência uniforme nos subconjuntos compactos}
+se, para todo $k \in \N$, a sequência $\{ f_n \}_{n=1}^\infty$
+converge uniformemente em $[-k,k]$.
 \begin{enumerate}[a)]
 \item
-Prove that if $f_n \colon \R \to \R$ is a sequence of
-continuous functions converging uniformly on compact subsets, then
-the limit is continuous.
+Prove que, se $f_n \colon \R \to \R$ é uma sequência de funções
+contínuas que converge uniformemente nos subconjuntos compactos, então o
+limite é contínuo.
 \item 
-Prove that if $f_n \colon \R \to \R$ is a sequence of
-functions Riemann integrable on every closed and bounded interval $[a,b]$,
-and converging uniformly on compact subsets to an $f \colon \R \to \R$,
-then for every interval $[a,b]$, we have $f \in \sR\bigl([a,b]\bigr)$, and
+Prove que, se $f_n \colon \R \to \R$ é uma sequência de funções
+integráveis à Riemann em todo intervalo fechado e limitado $[a,b]$ e que
+converge uniformemente nos subconjuntos compactos para uma função
+$f \colon \R \to \R$, então, para todo intervalo $[a,b]$,
+$f \in \sR\bigl([a,b]\bigr)$ e
 $\int_a^b f = \lim\limits_{n\to\infty} \int_a^b f_n$.
 \end{enumerate}
 \end{exercise}
 
-\begin{exercise}[Challenging]
-Find a sequence of continuous functions $f_n \colon [0,1] \to \R$ that
-converge to the popcorn function $f \colon [0,1] \to \R$, that is, the
-function such that $f(\nicefrac{p}{q}) \coloneqq \nicefrac{1}{q}$ (if $\nicefrac{p}{q}$
-is in lowest terms) and $f(x) \coloneqq 0$ if $x$ is not rational (note
-that $f(0) = f(1) = 1$),
-see \exampleref{popcornfunction:example}.
-So a pointwise limit of continuous functions can have a dense set of
-discontinuities.  See also the next exercise.
+\begin{exercise}[Desafiador]
+Encontre uma sequência de funções contínuas $f_n \colon [0,1] \to \R$
+que convirja para a \myindex{função pipoca} $f \colon [0,1] \to \R$,
+definida por $f(\nicefrac{p}{q}) \coloneqq \nicefrac{1}{q}$ (quando
+$\nicefrac{p}{q}$ está na forma irredutível) e $f(x) \coloneqq 0$ quando
+$x$ é irracional (note que $f(0) = f(1) = 1$); veja o
+\exampleref{popcornfunction:example}.
+Assim, o limite pontual de funções contínuas pode ter um conjunto denso de
+descontinuidades. Veja também o exercício seguinte.
 \end{exercise}
 
-\begin{exercise}[Challenging]
-The \myindex{Dirichlet function}
-$f \colon [0,1] \to \R$, that is, the
-function such that $f(x) \coloneqq 1$ if $x \in \Q$
-and $f(x) \coloneqq 0$ if $x \notin \Q$,
-is not the pointwise limit of
-continuous functions, although this is difficult to show.
-Prove, however, that $f$ is a pointwise limit of functions that are themselves
-pointwise limits of
-continuous functions.
+\begin{exercise}[Desafiador]
+A \myindex{função de Dirichlet}
+$f \colon [0,1] \to \R$, definida por $f(x) \coloneqq 1$ se $x \in \Q$
+e $f(x) \coloneqq 0$ se $x \notin \Q$, não é limite pontual de funções
+contínuas, embora isso seja difícil de provar.
+Prove, porém, que $f$ é limite pontual de funções que, por sua vez, são
+limites pontuais de funções contínuas.
 \end{exercise}
 
 \begin{exercise}
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Find a sequence of Lipschitz continuous functions on $[0,1]$
-whose uniform limit is $\sqrt{x}$, which is a non-Lipschitz function.
+Encontre uma sequência de funções Lipschitz contínuas em $[0,1]$ cujo
+limite uniforme seja $\sqrt{x}$, que não é uma função Lipschitz.
 \item
-On the other hand, show that if $f_n \colon S \to \R$ are Lipschitz
-with a uniform constant $K$ (meaning all of them satisfy the definition
-with the same constant) and $\{ f_n \}_{n=1}^\infty$ converges pointwise
-to $f \colon S \to \R$,
-then the limit $f$ is a Lipschitz continuous function
-with Lipschitz constant $K$.
+Por outro lado, mostre que, se $f_n \colon S \to \R$ são funções Lipschitz
+com uma constante uniforme $K$ (isto é, todas satisfazem a definição com
+a mesma constante) e $\{ f_n \}_{n=1}^\infty$ converge pontualmente para
+$f \colon S \to \R$, então o limite $f$ é uma função Lipschitz contínua
+com constante de Lipschitz $K$.
 \end{enumerate}
 \end{exercise}
 
-\begin{exercise}[requires \sectionref{sec:moreonseries}]
-If $\sum_{n=0}^\infty c_n {(x-a)}^n$ has radius of convergence $\rho$,
-show that the term by term integral
-$\sum_{n=1}^\infty \frac{c_{n-1}}{n} {(x-a)}^n$ has radius of convergence
-$\rho$.  Note that we only proved above that the radius of convergence was
-at least~$\rho$.
+\begin{exercise}[requer \sectionref{sec:moreonseries}]
+Se $\sum_{n=0}^\infty c_n {(x-a)}^n$ tem raio de convergência $\rho$,
+mostre que a integral termo a termo
+$\sum_{n=1}^\infty \frac{c_{n-1}}{n} {(x-a)}^n$ tem raio de convergência
+$\rho$. Observe que, acima, provamos apenas que o raio de convergência é
+pelo menos $\rho$.
 \end{exercise}
 
-\begin{exercise}[requires \sectionref{sec:moreonseries} and \sectionref{sec:taylor}]
+\begin{exercise}[requer \sectionref{sec:moreonseries} e \sectionref{sec:taylor}]
 \pagebreak[3]
-Suppose $f(x) \coloneqq \sum_{n=0}^\infty c_n {(x-a)}^n$ converges in $(a-\rho,a+\rho)$.
+Suponha que $f(x) \coloneqq \sum_{n=0}^\infty c_n {(x-a)}^n$ convirja em $(a-\rho,a+\rho)$.
 \begin{enumerate}[a)]
 \item
-Suppose that $f^{(k)}(a) = 0$ for all $k=0,1,2,3,\ldots$.  Prove that
-$c_n = 0$ for all $n$, or in other words, 
-$f(x) = 0$ for all $x \in (a-\rho,a+\rho)$.
+Suponha que $f^{(k)}(a) = 0$ para todo $k=0,1,2,3,\ldots$. Prove que
+$c_n = 0$ para todo $n$ ou, em outras palavras, que
+$f(x) = 0$ para todo $x \in (a-\rho,a+\rho)$.
 \item
-Using part a) prove a version of what is called the
-\myquote{identity theorem for analytic functions}:  If there exists an $\epsilon > 0$
-such that $f(x) = 0$ for all $x \in (a-\epsilon, a+\epsilon)$, then
-$f(x) = 0$ for all $x \in (a-\rho,a+\rho)$.
+Usando o item a), prove uma versão do chamado
+\myquote{teorema da identidade para funções analíticas}: se existe
+$\epsilon > 0$ tal que $f(x) = 0$ para todo $x \in (a-\epsilon, a+\epsilon)$,
+então $f(x) = 0$ para todo $x \in (a-\rho,a+\rho)$.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Let $f_n(x) \coloneqq \frac{x}{1+{(nx)}^2}$.  Notice that $f_n$ are differentiable
-functions.
+Seja $f_n(x) \coloneqq \frac{x}{1+{(nx)}^2}$. Observe que $f_n$ são
+funções diferenciáveis.
 \begin{enumerate}[a)]
 \item
-Show that $\{ f_n \}_{n=1}^\infty$ converges uniformly to 0.
+Mostre que $\{ f_n \}_{n=1}^\infty$ converge uniformemente para 0.
 \item
-Show that $\sabs{f_n'(x)} \leq 1$ for all $x$ and all $n$.
+Mostre que $\sabs{f_n'(x)} \leq 1$ para todo $x$ e todo $n$.
 \item
-Show that $\{ f_n' \}_{n=1}^\infty$ converges pointwise to a function discontinuous at
-the origin.
+Mostre que $\{ f_n' \}_{n=1}^\infty$ converge pontualmente para uma
+função descontínua na origem.
 \item
-Let $\{ a_n \}_{n=1}^\infty$ be an enumeration of the rational numbers.
-Define
+Seja $\{ a_n \}_{n=1}^\infty$ uma enumeração dos números racionais.
+Defina
 \begin{equation*}
 g_n(x) \coloneqq \sum_{k=1}^n 2^{-k} f_n(x-a_k) .
 \end{equation*}
-Show that $\{ g_n \}_{n=1}^\infty$ converges uniformly to 0.
+Mostre que $\{ g_n \}_{n=1}^\infty$ converge uniformemente para 0.
 \item
-Show that $\{ g_n' \}_{n=1}^\infty$ converges pointwise to a function $\psi$ that
-is discontinuous at every rational number and continuous at every
-irrational number.  In particular, $\lim\limits_{n\to\infty} g_n'(x) \neq 0$ for
-every rational number~$x$.
+Mostre que $\{ g_n' \}_{n=1}^\infty$ converge pontualmente para uma função
+$\psi$ que é descontínua em todo número racional e contínua em todo
+irracional. Em particular, $\lim\limits_{n\to\infty} g_n'(x) \neq 0$ para
+todo número racional $x$.
 \end{enumerate}
 \end{exercise}
 
-\begin{exercise}[requires \sectionref{sec:impropriemann}]
-Show that uniform convergence is not enough to pass the limit through
-improper integrals over infinite intervals.
-That is, find a sequence of functions $f_n \colon \R \to
-\R$ Riemann integrable on every bounded interval,
-converging uniformly to zero, and such that
-$\int_{-\infty}^\infty f_n = 1$ for every $n$.
+\begin{exercise}[requer \sectionref{sec:impropriemann}]
+Mostre que a convergência uniforme não basta para passar o limite através
+de integrais impróprias em intervalos infinitos.
+Isto é, encontre uma sequência de funções $f_n \colon \R \to \R$,
+integráveis à Riemann em todo intervalo limitado, que convirja
+uniformemente para zero e satisfaça $\int_{-\infty}^\infty f_n = 1$ para
+todo $n$.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{Picard's theorem}
+\section{Teorema de Picard}
 \label{sec:picard}
 
 %mbxINTROSUBSECTION
 
-\sectionnotes{1--2 lectures (can be safely skipped)}
+\sectionnotes{1--2 aulas (pode ser omitida sem prejuízo)}
 
-A first semester course in analysis should have
-a \emph{pi\`ece de r\'esistance} caliber
-theorem.  We pick a theorem whose proof combines everything we have
-learned.  It is more sophisticated than the fundamental theorem of calculus,
-the first highlight theorem of this course.  The
-theorem we are talking about is Picard's
-theorem%
-\footnote{Named for the French mathematician
+Um curso introdutório de análise deve incluir um teorema de grande destaque.
+Escolhemos um resultado cuja demonstração combina tudo o que aprendemos.
+Ele é mais sofisticado que o teorema fundamental do cálculo, o primeiro
+grande resultado marcante deste curso. Trata-se do teorema de Picard, que
+garante existência e unicidade de solução para uma equação diferencial
+ordinária. Tanto o enunciado quanto a demonstração são belos exemplos do
+que podemos fazer com o conteúdo estudado até aqui. O teorema também mostra
+uma aplicação da análise: equações diferenciais são indispensáveis nas
+mais diversas áreas da ciência.\footnote{Nomeado em homenagem ao
+matemático francês
 \href{https://en.wikipedia.org/wiki/\%C3\%89mile_Picard}{Charles \'Emile Picard}
 (1856--1941).}
-on existence and uniqueness of a solution to an ordinary differential equation.
-Both the statement and the proof are beautiful examples of what one can do
-with the material we have mastered so far.  It is also a good example of how analysis is
-applied, as differential equations are indispensable in science of every
-stripe.
 
-\subsection{First order ordinary differential equation}
+\subsection{Equação diferencial ordinária de primeira ordem}
 
-Modern science is described in the language of
-\emph{differential equations}\index{differential equation}.
-That is, equations involving not only the unknown, but also its
-derivatives.  The simplest nontrivial form of a differential equation is
-the \emph{\myindex{first order ordinary differential equation}}
-\index{ordinary differential equation}
+A ciência moderna é descrita na linguagem das
+\emph{equações diferenciais}\index{equação diferencial},
+isto é, equações que envolvem não só a incógnita, mas também suas
+derivadas. A forma não trivial mais simples de uma equação diferencial é a
+\emph{\myindex{equação diferencial ordinária de primeira ordem}}
+\index{equação diferencial ordinária}:
 \begin{equation*}
 y' = F(x,y) .
 \end{equation*}
-Generally, we also specify an \emph{\myindex{initial condition}}
-$y(x_0)=y_0$.  The solution of
-the equation is a function $y(x)$ such that 
-$y(x_0)=y_0$ and $y'(x) = F\bigl(x,y(x)\bigr)$.  See
-\figureref{fig:sampleslopes} for a graphical representation of
-this equation called a
-\emph{\myindex{slope field}}.
+Em geral, também especificamos uma \emph{\myindex{condição inicial}}
+$y(x_0)=y_0$. Uma solução da equação é uma função $y(x)$ tal que
+$y(x_0)=y_0$ e $y'(x) = F\bigl(x,y(x)\bigr)$. A
+\figureref{fig:sampleslopes} mostra uma representação gráfica da equação,
+chamada \emph{\myindex{campo de direções}}.
 \begin{myfigureht}
 \myincludegraphics{sampleslopes}{%
-A piece of the xy-plane near the origin with
-a rectangular grid of slopes.  On the left half of the plot
-the slopes go downward, but become flatter as we go up.
-On the right half of the plot they point upward, and
-again become flatter as we go up.
-A point (x sub 0, y sub 0) is given in the first quadrant.
-A graph of a solution is drawn that starts above
-the x-axis goes down and then goes back up and through the
-given point.}
-\caption{A \emph{slope field} giving the slope $F(x,y)$ at each point,
-in this case $F(x,y)=x(1-y)$.  A solution is drawn going through the point
-$(x_0,y_0)=(1,0.3)$, notice how it follows the slopes.\label{fig:sampleslopes}}
+Trecho do plano $xy$ próximo à origem com uma malha retangular de pequenos
+segmentos que indicam inclinações. Na metade esquerda do gráfico, os
+segmentos apontam para baixo, mas ficam mais horizontais à medida que
+subimos. Na metade direita, apontam para cima e também ficam mais
+horizontais à medida que subimos. Um ponto $(x_0,y_0)$ aparece no primeiro
+quadrante. Está desenhado o gráfico de uma solução, que começa acima do
+eixo $x$, desce, volta a subir e passa pelo ponto indicado.}
+\caption{Um \emph{campo de direções} que indica a inclinação $F(x,y)$ em
+cada ponto; neste caso, $F(x,y)=x(1-y)$. Uma solução passa pelo ponto
+$(x_0,y_0)=(1,0.3)$ e acompanha as inclinações.\label{fig:sampleslopes}}
 \end{myfigureht}
 
-When $F$ involves only the $x$ variable, the solution is given by the
-fundamental theorem of calculus.  On the other hand, when $F$ depends
-on both $x$ and $y$, we need far more firepower.  It is not always
-true that a solution exists, and if it does, that it is the unique solution.
-Picard's theorem gives us certain sufficient conditions for existence
-and uniqueness.
+Quando $F$ depende apenas da variável $x$, a solução é dada pelo teorema
+fundamental do cálculo. Por outro lado, quando $F$ depende de $x$ e de $y$,
+precisamos de ferramentas bem mais poderosas. Nem sempre existe uma
+solução e, quando existe, ela pode não ser única. O teorema de Picard
+fornece condições suficientes para a existência e a unicidade.
 
-\subsection{The theorem}
+\subsection{O teorema}
 
-We need a definition of continuity in two variables.  A point in the
-plane $\R^2 = \R \times \R$ is denoted by an ordered pair $(x,y)$.
-For simplicity,
-we give the following sequential definition of continuity.
+Precisamos de uma definição de continuidade para funções de duas variáveis.
+Um ponto do plano $\R^2 = \R \times \R$ é indicado por um par ordenado
+$(x,y)$. Por simplicidade, daremos a seguinte definição sequencial de
+continuidade.
 
 \begin{defn}
-Let $U \subset \R^2$ be a set, $F \colon U \to \R$ a function,
-and $(x,y) \in U$ a point.  The function $F$ is
-\emph{continuous at $(x,y)$}\index{continuous function of two variables}
-if for every sequence
-$\bigl\{ (x_n,y_n) \bigr\}_{n=1}^\infty$ of points in $U$ such that
-$\lim_{n\to\infty} x_n = x$ and 
-$\lim_{n\to\infty} y_n = y$, we have 
+Sejam $U \subset \R^2$ um conjunto, $F \colon U \to \R$ uma função e
+$(x,y) \in U$ um ponto. Dizemos que $F$ é
+\emph{contínua em $(x,y)$}\index{função contínua de duas variáveis}
+se, para toda sequência
+$\bigl\{ (x_n,y_n) \bigr\}_{n=1}^\infty$ de pontos de $U$ tal que
+$\lim_{n\to\infty} x_n = x$ e $\lim_{n\to\infty} y_n = y$, temos
 \begin{equation*}
 \lim_{n \to \infty} F(x_n,y_n) = 
 F(x,y) .
 \end{equation*}
-We say $F$ is \emph{continuous} if it is continuous at all points in $U$.
+Dizemos que $F$ é \emph{contínua} se for contínua em todos os pontos de $U$.
 \end{defn}
 
-\begin{thm}[Picard's theorem on existence and uniqueness]%
-\index{existence and uniqueness theorem}\index{Picard's theorem}%
+\begin{thm}[Teorema de Picard sobre existência e unicidade]%
+\index{teorema de existência e unicidade}\index{teorema de Picard}%
 \label{thm:fs:picard}
-Let $I, J \subset \R$ be closed bounded intervals, 
-let $I^\circ$ and $J^\circ$ be their interiors%
-\footnote{By interior of $[a,b]$, we mean $(a,b)$.},
-and
-let $(x_0,y_0) \in I^\circ \times J^\circ$.
-Suppose $F \colon I \times J \to \R$ is continuous
-and Lipschitz in the second variable, that is, there exists
-an $L \in \R$ such that
+Sejam $I, J \subset \R$ intervalos fechados e limitados,
+$I^\circ$ e $J^\circ$ seus interiores%
+\footnote{O interior de $[a,b]$ é $(a,b)$.},
+e seja $(x_0,y_0) \in I^\circ \times J^\circ$.
+Suponha que $F \colon I \times J \to \R$ seja contínua e Lipschitz na
+segunda variável, isto é, que exista $L \in \R$ tal que
 \begin{equation*}
 \babs{F(x,y) - F(x,z)} \leq L \sabs{y-z}
-\qquad \text{for all } y,z \in J, x \in I .
+\qquad \text{para todos } y,z \in J, x \in I .
 \end{equation*}
-Then there exists an $h > 0$ such that $[x_0-h,x_0+h] \subset I$ and a unique differentiable
-function $f \colon [x_0 - h, x_0 + h] \to J \subset \R$ such that
+Então existe $h > 0$ tal que $[x_0-h,x_0+h] \subset I$ e existe uma única
+função diferenciável $f \colon [x_0 - h, x_0 + h] \to J \subset \R$ que
+satisfaz
 \begin{equation} \label{picard:diffeq}
-f'(x) = F\bigl(x,f(x)\bigr) \qquad \text{and} \qquad f(x_0) = y_0.
+f'(x) = F\bigl(x,f(x)\bigr) \qquad \text{e} \qquad f(x_0) = y_0.
 \end{equation}
 \end{thm}
 
 \begin{proof}
 \pagebreak[2]
-Suppose we could find a solution $f$.  Using the fundamental
-theorem of calculus, we integrate the equation 
-$f'(x) = F\bigl(x,f(x)\bigr)$, $f(x_0) = y_0$, and write \eqref{picard:diffeq}
-as the integral equation
+Suponha que possamos encontrar uma solução $f$. Usando o teorema
+fundamental do cálculo, integramos a equação
+$f'(x) = F\bigl(x,f(x)\bigr)$, com $f(x_0) = y_0$, e reescrevemos
+\eqref{picard:diffeq} como a equação integral
 \begin{equation} \label{picard:inteq}
 f(x) = y_0 + \int_{x_0}^x F\bigl(t,f(t)\bigr)\,dt .
 \end{equation}
-The idea of our proof is that we try to plug in approximations to
-a solution to the right-hand side of \eqref{picard:inteq} to get better approximations on the
-left-hand side of  \eqref{picard:inteq}.  We hope that in the end the sequence 
-converges and solves
-\eqref{picard:inteq} and hence \eqref{picard:diffeq}.
-The technique below is called \emph{\myindex{Picard iteration}},
-and the individual functions $f_k$ are called the 
-\emph{Picard iterates}\index{Picard iterate}.
+Nossa ideia é inserir aproximações da solução no lado direito de
+\eqref{picard:inteq}, obtendo aproximações melhores no lado esquerdo de
+\eqref{picard:inteq}. Esperamos que, ao final, a sequência convirja e
+satisfaça \eqref{picard:inteq} e, portanto, \eqref{picard:diffeq}.
+A técnica a seguir é chamada de \emph{\myindex{iteração de Picard}},
+e cada função $f_k$ é chamada de \emph{iterado de Picard}\index{iterado de Picard}.
 
-Without loss of generality, suppose $x_0 = 0$ (exercise below).
-Another
-exercise tells us that $F$ is bounded as it is continuous.
-Therefore, pick some $M > 0$ so that 
-$\babs{F(x,y)} \leq M$ for all $(x,y) \in I\times J$.
-Pick $\alpha > 0$ such that
-$[-\alpha,\alpha] \subset I$ and $[y_0-\alpha, y_0 + \alpha] \subset J$.
-Define
+Sem perda de generalidade, suponha que $x_0 = 0$ (veja o exercício abaixo).
+Outro exercício mostra que $F$ é limitada, pois é contínua. Portanto,
+escolha $M > 0$ tal que
+$\babs{F(x,y)} \leq M$ para todo $(x,y) \in I\times J$.
+Escolha $\alpha > 0$ tal que
+$[-\alpha,\alpha] \subset I$ e $[y_0-\alpha, y_0 + \alpha] \subset J$.
+Defina
 \begin{equation*}
 h \coloneqq \min \left\{ \alpha, \frac{\alpha}{M+L\alpha} \right\} .
 \end{equation*}
-Observe
+Observe que
 $[-h,h] \subset I$.
 
-Set $f_0(x) \coloneqq y_0$.
-We define $f_k$ inductively.
-Assuming $f_{k-1}([-h,h]) \subset [y_0-\alpha,y_0+\alpha]$,
-we see 
-$F\bigl(t,f_{k-1}(t)\bigr)$ is
-a well-defined function of $t$ for $t \in [-h,h]$.
-If $f_{k-1}$ is continuous
-on $[-h,h]$, then
-$F\bigl(t,f_{k-1}(t)\bigr)$ is
-continuous as
-a function of $t$ on $[-h,h]$ (left as an exercise).
-Define
+Defina $f_0(x) \coloneqq y_0$.
+Definimos $f_k$ por indução.
+Supondo que $f_{k-1}([-h,h]) \subset [y_0-\alpha,y_0+\alpha]$,
+vemos que $F\bigl(t,f_{k-1}(t)\bigr)$ está bem definida para
+$t \in [-h,h]$.
+Se $f_{k-1}$ for contínua em $[-h,h]$, então
+$F\bigl(t,f_{k-1}(t)\bigr)$ também será contínua como função de $t$ em
+$[-h,h]$ (deixamos essa verificação como exercício).
+Defina
 \begin{equation*}
 f_k(x) \coloneqq y_0+ \int_{0}^x F\bigl(t,f_{k-1}(t)\bigr)\,dt ,
 \end{equation*}
-and $f_k$ is continuous on $[-h,h]$ by the fundamental theorem of calculus.
-To see that $f_k$ maps $[-h,h]$ to $[y_0-\alpha,y_0+\alpha]$, we compute for
-$x \in [-h,h]$
+e $f_k$ é contínua em $[-h,h]$ pelo teorema fundamental do cálculo.
+Para verificar que $f_k$ leva $[-h,h]$ em $[y_0-\alpha,y_0+\alpha]$,
+calculemos, para $x \in [-h,h]$,
 \begin{equation*}
 \sabs{f_k(x) - y_0} = 
 \abs{\int_{0}^x F\bigl(t,f_{k-1}(t)\bigr)\,dt }
@@ -1692,16 +1624,15 @@ M
 \frac{\alpha}{M+L\alpha}
 \leq \alpha .
 \end{equation*}
-We next define $f_{k+1}$ using $f_k$ and so on.
-Thus we have inductively defined a sequence $\{ f_k \}_{k=1}^\infty$
-of continuous functions.
-We need to show that it converges to a function $f$ that solves
-the equation~\eqref{picard:inteq} and therefore~\eqref{picard:diffeq}.
+Em seguida, definimos $f_{k+1}$ usando $f_k$ e assim por diante.
+Desse modo, definimos por indução uma sequência $\{ f_k \}_{k=1}^\infty$
+de funções contínuas.
+Precisamos mostrar que ela converge para uma função $f$ que satisfaça
+\eqref{picard:inteq} e, portanto, \eqref{picard:diffeq}.
 
-We wish to show that the sequence $\{ f_k \}_{k=1}^\infty$ converges uniformly
-to some function on $[-h,h]$.  First, for $t \in [-h,h]$,
-we have the following
-useful bound
+Queremos mostrar que a sequência $\{ f_k \}_{k=1}^\infty$ converge
+uniformemente para alguma função em $[-h,h]$. Primeiro, para
+$t \in [-h,h]$, temos a seguinte estimativa útil:
 \begin{equation*}
 \Babs{F\bigl(t,f_{n}(t)\bigr) - 
 F\bigl(t,f_{k}(t)\bigr)}
@@ -1710,10 +1641,10 @@ L \babs{f_n(t)-f_k(t)}
 \leq
 L \snorm{f_n-f_k}_{[-h,h]} ,
 \end{equation*}
-where $\snorm{f_n-f_k}_{[-h,h]}$ is the uniform norm,
-that is, the supremum of $\babs{f_n(t)-f_k(t)}$ for $t \in [-h,h]$.
-Now note that $\sabs{x} \leq h \leq \frac{\alpha}{M+L\alpha}$.
-Therefore,
+em que $\snorm{f_n-f_k}_{[-h,h]}$ é a norma uniforme, isto é, o supremo
+de $\babs{f_n(t)-f_k(t)}$ para $t \in [-h,h]$.
+Agora observe que $\sabs{x} \leq h \leq \frac{\alpha}{M+L\alpha}$.
+Logo,
 \begin{equation*}
 \begin{split}
 \babs{f_n(x) - f_k(x)}
@@ -1742,39 +1673,39 @@ L
 \snorm{f_{n-1}-f_{k-1}}_{[-h,h]} .
 \end{split}
 \end{equation*}
-Let $C \coloneqq \frac{L\alpha}{M+L\alpha}$ and note that $C < 1$.
-Taking supremum on the left-hand side we get
+Defina $C \coloneqq \frac{L\alpha}{M+L\alpha}$ e observe que $C < 1$.
+Tomando o supremo do lado esquerdo, obtemos
 \begin{equation*}
 \snorm{f_n-f_k}_{[-h,h]} \leq C \snorm{f_{n-1}-f_{k-1}}_{[-h,h]} .
 \end{equation*}
-Without loss of generality,
-suppose $n \geq k$.  Then by \hyperref[induction:thm]{induction} we can show 
+Sem perda de generalidade, suponha que $n \geq k$. Então, por
+\hyperref[induction:thm]{indução}, podemos mostrar que
 \begin{equation*}
 \snorm{f_n-f_k}_{[-h,h]} \leq C^{k} \snorm{f_{n-k}-f_{0}}_{[-h,h]} .
 \end{equation*}
-For $x \in [-h,h]$, we have
+Para $x \in [-h,h]$, temos
 \begin{equation*}
 \babs{f_{n-k}(x)-f_{0}(x)}
 =
 \babs{f_{n-k}(x)-y_0}
 \leq \alpha .
 \end{equation*}
-Therefore,
+Portanto,
 \begin{equation*}
 \snorm{f_n-f_k}_{[-h,h]} \leq C^{k} \snorm{f_{n-k}-f_{0}}_{[-h,h]} \leq C^{k} \alpha .
 \end{equation*}
-As $C < 1$, $\{f_n\}_{n=1}^\infty$ is uniformly Cauchy.
-By \propref{prop:uniformcauchy}, $\{ f_n \}_{n=1}^\infty$
-converges uniformly on $[-h,h]$ to some function $f \colon [-h,h] \to \R$.
-The function $f$ is the uniform limit of continuous functions and thus
-continuous.  Furthermore, since $f_n\bigl([-h,h]\bigr) \subset
-[y_0-\alpha,y_0+\alpha]$ for all $n$,
-then $f\bigl([-h,h]\bigr) \subset [y_0-\alpha,y_0+\alpha]$
-(why?).
+Como $C < 1$, $\{f_n\}_{n=1}^\infty$ é uniformemente de Cauchy.
+Pela \propref{prop:uniformcauchy}, $\{ f_n \}_{n=1}^\infty$
+converge uniformemente em $[-h,h]$ para alguma função
+$f \colon [-h,h] \to \R$.
+Como limite uniforme de funções contínuas, $f$ é contínua. Além disso,
+como $f_n\bigl([-h,h]\bigr) \subset [y_0-\alpha,y_0+\alpha]$ para todo
+$n$, temos $f\bigl([-h,h]\bigr) \subset [y_0-\alpha,y_0+\alpha]$
+(por quê?).
 
 
-We now need to show that $f$ solves \eqref{picard:inteq}.
-First, as before, we notice
+Agora precisamos mostrar que $f$ satisfaz \eqref{picard:inteq}.
+Primeiro, como antes, observamos que
 \begin{equation*}
 \Babs{F\bigl(t,f_{n}(t)\bigr) - 
 F\bigl(t,f(t)\bigr)}
@@ -1783,11 +1714,11 @@ L \babs{f_n(t)-f(t)}
 \leq
 L \snorm{f_n-f}_{[-h,h]} .
 \end{equation*}
-As $\snorm{f_n-f}_{[-h,h]}$ converges to zero,
-$F\bigl(t,f_n(t)\bigr)$ converges uniformly to $F\bigl(t,f(t)\bigr)$
-for $t \in [-h,h]$.  Hence, for $x \in [-h,h]$
-the convergence is uniform %(why?)
-for $t \in [0,x]$ (or $[x,0]$ if $x < 0$).  Therefore,
+Como $\snorm{f_n-f}_{[-h,h]}$ converge a zero,
+$F\bigl(t,f_n(t)\bigr)$ converge uniformemente para $F\bigl(t,f(t)\bigr)$
+quando $t \in [-h,h]$. Logo, para $x \in [-h,h]$, a convergência também
+é uniforme % (por quê?)
+para $t \in [0,x]$ (ou em $[x,0]$, se $x < 0$). Portanto,
 \begin{align*}
 y_0
 +
@@ -1805,7 +1736,7 @@ y_0
 +
 \int_0^{x}
 \lim_{n\to\infty} F\bigl(t,f_n(t)\bigr)\,dt
-& & \text{(by continuity of } F\text{)}
+& & \text{(pela continuidade de } F\text{)}
 \\
 & =
 \lim_{n\to\infty} 
@@ -1815,7 +1746,7 @@ y_0
 \int_0^{x}
 F\bigl(t,f_n(t)\bigr)\,dt
 \right)
-& & \text{(by uniform convergence)}
+& & \text{(pela convergência uniforme)}
 \\
 & =
 \lim_{n\to\infty} 
@@ -1824,15 +1755,15 @@ f_{n+1}(x)
 f(x) .
 & &
 \end{align*}
-We apply the fundamental theorem of calculus (\thmref{thm:FTCv2}) to show that
-$f$ is differentiable and its derivative is $F\bigl(x,f(x)\bigr)$.  It is obvious
-that $f(0) = y_0$.
+Aplicamos o teorema fundamental do cálculo (\thmref{thm:FTCv2}) para
+mostrar que $f$ é diferenciável e sua derivada é $F\bigl(x,f(x)\bigr)$.
+É imediato que $f(0) = y_0$.
 
-Finally, what is left to do is to show uniqueness.  Suppose $g \colon [-h,h]
-\to J \subset \R$ is another solution.
-As before we use the fact that
+Por fim, resta provar a unicidade. Suponha que
+$g \colon [-h,h] \to J \subset \R$ seja outra solução.
+Como antes, usamos o fato de que
 $\babs{F\bigl(t,f(t)\bigr) - F\bigl(t,g(t)\bigr)} \leq L \snorm{f-g}_{[-h,h]}$.
-Then
+Então
 \begin{equation*}
 \begin{split}
 \babs{f(x)-g(x)}
@@ -1870,73 +1801,65 @@ Lh\snorm{f-g}_{[-h,h]}
 \frac{L\alpha}{M+L\alpha}\snorm{f-g}_{[-h,h]} .
 \end{split}
 \end{equation*}
-As 
-before, $C = \frac{L\alpha}{M+L\alpha} < 1$.  By taking supremum over $x \in
-[-h,h]$ on the
-left-hand side we obtain
+Como antes, $C = \frac{L\alpha}{M+L\alpha} < 1$. Tomando o supremo do
+lado esquerdo em relação a $x \in [-h,h]$, obtemos
 \begin{equation*}
 \snorm{f-g}_{[-h,h]} \leq C \snorm{f-g}_{[-h,h]} .
 \end{equation*}
-This is only possible if $\snorm{f-g}_{[-h,h]} = 0$.  Therefore, $f=g$, and the
-solution is unique.
+Isso só é possível se $\snorm{f-g}_{[-h,h]} = 0$. Portanto, $f=g$, e a
+solução é única.
 \end{proof}
 
-\subsection{Examples}
+\subsection{Exemplos}
 
-Let us look at some examples.  The proof of the theorem 
-gives us an explicit way to find an $h$ that works.  It does not, however, give
-us the best $h$.  It is often possible to find a much larger $h$ for
-which the conclusion of the theorem holds.
+Vejamos alguns exemplos. A demonstração do teorema fornece um método
+explícito para encontrar um $h$ que funciona. No entanto, não fornece o
+melhor $h$. Muitas vezes é possível encontrar um $h$ bem maior para o qual
+a conclusão do teorema continua válida.
 
-The proof also gives us the Picard iterates as approximations to the
-solution.  So the proof actually tells us how to obtain
-the solution, not just that the solution exists.
+Além disso, a demonstração fornece os iterados de Picard como aproximações
+da solução. Assim, ela nos mostra como obter a solução, e não apenas que a
+solução existe.
 
 \begin{example} \label{example:picardexponential}
-Consider
+Considere
 \begin{equation*}
 f'(x) = f(x), \qquad f(0) = 1 .
 \end{equation*}
-That is, we suppose $F(x,y) = y$, and we are looking for a function 
-$f$ such that $f'(x) = f(x)$.
-Let us forget for the moment that we solved this equation in 
-\sectionref{sec:logandexp}.  See also \figureref{fig:exp} for a plot of
-both the equation, showing
-the slope $F(x,y)=y$ at each point, and the solution,
-the exponential, that satisfies $f(0)=1$.
+Isto é, suponha que $F(x,y) = y$ e procuremos uma função $f$ tal que
+$f'(x) = f(x)$.
+Por ora, esqueçamos que resolvemos essa equação na
+\sectionref{sec:logandexp}. Veja também a \figureref{fig:exp}, que mostra
+o campo de direções da equação, com inclinação $F(x,y)=y$ em cada ponto,
+e a solução exponencial que satisfaz $f(0)=1$.
 
-We pick any $I$ that contains 0
-in the interior.
-We pick an arbitrary $J$ that contains 1 in its interior.  We can
-use $L = 1$.
-The theorem guarantees an $h > 0$ such that
-there exists a unique solution $f \colon [-h,h] \to \R$.  This solution
-is usually denoted by
+Escolhemos qualquer $I$ que contenha 0 em seu interior.
+Escolhemos um $J$ qualquer que contenha 1 em seu interior. Podemos tomar
+$L = 1$.
+O teorema garante que existe $h > 0$ para o qual há uma única solução
+$f \colon [-h,h] \to \R$. Essa solução costuma ser denotada por
 \begin{equation*}
 e^x \coloneqq f(x) .
 \end{equation*}
-We leave it to the reader to verify that by picking $I$ and $J$
-large enough the proof of the theorem guarantees that
-we are able to pick $\alpha$ such that we get any
-$h$ we want as long as $h < \nicefrac{1}{2}$.  We omit the calculation.
-Of course, we know %(though we have not proved)
-this function exists
-as a function for all $x$, so an arbitrary $h$ ought to work, but the
-theorem's proof only provides $h < \nicefrac{1}{2}$.
+Deixamos ao leitor verificar que, escolhendo $I$ e $J$ suficientemente
+grandes, a demonstração do teorema permite escolher $\alpha$ de modo a
+obter qualquer $h < \nicefrac{1}{2}$. Omitimos os cálculos.
+É claro que sabemos %(embora ainda não tenhamos provado)
+que essa função existe para todo $x$; portanto, qualquer $h$ deveria
+servir. Ainda assim, a demonstração do teorema só fornece $h < \nicefrac{1}{2}$.
 
-By the same reasoning as above,
-no matter what $x_0$ and $y_0$ are,
-the proof guarantees an arbitrary $h$ as long as $h < \nicefrac{1}{2}$.
-Fix such an $h$.
-We get a unique function defined on $[x_0-h,x_0+h]$.  After defining the
-function on $[-h,h]$ we find a solution on the interval $[0,2h]$
-and notice that the two functions must coincide on $[0,h]$ by uniqueness.
-We thus iteratively construct the exponential for all $x \in \R$.
-Therefore, Picard's theorem could be used to prove the existence and uniqueness
-of the exponential.
+Pelo mesmo raciocínio, quaisquer que sejam $x_0$ e $y_0$, a demonstração
+garante qualquer $h < \nicefrac{1}{2}$.
+Fixe esse $h$.
+Obtemos uma única função definida em $[x_0-h,x_0+h]$. Depois de definir a
+função em $[-h,h]$, encontramos uma solução no intervalo $[0,2h]$ e
+observamos que, pela unicidade, as duas funções coincidem em $[0,h]$.
+Assim, construímos iterativamente a exponencial em todo $\R$.
+Portanto, o teorema de Picard poderia ser usado para provar a existência e
+a unicidade da função exponencial.
 
-Let us compute the Picard iterates.
-We start with the constant function $f_0(x) \coloneqq 1$.  Then
+Calculemos os iterados de Picard.
+Começamos com a função constante $f_0(x) \coloneqq 1$. Então
 \begin{align*}
 f_1(x) & = 1 + \int_0^x f_0(s)\,ds =
 1+x, \\
@@ -1946,171 +1869,158 @@ f_3(x) & = 1 + \int_0^x f_2(s)\,ds =
 1 + \int_0^x \left(1+ s + \frac{s^2}{2} \right)\,ds =
 1 + x + \frac{x^2}{2} + \frac{x^3}{6} .
 \end{align*}
-We recognize the beginning of the Taylor series for the exponential.
-See \figureref{fig:exppicard}.
+Reconhecemos o início da série de Taylor da função exponencial.
+Veja a \figureref{fig:exppicard}.
 \begin{myfigureht}
 \myincludegraphics{exppicardfig}{%
-A graph of the exponential function as
-a solid curve in the
-region for x between a bit less than minus 1 and
-a bit more than 1.
-Several dashed curves give approximations.
-They all go through the point (0,1).
-First a horizontal line.  Then a line
-with the same slope as the exponential at (0,1).
-Then two further curved approximations that get yet closer
-to the exponential, especially near x equals 0.}
-\caption{The exponential (solid line) together with $f_0$, $f_1$, $f_2$,
-$f_3$ (dashed).\label{fig:exppicard}}
+Gráfico da função exponencial como uma curva contínua na região em que $x$
+vai de um pouco menos que $-1$ a um pouco mais que $1$. Várias curvas
+tracejadas representam aproximações. Todas passam pelo ponto $(0,1)$.
+Primeiro há uma reta horizontal; depois, uma reta com a mesma inclinação
+da exponencial em $(0,1)$; por fim, duas aproximações curvas que ficam
+cada vez mais próximas da exponencial, sobretudo perto de $x=0$.}
+\caption{A função exponencial (curva contínua) e os iterados $f_0$, $f_1$,
+$f_2$ e $f_3$ (tracejados).\label{fig:exppicard}}
 \end{myfigureht}
 \end{example}
 
 \begin{example}
-Consider the equation
+Considere a equação
 \begin{equation*}
-f'(x) = {\bigl(f(x)\bigr)}^2 \qquad \text{and} \qquad f(0)=1.
+f'(x) = {\bigl(f(x)\bigr)}^2 \qquad \text{e} \qquad f(0)=1.
 \end{equation*}
-From elementary differential equations we know 
+Pela teoria elementar das equações diferenciais, sabemos que
 \begin{equation*}
 f(x) = \frac{1}{1-x}
 \end{equation*}
-is the solution.
-The solution is only defined on $(-\infty,1)$.  That is,
-we are able to use $h < 1$, but never a larger $h$.
-The function that takes $y$ to $y^2$ is
-not Lipschitz as a function on all of $\R$.
-As we approach $x=1$ from the left, the solution becomes larger
-and larger.  The derivative of the solution grows as $y^2$, and so
-the $L$ required has to be larger and larger as $y_0$ grows.
-If we apply the
-theorem with $x_0$ close to 1 and $y_0 = \frac{1}{1-x_0}$ we find
-that the $h$ that the proof guarantees is smaller and smaller as $x_0$
-approaches~1.
+é a solução.
+Essa solução só está definida em $(-\infty,1)$. Ou seja, podemos tomar
+$h < 1$, mas não um $h$ maior.
+A função que leva $y$ a $y^2$ não é Lipschitz em todo $\R$.
+Quando $x$ se aproxima de 1 pela esquerda, a solução cresce sem limite.
+A derivada da solução cresce como $y^2$ e, por isso, a constante $L$
+necessária também precisa crescer à medida que $y_0$ aumenta.
+Se aplicarmos o teorema com $x_0$ próximo de 1 e
+$y_0 = \frac{1}{1-x_0}$, veremos que o valor de $h$ garantido pela
+demonstração diminui à medida que $x_0$ se aproxima de 1.
 
-The $h$ from the proof is not the best $h$.
-By picking $\alpha$ correctly, the proof of the theorem guarantees
-$h=1-\nicefrac{\sqrt{3}}{2} \approx 0.134$ (we omit the
-calculation) for $x_0=0$ and $y_0=1$, even though
-we saw above that any $h < 1$ should work.
+O valor de $h$ fornecido pela demonstração não é o melhor possível.
+Escolhendo $\alpha$ corretamente, a demonstração garante
+$h=1-\nicefrac{\sqrt{3}}{2} \approx 0.134$ (omitimos os cálculos) para
+$x_0=0$ e $y_0=1$, embora tenhamos visto que qualquer $h < 1$ deveria
+servir.
 \end{example}
 
 \begin{example}
-Consider the equation
+Considere a equação
 \begin{equation*}
 f'(x) = 2 \sqrt{\babs{f(x)}}, \qquad f(0) = 0 .
 \end{equation*}
-The function $F(x,y) = 2 \sqrt{\sabs{y}}$ is continuous,
-but not Lipschitz in $y$ (why?). 
-The equation does not satisfy the hypotheses of the theorem.
-The function
+A função $F(x,y) = 2 \sqrt{\sabs{y}}$ é contínua, mas não é Lipschitz
+em relação a $y$ (por quê?). A equação não satisfaz as hipóteses do
+teorema. A função
 \begin{equation*}
 f(x) =
 \begin{cases}
-x^2 & \text{if } x \geq 0,\\
--x^2 & \text{if } x < 0,
+x^2 & \text{se } x \geq 0,\\
+-x^2 & \text{se } x < 0,
 \end{cases}
 \end{equation*}
-is a solution, but $f(x) = 0$ is also a solution.
-A solution exists, but is not unique.
+é uma solução, mas $f(x)=0$ também é solução.
+Existe uma solução, mas ela não é única.
 \end{example}
 
 \begin{example}
-Consider $y' = \varphi(x)$ where $\varphi(x) \coloneqq 0$ if $x \in \Q$ and
-$\varphi(x)\coloneqq 1$ if $x
-\notin \Q$.  In other words, the $F(x,y) = \varphi(x)$ is discontinuous.
-The equation has no solution regardless of the initial
-conditions.
-A solution would have
-derivative $\varphi$, but $\varphi$ does not have the intermediate value property
-at any point (why?).  No solution exists by
-\hyperref[thm:darboux]{Darboux's theorem}.
+Considere $y' = \varphi(x)$, em que $\varphi(x) \coloneqq 0$ se $x \in \Q$
+e $\varphi(x)\coloneqq 1$ se $x \notin \Q$. Em outras palavras,
+$F(x,y) = \varphi(x)$ é descontínua.
+A equação não tem solução, quaisquer que sejam as condições iniciais.
+Uma solução teria derivada igual a $\varphi$, mas $\varphi$ não tem a
+propriedade do valor intermediário em nenhum ponto (por quê?).
+Pelo \hyperref[thm:darboux]{teorema de Darboux}, não existe solução.
 \end{example}
 
-The examples show that without the Lipschitz condition, a solution might
-exist but not be unique, and without continuity of $F$, we may not
-have a solution at all.
-It is in fact a theorem, the Peano existence theorem, that if $F$ is
-continuous a solution exists (but may not be unique).
+Os exemplos mostram que, sem a condição de Lipschitz, uma solução pode
+existir sem ser única; e que, sem a continuidade de $F$, talvez nem exista
+solução.
+De fato, o teorema de existência de Peano garante que, se $F$ for contínua,
+existirá uma solução, embora ela possa não ser única.
 
 \begin{remark}
-It is possible to weaken what we mean by \myquote{solution to $y' = F(x,y)$}
-by focusing on the integral equation
-$f(x) = y_0 + \int_{x_0}^x F\bigl(t,f(t)\bigr) \, dt$.  For example,
-let $H$ be the
-Heaviside function%
-\footnote{Named
-for the English engineer, mathematician, and physicist
+É possível enfraquecer o significado de \myquote{solução de $y' = F(x,y)$}
+concentrando-nos na equação integral
+$f(x) = y_0 + \int_{x_0}^x F\bigl(t,f(t)\bigr) \, dt$. Por exemplo,
+seja $H$ a \myindex{função de Heaviside}%
+\footnote{Nomeada em homenagem ao engenheiro, matemático e físico inglês
 \href{https://en.wikipedia.org/wiki/Oliver_Heaviside}{Oliver Heaviside}
-(1850--1925).},
-that is $H(x) \coloneqq 0$ for $x < 0$ and $H(x) \coloneqq 1$ for $x \geq 0$.
-Then
+(1850--1925).}, isto é, $H(x) \coloneqq 0$ para $x < 0$ e
+$H(x) \coloneqq 1$ para $x \geq 0$.
+Então
 $y' = H(x)$, $y(0) = 0$,
-is a common equation.
-The \myquote{solution}
-is the ramp function $f(x) \coloneqq 0$ if $x < 0$ and $f(x) \coloneqq x$ if $x \geq 0$,
-since this function satisfies
-$f(x) = \int_0^x H(t)\, dt$.  Notice, however, that $f'(0)$ does not exist,
-so $f$ is only what is called a \emph{\myindex{weak solution}} to the
-differential equation.
+é uma equação comum.
+A \myquote{solução} é a função rampa
+$f(x) \coloneqq 0$ se $x < 0$ e $f(x) \coloneqq x$ se $x \geq 0$,
+pois essa função satisfaz
+$f(x) = \int_0^x H(t)\, dt$. Observe, porém, que $f'(0)$ não existe;
+assim, $f$ é apenas o que se chama de \emph{\myindex{solução fraca}} da
+equação diferencial.
 \end{remark}
 
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
 \begin{exercise}
-Let $I, J \subset \R$ be intervals.
-Let $F \colon I \times J \to \R$ be a continuous function
-of two variables
-and suppose $f \colon I \to J$ is a continuous function.
-Show that $F\bigl(x,f(x)\bigr)$ is a continuous function on $I$.
+Sejam $I, J \subset \R$ intervalos.
+Seja $F \colon I \times J \to \R$ uma função contínua de duas variáveis,
+e suponha que $f \colon I \to J$ seja contínua.
+Mostre que $F\bigl(x,f(x)\bigr)$ é uma função contínua em $I$.
 \end{exercise}
 
 \begin{exercise}
-Let $I, J \subset \R$ be closed bounded intervals.
-Show that if $F \colon I \times J \to \R$ is continuous,
-then $F$ is bounded.
+Sejam $I, J \subset \R$ intervalos fechados e limitados.
+Mostre que, se $F \colon I \times J \to \R$ for contínua, então $F$ é
+limitada.
 \end{exercise}
 
 \begin{exercise}
-We proved Picard's theorem under the assumption that $x_0 = 0$.
-Prove the full statement of Picard's theorem for an arbitrary $x_0$.
+Provamos o teorema de Picard supondo que $x_0 = 0$.
+Prove o enunciado completo do teorema de Picard para um $x_0$ qualquer.
 \end{exercise}
 
 \begin{exercise}
-Let $f'(x)=x f(x)$ be our equation.  Start with the initial condition
-$f(0)=2$ and find the Picard iterates $f_0,f_1,f_2,f_3,f_4$.
+Considere a equação $f'(x)=x f(x)$. Comece com a condição inicial
+$f(0)=2$ e determine os iterados de Picard $f_0,f_1,f_2,f_3,f_4$.
 \end{exercise}
 
 \begin{exercise}
-Suppose $F \colon I \times J \to \R$
-is a function that is continuous in the first variable,
-that is, for every fixed $y$ the function that takes $x$ to $F(x,y)$ is
-continuous.  Further, suppose $F$ is Lipschitz in the second variable,
-that is, there exists a number $L$ such that
+Suponha que $F \colon I \times J \to \R$ seja contínua na primeira
+variável, isto é, que, para cada $y$ fixado, a função que leva $x$ a
+$F(x,y)$ seja contínua. Suponha também que $F$ seja Lipschitz na segunda
+variável, isto é, que exista um número $L$ tal que
 \begin{equation*}
 \babs{F(x,y) - F(x,z)} \leq L \sabs{y-z}
-\qquad \text{for all } y,z \in J, x \in I .
+\qquad \text{para todos } y,z \in J, x \in I .
 \end{equation*}
-Show that $F$ is continuous as a function of two variables.  Therefore, the
-hypotheses in the theorem could be made even weaker.
+Mostre que $F$ é contínua como função de duas variáveis. Portanto, as
+hipóteses do teorema poderiam ser ainda mais fracas.
 \end{exercise}
 
 \begin{exercise}
 \pagebreak[2]
-A common type of equation is a
-\emph{\myindex{linear first order differential equation}}, that is,
-an equation of the form
+Um tipo comum de equação é a
+\emph{\myindex{equação diferencial linear de primeira ordem}}, isto é,
+uma equação da forma
 \begin{equation*}
 y' + p(x) y = q(x) , \qquad y(x_0) = y_0 .
 \end{equation*}
-Prove Picard's theorem for linear equations.  Suppose $I$ is an
-interval, $x_0 \in I$, and $p \colon I \to \R$ and $q \colon I \to \R$ are
-continuous.
-Show that there exists a unique differentiable $f \colon I \to \R$,
-such that $y = f(x)$
-satisfies the equation and the initial condition.
-Hint: Assume existence of the exponential function and use the integrating
-factor formula for existence of $f$ (prove that it works and then that it is unique):
+Prove o teorema de Picard para equações lineares. Suponha que $I$ seja um
+intervalo, $x_0 \in I$ e que $p \colon I \to \R$ e $q \colon I \to \R$
+sejam contínuas.
+Mostre que existe uma única função diferenciável $f \colon I \to \R$ tal
+que $y = f(x)$ satisfaça a equação e a condição inicial.
+Dica: suponha que a função exponencial exista e use a fórmula do fator
+integrante para obter $f$ (prove que ela funciona e depois que a solução é
+única):
 \begin{equation*}
 f(x) \coloneqq e^{-\int_{x_0}^x p(s)\, ds} \left( \int_{x_0}^x e^{\int_{x_0}^t p(s)\, ds}
 q(t) \,dt + y_0 \right).
@@ -2118,38 +2028,37 @@ q(t) \,dt + y_0 \right).
 \end{exercise}
 
 \begin{exercise}
-Consider the equation $f'(x) = f(x)$,
-from \exampleref{example:picardexponential}.  Show that given any $x_0$,
-any $y_0$, and any positive $h < \nicefrac{1}{2}$, we can pick $\alpha >
-0$ large enough that the proof of Picard's theorem guarantees a solution
-for the initial condition $f(x_0) = y_0$ in the interval
+Considere a equação $f'(x) = f(x)$ do
+\exampleref{example:picardexponential}. Mostre que, dados quaisquer $x_0$
+e $y_0$ e qualquer $h > 0$ com $h < \nicefrac{1}{2}$, podemos escolher
+um $\alpha > 0$ suficientemente grande para que a demonstração do teorema
+de Picard garanta uma solução com condição inicial $f(x_0) = y_0$ no intervalo
 $[x_0-h,x_0+h]$.
 \end{exercise}
 
 \begin{exercise}
 \pagebreak[3]
-Consider the equation $y' = y^{1/3}x$.
+Considere a equação $y' = y^{1/3}x$.
 \begin{enumerate}[a)]
 \item
-Show that for the initial condition $y(1)=1$, Picard's theorem applies.
-Find an $\alpha > 0$, $M$, $L$, and $h$ that would work in the proof.
+Mostre que o teorema de Picard se aplica à condição inicial $y(1)=1$.
+Determine valores de $\alpha > 0$, $M$, $L$ e $h$ que sirvam na demonstração.
 \item
-Show that for the initial condition $y(1) = 0$, Picard's theorem
-does not apply.
+Mostre que o teorema de Picard não se aplica à condição inicial $y(1) = 0$.
 \item
-Find a solution for $y(1) = 0$ anyway.
+Mesmo assim, encontre uma solução para $y(1) = 0$.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Consider the equation $x y' = 2y$.
+Considere a equação $x y' = 2y$.
 \begin{enumerate}[a)]
 \item
-Show that $y = Cx^2$ is a solution for every constant $C$.
+Mostre que $y = Cx^2$ é solução para toda constante $C$.
 \item
-Show that for every $x_0 \neq 0$ and every $y_0$, Picard's
-theorem applies for the initial condition $y(x_0) = y_0$.
+Mostre que, para todo $x_0 \neq 0$ e todo $y_0$, o teorema de Picard se
+aplica à condição inicial $y(x_0) = y_0$.
 \item
-Show that $y(0) = y_0$ is solvable if and only if $y_0 = 0$.
+Mostre que é possível resolver $y(0) = y_0$ se, e somente se, $y_0 = 0$.
 \end{enumerate}
 \end{exercise}

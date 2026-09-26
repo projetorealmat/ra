@@ -62,5 +62,7 @@ The automated Pages build preserves both volumes from realanal12.tex. Volume I i
 ## Publicações
 
 <!-- realmat-release:start -->
-Nenhuma Release REALMat foi publicada ainda. A primeira release listará aqui o HTML de leitura e o PDF oficial para download.
+- Release REALMat atualmente recomendada: [v0.1.0](https://github.com/projetorealmat/ra/releases/tag/v0.1.0).
+- [Ler o livro](https://projetorealmat.github.io/ra/)
+- [PDF](https://github.com/projetorealmat/ra/releases/download/v0.1.0/realanal.pdf)
 <!-- realmat-release:end -->

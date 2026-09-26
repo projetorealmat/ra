@@ -28,6 +28,10 @@ if ! perl "$ROOT_DIR/convert-to-mbx.pl" realanal.tex >"$BUILD_TMP/converter.log"
   exit 1
 fi
 tail -n 20 "$BUILD_TMP/converter.log"
+if grep -q "UNHANDLED escape" "$BUILD_TMP/converter.log"; then
+  echo "Comandos LaTeX não tratados pelo conversor (contagem):"
+  grep "UNHANDLED escape" "$BUILD_TMP/converter.log" | sort | uniq -c | head -n 40
+fi
 test -s "$ROOT_DIR/realanal-out.xml"
 grep -q '<pretext xml:lang="pt-BR">' "$ROOT_DIR/realanal-out.xml"
 grep -q '<chapter[^>]*number="7"' "$ROOT_DIR/realanal-out.xml"
@@ -36,6 +40,22 @@ if grep -Eq '<chapter[^>]*number="8"' "$ROOT_DIR/realanal-out.xml"; then
   exit 1
 fi
 perl -0777 -i -pe 's:<rahr/>[ \r\n]*<rahr/>:<rahr/>:igs' "$ROOT_DIR/realanal-out.xml"
+python3 - "$ROOT_DIR/realanal-out.xml" <<'PY'
+from pathlib import Path
+import sys
+import xml.etree.ElementTree as ET
+
+path = Path(sys.argv[1])
+try:
+    ET.parse(path)
+except ET.ParseError as error:
+    line, column = error.position
+    lines = path.read_text(encoding="utf-8").splitlines()
+    print(f"XML inválido: {error}", file=sys.stderr)
+    for index in range(max(0, line - 4), min(len(lines), line + 3)):
+        print(f"{index + 1}: {lines[index]}", file=sys.stderr)
+    raise SystemExit(1)
+PY
 
 python3 - "$PRETEXT_DIR/xsl/pretext-html.xsl" "$ROOT_DIR/realanal-html.xsl" "$BUILD_TMP/realanal-html.xsl" <<'PY'
 from pathlib import Path

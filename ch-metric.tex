@@ -1913,71 +1913,72 @@ $\{ x_k \}_{k=1}^\infty$ converge a $p$ em $(\R^n,d'')$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{Completeness and compactness}
+\section{Completude e compacidade}
 \label{sec:metcompact}
 
 %mbxINTROSUBSECTION
 
-\sectionnotes{2 lectures}
+\sectionnotes{2 aulas}
 
-\subsection{Cauchy sequences and completeness}
+\subsection{Sequências de Cauchy e completude}
 
-Just like with sequences of real numbers, we define Cauchy sequences.
+Assim como no caso das sequências de números reais, definimos sequências
+de Cauchy.
 
 \begin{defn}
-Let $(X,d)$ be a metric space.
-A sequence $\{ x_n \}_{n=1}^\infty$ in $X$ is a \emph{\myindex{Cauchy sequence}} if
-for every $\epsilon > 0$, there exists an $M \in \N$ such that
-for all $n \geq M$ and all $k \geq M$, we have
+Seja $(X,d)$ um espaço métrico.
+Uma sequência $\{ x_n \}_{n=1}^\infty$ em $X$ é uma
+\emph{\myindex{sequência de Cauchy}} se, para todo $\epsilon > 0$, existe
+$M \in \N$ tal que, para todo $n \geq M$ e todo $k \geq M$, temos
 \begin{equation*}
 d(x_n, x_k) < \epsilon .
 \end{equation*}
 \end{defn}
 
-The definition is again simply a translation of the concept
-from the real numbers to metric spaces.  A sequence of real
-numbers is Cauchy in the sense of \chapterref{seq:chapter} if and only if
-it is Cauchy in the sense above, provided we equip the real numbers with
-the standard metric $d(x,y) = \sabs{x-y}$.
+Mais uma vez, a definição é apenas uma tradução do conceito dos números
+reais para espaços métricos. Uma sequência de números reais é de Cauchy
+no sentido de \chapterref{seq:chapter} se, e somente se, é de Cauchy no
+sentido acima, desde que equipemos os números reais com a métrica usual
+$d(x,y) = \sabs{x-y}$.
 
 \begin{prop}
-A convergent sequence in a metric space is Cauchy.
+Uma sequência convergente em um espaço métrico é de Cauchy.
 \end{prop}
 
 \begin{proof}
-Suppose $\{ x_n \}_{n=1}^\infty$ converges to $p$.
-Given $\epsilon > 0$, there is an $M$ such that for all $n \geq M$,
-we have $d(p,x_n) < \nicefrac{\epsilon}{2}$.  Hence,
-for all $n,k \geq M$, we have
+Suponha que $\{ x_n \}_{n=1}^\infty$ convirja a $p$.
+Dado $\epsilon > 0$, existe $M$ tal que, para todo $n \geq M$,
+temos $d(p,x_n) < \nicefrac{\epsilon}{2}$. Portanto,
+para quaisquer $n,k \geq M$, temos
 $d(x_n,x_k) \leq d(x_n,p) + d(p,x_k) < \nicefrac{\epsilon}{2} +
 \nicefrac{\epsilon}{2} = \epsilon$.
 \end{proof}
 
 \begin{defn}
-We say a metric space $(X,d)$ is
-\emph{\myindex{complete}} or \emph{\myindex{Cauchy-complete}}
-if every Cauchy sequence $\{ x_n \}_{n=1}^\infty$ in $X$
-converges to a $p \in X$.
+Dizemos que um espaço métrico $(X,d)$ é
+\emph{\myindex{completo}} ou \emph{\myindex{completo de Cauchy}}
+se toda sequência de Cauchy $\{ x_n \}_{n=1}^\infty$ em $X$
+converge a algum $p \in X$.
 \end{defn}
 
 \begin{prop}
-The space $\R^n$ with the standard metric is a complete metric space.
+O espaço $\R^n$ com a métrica usual é um espaço métrico completo.
 \end{prop}
 
-For $\R = \R^1$, completeness was proved in \chapterref{seq:chapter}.
-The proof of completeness in $\R^n$
-is a reduction to the one-dimensional case.
+A completude de $\R = \R^1$ foi demonstrada em \chapterref{seq:chapter}.
+A demonstração da completude de $\R^n$
+se reduz ao caso unidimensional.
 
 \begin{proof}
-Let $\{ x_m \}_{m=1}^\infty$ be a Cauchy sequence
-in $\R^n$, where $x_m = \bigl(x_{m,1},x_{m,2},\ldots,x_{m,n}\bigr) \in \R^n$.
-As the sequence is Cauchy, given $\epsilon > 0$, there exists an $M$ such that for all
-$i,j \geq M$,
+Seja $\{ x_m \}_{m=1}^\infty$ uma sequência de Cauchy
+em $\R^n$, em que $x_m = \bigl(x_{m,1},x_{m,2},\ldots,x_{m,n}\bigr) \in \R^n$.
+Como a sequência é de Cauchy, dado $\epsilon > 0$, existe $M$ tal que, para
+quaisquer $i,j \geq M$,
 \begin{equation*}
 d(x_i,x_j) < \epsilon.
 \end{equation*}
 
-Fix some $k=1,2,\ldots,n$.  For $i,j \geq M$,
+Fixe um $k=1,2,\ldots,n$. Para $i,j \geq M$,
 \begin{equation*}
 \bigl\lvert x_{i,k} - x_{j,k} \bigr\rvert
 =
@@ -1986,42 +1987,39 @@ Fix some $k=1,2,\ldots,n$.  For $i,j \geq M$,
 \sqrt{\sum_{\ell=1}^n {\bigl(x_{i,\ell}-x_{j,\ell}\bigr)}^2}
 = d(x_i,x_j) < \epsilon .
 \end{equation*}
-Hence, the sequence $\{ x_{m,k} \}_{m=1}^\infty$ is Cauchy.  As $\R$ is
-complete, the sequence converges; there exists a $y_k \in \R$ such that
+Logo, a sequência $\{ x_{m,k} \}_{m=1}^\infty$ é de Cauchy. Como $\R$ é
+completo, a sequência converge; existe $y_k \in \R$ tal que
 $y_k = \lim_{m\to\infty} x_{m,k}$.
-Write $y = (y_1,y_2,\ldots,y_n) \in \R^n$.
-By \propref{prop:msconveuc}, $\{ x_m \}_{m=1}^\infty$ converges
-to $y \in \R^n$, and hence $\R^n$ is complete.
+Escreva $y = (y_1,y_2,\ldots,y_n) \in \R^n$.
+Pela \propref{prop:msconveuc}, a sequência $\{ x_m \}_{m=1}^\infty$ converge
+a $y \in \R^n$; portanto, $\R^n$ é completo.
 \end{proof}
 
-In the language of metric spaces,
-the results on continuity of \sectionref{sec:liminter}
-say that the metric space
-$C\bigl([a,b],\R\bigr)$ of \exampleref{example:msC01} is complete.
-The proof follows by \myquote{unrolling the definitions} 
-and is left as \exerciseref{exercise:CabRcomplete}.
+Na linguagem dos espaços métricos,
+os resultados sobre continuidade de \sectionref{sec:liminter}
+dizem que o espaço métrico
+$C\bigl([a,b],\R\bigr)$ de \exampleref{example:msC01} é completo.
+A demonstração, que consiste em \myquote{expandir as definições},
+fica como exercício em \exerciseref{exercise:CabRcomplete}.
 
 \begin{prop} \label{prop:CabRcomplete}
-The space of continuous functions $C\bigl([a,b],\R\bigr)$ with the uniform
-norm as metric is a complete metric space.
+O espaço das funções contínuas $C\bigl([a,b],\R\bigr)$, com a norma
+uniforme como métrica, é um espaço métrico completo.
 \end{prop}
 
-A subset of a complete metric space such as $\R^n$ with the subspace metric need not be
-complete.  For example, $(0,1]$ with the subspace metric is not
-complete, as $\{ \nicefrac{1}{n} \}_{n=1}^\infty$ is a Cauchy sequence in $(0,1]$
-with no limit in $(0,1]$.
-However, 
-a closed subspace of a complete metric space is
-complete.  After all, one way
-to think of a closed set is that it contains all points
-reachable from the set via a sequence.
-The proof is 
-\exerciseref{exercise:closedcomplete}.
+Um subconjunto de um espaço métrico completo, como $\R^n$ com a métrica de
+subespaço, não precisa ser completo. Por exemplo, $(0,1]$ com a métrica de
+subespaço não é completo, pois $\{ \nicefrac{1}{n} \}_{n=1}^\infty$ é uma
+sequência de Cauchy em $(0,1]$ sem limite em $(0,1]$.
+No entanto, um subespaço fechado de um espaço métrico completo é completo.
+Afinal, podemos pensar em um conjunto fechado como aquele que contém todos
+os pontos que são limites de sequências nele contidas.
+A demonstração fica como exercício em \exerciseref{exercise:closedcomplete}.
 
 \begin{prop} \label{prop:closedcomplete}
-Suppose $(X,d)$ is a complete metric space and $E \subset X$
-is closed.
-Then $E$ is a complete metric space with the subspace metric.
+Suponha que $(X,d)$ seja um espaço métrico completo e que $E \subset X$
+seja fechado.
+Então $E$ é um espaço métrico completo com a métrica de subespaço.
 \end{prop}
 
 \subsection{Compactness}

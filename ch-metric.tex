@@ -2639,65 +2639,65 @@ $\{ x_{n_k} \}_{k=1}^\infty$ que converge (em $X$).
 \end{exercise}
 
 \sectionnewpage
-\section{Continuous functions}
+\section{Funções contínuas}
 \label{sec:metcont}
 
 %mbxINTROSUBSECTION
 
 \sectionnotes{1.5--2 lectures}
 
-\subsection{Continuity}
+\subsection{Continuidade}
 
 \begin{defn}
-Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces and $c \in X$.
-Then $f \colon X \to Y$ is
-\emph{continuous at $c$}\index{continuous at $c$}
-if for every $\epsilon > 0$
-there is a $\delta > 0$ such that whenever $x \in X$ and $d_X(x,c) <
-\delta$, then
+Sejam $(X,d_X)$ e $(Y,d_Y)$ espaços métricos e $c \in X$.
+Dizemos que $f \colon X \to Y$ é
+\emph{contínua em $c$}\index{contínua em $c$}
+se, para todo $\epsilon > 0$,
+existe um $\delta > 0$ tal que, sempre que $x \in X$ e $d_X(x,c) <
+\delta$, tem-se
 $d_Y\bigl(f(x),f(c)\bigr) < \epsilon$.
 
 \medskip
 
-When $f \colon X \to Y$ is continuous at all $c \in X$, we simply say
-that $f$ is a \emph{continuous function}\index{continuous function!in a
-metric space}\index{function!continuous}.
+Quando $f \colon X \to Y$ é contínua em todo $c \in X$, dizemos simplesmente
+que $f$ é uma \emph{função contínua}\index{função contínua!em um
+espaço métrico}\index{função!contínua}.
 \end{defn}
 
-The definition agrees with the definition from \chapterref{lim:chapter} when
-$f$ is a real-valued function on the real line---as long as we take the standard
-metric on $\R$, of course.
+A definição coincide com a definição de \chapterref{lim:chapter} quando
+$f$ é uma função real definida na reta real — desde que, é claro, usemos
+a métrica usual em $\R$.
 
 \begin{prop} \label{prop:contiscont}
-Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces.
-Then $f \colon X \to Y$ is
-continuous at $c \in X$
-if and only if for every sequence $\{ x_n \}_{n=1}^\infty$ in $X$
-converging to $c$, the sequence $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ converges
-to $f(c)$.
+Sejam $(X,d_X)$ e $(Y,d_Y)$ espaços métricos.
+Então $f \colon X \to Y$ é
+contínua em $c \in X$
+se, e somente se, para toda sequência $\{ x_n \}_{n=1}^\infty$ em $X$
+que converge para $c$, a sequência $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ converge
+para $f(c)$.
 \end{prop}
 
 \begin{proof}
-Suppose $f$ is continuous at $c$.  Let $\{ x_n \}_{n=1}^\infty$ be a
-sequence in $X$ converging to $c$.  Given $\epsilon > 0$,
-there is a $\delta > 0$ such that $d_X(x,c) < \delta$ implies
-$d_Y\bigl(f(x),f(c)\bigr) < \epsilon$.  So take $M$ such that
-for all $n \geq M$, we have $d_X(x_n,c) < \delta$, and then
-$d_Y\bigl(f(x_n),f(c)\bigr) < \epsilon$.  Hence, $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$
-converges to $f(c)$.
+Suponha que $f$ seja contínua em $c$. Seja $\{ x_n \}_{n=1}^\infty$ uma
+sequência em $X$ que converge para $c$. Dado $\epsilon > 0$,
+existe um $\delta > 0$ tal que $d_X(x,c) < \delta$ implica
+$d_Y\bigl(f(x),f(c)\bigr) < \epsilon$. Escolha $M$ de modo que,
+para todo $n \geq M$, tenhamos $d_X(x_n,c) < \delta$; então
+$d_Y\bigl(f(x_n),f(c)\bigr) < \epsilon$. Portanto, a sequência $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$
+converge para $f(c)$.
 
-On the other hand, suppose $f$ is not continuous at $c$.
-Then there exists an $\epsilon > 0$
-such that for every $n \in \N$ there exists an $x_n \in X$,
-with
-$d_X(x_n,c) < \nicefrac{1}{n}$ such that $d_Y\bigl(f(x_n),f(c)\bigr) \geq
-\epsilon$.  Then $\{ x_n \}_{n=1}^\infty$ converges to $c$, but
+Por outro lado, suponha que $f$ não seja contínua em $c$.
+Então existe um $\epsilon > 0$
+tal que, para todo $n \in \N$, existe um $x_n \in X$
+com
+$d_X(x_n,c) < \nicefrac{1}{n}$ e tal que $d_Y\bigl(f(x_n),f(c)\bigr) \geq
+\epsilon$. Assim, $\{ x_n \}_{n=1}^\infty$ converge para $c$, mas
 $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$
-does not converge to $f(c)$.
+não converge para $f(c)$.
 \end{proof}
 
 \begin{example}
-Suppose $f \colon \R^2 \to \R$ is a polynomial.  That is,
+Suponha que $f \colon \R^2 \to \R$ seja um polinômio. Isto é,
 \begin{equation*}
 f(x,y) =
 \sum_{j=0}^d
@@ -2710,11 +2710,11 @@ a_{1\,1} \, xy+
 a_{0\,2} \, y^2+ \cdots +
 a_{0\,d} \, y^d ,
 \end{equation*}
-for some $d \in \N$ (the degree) and $a_{jk} \in \R$.  We claim 
-$f$ is continuous.  Let $\bigl\{ (x_n,y_n) \bigr\}_{n=1}^\infty$ be a sequence
-in $\R^2$ that converges to $(x,y) \in \R^2$.  We proved that this
-means $\lim_{n\to\infty} x_n = x$ and $\lim_{n\to\infty} y_n = y$.
-By \propref{prop:contalg},
+para algum $d \in \N$ (o grau) e $a_{jk} \in \R$. Afirmamos que
+$f$ é contínua. Seja $\bigl\{ (x_n,y_n) \bigr\}_{n=1}^\infty$ uma sequência
+em $\R^2$ que converge para $(x,y) \in \R^2$. Provamos que isso
+significa que $\lim_{n\to\infty} x_n = x$ e $\lim_{n\to\infty} y_n = y$.
+Por \propref{prop:contalg},
 \begin{equation*}
 \lim_{n\to\infty}
 f(x_n,y_n) =
@@ -2729,219 +2729,217 @@ a_{jk} \, x^jy^k
 =
 f(x,y) .
 \end{equation*}
-So $f$ is continuous at $(x,y)$, and as $(x,y)$ was arbitrary, $f$ is
-continuous everywhere.  Similarly, a
-polynomial in $n$ variables is continuous.
+Logo, $f$ é contínua em $(x,y)$; como $(x,y)$ era arbitrário, $f$ é
+contínua em toda parte. De modo análogo, um
+polinômio em $n$ variáveis é contínuo.
 \end{example}
 
-Be careful about taking limits separately.
-Consider $f \colon \R^2 \to \R$ defined by $f(x,y) \coloneqq \frac{xy}{x^2+y^2}$
-outside the origin and $f(0,0) \coloneqq 0$.
-See \figureref{fig:xyxsqysq}.
-In \exerciseref{exercise:dicontR2},
-you are asked to prove that $f$ is not continuous at the origin.
-However, for every $y$, the function $g(x) \coloneqq f(x,y)$ is
-continuous,
-and for every $x$, the function $h(y) \coloneqq f(x,y)$ is continuous.
+Tenha cuidado ao calcular limites separadamente.
+Considere $f \colon \R^2 \to \R$ definida por $f(x,y) \coloneqq \frac{xy}{x^2+y^2}$
+fora da origem e por $f(0,0) \coloneqq 0$ na origem.
+Veja \figureref{fig:xyxsqysq}.
+No \exerciseref{exercise:dicontR2},
+pede-se que você prove que $f$ não é contínua na origem.
+No entanto, para todo $y$, a função $g(x) \coloneqq f(x,y)$ é
+contínua,
+e, para todo $x$, a função $h(y) \coloneqq f(x,y)$ é contínua.
 \begin{myfigureht}
 \myincludegraphics{xyxsqysq}{%
-A surface graph of a function which appears pinched at the
-origin so that if we approach the origin in the xy-plane
-along different directions we may approach different values.}
-\caption{Graph of $\frac{xy}{x^2+y^2}$.\label{fig:xyxsqysq}}
+Gráfico de uma superfície que parece comprimida na
+origem, de modo que, ao nos aproximarmos da origem no plano xy
+em direções diferentes, podemos nos aproximar de valores distintos.}
+\caption{Gráfico de $\frac{xy}{x^2+y^2}$.\label{fig:xyxsqysq}}
 \end{myfigureht}
 
 \begin{example}
-Let $X$ be a metric space and $f \colon X \to \C$ a complex-valued
-function.  Write $f(p) = g(p) + i \, h(p)$, where $g \colon X \to \R$
-and $h \colon X \to \R$ are the real and imaginary parts of $f$.
-Then $f$ is continuous at $c \in X$ if and only if its real
-and imaginary parts are continuous at~$c$.  
-This fact follows because $\bigl\{ f(p_n) = g(p_n) + i \, h(p_n) \bigr\}_{n=1}^\infty$
-converges to $f(p) = g(p) + i \, h(p)$ if and only if
-$\bigl\{ g(p_n) \bigr\}_{n=1}^\infty$ converges to $g(p)$ and
-$\bigl\{ h(p_n) \bigr\}_{n=1}^\infty$ converges to $h(p)$.
+Seja $X$ um espaço métrico e seja $f \colon X \to \C$ uma função com valores
+complexos. Escreva $f(p) = g(p) + i \, h(p)$, onde $g \colon X \to \R$
+e $h \colon X \to \R$ são as partes real e imaginária de $f$.
+Então $f$ é contínua em $c \in X$ se, e somente se, suas partes real
+e imaginária são contínuas em~$c$.  
+Isso decorre do fato de que a sequência $\bigl\{ f(p_n) = g(p_n) + i \, h(p_n) \bigr\}_{n=1}^\infty$
+converge para $f(p) = g(p) + i \, h(p)$ se, e somente se,
+$\bigl\{ g(p_n) \bigr\}_{n=1}^\infty$ converge para $g(p)$ e
+$\bigl\{ h(p_n) \bigr\}_{n=1}^\infty$ converge para $h(p)$.
 \end{example}
 
-\subsection{Compactness and continuity}
+\subsection{Compacidade e continuidade}
 
-Continuous maps do not map closed sets to closed sets.  For example,
-$f \colon (0,1) \to \R$ defined by $f(x) \coloneqq x$ takes the set $(0,1)$, which
-is closed in $(0,1)$, to the set $(0,1)$, which is not closed in $\R$.
-On the other hand, continuous maps do preserve compact sets.
+Aplicações contínuas não levam conjuntos fechados a conjuntos fechados. Por exemplo,
+$f \colon (0,1) \to \R$ definida por $f(x) \coloneqq x$ leva o conjunto $(0,1)$, que
+é fechado em $(0,1)$, ao conjunto $(0,1)$, que não é fechado em $\R$.
+Por outro lado, aplicações contínuas preservam conjuntos compactos.
 
 \begin{lemma} \label{lemma:continuouscompact}
-Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces
-and $f \colon X \to Y$ a continuous function.  If
-$K \subset X$ is a compact set, then $f(K)$ is a compact set.
+Sejam $(X,d_X)$ e $(Y,d_Y)$ espaços métricos,
+e seja $f \colon X \to Y$ uma função contínua. Se
+$K \subset X$ é compacto, então $f(K)$ é compacto.
 \end{lemma}
 
 \begin{proof}
-A sequence in $f(K)$ can be written as
-$\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$, where
-$\{ x_n \}_{n=1}^\infty$ is a sequence in $K$.  The set $K$ is compact and
-therefore there is a subsequence
-$\{ x_{n_j} \}_{j=1}^\infty$ that converges to some $x \in K$.
-By continuity,
+Uma sequência em $f(K)$ pode ser escrita como
+$\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$, onde
+$\{ x_n \}_{n=1}^\infty$ é uma sequência em $K$. O conjunto $K$ é compacto e,
+portanto, existe uma subsequência
+$\{ x_{n_j} \}_{j=1}^\infty$ que converge para algum $x \in K$.
+Pela continuidade,
 \begin{equation*}
 \lim_{j\to\infty} f(x_{n_j}) = f(x) \in f(K) .
 \end{equation*}
-So every sequence in $f(K)$ has a subsequence convergent to 
-a point in $f(K)$, and $f(K)$ is compact by \thmref{thm:mscompactisseqcpt}.
+Assim, toda sequência em $f(K)$ tem uma subsequência que converge
+para um ponto de $f(K)$, e $f(K)$ é compacto por \thmref{thm:mscompactisseqcpt}.
 \end{proof}
 
-As before, $f \colon X \to \R$ achieves an
-\emph{\myindex{absolute minimum}} at $c \in X$ if
+Como antes, dizemos que $f \colon X \to \R$ atinge um
+\emph{\myindex{mínimo absoluto}} em $c \in X$ se
 \begin{equation*}
-f(x) \geq f(c) \qquad \text{for all } x \in X.
+f(x) \geq f(c) \qquad \text{para todo } x \in X.
 \end{equation*}
-On the other hand, $f$ achieves an 
-\emph{\myindex{absolute maximum}} at $c \in X$ if
+Por outro lado, $f$ atinge um
+\emph{\myindex{máximo absoluto}} em $c \in X$ se
 \begin{equation*}
-f(x) \leq f(c) \qquad \text{for all } x \in X.
+f(x) \leq f(c) \qquad \text{para todo } x \in X.
 \end{equation*}
 
 \begin{thm}
-Let $(X,d)$ be a nonempty compact metric space
-and let $f \colon X \to \R$ be continuous.  Then
-$f$ is bounded and in fact
-$f$ achieves an absolute minimum and an absolute maximum on $X$.
+Seja $(X,d)$ um espaço métrico compacto não vazio
+e seja $f \colon X \to \R$ contínua. Então
+$f$ é limitada e, de fato,
+$f$ atinge um mínimo absoluto e um máximo absoluto em $X$.
 \end{thm}
 
 \begin{proof}
-As $X$ is compact and $f$ is continuous,
-$f(X) \subset \R$ is compact.  Hence, $f(X)$ is closed
-and bounded.  In particular,
-$\sup f(X) \in f(X)$ and
-$\inf f(X) \in f(X)$, because both the sup and the inf
-can be achieved by sequences in $f(X)$ and $f(X)$ is closed.
-Therefore, there is some $x \in X$ such that $f(x) = \sup f(X)$
-and some $y \in X$ such that $f(y) = \inf f(X)$.
+Como $X$ é compacto e $f$ é contínua,
+$f(X) \subset \R$ é compacto. Portanto, $f(X)$ é fechado
+e limitado. Em particular,
+$\sup f(X) \in f(X)$ e
+$\inf f(X) \in f(X)$, pois tanto o supremo quanto o ínfimo
+podem ser obtidos por sequências em $f(X)$, e $f(X)$ é fechado.
+Portanto, há um $x \in X$ tal que $f(x) = \sup f(X)$
+e um $y \in X$ tal que $f(y) = \inf f(X)$.
 \end{proof}
 
-\subsection{Continuity and topology}
+\subsection{Continuidade e topologia}
 
-Let us see how to define continuity in terms of the topology, that is,
-the open sets.  We have already seen that topology determines which 
-sequences converge, and so it is no wonder that the topology also
-determines continuity of functions.
+Vejamos como definir a continuidade em termos da topologia, isto é,
+dos conjuntos abertos. Já vimos que a topologia determina quais
+sequências convergem; portanto, não surpreende que a topologia também
+determine a continuidade das funções.
 
 \begin{lemma} \label{lemma:mstopocontloc}
-Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces.
-A function $f \colon X \to Y$ is continuous at $c \in X$
-if and only if for every open neighborhood $U$ of $f(c)$ in $Y$, the set
-$f^{-1}(U)$ contains an open neighborhood of $c$ in $X$.
-See \figureref{fig:mscontfuncpt}.
+Sejam $(X,d_X)$ e $(Y,d_Y)$ espaços métricos.
+Uma função $f \colon X \to Y$ é contínua em $c \in X$
+se, e somente se, para toda vizinhança aberta $U$ de $f(c)$ em $Y$, o conjunto
+$f^{-1}(U)$ contém uma vizinhança aberta de $c$ em $X$.
+Veja \figureref{fig:mscontfuncpt}.
 \end{lemma}
 
 \begin{myfigureht}
 \myincludepdft{mscontfuncpt}{%
-On the left side is a darkly shaded region marked W with dotted boundary,
-It is contained in a lightly shaded region marked f inverse of U
-with dash-dotted boundary.  On the right is a lightly shaded blob
-marked U with dotted boundary.  There is a point marked c in the region W
-has an arrow marked f connecting it to a point f of c in the region U.}
-\caption{For every neighborhood $U$ of $f(c)$, the set $f^{-1}(U)$ contains an open
-neighborhood $W$ of $c$.\label{fig:mscontfuncpt}}
+À esquerda, há uma região sombreada escura, marcada com W e com fronteira
+pontilhada. Ela está contida em uma região sombreada clara, marcada com a imagem inversa de U e com fronteira traço-ponto. À direita, há uma região
+sombreada clara, marcada com U e com fronteira pontilhada. Há um ponto
+marcado com c na região W; uma seta marcada com f o liga ao ponto f(c) na região U.}
+\caption{Para toda vizinhança $U$ de $f(c)$, o conjunto $f^{-1}(U)$ contém uma vizinhança aberta
+$W$ de $c$.\label{fig:mscontfuncpt}}
 \end{myfigureht}
 
 \begin{proof}
-First suppose that $f$ is continuous at $c$.
-Let $U$ be an open neighborhood of $f(c)$
-in $Y$, then $B_Y\bigl(f(c),\epsilon\bigr) \subset U$ for some $\epsilon >
-0$.  By continuity of $f$, there exists a $\delta > 0$
-such that whenever $x$ is such that $d_X(x,c) < \delta$, then
-$d_Y\bigl(f(x),f(c)\bigr) < \epsilon$.  In other words,
+Suponha primeiro que $f$ seja contínua em $c$.
+Seja $U$ uma vizinhança aberta de $f(c)$
+em $Y$; então $B_Y\bigl(f(c),\epsilon\bigr) \subset U$ para algum $\epsilon >
+0$. Pela continuidade de $f$, existe um $\delta > 0$
+tal que, sempre que $x$ satisfaz $d_X(x,c) < \delta$, temos
+$d_Y\bigl(f(x),f(c)\bigr) < \epsilon$. Em outras palavras,
 \begin{equation*}
 B_X(c,\delta) \subset f^{-1}\bigl(B_Y\bigl(f(c),\epsilon\bigr)\bigr) \subset
 f^{-1}(U) ,
 \end{equation*}
-and $B_X(c,\delta)$ is an open neighborhood of $c$.
+e $B_X(c,\delta)$ é uma vizinhança aberta de $c$.
 
-For the other direction,
-let $\epsilon > 0$ be given.  If
-$f^{-1}\bigl(B_Y\bigl(f(c),\epsilon\bigr)\bigr)$ contains an open
-neighborhood $W$ of $c$, it contains a ball.  That is, there is some $\delta > 0$
-such that
+Para a recíproca,
+seja dado $\epsilon > 0$. Se
+$f^{-1}\bigl(B_Y\bigl(f(c),\epsilon\bigr)\bigr)$ contém uma vizinhança aberta
+$W$ de $c$, então contém uma bola. Isto é, existe algum $\delta > 0$
+tal que
 \begin{equation*}
 B_X(c,\delta) \subset W \subset f^{-1}\bigl(B_Y\bigl(f(c),\epsilon\bigr)\bigr) .
 \end{equation*}
-That means precisely that if $d_X(x,c) < \delta$,
-then $d_Y\bigl(f(x),f(c)\bigr) < \epsilon$.
-So $f$ is continuous at~$c$.
+Isso significa precisamente que, se $d_X(x,c) < \delta$,
+então $d_Y\bigl(f(x),f(c)\bigr) < \epsilon$.
+Logo, $f$ é contínua em~$c$.
 \end{proof}
 
 \begin{thm} \label{thm:mstopocont}
-Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces.  A function $f \colon X \to Y$
-is continuous if and only if
-for every open $U \subset Y$, $f^{-1}(U)$ is open in $X$.
+Sejam $(X,d_X)$ e $(Y,d_Y)$ espaços métricos. Uma função $f \colon X \to Y$
+é contínua se, e somente se,
+para todo conjunto aberto $U \subset Y$, $f^{-1}(U)$ é aberto em $X$.
 \end{thm}
 
-The proof follows from \lemmaref{lemma:mstopocontloc} and is left as
-an exercise.
+A demonstração decorre de \lemmaref{lemma:mstopocontloc} e fica
+como exercício.
 
 \begin{example}
-Let $f \colon X \to Y$ be a continuous function.
-\thmref{thm:mstopocont} tells us that if $E \subset Y$ is closed, then 
-$f^{-1}(E) = X \setminus f^{-1}(E^c)$ is also closed.  Therefore, if
-we have a continuous
-function $f \colon X \to \R$, then the
-\emph{\myindex{zero set}} of $f$, that is, 
-$f^{-1}(0) = \bigl\{ x \in X : f(x) = 0 \bigr\}$, is closed.
-We have just proved the most basic result in
-\emph{\myindex{algebraic geometry}}, the study of
-zero sets of polynomials:  The zero set of a polynomial is closed.
+Seja $f \colon X \to Y$ uma função contínua.
+O \thmref{thm:mstopocont} nos diz que, se $E \subset Y$ é fechado, então
+$f^{-1}(E) = X \setminus f^{-1}(E^c)$ também é fechado. Portanto, se
+temos uma função contínua
+$f \colon X \to \R$, o
+\emph{\myindex{conjunto de zeros}} de $f$, isto é,
+$f^{-1}(0) = \bigl\{ x \in X : f(x) = 0 \bigr\}$, é fechado.
+Acabamos de demonstrar o resultado mais básico da
+\emph{\myindex{geometria algébrica}}, o estudo dos conjuntos
+de zeros de polinômios: o conjunto de zeros de um polinômio é fechado.
 
-Similarly, the set where $f$ is nonnegative,
+De modo análogo, o conjunto em que $f$ é não negativa,
 $f^{-1}\bigl( [0,\infty) \bigr) = \bigl\{ x \in X : f(x) \geq 0 \bigr\}$,
-is closed.  On the other hand, the
-set where $f$ is positive,
+é fechado. Por outro lado, o
+conjunto em que $f$ é positiva,
 $f^{-1}\bigl( (0,\infty) \bigr) = \bigl\{ x \in X : f(x) > 0 \bigr\}$,
-is open.  
+é aberto.
 \end{example}
 
-\subsection{Uniform continuity}
+\subsection{Continuidade uniforme}
 
-As for continuous
-functions on the real line, in the definition of continuity
-it is sometimes convenient to be able to pick
-one $\delta$ for all points.
+Assim como ocorre com funções contínuas na reta real, na definição de continuidade
+às vezes é conveniente poder escolher
+um único $\delta$ para todos os pontos.
 
 \begin{defn}
-Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces.
-Then $f \colon X \to Y$ is
-\emph{uniformly continuous}\index{uniformly continuous!in a metric space}
-if for every $\epsilon > 0$
-there is a $\delta > 0$ such that whenever $p,q \in X$ and $d_X(p,q) <
-\delta$, we have
+Sejam $(X,d_X)$ e $(Y,d_Y)$ espaços métricos.
+Dizemos que $f \colon X \to Y$ é
+\emph{uniformemente contínua}\index{uniformemente contínua!em um espaço métrico}
+se, para todo $\epsilon > 0$,
+existe um $\delta > 0$ tal que, sempre que $p,q \in X$ e $d_X(p,q) <
+\delta$, temos
 $d_Y\bigl(f(p),f(q)\bigr) < \epsilon$.
 \end{defn}
 
-A uniformly continuous function is continuous, but not necessarily
-vice versa as we have seen.
+Toda função uniformemente contínua é contínua, mas a recíproca não
+é necessariamente verdadeira, como vimos.
 
 \begin{thm} \label{thm:Xcompactfunifcont}
-Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces.
-Suppose $f \colon X \to Y$ is continuous and $X$ is compact.  Then
-$f$ is uniformly continuous.
+Sejam $(X,d_X)$ e $(Y,d_Y)$ espaços métricos.
+Suponha que $f \colon X \to Y$ seja contínua e que $X$ seja compacto. Então
+$f$ é uniformemente contínua.
 \end{thm}
 
 \begin{proof}
-Let $\epsilon > 0$ be given.  For each $c \in X$, pick $\delta_c > 0$ such that
+Seja dado $\epsilon > 0$. Para cada $c \in X$, escolha $\delta_c > 0$ tal que
 $d_Y\bigl(f(x),f(c)\bigr) < \nicefrac{\epsilon}{2}$
-whenever
+sempre que
 $x \in B(c,\delta_c)$.
 %$d_X(x,c) < \delta_c$.
-The balls
-$B(c,\delta_c)$ cover $X$, and the space $X$ is compact.  
-Apply the \hyperref[ms:lebesgue]{Lebesgue covering lemma} to obtain a 
-$\delta > 0$ such that for every $x \in X$, there is a $c \in X$
-for which $B(x,\delta) \subset B(c,\delta_c)$.
+As bolas
+$B(c,\delta_c)$ cobrem $X$, e o espaço $X$ é compacto.
+Aplique o \hyperref[ms:lebesgue]{lema da cobertura de Lebesgue} para obter um
+$\delta > 0$ tal que, para todo $x \in X$, existe um $c \in X$
+para o qual $B(x,\delta) \subset B(c,\delta_c)$.
 
-Suppose $p, q \in X$ where $d_X(p,q) < \delta$.
-Find a $c \in X$ such that $B(p,\delta) \subset B(c,\delta_c)$.
-Then $q \in B(c,\delta_c)$.  By the triangle inequality
-and the definition of $\delta_c$,
+Suponha que $p, q \in X$ e que $d_X(p,q) < \delta$.
+Encontre um $c \in X$ tal que $B(p,\delta) \subset B(c,\delta_c)$.
+Então $q \in B(c,\delta_c)$. Pela desigualdade triangular
+e pela definição de $\delta_c$,
 \begin{equation*}
 d_Y\bigl(f(p),f(q)\bigr)
 \leq
@@ -2954,37 +2952,37 @@ d_Y\bigl(f(c),f(q)\bigr)
 \end{equation*}
 \end{proof}
 
-As an application of uniform continuity,
-we prove a useful criterion for
-continuity of functions defined by integrals.
-Let $f(x,y)$ be a function of two variables and define
+Como aplicação da continuidade uniforme,
+demonstraremos um critério útil para a
+continuidade de funções definidas por integrais.
+Seja $f(x,y)$ uma função de duas variáveis e defina
 \begin{equation*}
 g(y) \coloneqq \int_a^b f(x,y) \,dx .
 \end{equation*}
-Question is, is $g$ continuous?
-We are really asking when two limiting operations commute,
-which is not always possible, so some extra hypothesis
-is necessary.  A useful sufficient (but not
-necessary) condition is that $f$ is continuous on a closed rectangle.
+A questão é: $g$ é contínua?
+Estamos perguntando, na verdade, quando duas operações de limite comutam,
+o que nem sempre é possível; portanto, é necessária alguma hipótese
+adicional. Uma condição suficiente (mas não
+necessária) útil é que $f$ seja contínua em um retângulo fechado.
 
 \begin{prop} \label{prop:integralcontcont}
-If $f \colon [a,b] \times [c,d] \to \R$ is continuous,
-then $g \colon [c,d] \to \R$ defined by
+Se $f \colon [a,b] \times [c,d] \to \R$ é contínua,
+então $g \colon [c,d] \to \R$, definida por
 \begin{equation*}
-g(y) \coloneqq \int_a^b f(x,y) \,dx  \qquad \text{is continuous}.
+g(y) \coloneqq \int_a^b f(x,y) \,dx  \qquad \text{é contínua}.
 \end{equation*}
 \end{prop}
 
 \begin{proof}
-Fix $y \in [c,d]$ and
-let $\epsilon > 0$ be given.
-As $f$ is continuous on $[a,b] \times [c,d]$, which is compact, $f$
-is uniformly continuous.  
-In particular, there exists a $\delta > 0$ such that
-whenever $z \in [c,d]$ and
-$\sabs{z-y} < \delta$, we have
-$\babs{f(x,z)-f(x,y)} < \frac{\epsilon}{b-a}$ for all $x \in [a,b]$.
-So suppose $\sabs{z-y} < \delta$.  Then
+Fixe $y \in [c,d]$ e
+seja dado $\epsilon > 0$.
+Como $f$ é contínua em $[a,b] \times [c,d]$, que é compacto, $f$
+é uniformemente contínua.
+Em particular, existe um $\delta > 0$ tal que,
+sempre que $z \in [c,d]$ e
+$\sabs{z-y} < \delta$, temos
+$\babs{f(x,z)-f(x,y)} < \frac{\epsilon}{b-a}$ para todo $x \in [a,b]$.
+Suponha então que $\sabs{z-y} < \delta$. Então
 \begin{multline*}
 \babs{
 g(z)-
@@ -3014,333 +3012,334 @@ f(x,z) - f(x,y)
 \end{multline*}
 \end{proof}
 
-In applications, if we are interested in continuity at $y_0$, we just
-need to apply the proposition in $[a,b] \times [y_0-\epsilon,y_0+\epsilon]$
-for some small $\epsilon > 0$.  For example, if $f$ is continuous in
-$[a,b] \times \R$, then $g$ is continuous on $\R$.
+Nas aplicações, se estamos interessados na continuidade em $y_0$, basta
+aplicar a proposição em $[a,b] \times [y_0-\epsilon,y_0+\epsilon]$
+para algum $\epsilon > 0$ pequeno. Por exemplo, se $f$ é contínua em
+$[a,b] \times \R$, então $g$ é contínua em $\R$.
 
 \begin{example}
-Useful examples of uniformly continuous functions are again the
-\emph{Lipschitz continuous}%
-\index{Lipschitz continuous!in a metric space}%
-\index{function!Lipschitz}
-functions.  That is, if
-$(X,d_X)$ and $(Y,d_Y)$ are metric spaces, then $f \colon X \to Y$
-is called Lipschitz or $K$-Lipschitz if there exists a $K \in \R$ such that
+Exemplos úteis de funções uniformemente contínuas são novamente as
+\emph{funções Lipschitz}%
+\index{função Lipschitz!em um espaço métrico}%
+\index{função!Lipschitz}
+Isto é, se
+$(X,d_X)$ e $(Y,d_Y)$ são espaços métricos, então $f \colon X \to Y$
+é chamada função Lipschitz ou $K$-Lipschitz se existe um $K \in \R$ tal que
 \begin{equation*}
 d_Y\bigl(f(p),f(q)\bigr) \leq K \, d_X(p,q)
-\qquad \text{for all } p,q \in X.
+\qquad \text{para todos } p,q \in X.
 \end{equation*}
-A Lipschitz function is uniformly continuous:
-Take $\delta = \nicefrac{\epsilon}{K}$ (assuming that $K > 0$).
-A function can be uniformly continuous
-but not Lipschitz,
-as we already saw: $\sqrt{x}$ on $[0,1]$
-is uniformly continuous but not Lipschitz.
+Uma função Lipschitz é uniformemente contínua:
+basta tomar $\delta = \nicefrac{\epsilon}{K}$ (supondo que $K > 0$).
+Uma função pode ser uniformemente contínua
+sem ser Lipschitz,
+como já vimos: $\sqrt{x}$ em $[0,1]$
+é uniformemente contínua, mas não é Lipschitz.
 
-It is worth mentioning that,
-if a function is Lipschitz, it tends to be
-easiest to simply show it is Lipschitz even if we are only
-interested in knowing continuity.
+Vale mencionar que,
+se uma função é Lipschitz, em geral é
+mais simples demonstrar diretamente que ela é Lipschitz, mesmo quando
+o único objetivo é saber que ela é contínua.
 \end{example}
 
-\subsection{Cluster points and limits of functions}
+\subsection{Pontos de acumulação e limites de funções}
 
-While we have not started the discussion of continuity with them and
-we will not need them until
-\volIIref{volume II\@,}{much later,}
-let us also
-translate the idea of a limit of a function from the real line to metric
-spaces.
-Again we need to start with cluster points.
+Embora ainda não tenhamos iniciado a discussão da continuidade com eles,
+e só venhamos a precisar deles
+\volIIref{volume II\@,}{bem mais adiante,}
+vamos também
+traduzir a ideia de limite de uma função na reta real para espaços métricos.
+Novamente, precisamos começar pelos pontos de acumulação.
 
 \begin{defn}
-Let $(X,d)$ be a metric space and
-$S \subset X$. A point $p \in X$ is called
-a \emph{cluster point}\index{cluster point!in a metric space} of $S$
-if for every $\epsilon > 0$, the set $B(p,\epsilon) \cap S
-\setminus \{ p \}$ is not empty.
+Seja $(X,d)$ um espaço métrico e
+$S \subset X$. Dizemos que um ponto $p \in X$ é
+um \emph{ponto de acumulação}\index{ponto de acumulação!em um espaço métrico} de $S$
+se, para todo $\epsilon > 0$, o conjunto $B(p,\epsilon) \cap S
+\setminus \{ p \}$ não é vazio.
 \end{defn}
 
-It is not enough that $p$ is in the closure of $S$;
-it must be in the closure of
-$S \setminus \{ p \}$ (exercise).
-So, $p$ is a cluster point if and only if there exists a sequence in $S \setminus
-\{ p \}$ that converges to $p$.
+Não basta que $p$ pertença ao fecho de $S$;
+ele deve pertencer ao fecho de
+$S \setminus \{ p \}$ (exercício).
+Assim, $p$ é um ponto de acumulação se, e somente se, existe uma sequência em $S \setminus
+\{ p \}$ que converge para $p$.
 
 \begin{defn}
-\index{limit!of a function in a metric space}%
-Let $(X,d_X)$, $(Y,d_Y)$ be metric spaces, $S \subset X$, $p \in X$ a cluster point of $S$,
-and $f \colon S \to Y$ a function.
-Suppose there exists an $L \in Y$ and for every $\epsilon > 0$,
-there exists a $\delta > 0$ such that whenever $x \in S \setminus \{ p \}$
-and $d_X(x,p) < \delta$, then
+\index{limite!de uma função em um espaço métrico}%
+Sejam $(X,d_X)$, $(Y,d_Y)$ espaços métricos, $S \subset X$, $p \in X$ um ponto de acumulação de $S$,
+e seja $f \colon S \to Y$ uma função.
+Suponha que exista um $L \in Y$ e que, para todo $\epsilon > 0$,
+exista um $\delta > 0$ tal que, sempre que $x \in S \setminus \{ p \}$
+e $d_X(x,p) < \delta$, temos
 \begin{equation*}
 d_Y\bigl(f(x),L\bigr) < \epsilon .
 \end{equation*}
-Then we say $f(x)$
-\emph{converges}\index{converges!function in a metric space} to $L$ as $x$ goes
-to $p$, and $L$ is a \emph{limit} of $f(x)$ as $x$
-goes to $p$.  If $L$ is unique, we write
+Então dizemos que $f(x)$
+\emph{converge}\index{converge!função em um espaço métrico} para $L$ quando $x$ tende
+a $p$, e que $L$ é um \emph{limite} de $f(x)$ quando $x$
+tende a $p$. Se $L$ é único, escrevemos
 \glsadd{not:limfunc}
 \begin{equation*}
 \lim_{x \to p} f(x) \coloneqq L .
 \end{equation*}
-If $f(x)$ does not converge as $x$ goes to $p$, we say $f$
-\emph{diverges}\index{diverges!function in a metric space} at $p$.
+Se $f(x)$ não converge quando $x$ tende a $p$, dizemos que $f$
+\emph{diverge}\index{diverge!função em um espaço métrico} em $p$.
 \end{defn}
 
-As usual, we prove that the limit, if it exists, is unique.
-The proof is a direct translation of the proof
-from \chapterref{lim:chapter}, so we leave it as an exercise.
+Como de costume, provamos que o limite, se existir, é único.
+A demonstração é uma tradução direta da demonstração
+de \chapterref{lim:chapter}; por isso, deixamos o resultado como exercício.
 
 \begin{prop} \label{prop:mslimitisunique}
-Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces, $S \subset X$, $p \in X$
-a cluster point of $S$, and let $f \colon S \to Y$ be a function
-such that $f(x)$ converges as $x$ goes to $p$.  Then
-the limit of $f(x)$ as $x$ goes to $p$ is unique.
+Sejam $(X,d_X)$ e $(Y,d_Y)$ espaços métricos, $S \subset X$, $p \in X$
+um ponto de acumulação de $S$, e seja $f \colon S \to Y$ uma função
+tal que $f(x)$ converge quando $x$ tende a $p$. Então
+o limite de $f(x)$ quando $x$ tende a $p$ é único.
 \end{prop}
 
-In any metric space, just like in $\R$, continuous limits may be
-replaced by sequential limits.  The proof is again a direct translation
-of the proof from \chapterref{lim:chapter}, and we leave it as an
-exercise.  The upshot is that we really only need to prove things for
-sequential limits.
+Em qualquer espaço métrico, assim como em $\R$, limites de funções podem ser
+substituídos por limites sequenciais. A demonstração também é uma tradução direta
+da demonstração de \chapterref{lim:chapter}, e a deixamos como
+exercício. Em resumo, precisamos demonstrar os resultados apenas para
+limites sequenciais.
 
 \begin{lemma}\label{ms:seqflimit:lemma}
-Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces, $S \subset X$, $p \in X$
-a cluster point of $S$, and let $f \colon S \to Y$ be a function.
+Sejam $(X,d_X)$ e $(Y,d_Y)$ espaços métricos, $S \subset X$, $p \in X$
+um ponto de acumulação de $S$, e seja $f \colon S \to Y$ uma função.
 
-Then
-$f(x)$ converges to $L \in Y$ as $x$ goes to $p$ if and only if for every
-sequence $\{ x_n \}_{n=1}^\infty$
-in $S \setminus \{p\}$
-such that $\lim_{n\to\infty} x_n = p$,
-the sequence $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ converges to $L$.
+Então
+$f(x)$ converge para $L \in Y$ quando $x$ tende a $p$ se, e somente se, para toda
+sequência $\{ x_n \}_{n=1}^\infty$
+em $S \setminus \{p\}$
+tal que $\lim_{n\to\infty} x_n = p$,
+a sequência $\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ converge para $L$.
 \end{lemma}
 
-By applying \propref{prop:contiscont} or the definition directly, we find
-(exercise), as in \chapterref{lim:chapter}, that for cluster points $p$ of $S
-\subset X$, the function
-$f \colon S \to Y$ is continuous at $p$ if and only if
+Aplicando \propref{prop:contiscont} ou diretamente a definição, concluímos
+(exercício), como em \chapterref{lim:chapter}, que, para pontos de acumulação $p$ de $S
+\subset X$, a função
+$f \colon S \to Y$ é contínua em $p$ se, e somente se,
 \begin{equation*}
 \lim_{x \to p} f(x) = f(p) .
 \end{equation*}
 
-\subsection{Exercises}
+\subsection{Exercícios}
 
 \begin{exercise}
-Consider $\N \subset \R$ with the standard metric.  Let $(X,d)$ be a
-metric space and $f \colon X \to \N$ a continuous function.
+Considere $\N \subset \R$ com a métrica usual. Seja $(X,d)$ um
+espaço métrico e seja $f \colon X \to \N$ uma função contínua.
 \begin{enumerate}[a)]
 \item
-Prove that if $X$ is connected,
-then $f$ is constant (the range of $f$ is a single value).
+Demonstre que, se $X$ é conexo,
+então $f$ é constante (a imagem de $f$ tem um único elemento).
 \item
-Find an example where $X$ is disconnected and $f$ is not constant.
+Dê um exemplo em que $X$ é desconexo e $f$ não é constante.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise} \label{exercise:dicontR2}
 \pagebreak[2]
-Define $f \colon \R^2 \to \R$ by $f(0,0) \coloneqq 0$, and
-$f(x,y) \coloneqq \frac{xy}{x^2+y^2}$ if $(x,y) \neq (0,0)$.
-See \figureref{fig:xyxsqysq}.
+Defina $f \colon \R^2 \to \R$ por $f(0,0) \coloneqq 0$ e
+$f(x,y) \coloneqq \frac{xy}{x^2+y^2}$ se $(x,y) \neq (0,0)$.
+Veja \figureref{fig:xyxsqysq}.
 \begin{enumerate}[a)]
 \item
-Show that for every fixed $x$,
-the function that takes $y$ to $f(x,y)$ is continuous.  Similarly,
-for every fixed $y$, the function that takes $x$ to $f(x,y)$ is continuous.
+Demonstre que, para todo $x$ fixado,
+a função que leva $y$ a $f(x,y)$ é contínua. De modo análogo,
+para todo $y$ fixado, a função que leva $x$ a $f(x,y)$ é contínua.
 \item
-Show that $f$ is not continuous.
+Demonstre que $f$ não é contínua.
 \end{enumerate}
 \end{exercise}
 
-\begin{exercise} 
+\begin{exercise}
 \pagebreak[2]
-Suppose $(X,d_X)$, $(Y,d_Y)$ are metric spaces and
-$f \colon X \to Y$ is continuous.
-Let $A \subset X$.
+Suponha que $(X,d_X)$ e $(Y,d_Y)$ sejam espaços métricos e que
+$f \colon X \to Y$ seja contínua.
+Seja $A \subset X$.
 \begin{enumerate}[a)]
 \item
-Show that $f(\widebar{A}) \subset \overline{f(A)}$.
+Demonstre que $f(\widebar{A}) \subset \overline{f(A)}$.
 \item
-Show by example that $f(\widebar{A})$ can be a proper subset of
+Dê um exemplo em que $f(\widebar{A})$ seja um subconjunto próprio de
 $\overline{f(A)}$.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Prove \thmref{thm:mstopocont}.  Hint: Use \lemmaref{lemma:mstopocontloc}.
+Demonstre o \thmref{thm:mstopocont}. Dica: use \lemmaref{lemma:mstopocontloc}.
 \end{exercise}
 
 \begin{exercise} \label{exercise:msconnconn}
-Suppose $f \colon X \to Y$ is continuous for metric spaces $(X,d_X)$
-and $(Y,d_Y)$.  Show that if $X$ is connected, then $f(X)$ is connected.
+Suponha que $f \colon X \to Y$ seja contínua para os espaços métricos $(X,d_X)$
+e $(Y,d_Y)$. Demonstre que, se $X$ é conexo, então $f(X)$ é conexo.
 \end{exercise}
 
 \begin{exercise}
-Prove the following version of the
-\hyperref[IVT:thm]{intermediate value theorem}.  Let $(X,d)$ be a connected
-metric space and $f \colon X \to \R$ a continuous function.  Suppose 
-$x_0,x_1 \in X$ and $y \in \R$ are such that $f(x_0) < y < f(x_1)$.
-Then prove that there exists a $z \in X$ such that $f(z) = y$.
-Hint: See \exerciseref{exercise:msconnconn}.
+Demonstre a seguinte versão do
+\hyperref[IVT:thm]{teorema do valor intermediário}. Seja $(X,d)$ um espaço métrico
+conexo e seja $f \colon X \to \R$ uma função contínua. Suponha que
+$x_0,x_1 \in X$ e $y \in \R$ sejam tais que $f(x_0) < y < f(x_1)$.
+Demonstre então que existe um $z \in X$ tal que $f(z) = y$.
+Dica: veja \exerciseref{exercise:msconnconn}.
 \end{exercise}
 
 \begin{exercise}
-A continuous $f \colon X \to Y$ between metric spaces $(X,d_X)$ and
-$(Y,d_Y)$ is said to be \emph{\myindex{proper}}
-if for every compact set $K \subset Y$, the set $f^{-1}(K)$ is compact.
-Suppose a continuous $f \colon (0,1) \to (0,1)$ is proper and
-$\{ x_n \}_{n=1}^\infty$ is a sequence in $(0,1)$ converging to $0$.  Show that
-$\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ has no subsequence that converges in $(0,1)$.
+Uma função contínua $f \colon X \to Y$ entre os espaços métricos $(X,d_X)$ e
+$(Y,d_Y)$ é dita \emph{\myindex{própria}}
+se, para todo conjunto compacto $K \subset Y$, o conjunto $f^{-1}(K)$ é compacto.
+Suponha que uma função contínua $f \colon (0,1) \to (0,1)$ seja própria e que
+$\{ x_n \}_{n=1}^\infty$ seja uma sequência em $(0,1)$ que converge para $0$. Demonstre que
+$\bigl\{ f(x_n) \bigr\}_{n=1}^\infty$ não tem subsequência que
+convirja em $(0,1)$.
 \end{exercise}
 
 \begin{exercise}
-Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces and
-$f \colon X \to Y$ be a one-to-one and onto continuous function.  Suppose
-$X$ is compact.  Prove that the inverse $f^{-1} \colon Y \to X$
-is continuous.
+Sejam $(X,d_X)$ e $(Y,d_Y)$ espaços métricos e seja
+$f \colon X \to Y$ uma função contínua, bijetora. Suponha
+que $X$ seja compacto. Demonstre que a inversa $f^{-1} \colon Y \to X$
+é contínua.
 \end{exercise}
 
 \begin{exercise}
-Take the metric space of continuous functions $C\bigl([0,1],\R\bigr)$.  Let
-$k \colon [0,1] \times [0,1] \to \R$ be a continuous function.
-Given $f \in C\bigl([0,1],\R\bigr)$ define
+Considere o espaço métrico das funções contínuas $C\bigl([0,1],\R\bigr)$.
+Seja
+$k \colon [0,1] \times [0,1] \to \R$ uma função contínua.
+Dada uma função $f \in C\bigl([0,1],\R\bigr)$, defina
 \begin{equation*}
 \varphi_f(x) \coloneqq \int_0^1 k(x,y) f(y) \,dy .
 \end{equation*}
 \begin{enumerate}[a)]
 \item
-Show that $T(f) \coloneqq \varphi_f$ defines a function
+Demonstre que $T(f) \coloneqq \varphi_f$ define uma função
 $T \colon C\bigl([0,1],\R\bigr) \to C\bigl([0,1],\R\bigr)$.
 \item
-Show that $T$ is continuous.
+Demonstre que $T$ é contínua.
 \end{enumerate}
 \end{exercise}
 
 \begin{samepage}
 \begin{exercise}
-Let $(X,d)$ be a metric space.
+Seja $(X,d)$ um espaço métrico.
 \begin{enumerate}[a)]
 \item
-If $p \in X$,
-show that $f \colon X \to \R$ defined
-by $f(x) \coloneqq d(x,p)$ is continuous.
+Se $p \in X$,
+demonstre que $f \colon X \to \R$, definida
+por $f(x) \coloneqq d(x,p)$, é contínua.
 \item
-Define a metric on $X \times X$ as in \exerciseref{exercise:mscross} part
-b, and show that $g \colon X \times X \to \R$ defined by
-$g(x,y) \coloneqq d(x,y)$ is continuous.
+Defina uma métrica em $X \times X$ como em \exerciseref{exercise:mscross}, item
+b, e demonstre que $g \colon X \times X \to \R$, definida por
+$g(x,y) \coloneqq d(x,y)$, é contínua.
 \item
-Show that if $K_1$ and $K_2$ are compact subsets of $X$, then
-there exists a $p \in K_1$ and $q \in K_2$ such that $d(p,q)$ is minimal,
-that is, $d(p,q) = \inf \{ d(x,y) \colon x \in K_1, y \in K_2 \}$.
+Demonstre que, se $K_1$ e $K_2$ são subconjuntos compactos de $X$, então
+existem $p \in K_1$ e $q \in K_2$ tais que $d(p,q)$ é mínimo,
+isto é, $d(p,q) = \inf \{ d(x,y) \colon x \in K_1, y \in K_2 \}$.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
 
 \begin{exercise}
-Let $(X,d)$ be a compact metric space, let $C(X,\R)$ be the set
-of real-valued continuous functions.  Define
+Seja $(X,d)$ um espaço métrico compacto e seja $C(X,\R)$ o conjunto
+das funções contínuas com valores reais. Defina
 \begin{equation*}
 d(f,g) \coloneqq \snorm{f-g}_X = \sup_{x \in X} \babs{f(x)-g(x)} .
 \end{equation*}
 \begin{enumerate}[a)]
 \item
-Show that $d$ makes $C(X,\R)$ into a metric space.
+Demonstre que $d$ torna $C(X,\R)$ um espaço métrico.
 \item
-Show that for every $x \in X$, the evaluation function
-$E_x \colon C(X,\R) \to \R$ defined by $E_x(f) \coloneqq f(x)$
-is a continuous function.
+Demonstre que, para todo $x \in X$, a função avaliação
+$E_x \colon C(X,\R) \to \R$, definida por $E_x(f) \coloneqq f(x)$,
+é contínua.
 \end{enumerate}
 \end{exercise}
 
 \begin{samepage}
 \begin{exercise}
-Let $C\bigl([a,b],\R\bigr)$ be the set of continuous functions and
-$C^1\bigl([a,b],\R\bigr)$\glsadd{not:contdifffuncs} the set of
-once continuously differentiable functions on $[a,b]$.
-Define
+Seja $C\bigl([a,b],\R\bigr)$ o conjunto das funções contínuas e
+$C^1\bigl([a,b],\R\bigr)$\glsadd{not:contdifffuncs} o conjunto das
+funções continuamente diferenciáveis em $[a,b]$.
+Defina
 \begin{equation*}
 d_{C}(f,g) \coloneqq \snorm{f-g}_{[a,b]}
-\qquad \text{and} \qquad
+\qquad \text{e} \qquad
 d_{C^1}(f,g) \coloneqq \snorm{f-g}_{[a,b]} + \snorm{f'-g'}_{[a,b]},
 \end{equation*}
-where $\snorm{\cdot}_{[a,b]}$ is the uniform norm.
-By \exampleref{example:msC01} and \exerciseref{exercise:C1ab}, we know that
-$C\bigl([a,b],\R\bigr)$ with $d_C$ is a metric space and
-so is
-$C^1\bigl([a,b],\R\bigr)$ with $d_{C^1}$.
+onde $\snorm{\cdot}_{[a,b]}$ é a norma uniforme.
+Por \exampleref{example:msC01} e \exerciseref{exercise:C1ab}, sabemos que
+$C\bigl([a,b],\R\bigr)$ com $d_C$ é um espaço métrico, e
+também o é
+$C^1\bigl([a,b],\R\bigr)$ com $d_{C^1}$.
 \begin{enumerate}[a)]
 \item
-Prove that the derivative operator $D \colon 
-C^1\bigl([a,b],\R\bigr) \to C\bigl([a,b],\R\bigr)$ defined by
-$D(f) \coloneqq f'$ is continuous.
+Demonstre que o operador derivada $D \colon 
+C^1\bigl([a,b],\R\bigr) \to C\bigl([a,b],\R\bigr)$, definido por
+$D(f) \coloneqq f'$, é contínuo.
 \item
-On the other hand if we consider the metric $d_C$ on $C^1\bigl([a,b],\R\bigr)$,
-then prove the derivative operator is no longer continuous.  Hint: Consider
+Por outro lado, se considerarmos a métrica $d_C$ em $C^1\bigl([a,b],\R\bigr)$,
+demonstre que o operador derivada deixa de ser contínuo. Dica: considere
 $\sin(n x)$.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
 
 \begin{exercise}
-Let $(X,d)$ be a metric space, $S \subset X$, and $p \in X$.  Prove that
-$p$ is a cluster point of $S$ if and only if $p \in \overline{S \setminus \{
+Sejam $(X,d)$ um espaço métrico, $S \subset X$ e $p \in X$. Demonstre que
+$p$ é um ponto de acumulação de $S$ se, e somente se, $p \in \overline{S \setminus \{
 p \}}$.
 \end{exercise}
 
 \begin{exercise}
-Prove \propref{prop:mslimitisunique}.
+Demonstre \propref{prop:mslimitisunique}.
 \end{exercise}
 
 \begin{exercise}
-Prove \lemmaref{ms:seqflimit:lemma}.
+Demonstre \lemmaref{ms:seqflimit:lemma}.
 \end{exercise}
 
 \begin{exercise}
-Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces, $S \subset X$, $p \in X$
-a cluster point of $S$, and let $f \colon S \to Y$ be a function.
-Prove that
-$f \colon S \to Y$ is continuous at $p$ if and only if
+Sejam $(X,d_X)$ e $(Y,d_Y)$ espaços métricos, $S \subset X$, $p \in X$
+um ponto de acumulação de $S$, e seja $f \colon S \to Y$ uma função.
+Demonstre que
+$f \colon S \to Y$ é contínua em $p$ se, e somente se,
 \begin{equation*}
 \lim_{x \to p} f(x) = f(p) .
 \end{equation*}
 \end{exercise}
 
 \begin{exercise}
-Define
+Defina
 \begin{equation*}
 f(x,y) \coloneqq
 \begin{cases}
-\frac{2xy}{x^4+y^2} & \text{if } (x,y) \neq (0,0), \\
-0 & \text{if } (x,y) = (0,0) .
+\frac{2xy}{x^4+y^2} & \text{se } (x,y) \neq (0,0), \\
+0 & \text{se } (x,y) = (0,0) .
 \end{cases}
 \end{equation*}
 \begin{enumerate}[a)]
 \item
-Show that for every fixed $y$ the function that takes $x$ to $f(x,y)$
-is continuous and hence Riemann integrable.
+Demonstre que, para todo $y$ fixado, a função que leva $x$ a $f(x,y)$
+é contínua e, portanto, integrável no sentido de Riemann.
 \item
-For every fixed $x$, the function that takes $y$ to $f(x,y)$ is continuous.
+Para todo $x$ fixado, a função que leva $y$ a $f(x,y)$ é contínua.
 \item
-Show that $f$ is not continuous at $(0,0)$.
+Demonstre que $f$ não é contínua em $(0,0)$.
 \item
-Now show that $g(y) \coloneqq \int_0^1 f(x,y)\,dx$ is not continuous at $y=0$.
+Agora demonstre que $g(y) \coloneqq \int_0^1 f(x,y)\,dx$ não é contínua em $y=0$.
 \end{enumerate}
-Note: Feel free to use what you know about $\arctan$ from calculus,
-in particular that $\frac{d}{ds} \bigl[ \arctan(s) \bigr] = \frac{1}{1+s^2}$.
+Observação: fique à vontade para usar o que sabe sobre $\arctan$ do cálculo,
+em particular que $\frac{d}{ds} \bigl[ \arctan(s) \bigr] = \frac{1}{1+s^2}$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:integralcontcontextra}
-Prove a stronger version of \propref{prop:integralcontcont}:
-If $f \colon (a,b) \times (c,d) \to \R$ is a bounded continuous function,
-then $g \colon (c,d) \to \R$ defined by
+Demonstre uma versão mais forte da \propref{prop:integralcontcont}:
+se $f \colon (a,b) \times (c,d) \to \R$ é uma função contínua limitada,
+então $g \colon (c,d) \to \R$, definida por
 \begin{equation*}
-g(y) \coloneqq \int_a^b f(x,y) \,dx  \qquad \text{is continuous}.
+g(y) \coloneqq \int_a^b f(x,y) \,dx  \qquad \text{é contínua}.
 \end{equation*}
-Hint: First integrate over $[a+\nicefrac{1}{n},b-\nicefrac{1}{n}]$.
+Dica: primeiro integre em $[a+\nicefrac{1}{n},b-\nicefrac{1}{n}]$.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

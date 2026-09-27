@@ -1,0 +1,64 @@
+name: "Prévia do PDF — Análise Básica I"
+
+on:
+  pull_request:
+    branches: [master]
+    paths:
+      - ".realmat/book.json"
+      - ".github/workflows/preview-pdf.yml"
+      - "**.tex"
+      - "**.sty"
+      - "**.cls"
+      - "figures/**"
+      - "images/**"
+      - "plots/**"
+
+permissions:
+  contents: read
+
+jobs:
+  preview:
+    name: Compilar e anexar PDF para revisão
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - name: Checkout do livro
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+
+      - name: Checkout dos scripts REALMat
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: projetorealmat/.github
+          ref: v3
+          path: .realmat-central
+
+      - name: Instalar dependências de compilação
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y texlive-full latexmk poppler-utils pdf2svg nodejs npm
+
+      - name: Compilar PDF
+        env:
+          BUILD_SYSTEM: latex
+          PDF_NAME: realanal.pdf
+          LATEX_ENTRYPOINT: realanal.tex
+          LATEX_ENGINE: pdflatex
+        run: bash .realmat-central/scripts/build-book.sh
+
+      - name: Verificar PDF
+        run: |
+          set -euo pipefail
+          pdftotext -layout realanal.pdf "${RUNNER_TEMP}/realanal.pdf.txt"
+          test -s "${RUNNER_TEMP}/realanal.pdf.txt"
+
+      - name: Disponibilizar PDF para revisão
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: ra-pdf-preview-pr-${{ github.event.pull_request.number }}
+          path: realanal.pdf
+          if-no-files-found: error
+          retention-days: 7

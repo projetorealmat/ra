@@ -53,7 +53,7 @@ int main()
 
   //label(P(x-0.3,f(x)-0.3*slope),
         //P(1,4), "slope $= \\frac{f(x)-f(y)}{x-y}$", tl);
-  label(P(0.2,1.2),P(0,0), "slope $= \\frac{f(x)-f(y)}{x-y}$", br);
+  label(P(0.2,1.2),P(0,0), "inclinação $= \\frac{f(x)-f(y)}{x-y}$", br);
   //label(P(0.2,1.2),P(0,0), "$\\lvert \\text{slope} \\rvert \\leq K$", br);
 
   bold();

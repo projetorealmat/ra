@@ -1105,13 +1105,14 @@ f(x) \coloneqq
 \end{equation*}
 A função $f$ é descontínua em todo $c \in \R$.
 
+% Intervenção editorial transparente: a fonte restringe as sequências a $(0,1)$ apesar de afirmar descontinuidade em todo $\R$; como os racionais e irracionais são densos em $\R$, ampliamos o domínio das sequências.
 Demonstração:
 Se $c$ é racional, tome uma sequência $\{ x_n \}_{n=1}^\infty$
-de números irracionais em $(0,1)$ tal que $\lim_{n\to\infty} x_n = c$ (por que isso é possível?). Então $f(x_n) = 0$
+de números irracionais em $\R$ tal que $\lim_{n\to\infty} x_n = c$ (por que isso é possível?). Então $f(x_n) = 0$
 e, portanto, $\lim_{n\to\infty} f(x_n) = 0$, mas $f(c) = 1$.
 Se $c$ é irracional, tome uma sequência
 $\{ x_n \}_{n=1}^\infty$
-de números racionais em $(0,1)$
+de números racionais em $\R$
 que converge para $c$ (por que isso é possível?). Então $\lim_{n\to\infty} f(x_n) = 1$, mas $f(c) = 0$.
 \end{example}
 

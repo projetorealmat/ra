@@ -1462,9 +1462,9 @@ Suponhamos que $L < 1$.
 Como
 $\frac{\sabs{x_{n+1}}}{\sabs{x_n}} \geq 0$ para todo $n$, temos $L \geq 0$. Escolhamos
 $r$ tal que $L < r < 1$.
-Queremos comparar a sequência $\{ x_n \}_{n=1}^\infty$ com a sequência $\{ r^n \}_{n=1}^\infty$. A ideia é que,
-embora a razão $\frac{\sabs{x_{n+1}}}{\sabs{x_n}}$ não seja menor que $L$ a partir de algum ponto,
-ela será eventualmente menor que $r$, que ainda é menor que 1.
+Queremos comparar a sequência $\{ x_n \}_{n=1}^\infty$ com a sequência $\{ r^n \}_{n=1}^\infty$.
+% Intervenção editorial transparente: a frase da fonte é ambígua; explicita-se a leitura compatível com o limite da razão e com a comparação usada na demonstração.
+A ideia é que não podemos garantir que a razão $\frac{\sabs{x_{n+1}}}{\sabs{x_n}}$ seja menor que $L$ a partir de algum ponto; como $L < r < 1$, ela será eventualmente menor que $r$.
 A ideia intuitiva da demonstração está ilustrada na \figureref{figratseq}.
 \begin{myfigureht}
 \myincludepdft{figratseq}{%
@@ -4469,8 +4469,9 @@ A série
 \begin{equation*}
 \sum_{n=0}^\infty \frac{1}{n!} x^n
 \end{equation*}
-converge absolutamente para todo $x \in \R$, pelo critério da razão.
-Para qualquer $x \in \R$,
+% Intervenção editorial transparente: em $x=0$, o quociente do critério da razão não está definido; esse caso é tratado diretamente.
+converge absolutamente para todo $x \in \R$.
+Para $x=0$, a série é igual a $1$. Para $x \neq 0$, o critério da razão fornece
 \begin{equation*}
 \lim_{n \to \infty}
 \frac{\bigl(1/(n+1)!\bigr) \, x^{n+1}}{(1/n!) \, x^{n}}

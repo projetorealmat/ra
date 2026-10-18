@@ -2723,16 +2723,16 @@ o que indica que a integral diverge para infinito.
 \begin{proof}
 Começamos pelo primeiro item.
 Como $f$ é não negativa,
-$\int_a^x f$ é crescente em função de $x$.
+$\int_a^x f$ é não decrescente em função de $x$.
 Se o supremo é infinito, então, para todo $M \in \R$,
 encontramos $N$ tal que $\int_a^N f \geq M$. Como $\int_a^x f$
-é crescente, $\int_a^x f \geq M$ para todo $x \geq N$. Portanto,
+é não decrescente, $\int_a^x f \geq M$ para todo $x \geq N$. Portanto,
 $\int_a^\infty f$ diverge para infinito.
 
 Agora suponha que o supremo seja finito e denote
 $A \coloneqq \sup \left\{ \int_a^x f : x \geq a \right\}$.
 Para todo $\epsilon > 0$, encontramos $N$ tal que
-$A - \int_a^N f < \epsilon$. Como $\int_a^x f$ é crescente,
+$A - \int_a^N f < \epsilon$. Como $\int_a^x f$ é não decrescente,
 temos
 $A - \int_a^x f < \epsilon$ para todo $x \geq N$ e, portanto,
 $\int_a^\infty f$ converge para $A$.
@@ -2748,7 +2748,7 @@ $\lim_{n\to\infty} x_n = \infty$ e que
 converge. Dado $\epsilon > 0$, escolha $N$ de modo que, para
 todo $n \geq N$, tenhamos
 $A - \epsilon < \int_a^{x_n} f < A + \epsilon$.
-Como $\int_a^x f$ é crescente em função de $x$, para todo
+Como $\int_a^x f$ é não decrescente em função de $x$, para todo
 $x \geq x_N$ temos
 \begin{equation*}
 A - \epsilon < \int_a^{x_N} f \leq \int_a^x f .
@@ -3308,7 +3308,7 @@ de uma série e estimar sua soma.
 
 \begin{prop}[Teste da integral]\index{teste da integral para séries}
 Suponha que $f \colon [k,\infty) \to \R$ seja uma função não negativa e
-decrescente, com $k \in \Z$. Então
+não crescente, com $k \in \Z$. Então
 \begin{equation*}
 \sum_{n=k}^\infty f(n)
 \quad \text{converge} \qquad \text{se, e somente se,}
@@ -3332,9 +3332,9 @@ $[k,b]$, para qualquer $b>k$; portanto, o enunciado do teorema faz sentido
 sem hipóteses adicionais de integrabilidade.
 \begin{myfigureht}
 \myincludegraphics{integraltest}{%
-Diagrama dos retângulos de Darboux para uma função decrescente: começa em x igual a 1 e avança em intervalos de comprimento 1 até x igual a
+Diagrama dos retângulos de Darboux para uma função não crescente: começa em x igual a 1 e avança em intervalos de comprimento 1 até x igual a
 10, à direita. Como a
-função é decrescente, seu gráfico passa pelo canto superior esquerdo de cada
+função é não crescente, seu gráfico passa pelo canto superior esquerdo de cada
 retângulo completo e pelo canto superior direito de cada retângulo sombreado.}
 \caption{A área sob a curva, $\int_1^\infty f$, é limitada inferiormente
 pela área dos retângulos sombreados, $f(2)+f(3)+f(4)+\cdots$, e
@@ -3344,7 +3344,7 @@ $f(1)+f(2)+f(3)+\cdots$.\label{fig:integraltest}}
 
 \begin{proof}
 Sejam $\ell,m \in \Z$ tais que $m>\ell\geq k$.
-Como $f$ é decrescente, temos
+Como $f$ é não crescente, temos
 $\int_{n}^{n+1} f \leq f(n) \leq \int_{n-1}^{n} f$. Portanto,
 \begin{equation} \label{impropriemann:eqseries}
 \int_\ell^m f
@@ -3517,7 +3517,7 @@ $\babs{\int_a^b f}<\epsilon$.
 
 \begin{exercise}
 Suponha que $f \colon [0,\infty) \to \R$ seja não negativa e
-\emph{decrescente}. Prove que:
+\emph{não crescente}. Prove que:
 \begin{enumerate}[a)]
 \item
 Se $\int_0^\infty f < \infty$, então $\lim\limits_{x\to\infty} f(x)=0$.

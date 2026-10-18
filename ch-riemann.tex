@@ -181,7 +181,7 @@ menores.
 \begin{defn}
 Sejam $P = \{ x_0, x_1, \ldots, x_n \}$ e
 $\widetilde{P} = \{ \widetilde{x}_0, \widetilde{x}_1, \ldots,
-\widetilde{x}_{\ell} \}$ sejam
+\widetilde{x}_{\ell} \}$
 partições de $[a,b]$. Dizemos que $\widetilde{P}$ é um
 \emph{refinamento}\index{refinamento de uma partição} de $P$
 se, como conjuntos, $P \subset \widetilde{P}$.
@@ -304,9 +304,9 @@ Pela \propref{sumulbound:prop}, para toda partição $P$,
 m(b-a) \leq L(P,f) \leq U(P,f) \leq M(b-a).
 \end{equation*}
 Da desigualdade
-$m(b-a) \leq L(P,f)$ implies $m(b-a) \leq \underline{\int_a^b} f$.
+$m(b-a) \leq L(P,f)$ implica $m(b-a) \leq \underline{\int_a^b} f$.
 Da desigualdade
-$U(P,f) \leq M(b-a)$ implies $\overline{\int_a^b} f \leq M(b-a)$.
+$U(P,f) \leq M(b-a)$ implica $\overline{\int_a^b} f \leq M(b-a)$.
 
 A desigualdade central em
 \eqref{intulbound:eq} é o ponto principal da proposição.
@@ -641,7 +641,7 @@ f(x) \coloneqq
 0 & \text{se } x \leq 0.
 \end{cases}
 \end{equation*}
-Prove que $f \in \sR\bigl([-1,1]\bigr)$ e
+Demonstre que $f \in \sR\bigl([-1,1]\bigr)$ e
 calcule $\int_{-1}^1 f$ usando a definição de integral
 (mas sinta-se à vontade para usar as proposições desta seção).
 %(feel free to use \propref{intulbound:prop}).
@@ -657,7 +657,7 @@ d & \text{se } x = c, \\
 0 & \text{se } x \neq c.
 \end{cases}
 \end{equation*}
-Prove que $f \in \sR\bigl([a,b]\bigr)$ e
+Demonstre que $f \in \sR\bigl([a,b]\bigr)$ e
 calcule
 $\int_a^b f$ usando a definição de integral
 %(feel free to use \propref{intulbound:prop}).
@@ -688,7 +688,7 @@ que $g$ é integrável à Riemann em $I$.
 Suponha que $f \colon [0,1] \to \R$ e $g \colon [0,1] \to \R$
 sejam tais que $f(x) = g(x)$ para todo $x \in (0,1]$.
 Suponha que $f$ seja integrável à Riemann.
-Prove que $g$ é integrável à Riemann e que $\int_{0}^1 f = \int_{0}^1 g$.
+Demonstre que $g$ é integrável à Riemann e que $\int_{0}^1 f = \int_{0}^1 g$.
 \end{exercise}
 
 \begin{exercise}
@@ -747,7 +747,7 @@ mas a composição $f \circ g$ não seja integrável à Riemann.
 
 \begin{exercise}
 Suponha que $f \colon [a,b] \to \R$ seja uma função limitada e que $P$ seja
-uma partição de $[a,b]$ tal que $L(P,f)=U(P,f)$. Prove que $f$ é constante.
+uma partição de $[a,b]$ tal que $L(P,f)=U(P,f)$. Demonstre que $f$ é constante.
 \end{exercise}
 
 
@@ -1354,16 +1354,16 @@ Seja $f \colon [a,b] \to \R$ uma função monótona. Então $f \in
 \begin{exercise} \label{exercise:proofoflinpropparti}
 Complete a demonstração do primeiro item da
 \propref{prop:integrallinear}. Seja $f \in \sR\bigl([a,b]\bigr)$.
-Prove que $-f \in \sR\bigl([a,b]\bigr)$ e
+Demonstre que $-f \in \sR\bigl([a,b]\bigr)$ e
 \begin{equation*}
 \int_a^b - f(x) \,dx = - \int_a^b f(x) \,dx .
 \end{equation*}
 \end{exercise}
 
 \begin{exercise} \label{exercise:proofoflinproppartii}
-Prove o segundo item da \propref{prop:integrallinear}.
+Demonstre o segundo item da \propref{prop:integrallinear}.
 Sejam $f,g \in \sR\bigl([a,b]\bigr)$.
-Prove, sem usar a \propref{prop:upperlowerlinineq}, que $f+g$ pertence a
+Demonstre, sem usar a \propref{prop:upperlowerlinineq}, que $f+g$ pertence a
 $\sR\bigl([a,b]\bigr)$ e que
 \begin{equation*}
 \int_a^b \bigl( f(x)+g(x) \bigr) \,dx = 
@@ -1379,27 +1379,27 @@ $U(P,g)-L(P,g) < \nicefrac{\epsilon}{2}$.
 \begin{exercise} \label{exercise:changeendpointsintegral}
 Seja $f \colon [a,b] \to \R$ integrável à Riemann, e seja
 $g \colon [a,b] \to \R$ tal que $f(x) = g(x)$ para todo $x \in (a,b)$.
-Prove que $g$ é integrável à Riemann e que
+Demonstre que $g$ é integrável à Riemann e que
 \begin{equation*}
 \int_a^b g = \int_a^b f.
 \end{equation*}
 \end{exercise}
 
 \begin{exercise}
-Prove o \emph{\myindex{teorema do valor médio para integrais}}:
+Demonstre o \emph{\myindex{teorema do valor médio para integrais}}:
 se $f \colon [a,b] \to \R$ é contínua, então existe
 $c \in [a,b]$ tal que $\int_a^b f = f(c)(b-a)$.
 \end{exercise}
 
 \begin{exercise}
 Seja $f \colon [a,b] \to \R$ uma função contínua tal que $f(x) \geq 0$
-para todo $x \in [a,b]$ e $\int_a^b f = 0$. Prove que $f(x) = 0$
+para todo $x \in [a,b]$ e $\int_a^b f = 0$. Demonstre que $f(x) = 0$
 para todo $x$.
 \end{exercise}
 
 \begin{exercise}
 Seja $f \colon [a,b] \to \R$ uma função contínua
-e suponha que $\int_a^b f = 0$. Prove que existe
+e suponha que $\int_a^b f = 0$. Demonstre que existe
 $c \in [a,b]$ tal que $f(c) = 0$. (Compare com o exercício anterior.)
 \end{exercise}
 
@@ -1411,7 +1411,7 @@ Mostre que existe $c \in [a,b]$ tal que $f(c) = g(c)$.
 
 \begin{exercise}
 Seja $f \in \sR\bigl([a,b]\bigr)$. Sejam $\alpha, \beta, \gamma$ números
-arbitrários em $[a,b]$ (não necessariamente em alguma ordem específica). Prove
+arbitrários em $[a,b]$ (não necessariamente em alguma ordem específica). Demonstre
 \begin{equation*}
 \int_\alpha^\gamma f =
 \int_\alpha^\beta f +
@@ -1421,7 +1421,7 @@ Lembre-se do significado de $\int_a^b f$ quando $b \leq a$.
 \end{exercise}
 
 \begin{exercise}
-Prove o \corref{intsubcor}.
+Demonstre o \corref{intsubcor}.
 \end{exercise}
 
 \begin{exercise} \label{exercise:easyabsint}
@@ -1508,7 +1508,7 @@ funções crescentes em $[a,b]$. Mostre que $h$ é integrável à Riemann.
 \end{exercise}
 
 \begin{exercise}[Desafiador] \label{exercise:hardabsint}
-Suponha que $f \in \sR\bigl([a,b]\bigr)$. Prove que a função que associa a $x$
+Suponha que $f \in \sR\bigl([a,b]\bigr)$. Demonstre que a função que associa a $x$
 o valor $\babs{f(x)}$ também é integrável à Riemann em $[a,b]$.
 Em seguida, prove a mesma desigualdade do \exerciseref{exercise:easyabsint}.
 \end{exercise}
@@ -1534,18 +1534,18 @@ Lipschitz contínua. Defina
 \begin{equation*}
 h(x) \coloneqq \int_a^b g(t-x) f(t) \, dt .
 \end{equation*}
-Prove que $h$ é Lipschitz contínua.
+Demonstre que $h$ é Lipschitz contínua.
 \end{exercise}
 
 \begin{exercise} \label{exercise:rieleblem}
-Prove uma versão do \emph{\myindex{lema de Riemann--Lebesgue}}
+Demonstre uma versão do \emph{\myindex{lema de Riemann--Lebesgue}}
 (há vários resultados com esse nome):
 suponha que $f \colon [a,b] \to \R$ seja contínua e defina a sequência
 $\{ x_n \}_{n=1}^\infty$ por
 \begin{equation*}
 x_n \coloneqq \int_a^b f(t) \sin(nt) \, dt .
 \end{equation*}
-Prove que $\lim\limits_{n\to\infty} x_n = 0$.
+Demonstre que $\lim\limits_{n\to\infty} x_n = 0$.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1929,13 +1929,13 @@ arbitrário. Defina
 \begin{equation*}
 F(x) \coloneqq \int_c^x f .
 \end{equation*}
-Prove que $F$ é diferenciável e que $F'(x) = f(x)$ para todo
+Demonstre que $F$ é diferenciável e que $F'(x) = f(x)$ para todo
 $x \in [a,b]$.
 \end{exercise}
 
 \begin{exercise}
-Prove a \emph{\myindex{integração por partes}}. Isto é, suponha que $F$ e
-$G$ sejam funções continuamente diferenciáveis em $[a,b]$. Prove que
+Demonstre a \emph{\myindex{integração por partes}}. Isto é, suponha que $F$ e
+$G$ sejam funções continuamente diferenciáveis em $[a,b]$. Demonstre que
 \begin{equation*}
 \int_a^b F(x)G'(x)\,dx
 =
@@ -1995,7 +1995,7 @@ para todo $x \in [a,b]$.
 \begin{exercise}
 Uma função $f$ é \emph{\myindex{função ímpar}} se $f(x) = -f(-x)$,
 e é \emph{\myindex{função par}} se $f(x) = f(-x)$. Seja $a >
-0$. Suponha que $f$ seja contínua. Prove:
+0$. Suponha que $f$ seja contínua. Demonstre:
 \begin{enumerate}[a)]
 \item
 Se $f$ é ímpar, então $\int_{-a}^a f = 0$.
@@ -2427,10 +2427,10 @@ $\log_b(y) \coloneqq x$.
 \item
 Mostre que $\log_b(x) = \frac{\ln(x)}{\ln(b)}$.
 \item
-Prove que, se $c > 0$ e $c \neq 1$, então
+Demonstre que, se $c > 0$ e $c \neq 1$, então
 $\log_b(x) = \frac{\log_c(x)}{\log_c(b)}$.
 \item
-Prove que $\log_b(xy) =
+Demonstre que $\log_b(xy) =
 \log_b(x)+\log_b(y)$ e $\log_b(x^y) = y \log_b(x)$.
 \end{enumerate}
 \end{exercise}
@@ -2482,7 +2482,7 @@ exponencial $e^x$ corresponde à capitalização contínua.
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Prove que, para todo inteiro $n \geq 2$,
+Demonstre que, para todo inteiro $n \geq 2$,
 \begin{equation*}
 \sum_{k=2}^{n}
 \frac{1}{k}
@@ -2493,7 +2493,7 @@ Prove que, para todo inteiro $n \geq 2$,
 \frac{1}{k} .
 \end{equation*}
 \item
-Prove que o limite
+Demonstre que o limite
 \begin{equation*}
 \gamma \coloneqq \lim_{n\to\infty}
 \left( \left( \sum_{k=1}^{n} \frac{1}{k} \right) - \ln (n) \right)
@@ -2551,12 +2551,12 @@ e^{-1/x} & \text{se } x > 0, \\
 \end{equation*}
 \begin{enumerate}[a)]
 \item
-Prove que, para todo $m \in \N$,
+Demonstre que, para todo $m \in \N$,
 \begin{equation*}
 \lim_{x \to 0^+} \frac{e^{-1/x}}{x^m} = 0 .
 \end{equation*}
 \item
-Prove que $f$ é infinitamente diferenciável.
+Demonstre que $f$ é infinitamente diferenciável.
 \item
 Calcule a série de Taylor de $f$ na origem, isto é,
 \begin{equation*}
@@ -3469,7 +3469,7 @@ Calcule exatamente o limite da série e compare. Dica: a soma é telescópica.
 \end{exercise}
 
 \begin{exercise}
-Prove que
+Demonstre que
 \begin{equation*}
 \int_{-\infty}^\infty \babs{\operatorname{sinc}(x)}\,dx = \infty .
 \end{equation*}
@@ -3517,7 +3517,7 @@ $\babs{\int_a^b f}<\epsilon$.
 
 \begin{exercise}
 Suponha que $f \colon [0,\infty) \to \R$ seja não negativa e
-\emph{decrescente}. Prove que:
+\emph{decrescente}. Demonstre que:
 \begin{enumerate}[a)]
 \item
 Se $\int_0^\infty f < \infty$, então $\lim\limits_{x\to\infty} f(x)=0$.
@@ -3545,7 +3545,7 @@ ser negativa em uma metade e positiva na outra.
 
 \begin{exercise}
 Suponha que $f \colon [1,\infty) \to \R$ seja tal que
-$g(x) \coloneqq x^2 f(x)$ seja uma função limitada. Prove que
+$g(x) \coloneqq x^2 f(x)$ seja uma função limitada. Demonstre que
 $\int_1^\infty f$ converge.
 \end{exercise}
 
@@ -3585,7 +3585,7 @@ $p.v.\!\int_a^b f = \int_a^b f$ (para qualquer $c\in(a,b)$).
 \item
 Suponha que $f \colon [-1,1] \to \R$ seja ímpar ($f(-x)=-f(x)$) e
 integrável em $[-1,-\epsilon]$ e $[\epsilon,1]$ para todo $\epsilon>0$.
-Prove que
+Demonstre que
 $p.v.\!\int_{-1}^1 f = 0$.
 \item
 Suponha que $f \colon [-1,1] \to \R$ seja contínua e diferenciável em 0.
@@ -3606,7 +3606,7 @@ Mostre que a \emph{\myindex{convolução}}
 \end{equation*}
 está bem definida para todo $x\in\R$.
 \item
-Suponha que $\int_{-\infty}^\infty \babs{f(x)}\,dx < \infty$. Prove que
+Suponha que $\int_{-\infty}^\infty \babs{f(x)}\,dx < \infty$. Demonstre que
 \begin{equation*}
 \lim_{x \to -\infty} (g * f)(x) = 0, \qquad \text{e} \qquad
 \lim_{x \to \infty} (g * f)(x) = 0 .

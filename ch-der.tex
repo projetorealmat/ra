@@ -1223,8 +1223,10 @@ Na demonstração, vimos que ${ (P_n^{x_0})}^{(k)}(x_0) = f^{(k)}(x_0)$ para $k=
 O polinômio de Taylor não fornece necessariamente boas aproximações em todo lugar. Considere o desenvolvimento da função $f(x) \coloneqq \frac{x}{1-x}$ ao redor de $0$, para $x<1$; os gráficos estão na \figureref{fig:taylorgeom}. As linhas pontilhadas representam as aproximações de graus 1, 2 e 3. A linha tracejada representa o polinômio de grau 20. A aproximação parece melhorar à medida que o grau aumenta para $x>-1$. Para $x<-1$, na verdade, ela piora visivelmente. Os polinômios são as somas parciais da série geométrica $\sum_{n=1}^\infty x^n$, que só converge em $(-1,1)$. Veja a discussão sobre séries de potências na \sectionref{sec:moreonseries}.
 
 \begin{myfigureht}
+% Nota editorial da tradução: o original diz "from the right", mas a curva
+% representada entra pela esquerda; a descrição abaixo acompanha a figura.
 \myincludegraphics{taylorgeom}{%
-Em linha espessa, aparece o gráfico de uma função no intervalo de menos 2 a 1: ela chega horizontalmente pela direita, abaixo do eixo $x$, cruza o eixo na origem e então sobe abruptamente, saindo da figura antes de chegar a 1. Os gráficos dos três primeiros polinômios de Taylor aparecem pontilhados: uma reta, uma parábola e uma cúbica. Todos parecem aproximar razoavelmente a função bem perto da origem, mas a aproximação piora à medida que nos afastamos. Uma linha tracejada representa a aproximação de grau 20. Um pouco à direita de menos 1 e até o ponto em que a linha espessa sai da figura, mal se distingue essa aproximação da curva original. Porém, perto de menos 1, ao avançarmos da direita para a esquerda, ela sobe rapidamente e sai da figura; assim, para $x$ menor que menos 1, a aproximação fica muito pior que as de grau baixo, que já não eram boas.}
+Em linha espessa, aparece o gráfico de uma função no intervalo de menos 2 a 1: ela chega horizontalmente pela esquerda, abaixo do eixo $x$, cruza o eixo na origem e então sobe abruptamente, saindo da figura antes de chegar a 1. Os gráficos dos três primeiros polinômios de Taylor aparecem pontilhados: uma reta, uma parábola e uma cúbica. Todos parecem aproximar razoavelmente a função bem perto da origem, mas a aproximação piora à medida que nos afastamos. Uma linha tracejada representa a aproximação de grau 20. Um pouco à direita de menos 1 e até o ponto em que a linha espessa sai da figura, mal se distingue essa aproximação da curva original. Porém, perto de menos 1, ao avançarmos da direita para a esquerda, ela sobe rapidamente e sai da figura; assim, para $x$ menor que menos 1, a aproximação fica muito pior que as de grau baixo, que já não eram boas.}
 \caption{A função $\frac{x}{1-x}$ e os polinômios de Taylor $P_1^0$, $P_2^0$ e $P_3^0$ (pontilhados) e $P_{20}^0$ (tracejado).\label{fig:taylorgeom}}
 \end{myfigureht}
 
@@ -1505,3 +1507,4 @@ Se $g'(y) \neq 0$, então $f$ é diferenciável em $x$.
 Se $g'(y)=0$, então $f$ não é diferenciável em $x$.
 \end{enumerate}
 \end{exercise}
+

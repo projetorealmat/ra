@@ -44,7 +44,7 @@ int main()
   label(P(c,0.0), P(0,-4), "$c$", b);
   label(P(x,0.0), P(0,-4), "$y$", b);
 
-  label(P(0.1,1.3),P(0,0), "slope $= \\frac{f(y)-f(c)}{y-c} \\geq 0$", br);
+  label(P(0.1,1.3),P(0,0), "inclinação $= \\frac{f(y)-f(c)}{y-c} \\geq 0$", br);
 
   c = 1.5;
   x = 2.1;
@@ -70,7 +70,7 @@ int main()
 
   //label(P(x-0.3,f(x)-0.3*slope),
         //P(1,4), "slope $= \\frac{f(x)-f(y)}{x-y}$", tl);
-  label(P(2.9,1.3),P(0,0), "slope $= \\frac{f(x)-f(c)}{x-c} \\leq 0$", bl);
+  label(P(2.9,1.3),P(0,0), "inclinação $= \\frac{f(x)-f(c)}{x-c} \\leq 0$", bl);
   //label(P(0.2,1.2),P(0,0), "$\\lvert \\text{slope} \\rvert \\leq K$", br);
 
   bold();

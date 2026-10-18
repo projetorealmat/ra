@@ -106,8 +106,8 @@ int main()
   line(P(-0.1,R_upper),P(D_upper,R_upper));
   solid();
   
-  label(P(-0.1,R_upper), P(-4,0), "$\\text{absolute maximum of } f = f(c)$", l);
-  label(P(-0.1,R_lower), P(-4,0), "$\\text{absolute minimum of } f = f(d)$", l);
+  label(P(-0.1,R_upper), P(-4,0), "$\\text{máximo absoluto de } f = f(c)$", l);
+  label(P(-0.1,R_lower), P(-4,0), "$\\text{mínimo absoluto de } f = f(d)$", l);
 
   line(P(D_lower,-0.05),P(D_lower,0.05));
   line(P(D_upper,-0.05),P(D_upper,0.05));

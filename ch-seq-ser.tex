@@ -523,8 +523,8 @@ $\{ x_n \}_{n=1}^\infty =
 \nicefrac{9}{97} >
 \nicefrac{5}{58} > \ldots .
 \end{equation*}
-Se descartarmos os três primeiros termos e considerarmos a cauda de índice 3, ela
-será decrescente. Deixamos a demonstração como exercício. Como a cauda de índice 3
+Se descartarmos os três primeiros termos e considerarmos a cauda-$3$, ela
+será decrescente. Deixamos a demonstração como exercício. Como a cauda-$3$
 é monótona e limitada inferiormente por zero, ela é convergente; portanto,
 a sequência também é convergente.
 
@@ -744,7 +744,7 @@ Mostre que $\lim\limits_{n\to\infty} x_n = x$.
 \end{exercise}
 
 \begin{exercise}[F\'acil]
-Seja $\{ x_n \}_{n=1}^\infty$ uma sequência e seja $x \in \R$ tais que
+Seja $\{ x_n \}_{n=1}^\infty$ uma sequência e seja $x \in \R$ tal que
 exista $k \in \N$ para o qual $x_n = x$ para todo $n \geq k$.
 Prove que $\{ x_n \}_{n=1}^\infty$ converge para $x$.
 \end{exercise}
@@ -760,7 +760,7 @@ $\lim\limits_{n\to\infty} x_n = \lim\limits_{n\to\infty} y_n$.
 \end{exercise}
 
 \begin{exercise}
-Mostre que a cauda de índice 3 da sequência definida por
+Mostre que a cauda-$3$ da sequência definida por
 $x_n \coloneqq \frac{n}{n^2+16}$ é monótona não crescente.
 Dica: suponha que $n \geq m \geq 4$ e considere o numerador da expressão
 $x_n-x_m$.
@@ -1130,7 +1130,7 @@ Concluímos a demonstração da afirmação:
 E a demonstração está concluída.
 \end{proof}
 
-Substituindo constantes por sequências, obtemos vários corolários simples.
+Aplicando o resultado a sequências constantes, obtemos vários corolários simples.
 Se $c \in \R$ e $\{ x_n \}_{n=1}^\infty$ é uma sequência convergente, então,
 por exemplo,
 \begin{equation*}
@@ -1613,7 +1613,7 @@ $\lim_{n\to\infty} x_n$. Dica: não se pode dividir por zero!
 
 \begin{exercise}
 Seja $x_n \coloneqq \frac{n-\cos(n)}{n}$. Use o
-\hyperref[squeeze:lemma]{lema do confronto} para mostrar que
+\hyperref[squeeze:lemma]{teorema do confronto} para mostrar que
 $\{ x_n \}_{n=1}^\infty$ converge e determinar seu limite.
 \end{exercise}
 
@@ -2055,7 +2055,7 @@ Suponhamos primeiro que
 $\liminf_{n\to\infty} x_n = \limsup_{n\to\infty} x_n$.
 Então $\{ a_n \}_{n=1}^\infty$ e $\{ b_n \}_{n=1}^\infty$
 convergem para o mesmo limite.
-Pelo lema do confronto
+Pelo teorema do confronto
 (\lemmaref{squeeze:lemma}), $\{ x_n \}_{n=1}^\infty$ converge e
 \begin{equation*}
 \lim_{n\to \infty} b_n
@@ -2176,7 +2176,7 @@ sequências $\{ a_i \}_{i=1}^\infty$ e $\{ b_i \}_{i=1}^\infty$ tais que
 $\{ a_i \}_{i=1}^\infty$ seja monótona crescente, $\{ b_i \}_{i=1}^\infty$ seja monótona decrescente,
 $a_i \leq x_{n_i} \leq b_i$ e $\lim_{i\to\infty} a_i =
 \lim_{i\to\infty} b_i$. Então, pelo
-\hyperref[squeeze:lemma]{lema do confronto}, a subsequência
+\hyperref[squeeze:lemma]{teorema do confronto}, a subsequência
 $\{ x_{n_i} \}_{i=1}^\infty$ converge.
 
 Definimos as sequências indutivamente. Vamos construí-las de modo que,
@@ -2224,7 +2224,7 @@ Como as sequências são monótonas, temos (por quê?) que, para todo $i$,
 y-x \leq b_i-a_i = \frac{b_1-a_1}{2^{i-1}} .
 \end{equation*}
 Como $\frac{b_1-a_1}{2^{i-1}}$ pode ser arbitrariamente pequeno e $y-x \geq 0$,
-temos $y-x = 0$. Conclua usando o \hyperref[squeeze:lemma]{lema do confronto}.
+temos $y-x = 0$. Conclua usando o \hyperref[squeeze:lemma]{teorema do confronto}.
 \end{proof}
 
 Outra demonstração do teorema de Bolzano--Weierstrass consiste em provar a
@@ -3052,11 +3052,11 @@ leitor. A \figureref{figcutseries} ilustra a situação.
 \begin{myfigureht}
 \myincludepdft{figcutseries}{%
 Diagrama da reta real. O ponto 0 está à esquerda e o ponto 1, à direita.
-Marca-se a distância de um meio de 0 até um meio. Em seguida, marca-se a distância
-de um quarto de um meio até o ponto três quartos. Depois, marca-se a distância
-de um oitavo de três quartos até sete oitavos. Também está marcada a distância
-um meio mais um quarto mais um oitavo, que reúne as três distâncias mencionadas.
-Por fim, marca-se a distância restante de um oitavo entre sete oitavos e 1.}
+A partir de 0, marca-se um segmento de comprimento um meio até o ponto um meio.
+A partir de um meio, marca-se um segmento de comprimento um quarto até três quartos.
+A partir de três quartos, marca-se um segmento de comprimento um oitavo até sete oitavos.
+Também está marcada a distância total de um meio mais um quarto mais um oitavo, que reúne os três segmentos mencionados.
+Por fim, marca-se o segmento restante, de comprimento um oitavo, de sete oitavos até 1.}
 \caption{A igualdade 
 $\left( \sum_{n=1}^k \frac{1}{2^n} \right)
 + \frac{1}{2^k}
@@ -4079,7 +4079,7 @@ Cada linha contínua sucessiva é mais curta, pois cada x com índice n é menor
 Linhas pontilhadas também mostram menos x de índice 2, menos x de índice 4 etc.
 As diferenças menos x de índice 1 mais x de índice 2, menos x de índice 3 mais x de índice 4,
 menos x de índice 5 mais x de índice 6 e menos x de índice 7 mais x de índice 8 são indicadas
-e correspondem às diferenças entre os pares de segmentos consecutivos.
+e correspondem às distâncias entre os pontos que representam menos x com índice 1 e menos x com índice 2, entre os que representam menos x com índice 3 e menos x com índice 4, e assim por diante.
 Observamos que essas diferenças ocupam apenas parte do comprimento total
 do segmento correspondente a menos x de índice 1.}
 \caption{Ilustração de $0 \geq s_{2k} \geq -x_1$ para $k=4$ em uma série alternada.\label{fig:seralternate}}
@@ -4230,7 +4230,7 @@ e $\sigma(N') \to \infty$. Logo,
 \sum_{n=1}^\infty \frac{{(-1)}^{\sigma(n)+1}}{\sigma(n)} = L .
 \end{equation*}
 
-Eis um exemplo que ilustra a demonstração. Para $L=1.2$, a ordem
+Eis um exemplo que ilustra a demonstração. Para $L=1{,}2$, a ordem
 é
 \begin{equation*}
 1+\nicefrac{1}{3}-\nicefrac{1}{2}+\nicefrac{1}{5}+\nicefrac{1}{7}+\nicefrac{1}{9}-\nicefrac{1}{4}+\nicefrac{1}{11}+\nicefrac{1}{13}-\nicefrac{1}{6}
@@ -4246,7 +4246,7 @@ Depois volta para baixo da linha, leva alguns passos para ficar acima dela
 e, no passo seguinte, fica novamente abaixo.
 E assim por diante, com passos cada vez menores.}
 \caption{As primeiras 14 somas parciais da reordenação que converge
-para $1.2$.\label{fig:serrearrange}}
+para $1{,}2$.\label{fig:serrearrange}}
 \end{myfigureht}
 \end{example}
 

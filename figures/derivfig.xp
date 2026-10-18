@@ -39,7 +39,7 @@ int main()
 
   label(P(c,0.0), P(0,-4), "$c$", b);
 
-  label(P(c+0.5,f(c)+0.5*slope), P(0,0), "slope $= f'(c)$", tl);
+  label(P(c+0.5,f(c)+0.5*slope), P(0,0), "inclinação $= f'(c)$", tl);
 
   bold();
   plot(f, xmin(), xmax(), 40);

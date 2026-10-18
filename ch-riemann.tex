@@ -181,7 +181,7 @@ menores.
 \begin{defn}
 Sejam $P = \{ x_0, x_1, \ldots, x_n \}$ e
 $\widetilde{P} = \{ \widetilde{x}_0, \widetilde{x}_1, \ldots,
-\widetilde{x}_{\ell} \}$ sejam
+\widetilde{x}_{\ell} \}$
 partições de $[a,b]$. Dizemos que $\widetilde{P}$ é um
 \emph{refinamento}\index{refinamento de uma partição} de $P$
 se, como conjuntos, $P \subset \widetilde{P}$.
@@ -189,8 +189,8 @@ se, como conjuntos, $P \subset \widetilde{P}$.
 
 Isto é, $\widetilde{P}$ é um refinamento de uma partição quando contém todos
 os números de $P$ e, possivelmente, outros números entre eles. Por exemplo,
-$\{ 0, 0.5, 1, 2 \}$ é uma partição de $[0,2]$, e
-$\{ 0, 0.2, 0.5, 1, 1.5, 1.75, 2 \}$ é um refinamento.
+$\{ 0, 0{,}5, 1, 2 \}$ é uma partição de $[0,2]$, e
+$\{ 0, 0{,}2, 0{,}5, 1, 1{,}5, 1{,}75, 2 \}$ é um refinamento.
 A principal razão para introduzir refinamentos é a seguinte proposição.
 
 \begin{prop} \label{prop:refinement}
@@ -304,9 +304,9 @@ Pela \propref{sumulbound:prop}, para toda partição $P$,
 m(b-a) \leq L(P,f) \leq U(P,f) \leq M(b-a).
 \end{equation*}
 Da desigualdade
-$m(b-a) \leq L(P,f)$ implies $m(b-a) \leq \underline{\int_a^b} f$.
+$m(b-a) \leq L(P,f)$ implica $m(b-a) \leq \underline{\int_a^b} f$.
 Da desigualdade
-$U(P,f) \leq M(b-a)$ implies $\overline{\int_a^b} f \leq M(b-a)$.
+$U(P,f) \leq M(b-a)$ implica $\overline{\int_a^b} f \leq M(b-a)$.
 
 A desigualdade central em
 \eqref{intulbound:eq} é o ponto principal da proposição.
@@ -602,7 +602,7 @@ usar outra letra. Por exemplo,
 
 \begin{exercise}
 Defina $f \colon [0,1] \to \R$ por $f(x) \coloneqq x^3$
-e seja $P \coloneqq \{ 0, 0.1, 0.4, 1 \}$. Calcule $L(P,f)$ e $U(P,f)$.
+e seja $P \coloneqq \{ 0, 0{,}1, 0{,}4, 1 \}$. Calcule $L(P,f)$ e $U(P,f)$.
 \end{exercise}
 
 \begin{exercise}
@@ -1447,7 +1447,7 @@ f(x) \coloneqq
 \begin{cases}
 \nicefrac{1}{k} & \text{se } x=\nicefrac{m}{k}, \text{ com }
 m,k \in \N \text{ e } m \text{ e } k \text{ primos entre si,} \\
-0               & \text{se } x \text{ is irrational.}
+0               & \text{se } x \text{ é irracional.}
 \end{cases}
 \end{equation*}
 Mostre que $\int_0^1 f = 0$.
@@ -2422,7 +2422,7 @@ Seja $b > 0$, $b\neq 1$.
 \item
 Mostre que, para todo $y > 0$, existe um único número $x$
 tal que $y = b^x$. Defina o \emph{\myindex{logaritmo na base $b$}},
-$\log_b \colon (0,\infty) \to \R$, by
+$\log_b \colon (0,\infty) \to \R$, por
 $\log_b(y) \coloneqq x$.
 \item
 Mostre que $\log_b(x) = \frac{\ln(x)}{\ln(b)}$.
@@ -2472,7 +2472,7 @@ Sugestão: tome o logaritmo.\\
 Observação: a expressão
 ${\left( 1 + \frac{x}{n} \right)}^n$ aparece em cálculos de juros compostos.
 Ela representa o montante em uma conta bancária após um ano, se inicialmente
-for depositado 1 dólar a uma taxa de juros $x$ (por exemplo, $x=0.01$ para
+for depositado 1 dólar a uma taxa de juros $x$ (por exemplo, $x=0{,}01$ para
 $1\%$) e os juros forem capitalizados $n$ vezes durante o ano. A função
 exponencial $e^x$ corresponde à capitalização contínua.
 \end{exercise}
@@ -2506,7 +2506,7 @@ existe. Essa constante $\gamma$ é chamada de
 e ao matemático italiano
 \href{https://en.wikipedia.org/wiki/Lorenzo_Mascheroni}{Lorenzo Mascheroni}
 (1750--1800).}. Não se sabe se $\gamma$ é racional.
-Seu valor aproximado é $\gamma \approx 0.5772$.
+Seu valor aproximado é $\gamma \approx 0{,}5772$.
 \end{enumerate}
 \end{exercise}
 \end{samepage}
@@ -2981,7 +2981,7 @@ Então
 \quad
 \text{converge,}
 \end{equation*}
-Nesse caso, as duas expressões são iguais. Se uma delas converge,
+nesse caso, as duas expressões são iguais. Se uma delas converge,
 então a integral imprópria converge e
 \begin{equation*}
 \lim_{a\to\infty}
@@ -3134,7 +3134,7 @@ a função sinc é contínua em zero, mas isso não é importante agora.
 O que importa é que
 \begin{equation*}
 \int_{-\infty}^\infty \operatorname{sinc}(x) \,dx = \pi ,
-\qquad \text{while} \qquad
+\qquad \text{enquanto} \qquad
 \int_{-\infty}^\infty \babs{\operatorname{sinc}(x)} \,dx = \infty .
 \end{equation*}
 A integral da função sinc é um análogo contínuo da série harmônica alternada
@@ -3229,19 +3229,19 @@ Somando as duas desigualdades, obtemos
 Veja a \figureref{fig:sincbound}.
 \begin{myfigureht}
 \myincludegraphics{sincbound}{%
-O gráfico mostra várias funções no intervalo de 2 pi n a 2 pi vezes (n+1);
+O gráfico mostra várias funções no intervalo de $2\pi n$ a $2\pi(n+1)$;
 todas se parecem com ondas senoidais de amplitude decrescente.
-Uma linha escura e espessa representa a função seno de x dividido por x em
+Uma linha escura e espessa representa a função $\frac{\sin(x)}{x}$ em
 todo o intervalo.
 Como as demais funções, ela vale zero nos extremos do intervalo e no ponto
-central pi vezes (2n+1). No primeiro subintervalo (a metade à esquerda), uma
-linha pontilhada, muito próxima e abaixo da linha contínua, representa o seno
-de x dividido por pi vezes (2n+1). Uma linha tracejada, muito próxima e acima
-da linha contínua, representa o seno de x dividido por 2 pi n. A área entre
+central $\pi(2n+1)$. No primeiro subintervalo (a metade à esquerda), uma
+linha pontilhada, muito próxima e abaixo da linha contínua, representa a função
+$\frac{\sin(x)}{\pi(2n+1)}$. Uma linha tracejada, muito próxima e acima
+da linha contínua, representa a função $\frac{\sin(x)}{2\pi n}$. A área entre
 essa linha tracejada e o eixo x no primeiro subintervalo está sombreada. Na metade à direita, uma
 linha pontilhada representa a mesma função de antes e, novamente, fica abaixo
 da linha contínua. Uma linha traço-ponto, ligeiramente acima da linha
-contínua, representa o seno de x dividido por pi vezes (2n+2); a área acima
+contínua, representa a função $\frac{\sin(x)}{\pi(2n+2)}$; a área acima
 dela está sombreada.}
 \caption{Estimativa de $\int_{2\pi n}^{2\pi (n+1)} \frac{\sin(x)}{x} \,dx$
 usando as áreas sombreadas (área com sinal
@@ -3331,8 +3331,7 @@ $[k,b]$, para qualquer $b>k$; portanto, o enunciado do teorema faz sentido
 sem hipóteses adicionais de integrabilidade.
 \begin{myfigureht}
 \myincludegraphics{integraltest}{%
-Diagrama dos retângulos de Darboux para uma função decrescente: começa em
-começa em x igual a 1 e avança em intervalos de comprimento 1 até x igual a
+Diagrama dos retângulos de Darboux para uma função decrescente: começa em x igual a 1 e avança em intervalos de comprimento 1 até x igual a
 10, à direita. Como a
 função é decrescente, seu gráfico passa pelo canto superior esquerdo de cada
 retângulo completo e pelo canto superior direito de cada retângulo sombreado.}
@@ -3431,7 +3430,7 @@ Em outras palavras, $\nicefrac{1}{k} + \sum_{n=1}^{k-1} \nicefrac{1}{n^2}$
 Portanto, se quisermos determinar a soma com erro de, no máximo, 0,01,
 observamos que $\nicefrac{1}{{10}^2}=0{,}01$. Assim, obtemos
 \begin{equation*}
-1.6397\ldots
+1{,}6397\ldots
 \approx
 \frac{1}{10} + \sum_{n=1}^{9} \frac{1}{n^2}
 \leq
@@ -3441,9 +3440,9 @@ observamos que $\nicefrac{1}{{10}^2}=0{,}01$. Assim, obtemos
 +
 \frac{1}{10} + \sum_{n=1}^{9} \frac{1}{n^2}
 \approx
-1.6497\ldots .
+1{,}6497\ldots .
 \end{equation*}
-O valor exato da soma é $\nicefrac{\pi^2}{6} \approx 1.6449\ldots$.
+O valor exato da soma é $\nicefrac{\pi^2}{6} \approx 1{,}6449\ldots$.
 \end{example}
 
 \subsection{Exercícios}

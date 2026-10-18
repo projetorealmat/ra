@@ -58,7 +58,7 @@ int main()
   label(P(0.0,f(y)), P(-4,0), "$f(x_0)=y_0$", l);
 
   masklabel(P(y+extra2,f(y)+extra2*slope), P(-15,0),
-	"{\\small slope $= \\frac{f(x)-f(x_0)}{x-x_0} = \\frac{y-y_0}{g(y)-g(y_0)}$}", l);
+	"{\\small inclinação $= \\frac{f(x)-f(x_0)}{x-x_0} = \\frac{y-y_0}{g(y)-g(y_0)}$}", l);
 
   bold();
   //plot(f, xmin(), xmax(), 60);

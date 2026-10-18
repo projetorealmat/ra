@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use this work, please cite it."
+message: "Se utilizar esta obra, cite-a."
 title: "Análise Básica: Introdução à Análise Real, Volume I"
 version: "0.1.1"
 authors:
@@ -8,3 +8,15 @@ authors:
 repository-code: "https://github.com/projetorealmat/ra"
 license: "CC-BY-SA-4.0 OR CC-BY-NC-SA-4.0"
 date-released: 2026-09-26
+
+preferred-citation:
+  type: book
+  title: "Análise Básica: Introdução à Análise Real, Volume I"
+  authors:
+    - family-names: Lebl
+      given-names: Jiří
+  translators:
+    - name: "Carlos André Duarte Costa"
+  version: "0.1.1"
+  date-released: "2026-09-26"
+  url: "https://github.com/projetorealmat/ra"

@@ -1344,7 +1344,8 @@ $\babs{g(x)} \leq \babs{f(x)}$ para todo $x \in [-1,1]$.
 
 \begin{exercise}[Desafiador]
 Uma função $f \colon I \to \R$ é \emph{\myindex{convexa}} se,
-sempre que $a \leq x \leq b$, com $a,x,b$ em $I$, tivermos
+% Intervenção editorial transparente: a condição da fonte permite a=b, mas a expressão contém b-a no denominador; explicitamos a<b para que a fórmula fique definida.
+sempre que $a < b$ e $a \leq x \leq b$, com $a,x,b$ em $I$, tivermos
 $f(x) \leq f(a) \frac{b-x}{b-a} + f(b) \frac{x-a}{b-a}$. Isto é,
 o segmento de reta que une $\bigl(a,f(a)\bigr)$ a $\bigl(b,f(b)\bigr)$ fica acima
 do gráfico de $f$.

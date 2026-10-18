@@ -44,7 +44,7 @@ int main()
   label(P(x,0.0), P(0,-4), "$x$", b);
 
   label(P(x-0.3,f(x)-0.3*slope),
-        P(1,4), "slope $= \\frac{f(x)-f(c)}{x-c}$", tl);
+        P(1,4), "inclinação $= \\frac{f(x)-f(c)}{x-c}$", tl);
 
   bold();
   plot(f, xmin(), xmax(), 40);

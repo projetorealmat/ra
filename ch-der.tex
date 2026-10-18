@@ -803,12 +803,12 @@ a função é constante.
 \end{proof}
 
 Agora que sabemos o que significa uma função permanecer constante, vamos
-considerar as funções crescentes e decrescentes.
-Dizemos que $f \colon I \to \R$ é \emph{\myindex{crescente}}
+considerar as funções não decrescentes e não crescentes.
+Dizemos que $f \colon I \to \R$ é \emph{\myindex{não decrescente}}
 (respectivamente, \emph{\myindex{estritamente crescente}}) se
 $x < y$ implica $f(x) \leq f(y)$ (respectivamente, $f(x) < f(y)$).
 Definimos
-\emph{\myindex{decrescente}} e
+\emph{\myindex{não crescente}} e
 \emph{\myindex{estritamente decrescente}} da mesma maneira, invertendo as
 desigualdades para $f$.
 
@@ -817,13 +817,13 @@ Seja $I$ um intervalo e
 seja $f \colon I \to \R$ uma função diferenciável.
 %\begin{enumerate}[(i),itemsep=0.5\itemsep,parsep=0.5\parsep,topsep=0.5\topsep,partopsep=0.5\partopsep]
 \begin{enumerate}[(i)]
-\item $f$ é crescente se, e somente se, $f'(x) \geq 0$ para todo $x \in I$.
-\item $f$ é decrescente se, e somente se, $f'(x) \leq 0$ para todo $x \in I$.
+\item $f$ é não decrescente se, e somente se, $f'(x) \geq 0$ para todo $x \in I$.
+\item $f$ é não crescente se, e somente se, $f'(x) \leq 0$ para todo $x \in I$.
 \end{enumerate}
 \end{prop}
 
 \begin{proof}
-Demonstremos o primeiro item. Suponha que $f$ seja crescente.
+Demonstremos o primeiro item. Suponha que $f$ seja não decrescente.
 Para todos $x,c \in I$ com $x \neq c$,
 \begin{equation*}
 \frac{f(x)-f(c)}{x-c} \geq 0 .
@@ -838,10 +838,10 @@ f(y)-f(x) = f'(c)(y-x) .
 \end{equation*}
 Como $f'(c) \geq 0$ e $y-x > 0$, temos $f(y) - f(x) \geq 0$, ou seja,
 $f(x) \leq f(y)$; portanto,
-$f$ é crescente.
+$f$ é não decrescente.
 
 Deixamos como exercício para o leitor o segundo item, relativo à função $f$
-decrescente.
+não crescente.
 \end{proof}
 
 Uma afirmação semelhante, mas mais fraca, vale para funções estritamente
@@ -900,7 +900,7 @@ Tome $x \in (a,c)$
 e uma sequência $\{ y_n\}_{n=1}^\infty$ tal que $x < y_n < c$ para todo $n$
 e $\lim_{n\to\infty} y_n = c$.
 Pela proposição anterior,
-$f$ é decrescente em $(a,c)$, logo $f(x) \geq f(y_n)$ para todo $n$.
+$f$ é não crescente em $(a,c)$, logo $f(x) \geq f(y_n)$ para todo $n$.
 Como $f$ é
 contínua em $c$, passando ao limite obtemos
 $f(x) \geq f(c)$.
@@ -908,7 +908,7 @@ $f(x) \geq f(c)$.
 De modo semelhante, tome $x \in (c,b)$
 e uma sequência $\{ y_n\}_{n=1}^\infty$ tal que $c < y_n < x$ e
 $\lim_{n\to\infty} y_n = c$.
-A função é crescente em $(c,b)$, logo $f(x) \geq f(y_n)$ para todo $n$.
+A função é não decrescente em $(c,b)$, logo $f(x) \geq f(y_n)$ para todo $n$.
 Pela continuidade de $f$, obtemos
 $f(x) \geq f(c)$. Assim, $f(x) \geq f(c)$ para todo
 $x \in (a,b)$.

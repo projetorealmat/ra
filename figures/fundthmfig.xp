@@ -60,14 +60,14 @@ int main()
   bold();
   plot(f,0.0,2.0,20);
 
-  label (P(x2,0.34), P(4,0), "$\\text{area} = f(c_i) \\Delta x_i$", r);
-  label (P(x2,0.16), P(4,0), "$\\text{\\phantom{area}} = F(x_i)-F(x_{i-1})$", r);
+  label (P(x2,0.34), P(4,0), "$\\text{área} = f(c_i) \\Delta x_i$", r);
+  label (P(x2,0.16), P(4,0), "$\\text{\\phantom{área}} = F(x_i)-F(x_{i-1})$", r);
 
-  label (P(x1,0.34), P(3,0), "$\\text{area} = f(c_{i-1}) \\Delta x_{i-1}$", r);
-  label (P(x1,0.16), P(3,0), "$\\text{\\phantom{area}} = F(x_{i-1})-F(x_{i-2})$", r);
+  label (P(x1,0.34), P(3,0), "$\\text{área} = f(c_{i-1}) \\Delta x_{i-1}$", r);
+  label (P(x1,0.16), P(3,0), "$\\text{\\phantom{área}} = F(x_{i-1})-F(x_{i-2})$", r);
 
-  label (P(x3-0.00,0.84), P(4,0), "$\\text{area} = f(c_{i+1}) \\Delta x_{i+1}$", r);
-  label (P(x3-0.00,0.66), P(4,0), "$\\text{\\phantom{area}} = F(x_{i+1})-F(x_{i})$", r);
+  label (P(x3-0.00,0.84), P(4,0), "$\\text{área} = f(c_{i+1}) \\Delta x_{i+1}$", r);
+  label (P(x3-0.00,0.66), P(4,0), "$\\text{\\phantom{área}} = F(x_{i+1})-F(x_{i})$", r);
 
   arrow(P(x3+0.2,0.50),P(x3+0.15,0.1));
   

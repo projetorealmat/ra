@@ -80,6 +80,8 @@ find "$ROOT_DIR/html/figures" -type f \
   -delete
 cp "$ROOT_DIR/extra.css" "$ROOT_DIR/html/extra.css"
 cp "$ROOT_DIR/logo.png" "$ROOT_DIR/html/logo.png"
+mkdir -p "$ROOT_DIR/html/external"
+cp "$ROOT_DIR/logo.png" "$ROOT_DIR/html/external/logo.png"
 
 mkdir -p "$ROOT_DIR/html/_static/pretext"
 cp -a "$PRETEXT_DIR/js" "$PRETEXT_DIR/css" "$ROOT_DIR/html/_static/pretext/"
@@ -95,6 +97,30 @@ PUBLISHER_URI="$(python3 -c 'from pathlib import Path; import sys; print(Path(sy
     "$BUILD_TMP/realanal-html.xsl" \
     "$ROOT_DIR/realanal-out.xml"
 )
+
+python3 - "$ROOT_DIR/html" <<'PY'
+from pathlib import Path
+import sys
+
+root = Path(sys.argv[1])
+old = '<img src="external/logo.png" alt="Logo image">'
+new = '<img src="external/logo.png" alt="Logotipo de Análise Básica">'
+localized = 0
+
+for html_file in root.rglob("*.html"):
+    html = html_file.read_text(encoding="utf-8")
+    count = html.count(old)
+    if count:
+        html_file.write_text(html.replace(old, new), encoding="utf-8")
+        localized += count
+
+if localized == 0:
+    raise SystemExit("Nenhum texto alternativo padrão do logotipo foi localizado.")
+if not (root / "external" / "logo.png").is_file():
+    raise SystemExit("O arquivo external/logo.png não foi incluído no HTML.")
+
+print(f"Texto alternativo do logotipo localizado em {localized} páginas.")
+PY
 
 mkdir -p "$ROOT_DIR/_site"
 cp -a "$ROOT_DIR/html/." "$ROOT_DIR/_site/"

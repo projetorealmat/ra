@@ -107,7 +107,7 @@ identificados na reta real.
 Dois diagramas.
 O primeiro é o gráfico de uma sequência: os valores estão no eixo vertical
 e o índice, no eixo horizontal. No eixo vertical, marca-se o número x e
-traça-se uma reta horizontal. Uma faixa de x menos épsilon a x mais épsilon está
+traça-se uma reta horizontal. Uma faixa entre x menos épsilon e x mais épsilon está
 sombreada. Até o índice 7, indicado por $M$, a maioria dos termos da
 sequência está fora da faixa sombreada. Todos os termos seguintes estão
 dentro dela.
@@ -1280,7 +1280,7 @@ Sempre vale $x_n^2+2 > 0$,
 e, como
 $x_n > 0$, temos $x_{n+1} = \frac{x_n^2+2}{2x_n} > 0$.
 
-Em seguida, mostraremos que a sequência é monótona decrescente. Se demonstrarmos que
+Em seguida, mostraremos que a sequência é monótona não crescente. Se demonstrarmos que
 $x_n^2-2 \geq 0$ para todo $n$, então $x_{n+1} \leq x_n$ para todo $n$.
 É claro que $x_1^2-2 = 4-2 = 2 > 0$. Para um $n$ arbitrário, temos
 \begin{equation*}
@@ -1295,7 +1295,7 @@ x_{n+1}^2-2 =
 \end{equation*}
 Como quadrados são não negativos,
 $x_{n+1}^2-2 \geq 0$ para todo $n$. Portanto,
-$\{ x_n \}_{n=1}^\infty$ é monótona decrescente e limitada (pois $x_n > 0$ para todo $n$); assim,
+$\{ x_n \}_{n=1}^\infty$ é monótona não crescente e limitada (pois $x_n > 0$ para todo $n$); assim,
 o limite existe. Resta encontrar esse limite.
 
 Escrevamos
@@ -1462,9 +1462,9 @@ Suponhamos que $L < 1$.
 Como
 $\frac{\sabs{x_{n+1}}}{\sabs{x_n}} \geq 0$ para todo $n$, temos $L \geq 0$. Escolhamos
 $r$ tal que $L < r < 1$.
-Queremos comparar a sequência $\{ x_n \}_{n=1}^\infty$ com a sequência $\{ r^n \}_{n=1}^\infty$. A ideia é que,
-embora a razão $\frac{\sabs{x_{n+1}}}{\sabs{x_n}}$ não seja menor que $L$ a partir de algum ponto,
-ela será eventualmente menor que $r$, que ainda é menor que 1.
+Queremos comparar a sequência $\{ x_n \}_{n=1}^\infty$ com a sequência $\{ r^n \}_{n=1}^\infty$.
+% Intervenção editorial transparente: a frase da fonte é ambígua; explicita-se a leitura compatível com o limite da razão e com a comparação usada na demonstração.
+A ideia é que não podemos garantir que a razão $\frac{\sabs{x_{n+1}}}{\sabs{x_n}}$ seja menor que $L$ a partir de algum ponto; como $L < r < 1$, ela será eventualmente menor que $r$.
 A ideia intuitiva da demonstração está ilustrada na \figureref{figratseq}.
 \begin{myfigureht}
 \myincludepdft{figratseq}{%
@@ -1798,8 +1798,8 @@ Seja $\{ x_n \}_{n=1}^\infty$ uma sequência limitada. Sejam $a_n$ e $b_n$ como 
 definição acima.
 \begin{enumerate}[(i)]
 \item
-A sequência $\{ a_n \}_{n=1}^\infty$ é limitada e monótona decrescente,
-e $\{ b_n \}_{n=1}^\infty$ é limitada e monótona crescente. Em particular,
+A sequência $\{ a_n \}_{n=1}^\infty$ é limitada e monótona não crescente,
+e $\{ b_n \}_{n=1}^\infty$ é limitada e monótona não decrescente. Em particular,
 $\liminf\limits_{n\to\infty} x_n$ e $\limsup\limits_{n\to\infty} x_n$ existem.
 \item
 $\displaystyle \limsup_{n \to \infty} x_n = \inf \{ a_n : n \in \N \}$
@@ -1811,7 +1811,7 @@ $\displaystyle \liminf_{n \to \infty} x_n \leq \limsup_{n \to \infty} x_n$.
 \end{prop}
 
 \begin{proof}
-Vejamos por que $\{ a_n \}_{n=1}^\infty$ é uma sequência decrescente. Como $a_n$ é a menor cota superior
+Vejamos por que $\{ a_n \}_{n=1}^\infty$ é uma sequência não crescente. Como $a_n$ é a menor cota superior
 de $\{ x_k : k \geq n \}$, também é
 uma cota superior do subconjunto $\{ x_k : k \geq n+1 \}$. Portanto,
 $a_{n+1}$, a menor cota superior de
@@ -1820,7 +1820,7 @@ a menor cota superior de
 $\{ x_k : k \geq n \}$.
 Isto é,
 $a_n \geq a_{n+1}$ para todo $n$. De modo semelhante (veja o exercício),
-$\{ b_n \}_{n=1}^\infty$ é uma sequência crescente.
+$\{ b_n \}_{n=1}^\infty$ é uma sequência não decrescente.
 Fica como exercício mostrar que,
 se $\{ x_n \}_{n=1}^\infty$ é limitada, então $\{ a_n \}_{n=1}^\infty$ e
 $\{ b_n \}_{n=1}^\infty$ também são limitadas.
@@ -2173,7 +2173,7 @@ Como a sequência é limitada, existem dois números $a_1 < b_1$
 tais que $a_1 \leq x_n \leq b_1$ para todo $n \in \N$.
 Definiremos uma subsequência $\{ x_{n_i} \}_{i=1}^\infty$ e duas
 sequências $\{ a_i \}_{i=1}^\infty$ e $\{ b_i \}_{i=1}^\infty$ tais que
-$\{ a_i \}_{i=1}^\infty$ seja monótona crescente, $\{ b_i \}_{i=1}^\infty$ seja monótona decrescente,
+$\{ a_i \}_{i=1}^\infty$ seja monótona não decrescente, $\{ b_i \}_{i=1}^\infty$ seja monótona não crescente,
 $a_i \leq x_{n_i} \leq b_i$ e $\lim_{i\to\infty} a_i =
 \lim_{i\to\infty} b_i$. Então, pelo
 \hyperref[squeeze:lemma]{teorema do confronto}, a subsequência
@@ -2266,16 +2266,16 @@ Suponhamos que $\{ x_n \}_{n=1}^\infty$ seja uma sequência monótona não limit
 \begin{equation*}
 \lim_{n \to \infty} x_n =
 \begin{cases}
-\infty  & \text{se } \{ x_n \}_{n=1}^\infty \text{ é crescente,} \\
--\infty & \text{se } \{ x_n \}_{n=1}^\infty \text{ é decrescente.}
+\infty  & \text{se } \{ x_n \}_{n=1}^\infty \text{ é não decrescente,} \\
+-\infty & \text{se } \{ x_n \}_{n=1}^\infty \text{ é não crescente.}
 \end{cases}
 \end{equation*}
 \end{prop}
 
 \begin{proof}
-O caso monótono crescente segue do
+O caso monótono não decrescente segue do
 item c) do \exerciseref{exercise:infseqlimlims} abaixo.
-Suponhamos que $\{x_n\}_{n=1}^\infty$ seja decrescente e não limitada.
+Suponhamos que $\{x_n\}_{n=1}^\infty$ seja não crescente e não limitada.
 O fato de a sequência não ser limitada significa que,
 para todo $K \in \R$, existe um $M \in \N$ tal que $x_M < K$.
 Pela monotonicidade, $x_n \leq x_M < K$ para todo $n \geq M$.
@@ -2322,7 +2322,7 @@ Essa definição coincide com a definição para sequências limitadas.
 \begin{prop}
 Seja $\{ x_n \}_{n=1}^\infty$ uma sequência não limitada. Definamos
 $\{ a_n \}_{n=1}^\infty$ e $\{ b_n \}_{n=1}^\infty$ como acima.
-Então $\{ a_n \}_{n=1}^\infty$ é decrescente, e $\{ b_n \}_{n=1}^\infty$ é crescente.
+Então $\{ a_n \}_{n=1}^\infty$ é não crescente, e $\{ b_n \}_{n=1}^\infty$ é não decrescente.
 Se $a_n$ for um número real para todo $n$, então
 $\limsup_{n\to\infty} x_n = \lim_{n\to\infty} a_n$.
 Se $b_n$ for um número real para todo $n$, então
@@ -2332,8 +2332,8 @@ $\liminf_{n\to\infty} x_n = \lim_{n\to\infty} b_n$.
 \begin{proof}
 Como antes,
 $a_n = \sup \{ x_k : k \geq n \} \geq \sup \{ x_k : k \geq n+1 \} =
-a_{n+1}$. Portanto, $\{ a_n \}_{n=1}^\infty$ é decrescente. De modo semelhante,
-$\{ b_n \}_{n=1}^\infty$ é crescente.
+a_{n+1}$. Portanto, $\{ a_n \}_{n=1}^\infty$ é não crescente. De modo semelhante,
+$\{ b_n \}_{n=1}^\infty$ é não decrescente.
 
 Se $\{ a_n \}_{n=1}^\infty$ for uma sequência de números reais, então
 $\lim_{n\to\infty} a_n = \inf \{ a_n : n \in \N \}$. Isso segue do
@@ -2375,7 +2375,7 @@ e $\{ b_n \}_{n=1}^\infty$ são limitadas.
 \begin{exercise}
 Suponha que $\{ x_n \}_{n=1}^\infty$ seja uma sequência limitada.
 Defina $b_n$ como na \defnref{liminflimsup:def}. Mostre que
-$\{ b_n \}_{n=1}^\infty$ é uma sequência crescente.
+$\{ b_n \}_{n=1}^\infty$ é uma sequência não decrescente.
 \end{exercise}
 
 \begin{exercise}
@@ -2569,7 +2569,7 @@ $\liminf\limits_{n\to\infty} x_n = \infty$.
 Em seguida, mostre que $\lim\limits_{n\to\infty} x_n = - \infty$ se, e somente se,
 $\limsup\limits_{n\to\infty} x_n = -\infty$.
 \item
-Se $\{ x_n \}_{n=1}^\infty$ é monótona crescente, mostre que ou
+Se $\{ x_n \}_{n=1}^\infty$ é monótona não decrescente, mostre que ou
 $\lim_{n\to\infty} x_n$ existe e é finito, ou $\lim_{n\to\infty} x_n = \infty$. Em qualquer
 caso, $\lim_{n\to\infty} x_n = \sup \{ x_n : n \in \N \}$.
 \end{enumerate}
@@ -3833,7 +3833,7 @@ então a série diverge.
 \end{exercise}
 
 \begin{exercise}[Desafiador]
-Suponha que $\{ x_n \}_{n=1}^\infty$ seja uma sequência decrescente e
+Suponha que $\{ x_n \}_{n=1}^\infty$ seja uma sequência não crescente e
 que $\sum_{n=1}^\infty x_n$ convirja.
 Demonstre que $\displaystyle \lim_{n\to\infty} n x_n = 0$.
 \end{exercise}
@@ -3907,7 +3907,7 @@ Demonstre que $\sum_{n=1}^\infty x_n^2$ converge.
 \end{exercise}
 
 \begin{exercise}[Desafiador] \label{exercise:cauchycondensation}
-Suponha que $\{ x_n\}_{n=1}^\infty$ seja uma sequência decrescente de números positivos.
+Suponha que $\{ x_n\}_{n=1}^\infty$ seja uma sequência não crescente de números positivos.
 A demonstração da convergência ou divergência da série $p$ se generaliza.
 Demonstre o
 \emph{\myindex{princípio da condensação de Cauchy}}:
@@ -4043,7 +4043,7 @@ Os critérios que vimos até agora tratam apenas da convergência absoluta. O
 critério a seguir fornece muitos exemplos de séries condicionalmente convergentes.
 
 \begin{prop}[Série alternada]
-Seja $\{ x_n \}_{n=1}^\infty$ uma sequência monótona decrescente de números reais positivos tal
+Seja $\{ x_n \}_{n=1}^\infty$ uma sequência monótona não crescente de números reais positivos tal
 que $\lim\limits_{n\to\infty} x_n = 0$. Então
 \begin{equation*}
 \sum_{n=1}^\infty {(-1)}^n x_n \qquad \text{converge.}
@@ -4060,10 +4060,10 @@ s_{2k} =
 =
 \sum_{\ell=1}^{k} (-x_{2\ell-1} + x_{2\ell}) .
 \end{equation*}
-A sequência $\{ x_n \}_{n=1}^\infty$ é decrescente, logo $(-x_{2\ell-1}+x_{2\ell}) \leq 0$
+A sequência $\{ x_n \}_{n=1}^\infty$ é não crescente, logo $(-x_{2\ell-1}+x_{2\ell}) \leq 0$
 para todo $\ell$.
 Assim, a subsequência $\{ s_{2k} \}_{k=1}^\infty$ das somas parciais
-é decrescente. Analogamente, $(x_{2\ell}-x_{2\ell+1}) \geq 0$ e, portanto,
+é não crescente. Analogamente, $(x_{2\ell}-x_{2\ell+1}) \geq 0$ e, portanto,
 \begin{equation*}
 s_{2k} = - x_1 + ( x_2 - x_3 ) + \cdots + ( x_{2k-2} - x_{2k-1} ) + x_{2k}
 \geq -x_1 .
@@ -4085,7 +4085,7 @@ do segmento correspondente a menos x de índice 1.}
 \caption{Ilustração de $0 \geq s_{2k} \geq -x_1$ para $k=4$ em uma série alternada.\label{fig:seralternate}}
 \end{myfigureht}
 
-Como $\{ s_{2k} \}_{k=1}^\infty$ é decrescente e limitada inferiormente, ela converge.
+Como $\{ s_{2k} \}_{k=1}^\infty$ é não crescente e limitada inferiormente, ela converge.
 Seja $a \coloneqq \lim_{k\to\infty} s_{2k}$.
 Queremos mostrar que $\lim_{m\to\infty} s_m = a$, e não apenas que isso vale para a subsequência.
 Dado $\epsilon > 0$, escolha $M$ de modo que $\sabs{s_{2k}-a} <
@@ -4469,8 +4469,9 @@ A série
 \begin{equation*}
 \sum_{n=0}^\infty \frac{1}{n!} x^n
 \end{equation*}
-converge absolutamente para todo $x \in \R$, pelo critério da razão.
-Para qualquer $x \in \R$,
+% Intervenção editorial transparente: em $x=0$, o quociente do critério da razão não está definido; esse caso é tratado diretamente.
+converge absolutamente para todo $x \in \R$.
+Para $x=0$, a série é igual a $1$. Para $x \neq 0$, o critério da razão fornece
 \begin{equation*}
 \lim_{n \to \infty}
 \frac{\bigl(1/(n+1)!\bigr) \, x^{n+1}}{(1/n!) \, x^{n}}
@@ -4488,7 +4489,9 @@ A série
 \begin{equation*}
 \sum_{n=1}^\infty \frac{1}{n} x^n
 \end{equation*}
-converge absolutamente para todo $x \in (-1,1)$, pelo critério da razão:
+converge absolutamente para todo $x \in (-1,1)$.
+% Intervenção editorial transparente: no caso x=0, o quociente do critério da razão não está definido; tratamos esse caso separadamente.
+Para $x=0$, a série é nula. Para $x \neq 0$, aplicamos o critério da razão:
 \begin{equation*}
 \lim_{n \to \infty}
 \abs{

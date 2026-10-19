@@ -403,11 +403,11 @@ Outro exemplo útil de espaço métrico é a esfera com uma métrica geralmente
 chamada de \emph{\myindex{distância ortodrômica}}.
 Seja $S^2$ a \myindex{esfera unitária}\index{esfera} em $\R^3$, isto é,
 $S^2 \coloneqq \{ x \in \R^3 : x_1^2+x_2^2+x_3^2 = 1 \}$.
-Tomemos $x$ e $y$ em $S^2$, tracemos uma reta pela origem e por $x$ e outra
-reta pela origem e por $y$, e seja $\theta$ o ângulo entre essas retas.
+% Intervenção editorial transparente: a fonte fala em ângulo entre retas não orientadas, mas a fórmula de produto interno fornece o ângulo entre os vetores de posição, em $[0,\pi]$; explicitamos essa leitura para incluir pontos antípodas.
+Sejam $x$ e $y$ em $S^2$, e seja $\theta \in [0,\pi]$ o ângulo entre os vetores que vão da origem a $x$ e a $y$.
 Definimos então $d(x,y) \coloneqq \theta$. Veja a
 \figureref{fig:spheremetric}.
-A lei dos cossenos da geometria vetorial fornece
+A lei dos cossenos em cálculo vetorial fornece
 $d(x,y) = \arccos(x_1y_1+x_2y_2+x_3y_3)$.
 É relativamente fácil ver que essa função satisfaz as três primeiras
 propriedades de uma métrica.
@@ -419,8 +419,7 @@ deixaremos a demonstração de lado.
 \myincludepdft{spheremetric}{%
 Diagrama de uma esfera no espaço tridimensional, identificada por S ao
 quadrado. A origem está indicada por 0, e os pontos x e y pertencem à esfera.
-Há uma reta entre a origem e x, outra entre a origem e y, e o ângulo entre
-elas está identificado por teta.}
+Os vetores que vão da origem a x e a y formam o ângulo identificado por teta.}
 \caption{Distância ortodrômica na esfera
 unitária.\label{fig:spheremetric}}
 \end{myfigureht}
@@ -942,7 +941,7 @@ Então,
 \begin{equation*}
 B_Y(x,\delta) = B_X(x,\delta) \cap Y \subset V \cap Y = U .
 \end{equation*}
-Aí, $U$ é aberto em $Y$.
+Portanto, $U$ é aberto em $Y$.
 
 A demonstração da recíproca, isto é, de que, se $U \subset Y$ é aberto na
 topologia de subespaço, então existe um conjunto $V$, fica como
@@ -2076,7 +2075,8 @@ limitado $[a,b]$, é compacto.
 \end{example}
 
 \begin{prop}
-Seja $(X,d)$ um espaço métrico. Se $K \subset X$ é compacto, então
+% Intervenção editorial transparente: exclui-se $X=\emptyset$, caso em que o compacto $K=\emptyset$ não tem centro $p\in X$ exigido pela definição de limitado adotada no capítulo.
+Seja $(X,d)$ um espaço métrico não vazio. Se $K \subset X$ é compacto, então
 $K$ é fechado e limitado.
 \end{prop}
 
@@ -3231,7 +3231,8 @@ Defina uma métrica em $X \times X$ como em \exerciseref{exercise:mscross}, item
 b, e demonstre que $g \colon X \times X \to \R$, definida por
 $g(x,y) \coloneqq d(x,y)$, é contínua.
 \item
-Demonstre que, se $K_1$ e $K_2$ são subconjuntos compactos de $X$, então
+% Intervenção editorial transparente: a existência de pontos minimizadores exige que ambos os compactos sejam não vazios.
+Demonstre que, se $K_1$ e $K_2$ são subconjuntos compactos e não vazios de $X$, então
 existem $p \in K_1$ e $q \in K_2$ tais que $d(p,q)$ é mínimo,
 isto é, $d(p,q) = \inf \{ d(x,y) \colon x \in K_1, y \in K_2 \}$.
 \end{enumerate}
@@ -3239,7 +3240,8 @@ isto é, $d(p,q) = \inf \{ d(x,y) \colon x \in K_1, y \in K_2 \}$.
 \end{samepage}
 
 \begin{exercise}
-Seja $(X,d)$ um espaço métrico compacto e seja $C(X,\R)$ o conjunto
+% Intervenção editorial transparente: exige-se $X\neq\emptyset$ para que o supremo que define a norma uniforme esteja definido em $\R$, sem convenção para o supremo vazio.
+Seja $(X,d)$ um espaço métrico compacto não vazio e seja $C(X,\R)$ o conjunto
 das funções contínuas com valores reais. Defina
 \begin{equation*}
 d(f,g) \coloneqq \snorm{f-g}_X = \sup_{x \in X} \babs{f(x)-g(x)} .
@@ -3720,7 +3722,8 @@ pode ser usada para aproximar $\sqrt{2}$.
 \end{exercise}
 
 \begin{exercise}
-Suponha que $f \colon X \to X$ seja uma contração e que $(X,d)$ seja um espaço métrico
+% Intervenção editorial transparente: o caso $X=\emptyset$ torna falsa a conclusão de que existe $c\in X$.
+Suponha que $f \colon X \to X$ seja uma contração e que $(X,d)$ seja um espaço métrico não vazio
 com a métrica discreta, isto é, $d(x,y) = 1$ sempre que $x \neq y$.
 Demonstre que $f$ é constante, isto é,
 existe um $c \in X$ tal que $f(x) = c$ para todo $x \in X$.

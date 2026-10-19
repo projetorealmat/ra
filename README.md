@@ -57,7 +57,7 @@ take out the "sort=use" option from the glossaries package.
 
 Esta é a edição brasileira do Volume I, baseada na obra de Jiří Lebl. A tradução é de Carlos André Duarte Costa. O projeto REALMat organiza e disponibiliza a edição; o repositório de origem é mantido para registrar procedência, créditos e licença.
 
-The automated Pages build preserves both volumes from realanal12.tex. Volume I is translated to Portuguese and Volume II remains in English. The official PDF release corresponds to Volume I and is offered for download from the REALMat portal.
+A publicação automatizada no Pages mantém os dois volumes definidos em `realanal12.tex`. O Volume I está traduzido para o português, e o Volume II permanece em inglês. A edição oficial em PDF corresponde ao Volume I e está disponível para download no portal do REALMat.
 
 ## Publicações
 

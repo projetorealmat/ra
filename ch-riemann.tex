@@ -214,8 +214,9 @@ $x_n = \widetilde{x}_{\ell}$. De fato, existem inteiros
 $k_0 < k_1 < \cdots < k_n$ tais que $x_i = \widetilde{x}_{k_i}$ para
 $i=0,1,2,\ldots,n$.
 
+% Intervenção editorial transparente: a fonte começa em q=0, mas a expressão usa $\widetilde{x}_{q-1}$; o índice válido começa em q=1.
 Defina $\Delta \widetilde{x}_q \coloneqq \widetilde{x}_q - \widetilde{x}_{q-1}$ para
-$q=0,1,2,\ldots,\ell$.
+$q=1,2,\ldots,\ell$.
 Veja a \figureref{fig:refinement}.
 Obtemos
 \begin{equation*}
@@ -1340,7 +1341,7 @@ todo $x \in (a,b)$. A demonstração decorre do
 \exerciseref{exercise:changeendpointsintegral}.
 \end{proof}
 
-Por fim, funções monótonas (crescentes ou decrescentes) são sempre
+Por fim, funções monótonas (não decrescentes ou não crescentes) são sempre
 integráveis à Riemann. A demonstração fica a cargo do leitor como parte do
 \exerciseref{exercise:boundedvariationintegrable}.
 
@@ -1496,14 +1497,14 @@ $\alpha_k$.
 Seja $f \colon [a,b] \to \R$ uma função.
 \begin{enumerate}[a)]
 \item
-Mostre que, se $f$ é crescente, então é integrável à Riemann.
+Mostre que, se $f$ é não decrescente, então é integrável à Riemann.
 Sugestão: use uma partição uniforme, cujos subintervalos têm todos o mesmo comprimento.
 \item
-Use o item a) para mostrar que, se $f$ é decrescente, então é integrável à Riemann.
+Use o item a) para mostrar que, se $f$ é não crescente, então é integrável à Riemann.
 \item
 Suponha\footnote{Dizemos que uma função $h$ assim é de
 \emph{\myindex{variação limitada}}.} que $h = f-g$, onde $f$ e $g$ são
-funções crescentes em $[a,b]$. Mostre que $h$ é integrável à Riemann.
+funções não decrescentes em $[a,b]$. Mostre que $h$ é integrável à Riemann.
 \end{enumerate}
 \end{exercise}
 
@@ -2021,14 +2022,14 @@ descontinuidade).
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Suponha que $f \colon [a,b] \to \R$ seja crescente.
+Suponha que $f \colon [a,b] \to \R$ seja não decrescente.
 Pela \propref{prop:monotoneintegrable},
 %\exerciseref{exercise:boundedvariationintegrable},
 $f$ é integrável à Riemann. Mostre que, se $f$ tem uma descontinuidade em
 $c \in (a,b)$, então $F(x) \coloneqq \int_a^x f$ não é diferenciável em $c$.
 \item
 No \exerciseref{exercise:increasingfuncdiscatQ}, você construiu uma função
-crescente $f \colon [0,1] \to \R$ que é descontínua em todo
+não decrescente $f \colon [0,1] \to \R$ que é descontínua em todo
 $x \in [0,1] \cap \Q$. Use essa função $f$ para construir uma função $F(x)$
 contínua em $[0,1]$, mas não diferenciável em nenhum $x \in [0,1] \cap \Q$.
 \end{enumerate}
@@ -2722,16 +2723,16 @@ o que indica que a integral diverge para infinito.
 \begin{proof}
 Começamos pelo primeiro item.
 Como $f$ é não negativa,
-$\int_a^x f$ é crescente em função de $x$.
+$\int_a^x f$ é não decrescente em função de $x$.
 Se o supremo é infinito, então, para todo $M \in \R$,
 encontramos $N$ tal que $\int_a^N f \geq M$. Como $\int_a^x f$
-é crescente, $\int_a^x f \geq M$ para todo $x \geq N$. Portanto,
+é não decrescente, $\int_a^x f \geq M$ para todo $x \geq N$. Portanto,
 $\int_a^\infty f$ diverge para infinito.
 
 Agora suponha que o supremo seja finito e denote
 $A \coloneqq \sup \left\{ \int_a^x f : x \geq a \right\}$.
 Para todo $\epsilon > 0$, encontramos $N$ tal que
-$A - \int_a^N f < \epsilon$. Como $\int_a^x f$ é crescente,
+$A - \int_a^N f < \epsilon$. Como $\int_a^x f$ é não decrescente,
 temos
 $A - \int_a^x f < \epsilon$ para todo $x \geq N$ e, portanto,
 $\int_a^\infty f$ converge para $A$.
@@ -2747,7 +2748,7 @@ $\lim_{n\to\infty} x_n = \infty$ e que
 converge. Dado $\epsilon > 0$, escolha $N$ de modo que, para
 todo $n \geq N$, tenhamos
 $A - \epsilon < \int_a^{x_n} f < A + \epsilon$.
-Como $\int_a^x f$ é crescente em função de $x$, para todo
+Como $\int_a^x f$ é não decrescente em função de $x$, para todo
 $x \geq x_N$ temos
 \begin{equation*}
 A - \epsilon < \int_a^{x_N} f \leq \int_a^x f .
@@ -3107,7 +3108,7 @@ Portanto,
 \end{example}
 
 \begin{example}
-Um exemplo importante de integral imprópria é a
+Um exemplo útil para o estudo de integrais impróprias é a
 \emph{\myindex{função sinc}}%
 \footnote{Forma abreviada do latim: \emph{sinus cardinalis}}.
 Essa função aparece com frequência tanto na matemática pura
@@ -3307,7 +3308,7 @@ de uma série e estimar sua soma.
 
 \begin{prop}[Teste da integral]\index{teste da integral para séries}
 Suponha que $f \colon [k,\infty) \to \R$ seja uma função não negativa e
-decrescente, com $k \in \Z$. Então
+não crescente, com $k \in \Z$. Então
 \begin{equation*}
 \sum_{n=k}^\infty f(n)
 \quad \text{converge} \qquad \text{se, e somente se,}
@@ -3331,9 +3332,9 @@ $[k,b]$, para qualquer $b>k$; portanto, o enunciado do teorema faz sentido
 sem hipóteses adicionais de integrabilidade.
 \begin{myfigureht}
 \myincludegraphics{integraltest}{%
-Diagrama dos retângulos de Darboux para uma função decrescente: começa em x igual a 1 e avança em intervalos de comprimento 1 até x igual a
+Diagrama dos retângulos de Darboux para uma função não crescente: começa em x igual a 1 e avança em intervalos de comprimento 1 até x igual a
 10, à direita. Como a
-função é decrescente, seu gráfico passa pelo canto superior esquerdo de cada
+função é não crescente, seu gráfico passa pelo canto superior esquerdo de cada
 retângulo completo e pelo canto superior direito de cada retângulo sombreado.}
 \caption{A área sob a curva, $\int_1^\infty f$, é limitada inferiormente
 pela área dos retângulos sombreados, $f(2)+f(3)+f(4)+\cdots$, e
@@ -3343,7 +3344,7 @@ $f(1)+f(2)+f(3)+\cdots$.\label{fig:integraltest}}
 
 \begin{proof}
 Sejam $\ell,m \in \Z$ tais que $m>\ell\geq k$.
-Como $f$ é decrescente, temos
+Como $f$ é não crescente, temos
 $\int_{n}^{n+1} f \leq f(n) \leq \int_{n-1}^{n} f$. Portanto,
 \begin{equation} \label{impropriemann:eqseries}
 \int_\ell^m f
@@ -3516,7 +3517,7 @@ $\babs{\int_a^b f}<\epsilon$.
 
 \begin{exercise}
 Suponha que $f \colon [0,\infty) \to \R$ seja não negativa e
-\emph{decrescente}. Prove que:
+\emph{não crescente}. Prove que:
 \begin{enumerate}[a)]
 \item
 Se $\int_0^\infty f < \infty$, então $\lim\limits_{x\to\infty} f(x)=0$.
@@ -3543,7 +3544,8 @@ ser negativa em uma metade e positiva na outra.
 \end{exercise}
 
 \begin{exercise}
-Suponha que $f \colon [1,\infty) \to \R$ seja tal que
+% Intervenção editorial transparente: acrescenta-se a integrabilidade local de Riemann, pressuposta pela definição da integral imprópria no capítulo e omitida no enunciado da fonte.
+Suponha que $f \colon [1,\infty) \to \R$ seja integrável à Riemann em cada intervalo $[1,b]$, para $b\ge1$, e que
 $g(x) \coloneqq x^2 f(x)$ seja uma função limitada. Prove que
 $\int_1^\infty f$ converge.
 \end{exercise}

@@ -803,12 +803,12 @@ a função é constante.
 \end{proof}
 
 Agora que sabemos o que significa uma função permanecer constante, vamos
-considerar as funções crescentes e decrescentes.
-Dizemos que $f \colon I \to \R$ é \emph{\myindex{crescente}}
+considerar as funções não decrescentes e não crescentes.
+Dizemos que $f \colon I \to \R$ é \emph{\myindex{não decrescente}}
 (respectivamente, \emph{\myindex{estritamente crescente}}) se
 $x < y$ implica $f(x) \leq f(y)$ (respectivamente, $f(x) < f(y)$).
 Definimos
-\emph{\myindex{decrescente}} e
+\emph{\myindex{não crescente}} e
 \emph{\myindex{estritamente decrescente}} da mesma maneira, invertendo as
 desigualdades para $f$.
 
@@ -817,13 +817,13 @@ Seja $I$ um intervalo e
 seja $f \colon I \to \R$ uma função diferenciável.
 %\begin{enumerate}[(i),itemsep=0.5\itemsep,parsep=0.5\parsep,topsep=0.5\topsep,partopsep=0.5\partopsep]
 \begin{enumerate}[(i)]
-\item $f$ é crescente se, e somente se, $f'(x) \geq 0$ para todo $x \in I$.
-\item $f$ é decrescente se, e somente se, $f'(x) \leq 0$ para todo $x \in I$.
+\item $f$ é não decrescente se, e somente se, $f'(x) \geq 0$ para todo $x \in I$.
+\item $f$ é não crescente se, e somente se, $f'(x) \leq 0$ para todo $x \in I$.
 \end{enumerate}
 \end{prop}
 
 \begin{proof}
-Demonstremos o primeiro item. Suponha que $f$ seja crescente.
+Demonstremos o primeiro item. Suponha que $f$ seja não decrescente.
 Para todos $x,c \in I$ com $x \neq c$,
 \begin{equation*}
 \frac{f(x)-f(c)}{x-c} \geq 0 .
@@ -838,10 +838,10 @@ f(y)-f(x) = f'(c)(y-x) .
 \end{equation*}
 Como $f'(c) \geq 0$ e $y-x > 0$, temos $f(y) - f(x) \geq 0$, ou seja,
 $f(x) \leq f(y)$; portanto,
-$f$ é crescente.
+$f$ é não decrescente.
 
 Deixamos como exercício para o leitor o segundo item, relativo à função $f$
-decrescente.
+não crescente.
 \end{proof}
 
 Uma afirmação semelhante, mas mais fraca, vale para funções estritamente
@@ -900,7 +900,7 @@ Tome $x \in (a,c)$
 e uma sequência $\{ y_n\}_{n=1}^\infty$ tal que $x < y_n < c$ para todo $n$
 e $\lim_{n\to\infty} y_n = c$.
 Pela proposição anterior,
-$f$ é decrescente em $(a,c)$, logo $f(x) \geq f(y_n)$ para todo $n$.
+$f$ é não crescente em $(a,c)$, logo $f(x) \geq f(y_n)$ para todo $n$.
 Como $f$ é
 contínua em $c$, passando ao limite obtemos
 $f(x) \geq f(c)$.
@@ -908,7 +908,7 @@ $f(x) \geq f(c)$.
 De modo semelhante, tome $x \in (c,b)$
 e uma sequência $\{ y_n\}_{n=1}^\infty$ tal que $c < y_n < x$ e
 $\lim_{n\to\infty} y_n = c$.
-A função é crescente em $(c,b)$, logo $f(x) \geq f(y_n)$ para todo $n$.
+A função é não decrescente em $(c,b)$, logo $f(x) \geq f(y_n)$ para todo $n$.
 Pela continuidade de $f$, obtemos
 $f(x) \geq f(c)$. Assim, $f(x) \geq f(c)$ para todo
 $x \in (a,b)$.
@@ -1223,8 +1223,10 @@ Na demonstração, vimos que ${ (P_n^{x_0})}^{(k)}(x_0) = f^{(k)}(x_0)$ para $k=
 O polinômio de Taylor não fornece necessariamente boas aproximações em todo lugar. Considere o desenvolvimento da função $f(x) \coloneqq \frac{x}{1-x}$ ao redor de $0$, para $x<1$; os gráficos estão na \figureref{fig:taylorgeom}. As linhas pontilhadas representam as aproximações de graus 1, 2 e 3. A linha tracejada representa o polinômio de grau 20. A aproximação parece melhorar à medida que o grau aumenta para $x>-1$. Para $x<-1$, na verdade, ela piora visivelmente. Os polinômios são as somas parciais da série geométrica $\sum_{n=1}^\infty x^n$, que só converge em $(-1,1)$. Veja a discussão sobre séries de potências na \sectionref{sec:moreonseries}.
 
 \begin{myfigureht}
+% Nota editorial da tradução: o original diz "from the right", mas a curva
+% representada entra pela esquerda; a descrição abaixo acompanha a figura.
 \myincludegraphics{taylorgeom}{%
-Em linha espessa, aparece o gráfico de uma função no intervalo de menos 2 a 1: ela chega horizontalmente pela direita, abaixo do eixo $x$, cruza o eixo na origem e então sobe abruptamente, saindo da figura antes de chegar a 1. Os gráficos dos três primeiros polinômios de Taylor aparecem pontilhados: uma reta, uma parábola e uma cúbica. Todos parecem aproximar razoavelmente a função bem perto da origem, mas a aproximação piora à medida que nos afastamos. Uma linha tracejada representa a aproximação de grau 20. Um pouco à direita de menos 1 e até o ponto em que a linha espessa sai da figura, mal se distingue essa aproximação da curva original. Porém, perto de menos 1, ao avançarmos da direita para a esquerda, ela sobe rapidamente e sai da figura; assim, para $x$ menor que menos 1, a aproximação fica muito pior que as de grau baixo, que já não eram boas.}
+Em linha espessa, aparece o gráfico de uma função no intervalo de menos 2 a 1: ela chega horizontalmente pela esquerda, abaixo do eixo $x$, cruza o eixo na origem e então sobe abruptamente, saindo da figura antes de chegar a 1. Os gráficos dos três primeiros polinômios de Taylor aparecem pontilhados: uma reta, uma parábola e uma cúbica. Todos parecem aproximar razoavelmente a função bem perto da origem, mas a aproximação piora à medida que nos afastamos. Uma linha tracejada representa a aproximação de grau 20. Um pouco à direita de menos 1 e até o ponto em que a linha espessa sai da figura, mal se distingue essa aproximação da curva original. Porém, perto de menos 1, ao avançarmos da direita para a esquerda, ela sobe rapidamente e sai da figura; assim, para $x$ menor que menos 1, a aproximação fica muito pior que as de grau baixo, que já não eram boas.}
 \caption{A função $\frac{x}{1-x}$ e os polinômios de Taylor $P_1^0$, $P_2^0$ e $P_3^0$ (pontilhados) e $P_{20}^0$ (tracejado).\label{fig:taylorgeom}}
 \end{myfigureht}
 
@@ -1505,3 +1507,4 @@ Se $g'(y) \neq 0$, então $f$ é diferenciável em $x$.
 Se $g'(y)=0$, então $f$ não é diferenciável em $x$.
 \end{enumerate}
 \end{exercise}
+

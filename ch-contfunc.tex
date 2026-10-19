@@ -1105,13 +1105,14 @@ f(x) \coloneqq
 \end{equation*}
 A função $f$ é descontínua em todo $c \in \R$.
 
+% Intervenção editorial transparente: a fonte restringe as sequências a $(0,1)$ apesar de afirmar descontinuidade em todo $\R$; como os racionais e irracionais são densos em $\R$, ampliamos o domínio das sequências.
 Demonstração:
 Se $c$ é racional, tome uma sequência $\{ x_n \}_{n=1}^\infty$
-de números irracionais em $(0,1)$ tal que $\lim_{n\to\infty} x_n = c$ (por que isso é possível?). Então $f(x_n) = 0$
+de números irracionais em $\R$ tal que $\lim_{n\to\infty} x_n = c$ (por que isso é possível?). Então $f(x_n) = 0$
 e, portanto, $\lim_{n\to\infty} f(x_n) = 0$, mas $f(c) = 1$.
 Se $c$ é irracional, tome uma sequência
 $\{ x_n \}_{n=1}^\infty$
-de números racionais em $(0,1)$
+de números racionais em $\R$
 que converge para $c$ (por que isso é possível?). Então $\lim_{n\to\infty} f(x_n) = 1$, mas $f(c) = 0$.
 \end{example}
 
@@ -1343,7 +1344,8 @@ $\babs{g(x)} \leq \babs{f(x)}$ para todo $x \in [-1,1]$.
 
 \begin{exercise}[Desafiador]
 Uma função $f \colon I \to \R$ é \emph{\myindex{convexa}} se,
-sempre que $a \leq x \leq b$, com $a,x,b$ em $I$, tivermos
+% Intervenção editorial transparente: a condição da fonte permite a=b, mas a expressão contém b-a no denominador; explicitamos a<b para que a fórmula fique definida.
+sempre que $a < b$ e $a \leq x \leq b$, com $a,x,b$ em $I$, tivermos
 $f(x) \leq f(a) \frac{b-x}{b-a} + f(b) \frac{x-a}{b-a}$. Isto é,
 o segmento de reta que une $\bigl(a,f(a)\bigr)$ a $\bigl(b,f(b)\bigr)$ fica acima
 do gráfico de $f$.
@@ -2904,28 +2906,28 @@ f(1) = f(-1) .
 
 \begin{defn}
 Seja $S \subset \R$.
-Dizemos que $f \colon S \to \R$ é \emph{\myindex{crescente}}
+Dizemos que $f \colon S \to \R$ é \emph{\myindex{não decrescente}}
 (respectivamente, \emph{\myindex{estritamente crescente}}) se $x,y \in S$
 e $x < y$ implicar $f(x) \leq f(y)$ (respectivamente, $f(x) < f(y)$).
 Definimos
-\emph{\myindex{decrescente}} e
+\emph{\myindex{não crescente}} e
 \emph{\myindex{estritamente decrescente}} da mesma maneira, invertendo as
 desigualdades para $f$.
 
-Se uma função é crescente ou decrescente, dizemos que ela é
+Se uma função é não decrescente ou não crescente, dizemos que ela é
 \emph{monótona}\index{função monótona}. Se é
 estritamente crescente ou estritamente decrescente, dizemos que é
 \emph{estritamente monótona}\index{função!estritamente monótona}.
 \end{defn}
 
-Às vezes, usam-se os termos \emph{\myindex{não decrescente}}
-(respectivamente, \emph{\myindex{não crescente}})
-para uma função crescente (respectivamente, decrescente), a fim de enfatizar
+Às vezes, usam-se os termos \emph{\myindex{crescente}}
+(respectivamente, \emph{\myindex{decrescente}})
+para indicar que uma função é não decrescente (respectivamente, não crescente), a fim de enfatizar
 que ela não é estritamente crescente (respectivamente, estritamente decrescente).
 
-Se $f$ é crescente, então $-f$ é decrescente, e vice-versa. Portanto,
+Se $f$ é não decrescente, então $-f$ é não crescente, e vice-versa. Portanto,
 muitos resultados sobre funções monótonas podem ser demonstrados apenas para,
-digamos, funções crescentes; os resultados para funções decrescentes seguem facilmente.
+digamos, funções não decrescentes; os resultados para funções não crescentes seguem facilmente.
 
 \subsection{Continuidade de funções monótonas}
 
@@ -2933,9 +2935,9 @@ Calculamos os limites laterais de funções monótonas por meio de ínfimos e su
 
 \begin{prop} \label{prop:monotlimits}
 Sejam $S \subset \R$, $c \in \R$,
-$f \colon S \to \R$ uma função crescente
+$f \colon S \to \R$ uma função não decrescente
 e
-$g \colon S \to \R$ uma função decrescente.
+$g \colon S \to \R$ uma função não crescente.
 Se $c$ é um ponto de acumulação de $S \cap (-\infty,c)$, então
 \begin{equation*}
 \lim_{x \to c^-} f(x) = \sup \{ f(x) : x < c, x \in S \}
@@ -2981,12 +2983,12 @@ queremos dizer que $c$ é um ponto de acumulação de $S \cap (-\infty,c)$;
 o mesmo vale para o limite pela direita.
 
 \begin{proof}
-Suponhamos que $f$ seja crescente e provemos a primeira
+Suponhamos que $f$ seja não decrescente e provemos a primeira
 igualdade. A demonstração do restante é muito semelhante e fica como exercício.
 
 Seja $a \coloneqq \sup \{ f(x) : x < c, x \in S \}$. Se $a = \infty$,
 então, dado $M \in \R$, existe $x_M \in S$, com $x_M < c$, tal que $f(x_M) > M$.
-Como $f$ é crescente, $f(x) \geq f(x_M) > M$ para todo $x \in S$ com $x > x_M$.
+Como $f$ é não decrescente, $f(x) \geq f(x_M) > M$ para todo $x \in S$ com $x > x_M$.
 Tome $\delta \coloneqq c-x_M > 0$ para satisfazer a definição de limite
 igual a infinito.
 
@@ -2996,7 +2998,7 @@ $S \cap (-\infty,c)$ não é vazio, temos $a \in \R$ e
 existe
 $x_\epsilon \in S$,
 com $x_\epsilon < c$,
-tal que $f(x_\epsilon) > a-\epsilon$. Como $f$ é crescente,
+tal que $f(x_\epsilon) > a-\epsilon$. Como $f$ é não decrescente,
 se $x \in S$ e $x_\epsilon < x < c$, então
 $a-\epsilon < f(x_\epsilon) \leq f(x) \leq a$. Seja
 $\delta \coloneqq c-x_\epsilon$. Então, para $x \in S \cap (-\infty,c)$
@@ -3004,7 +3006,7 @@ com $\sabs{x-c} < \delta$,
 temos $\babs{f(x)-a} < \epsilon$.
 \end{proof}
 
-Suponha que $f \colon S \to \R$ seja crescente, que $c \in S$ e
+Suponha que $f \colon S \to \R$ seja não decrescente, que $c \in S$ e
 que existam os dois limites laterais.
 Como $f(x) \leq f(c) \leq f(y)$
 sempre que $x < c < y$, passando aos limites obtemos
@@ -3028,12 +3030,12 @@ se, e somente se, $f$ é constante. Toda função constante é
 contínua.
 
 \begin{proof}
-Sem perda de generalidade, suponhamos que $f$ seja crescente.
+Sem perda de generalidade, suponhamos que $f$ seja não decrescente.
 
 Suponha primeiro que $f$ seja contínua. Tomemos dois pontos
 $f(x_1), f(x_2)$ de $f(I)$ e suponhamos que
 $f(x_1) < f(x_2)$.
-Como $f$ é crescente, $x_1 < x_2$. Pelo
+Como $f$ é não decrescente, $x_1 < x_2$. Pelo
 \hyperref[IVT:thm]{teorema do valor intermediário},
 dado $y$ com $f(x_1) < y < f(x_2)$, encontramos
 $c \in (x_1,x_2) \subset I$ tal que $f(c) = y$, logo $y \in f(I)$.
@@ -3089,7 +3091,7 @@ f de x sub 1.
 A parte seguinte consiste apenas no ponto f de c.
 A terceira parte, a superior, é um intervalo que começa em b
 e contém f de x sub 2.}
-\caption{Descontinuidade da função crescente $f \colon I \to \R$ em
+\caption{Descontinuidade da função não decrescente $f \colon I \to \R$ em
 $c$.\label{fig:figinccont}}
 \end{myfigureht}
 
@@ -3106,7 +3108,7 @@ um número enumerável de descontinuidades.
 Seja $E \subset I$ o conjunto de todas as descontinuidades
 que não são extremidades de $I$. Como há
 no máximo duas extremidades, basta mostrar que $E$ é enumerável.
-Sem perda de generalidade, suponhamos que $f$ seja crescente.
+Sem perda de generalidade, suponhamos que $f$ seja não decrescente.
 Definiremos uma injeção $h \colon E \to \Q$.
 Para cada $c \in E$,
 existem os dois limites laterais de $f$, pois $c$ não é uma extremidade.
@@ -3146,8 +3148,9 @@ x +
 2^{-n} ,
 \end{equation*}
 para $x < 1$, e $f(1) \coloneqq 3$.
+% Intervenção editorial transparente: a fonte inclui $k=1$, que corresponde a $x=0$, onde a função é contínua no domínio $[0,1]$. Restringimos a afirmação a $k \geq 2$.
 É um exercício mostrar que $f$ é estritamente crescente, limitada e
-descontínua em todos os pontos $1-\nicefrac{1}{k}$, para $k \in \N$. Em particular,
+descontínua em todos os pontos $1-\nicefrac{1}{k}$, para $k \in \N$ com $k \geq 2$. Em particular,
 há um número enumerável de descontinuidades, mas a função é limitada e está definida em um intervalo fechado e limitado. Veja a \figureref{fig:countdiscont}.
 \begin{myfigureht}
 \myincludegraphics{increasing-discont-fig}{%
@@ -3264,8 +3267,8 @@ Suponha que $f \colon [0,1] \to \R$ seja monótona. Demonstre que $f$ é limitad
 
 \begin{exercise}
 Complete a demonstração da \propref{prop:monotlimits}.
-Dica: Você pode reduzir o trabalho pela metade observando que, se $g$ é decrescente,
-então $-g$ é crescente.
+Dica: Você pode reduzir o trabalho pela metade observando que, se $g$ é não crescente,
+então $-g$ é não decrescente.
 \end{exercise}
 
 \begin{exercise}
@@ -3282,7 +3285,7 @@ Complete a demonstração da \propref{prop:invcont}.
 
 \begin{samepage}
 \begin{exercise}
-Suponha que $S \subset \R$ e que $f \colon S \to \R$ seja uma função crescente.
+Suponha que $S \subset \R$ e que $f \colon S \to \R$ seja uma função não decrescente.
 Demonstre:
 \begin{enumerate}[a)]
 \item
@@ -3322,18 +3325,18 @@ $g(x) = f(x)$ para todo $x \in I$, com exceção de um conjunto enumerável de p
 \leavevmode
 \begin{enumerate}[a)]
 \item
-Seja $S \subset \R$. Mostre que, se $f \colon S \to \R$ é crescente e
+Seja $S \subset \R$. Mostre que, se $f \colon S \to \R$ é não decrescente e
 limitada,
-então existe uma função crescente $F \colon \R \to \R$
+então existe uma função não decrescente $F \colon \R \to \R$
 tal que $f(x) = F(x)$ para todo $x \in S$.
 \item
 Dê um exemplo de uma função limitada e estritamente crescente $f \colon S \to \R$ tal que
-nenhuma escolha da função crescente $F$ acima possa torná-la estritamente crescente.
+nenhuma escolha da função não decrescente $F$ acima possa torná-la estritamente crescente.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}[Desafiador] \label{exercise:increasingfuncdiscatQ}
-Dê um exemplo de uma função crescente $f \colon [0,1] \to \R$
+Dê um exemplo de uma função não decrescente $f \colon [0,1] \to \R$
 que seja descontínua em todo número racional. Mostre, em seguida, que a imagem
 $f\bigl([0,1]\bigr)$ não contém nenhum intervalo. Dica: Enumere
 os números racionais e defina a função por meio de uma série.
@@ -3345,7 +3348,7 @@ Mostre que $\R \setminus f(I)$ é uma união enumerável de intervalos disjuntos
 \end{exercise}
 
 \begin{exercise}
-Suponha que $f \colon [0,1] \to (0,1)$ seja crescente. Mostre que, para todo
+Suponha que $f \colon [0,1] \to (0,1)$ seja não decrescente. Mostre que, para todo
 $\epsilon > 0$, existe uma função estritamente crescente
 $g \colon [0,1] \to (0,1)$ tal que
 $g(0) = f(0)$, $f(x) \leq g(x)$ para todo $x$ e $g(1)-f(1) < \epsilon$.
@@ -3355,7 +3358,7 @@ $g(0) = f(0)$, $f(x) \leq g(x)$ para todo $x$ e $g(1)-f(1) < \epsilon$.
 Demonstre que a \myindex{função de Dirichlet}
 $f \colon [0,1] \to\R$, definida por $f(x) \coloneqq 1$
 se $x$ é racional e $f(x) \coloneqq 0$ caso contrário, não pode ser escrita como a
-diferença de duas funções crescentes. Isto é, não existem funções crescentes
+diferença de duas funções não decrescentes. Isto é, não existem funções não decrescentes
 $g$ e $h$ tais que $f(x) = g(x) - h(x)$.
 \end{exercise}
 
